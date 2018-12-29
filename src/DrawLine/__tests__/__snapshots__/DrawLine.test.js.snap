@@ -1,0 +1,172 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DrawLine DrawLine render correctly 1`] = `
+<Demo>
+  <Block
+    className="stepped-A"
+    color="#00f"
+    left="90px"
+    top="50px"
+  >
+    <div
+      className="block stepped-A"
+      style={
+        Object {
+          "backgroundColor": "#00f",
+          "left": "90px",
+          "top": "50px",
+        }
+      }
+    >
+      A
+    </div>
+  </Block>
+  <Block
+    className="stepped-B"
+    color="#00f"
+    left="20px"
+    top="150px"
+  >
+    <div
+      className="block stepped-B"
+      style={
+        Object {
+          "backgroundColor": "#00f",
+          "left": "20px",
+          "top": "150px",
+        }
+      }
+    >
+      B
+    </div>
+  </Block>
+  <Block
+    className="stepped-C"
+    color="#00f"
+    left="90px"
+    top="150px"
+  >
+    <div
+      className="block stepped-C"
+      style={
+        Object {
+          "backgroundColor": "#00f",
+          "left": "90px",
+          "top": "150px",
+        }
+      }
+    >
+      C
+    </div>
+  </Block>
+  <Block
+    className="stepped-D"
+    color="#00f"
+    left="160px"
+    top="150px"
+  >
+    <div
+      className="block stepped-D"
+      style={
+        Object {
+          "backgroundColor": "#00f",
+          "left": "160px",
+          "top": "150px",
+        }
+      }
+    >
+      D
+    </div>
+  </Block>
+  <Block
+    className="stepped-E"
+    color="#00f"
+    left="300px"
+    top="50px"
+  >
+    <div
+      className="block stepped-E"
+      style={
+        Object {
+          "backgroundColor": "#00f",
+          "left": "300px",
+          "top": "50px",
+        }
+      }
+    >
+      E
+    </div>
+  </Block>
+  <Block
+    className="stepped-F"
+    color="#00f"
+    left="300px"
+    top="120px"
+  >
+    <div
+      className="block stepped-F"
+      style={
+        Object {
+          "backgroundColor": "#00f",
+          "left": "300px",
+          "top": "120px",
+        }
+      }
+    >
+      F
+    </div>
+  </Block>
+  <SteppedLineTo
+    borderColor="#ddd"
+    borderStyle="solid"
+    borderWidth={3}
+    delay={true}
+    from="stepped-A"
+    fromAnchor="bottom"
+    to="stepped-B"
+    toAnchor="top"
+  />
+  <SteppedLineTo
+    borderColor="#ddd"
+    borderStyle="solid"
+    borderWidth={3}
+    delay={true}
+    from="stepped-A"
+    fromAnchor="bottom"
+    to="stepped-C"
+    toAnchor="top"
+  />
+  <SteppedLineTo
+    borderColor="#ddd"
+    borderStyle="solid"
+    borderWidth={3}
+    delay={true}
+    from="stepped-A"
+    fromAnchor="bottom"
+    to="stepped-D"
+    toAnchor="top"
+  />
+  <SteppedLineTo
+    borderColor="#ddd"
+    borderStyle="solid"
+    borderWidth={3}
+    delay={true}
+    from="stepped-A"
+    fromAnchor="right"
+    orientation="h"
+    to="stepped-E"
+    toAnchor="left"
+  />
+  <SteppedLineTo
+    borderColor="#ddd"
+    borderStyle="solid"
+    borderWidth={3}
+    delay={true}
+    from="stepped-A"
+    fromAnchor="right"
+    orientation="h"
+    to="stepped-F"
+    toAnchor="left"
+  />
+</Demo>
+`;
