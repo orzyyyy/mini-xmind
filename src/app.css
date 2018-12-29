@@ -1,0 +1,20 @@
+.App {
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  background: pink;
+  height: 100vh;
+}
+
+ul {
+  list-style: none;
+  position: fixed;
+  left: 5px;
+  top: 45%;
+}
+
+ul li {
+  cursor: pointer;
+}
+
+.App .tool-border {
+  position: absolute;
+}

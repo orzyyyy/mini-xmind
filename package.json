@@ -1,0 +1,70 @@
+{
+  "name": "mini-xmind",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "node webpack.dev.js",
+    "test": "jest --config .jest.js --verbose=false",
+    "build": "node webpack.prod.js",
+    "dev": "node webpack.prod.js --development",
+    "lint": "npx eslint .",
+    "prettier": "node ./scripts/prettier.js",
+    "lint-staged": "lint-staged"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "antd": "^3.11.6",
+    "classnames": "^2.2.6",
+    "react-draggable": "^3.1.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-import": "^1.7.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "chalk": "^2.4.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "commitizen": "^3.0.5",
+    "copy-webpack-plugin": "^4.6.0",
+    "css-loader": "^0.28.11",
+    "cz-conventional-changelog": "^2.1.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "enzyme-to-json": "^3.3.5",
+    "eslint": "^5.10.0",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^1.2.1",
+    "jest": "^23.6.0",
+    "lint-staged": "^8.1.0",
+    "postcss-loader": "^2.1.6",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.15.3",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-hot-loader": "^4.6.3",
+    "style-loader": "^0.21.0",
+    "toho-log-plugin": "^1.0.11",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.28.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.11"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "pre-commit": [
+    "lint-staged"
+  ],
+  "lint-staged": {
+    "*.{js,css}": [
+      "node ./scripts/prettier.js",
+      "npx eslint .",
+      "git add"
+    ]
+  }
+}
