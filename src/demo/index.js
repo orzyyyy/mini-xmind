@@ -2,10 +2,10 @@ import React, { Component, Fragment } from 'react';
 
 import { Icon } from 'antd';
 import Draggable from 'react-draggable';
-import { SteppedLineTo, Block } from './DrawLine';
-import { ajax } from './urlHelper';
+import { SteppedLineTo, Block } from '../DrawLine';
+import { ajax } from '../urlHelper';
 
-import './app.css';
+import './assets/app.css';
 
 export default class App extends Component {
   constructor(props) {
@@ -119,8 +119,7 @@ export default class App extends Component {
         <Block className="stepped-E" top="50px" left="300px" color="#00f">
           E
         </Block>
-        <Block className="stepped-F" top="120px" left="300px"
-        color="#00f">
+        <Block className="stepped-F" top="120px" left="300px" color="#00f">
           F
         </Block>
         <SteppedLineTo

@@ -17,23 +17,22 @@ describe('DrawLine', () => {
           <React.Fragment>
             <Block className="stepped-A" top="50px" left="90px" color="#00f">
               A
-        </Block>
+            </Block>
             <Block className="stepped-B" top="150px" left="20px" color="#00f">
               B
-        </Block>
+            </Block>
             <Block className="stepped-C" top="150px" left="90px" color="#00f">
               C
-        </Block>
+            </Block>
             <Block className="stepped-D" top="150px" left="160px" color="#00f">
               D
-        </Block>
+            </Block>
             <Block className="stepped-E" top="50px" left="300px" color="#00f">
               E
-        </Block>
-            <Block className="stepped-F" top="120px" left="300px"
-              color="#00f">
+            </Block>
+            <Block className="stepped-F" top="120px" left="300px" color="#00f">
               F
-        </Block>
+            </Block>
             <SteppedLineTo
               from="stepped-A"
               to="stepped-B"
