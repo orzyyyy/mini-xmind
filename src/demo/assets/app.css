@@ -14,7 +14,3 @@ ul {
 ul li {
   cursor: pointer;
 }
-
-.App .tool-border {
-  position: absolute;
-}

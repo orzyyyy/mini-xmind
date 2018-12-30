@@ -1,7 +1,8 @@
 [
   {
     "key": "minus",
-    "value": "line"
+    "value": "line",
+    "isBind": true
   },
   {
     "key": "border",
