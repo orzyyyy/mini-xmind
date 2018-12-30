@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import Line from './Line';
+const defaultBorderWidth = 1;
 
 export default class SteppedLine extends PureComponent {
   static propTypes = {

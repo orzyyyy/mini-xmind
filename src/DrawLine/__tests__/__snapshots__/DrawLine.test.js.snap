@@ -10,13 +10,6 @@ exports[`DrawLine DrawLine render correctly 1`] = `
   >
     <div
       className="block stepped-A"
-      style={
-        Object {
-          "backgroundColor": "#00f",
-          "left": "90px",
-          "top": "50px",
-        }
-      }
     >
       A
     </div>
@@ -29,13 +22,6 @@ exports[`DrawLine DrawLine render correctly 1`] = `
   >
     <div
       className="block stepped-B"
-      style={
-        Object {
-          "backgroundColor": "#00f",
-          "left": "20px",
-          "top": "150px",
-        }
-      }
     >
       B
     </div>
@@ -48,13 +34,6 @@ exports[`DrawLine DrawLine render correctly 1`] = `
   >
     <div
       className="block stepped-C"
-      style={
-        Object {
-          "backgroundColor": "#00f",
-          "left": "90px",
-          "top": "150px",
-        }
-      }
     >
       C
     </div>
@@ -67,13 +46,6 @@ exports[`DrawLine DrawLine render correctly 1`] = `
   >
     <div
       className="block stepped-D"
-      style={
-        Object {
-          "backgroundColor": "#00f",
-          "left": "160px",
-          "top": "150px",
-        }
-      }
     >
       D
     </div>
@@ -86,13 +58,6 @@ exports[`DrawLine DrawLine render correctly 1`] = `
   >
     <div
       className="block stepped-E"
-      style={
-        Object {
-          "backgroundColor": "#00f",
-          "left": "300px",
-          "top": "50px",
-        }
-      }
     >
       E
     </div>
@@ -105,13 +70,6 @@ exports[`DrawLine DrawLine render correctly 1`] = `
   >
     <div
       className="block stepped-F"
-      style={
-        Object {
-          "backgroundColor": "#00f",
-          "left": "300px",
-          "top": "120px",
-        }
-      }
     >
       F
     </div>
