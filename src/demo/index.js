@@ -61,6 +61,9 @@ export default class App extends Component {
     let { toolInstance, lineActive } = this.state;
     const { clientX, clientY } = e;
     const blockKey = this.generateBlockKey();
+    const x = clientX - style.width / 2;
+    const y = clientY - style.height / 2;
+    this.blocks[blockKey] = { x, y };
 
     switch (value) {
       case 'border':
@@ -74,13 +77,12 @@ export default class App extends Component {
             <Block
               className={blockKey}
               key={blockKey}
-              ref={ref => (this[blockKey] = ref)}
               style={Object.assign({}, style, {
-                left: clientX - style.width / 2,
-                top: clientY - style.height / 2,
+                left: x,
+                top: y,
                 position: 'absolute',
               })}
-              onClick={e => this.handleBlockClick(e, blockKey)}
+              onClick={e => this.handleBlockClick(blockKey)}
             />
           </Draggable>,
         );
@@ -98,32 +100,58 @@ export default class App extends Component {
   generateBlockKey = () => {
     let key = moment().format('YYYYMMDDHHmmss');
 
-    this.blocks[key] = {};
-
     return key;
   };
 
-  handleBlockClick = (e, blockKey) => {
+  // e.g. relative 在 target 的 bottomRight
+  getPlacement = (target, relative) => {
+    let result = {};
+    let placement = '';
+    let from = '';
+    let to = '';
+    const { x: targetX, y: targetY } = target;
+    const { x: relativeX, y: relativeY } = relative;
+
+    if (targetY < relativeY) {
+      placement += 'bottom';
+      from = 'bottom';
+      to = 'top';
+    } else {
+      placement += 'top';
+      from = 'top';
+      to = 'bottom';
+    }
+
+    if (targetX < relativeX) {
+      placement += 'Right';
+    } else {
+      placement += 'Left';
+    }
+
+    return { placement, from, to };
+  };
+
+  handleBlockClick = blockKey => {
     const { lineBlockList } = this;
 
     lineBlockList.push(blockKey);
 
     if (lineBlockList.length == 2) {
       let { toolInstance } = this.state;
+      const { from, to } = this.getPlacement(
+        this.blocks[lineBlockList[0]],
+        this.blocks[lineBlockList[1]],
+      );
 
       toolInstance.push(
         <SteppedLineTo
-          from={this.lineBlockList[0]}
-          to={this.lineBlockList[1]}
-          fromAnchor="bottom"
-          toAnchor="top"
-          style={{
-            borderColor: '#ddd',
-            borderStyle: 'solid',
-            borderWidth: 3,
-          }}
+          from={lineBlockList[0]}
+          to={lineBlockList[1]}
+          fromAnchor={from}
+          toAnchor={to}
         />,
       );
+      this.lineBlockList = [];
 
       this.setState({ toolInstance });
     }
@@ -139,12 +167,6 @@ export default class App extends Component {
 
   render = () => {
     const { tools, toolInstance, lineActive } = this.state;
-    const style = {
-      delay: true,
-      borderColor: '#ddd',
-      borderStyle: 'solid',
-      borderWidth: 3,
-    };
 
     return (
       <Fragment>
