@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-const defaultBorderColor = '#f00';
+const defaultBorderColor = '#ddd';
 const defaultBorderStyle = 'solid';
 const defaultBorderWidth = 1;
 
