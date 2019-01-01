@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DrawLine DrawLine render correctly 1`] = `
+exports[`Line SteppedLineTo render correctly 1`] = `
 <Demo>
   <Block
     className=""
@@ -51,9 +51,6 @@ exports[`DrawLine DrawLine render correctly 1`] = `
     </div>
   </Block>
   <SteppedLineTo
-    borderColor="#ddd"
-    borderStyle="solid"
-    borderWidth={3}
     from={
       <div
         class="Block"
@@ -74,9 +71,6 @@ exports[`DrawLine DrawLine render correctly 1`] = `
     toAnchor="top"
   >
     <SteppedLine
-      borderColor="#ddd"
-      borderStyle="solid"
-      borderWidth={3}
       from={
         <div
           class="Block"
@@ -85,7 +79,6 @@ exports[`DrawLine DrawLine render correctly 1`] = `
           A
         </div>
       }
-      fromAnchor="bottom"
       orientation="v"
       to={
         <div
@@ -95,16 +88,13 @@ exports[`DrawLine DrawLine render correctly 1`] = `
           B
         </div>
       }
-      toAnchor="top"
       x0={0}
       x1={0}
       y0={0}
       y1={0}
     >
       <Line
-        borderColor="#ddd"
-        borderStyle="solid"
-        borderWidth={3}
+        className=""
         from={
           <div
             class="Block"
@@ -113,8 +103,8 @@ exports[`DrawLine DrawLine render correctly 1`] = `
             A
           </div>
         }
-        fromAnchor="bottom"
         orientation="v"
+        style={Object {}}
         to={
           <div
             class="Block"
@@ -123,7 +113,6 @@ exports[`DrawLine DrawLine render correctly 1`] = `
             B
           </div>
         }
-        toAnchor="top"
         x0={0}
         x1={0}
         y0={0}
@@ -133,11 +122,21 @@ exports[`DrawLine DrawLine render correctly 1`] = `
           className="react-lineto-placeholder"
         >
           <div
+            className=""
+            from={
+              <div
+                class="Block"
+                style="left: 90px; top: 50px; color: rgb(0, 0, 255);"
+              >
+                A
+              </div>
+            }
+            orientation="v"
             style={
               Object {
                 "borderTopColor": "#ddd",
                 "borderTopStyle": "solid",
-                "borderTopWidth": 3,
+                "borderTopWidth": 1,
                 "left": "0px",
                 "position": "absolute",
                 "top": "0px",
@@ -146,6 +145,14 @@ exports[`DrawLine DrawLine render correctly 1`] = `
                 "width": "0px",
                 "zIndex": "1",
               }
+            }
+            to={
+              <div
+                class="Block"
+                style="left: 20px; top: 150px; color: rgb(0, 0, 255);"
+              >
+                B
+              </div>
             }
           />
         </div>

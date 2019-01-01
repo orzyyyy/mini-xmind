@@ -4,8 +4,8 @@ import { render, mount, shallow } from 'enzyme';
 import { SteppedLineTo } from '..';
 import Block from '../../tools/Block';
 
-describe('DrawLine', () => {
-  it('DrawLine render correctly', () => {
+describe('Line', () => {
+  it('SteppedLine render correctly', () => {
     class Demo extends React.Component {
       constructor() {
         super();
@@ -22,9 +22,6 @@ describe('DrawLine', () => {
             to={ReactDOM.findDOMNode(this.blockB)}
             fromAnchor="bottom"
             toAnchor="top"
-            borderColor="#ddd"
-            borderStyle="solid"
-            borderWidth={3}
           />
         );
 
