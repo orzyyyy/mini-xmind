@@ -54,9 +54,8 @@ export default class LineTo extends Component {
     borderWidth: PropTypes.number,
     className: PropTypes.string,
     zIndex: PropTypes.number,
-    from: PropTypes.string.isRequired,
-    to: PropTypes.string.isRequired,
-    within: PropTypes.string,
+    from: PropTypes.object.isRequired,
+    to: PropTypes.object.isRequired,
     fromAnchor: PropTypes.string,
     toAnchor: PropTypes.string,
   };
@@ -98,31 +97,20 @@ export default class LineTo extends Component {
   }
 
   detect() {
-    const { from, to, within = '' } = this.props;
+    const { from, to } = this.props;
 
-    const a = this.findElement(from);
-    const b = this.findElement(to);
-
-    if (!a || !b) {
-      return false;
+    if (!from || !to) {
+      return;
     }
 
     const anchor0 = this.fromAnchor;
     const anchor1 = this.toAnchor;
 
-    const box0 = a.getBoundingClientRect();
-    const box1 = b.getBoundingClientRect();
+    const box0 = from.getBoundingClientRect();
+    const box1 = to.getBoundingClientRect();
 
     let offsetX = window.pageXOffset;
     let offsetY = window.pageYOffset;
-
-    if (within) {
-      const p = this.findElement(within);
-      const boxp = p.getBoundingClientRect();
-
-      offsetX -= boxp.left;
-      offsetY -= boxp.top;
-    }
 
     const x0 = box0.left + box0.width * anchor0.x + offsetX;
     const x1 = box1.left + box1.width * anchor1.x + offsetX;

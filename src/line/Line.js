@@ -18,24 +18,8 @@ export default class Line extends PureComponent {
     zIndex: PropTypes.number,
   };
 
-  componentDidMount() {
-    // Append rendered DOM element to the container the
-    // offsets were calculated for
-    this.within.appendChild(this.el);
-  }
-
-  componentWillUnmount() {
-    this.within.removeChild(this.el);
-  }
-
-  findElement(className) {
-    return document.getElementsByClassName(className)[0];
-  }
-
   render() {
-    const { x0, y0, x1, y1, within = '' } = this.props;
-
-    this.within = within ? this.findElement(within) : document.body;
+    const { x0, y0, x1, y1 } = this.props;
 
     const dy = y1 - y0;
     const dx = x1 - x0;

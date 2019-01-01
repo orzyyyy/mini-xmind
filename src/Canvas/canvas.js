@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
 import Draggable from 'react-draggable';
 import { SteppedLineTo } from '../Line';
@@ -23,6 +24,10 @@ export default class Canvas extends Component {
 
   componentDidMount = () => {};
 
+  saveBlock = (ref, blockKey) => {
+    this.blocks[blockKey].current = ReactDOM.findDOMNode(ref);
+  };
+
   onDrop = e => {
     let dragItem = e.dataTransfer.getData('dragItem');
     dragItem = dragItem ? JSON.parse(dragItem) : {};
@@ -41,7 +46,6 @@ export default class Canvas extends Component {
             onStop={this.handleStop}
             key={`border-${toolInstance.length + 1}`}
             disabled={lineActive}
-            onDrag={e => this.test.refresh()}
             // position={{ x: clientX - style.width / 2, y: clientY - style.height / 2 }}
           >
             <Block
@@ -52,7 +56,9 @@ export default class Canvas extends Component {
                 top: y,
                 position: 'absolute',
               })}
+              // onDrag={e => e && this.test.refresh()}
               onClick={e => this.handleBlockClick(blockKey)}
+              ref={ref => this.saveBlock(ref, blockKey)}
             />
           </Draggable>,
         );
@@ -74,19 +80,16 @@ export default class Canvas extends Component {
 
     if (lineBlockList.length == 2) {
       let { toolInstance } = this.state;
-      const { fromAnchor, toAnchor } = getPlacement(
-        this.blocks[lineBlockList[0]],
-        this.blocks[lineBlockList[1]],
-      );
+      const fromNode = this.blocks[lineBlockList[0]];
+      const toNode = this.blocks[lineBlockList[1]];
+      const { fromAnchor, toAnchor } = getPlacement(fromNode, toNode);
 
       toolInstance.push(
         <SteppedLineTo
-          // https://stackoverflow.com/questions/46984544/redux-form-invalid-prop-value-of-type-number-supplied-to-textinput-expec
-          from={`${lineBlockList[0]}`}
-          to={`${lineBlockList[1]}`}
+          from={fromNode.current}
+          to={toNode.current}
           fromAnchor={fromAnchor}
           toAnchor={toAnchor}
-          ref={ref => (this.test = ref)}
           key={`stepLine-${blockKey}`}
         />,
       );
@@ -97,7 +100,7 @@ export default class Canvas extends Component {
   };
 
   generateBlockKey = () => {
-    return new Date().getTime() % 1000000;
+    return `block-${new Date().getTime() % 1000000}`;
   };
 
   render = () => {
