@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Line SteppedLineTo render correctly 1`] = `
+exports[`Line SteppedLine render correctly 1`] = `
 <Demo>
   <Block
     className=""
