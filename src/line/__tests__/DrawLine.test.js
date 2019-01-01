@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, mount, shallow } from 'enzyme';
-import { SteppedLineTo, Block } from '..';
+import { SteppedLineTo } from '..';
+import Block from '../../tools/Block';
 
 describe('DrawLine', () => {
   it('DrawLine render correctly', () => {
