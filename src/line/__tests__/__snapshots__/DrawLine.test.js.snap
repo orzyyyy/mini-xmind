@@ -3,23 +3,49 @@
 exports[`DrawLine DrawLine render correctly 1`] = `
 <Demo>
   <Block
-    color="#00f"
-    left="90px"
-    top="50px"
+    className=""
+    key="blockA"
+    style={
+      Object {
+        "color": "#00f",
+        "left": 90,
+        "top": 50,
+      }
+    }
   >
     <div
-      className="block"
+      className="Block"
+      style={
+        Object {
+          "color": "#00f",
+          "left": 90,
+          "top": 50,
+        }
+      }
     >
       A
     </div>
   </Block>
   <Block
-    color="#00f"
-    left="20px"
-    top="150px"
+    className=""
+    key="blockB"
+    style={
+      Object {
+        "color": "#00f",
+        "left": 20,
+        "top": 150,
+      }
+    }
   >
     <div
-      className="block"
+      className="Block"
+      style={
+        Object {
+          "color": "#00f",
+          "left": 20,
+          "top": 150,
+        }
+      }
     >
       B
     </div>
@@ -30,7 +56,8 @@ exports[`DrawLine DrawLine render correctly 1`] = `
     borderWidth={3}
     from={
       <div
-        class="block"
+        class="Block"
+        style="left: 90px; top: 50px; color: rgb(0, 0, 255);"
       >
         A
       </div>
@@ -38,7 +65,8 @@ exports[`DrawLine DrawLine render correctly 1`] = `
     fromAnchor="bottom"
     to={
       <div
-        class="block"
+        class="Block"
+        style="left: 20px; top: 150px; color: rgb(0, 0, 255);"
       >
         B
       </div>
@@ -51,7 +79,8 @@ exports[`DrawLine DrawLine render correctly 1`] = `
       borderWidth={3}
       from={
         <div
-          class="block"
+          class="Block"
+          style="left: 90px; top: 50px; color: rgb(0, 0, 255);"
         >
           A
         </div>
@@ -59,7 +88,8 @@ exports[`DrawLine DrawLine render correctly 1`] = `
       fromAnchor="bottom"
       to={
         <div
-          class="block"
+          class="Block"
+          style="left: 20px; top: 150px; color: rgb(0, 0, 255);"
         >
           B
         </div>
@@ -76,7 +106,8 @@ exports[`DrawLine DrawLine render correctly 1`] = `
         borderWidth={3}
         from={
           <div
-            class="block"
+            class="Block"
+            style="left: 90px; top: 50px; color: rgb(0, 0, 255);"
           >
             A
           </div>
@@ -84,7 +115,8 @@ exports[`DrawLine DrawLine render correctly 1`] = `
         fromAnchor="bottom"
         to={
           <div
-            class="block"
+            class="Block"
+            style="left: 20px; top: 150px; color: rgb(0, 0, 255);"
           >
             B
           </div>

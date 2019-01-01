@@ -32,7 +32,7 @@ export default class Canvas extends Component {
     let dragItem = e.dataTransfer.getData('dragItem');
     dragItem = dragItem ? JSON.parse(dragItem) : {};
     const { value, style } = dragItem;
-    let { toolInstance, lineActive } = this.state;
+    let { toolInstance } = this.state;
     const { clientX, clientY } = e;
     const blockKey = this.generateBlockKey();
     const x = clientX - style.width / 2;
@@ -45,16 +45,13 @@ export default class Canvas extends Component {
           <Draggable
             onStop={this.handleStop}
             key={`border-${toolInstance.length + 1}`}
-            disabled={lineActive}
             // position={{ x: clientX - style.width / 2, y: clientY - style.height / 2 }}
           >
             <Block
-              className={blockKey}
               key={blockKey}
               style={Object.assign({}, style, {
                 left: x,
                 top: y,
-                position: 'absolute',
               })}
               // onDrag={e => e && this.test.refresh()}
               onClick={e => this.handleBlockClick(blockKey)}

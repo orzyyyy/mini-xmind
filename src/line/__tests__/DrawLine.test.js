@@ -11,14 +11,12 @@ describe('DrawLine', () => {
         super();
 
         this.state = {
-          steps: [],
+          steps: null,
         };
       }
 
       componentDidMount = () => {
-        let steps = [];
-
-        steps.push(
+        let steps = (
           <SteppedLineTo
             from={ReactDOM.findDOMNode(this.blockA)}
             to={ReactDOM.findDOMNode(this.blockB)}
@@ -27,7 +25,7 @@ describe('DrawLine', () => {
             borderColor="#ddd"
             borderStyle="solid"
             borderWidth={3}
-          />,
+          />
         );
 
         this.setState({ steps });
@@ -37,18 +35,24 @@ describe('DrawLine', () => {
         return (
           <React.Fragment>
             <Block
-              top="50px"
-              left="90px"
-              color="#00f"
+              style={{
+                left: 90,
+                top: 50,
+                color: '#00f',
+              }}
               ref={ref => (this.blockA = ref)}
+              key="blockA"
             >
               A
             </Block>
             <Block
-              top="150px"
-              left="20px"
-              color="#00f"
+              style={{
+                left: 20,
+                top: 150,
+                color: '#00f',
+              }}
               ref={ref => (this.blockB = ref)}
+              key="blockB"
             >
               B
             </Block>
