@@ -3,3 +3,8 @@
   background: pink;
   height: 100vh;
 }
+
+.Demo .canvas-wrapper {
+  width: 100%;
+  height: 100%;
+}

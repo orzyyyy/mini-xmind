@@ -9,7 +9,7 @@ export default class Demo extends Component {
     return (
       <div className="Demo">
         <ToolBar />
-        <Canvas style={{ width: '100%', height: '100%' }} />
+        <Canvas className="canvas-wrapper" />
       </div>
     );
   };

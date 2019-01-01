@@ -6,20 +6,15 @@ const defaultBorderWidth = 1;
 
 export default class SteppedLine extends PureComponent {
   static propTypes = {
-    x0: PropTypes.number.isRequired,
-    y0: PropTypes.number.isRequired,
-    x1: PropTypes.number.isRequired,
-    y1: PropTypes.number.isRequired,
     orientation: PropTypes.oneOf(['h', 'v', 'horizonal', 'vertical']),
-    borderColor: PropTypes.string,
-    borderStyle: PropTypes.string,
-    borderWidth: PropTypes.number,
     className: PropTypes.string,
-    zIndex: PropTypes.number,
+    style: PropTypes.object,
   };
 
   static defaultProps = {
     orientation: 'v',
+    className: '',
+    style: {},
   };
 
   renderVertical = () => {
