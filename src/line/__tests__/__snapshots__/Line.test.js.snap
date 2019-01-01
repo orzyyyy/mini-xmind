@@ -51,6 +51,7 @@ exports[`Line SteppedLine render correctly 1`] = `
     </div>
   </Block>
   <SteppedLineTo
+    className=""
     from={
       <div
         class="Block"
@@ -60,6 +61,7 @@ exports[`Line SteppedLine render correctly 1`] = `
       </div>
     }
     fromAnchor="bottom"
+    style={Object {}}
     to={
       <div
         class="Block"
@@ -71,6 +73,7 @@ exports[`Line SteppedLine render correctly 1`] = `
     toAnchor="top"
   >
     <SteppedLine
+      className=""
       from={
         <div
           class="Block"
@@ -80,6 +83,7 @@ exports[`Line SteppedLine render correctly 1`] = `
         </div>
       }
       orientation="v"
+      style={Object {}}
       to={
         <div
           class="Block"

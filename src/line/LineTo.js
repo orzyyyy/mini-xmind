@@ -49,15 +49,17 @@ function parseAnchorPercent(value) {
 
 export default class LineTo extends Component {
   static propTypes = {
-    borderColor: PropTypes.string,
-    borderStyle: PropTypes.string,
-    borderWidth: PropTypes.number,
     className: PropTypes.string,
-    zIndex: PropTypes.number,
+    style: PropTypes.object,
     from: PropTypes.object.isRequired,
     to: PropTypes.object.isRequired,
     fromAnchor: PropTypes.string,
     toAnchor: PropTypes.string,
+  };
+
+  static defaultProps = {
+    className: '',
+    style: {},
   };
 
   static getDerivedStateFromProps(nextProps, state) {
