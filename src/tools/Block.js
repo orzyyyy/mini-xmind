@@ -4,9 +4,9 @@ import './assets/Block.css';
 
 export default class Block extends Component {
   render() {
-    const { top, left, color, className, children, ...rest } = this.props;
+    const { top, left, color, children, ...rest } = this.props;
     return (
-      <div className={`block ${className}`} {...rest}>
+      <div className="block" {...rest}>
         {children}
       </div>
     );
