@@ -4,10 +4,10 @@ import './assets/Block.css';
 
 export default class Block extends Component {
   render() {
-    const { top, left, color, className, ...rest } = this.props;
+    const { top, left, color, className, children, ...rest } = this.props;
     return (
       <div className={`block ${className}`} {...rest}>
-        {this.props.children}
+        {children}
       </div>
     );
   }

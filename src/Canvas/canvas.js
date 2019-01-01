@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 
 import Draggable from 'react-draggable';
-import { SteppedLineTo, Block } from '../DrawLine';
+import { SteppedLineTo } from '../Line';
 import { getPlacement, preventDefault } from '../utils/LineUtil';
+import Block from '../tools/Block';
 
 export default class Canvas extends Component {
   static propTypes = {};
