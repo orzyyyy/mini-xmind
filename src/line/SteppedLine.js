@@ -10,7 +10,7 @@ export default class SteppedLine extends PureComponent {
     y0: PropTypes.number.isRequired,
     x1: PropTypes.number.isRequired,
     y1: PropTypes.number.isRequired,
-    orientation: PropTypes.oneOf(['h', 'v']),
+    orientation: PropTypes.oneOf(['h', 'v', 'horizonal', 'vertical']),
     borderColor: PropTypes.string,
     borderStyle: PropTypes.string,
     borderWidth: PropTypes.number,
@@ -18,14 +18,11 @@ export default class SteppedLine extends PureComponent {
     zIndex: PropTypes.number,
   };
 
-  render() {
-    if (this.props.orientation === 'h') {
-      return this.renderHorizontal();
-    }
-    return this.renderVertical();
-  }
+  static defaultProps = {
+    orientation: 'v',
+  };
 
-  renderVertical() {
+  renderVertical = () => {
     const { x0, y0, x1, y1 } = this.props;
 
     const dx = x1 - x0;
@@ -47,9 +44,9 @@ export default class SteppedLine extends PureComponent {
         <Line {...this.props} x0={minX} y0={y2} x1={maxX} y1={y2} />
       </div>
     );
-  }
+  };
 
-  renderHorizontal() {
+  renderHorizontal = () => {
     const { x0, y0, x1, y1 } = this.props;
 
     const dy = y1 - y0;
@@ -71,5 +68,24 @@ export default class SteppedLine extends PureComponent {
         <Line {...this.props} x0={x2} y0={minY} x1={x2} y1={maxY} />
       </div>
     );
+  };
+
+  render() {
+    const { orientation } = this.props;
+    let result;
+
+    switch (orientation) {
+      case 'horizonal':
+      case 'h':
+        result = this.renderHorizontal();
+        break;
+
+      case 'vertical':
+      case 'v':
+        result = this.renderVertical();
+        break;
+    }
+
+    return result;
   }
 }

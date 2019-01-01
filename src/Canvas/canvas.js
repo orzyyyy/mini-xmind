@@ -19,7 +19,7 @@ export default class Canvas extends Component {
     };
 
     this.blocks = {};
-    this.lineBlockList = []; // 用于连线，一般是两点一线
+    this.lineBlockList = []; // for Line, two point create a line
   }
 
   componentDidMount = () => {};

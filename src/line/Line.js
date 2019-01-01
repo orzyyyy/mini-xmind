@@ -51,9 +51,6 @@ export default class Line extends PureComponent {
       style: Object.assign({}, defaultStyle, positionStyle),
     };
 
-    // We need a wrapper element to prevent an exception when then
-    // React component is removed. This is because we manually
-    // move the rendered DOM element after creation.
     return (
       <div className="react-lineto-placeholder">
         <div
