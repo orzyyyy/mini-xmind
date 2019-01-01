@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
 import Draggable from 'react-draggable';
-import { SteppedLineTo, Block } from '../DrawLine';
+import { SteppedLineTo } from '../Line';
 import { getPlacement, preventDefault } from '../utils/LineUtil';
+import Block from '../tools/Block';
 
 export default class Canvas extends Component {
   static propTypes = {};
@@ -17,16 +19,20 @@ export default class Canvas extends Component {
     };
 
     this.blocks = {};
-    this.lineBlockList = []; // 用于连线，一般是两点一线
+    this.lineBlockList = []; // for Line, two point create a line
   }
 
   componentDidMount = () => {};
+
+  saveBlock = (ref, blockKey) => {
+    this.blocks[blockKey].current = ReactDOM.findDOMNode(ref);
+  };
 
   onDrop = e => {
     let dragItem = e.dataTransfer.getData('dragItem');
     dragItem = dragItem ? JSON.parse(dragItem) : {};
     const { value, style } = dragItem;
-    let { toolInstance, lineActive } = this.state;
+    let { toolInstance } = this.state;
     const { clientX, clientY } = e;
     const blockKey = this.generateBlockKey();
     const x = clientX - style.width / 2;
@@ -39,19 +45,17 @@ export default class Canvas extends Component {
           <Draggable
             onStop={this.handleStop}
             key={`border-${toolInstance.length + 1}`}
-            disabled={lineActive}
-            onDrag={e => this.test.refresh()}
             // position={{ x: clientX - style.width / 2, y: clientY - style.height / 2 }}
           >
             <Block
-              className={blockKey}
               key={blockKey}
               style={Object.assign({}, style, {
                 left: x,
                 top: y,
-                position: 'absolute',
               })}
+              // onDrag={e => e && this.test.refresh()}
               onClick={e => this.handleBlockClick(blockKey)}
+              ref={ref => this.saveBlock(ref, blockKey)}
             />
           </Draggable>,
         );
@@ -73,18 +77,17 @@ export default class Canvas extends Component {
 
     if (lineBlockList.length == 2) {
       let { toolInstance } = this.state;
-      const { from, to } = getPlacement(
-        this.blocks[lineBlockList[0]],
-        this.blocks[lineBlockList[1]],
-      );
+      const fromNode = this.blocks[lineBlockList[0]];
+      const toNode = this.blocks[lineBlockList[1]];
+      const { fromAnchor, toAnchor } = getPlacement(fromNode, toNode);
 
       toolInstance.push(
         <SteppedLineTo
-          from={lineBlockList[0]}
-          to={lineBlockList[1]}
-          fromAnchor={from}
-          toAnchor={to}
-          ref={ref => (this.test = ref)}
+          from={fromNode.current}
+          to={toNode.current}
+          fromAnchor={fromAnchor}
+          toAnchor={toAnchor}
+          key={`stepLine-${blockKey}`}
         />,
       );
       this.lineBlockList = [];
@@ -94,7 +97,7 @@ export default class Canvas extends Component {
   };
 
   generateBlockKey = () => {
-    return new Date().getTime();
+    return `block-${new Date().getTime() % 1000000}`;
   };
 
   render = () => {

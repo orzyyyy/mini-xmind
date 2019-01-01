@@ -1,6 +1,6 @@
-// key: 用作 Icon 的 type
-// value: 唯一标识
-// style: tool 最外层样式
+// key: for type of Icon
+// value: id
+// style: class of tool's wrapper
 export const tools = [
   {
     key: 'minus',

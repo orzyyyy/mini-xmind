@@ -1,4 +1,4 @@
-import Canvas from './canvas';
-import ToolBar from './tool-bar';
+import Canvas from './Canvas';
+import ToolBar from './Tool-bar';
 
 export { Canvas, ToolBar };

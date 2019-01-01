@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Line SteppedLine render correctly 1`] = `
+<Demo>
+  <Block
+    className=""
+    key="blockA"
+    style={
+      Object {
+        "color": "#00f",
+        "left": 90,
+        "top": 50,
+      }
+    }
+  >
+    <div
+      className="Block"
+      style={
+        Object {
+          "color": "#00f",
+          "left": 90,
+          "top": 50,
+        }
+      }
+    >
+      A
+    </div>
+  </Block>
+  <Block
+    className=""
+    key="blockB"
+    style={
+      Object {
+        "color": "#00f",
+        "left": 20,
+        "top": 150,
+      }
+    }
+  >
+    <div
+      className="Block"
+      style={
+        Object {
+          "color": "#00f",
+          "left": 20,
+          "top": 150,
+        }
+      }
+    >
+      B
+    </div>
+  </Block>
+  <SteppedLineTo
+    from={
+      <div
+        class="Block"
+        style="left: 90px; top: 50px; color: rgb(0, 0, 255);"
+      >
+        A
+      </div>
+    }
+    fromAnchor="bottom"
+    to={
+      <div
+        class="Block"
+        style="left: 20px; top: 150px; color: rgb(0, 0, 255);"
+      >
+        B
+      </div>
+    }
+    toAnchor="top"
+  >
+    <SteppedLine
+      from={
+        <div
+          class="Block"
+          style="left: 90px; top: 50px; color: rgb(0, 0, 255);"
+        >
+          A
+        </div>
+      }
+      orientation="v"
+      to={
+        <div
+          class="Block"
+          style="left: 20px; top: 150px; color: rgb(0, 0, 255);"
+        >
+          B
+        </div>
+      }
+      x0={0}
+      x1={0}
+      y0={0}
+      y1={0}
+    >
+      <Line
+        className=""
+        from={
+          <div
+            class="Block"
+            style="left: 90px; top: 50px; color: rgb(0, 0, 255);"
+          >
+            A
+          </div>
+        }
+        orientation="v"
+        style={Object {}}
+        to={
+          <div
+            class="Block"
+            style="left: 20px; top: 150px; color: rgb(0, 0, 255);"
+          >
+            B
+          </div>
+        }
+        x0={0}
+        x1={0}
+        y0={0}
+        y1={0}
+      >
+        <div
+          className="react-lineto-placeholder"
+        >
+          <div
+            className=""
+            from={
+              <div
+                class="Block"
+                style="left: 90px; top: 50px; color: rgb(0, 0, 255);"
+              >
+                A
+              </div>
+            }
+            orientation="v"
+            style={
+              Object {
+                "borderTopColor": "#ddd",
+                "borderTopStyle": "solid",
+                "borderTopWidth": 1,
+                "left": "0px",
+                "position": "absolute",
+                "top": "0px",
+                "transform": "rotate(0deg)",
+                "transformOrigin": "0 0",
+                "width": "0px",
+                "zIndex": "1",
+              }
+            }
+            to={
+              <div
+                class="Block"
+                style="left: 20px; top: 150px; color: rgb(0, 0, 255);"
+              >
+                B
+              </div>
+            }
+          />
+        </div>
+      </Line>
+    </SteppedLine>
+  </SteppedLineTo>
+</Demo>
+`;

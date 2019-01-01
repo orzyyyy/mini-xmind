@@ -10,14 +10,6 @@ export default class ToolBar extends Component {
 
   static defaultProps = {};
 
-  constructor(props) {
-    super(props);
-
-    this.state = {};
-  }
-
-  componentDidMount = () => {};
-
   onDragStart = (e, item) => {
     e.dataTransfer.effectAllowed = 'copy';
 

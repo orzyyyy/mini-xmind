@@ -3,19 +3,18 @@ const placements = ['top', 'bottom', 'Left', 'Right'];
 // e.g. relative 在 target 的 bottomRight
 export const getPlacement = (target, relative) => {
   let placement = '';
-  let from = '';
-  let to = '';
+  let fromAnchor, toAnchor;
   const { x: targetX, y: targetY } = target;
   const { x: relativeX, y: relativeY } = relative;
 
   if (targetY < relativeY) {
     placement += placements[1];
-    from = placements[1];
-    to = placements[0];
+    fromAnchor = placements[1];
+    toAnchor = placements[0];
   } else {
     placement += placements[0];
-    from = placements[0];
-    to = placements[1];
+    fromAnchor = placements[0];
+    toAnchor = placements[1];
   }
 
   if (targetX < relativeX) {
@@ -24,7 +23,7 @@ export const getPlacement = (target, relative) => {
     placement += placements[2];
   }
 
-  return { placement, from, to };
+  return { placement, fromAnchor, toAnchor };
 };
 
 export function preventDefault(e) {
