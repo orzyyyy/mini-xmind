@@ -73,18 +73,20 @@ export default class Canvas extends Component {
 
     if (lineBlockList.length == 2) {
       let { toolInstance } = this.state;
-      const { from, to } = getPlacement(
+      const { fromAnchor, toAnchor } = getPlacement(
         this.blocks[lineBlockList[0]],
         this.blocks[lineBlockList[1]],
       );
 
       toolInstance.push(
         <SteppedLineTo
-          from={lineBlockList[0]}
-          to={lineBlockList[1]}
-          fromAnchor={from}
-          toAnchor={to}
+          // https://stackoverflow.com/questions/46984544/redux-form-invalid-prop-value-of-type-number-supplied-to-textinput-expec
+          from={`${lineBlockList[0]}`}
+          to={`${lineBlockList[1]}`}
+          fromAnchor={fromAnchor}
+          toAnchor={toAnchor}
           ref={ref => (this.test = ref)}
+          key={`stepLine-${blockKey}`}
         />,
       );
       this.lineBlockList = [];
@@ -94,7 +96,7 @@ export default class Canvas extends Component {
   };
 
   generateBlockKey = () => {
-    return new Date().getTime();
+    return new Date().getTime() % 1000000;
   };
 
   render = () => {
