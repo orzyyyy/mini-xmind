@@ -3,6 +3,10 @@ import LineTo from './LineTo';
 import SteppedLine from './SteppedLine';
 
 export default class SteppedLineTo extends LineTo {
+  refresh = () => {
+    this.setState({});
+  };
+
   render() {
     const points = this.detect();
     return points ? <SteppedLine {...points} {...this.props} /> : null;
