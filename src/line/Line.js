@@ -11,15 +11,17 @@ export default class Line extends PureComponent {
     y0: PropTypes.number.isRequired,
     x1: PropTypes.number.isRequired,
     y1: PropTypes.number.isRequired,
-    borderColor: PropTypes.string,
-    borderStyle: PropTypes.string,
-    borderWidth: PropTypes.number,
     className: PropTypes.string,
-    zIndex: PropTypes.number,
+    style: PropTypes.object,
+  };
+
+  static defaultProps = {
+    className: '',
+    style: {},
   };
 
   render() {
-    const { x0, y0, x1, y1 } = this.props;
+    const { x0, y0, x1, y1, style, ...rest } = this.props;
 
     const dy = y1 - y0;
     const dx = x1 - x0;
@@ -41,24 +43,19 @@ export default class Line extends PureComponent {
     };
 
     const defaultStyle = {
-      borderTopColor: this.props.borderColor || defaultBorderColor,
-      borderTopStyle: this.props.borderStyle || defaultBorderStyle,
-      borderTopWidth: this.props.borderWidth || defaultBorderWidth,
+      borderTopColor: defaultBorderColor,
+      borderTopStyle: defaultBorderStyle,
+      borderTopWidth: defaultBorderWidth,
     };
 
     const props = {
       className: this.props.className,
-      style: Object.assign({}, defaultStyle, positionStyle),
+      style: Object.assign({}, defaultStyle, positionStyle, style),
     };
 
     return (
       <div className="react-lineto-placeholder">
-        <div
-          ref={el => {
-            this.el = el;
-          }}
-          {...props}
-        />
+        <div ref={el => (this.el = el)} {...rest} {...props} />
       </div>
     );
   }
