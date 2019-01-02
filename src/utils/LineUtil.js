@@ -29,3 +29,7 @@ export const getPlacement = (target, relative) => {
 export function preventDefault(e) {
   e.preventDefault();
 }
+
+export const generateKey = name => {
+  return `${name}-${new Date().getTime() % 1000000}`;
+};

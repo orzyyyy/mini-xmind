@@ -5,7 +5,7 @@ import classNames from 'classNames';
 
 import Draggable from 'react-draggable';
 import { SteppedLineTo } from '../Line';
-import { getPlacement, preventDefault } from '../utils/LineUtil';
+import { getPlacement, preventDefault, generateKey } from '../utils/LineUtil';
 import Block from '../tools/Block';
 
 export default class Canvas extends Component {
@@ -27,7 +27,8 @@ export default class Canvas extends Component {
       lines: {},
     };
 
-    this.checkBlockClickList = {}; // for Line, two point create a line
+    // for Line, two point create a line
+    this.checkBlockClickList = {};
     this.blockDOM = {};
   }
 
@@ -49,7 +50,7 @@ export default class Canvas extends Component {
     const { value, style } = dragItem;
     let { blockProps } = this.state;
     const { clientX, clientY } = e;
-    const blockKey = this.generateKey('block');
+    const blockKey = generateKey('block');
     const x = clientX - style.width / 2;
     const y = clientY - style.height / 2;
 
@@ -67,6 +68,8 @@ export default class Canvas extends Component {
     this.setState({ blockProps });
   };
 
+  // when Block clicked twice, generate a Line
+  // and clear checkBlockClickList
   handleBlockClick = blockKey => {
     let { checkBlockClickList, blockDOM } = this;
     const { blockProps } = this.state;
@@ -79,9 +82,10 @@ export default class Canvas extends Component {
     }
 
     if (Object.keys(checkBlockClickList).length == 2) {
+      let fromNode, toNode, fromKey, toKey;
       let { lines } = this.state;
       const keys = Object.keys(checkBlockClickList);
-      let fromNode, toNode, fromKey, toKey;
+      const lineKey = generateKey('line');
 
       if (checkBlockClickList[keys[0]] > checkBlockClickList[keys[1]]) {
         fromKey = keys[1];
@@ -90,13 +94,14 @@ export default class Canvas extends Component {
         fromKey = keys[0];
         toKey = keys[1];
       }
+
       fromNode = checkBlockClickList[fromKey].current;
       toNode = checkBlockClickList[toKey].current;
+
       const { fromAnchor, toAnchor } = getPlacement(
         blockProps[fromKey],
         blockProps[toKey],
       );
-      const lineKey = this.generateKey('line');
 
       lines[lineKey] = {
         from: fromNode,
@@ -110,10 +115,6 @@ export default class Canvas extends Component {
         this.checkBlockClickList = {};
       });
     }
-  };
-
-  generateKey = name => {
-    return `${name}-${new Date().getTime() % 1000000}`;
   };
 
   generateBlocks = blockProps => {
