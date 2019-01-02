@@ -68,6 +68,11 @@ export default class Canvas extends Component {
     this.setState({ blockProps });
   };
 
+  // to repaint Line instantly
+  handleBlockDrag = () => {
+    this.setState({});
+  };
+
   // when Block clicked twice, generate a Line
   // and clear checkBlockClickList
   handleBlockClick = blockKey => {
@@ -126,10 +131,10 @@ export default class Canvas extends Component {
           onStop={(e, item) => this.handleStop(item, blockKey)}
           key={blockKey}
           position={{ x, y }}
+          onDrag={this.handleBlockDrag}
         >
           <Block
             style={style}
-            // onDrag={e => e && this.test.refresh()}
             onClick={e => this.handleBlockClick(blockKey)}
             ref={ref => this.saveBlock(ref, blockKey)}
           />
