@@ -23,7 +23,6 @@ export default class Canvas extends Component {
     super(props);
 
     this.state = {
-      toolInstance: [],
       blocks: {},
     };
 
@@ -37,7 +36,7 @@ export default class Canvas extends Component {
 
     blocks[blockKey].current = ReactDOM.findDOMNode(ref);
 
-    this.setState({ blocks });
+    // this.setState({ blocks });
   };
 
   handleStop = ({ x, y }, blockKey) => {
@@ -52,33 +51,33 @@ export default class Canvas extends Component {
     let dragItem = e.dataTransfer.getData('dragItem');
     dragItem = dragItem ? JSON.parse(dragItem) : {};
     const { value, style } = dragItem;
-    let { toolInstance } = this.state;
+    let { blocks } = this.state;
     const { clientX, clientY } = e;
     const blockKey = this.generateBlockKey();
     const x = clientX - style.width / 2;
     const y = clientY - style.height / 2;
-    this.state.blocks[blockKey] = { x, y };
 
     switch (value) {
       case 'block':
-        toolInstance.push(
-          <Draggable
-            onStop={(e, item) => this.handleStop(item, blockKey)}
-            key={blockKey}
-            position={{ x, y }}
-          >
-            <Block
-              style={style}
-              // style={Object.assign({}, style, {
-              //   left: x,
-              //   top: y,
-              // })}
-              // onDrag={e => e && this.test.refresh()}
-              onClick={e => this.handleBlockClick(blockKey)}
-              ref={ref => this.saveBlock(ref, blockKey)}
-            />
-          </Draggable>,
-        );
+        // toolInstance.push(
+        //   <Draggable
+        //     onStop={(e, item) => this.handleStop(item, blockKey)}
+        //     key={blockKey}
+        //     position={{ x, y }}
+        //   >
+        //     <Block
+        //       style={style}
+        //       // style={Object.assign({}, style, {
+        //       //   left: x,
+        //       //   top: y,
+        //       // })}
+        //       // onDrag={e => e && this.test.refresh()}
+        //       onClick={e => this.handleBlockClick(blockKey)}
+        //       ref={ref => this.saveBlock(ref, blockKey)}
+        //     />
+        //   </Draggable>,
+        // );
+        blocks[blockKey] = { x, y, style };
         break;
 
       case 'line':
@@ -87,7 +86,7 @@ export default class Canvas extends Component {
       default:
         break;
     }
-    this.setState({ toolInstance });
+    this.setState({ blocks });
   };
 
   handleBlockClick = blockKey => {
@@ -122,7 +121,7 @@ export default class Canvas extends Component {
 
   render = () => {
     const { className, ...rest } = this.props;
-    const { toolInstance, blocks } = this.state;
+    const { blocks } = this.state;
 
     return (
       <div
@@ -131,7 +130,24 @@ export default class Canvas extends Component {
         onDrop={this.onDrop}
         {...rest}
       >
-        {toolInstance}
+        {Object.keys(blocks).map(blockKey => {
+          const { x, y, style } = blocks[blockKey];
+
+          return (
+            <Draggable
+              onStop={(e, item) => this.handleStop(item, blockKey)}
+              key={blockKey}
+              position={{ x, y }}
+            >
+              <Block
+                style={style}
+                // onDrag={e => e && this.test.refresh()}
+                // onClick={e => this.handleBlockClick(blockKey)}
+                // ref={ref => this.saveBlock(ref, blockKey)}
+              />
+            </Draggable>
+          );
+        })}
       </div>
     );
   };
