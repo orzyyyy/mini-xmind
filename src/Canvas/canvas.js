@@ -30,6 +30,9 @@ export default class Canvas extends Component {
     // for Line, two point create a line
     this.checkBlockClickList = {};
     this.blockDOM = {};
+    // one Line is mapping to two Block
+    // to record it here
+    this.mapping = {};
   }
 
   saveBlock = (ref, blockKey) => {
@@ -73,22 +76,54 @@ export default class Canvas extends Component {
     this.setState({});
   };
 
+  shouldPaintLine = (mapping, checkBlockClickList, lines) => {
+    if (!Object.keys(lines).length) {
+      return true;
+    }
+
+    const blocks = Object.keys(checkBlockClickList).toString();
+    for (let key of Object.keys(mapping)) {
+      let fromFlag = false,
+        toFlag = false;
+      const { fromKey, toKey } = mapping[key];
+
+      if (blocks.includes(fromKey)) {
+        fromFlag = true;
+      }
+
+      if (blocks.includes(toKey)) {
+        toFlag = true;
+      }
+
+      if (fromFlag && toFlag) {
+        return false;
+      }
+    }
+
+    return true;
+  };
+
   // when Block clicked twice, generate a Line
   // and clear checkBlockClickList
   handleBlockClick = blockKey => {
     let { checkBlockClickList, blockDOM } = this;
     const { blockProps } = this.state;
+    let { lines } = this.state;
 
     checkBlockClickList[blockKey] = { current: blockDOM[blockKey] };
 
-    // to know which block is starting point
+    // to know which Block is starting point
     if (!('time' in checkBlockClickList[blockKey])) {
       checkBlockClickList[blockKey].time = new Date().getTime();
     }
 
     if (Object.keys(checkBlockClickList).length == 2) {
+      if (!this.shouldPaintLine(this.mapping, checkBlockClickList, lines)) {
+        this.checkBlockClickList = {};
+        return;
+      }
+
       let fromNode, toNode, fromKey, toKey;
-      let { lines } = this.state;
       const keys = Object.keys(checkBlockClickList);
       const lineKey = generateKey('line');
 
@@ -118,6 +153,11 @@ export default class Canvas extends Component {
 
       this.setState({ lines }, () => {
         this.checkBlockClickList = {};
+        // record mapping for arrow
+        this.mapping[lineKey] = {
+          fromKey,
+          toKey,
+        };
       });
     }
   };
