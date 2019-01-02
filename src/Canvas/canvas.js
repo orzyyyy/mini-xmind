@@ -23,61 +23,39 @@ export default class Canvas extends Component {
     super(props);
 
     this.state = {
-      blocks: {},
+      blockProps: {},
+      lines: {},
     };
 
-    this.lineBlockList = []; // for Line, two point create a line
+    this.checkBlockClickList = {}; // for Line, two point create a line
+    this.blockDOM = {};
   }
 
-  componentDidMount = () => {};
-
   saveBlock = (ref, blockKey) => {
-    let { blocks } = this.state;
-
-    blocks[blockKey].current = ReactDOM.findDOMNode(ref);
-
-    // this.setState({ blocks });
+    this.blockDOM[blockKey] = ReactDOM.findDOMNode(ref);
   };
 
   handleStop = ({ x, y }, blockKey) => {
-    const { blocks } = this.state;
+    const { blockProps } = this.state;
 
-    blocks[blockKey] = Object.assign({}, blocks[blockKey], { x, y });
+    blockProps[blockKey] = Object.assign({}, blockProps[blockKey], { x, y });
 
-    this.setState({ blocks });
+    this.setState({ blockProps });
   };
 
   onDrop = e => {
     let dragItem = e.dataTransfer.getData('dragItem');
     dragItem = dragItem ? JSON.parse(dragItem) : {};
     const { value, style } = dragItem;
-    let { blocks } = this.state;
+    let { blockProps } = this.state;
     const { clientX, clientY } = e;
-    const blockKey = this.generateBlockKey();
+    const blockKey = this.generateKey('block');
     const x = clientX - style.width / 2;
     const y = clientY - style.height / 2;
 
     switch (value) {
       case 'block':
-        // toolInstance.push(
-        //   <Draggable
-        //     onStop={(e, item) => this.handleStop(item, blockKey)}
-        //     key={blockKey}
-        //     position={{ x, y }}
-        //   >
-        //     <Block
-        //       style={style}
-        //       // style={Object.assign({}, style, {
-        //       //   left: x,
-        //       //   top: y,
-        //       // })}
-        //       // onDrag={e => e && this.test.refresh()}
-        //       onClick={e => this.handleBlockClick(blockKey)}
-        //       ref={ref => this.saveBlock(ref, blockKey)}
-        //     />
-        //   </Draggable>,
-        // );
-        blocks[blockKey] = { x, y, style };
+        blockProps[blockKey] = { x, y, style };
         break;
 
       case 'line':
@@ -86,42 +64,98 @@ export default class Canvas extends Component {
       default:
         break;
     }
-    this.setState({ blocks });
+    this.setState({ blockProps });
   };
 
   handleBlockClick = blockKey => {
-    let { lineBlockList } = this;
+    let { checkBlockClickList, blockDOM } = this;
+    const { blockProps } = this.state;
 
-    lineBlockList.push(blockKey);
+    checkBlockClickList[blockKey] = { current: blockDOM[blockKey] };
 
-    if (lineBlockList.length == 2) {
-      let { toolInstance } = this.state;
-      const fromNode = this.state.blocks[lineBlockList[0]];
-      const toNode = this.state.blocks[lineBlockList[1]];
-      const { fromAnchor, toAnchor } = getPlacement(fromNode, toNode);
+    // to know which block is starting point
+    if (!('time' in checkBlockClickList[blockKey])) {
+      checkBlockClickList[blockKey].time = new Date().getTime();
+    }
 
-      toolInstance.push(
-        <SteppedLineTo
-          from={fromNode.current}
-          to={toNode.current}
-          fromAnchor={fromAnchor}
-          toAnchor={toAnchor}
-          key={`stepLine-${blockKey}`}
-        />,
+    if (Object.keys(checkBlockClickList).length == 2) {
+      let { lines } = this.state;
+      const keys = Object.keys(checkBlockClickList);
+      let fromNode, toNode, fromKey, toKey;
+
+      if (checkBlockClickList[keys[0]] > checkBlockClickList[keys[1]]) {
+        fromKey = keys[1];
+        toKey = keys[0];
+      } else {
+        fromKey = keys[0];
+        toKey = keys[1];
+      }
+      fromNode = checkBlockClickList[fromKey].current;
+      toNode = checkBlockClickList[toKey].current;
+      const { fromAnchor, toAnchor } = getPlacement(
+        blockProps[fromKey],
+        blockProps[toKey],
       );
-      lineBlockList = [];
+      const lineKey = this.generateKey('line');
 
-      this.setState({ toolInstance });
+      lines[lineKey] = {
+        from: fromNode,
+        to: toNode,
+        fromAnchor,
+        toAnchor,
+        key: lineKey,
+      };
+
+      this.setState({ lines }, () => {
+        this.checkBlockClickList = {};
+      });
     }
   };
 
-  generateBlockKey = () => {
-    return `block-${new Date().getTime() % 1000000}`;
+  generateKey = name => {
+    return `${name}-${new Date().getTime() % 1000000}`;
+  };
+
+  generateBlocks = blockProps => {
+    return Object.keys(blockProps).map(blockKey => {
+      const { x, y, style } = blockProps[blockKey];
+
+      return (
+        <Draggable
+          onStop={(e, item) => this.handleStop(item, blockKey)}
+          key={blockKey}
+          position={{ x, y }}
+        >
+          <Block
+            style={style}
+            // onDrag={e => e && this.test.refresh()}
+            onClick={e => this.handleBlockClick(blockKey)}
+            ref={ref => this.saveBlock(ref, blockKey)}
+          />
+        </Draggable>
+      );
+    });
+  };
+
+  generateLines = lines => {
+    return Object.keys(lines).map(lineKey => {
+      const { from, to, key, fromAnchor, toAnchor } = lines[lineKey];
+
+      return (
+        <SteppedLineTo
+          from={from}
+          to={to}
+          fromAnchor={fromAnchor}
+          toAnchor={toAnchor}
+          key={key}
+        />
+      );
+    });
   };
 
   render = () => {
     const { className, ...rest } = this.props;
-    const { blocks } = this.state;
+    const { blockProps, lines } = this.state;
 
     return (
       <div
@@ -130,24 +164,8 @@ export default class Canvas extends Component {
         onDrop={this.onDrop}
         {...rest}
       >
-        {Object.keys(blocks).map(blockKey => {
-          const { x, y, style } = blocks[blockKey];
-
-          return (
-            <Draggable
-              onStop={(e, item) => this.handleStop(item, blockKey)}
-              key={blockKey}
-              position={{ x, y }}
-            >
-              <Block
-                style={style}
-                // onDrag={e => e && this.test.refresh()}
-                // onClick={e => this.handleBlockClick(blockKey)}
-                // ref={ref => this.saveBlock(ref, blockKey)}
-              />
-            </Draggable>
-          );
-        })}
+        {this.generateBlocks(blockProps)}
+        {this.generateLines(lines)}
       </div>
     );
   };
