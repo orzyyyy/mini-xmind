@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import classNames from 'classNames';
+import classNames from 'classnames';
 
 import Draggable from 'react-draggable';
-import { SteppedLineTo } from '../Line';
+import { SteppedLineTo } from '../line';
 import { getPlacement, preventDefault, generateKey } from '../utils/LineUtil';
 import Block from '../tools/Block';
 

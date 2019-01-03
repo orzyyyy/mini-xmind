@@ -1,5 +1,3 @@
-const libDir = process.env.LIB_DIR;
-
 module.exports = {
   bail: true,
   verbose: true,
@@ -15,7 +13,7 @@ module.exports = {
     '/node_modules/',
     'node',
   ],
-  testRegex: libDir === 'dist' ? 'demo\\.test\\.js$' : '.*\\.test\\.js$',
+  testRegex: '.*\\.test\\.js$',
   transformIgnorePatterns: [
     '/dist/',
     'node_modules/[^/]+?/(?!(es|node_modules)/)', // Ignore modules without es dir
