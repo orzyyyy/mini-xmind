@@ -27,14 +27,17 @@ const blockProps = {
   },
 };
 
+const createWrapper = () =>
+  mount(<Canvas style={{ width: '100%', height: '100%' }} />);
+
 describe('Canvas', () => {
   it('Canvas renders correctly', () => {
-    const wrapper = mount(<Canvas style={{ width: '100%', height: '100%' }} />);
+    const wrapper = createWrapper();
     expect(wrapper).toMatchSnapshot();
   });
 
   it('Block renders correctly', () => {
-    const wrapper = mount(<Canvas style={{ width: '100%', height: '100%' }} />);
+    const wrapper = createWrapper();
     wrapper.setState({ blockProps });
 
     expect(wrapper.find('.Block').length).toBe(3);
@@ -42,7 +45,7 @@ describe('Canvas', () => {
   });
 
   it('when Block is clicked, Line renders correctly', () => {
-    const wrapper = mount(<Canvas style={{ width: '100%', height: '100%' }} />);
+    const wrapper = createWrapper();
     wrapper.setState({ blockProps });
 
     const blocks = wrapper.find('.Block');
@@ -58,7 +61,7 @@ describe('Canvas', () => {
   });
 
   it('should not render redundant Line', () => {
-    const wrapper = mount(<Canvas style={{ width: '100%', height: '100%' }} />);
+    const wrapper = createWrapper();
     wrapper.setState({ blockProps });
 
     const blocks = wrapper.find('.Block');
