@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import Canvas from '../Canvas';
-import Toolbar, { Block } from '../tools';
+import Canvas from '../canvas';
+import Toolbar from '../tools';
 
 import './assets/demo.css';
 
