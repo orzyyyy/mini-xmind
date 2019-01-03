@@ -64,7 +64,6 @@ describe('Canvas', () => {
     const blocks = wrapper.find('.Block');
     blocks.at(0).simulate('click');
     blocks.at(1).simulate('click');
-    expect(wrapper).toMatchSnapshot();
     expect(wrapper.find('.stepped-line-to').length).toBe(1);
 
     blocks.at(0).simulate('click');
