@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Line SteppedLine render correctly 1`] = `
+exports[`Line Block and SteppedLine render correctly 1`] = `
 <Demo>
   <Block
     className=""
@@ -50,6 +50,30 @@ exports[`Line SteppedLine render correctly 1`] = `
       B
     </div>
   </Block>
+  <Block
+    className=""
+    key="blockC"
+    style={
+      Object {
+        "color": "#00f",
+        "left": 100,
+        "top": 100,
+      }
+    }
+  >
+    <div
+      className="Block"
+      style={
+        Object {
+          "color": "#00f",
+          "left": 100,
+          "top": 100,
+        }
+      }
+    >
+      B
+    </div>
+  </Block>
   <SteppedLineTo
     className=""
     from={
@@ -65,7 +89,7 @@ exports[`Line SteppedLine render correctly 1`] = `
     to={
       <div
         class="Block"
-        style="left: 20px; top: 150px; color: rgb(0, 0, 255);"
+        style="left: 100px; top: 100px; color: rgb(0, 0, 255);"
       >
         B
       </div>
@@ -87,7 +111,7 @@ exports[`Line SteppedLine render correctly 1`] = `
       to={
         <div
           class="Block"
-          style="left: 20px; top: 150px; color: rgb(0, 0, 255);"
+          style="left: 100px; top: 100px; color: rgb(0, 0, 255);"
         >
           B
         </div>
@@ -112,7 +136,7 @@ exports[`Line SteppedLine render correctly 1`] = `
         to={
           <div
             class="Block"
-            style="left: 20px; top: 150px; color: rgb(0, 0, 255);"
+            style="left: 100px; top: 100px; color: rgb(0, 0, 255);"
           >
             B
           </div>
@@ -153,7 +177,7 @@ exports[`Line SteppedLine render correctly 1`] = `
             to={
               <div
                 class="Block"
-                style="left: 20px; top: 150px; color: rgb(0, 0, 255);"
+                style="left: 100px; top: 100px; color: rgb(0, 0, 255);"
               >
                 B
               </div>
