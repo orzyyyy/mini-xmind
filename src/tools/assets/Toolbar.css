@@ -1,10 +1,10 @@
-.tool-bar ul {
+.Toolbar ul {
   list-style: none;
   position: fixed;
   left: 5px;
   top: 45%;
 }
 
-.tool-bar ul li {
+.Toolbar ul li {
   cursor: pointer;
 }

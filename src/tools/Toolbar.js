@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import { Icon } from 'antd';
 import { tools } from '../options/tools';
 
-import './assets/tool-bar.css';
+import './assets/Toolbar.css';
 
-export default class ToolBar extends Component {
+export default class Toolbar extends Component {
   static propTypes = {};
 
   static defaultProps = {};
@@ -18,7 +18,7 @@ export default class ToolBar extends Component {
 
   render = () => {
     return (
-      <div className="tool-bar">
+      <div className="Toolbar">
         <ul>
           {tools.map((item, i) => {
             const { key, value } = item;
