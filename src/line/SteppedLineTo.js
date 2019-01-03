@@ -16,6 +16,10 @@ export default class SteppedLineTo extends LineTo {
       omit(this.props, ['fromAnchor', 'toAnchor']),
     );
 
-    return points ? <SteppedLine {...props} /> : null;
+    return (
+      <div className="stepped-line-to">
+        {points ? <SteppedLine {...props} /> : null}
+      </div>
+    );
   }
 }

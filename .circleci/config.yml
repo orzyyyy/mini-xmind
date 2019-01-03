@@ -27,8 +27,6 @@ jobs:
           root: ~/mini-xmind
           paths:
             - node_modules
-      - store_artifacts:
-          path: package-lock.json
   lint:
     <<: *container_config
     steps:
@@ -46,9 +44,9 @@ workflows:
   build:
     jobs:
       - setup
-      - lint:
+      - test:
           requires:
             - setup
-      - test:
+      - lint:
           requires:
             - setup

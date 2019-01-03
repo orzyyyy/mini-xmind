@@ -96,32 +96,10 @@ exports[`Line Block and SteppedLine render correctly 1`] = `
     }
     toAnchor="top"
   >
-    <SteppedLine
-      className=""
-      from={
-        <div
-          class="Block"
-          style="left: 90px; top: 50px; color: rgb(0, 0, 255);"
-        >
-          A
-        </div>
-      }
-      orientation="v"
-      style={Object {}}
-      to={
-        <div
-          class="Block"
-          style="left: 100px; top: 100px; color: rgb(0, 0, 255);"
-        >
-          B
-        </div>
-      }
-      x0={0}
-      x1={0}
-      y0={0}
-      y1={0}
+    <div
+      className="stepped-line-to"
     >
-      <Line
+      <SteppedLine
         className=""
         from={
           <div
@@ -146,46 +124,72 @@ exports[`Line Block and SteppedLine render correctly 1`] = `
         y0={0}
         y1={0}
       >
-        <div
-          className="react-lineto-placeholder"
+        <Line
+          className=""
+          from={
+            <div
+              class="Block"
+              style="left: 90px; top: 50px; color: rgb(0, 0, 255);"
+            >
+              A
+            </div>
+          }
+          orientation="v"
+          style={Object {}}
+          to={
+            <div
+              class="Block"
+              style="left: 100px; top: 100px; color: rgb(0, 0, 255);"
+            >
+              B
+            </div>
+          }
+          x0={0}
+          x1={0}
+          y0={0}
+          y1={0}
         >
           <div
-            className=""
-            from={
-              <div
-                class="Block"
-                style="left: 90px; top: 50px; color: rgb(0, 0, 255);"
-              >
-                A
-              </div>
-            }
-            orientation="v"
-            style={
-              Object {
-                "borderTopColor": "#ddd",
-                "borderTopStyle": "solid",
-                "borderTopWidth": 1,
-                "left": "0px",
-                "position": "absolute",
-                "top": "0px",
-                "transform": "rotate(0deg)",
-                "transformOrigin": "0 0",
-                "width": "0px",
-                "zIndex": "1",
+            className="line-placeholder"
+          >
+            <div
+              className=""
+              from={
+                <div
+                  class="Block"
+                  style="left: 90px; top: 50px; color: rgb(0, 0, 255);"
+                >
+                  A
+                </div>
               }
-            }
-            to={
-              <div
-                class="Block"
-                style="left: 100px; top: 100px; color: rgb(0, 0, 255);"
-              >
-                B
-              </div>
-            }
-          />
-        </div>
-      </Line>
-    </SteppedLine>
+              orientation="v"
+              style={
+                Object {
+                  "borderTopColor": "#ddd",
+                  "borderTopStyle": "solid",
+                  "borderTopWidth": 1,
+                  "left": "0px",
+                  "position": "absolute",
+                  "top": "0px",
+                  "transform": "rotate(0deg)",
+                  "transformOrigin": "0 0",
+                  "width": "0px",
+                  "zIndex": "1",
+                }
+              }
+              to={
+                <div
+                  class="Block"
+                  style="left: 100px; top: 100px; color: rgb(0, 0, 255);"
+                >
+                  B
+                </div>
+              }
+            />
+          </div>
+        </Line>
+      </SteppedLine>
+    </div>
   </SteppedLineTo>
 </Demo>
 `;

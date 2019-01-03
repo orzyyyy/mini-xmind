@@ -54,7 +54,7 @@ export default class Line extends PureComponent {
     };
 
     return (
-      <div className="react-lineto-placeholder">
+      <div className="line-placeholder">
         <div ref={el => (this.el = el)} {...rest} {...props} />
       </div>
     );

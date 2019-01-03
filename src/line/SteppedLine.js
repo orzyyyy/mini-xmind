@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import Line from './Line';
+import Line from './core';
 const defaultBorderWidth = 1;
 
 export default class SteppedLine extends PureComponent {
@@ -33,7 +33,7 @@ export default class SteppedLine extends PureComponent {
     const maxX = Math.max(x0, x1);
 
     return (
-      <div className="react-steppedlineto">
+      <div className="stepped-lineto">
         <Line {...this.props} x0={x0} y0={y0} x1={x0} y1={y2} />
         <Line {...this.props} x0={x1} y0={y1} x1={x1} y1={y2} />
         <Line {...this.props} x0={minX} y0={y2} x1={maxX} y1={y2} />
@@ -57,7 +57,7 @@ export default class SteppedLine extends PureComponent {
     const maxY = Math.max(y0, y1);
 
     return (
-      <div className="react-steppedlineto">
+      <div className="stepped-line">
         <Line {...this.props} x0={x0} y0={y0} x1={x2} y1={y0} />
         <Line {...this.props} x0={x1} y0={y1} x1={x2} y1={y1} />
         <Line {...this.props} x0={x2} y0={minY} x1={x2} y1={maxY} />
