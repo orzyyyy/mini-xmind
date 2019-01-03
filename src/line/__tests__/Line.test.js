@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { render, mount, shallow } from 'enzyme';
 import { SteppedLineTo } from '..';
-import Block from '../../tools/Block';
+import { Block } from '../../tools';
 
 class Demo extends React.Component {
   constructor() {
