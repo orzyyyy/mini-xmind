@@ -1,6 +1,15 @@
 const placements = ['top', 'bottom', 'Left', 'Right'];
 
-// e.g. relative 在 target 的 bottomRight
+//   _________
+//  |         |
+//  | target  |
+//  |_________|
+//      |                  =======> bottomRight
+//      |    ____________
+//      |___|            |
+//          |  relative  |
+//          |____________|
+//
 export const getPlacement = (target, relative) => {
   let placement = '';
   let fromAnchor, toAnchor;
@@ -32,4 +41,20 @@ export function preventDefault(e) {
 
 export const generateKey = name => {
   return `${name}-${new Date().getTime() % 1000000}`;
+};
+
+export const getRelativeLinesByBlockKey = (blockKey, mapping) => {
+  let lineKeys = [];
+
+  for (let key in mapping) {
+    const value = mapping[key];
+    const { fromKey, toKey } = value;
+
+    if (blockKey == fromKey || blockKey == toKey) {
+      lineKeys.push(key);
+    }
+  }
+  lineKeys = Array.from(new Set(lineKeys));
+
+  return lineKeys;
 };

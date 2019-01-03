@@ -5,7 +5,12 @@ import classNames from 'classnames';
 
 import Draggable from 'react-draggable';
 import { SteppedLineTo } from '../line';
-import { getPlacement, preventDefault, generateKey } from '../utils/LineUtil';
+import {
+  getPlacement,
+  preventDefault,
+  generateKey,
+  getRelativeLinesByBlockKey,
+} from '../utils/LineUtil';
 import Block from '../tools/Block';
 
 export default class Canvas extends Component {
@@ -24,7 +29,7 @@ export default class Canvas extends Component {
 
     this.state = {
       blockProps: {},
-      lines: {},
+      linesProps: {},
     };
 
     // for Line, two point create a line
@@ -49,6 +54,9 @@ export default class Canvas extends Component {
 
   onDrop = e => {
     let dragItem = e.dataTransfer.getData('dragItem');
+    if (!dragItem) {
+      return;
+    }
     dragItem = dragItem ? JSON.parse(dragItem) : {};
     const { value, style } = dragItem;
     let { blockProps } = this.state;
@@ -72,12 +80,32 @@ export default class Canvas extends Component {
   };
 
   // to repaint Line instantly
-  handleBlockDrag = () => {
-    this.setState({});
+  handleBlockDrag = ({ x, y }, blockKey) => {
+    let { state, blockDOM } = this;
+    const { linesProps, blockProps } = state;
+    const relativeLines = getRelativeLinesByBlockKey(blockKey, this.mapping);
+
+    blockProps[blockKey].x = x;
+    blockProps[blockKey].y = y;
+
+    // Line should change anchor automatically
+    for (let key of relativeLines) {
+      const item = linesProps[key];
+      const { fromKey, toKey } = item;
+      const { fromAnchor, toAnchor } = getPlacement(
+        blockDOM[fromKey],
+        blockDOM[toKey],
+      );
+
+      item.fromAnchor = fromAnchor;
+      item.toAnchor = toAnchor;
+    }
+
+    this.setState({ linesProps, blockProps });
   };
 
-  shouldPaintLine = (mapping, checkBlockClickList, lines) => {
-    if (!Object.keys(lines).length) {
+  shouldPaintLine = (mapping, checkBlockClickList, linesProps) => {
+    if (!Object.keys(linesProps).length) {
       return true;
     }
 
@@ -108,7 +136,7 @@ export default class Canvas extends Component {
   handleBlockClick = blockKey => {
     let { checkBlockClickList, blockDOM } = this;
     const { blockProps } = this.state;
-    let { lines } = this.state;
+    let { linesProps } = this.state;
 
     checkBlockClickList[blockKey] = { current: blockDOM[blockKey] };
 
@@ -118,7 +146,9 @@ export default class Canvas extends Component {
     }
 
     if (Object.keys(checkBlockClickList).length == 2) {
-      if (!this.shouldPaintLine(this.mapping, checkBlockClickList, lines)) {
+      if (
+        !this.shouldPaintLine(this.mapping, checkBlockClickList, linesProps)
+      ) {
         this.checkBlockClickList = {};
         return;
       }
@@ -143,15 +173,17 @@ export default class Canvas extends Component {
         blockProps[toKey],
       );
 
-      lines[lineKey] = {
+      linesProps[lineKey] = {
         from: fromNode,
+        key: lineKey,
         to: toNode,
         fromAnchor,
         toAnchor,
-        key: lineKey,
+        fromKey,
+        toKey,
       };
 
-      this.setState({ lines }, () => {
+      this.setState({ linesProps }, () => {
         this.checkBlockClickList = {};
         // record mapping for arrow
         this.mapping[lineKey] = {
@@ -171,7 +203,7 @@ export default class Canvas extends Component {
           onStop={(e, item) => this.handleStop(item, blockKey)}
           key={blockKey}
           position={{ x, y }}
-          onDrag={this.handleBlockDrag}
+          onDrag={(e, item) => this.handleBlockDrag(item, blockKey)}
         >
           <Block
             style={style}
@@ -183,9 +215,11 @@ export default class Canvas extends Component {
     });
   };
 
-  generateLines = lines => {
-    return Object.keys(lines).map(lineKey => {
-      const { from, to, key, fromAnchor, toAnchor } = lines[lineKey];
+  generateLines = linesProps => {
+    return Object.keys(linesProps).map(lineKey => {
+      const { from, to, key, fromAnchor, toAnchor, orientation } = linesProps[
+        lineKey
+      ];
 
       return (
         <SteppedLineTo
@@ -201,7 +235,7 @@ export default class Canvas extends Component {
 
   render = () => {
     const { className, ...rest } = this.props;
-    const { blockProps, lines } = this.state;
+    const { blockProps, linesProps } = this.state;
 
     return (
       <div
@@ -211,7 +245,7 @@ export default class Canvas extends Component {
         {...rest}
       >
         {this.generateBlocks(blockProps)}
-        {this.generateLines(lines)}
+        {this.generateLines(linesProps)}
       </div>
     );
   };
