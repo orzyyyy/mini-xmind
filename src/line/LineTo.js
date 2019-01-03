@@ -47,6 +47,8 @@ function parseAnchorPercent(value) {
   return percent;
 }
 
+let staticFromAnchor, staticToAnchor;
+
 export default class LineTo extends Component {
   static propTypes = {
     className: PropTypes.string,
@@ -65,11 +67,11 @@ export default class LineTo extends Component {
   static getDerivedStateFromProps(nextProps, state) {
     let newState = {};
     if (nextProps.fromAnchor !== state.fromAnchor) {
-      this.fromAnchor = parseAnchor(nextProps.fromAnchor);
+      staticFromAnchor = parseAnchor(nextProps.fromAnchor);
       newState.fromAnchor = nextProps.fromAnchor;
     }
     if (nextProps.toAnchor !== state.toAnchor) {
-      this.toAnchor = parseAnchor(nextProps.toAnchor);
+      staticToAnchor = parseAnchor(nextProps.toAnchor);
       newState.toAnchor = nextProps.toAnchor;
     }
     return newState;
@@ -83,8 +85,8 @@ export default class LineTo extends Component {
       toAnchor: props.toAnchor,
     };
 
-    this.fromAnchor = parseAnchor(props.fromAnchor);
-    this.toAnchor = parseAnchor(props.toAnchor);
+    staticFromAnchor = parseAnchor(props.fromAnchor);
+    staticToAnchor = parseAnchor(props.toAnchor);
   }
 
   componentWillUnmount() {
@@ -101,8 +103,8 @@ export default class LineTo extends Component {
       return;
     }
 
-    const anchor0 = this.fromAnchor;
-    const anchor1 = this.toAnchor;
+    const anchor0 = staticFromAnchor;
+    const anchor1 = staticToAnchor;
 
     const box0 = from.getBoundingClientRect();
     const box1 = to.getBoundingClientRect();
