@@ -7,4 +7,5 @@
   cursor: pointer;
   text-align: center;
   color: #fff;
+  z-index: 2;
 }
