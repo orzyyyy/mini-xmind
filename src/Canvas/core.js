@@ -80,7 +80,7 @@ export default class Canvas extends Component {
   };
 
   // to repaint Line instantly
-  handleBlockDrag = ({ x, y }, blockKey) => {
+  handleBlockDrag = ({ x, y, width, height }, blockKey) => {
     let { state, blockDOM } = this;
     const { linesProps, blockProps } = state;
     const relativeLines = getRelativeLinesByBlockKey(blockKey, this.mapping);
@@ -95,6 +95,8 @@ export default class Canvas extends Component {
       const { fromAnchor, toAnchor } = getPlacement(
         blockDOM[fromKey],
         blockDOM[toKey],
+        width,
+        height,
       );
 
       item.fromAnchor = fromAnchor;
@@ -171,6 +173,8 @@ export default class Canvas extends Component {
       const { fromAnchor, toAnchor } = getPlacement(
         blockProps[fromKey],
         blockProps[toKey],
+        blockProps[fromKey].style.width,
+        blockProps[fromKey].style.height,
       );
 
       linesProps[lineKey] = {
@@ -197,13 +201,19 @@ export default class Canvas extends Component {
   generateBlocks = blockProps => {
     return Object.keys(blockProps).map(blockKey => {
       const { x, y, style } = blockProps[blockKey];
+      const { width, height } = style;
 
       return (
         <Draggable
           onStop={(e, item) => this.handleStop(item, blockKey)}
           key={blockKey}
           position={{ x, y }}
-          onDrag={(e, item) => this.handleBlockDrag(item, blockKey)}
+          onDrag={(e, item) =>
+            this.handleBlockDrag(
+              { x: item.x, y: item.y, width, height },
+              blockKey,
+            )
+          }
         >
           <Block
             style={style}

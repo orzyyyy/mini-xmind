@@ -1,38 +1,118 @@
-const placements = ['top', 'bottom', 'Left', 'Right'];
+const placements = ['top', 'bottom', 'left', 'right'];
 
 //   _________
 //  |         |
 //  | target  |
 //  |_________|
-//      |                  =======> bottomRight
+//      |                  =======> bottom right
 //      |    ____________
 //      |___|            |
 //          |  relative  |
 //          |____________|
 //
-export const getPlacement = (target, relative) => {
-  let placement = '';
+export const getPlacement = (
+  { x: x0, y: y0 },
+  { x: x1, y: y1 },
+  width,
+  height,
+) => {
   let fromAnchor, toAnchor;
-  const { x: targetX, y: targetY } = target;
-  const { x: relativeX, y: relativeY } = relative;
 
-  if (targetY < relativeY) {
-    placement += placements[1];
-    fromAnchor = placements[1];
-    toAnchor = placements[0];
+  // (x0, y0) is origin
+  // { x: x0, y: y0 } must be the center of rectangle
+  const target = getVertexs({ x: x0, y: y0 }, width, height);
+  const targetFirstThirdQuadrantSlope = getSlopeByTwoPoints(
+    target.topRight,
+    target.bottomLeft,
+  );
+  const targetSecondFourthQuadrantSlope = getSlopeByTwoPoints(
+    target.topLeft,
+    target.bottomRight,
+  );
+
+  const relativeSlope = getSlopeByTwoPoints({ x: 0, y: 0 }, { x: x1, y: y1 });
+
+  // Y-line right
+  if (x1 > x0) {
+    // first quadrant
+    if (y1 > y0) {
+      if (targetFirstThirdQuadrantSlope > relativeSlope) {
+        // bottom
+        fromAnchor = 'top';
+        toAnchor = 'left';
+      } else {
+        // top
+        fromAnchor = 'top';
+        toAnchor = 'bottom';
+      }
+    } else {
+      // fourth quadrant
+      // eslint-disable-next-line no-lonely-if
+      if (targetSecondFourthQuadrantSlope > relativeSlope) {
+        // top
+        fromAnchor = 'bottom';
+        toAnchor = 'left';
+      } else {
+        // bottom
+        fromAnchor = 'bottom';
+        toAnchor = 'right';
+      }
+    }
   } else {
-    placement += placements[0];
-    fromAnchor = placements[0];
-    toAnchor = placements[1];
+    // Y-line left
+    // second quadrant
+    // eslint-disable-next-line no-lonely-if
+    if (y1 > y0) {
+      if (targetSecondFourthQuadrantSlope > relativeSlope) {
+        // top
+        fromAnchor = 'top';
+        toAnchor = 'bottom';
+      } else {
+        // bottom
+        fromAnchor = 'top';
+        toAnchor = 'right';
+      }
+    } else {
+      // third quadrant
+      // eslint-disable-next-line no-lonely-if
+      if (targetFirstThirdQuadrantSlope > relativeSlope) {
+        // bottom
+        fromAnchor = 'bottom';
+        toAnchor = 'top';
+      } else {
+        // top
+        fromAnchor = 'bottom';
+        toAnchor = 'right';
+      }
+    }
   }
 
-  if (targetX < relativeX) {
-    placement += placements[3];
-  } else {
-    placement += placements[2];
+  return { fromAnchor, toAnchor };
+};
+
+const getVertexs = (center, width, height) => {
+  const { x, y } = center;
+  const halfWidth = width / 2;
+  const halfHeight = height / 2;
+
+  return {
+    topLeft: { x: x - halfWidth, y: y - halfHeight },
+    topRight: { x: x + halfWidth, y: y - halfHeight },
+    bottomLeft: { x: x - halfWidth, y: y + halfHeight },
+    bottomRight: { x: x + halfWidth, y: y + halfHeight },
+  };
+};
+
+const getSlopeByTwoPoints = ({ x: x0, y: y0 }, { x: x1, y: y1 }) => {
+  if (x0 === x1) {
+    return;
   }
 
-  return { placement, fromAnchor, toAnchor };
+  return (y1 - y0) / (x1 - x0);
+};
+
+export const getCenterByTwoPoints = ({ x: x0, y: y0 }, { x: x1, y: y1 }) => {
+  return { x: (x0 + x1) / 2, y: (y0 + y1) / 2 };
 };
 
 export function preventDefault(e) {
