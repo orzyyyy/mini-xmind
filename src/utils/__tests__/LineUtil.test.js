@@ -4,14 +4,16 @@ describe('LineUtil', () => {
   it('getPlacement works correctly', () => {
     const target = { x: 0, y: 0 };
 
-    const firstQuadrantTop = { x: 10, y: 20 };
-    const firstQuadrantBottom = { x: 10, y: 5 };
-    const secondQuadrantTop = { x: -10, y: 20 };
-    const secondQuadrantBottom = { x: -10, y: 5 };
-    const thirdQuadrantTop = { x: -10, y: -5 };
-    const thirdQuadrantBottom = { x: -10, y: -20 };
-    const fourthQuadrantTop = { x: 10, y: -5 };
-    const fourthQuadrantBottom = { x: 10, y: -20 };
+    // for brower, it's fourth quadrant
+    // so change those cases to fourth
+    const firstQuadrantTop = { x: 10, y: 20 * -1 };
+    const firstQuadrantBottom = { x: 10, y: 5 * -1 };
+    const secondQuadrantTop = { x: -10, y: 20 * -1 };
+    const secondQuadrantBottom = { x: -10, y: 5 * -1 };
+    const thirdQuadrantTop = { x: -10, y: -5 * -1 };
+    const thirdQuadrantBottom = { x: -10, y: -20 * -1 };
+    const fourthQuadrantTop = { x: 10, y: -5 * -1 };
+    const fourthQuadrantBottom = { x: 10, y: -20 * -1 };
 
     const firstQuadrantTopInstance = getPlacement(target, firstQuadrantTop);
     expect(firstQuadrantTopInstance.fromAnchor).toBe('top');

@@ -14,7 +14,7 @@ export const getPlacement = ({ x: x0, y: y0 }, { x: x1, y: y1 }) => {
   let fromAnchor, toAnchor;
   // when the origin is determined, relative need to
   // calculate relative coordinate
-  const { x, y } = getRelativeOrigin({ x: x0, y: y0 }, { x: x1, y: y1 });
+  const { x, y } = getRelativeOrigin({ x: x0, y: -y0 }, { x: x1, y: -y1 });
 
   // first quadrant
   if (x > 0 && y > 0) {
