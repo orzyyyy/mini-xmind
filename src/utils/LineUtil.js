@@ -1,38 +1,81 @@
-const placements = ['top', 'bottom', 'Left', 'Right'];
+const placements = ['top', 'bottom', 'left', 'right'];
 
 //   _________
 //  |         |
 //  | target  |
 //  |_________|
-//      |                  =======> bottomRight
+//      |                  =======> bottom right
 //      |    ____________
 //      |___|            |
 //          |  relative  |
 //          |____________|
 //
-export const getPlacement = (target, relative) => {
-  let placement = '';
+export const getPlacement = ({ x: x0, y: y0 }, { x: x1, y: y1 }) => {
   let fromAnchor, toAnchor;
-  const { x: targetX, y: targetY } = target;
-  const { x: relativeX, y: relativeY } = relative;
+  // when the origin is determined, relative need to
+  // calculate relative coordinate
+  const { x, y } = getRelativeOrigin({ x: x0, y: -y0 }, { x: x1, y: -y1 });
 
-  if (targetY < relativeY) {
-    placement += placements[1];
-    fromAnchor = placements[1];
-    toAnchor = placements[0];
-  } else {
-    placement += placements[0];
-    fromAnchor = placements[0];
-    toAnchor = placements[1];
+  // first quadrant
+  if (x > 0 && y > 0) {
+    if (x < y) {
+      // top
+      fromAnchor = 'top';
+      toAnchor = 'bottom';
+    } else if (x > y) {
+      // bottom
+      fromAnchor = 'top';
+      toAnchor = 'left';
+    }
   }
 
-  if (targetX < relativeX) {
-    placement += placements[3];
-  } else {
-    placement += placements[2];
+  // second quadrant
+  if (x < 0 && y > 0) {
+    if (-x < y) {
+      // top
+      fromAnchor = 'top';
+      toAnchor = 'bottom';
+    } else if (-x > y) {
+      // bottom
+      fromAnchor = 'top';
+      toAnchor = 'right';
+    }
   }
 
-  return { placement, fromAnchor, toAnchor };
+  // third quadrant
+  if (x < 0 && y < 0) {
+    if (x < y) {
+      // top
+      fromAnchor = 'bottom';
+      toAnchor = 'right';
+    } else if (x > y) {
+      // bottom
+      fromAnchor = 'bottom';
+      toAnchor = 'top';
+    }
+  }
+
+  // fourth quadrant
+  if (x > 0 && y < 0) {
+    if (x > -y) {
+      // top
+      fromAnchor = 'bottom';
+      toAnchor = 'left';
+    } else if (x < -y) {
+      // bottom
+      fromAnchor = 'bottom';
+      toAnchor = 'right';
+    }
+  }
+
+  return { fromAnchor, toAnchor };
+};
+
+const getRelativeOrigin = (target, relative) => {
+  const { x: x0, y: y0 } = target;
+  const { x: x1, y: y1 } = relative;
+
+  return { x: x1 - x0, y: y1 - y0 };
 };
 
 export function preventDefault(e) {

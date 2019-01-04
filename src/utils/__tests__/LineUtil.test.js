@@ -2,23 +2,61 @@ import { getPlacement } from '../LineUtil';
 
 describe('LineUtil', () => {
   it('getPlacement works correctly', () => {
-    const target = { x: 100, y: 100 };
+    const target = { x: 0, y: 0 };
 
-    const relativeTopLeft = { x: 10, y: 10 };
-    const relativeTopRight = { x: 200, y: 10 };
-    const relativeBottomLeft = { x: 10, y: 200 };
-    const relativeBottomRight = { x: 200, y: 200 };
+    // for brower, it's fourth quadrant
+    // so change those cases to fourth
+    const firstQuadrantTop = { x: 10, y: 20 * -1 };
+    const firstQuadrantBottom = { x: 10, y: 5 * -1 };
+    const secondQuadrantTop = { x: -10, y: 20 * -1 };
+    const secondQuadrantBottom = { x: -10, y: 5 * -1 };
+    const thirdQuadrantTop = { x: -10, y: -5 * -1 };
+    const thirdQuadrantBottom = { x: -10, y: -20 * -1 };
+    const fourthQuadrantTop = { x: 10, y: -5 * -1 };
+    const fourthQuadrantBottom = { x: 10, y: -20 * -1 };
 
-    const topLeft = getPlacement(target, relativeTopLeft);
-    expect(topLeft.placement).toBe('topLeft');
-    // expect(topLeft.fromAnchor).toBe('');
+    const firstQuadrantTopInstance = getPlacement(target, firstQuadrantTop);
+    expect(firstQuadrantTopInstance.fromAnchor).toBe('top');
+    expect(firstQuadrantTopInstance.toAnchor).toBe('bottom');
 
-    expect(getPlacement(target, relativeTopRight).placement).toBe('topRight');
-    expect(getPlacement(target, relativeBottomLeft).placement).toBe(
-      'bottomLeft',
+    const firstQuadrantBottomInstance = getPlacement(
+      target,
+      firstQuadrantBottom,
     );
-    expect(getPlacement(target, relativeBottomRight).placement).toBe(
-      'bottomRight',
+    expect(firstQuadrantBottomInstance.fromAnchor).toBe('top');
+    expect(firstQuadrantBottomInstance.toAnchor).toBe('left');
+
+    const secondQuadrantTopInstance = getPlacement(target, secondQuadrantTop);
+    expect(secondQuadrantTopInstance.fromAnchor).toBe('top');
+    expect(secondQuadrantTopInstance.toAnchor).toBe('bottom');
+
+    const secondQuadrantBottomInstance = getPlacement(
+      target,
+      secondQuadrantBottom,
     );
+    expect(secondQuadrantBottomInstance.fromAnchor).toBe('top');
+    expect(secondQuadrantBottomInstance.toAnchor).toBe('right');
+
+    const thirdQuadrantTopInstance = getPlacement(target, thirdQuadrantTop);
+    expect(thirdQuadrantTopInstance.fromAnchor).toBe('bottom');
+    expect(thirdQuadrantTopInstance.toAnchor).toBe('right');
+
+    const thirdQuadrantBottomInstance = getPlacement(
+      target,
+      thirdQuadrantBottom,
+    );
+    expect(thirdQuadrantBottomInstance.fromAnchor).toBe('bottom');
+    expect(thirdQuadrantBottomInstance.toAnchor).toBe('top');
+
+    const fourthQuadrantTopInstance = getPlacement(target, fourthQuadrantTop);
+    expect(fourthQuadrantTopInstance.fromAnchor).toBe('bottom');
+    expect(fourthQuadrantTopInstance.toAnchor).toBe('left');
+
+    const fourthQuadrantBottomInstance = getPlacement(
+      target,
+      fourthQuadrantBottom,
+    );
+    expect(fourthQuadrantBottomInstance.fromAnchor).toBe('bottom');
+    expect(fourthQuadrantBottomInstance.toAnchor).toBe('right');
   });
 });

@@ -5,12 +5,7 @@ import classNames from 'classnames';
 
 import Draggable from 'react-draggable';
 import { SteppedLineTo } from '../line';
-import {
-  getPlacement,
-  preventDefault,
-  generateKey,
-  getRelativeLinesByBlockKey,
-} from '../utils/LineUtil';
+import { preventDefault, generateKey } from '../utils/LineUtil';
 import Block from '../tools/Block';
 
 export default class Canvas extends Component {
@@ -80,28 +75,8 @@ export default class Canvas extends Component {
   };
 
   // to repaint Line instantly
-  handleBlockDrag = ({ x, y }, blockKey) => {
-    let { state, blockDOM } = this;
-    const { linesProps, blockProps } = state;
-    const relativeLines = getRelativeLinesByBlockKey(blockKey, this.mapping);
-
-    blockProps[blockKey].x = x;
-    blockProps[blockKey].y = y;
-
-    // Line should change anchor automatically
-    for (let key of relativeLines) {
-      const item = linesProps[key];
-      const { fromKey, toKey } = item;
-      const { fromAnchor, toAnchor } = getPlacement(
-        blockDOM[fromKey],
-        blockDOM[toKey],
-      );
-
-      item.fromAnchor = fromAnchor;
-      item.toAnchor = toAnchor;
-    }
-
-    this.setState({ linesProps, blockProps });
+  handleBlockDrag = () => {
+    this.setState({});
   };
 
   shouldPaintLine = (mapping, checkBlockClickList, linesProps) => {
@@ -135,7 +110,6 @@ export default class Canvas extends Component {
   // and clear checkBlockClickList
   handleBlockClick = blockKey => {
     let { checkBlockClickList, blockDOM } = this;
-    const { blockProps } = this.state;
     let { linesProps } = this.state;
 
     checkBlockClickList[blockKey] = { current: blockDOM[blockKey] };
@@ -168,17 +142,10 @@ export default class Canvas extends Component {
       fromNode = checkBlockClickList[fromKey].current;
       toNode = checkBlockClickList[toKey].current;
 
-      const { fromAnchor, toAnchor } = getPlacement(
-        blockProps[fromKey],
-        blockProps[toKey],
-      );
-
       linesProps[lineKey] = {
         from: fromNode,
         key: lineKey,
         to: toNode,
-        fromAnchor,
-        toAnchor,
         fromKey,
         toKey,
       };
@@ -203,7 +170,7 @@ export default class Canvas extends Component {
           onStop={(e, item) => this.handleStop(item, blockKey)}
           key={blockKey}
           position={{ x, y }}
-          onDrag={(e, item) => this.handleBlockDrag(item, blockKey)}
+          onDrag={this.handleBlockDrag}
         >
           <Block
             style={style}
@@ -217,19 +184,9 @@ export default class Canvas extends Component {
 
   generateLines = linesProps => {
     return Object.keys(linesProps).map(lineKey => {
-      const { from, to, key, fromAnchor, toAnchor, orientation } = linesProps[
-        lineKey
-      ];
+      const { from, to, key } = linesProps[lineKey];
 
-      return (
-        <SteppedLineTo
-          from={from}
-          to={to}
-          fromAnchor={fromAnchor}
-          toAnchor={toAnchor}
-          key={key}
-        />
-      );
+      return <SteppedLineTo from={from} to={to} key={key} orientation="v" />;
     });
   };
 
