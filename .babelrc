@@ -1,8 +1,7 @@
 {
     "presets": [
-        "env",
-        "stage-0",
-        "react"
+        "@babel/react",
+        "@babel/env"
     ],
     "plugins": [
         [
@@ -11,6 +10,7 @@
                 "libraryName": "antd",
                 "style": "css"
             }
-        ]
+        ],
+        "@babel/plugin-proposal-class-properties"
     ]
-} 
+}
