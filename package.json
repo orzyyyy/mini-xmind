@@ -2,11 +2,10 @@
   "name": "mini-xmind",
   "version": "0.0.0",
   "scripts": {
-    "start": "node webpack.dev.js",
-    "test": "jest --config .jest.js --verbose=false",
-    "test:watch": "jest --config .jest.js --watchAll",
-    "build": "node webpack.prod.js",
-    "dev": "node webpack.prod.js --development",
+    "start": "nino go",
+    "test": "nino test",
+    "build": "nino koei",
+    "dev": "nino koei -w-d",
     "lint": "npx eslint .",
     "prettier": "node ./scripts/prettier.js",
     "lint-staged": "lint-staged"
@@ -14,6 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "antd": "^3.12.1",
+    "nino-cli": "^0.0.3",
     "omit.js": "^1.0.0",
     "react-draggable": "^3.1.1"
   },
