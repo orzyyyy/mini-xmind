@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import Canvas from '..';
+import 'nino-cli/scripts/setup';
 
 const style = {
   width: 100,
