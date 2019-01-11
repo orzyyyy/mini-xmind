@@ -1,4 +1,5 @@
 import { getPlacement } from '../LineUtil';
+import 'nino-cli/scripts/setup';
 
 describe('LineUtil', () => {
   it('getPlacement works correctly', () => {
