@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import Draggable from 'react-draggable';
 import { SteppedLineTo } from '../line';
 import { preventDefault, generateKey } from '../utils/LineUtil';
-import Block from '../tools/Block';
+import BlockGroup from '../tools/Block';
 
 export default class Canvas extends Component {
   static propTypes = {
@@ -26,25 +24,14 @@ export default class Canvas extends Component {
       blockProps: {},
       linesProps: {},
     };
-
-    // for Line, two point create a line
-    this.checkBlockClickList = {};
-    this.blockDOM = {};
-    // one Line is mapping to two Block
-    // to record it here
-    this.mapping = {};
   }
 
-  saveBlock = (ref, blockKey) => {
-    this.blockDOM[blockKey] = ReactDOM.findDOMNode(ref);
-  };
-
-  handleStop = ({ x, y }, blockKey) => {
-    const { blockProps } = this.state;
-
-    blockProps[blockKey] = Object.assign({}, blockProps[blockKey], { x, y });
-
+  // to repaint Line instantly
+  handleChange = (blockProps, linesProps) => {
     this.setState({ blockProps });
+    if (linesProps) {
+      this.setState({ linesProps });
+    }
   };
 
   onDrop = e => {
@@ -77,114 +64,6 @@ export default class Canvas extends Component {
     this.setState({ blockProps });
   };
 
-  // to repaint Line instantly
-  handleBlockDrag = () => {
-    this.setState({});
-  };
-
-  shouldPaintLine = (mapping, checkBlockClickList, linesProps) => {
-    if (!Object.keys(linesProps).length) {
-      return true;
-    }
-
-    const blocks = Object.keys(checkBlockClickList).toString();
-    for (let key of Object.keys(mapping)) {
-      let fromFlag = false,
-        toFlag = false;
-      const { fromKey, toKey } = mapping[key];
-
-      if (blocks.includes(fromKey)) {
-        fromFlag = true;
-      }
-
-      if (blocks.includes(toKey)) {
-        toFlag = true;
-      }
-
-      if (fromFlag && toFlag) {
-        return false;
-      }
-    }
-
-    return true;
-  };
-
-  // when Block clicked twice, generate a Line
-  // and clear checkBlockClickList
-  handleBlockClick = blockKey => {
-    let { checkBlockClickList, blockDOM } = this;
-    let { linesProps } = this.state;
-
-    checkBlockClickList[blockKey] = { current: blockDOM[blockKey] };
-
-    // to know which Block is starting point
-    if (!('time' in checkBlockClickList[blockKey])) {
-      checkBlockClickList[blockKey].time = new Date().getTime();
-    }
-
-    if (Object.keys(checkBlockClickList).length == 2) {
-      if (
-        !this.shouldPaintLine(this.mapping, checkBlockClickList, linesProps)
-      ) {
-        this.checkBlockClickList = {};
-        return;
-      }
-
-      let fromNode, toNode, fromKey, toKey;
-      const keys = Object.keys(checkBlockClickList);
-      const lineKey = generateKey('line');
-
-      if (checkBlockClickList[keys[0]] > checkBlockClickList[keys[1]]) {
-        fromKey = keys[1];
-        toKey = keys[0];
-      } else {
-        fromKey = keys[0];
-        toKey = keys[1];
-      }
-
-      fromNode = checkBlockClickList[fromKey].current;
-      toNode = checkBlockClickList[toKey].current;
-
-      linesProps[lineKey] = {
-        from: fromNode,
-        key: lineKey,
-        to: toNode,
-        fromKey,
-        toKey,
-      };
-
-      this.setState({ linesProps }, () => {
-        this.checkBlockClickList = {};
-        // record mapping for arrow
-        this.mapping[lineKey] = {
-          fromKey,
-          toKey,
-        };
-      });
-    }
-  };
-
-  generateBlocks = blockProps => {
-    return Object.keys(blockProps).map(blockKey => {
-      const { x, y, style } = blockProps[blockKey];
-
-      return (
-        <Draggable
-          onStop={(e, item) => this.handleStop(item, blockKey)}
-          key={blockKey}
-          position={{ x, y }}
-          onDrag={this.handleBlockDrag}
-        >
-          <Block
-            style={style}
-            onClick={e => this.handleBlockClick(blockKey)}
-            ref={ref => this.saveBlock(ref, blockKey)}
-          />
-        </Draggable>
-      );
-    });
-  };
-
   generateLines = linesProps => {
     return Object.keys(linesProps).map(lineKey => {
       const { from, to, key } = linesProps[lineKey];
@@ -204,7 +83,11 @@ export default class Canvas extends Component {
         onDrop={this.onDrop}
         {...rest}
       >
-        {this.generateBlocks(blockProps)}
+        <BlockGroup
+          data={blockProps}
+          onChange={this.handleChange}
+          lineData={linesProps}
+        />
         {this.generateLines(linesProps)}
       </div>
     );

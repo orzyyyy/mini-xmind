@@ -21,40 +21,49 @@ exports[`Canvas Block renders correctly 1`] = `
       }
     }
   >
-    <Draggable
-      allowAnyClick={false}
-      axis="both"
-      bounds={false}
-      cancel={null}
-      defaultClassName="react-draggable"
-      defaultClassNameDragged="react-draggable-dragged"
-      defaultClassNameDragging="react-draggable-dragging"
-      defaultPosition={
+    <Block
+      className=""
+      data={
         Object {
-          "x": 0,
-          "y": 0,
+          "test1": Object {
+            "style": Object {
+              "background": "#F96",
+              "border": "1px solid #aaa",
+              "borderRadius": "10px",
+              "height": 80,
+              "width": 100,
+            },
+            "x": 90,
+            "y": 50,
+          },
+          "test2": Object {
+            "style": Object {
+              "background": "#F96",
+              "border": "1px solid #aaa",
+              "borderRadius": "10px",
+              "height": 80,
+              "width": 100,
+            },
+            "x": 20,
+            "y": 150,
+          },
+          "test3": Object {
+            "style": Object {
+              "background": "#F96",
+              "border": "1px solid #aaa",
+              "borderRadius": "10px",
+              "height": 80,
+              "width": 100,
+            },
+            "x": 100,
+            "y": 100,
+          },
         }
       }
-      disabled={false}
-      enableUserSelectHack={true}
-      grid={null}
-      handle={null}
-      key="test1"
-      offsetParent={null}
-      onDrag={[Function]}
-      onMouseDown={[Function]}
-      onStart={[Function]}
-      onStop={[Function]}
-      position={
-        Object {
-          "x": 90,
-          "y": 50,
-        }
-      }
-      scale={1}
-      transform={null}
+      lineData={Object {}}
+      onChange={[Function]}
     >
-      <DraggableCore
+      <Draggable
         allowAnyClick={false}
         axis="both"
         bounds={false}
@@ -72,6 +81,7 @@ exports[`Canvas Block renders correctly 1`] = `
         enableUserSelectHack={true}
         grid={null}
         handle={null}
+        key="test1"
         offsetParent={null}
         onDrag={[Function]}
         onMouseDown={[Function]}
@@ -86,24 +96,36 @@ exports[`Canvas Block renders correctly 1`] = `
         scale={1}
         transform={null}
       >
-        <Block
-          className="react-draggable"
-          onClick={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchStart={[Function]}
-          style={
+        <DraggableCore
+          allowAnyClick={false}
+          axis="both"
+          bounds={false}
+          cancel={null}
+          defaultClassName="react-draggable"
+          defaultClassNameDragged="react-draggable-dragged"
+          defaultClassNameDragging="react-draggable-dragging"
+          defaultPosition={
             Object {
-              "background": "#F96",
-              "border": "1px solid #aaa",
-              "borderRadius": "10px",
-              "height": 80,
-              "touchAction": "none",
-              "transform": "translate(90px,50px)",
-              "width": 100,
+              "x": 0,
+              "y": 0,
             }
           }
+          disabled={false}
+          enableUserSelectHack={true}
+          grid={null}
+          handle={null}
+          offsetParent={null}
+          onDrag={[Function]}
+          onMouseDown={[Function]}
+          onStart={[Function]}
+          onStop={[Function]}
+          position={
+            Object {
+              "x": 90,
+              "y": 50,
+            }
+          }
+          scale={1}
           transform={null}
         >
           <div
@@ -126,43 +148,9 @@ exports[`Canvas Block renders correctly 1`] = `
             }
             transform={null}
           />
-        </Block>
-      </DraggableCore>
-    </Draggable>
-    <Draggable
-      allowAnyClick={false}
-      axis="both"
-      bounds={false}
-      cancel={null}
-      defaultClassName="react-draggable"
-      defaultClassNameDragged="react-draggable-dragged"
-      defaultClassNameDragging="react-draggable-dragging"
-      defaultPosition={
-        Object {
-          "x": 0,
-          "y": 0,
-        }
-      }
-      disabled={false}
-      enableUserSelectHack={true}
-      grid={null}
-      handle={null}
-      key="test2"
-      offsetParent={null}
-      onDrag={[Function]}
-      onMouseDown={[Function]}
-      onStart={[Function]}
-      onStop={[Function]}
-      position={
-        Object {
-          "x": 20,
-          "y": 150,
-        }
-      }
-      scale={1}
-      transform={null}
-    >
-      <DraggableCore
+        </DraggableCore>
+      </Draggable>
+      <Draggable
         allowAnyClick={false}
         axis="both"
         bounds={false}
@@ -180,6 +168,7 @@ exports[`Canvas Block renders correctly 1`] = `
         enableUserSelectHack={true}
         grid={null}
         handle={null}
+        key="test2"
         offsetParent={null}
         onDrag={[Function]}
         onMouseDown={[Function]}
@@ -194,24 +183,36 @@ exports[`Canvas Block renders correctly 1`] = `
         scale={1}
         transform={null}
       >
-        <Block
-          className="react-draggable"
-          onClick={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchStart={[Function]}
-          style={
+        <DraggableCore
+          allowAnyClick={false}
+          axis="both"
+          bounds={false}
+          cancel={null}
+          defaultClassName="react-draggable"
+          defaultClassNameDragged="react-draggable-dragged"
+          defaultClassNameDragging="react-draggable-dragging"
+          defaultPosition={
             Object {
-              "background": "#F96",
-              "border": "1px solid #aaa",
-              "borderRadius": "10px",
-              "height": 80,
-              "touchAction": "none",
-              "transform": "translate(20px,150px)",
-              "width": 100,
+              "x": 0,
+              "y": 0,
             }
           }
+          disabled={false}
+          enableUserSelectHack={true}
+          grid={null}
+          handle={null}
+          offsetParent={null}
+          onDrag={[Function]}
+          onMouseDown={[Function]}
+          onStart={[Function]}
+          onStop={[Function]}
+          position={
+            Object {
+              "x": 20,
+              "y": 150,
+            }
+          }
+          scale={1}
           transform={null}
         >
           <div
@@ -234,43 +235,9 @@ exports[`Canvas Block renders correctly 1`] = `
             }
             transform={null}
           />
-        </Block>
-      </DraggableCore>
-    </Draggable>
-    <Draggable
-      allowAnyClick={false}
-      axis="both"
-      bounds={false}
-      cancel={null}
-      defaultClassName="react-draggable"
-      defaultClassNameDragged="react-draggable-dragged"
-      defaultClassNameDragging="react-draggable-dragging"
-      defaultPosition={
-        Object {
-          "x": 0,
-          "y": 0,
-        }
-      }
-      disabled={false}
-      enableUserSelectHack={true}
-      grid={null}
-      handle={null}
-      key="test3"
-      offsetParent={null}
-      onDrag={[Function]}
-      onMouseDown={[Function]}
-      onStart={[Function]}
-      onStop={[Function]}
-      position={
-        Object {
-          "x": 100,
-          "y": 100,
-        }
-      }
-      scale={1}
-      transform={null}
-    >
-      <DraggableCore
+        </DraggableCore>
+      </Draggable>
+      <Draggable
         allowAnyClick={false}
         axis="both"
         bounds={false}
@@ -288,6 +255,7 @@ exports[`Canvas Block renders correctly 1`] = `
         enableUserSelectHack={true}
         grid={null}
         handle={null}
+        key="test3"
         offsetParent={null}
         onDrag={[Function]}
         onMouseDown={[Function]}
@@ -302,24 +270,36 @@ exports[`Canvas Block renders correctly 1`] = `
         scale={1}
         transform={null}
       >
-        <Block
-          className="react-draggable"
-          onClick={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchStart={[Function]}
-          style={
+        <DraggableCore
+          allowAnyClick={false}
+          axis="both"
+          bounds={false}
+          cancel={null}
+          defaultClassName="react-draggable"
+          defaultClassNameDragged="react-draggable-dragged"
+          defaultClassNameDragging="react-draggable-dragging"
+          defaultPosition={
             Object {
-              "background": "#F96",
-              "border": "1px solid #aaa",
-              "borderRadius": "10px",
-              "height": 80,
-              "touchAction": "none",
-              "transform": "translate(100px,100px)",
-              "width": 100,
+              "x": 0,
+              "y": 0,
             }
           }
+          disabled={false}
+          enableUserSelectHack={true}
+          grid={null}
+          handle={null}
+          offsetParent={null}
+          onDrag={[Function]}
+          onMouseDown={[Function]}
+          onStart={[Function]}
+          onStop={[Function]}
+          position={
+            Object {
+              "x": 100,
+              "y": 100,
+            }
+          }
+          scale={1}
           transform={null}
         >
           <div
@@ -342,9 +322,9 @@ exports[`Canvas Block renders correctly 1`] = `
             }
             transform={null}
           />
-        </Block>
-      </DraggableCore>
-    </Draggable>
+        </DraggableCore>
+      </Draggable>
+    </Block>
   </div>
 </Canvas>
 `;
@@ -369,6 +349,13 @@ exports[`Canvas Canvas renders correctly 1`] = `
         "width": "100%",
       }
     }
-  />
+  >
+    <Block
+      className=""
+      data={Object {}}
+      lineData={Object {}}
+      onChange={[Function]}
+    />
+  </div>
 </Canvas>
 `;
