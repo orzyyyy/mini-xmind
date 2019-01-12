@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import Draggable from 'react-draggable';
 import { noop } from '../utils/commonUtil';
 import { generateKey } from '../utils/LineUtil';
-import omit from 'omit.js';
 
 import './assets/BlockGroup.css';
 
@@ -144,7 +143,7 @@ export default class Block extends Component {
             onClick={e => this.handleBlockClick(blockKey)}
             ref={ref => this.saveBlock(ref, blockKey)}
             style={style}
-            {...omit(rest, ['lineData'])}
+            {...rest}
           />
         </Draggable>
       );
