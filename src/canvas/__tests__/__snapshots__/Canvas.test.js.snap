@@ -332,6 +332,10 @@ exports[`Canvas Block renders correctly 1`] = `
         className="LineGroup"
       />
     </LineGroup>
+    <TagGroup
+      data={Object {}}
+      onChange={[Function]}
+    />
   </div>
 </Canvas>
 `;
@@ -370,6 +374,10 @@ exports[`Canvas Canvas renders correctly 1`] = `
         className="LineGroup"
       />
     </LineGroup>
+    <TagGroup
+      data={Object {}}
+      onChange={[Function]}
+    />
   </div>
 </Canvas>
 `;

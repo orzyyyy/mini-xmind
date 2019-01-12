@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import LineGroup from '../tools/LineGroup';
 import { preventDefault, generateKey } from '../utils/LineUtil';
 import BlockGroup from '../tools/BlockGroup';
+import TagGroup from '../tools/TagGroup';
 
 export default class Canvas extends Component {
   static propTypes = {
@@ -22,15 +23,20 @@ export default class Canvas extends Component {
     this.state = {
       blockProps: {},
       linesProps: {},
+      tagProps: {},
     };
   }
 
   // to repaint Line instantly
-  handleChange = (blockProps, linesProps) => {
+  handleBlockChange = (blockProps, linesProps) => {
     this.setState({ blockProps });
     if (linesProps) {
       this.setState({ linesProps });
     }
+  };
+
+  handleTagChange = tagProps => {
+    this.setState({ tagProps });
   };
 
   onDrop = e => {
@@ -40,32 +46,33 @@ export default class Canvas extends Component {
     }
     dragItem = dragItem ? JSON.parse(dragItem) : {};
     const { value, style } = dragItem;
-    let { blockProps } = this.state;
+    let { blockProps, tagProps } = this.state;
     const { clientX, clientY } = e;
-    const blockKey = generateKey('block');
     const x = clientX - style.width / 2;
     const y = clientY - style.height / 2;
 
     switch (value) {
       case 'block':
-        blockProps[blockKey] = { x, y, style };
+        blockProps[generateKey('block')] = { x, y, style };
+        this.setState({ blockProps });
         break;
 
       case 'line':
         break;
 
       case 'input':
+        tagProps[generateKey('tag')] = { x, y, style };
+        this.setState({ tagProps });
         break;
 
       default:
         break;
     }
-    this.setState({ blockProps });
   };
 
   render = () => {
     const { className, ...rest } = this.props;
-    const { blockProps, linesProps } = this.state;
+    const { blockProps, linesProps, tagProps } = this.state;
 
     return (
       <div
@@ -76,10 +83,11 @@ export default class Canvas extends Component {
       >
         <BlockGroup
           data={blockProps}
-          onChange={this.handleChange}
+          onChange={this.handleBlockChange}
           lineData={linesProps}
         />
         <LineGroup data={linesProps} />
+        <TagGroup data={tagProps} onChange={this.handleTagChange} />
       </div>
     );
   };
