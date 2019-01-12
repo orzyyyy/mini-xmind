@@ -2,9 +2,10 @@
   list-style: none;
   position: fixed;
   left: 5px;
-  top: 45%;
+  top: 40%;
 }
 
 .Toolbar ul li {
   cursor: pointer;
+  margin-bottom: 10px;
 }

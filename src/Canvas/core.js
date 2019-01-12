@@ -68,6 +68,9 @@ export default class Canvas extends Component {
       case 'line':
         break;
 
+      case 'input':
+        break;
+
       default:
         break;
     }
