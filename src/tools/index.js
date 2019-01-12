@@ -1,5 +1,5 @@
 import Toolbar from './Toolbar';
-import Block from './Block';
+import BlockGroup from './BlockGroup';
 
 export default Toolbar;
-export { Block };
+export { BlockGroup };

@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import { SteppedLineTo } from '../line';
 import { preventDefault, generateKey } from '../utils/LineUtil';
-import BlockGroup from '../tools/Block';
+import BlockGroup from '../tools/BlockGroup';
 
 export default class Canvas extends Component {
   static propTypes = {

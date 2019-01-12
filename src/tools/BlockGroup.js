@@ -7,7 +7,7 @@ import { noop } from '../utils/commonUtil';
 import { generateKey } from '../utils/LineUtil';
 import omit from 'omit.js';
 
-import './assets/Block.css';
+import './assets/BlockGroup.css';
 
 export default class Block extends Component {
   static propTypes = {
@@ -140,7 +140,7 @@ export default class Block extends Component {
           onDrag={e => onChange && onChange(data)}
         >
           <div
-            className={classNames('Block', className)}
+            className={classNames('BlockGroup', className)}
             onClick={e => this.handleBlockClick(blockKey)}
             ref={ref => this.saveBlock(ref, blockKey)}
             style={style}
