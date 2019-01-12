@@ -4,6 +4,7 @@
   "scripts": {
     "start": "nino go",
     "test": "nino test",
+    "test:u": "nino test -u",
     "build": "nino koei",
     "dev": "nino koei -w-d",
     "lint": "npx eslint .",
@@ -13,7 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "antd": "^3.12.1",
-    "nino-cli": "^0.0.6",
+    "nino-cli": "^0.1.0",
     "omit.js": "^1.0.0",
     "react-draggable": "^3.1.1"
   },
