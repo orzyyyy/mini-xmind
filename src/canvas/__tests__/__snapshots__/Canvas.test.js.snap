@@ -325,6 +325,13 @@ exports[`Canvas Block renders correctly 1`] = `
         </DraggableCore>
       </Draggable>
     </Block>
+    <LineGroup
+      data={Object {}}
+    >
+      <div
+        className="LineGroup"
+      />
+    </LineGroup>
   </div>
 </Canvas>
 `;
@@ -356,6 +363,13 @@ exports[`Canvas Canvas renders correctly 1`] = `
       lineData={Object {}}
       onChange={[Function]}
     />
+    <LineGroup
+      data={Object {}}
+    >
+      <div
+        className="LineGroup"
+      />
+    </LineGroup>
   </div>
 </Canvas>
 `;

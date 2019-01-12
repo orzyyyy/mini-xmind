@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-
-import { SteppedLineTo } from '../line';
+import LineGroup from '../tools/LineGroup';
 import { preventDefault, generateKey } from '../utils/LineUtil';
 import BlockGroup from '../tools/BlockGroup';
 
@@ -64,14 +63,6 @@ export default class Canvas extends Component {
     this.setState({ blockProps });
   };
 
-  generateLines = linesProps => {
-    return Object.keys(linesProps).map(lineKey => {
-      const { from, to, key } = linesProps[lineKey];
-
-      return <SteppedLineTo from={from} to={to} key={key} orientation="v" />;
-    });
-  };
-
   render = () => {
     const { className, ...rest } = this.props;
     const { blockProps, linesProps } = this.state;
@@ -88,7 +79,7 @@ export default class Canvas extends Component {
           onChange={this.handleChange}
           lineData={linesProps}
         />
-        {this.generateLines(linesProps)}
+        <LineGroup data={linesProps} />
       </div>
     );
   };
