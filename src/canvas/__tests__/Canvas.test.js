@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import Canvas from '..';
+import Listener from '../../utils/GlobalListener';
 import 'nino-cli/scripts/setup';
 
 const style = {
@@ -32,6 +33,14 @@ const createWrapper = () =>
   mount(<Canvas style={{ width: '100%', height: '100%' }} />);
 
 describe('Canvas', () => {
+  beforeEach(() => {
+    window.DataCollector = new Listener();
+  });
+
+  afterEach(() => {
+    window.DataCollector = null;
+  });
+
   it('Canvas renders correctly', () => {
     const wrapper = createWrapper();
     expect(wrapper).toMatchSnapshot();

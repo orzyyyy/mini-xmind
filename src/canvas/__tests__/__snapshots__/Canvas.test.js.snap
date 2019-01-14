@@ -3,6 +3,7 @@
 exports[`Canvas Block renders correctly 1`] = `
 <Canvas
   className=""
+  data={Object {}}
   style={
     Object {
       "height": "100%",
@@ -12,6 +13,7 @@ exports[`Canvas Block renders correctly 1`] = `
 >
   <div
     className="Canvas"
+    data={Object {}}
     onDragOver={[Function]}
     onDrop={[Function]}
     style={
@@ -343,6 +345,7 @@ exports[`Canvas Block renders correctly 1`] = `
 exports[`Canvas Canvas renders correctly 1`] = `
 <Canvas
   className=""
+  data={Object {}}
   style={
     Object {
       "height": "100%",
@@ -352,6 +355,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
 >
   <div
     className="Canvas"
+    data={Object {}}
     onDragOver={[Function]}
     onDrop={[Function]}
     style={
