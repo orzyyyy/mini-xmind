@@ -2,6 +2,7 @@ import React from 'react';
 import LineTo from './LineTo';
 import SteppedLine from './SteppedLine';
 import omit from 'omit.js';
+import classNames from 'classnames';
 
 export default class SteppedLineTo extends LineTo {
   refresh = () => {
@@ -9,6 +10,7 @@ export default class SteppedLineTo extends LineTo {
   };
 
   render() {
+    const { className } = this.props;
     const points = this.detect();
     const props = Object.assign(
       {},
@@ -17,7 +19,7 @@ export default class SteppedLineTo extends LineTo {
     );
 
     return (
-      <div className="stepped-line-to">
+      <div className={classNames('stepped-line-to', className)}>
         {points ? <SteppedLine {...props} /> : null}
       </div>
     );

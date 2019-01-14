@@ -26,7 +26,7 @@ export default class GlobalListener {
   };
 
   set = (key, data) => {
-    this.meta[key] = data;
+    this.meta[key] = Object.assign({}, this.meta[key], data);
 
     return this;
   };

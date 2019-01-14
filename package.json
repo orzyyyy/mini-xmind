@@ -1,6 +1,6 @@
 {
   "name": "mini-xmind",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "start": "nino go",
     "test": "nino test",

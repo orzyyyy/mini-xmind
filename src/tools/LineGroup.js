@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { SteppedLineTo } from '../line';
+import omit from 'omit.js';
 
 export default class LineGroup extends Component {
   static propTypes = {
@@ -11,17 +12,53 @@ export default class LineGroup extends Component {
     data: {},
   };
 
+  static getDerivedStateFromProps(nextProps) {
+    const data = nextProps.data;
+    const newState = {};
+    for (let key in data) {
+      const { from, to } = data[key];
+
+      if (from && to) {
+        newState[key] = data[key];
+      }
+    }
+
+    return { data: newState };
+  }
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      data: {},
+    };
+  }
+
   generateLines = data =>
     Object.keys(data).map(lineKey => {
-      const { from, to, key } = data[lineKey];
+      const { from, to } = data[lineKey];
 
-      return <SteppedLineTo from={from} to={to} key={key} orientation="v" />;
+      DataCollector.set('LineGroup', {
+        [lineKey]: omit(data[lineKey], ['from', 'to']),
+      });
+      return (
+        <SteppedLineTo
+          from={from}
+          to={to}
+          key={lineKey}
+          orientation="v"
+          className="animate-appear"
+        />
+      );
     });
 
   render = () => {
-    const { data } = this.props;
+    const { data } = this.state;
 
-    // DataCollector.set('LineGroup', data);
+    if (Object.keys(data).length == 0) {
+      return null;
+    }
+
     return <div className="LineGroup">{this.generateLines(data)}</div>;
   };
 }
