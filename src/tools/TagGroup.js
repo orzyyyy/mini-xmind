@@ -17,7 +17,7 @@ export default class TagGroup extends Component {
     onChange: noop,
   };
 
-  static getDerivedStateFromProps(nextProps, nextState) {
+  static getDerivedStateFromProps(nextProps) {
     return { data: nextProps.data };
   }
 
@@ -39,17 +39,10 @@ export default class TagGroup extends Component {
     onChange && onChange(data);
   };
 
-  handleChange = (value, key, item) => {
+  handleChange = (item, key, targetKey, targetValue) => {
     let { data } = this.state;
     data[key] = item;
-    data[key].input = value;
-    this.setState({ data });
-  };
-
-  handleEditable = (key, item, editable) => {
-    let { data } = this.state;
-    data[key] = item;
-    data[key].editable = editable;
+    data[key][targetKey] = targetValue;
     this.setState({ data });
   };
 
@@ -63,19 +56,23 @@ export default class TagGroup extends Component {
       if (editable) {
         return (
           <div
-            className={classNames('TagGroup', className, 'animate-appear')}
+            className={classNames('TagGroup', className)}
             style={Object.assign({}, style, {
               transform: `translate(${x}px, ${y}px)`,
-              background: '#F96',
             })}
             key={key}
             {...rest}
           >
             <Input
-              onChange={e => this.handleChange(e.target.value, key, data[key])}
+              className="animate-appear"
+              onChange={e =>
+                this.handleChange(data[key], key, 'input', e.target.value)
+              }
               value={data[key].input}
               autoFocus
-              onBlur={() => this.handleEditable(key, data[key], false)}
+              onBlur={() =>
+                this.handleChange(data[key], key, 'editable', false)
+              }
             />
           </div>
         );
@@ -91,7 +88,9 @@ export default class TagGroup extends Component {
           <div
             className={classNames('TagGroup', className, 'animate-appear')}
             style={style}
-            onDoubleClick={() => this.handleEditable(key, data[key], true)}
+            onDoubleClick={() =>
+              this.handleChange(data[key], key, 'editable', true)
+            }
             {...rest}
           >
             {data[key].input}
