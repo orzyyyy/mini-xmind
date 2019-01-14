@@ -10,12 +10,27 @@ export default class Canvas extends Component {
   static propTypes = {
     style: PropTypes.object,
     className: PropTypes.string,
+    data: PropTypes.object,
   };
 
   static defaultProps = {
     style: {},
     className: '',
+    data: {},
   };
+
+  static getDerivedStateFromProps(nextProps) {
+    const data = nextProps.data;
+    if (Object.keys(data) != 0) {
+      const { BlockGroup, TagGroup } = data;
+
+      return {
+        blockProps: BlockGroup,
+        tagProps: TagGroup,
+      };
+    }
+    return null;
+  }
 
   constructor(props) {
     super(props);

@@ -21,7 +21,7 @@ export default class LineGroup extends Component {
   render = () => {
     const { data } = this.props;
 
-    DataCollector.set('LineGroup', data);
+    // DataCollector.set('LineGroup', data);
     return <div className="LineGroup">{this.generateLines(data)}</div>;
   };
 }

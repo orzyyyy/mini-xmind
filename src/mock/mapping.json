@@ -1,0 +1,48 @@
+{
+  "BlockGroup": {
+    "block-623187": {
+      "x": 158,
+      "y": 256,
+      "style": {
+        "width": 100,
+        "height": 80,
+        "background": "#F96",
+        "borderRadius": "10px",
+        "border": "1px solid #aaa"
+      }
+    },
+    "block-624018": {
+      "x": 367,
+      "y": 368,
+      "style": {
+        "width": 100,
+        "height": 80,
+        "background": "#F96",
+        "borderRadius": "10px",
+        "border": "1px solid #aaa"
+      }
+    }
+  },
+  "TagGroup": {
+    "tag-626505": {
+      "x": 167,
+      "y": 284,
+      "style": {
+        "width": 100,
+        "height": 32
+      },
+      "editable": false,
+      "input": "test"
+    },
+    "tag-629962": {
+      "x": 405,
+      "y": 398,
+      "style": {
+        "width": 100,
+        "height": 32
+      },
+      "editable": false,
+      "input": "test2"
+    }
+  }
+}
