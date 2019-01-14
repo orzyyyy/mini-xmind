@@ -17,4 +17,12 @@ export const tools = [
       border: '1px solid #aaa',
     },
   },
+  {
+    key: 'tag',
+    value: 'input',
+    style: {
+      width: 100,
+      height: 32,
+    },
+  },
 ];
