@@ -1,6 +1,19 @@
-.TagGroup{
+.TagGroup {
   position: absolute;
   cursor: pointer;
   user-select: none;
   z-index: 3;
+}
+
+.animate-appear {
+  animation: 0.3s appear 0s;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1;
+  }
 }

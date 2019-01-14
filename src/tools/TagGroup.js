@@ -26,7 +26,6 @@ export default class TagGroup extends Component {
 
     this.state = {
       data: {},
-      value: 'test',
     };
   }
 
@@ -40,25 +39,26 @@ export default class TagGroup extends Component {
     onChange && onChange(data);
   };
 
-  handleChange = e => {
-    const value = e.target.value;
-
-    this.setState({ value });
-  };
-
-  handleDoubleClick = (key, item) => {
+  handleChange = (value, key, item) => {
     let { data } = this.state;
     data[key] = item;
-    data[key].editable = true;
+    data[key].input = value;
+    this.setState({ data });
+  };
+
+  handleEditable = (key, item, editable) => {
+    let { data } = this.state;
+    data[key] = item;
+    data[key].editable = editable;
     this.setState({ data });
   };
 
   render = () => {
     const { className, onChange, ...rest } = this.props;
-    const { value, data } = this.state;
+    const { data } = this.state;
 
     return Object.keys(data).map(key => {
-      const { x, y, style, editable = false } = data[key];
+      const { x, y, style, editable } = data[key];
 
       if (editable) {
         return (
@@ -71,7 +71,13 @@ export default class TagGroup extends Component {
             key={key}
             {...rest}
           >
-            <Input onChange={this.handleChange} value={value} />
+            <Input
+              className="animate-appear"
+              onChange={e => this.handleChange(e.target.value, key, data[key])}
+              value={data[key].input}
+              autoFocus
+              onBlur={() => this.handleEditable(key, data[key], false)}
+            />
           </div>
         );
       }
@@ -84,12 +90,12 @@ export default class TagGroup extends Component {
           onDrag={e => onChange && onChange(data)}
         >
           <div
-            className={classNames('TagGroup', className)}
+            className={classNames('TagGroup', className, 'animate-appear')}
             style={style}
-            onDoubleClick={() => this.handleDoubleClick(key, data[key])}
+            onDoubleClick={() => this.handleEditable(key, data[key], true)}
             {...rest}
           >
-            {value}
+            {data[key].input}
           </div>
         </Draggable>
       );

@@ -61,7 +61,7 @@ export default class Canvas extends Component {
         break;
 
       case 'input':
-        tagProps[generateKey('tag')] = { x, y, style };
+        tagProps[generateKey('tag')] = { x, y, style, editable: true };
         this.setState({ tagProps });
         break;
 
