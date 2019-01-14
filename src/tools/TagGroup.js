@@ -17,10 +17,17 @@ export default class TagGroup extends Component {
     onChange: noop,
   };
 
+  static getDerivedStateFromProps(nextProps, nextState) {
+    return { data: nextProps.data };
+  }
+
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      data: {},
+      value: 'test',
+    };
   }
 
   componentDidMount = () => {};
@@ -33,11 +40,42 @@ export default class TagGroup extends Component {
     onChange && onChange(data);
   };
 
+  handleChange = e => {
+    const value = e.target.value;
+
+    this.setState({ value });
+  };
+
+  handleDoubleClick = (key, item) => {
+    let { data } = this.state;
+    data[key] = item;
+    data[key].editable = true;
+    this.setState({ data });
+  };
+
   render = () => {
-    const { data, className, onChange, ...rest } = this.props;
+    const { className, onChange, ...rest } = this.props;
+    const { value, data } = this.state;
 
     return Object.keys(data).map(key => {
-      const { x, y, style } = data[key];
+      const { x, y, style, editable = false } = data[key];
+
+      if (editable) {
+        return (
+          <div
+            className={classNames('TagGroup', className)}
+            style={Object.assign({}, style, {
+              transform: `translate(${x}px, ${y}px)`,
+              background: '#F96',
+            })}
+            key={key}
+            {...rest}
+          >
+            <Input onChange={this.handleChange} value={value} />
+          </div>
+        );
+      }
+
       return (
         <Draggable
           onStop={(e, item) => this.handleStop(item, key)}
@@ -48,9 +86,10 @@ export default class TagGroup extends Component {
           <div
             className={classNames('TagGroup', className)}
             style={style}
+            onDoubleClick={() => this.handleDoubleClick(key, data[key])}
             {...rest}
           >
-            <Input />
+            {value}
           </div>
         </Draggable>
       );
