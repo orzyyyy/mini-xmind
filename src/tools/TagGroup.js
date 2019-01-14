@@ -43,6 +43,8 @@ export default class TagGroup extends Component {
     let { data } = this.state;
     data[key] = item;
     data[key][targetKey] = targetValue;
+
+    DataCollector.set('TagGroup', data);
     this.setState({ data });
   };
 

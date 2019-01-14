@@ -130,6 +130,7 @@ export default class Block extends Component {
   render() {
     const { className, onChange, data, ...rest } = this.props;
 
+    DataCollector.set('BlockGroup', data);
     return Object.keys(data).map(blockKey => {
       const { x, y, style } = data[blockKey];
       return (
