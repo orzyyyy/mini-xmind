@@ -1,1 +1,1 @@
-![CircleCI](https://img.shields.io/circleci/project/github/zy410419243/mini-xmind/master.svg?label=circleci)
+![CircleCI](https://img.shields.io/circleci/project/github/zy410419243/mini-xmind/master.svg)
