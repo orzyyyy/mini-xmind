@@ -27,6 +27,11 @@ export default class Block extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      data: {},
+      lineData: {},
+    };
+
     // for Line, two point create a line
     this.checkBlockClickList = {};
     this.blockDOM = {};
@@ -34,6 +39,42 @@ export default class Block extends Component {
     // to record it here
     this.mapping = {};
   }
+
+  static getDerivedStateFromProps(nextProps, nextState) {
+    const { data, onChange } = nextProps;
+
+    if (
+      Object.keys(nextProps.lineData).length !=
+      Object.keys(nextState.lineData).length
+    ) {
+      onChange && onChange(data, nextProps.lineData);
+    }
+
+    return {
+      data,
+      lineData: nextProps.lineData,
+    };
+  }
+
+  componentDidMount = () => {
+    const { blockDOM, props } = this;
+    const { lineData } = props;
+    for (let key in lineData) {
+      const { fromKey, toKey } = lineData[key];
+
+      for (let blockKey in blockDOM) {
+        const value = blockDOM[blockKey];
+
+        if (fromKey == blockKey) {
+          lineData[key].from = value;
+        }
+
+        if (toKey == blockKey) {
+          lineData[key].to = value;
+        }
+      }
+    }
+  };
 
   handleStop = ({ x, y }, blockKey) => {
     const { data, onChange } = this.props;
@@ -48,6 +89,7 @@ export default class Block extends Component {
   handleBlockClick = blockKey => {
     let { checkBlockClickList, blockDOM } = this;
     let { lineData, onChange, data } = this.props;
+    const lineKey = generateKey('line');
 
     checkBlockClickList[blockKey] = { current: blockDOM[blockKey] };
 
@@ -62,30 +104,11 @@ export default class Block extends Component {
         return;
       }
 
-      let fromNode, toNode, fromKey, toKey;
-      const keys = Object.keys(checkBlockClickList);
-      const lineKey = generateKey('line');
-
-      if (checkBlockClickList[keys[0]] > checkBlockClickList[keys[1]]) {
-        fromKey = keys[1];
-        toKey = keys[0];
-      } else {
-        fromKey = keys[0];
-        toKey = keys[1];
-      }
-
-      fromNode = checkBlockClickList[fromKey].current;
-      toNode = checkBlockClickList[toKey].current;
-
-      lineData[lineKey] = {
-        from: fromNode,
-        key: lineKey,
-        to: toNode,
-        fromKey,
-        toKey,
-      };
-
-      onChange && onChange(data, lineData);
+      const { result, fromKey, toKey } = this.generateLineData(
+        lineData,
+        lineKey,
+      );
+      onChange && onChange(data, result);
 
       this.checkBlockClickList = {};
       // record mapping for arrow
@@ -94,6 +117,35 @@ export default class Block extends Component {
         toKey,
       };
     }
+  };
+
+  generateLineData = (lineData, lineKey) => {
+    const { checkBlockClickList } = this;
+    let fromNode, toNode, fromKey, toKey;
+    const keys = Object.keys(checkBlockClickList);
+
+    if (checkBlockClickList[keys[0]] > checkBlockClickList[keys[1]]) {
+      fromKey = keys[1];
+      toKey = keys[0];
+    } else {
+      fromKey = keys[0];
+      toKey = keys[1];
+    }
+
+    fromNode = checkBlockClickList[fromKey].current;
+    toNode = checkBlockClickList[toKey].current;
+
+    const common = {
+      fromKey,
+      toKey,
+    };
+    lineData[lineKey] = {
+      ...common,
+      from: fromNode,
+      to: toNode,
+    };
+
+    return lineData;
   };
 
   saveBlock = (ref, blockKey) => {
@@ -128,7 +180,8 @@ export default class Block extends Component {
   };
 
   render() {
-    const { className, onChange, data, ...rest } = this.props;
+    const { className, onChange, ...rest } = this.props;
+    const { data } = this.state;
 
     DataCollector.set('BlockGroup', data);
     return Object.keys(data).map(blockKey => {

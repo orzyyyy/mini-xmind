@@ -22,11 +22,12 @@ export default class Canvas extends Component {
   static getDerivedStateFromProps(nextProps) {
     const data = nextProps.data;
     if (Object.keys(data) != 0) {
-      const { BlockGroup, TagGroup } = data;
+      const { BlockGroup, TagGroup, LineGroup } = data;
 
       return {
         blockProps: BlockGroup,
         tagProps: TagGroup,
+        linesProps: LineGroup,
       };
     }
     return null;
