@@ -63,7 +63,7 @@ export default class TagGroup extends Component {
       if (editable) {
         return (
           <div
-            className={classNames('TagGroup', className)}
+            className={classNames('TagGroup', className, 'animate-appear')}
             style={Object.assign({}, style, {
               transform: `translate(${x}px, ${y}px)`,
               background: '#F96',
@@ -72,7 +72,6 @@ export default class TagGroup extends Component {
             {...rest}
           >
             <Input
-              className="animate-appear"
               onChange={e => this.handleChange(e.target.value, key, data[key])}
               value={data[key].input}
               autoFocus
