@@ -44,7 +44,6 @@ export default class TagGroup extends Component {
     data[key] = item;
     data[key][targetKey] = targetValue;
 
-    DataCollector.set('TagGroup', data);
     this.setState({ data });
   };
 
@@ -52,6 +51,7 @@ export default class TagGroup extends Component {
     const { className, onChange, ...rest } = this.props;
     const { data } = this.state;
 
+    DataCollector.set('TagGroup', data);
     return Object.keys(data).map(key => {
       const { x, y, style, editable } = data[key];
 
