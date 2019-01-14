@@ -131,7 +131,7 @@ exports[`Canvas Block renders correctly 1`] = `
           transform={null}
         >
           <div
-            className="BlockGroup react-draggable"
+            className="BlockGroup animate-appear react-draggable"
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
@@ -218,7 +218,7 @@ exports[`Canvas Block renders correctly 1`] = `
           transform={null}
         >
           <div
-            className="BlockGroup react-draggable"
+            className="BlockGroup animate-appear react-draggable"
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
@@ -305,7 +305,7 @@ exports[`Canvas Block renders correctly 1`] = `
           transform={null}
         >
           <div
-            className="BlockGroup react-draggable"
+            className="BlockGroup animate-appear react-draggable"
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseUp={[Function]}

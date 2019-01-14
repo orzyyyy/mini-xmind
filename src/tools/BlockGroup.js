@@ -141,7 +141,7 @@ export default class Block extends Component {
           onDrag={e => onChange && onChange(data)}
         >
           <div
-            className={classNames('BlockGroup', className)}
+            className={classNames('BlockGroup', 'animate-appear', className)}
             onClick={e => this.handleBlockClick(blockKey)}
             ref={ref => this.saveBlock(ref, blockKey)}
             style={style}
