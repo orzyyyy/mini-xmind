@@ -1,4 +1,4 @@
-![CircleCI](https://img.shields.io/circleci/project/github/breathing-is-fun/mini-xmind/master.svg)
+![CircleCI](https://img.shields.io/circleci/project/github/zy410419243/mini-xmind/master.svg)
 
 ![img](./docs/assets/demo.gif)
 
