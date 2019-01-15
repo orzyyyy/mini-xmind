@@ -9,6 +9,10 @@ import omit from 'omit.js';
 
 import './assets/BlockGroup.css';
 
+// one Line is mapping to two Block
+// to record it here
+let mapping = {};
+
 export default class Block extends Component {
   static propTypes = {
     className: PropTypes.string,
@@ -35,14 +39,12 @@ export default class Block extends Component {
     // for Line, two point create a line
     this.checkBlockClickList = {};
     this.blockDOM = {};
-    // one Line is mapping to two Block
-    // to record it here
-    this.mapping = {};
   }
 
   static getDerivedStateFromProps(nextProps, nextState) {
     const { data, onChange } = nextProps;
 
+    mapping = Object.assign({}, mapping, nextProps.lineData);
     if (
       Object.keys(nextProps.lineData).length !=
       Object.keys(nextState.lineData).length
@@ -88,7 +90,8 @@ export default class Block extends Component {
   // and clear checkBlockClickList
   handleBlockClick = blockKey => {
     let { checkBlockClickList, blockDOM } = this;
-    let { lineData, onChange, data } = this.props;
+    let { onChange } = this.props;
+    const { lineData, data } = this.state;
     const lineKey = generateKey('line');
 
     checkBlockClickList[blockKey] = { current: blockDOM[blockKey] };
@@ -99,7 +102,7 @@ export default class Block extends Component {
     }
 
     if (Object.keys(checkBlockClickList).length == 2) {
-      if (!this.shouldPaintLine(this.mapping, checkBlockClickList, lineData)) {
+      if (!this.shouldPaintLine(checkBlockClickList, lineData)) {
         this.checkBlockClickList = {};
         return;
       }
@@ -108,11 +111,12 @@ export default class Block extends Component {
         lineData,
         lineKey,
       );
+
       onChange && onChange(data, result);
 
       this.checkBlockClickList = {};
       // record mapping for arrow
-      this.mapping[lineKey] = {
+      mapping[lineKey] = {
         fromKey,
         toKey,
       };
@@ -145,14 +149,17 @@ export default class Block extends Component {
       to: toNode,
     };
 
-    return lineData;
+    return {
+      result: lineData,
+      ...common,
+    };
   };
 
   saveBlock = (ref, blockKey) => {
     this.blockDOM[blockKey] = ReactDOM.findDOMNode(ref);
   };
 
-  shouldPaintLine = (mapping, checkBlockClickList, linesProps) => {
+  shouldPaintLine = (checkBlockClickList, linesProps) => {
     if (!Object.keys(linesProps).length) {
       return true;
     }

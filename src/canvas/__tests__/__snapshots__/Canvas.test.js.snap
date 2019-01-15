@@ -132,6 +132,43 @@ exports[`Canvas Block renders correctly 1`] = `
         >
           <div
             className="BlockGroup animate-appear react-draggable"
+            data={
+              Object {
+                "test1": Object {
+                  "style": Object {
+                    "background": "#F96",
+                    "border": "1px solid #aaa",
+                    "borderRadius": "10px",
+                    "height": 80,
+                    "width": 100,
+                  },
+                  "x": 90,
+                  "y": 50,
+                },
+                "test2": Object {
+                  "style": Object {
+                    "background": "#F96",
+                    "border": "1px solid #aaa",
+                    "borderRadius": "10px",
+                    "height": 80,
+                    "width": 100,
+                  },
+                  "x": 20,
+                  "y": 150,
+                },
+                "test3": Object {
+                  "style": Object {
+                    "background": "#F96",
+                    "border": "1px solid #aaa",
+                    "borderRadius": "10px",
+                    "height": 80,
+                    "width": 100,
+                  },
+                  "x": 100,
+                  "y": 100,
+                },
+              }
+            }
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
@@ -219,6 +256,43 @@ exports[`Canvas Block renders correctly 1`] = `
         >
           <div
             className="BlockGroup animate-appear react-draggable"
+            data={
+              Object {
+                "test1": Object {
+                  "style": Object {
+                    "background": "#F96",
+                    "border": "1px solid #aaa",
+                    "borderRadius": "10px",
+                    "height": 80,
+                    "width": 100,
+                  },
+                  "x": 90,
+                  "y": 50,
+                },
+                "test2": Object {
+                  "style": Object {
+                    "background": "#F96",
+                    "border": "1px solid #aaa",
+                    "borderRadius": "10px",
+                    "height": 80,
+                    "width": 100,
+                  },
+                  "x": 20,
+                  "y": 150,
+                },
+                "test3": Object {
+                  "style": Object {
+                    "background": "#F96",
+                    "border": "1px solid #aaa",
+                    "borderRadius": "10px",
+                    "height": 80,
+                    "width": 100,
+                  },
+                  "x": 100,
+                  "y": 100,
+                },
+              }
+            }
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
@@ -306,6 +380,43 @@ exports[`Canvas Block renders correctly 1`] = `
         >
           <div
             className="BlockGroup animate-appear react-draggable"
+            data={
+              Object {
+                "test1": Object {
+                  "style": Object {
+                    "background": "#F96",
+                    "border": "1px solid #aaa",
+                    "borderRadius": "10px",
+                    "height": 80,
+                    "width": 100,
+                  },
+                  "x": 90,
+                  "y": 50,
+                },
+                "test2": Object {
+                  "style": Object {
+                    "background": "#F96",
+                    "border": "1px solid #aaa",
+                    "borderRadius": "10px",
+                    "height": 80,
+                    "width": 100,
+                  },
+                  "x": 20,
+                  "y": 150,
+                },
+                "test3": Object {
+                  "style": Object {
+                    "background": "#F96",
+                    "border": "1px solid #aaa",
+                    "borderRadius": "10px",
+                    "height": 80,
+                    "width": 100,
+                  },
+                  "x": 100,
+                  "y": 100,
+                },
+              }
+            }
             onClick={[Function]}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
@@ -329,11 +440,7 @@ exports[`Canvas Block renders correctly 1`] = `
     </Block>
     <LineGroup
       data={Object {}}
-    >
-      <div
-        className="LineGroup"
-      />
-    </LineGroup>
+    />
     <TagGroup
       data={Object {}}
       onChange={[Function]}
@@ -373,11 +480,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
     />
     <LineGroup
       data={Object {}}
-    >
-      <div
-        className="LineGroup"
-      />
-    </LineGroup>
+    />
     <TagGroup
       data={Object {}}
       onChange={[Function]}
