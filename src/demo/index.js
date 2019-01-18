@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import Canvas from '../canvas';
 import Toolbar from '../tools';
 import { Button } from 'antd';
@@ -20,7 +19,8 @@ export default class Demo extends Component {
     const data = DataCollector.getAll();
     const treeData = JSON.stringify(data);
     // eslint-disable-next-line
-    console.log(treeData);
+    // console.log(treeData);
+    return data;
   };
 
   render = () => {
