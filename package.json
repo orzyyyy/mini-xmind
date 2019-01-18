@@ -5,7 +5,7 @@
     "start": "nino go",
     "test": "nino test",
     "test:u": "nino test -u",
-    "build": "nino koei",
+    "build": "nino koei -c nino.koei.js",
     "dev": "nino koei -w-d",
     "lint": "npx eslint .",
     "prettier": "node ./scripts/prettier.js",
