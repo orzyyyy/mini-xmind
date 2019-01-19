@@ -56,7 +56,7 @@ jobs:
       - checkout
       - *attach_workspace
       - run:
-          command: npm test -- -w 1
+          command: npm test
           environment:
             LIB_DIR: dist
 
