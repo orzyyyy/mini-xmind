@@ -16,10 +16,10 @@ export default class Demo extends Component {
   }
 
   outputData = () => {
-    const data = DataCollector.getAll();
+    let data = DataCollector.getAll();
     const treeData = JSON.stringify(data);
     // eslint-disable-next-line
-    // console.log(treeData);
+    console.log(treeData);
     return data;
   };
 
