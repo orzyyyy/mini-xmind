@@ -52,7 +52,6 @@ jobs:
             - dist
   test_dist:
     <<: *container_config
-    <<: *react_16
     steps:
       - checkout
       - *attach_workspace
