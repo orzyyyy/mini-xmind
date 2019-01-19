@@ -45,7 +45,7 @@ jobs:
       - checkout
       - *attach_workspace
       - run: npm run build
-      - run: node ./scripts/dist.test.js
+      - run: node ./scripts/dekko.js
       - persist_to_workspace:
           root: ~/mini-xmind
           paths:
