@@ -56,7 +56,7 @@ jobs:
       - checkout
       - *attach_workspace
       - run:
-          command: nino test -u
+          command: npm test -- -u
           environment:
             LIB_DIR: dist
 
