@@ -39,11 +39,39 @@ jobs:
       - checkout
       - *attach_workspace
       - run: npm test
+  dist:
+    <<: *container_config
+    steps:
+      - checkout
+      - *attach_workspace
+      - run: npm run build
+      - run: node ./scripts/dist.test.js
+      - persist_to_workspace:
+          root: ~/mini-xmind
+          paths:
+            - dist
+  test_dist:
+    <<: *container_config
+    <<: *react_16
+    steps:
+      - checkout
+      - *attach_workspace
+      - run:
+          command: npm test -- -w 1
+          environment:
+            LIB_DIR: dist
+
 workflows:
   version: 2
   build:
     jobs:
       - setup
+      - dist:
+          requires:
+            - setup
+      - test_dist:
+          requires:
+            - dist
       - test:
           requires:
             - setup

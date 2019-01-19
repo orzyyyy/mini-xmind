@@ -14,7 +14,8 @@
   "license": "MIT",
   "dependencies": {
     "antd": "^3.12.3",
-    "nino-cli": "^0.2.0",
+    "dekko": "^0.2.1",
+    "nino-cli": "^0.2.1",
     "omit.js": "^1.0.0",
     "react-draggable": "^3.1.1"
   },
