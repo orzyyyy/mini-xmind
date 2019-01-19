@@ -1,5 +1,4 @@
 const placements = ['top', 'bottom', 'left', 'right'];
-
 //   _________
 //  |         |
 //  | target  |

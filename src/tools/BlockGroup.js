@@ -6,7 +6,6 @@ import Draggable from 'react-draggable';
 import { noop } from '../utils/commonUtil';
 import { generateKey } from '../utils/LineUtil';
 import omit from 'omit.js';
-
 import './assets/BlockGroup.css';
 
 // one Line is mapping to two Block

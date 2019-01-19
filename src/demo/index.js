@@ -3,7 +3,6 @@ import Canvas from '../canvas';
 import Toolbar from '../tools';
 import { Button } from 'antd';
 import mapping from '../mock/mapping.json';
-
 import './assets/demo.css';
 
 export default class Demo extends Component {
