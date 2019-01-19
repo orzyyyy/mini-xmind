@@ -1,10 +1,6 @@
 const $ = require('dekko');
 const chalk = require('chalk');
 
-$('dist')
-  .isDirectory()
-  .hasFile('antd.css');
-
 $('dist/lib')
   .isDirectory()
   .hasFile('canvas.js')
