@@ -2,6 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import Canvas from '..';
 import Listener from '../../utils/GlobalListener';
+import mapping from '../../mock/mapping.json';
 import 'nino-cli/scripts/setup';
 
 const style = {
@@ -82,5 +83,14 @@ describe('Canvas', () => {
     blocks.at(0).simulate('click');
     blocks.at(1).simulate('click');
     expect(wrapper.find('.stepped-line-to').length).toBe(1);
+  });
+
+  it('when passing data, canvas should render mapping correctly', () => {
+    const wrapper = createWrapper();
+    wrapper.setProps({ data: mapping });
+
+    expect(wrapper.find('.BlockGroup').length).toBe(3);
+    expect(wrapper.find('.TagGroup').length).toBe(3);
+    expect(wrapper).toMatchSnapshot();
   });
 });

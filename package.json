@@ -5,7 +5,7 @@
     "start": "nino go",
     "test": "nino test",
     "test:u": "nino test -u",
-    "build": "nino koei",
+    "build": "nino koei -c nino.koei.js",
     "dev": "nino koei -w-d",
     "lint": "npx eslint .",
     "prettier": "node ./scripts/prettier.js",
@@ -14,7 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "antd": "^3.12.3",
-    "nino-cli": "^0.1.2",
+    "nino-cli": "^0.2.0",
     "omit.js": "^1.0.0",
     "react-draggable": "^3.1.1"
   },
