@@ -1,0 +1,7 @@
+/src/
+/scripts/
+.eslintignore
+.eslintrc.js
+/.circleci/
+/.github/
+.prettierrc
