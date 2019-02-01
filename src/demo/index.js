@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Canvas from '../canvas';
+import mapping from '../mock/mapping.json';
 import Toolbar from '../tools';
 import { Button } from 'antd';
 import './assets/demo.css';
@@ -14,9 +15,13 @@ export default class Demo extends Component {
   }
 
   componentDidMount = () => {
-    fetch('../mock/mapping.json')
-      .then(result => result.json())
-      .then(data => this.setState({ data }));
+    if (fetch) {
+      fetch('../mock/mapping.json')
+        .then(result => result.json())
+        .then(data => this.setState({ data }));
+    } else {
+      this.setState({ data: mapping });
+    }
   };
 
   outputData = () => {
