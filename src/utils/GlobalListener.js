@@ -39,5 +39,9 @@ export default class GlobalListener {
     return this.meta[key];
   };
 
+  clear = () => {
+    this.meta = {};
+  };
+
   isListenerExist = name => !!this.listeners[name];
 }
