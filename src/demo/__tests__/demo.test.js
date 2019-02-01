@@ -4,8 +4,6 @@ import Demo from '..';
 import Listener from '../../utils/GlobalListener';
 import mapping from '../../mock/mapping.json';
 import 'nino-cli/scripts/setup';
-import Toolbar from '../../tools';
-import Canvas from '../../canvas';
 
 const fetch = window.fetch;
 describe('demo', () => {
@@ -19,14 +17,12 @@ describe('demo', () => {
     window.fetch = fetch;
   });
 
-  it('render correctly', () => {
-    const wrapper = mount(
-      <div className="Demo">
-        <Toolbar />
-        <Canvas data={mapping} />
-      </div>,
-    );
-    expect(wrapper).toMatchSnapshot();
+  it('render correctly', done => {
+    const wrapper = mount(<Demo />);
+    setTimeout(() => {
+      expect(wrapper).toMatchSnapshot();
+      done();
+    }, 0);
   });
 
   it('when button is clicked, it should return layout info', () => {
