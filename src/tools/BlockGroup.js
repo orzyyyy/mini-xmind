@@ -12,6 +12,27 @@ import './assets/BlockGroup.css';
 // to record it here
 let mapping = {};
 
+let blockDOM = {};
+
+const addBlockDom = (lineData, blockDOM) => {
+  for (let key in lineData) {
+    const { fromKey, toKey } = lineData[key];
+
+    for (let blockKey in blockDOM) {
+      const value = blockDOM[blockKey];
+
+      if (fromKey == blockKey) {
+        lineData[key].from = value;
+      }
+
+      if (toKey == blockKey) {
+        lineData[key].to = value;
+      }
+    }
+  }
+  return lineData;
+};
+
 export default class Block extends Component {
   static propTypes = {
     className: PropTypes.string,
@@ -37,7 +58,6 @@ export default class Block extends Component {
 
     // for Line, two point create a line
     this.checkBlockClickList = {};
-    this.blockDOM = {};
   }
 
   static getDerivedStateFromProps(nextProps, nextState) {
@@ -48,7 +68,11 @@ export default class Block extends Component {
       Object.keys(nextProps.lineData).length !=
       Object.keys(nextState.lineData).length
     ) {
-      onChange && onChange(data, nextProps.lineData);
+      // hack: when lineData is loaded, blockDOM is not mounted
+      setTimeout(() => {
+        const lineData = addBlockDom(nextProps.lineData, blockDOM);
+        onChange && onChange(data, lineData);
+      }, 0);
     }
 
     return {
@@ -58,23 +82,10 @@ export default class Block extends Component {
   }
 
   componentDidMount = () => {
-    const { blockDOM, props } = this;
+    const { props } = this;
     const { lineData } = props;
-    for (let key in lineData) {
-      const { fromKey, toKey } = lineData[key];
 
-      for (let blockKey in blockDOM) {
-        const value = blockDOM[blockKey];
-
-        if (fromKey == blockKey) {
-          lineData[key].from = value;
-        }
-
-        if (toKey == blockKey) {
-          lineData[key].to = value;
-        }
-      }
-    }
+    addBlockDom(lineData, blockDOM);
   };
 
   handleStop = ({ x, y }, blockKey) => {
@@ -88,7 +99,7 @@ export default class Block extends Component {
   // when Block clicked twice, generate a Line
   // and clear checkBlockClickList
   handleBlockClick = blockKey => {
-    let { checkBlockClickList, blockDOM } = this;
+    let { checkBlockClickList } = this;
     let { onChange } = this.props;
     const { lineData, data } = this.state;
     const lineKey = generateKey('line');
@@ -155,7 +166,7 @@ export default class Block extends Component {
   };
 
   saveBlock = (ref, blockKey) => {
-    this.blockDOM[blockKey] = ReactDOM.findDOMNode(ref);
+    blockDOM[blockKey] = ReactDOM.findDOMNode(ref);
   };
 
   shouldPaintLine = (checkBlockClickList, linesProps) => {
