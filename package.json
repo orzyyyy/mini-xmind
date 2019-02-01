@@ -10,7 +10,8 @@
     "lint": "npx eslint .",
     "prettier": "node ./scripts/prettier.js",
     "lint-staged": "lint-staged",
-    "pub": "npm config set registry=https://registry.npmjs.org && npm publish && npm config set registry=https://registry.npm.taobao.org"
+    "backup": "npm config set registry=https://registry.npmjs.org && npm publish && npm config set registry=https://registry.npm.taobao.org",
+    "pub": "git push origin master && npm publish"
   },
   "license": "MIT",
   "dependencies": {
