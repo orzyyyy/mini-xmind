@@ -97,7 +97,7 @@ export default class LineTo extends Component {
   }
 
   detect() {
-    const { from, to } = this.props;
+    const { from, to, offset } = this.props;
 
     if (!from || !to) {
       return;
@@ -109,8 +109,8 @@ export default class LineTo extends Component {
     const box0 = from.getBoundingClientRect();
     const box1 = to.getBoundingClientRect();
 
-    let offsetX = window.pageXOffset;
-    let offsetY = window.pageYOffset;
+    const offsetX = window.pageXOffset - (offset.x || 0);
+    const offsetY = window.pageYOffset - (offset.y || 0);
 
     const x0 = box0.left + box0.width * anchor0.x + offsetX;
     const x1 = box1.left + box1.width * anchor1.x + offsetX;

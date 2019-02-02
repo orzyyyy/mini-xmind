@@ -18,10 +18,14 @@ export default class Line extends PureComponent {
   static defaultProps = {
     className: '',
     style: {},
+    x0: 0,
+    y0: 0,
+    x1: 0,
+    y1: 0,
   };
 
   render() {
-    const { x0, y0, x1, y1, style, ...rest } = this.props;
+    const { x0, y0, x1, y1, style, zIndex, className, ...rest } = this.props;
 
     const dy = y1 - y0;
     const dx = x1 - x0;
@@ -34,9 +38,7 @@ export default class Line extends PureComponent {
       top: `${y0}px`,
       left: `${x0}px`,
       width: `${length}px`,
-      zIndex: Number.isFinite(this.props.zIndex)
-        ? String(this.props.zIndex)
-        : '1',
+      zIndex: Number.isFinite(zIndex) ? String(zIndex) : '1',
       transform: `rotate(${angle}deg)`,
       // Rotate around (x0, y0)
       transformOrigin: '0 0',
@@ -49,7 +51,7 @@ export default class Line extends PureComponent {
     };
 
     const props = {
-      className: this.props.className,
+      className,
       style: Object.assign({}, defaultStyle, positionStyle, style),
     };
 
