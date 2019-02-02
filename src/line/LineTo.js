@@ -57,11 +57,13 @@ export default class LineTo extends Component {
     to: PropTypes.object.isRequired,
     fromAnchor: PropTypes.string,
     toAnchor: PropTypes.string,
+    offset: PropTypes.object,
   };
 
   static defaultProps = {
     className: '',
     style: {},
+    offset: { x: 0, y: 0 },
   };
 
   static getDerivedStateFromProps(nextProps, state) {
@@ -109,8 +111,8 @@ export default class LineTo extends Component {
     const box0 = from.getBoundingClientRect();
     const box1 = to.getBoundingClientRect();
 
-    const offsetX = window.pageXOffset - (offset.x || 0);
-    const offsetY = window.pageYOffset - (offset.y || 0);
+    const offsetX = window.pageXOffset - offset.x;
+    const offsetY = window.pageYOffset - offset.y;
 
     const x0 = box0.left + box0.width * anchor0.x + offsetX;
     const x1 = box1.left + box1.width * anchor1.x + offsetX;
