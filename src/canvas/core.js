@@ -5,6 +5,7 @@ import LineGroup from '../tools/LineGroup';
 import { preventDefault, generateKey } from '../utils/LineUtil';
 import BlockGroup from '../tools/BlockGroup';
 import TagGroup from '../tools/TagGroup';
+import Draggable from 'react-draggable';
 
 export default class Canvas extends Component {
   static propTypes = {
@@ -19,15 +20,21 @@ export default class Canvas extends Component {
     data: {},
   };
 
-  static getDerivedStateFromProps(nextProps) {
+  static getDerivedStateFromProps(nextProps, nextState) {
     const data = nextProps.data;
     if (Object.keys(data) != 0) {
-      const { BlockGroup, TagGroup, LineGroup } = data;
+      const { BlockGroup, TagGroup, LineGroup, CanvasPosition } = data;
+
+      let position = nextState.position;
+      if (position.x == 0 && position.y == 0) {
+        position = CanvasPosition;
+      }
 
       return {
         blockProps: BlockGroup,
         tagProps: TagGroup,
         linesProps: LineGroup,
+        position,
       };
     }
     return null;
@@ -40,6 +47,7 @@ export default class Canvas extends Component {
       blockProps: {},
       linesProps: {},
       tagProps: {},
+      position: { x: 0, y: 0 },
     };
   }
 
@@ -86,25 +94,36 @@ export default class Canvas extends Component {
     }
   };
 
+  handleDrag = (event, { x, y }) => {
+    this.setState({ position: { x, y } });
+  };
+
   render = () => {
     const { className, ...rest } = this.props;
-    const { blockProps, linesProps, tagProps } = this.state;
+    const { blockProps, linesProps, tagProps, position } = this.state;
 
+    DataCollector.set('CanvasPosition', position);
     return (
-      <div
-        className={classNames('Canvas', className)}
-        onDragOver={preventDefault}
-        onDrop={this.onDrop}
-        {...rest}
+      <Draggable
+        onDrag={this.handleDrag}
+        onStop={this.handleDrag}
+        position={position}
       >
-        <BlockGroup
-          data={blockProps}
-          onChange={this.handleBlockChange}
-          lineData={linesProps}
-        />
-        <LineGroup data={linesProps} />
-        <TagGroup data={tagProps} onChange={this.handleTagChange} />
-      </div>
+        <div
+          className={classNames('Canvas', className)}
+          onDragOver={preventDefault}
+          onDrop={this.onDrop}
+          {...rest}
+        >
+          <BlockGroup
+            data={blockProps}
+            onChange={this.handleBlockChange}
+            lineData={linesProps}
+          />
+          <LineGroup data={linesProps} />
+          <TagGroup data={tagProps} onChange={this.handleTagChange} />
+        </div>
+      </Draggable>
     );
   };
 }
