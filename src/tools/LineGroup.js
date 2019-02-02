@@ -34,8 +34,9 @@ export default class LineGroup extends Component {
     };
   }
 
-  generateLines = data =>
-    Object.keys(data).map(lineKey => {
+  generateLines = data => {
+    const { offset } = this.props;
+    return Object.keys(data).map(lineKey => {
       const { from, to } = data[lineKey];
 
       DataCollector.set('LineGroup', {
@@ -47,10 +48,12 @@ export default class LineGroup extends Component {
           to={to}
           key={lineKey}
           orientation="v"
+          offset={offset}
           className="animate-appear"
         />
       );
     });
+  };
 
   render = () => {
     const { data } = this.state;

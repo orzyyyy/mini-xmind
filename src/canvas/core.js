@@ -128,7 +128,7 @@ export default class Canvas extends Component {
             onChange={this.handleBlockChange}
             lineData={linesProps}
           />
-          <LineGroup data={linesProps} />
+          <LineGroup data={linesProps} offset={position} />
           <TagGroup data={tagProps} onChange={this.handleTagChange} />
         </div>
       </Draggable>
