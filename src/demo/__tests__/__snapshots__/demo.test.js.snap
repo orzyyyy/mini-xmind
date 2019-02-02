@@ -200,8 +200,8 @@ exports[`demo render correctly 1`] = `
             },
           },
           "CanvasPosition": Object {
-            "x": 184,
-            "y": 205,
+            "x": -67,
+            "y": 230,
           },
           "LineGroup": Object {
             "line-592694": Object {
@@ -294,8 +294,8 @@ exports[`demo render correctly 1`] = `
         onStop={[Function]}
         position={
           Object {
-            "x": 184,
-            "y": 205,
+            "x": -67,
+            "y": 230,
           }
         }
         scale={1}
@@ -326,8 +326,8 @@ exports[`demo render correctly 1`] = `
           onStop={[Function]}
           position={
             Object {
-              "x": 184,
-              "y": 205,
+              "x": -67,
+              "y": 230,
             }
           }
           scale={1}
@@ -373,8 +373,8 @@ exports[`demo render correctly 1`] = `
                   },
                 },
                 "CanvasPosition": Object {
-                  "x": 184,
-                  "y": 205,
+                  "x": -67,
+                  "y": 230,
                 },
                 "LineGroup": Object {
                   "line-592694": Object {
@@ -449,7 +449,7 @@ exports[`demo render correctly 1`] = `
             style={
               Object {
                 "touchAction": "none",
-                "transform": "translate(184px,205px)",
+                "transform": "translate(-67px,230px)",
               }
             }
             transform={null}
@@ -933,6 +933,12 @@ exports[`demo render correctly 1`] = `
                   },
                 }
               }
+              offset={
+                Object {
+                  "x": -67,
+                  "y": 230,
+                }
+              }
             />
             <TagGroup
               data={
@@ -975,7 +981,7 @@ exports[`demo render correctly 1`] = `
                 allowAnyClick={false}
                 axis="both"
                 bounds={false}
-                cancel={null}
+                cancel=".not-draggable"
                 defaultClassName="react-draggable"
                 defaultClassNameDragged="react-draggable-dragged"
                 defaultClassNameDragging="react-draggable-dragging"
@@ -1008,7 +1014,7 @@ exports[`demo render correctly 1`] = `
                   allowAnyClick={false}
                   axis="both"
                   bounds={false}
-                  cancel={null}
+                  cancel=".not-draggable"
                   defaultClassName="react-draggable"
                   defaultClassNameDragged="react-draggable-dragged"
                   defaultClassNameDragging="react-draggable-dragging"
@@ -1095,7 +1101,7 @@ exports[`demo render correctly 1`] = `
                 allowAnyClick={false}
                 axis="both"
                 bounds={false}
-                cancel={null}
+                cancel=".not-draggable"
                 defaultClassName="react-draggable"
                 defaultClassNameDragged="react-draggable-dragged"
                 defaultClassNameDragging="react-draggable-dragging"
@@ -1128,7 +1134,7 @@ exports[`demo render correctly 1`] = `
                   allowAnyClick={false}
                   axis="both"
                   bounds={false}
-                  cancel={null}
+                  cancel=".not-draggable"
                   defaultClassName="react-draggable"
                   defaultClassNameDragged="react-draggable-dragged"
                   defaultClassNameDragging="react-draggable-dragging"
@@ -1215,7 +1221,7 @@ exports[`demo render correctly 1`] = `
                 allowAnyClick={false}
                 axis="both"
                 bounds={false}
-                cancel={null}
+                cancel=".not-draggable"
                 defaultClassName="react-draggable"
                 defaultClassNameDragged="react-draggable-dragged"
                 defaultClassNameDragging="react-draggable-dragging"
@@ -1248,7 +1254,7 @@ exports[`demo render correctly 1`] = `
                   allowAnyClick={false}
                   axis="both"
                   bounds={false}
-                  cancel={null}
+                  cancel=".not-draggable"
                   defaultClassName="react-draggable"
                   defaultClassNameDragged="react-draggable-dragged"
                   defaultClassNameDragging="react-draggable-dragging"
