@@ -5,6 +5,7 @@ import Draggable from 'react-draggable';
 import { Input } from 'antd';
 import { noop } from '../utils/commonUtil';
 import './assets/TagGroup.css';
+import { stopPropagation } from '../utils/LineUtil';
 
 export default class TagGroup extends Component {
   static propTypes = {
@@ -47,6 +48,10 @@ export default class TagGroup extends Component {
     this.setState({ data });
   };
 
+  handleDragStart = e => {
+    stopPropagation(e);
+  };
+
   render = () => {
     const { className, onChange, ...rest } = this.props;
     const { data } = this.state;
@@ -82,6 +87,7 @@ export default class TagGroup extends Component {
 
       return (
         <Draggable
+          onStart={this.handleDragStart}
           onStop={(e, item) => this.handleStop(item, key)}
           key={key}
           position={{ x, y }}

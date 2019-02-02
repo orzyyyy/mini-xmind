@@ -81,6 +81,10 @@ export function preventDefault(e) {
   e.preventDefault();
 }
 
+export function stopPropagation(e) {
+  e.stopPropagation();
+}
+
 export const generateKey = name => {
   return `${name}-${new Date().getTime() % 1000000}`;
 };

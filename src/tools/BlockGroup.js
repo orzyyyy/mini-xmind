@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Draggable from 'react-draggable';
 import { noop } from '../utils/commonUtil';
-import { generateKey } from '../utils/LineUtil';
+import { generateKey, stopPropagation } from '../utils/LineUtil';
 import omit from 'omit.js';
 import './assets/BlockGroup.css';
 
@@ -196,6 +196,10 @@ export default class Block extends Component {
     return true;
   };
 
+  handleDragStart = e => {
+    stopPropagation(e);
+  };
+
   render() {
     const { className, onChange, ...rest } = this.props;
     const { data } = this.state;
@@ -209,6 +213,7 @@ export default class Block extends Component {
           key={blockKey}
           position={{ x, y }}
           onDrag={e => onChange && onChange(data)}
+          onStart={this.handleDragStart}
         >
           <div
             className={classNames('BlockGroup', 'animate-appear', className)}

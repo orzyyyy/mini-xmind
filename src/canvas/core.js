@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import LineGroup from '../tools/LineGroup';
-import { preventDefault, generateKey } from '../utils/LineUtil';
+import {
+  preventDefault,
+  generateKey,
+  stopPropagation,
+} from '../utils/LineUtil';
 import BlockGroup from '../tools/BlockGroup';
 import TagGroup from '../tools/TagGroup';
 import Draggable from 'react-draggable';
@@ -98,13 +102,21 @@ export default class Canvas extends Component {
     this.setState({ position: { x, y } });
   };
 
+  handleDragStart = e => {
+    stopPropagation(e);
+  };
+
   render = () => {
     const { className, ...rest } = this.props;
     const { blockProps, linesProps, tagProps, position } = this.state;
 
     DataCollector.set('CanvasPosition', position);
     return (
-      <Draggable onDrag={this.handleDrag} position={position}>
+      <Draggable
+        onDrag={this.handleDrag}
+        position={position}
+        onStart={this.handleDragStart}
+      >
         <div
           className={classNames('Canvas', className)}
           onDragOver={preventDefault}
