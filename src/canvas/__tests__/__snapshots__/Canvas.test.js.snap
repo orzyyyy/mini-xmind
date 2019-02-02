@@ -11,441 +11,514 @@ exports[`Canvas Block renders correctly 1`] = `
     }
   }
 >
-  <div
-    className="Canvas"
-    data={Object {}}
-    onDragOver={[Function]}
-    onDrop={[Function]}
-    style={
+  <Draggable
+    allowAnyClick={false}
+    axis="both"
+    bounds={false}
+    cancel={null}
+    defaultClassName="react-draggable"
+    defaultClassNameDragged="react-draggable-dragged"
+    defaultClassNameDragging="react-draggable-dragging"
+    defaultPosition={
       Object {
-        "height": "100%",
-        "width": "100%",
+        "x": 0,
+        "y": 0,
       }
     }
+    disabled={false}
+    enableUserSelectHack={true}
+    grid={null}
+    handle={null}
+    offsetParent={null}
+    onDrag={[Function]}
+    onMouseDown={[Function]}
+    onStart={[Function]}
+    onStop={[Function]}
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1}
+    transform={null}
   >
-    <Block
-      className=""
-      data={
+    <DraggableCore
+      allowAnyClick={false}
+      axis="both"
+      bounds={false}
+      cancel={null}
+      defaultClassName="react-draggable"
+      defaultClassNameDragged="react-draggable-dragged"
+      defaultClassNameDragging="react-draggable-dragging"
+      defaultPosition={
         Object {
-          "test1": Object {
-            "style": Object {
-              "background": "#F96",
-              "border": "1px solid #aaa",
-              "borderRadius": "10px",
-              "height": 80,
-              "width": 100,
-            },
-            "x": 90,
-            "y": 50,
-          },
-          "test2": Object {
-            "style": Object {
-              "background": "#F96",
-              "border": "1px solid #aaa",
-              "borderRadius": "10px",
-              "height": 80,
-              "width": 100,
-            },
-            "x": 20,
-            "y": 150,
-          },
-          "test3": Object {
-            "style": Object {
-              "background": "#F96",
-              "border": "1px solid #aaa",
-              "borderRadius": "10px",
-              "height": 80,
-              "width": 100,
-            },
-            "x": 100,
-            "y": 100,
-          },
+          "x": 0,
+          "y": 0,
         }
       }
-      lineData={Object {}}
-      onChange={[Function]}
+      disabled={false}
+      enableUserSelectHack={true}
+      grid={null}
+      handle={null}
+      offsetParent={null}
+      onDrag={[Function]}
+      onMouseDown={[Function]}
+      onStart={[Function]}
+      onStop={[Function]}
+      position={
+        Object {
+          "x": 0,
+          "y": 0,
+        }
+      }
+      scale={1}
+      transform={null}
     >
-      <Draggable
-        allowAnyClick={false}
-        axis="both"
-        bounds={false}
-        cancel={null}
-        defaultClassName="react-draggable"
-        defaultClassNameDragged="react-draggable-dragged"
-        defaultClassNameDragging="react-draggable-dragging"
-        defaultPosition={
-          Object {
-            "x": 0,
-            "y": 0,
-          }
-        }
-        disabled={false}
-        enableUserSelectHack={true}
-        grid={null}
-        handle={null}
-        key="test1"
-        offsetParent={null}
-        onDrag={[Function]}
+      <div
+        className="Canvas react-draggable"
+        data={Object {}}
+        onDragOver={[Function]}
+        onDrop={[Function]}
         onMouseDown={[Function]}
-        onStart={[Function]}
-        onStop={[Function]}
-        position={
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        style={
           Object {
-            "x": 90,
-            "y": 50,
+            "height": "100%",
+            "touchAction": "none",
+            "transform": "translate(0px,0px)",
+            "width": "100%",
           }
         }
-        scale={1}
         transform={null}
       >
-        <DraggableCore
-          allowAnyClick={false}
-          axis="both"
-          bounds={false}
-          cancel={null}
-          defaultClassName="react-draggable"
-          defaultClassNameDragged="react-draggable-dragged"
-          defaultClassNameDragging="react-draggable-dragging"
-          defaultPosition={
+        <Block
+          className=""
+          data={
             Object {
-              "x": 0,
-              "y": 0,
+              "test1": Object {
+                "style": Object {
+                  "background": "#F96",
+                  "border": "1px solid #aaa",
+                  "borderRadius": "10px",
+                  "height": 80,
+                  "width": 100,
+                },
+                "x": 90,
+                "y": 50,
+              },
+              "test2": Object {
+                "style": Object {
+                  "background": "#F96",
+                  "border": "1px solid #aaa",
+                  "borderRadius": "10px",
+                  "height": 80,
+                  "width": 100,
+                },
+                "x": 20,
+                "y": 150,
+              },
+              "test3": Object {
+                "style": Object {
+                  "background": "#F96",
+                  "border": "1px solid #aaa",
+                  "borderRadius": "10px",
+                  "height": 80,
+                  "width": 100,
+                },
+                "x": 100,
+                "y": 100,
+              },
             }
           }
-          disabled={false}
-          enableUserSelectHack={true}
-          grid={null}
-          handle={null}
-          offsetParent={null}
-          onDrag={[Function]}
-          onMouseDown={[Function]}
-          onStart={[Function]}
-          onStop={[Function]}
-          position={
-            Object {
-              "x": 90,
-              "y": 50,
-            }
-          }
-          scale={1}
-          transform={null}
+          lineData={Object {}}
+          onChange={[Function]}
         >
-          <div
-            className="BlockGroup animate-appear react-draggable"
-            data={
+          <Draggable
+            allowAnyClick={false}
+            axis="both"
+            bounds={false}
+            cancel={null}
+            defaultClassName="react-draggable"
+            defaultClassNameDragged="react-draggable-dragged"
+            defaultClassNameDragging="react-draggable-dragging"
+            defaultPosition={
               Object {
-                "test1": Object {
-                  "style": Object {
-                    "background": "#F96",
-                    "border": "1px solid #aaa",
-                    "borderRadius": "10px",
-                    "height": 80,
-                    "width": 100,
-                  },
+                "x": 0,
+                "y": 0,
+              }
+            }
+            disabled={false}
+            enableUserSelectHack={true}
+            grid={null}
+            handle={null}
+            key="test1"
+            offsetParent={null}
+            onDrag={[Function]}
+            onMouseDown={[Function]}
+            onStart={[Function]}
+            onStop={[Function]}
+            position={
+              Object {
+                "x": 90,
+                "y": 50,
+              }
+            }
+            scale={1}
+            transform={null}
+          >
+            <DraggableCore
+              allowAnyClick={false}
+              axis="both"
+              bounds={false}
+              cancel={null}
+              defaultClassName="react-draggable"
+              defaultClassNameDragged="react-draggable-dragged"
+              defaultClassNameDragging="react-draggable-dragging"
+              defaultPosition={
+                Object {
+                  "x": 0,
+                  "y": 0,
+                }
+              }
+              disabled={false}
+              enableUserSelectHack={true}
+              grid={null}
+              handle={null}
+              offsetParent={null}
+              onDrag={[Function]}
+              onMouseDown={[Function]}
+              onStart={[Function]}
+              onStop={[Function]}
+              position={
+                Object {
                   "x": 90,
                   "y": 50,
-                },
-                "test2": Object {
-                  "style": Object {
+                }
+              }
+              scale={1}
+              transform={null}
+            >
+              <div
+                className="BlockGroup animate-appear react-draggable"
+                data={
+                  Object {
+                    "test1": Object {
+                      "style": Object {
+                        "background": "#F96",
+                        "border": "1px solid #aaa",
+                        "borderRadius": "10px",
+                        "height": 80,
+                        "width": 100,
+                      },
+                      "x": 90,
+                      "y": 50,
+                    },
+                    "test2": Object {
+                      "style": Object {
+                        "background": "#F96",
+                        "border": "1px solid #aaa",
+                        "borderRadius": "10px",
+                        "height": 80,
+                        "width": 100,
+                      },
+                      "x": 20,
+                      "y": 150,
+                    },
+                    "test3": Object {
+                      "style": Object {
+                        "background": "#F96",
+                        "border": "1px solid #aaa",
+                        "borderRadius": "10px",
+                        "height": 80,
+                        "width": 100,
+                      },
+                      "x": 100,
+                      "y": 100,
+                    },
+                  }
+                }
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
                     "background": "#F96",
                     "border": "1px solid #aaa",
                     "borderRadius": "10px",
                     "height": 80,
+                    "touchAction": "none",
+                    "transform": "translate(90px,50px)",
                     "width": 100,
-                  },
+                  }
+                }
+                transform={null}
+              />
+            </DraggableCore>
+          </Draggable>
+          <Draggable
+            allowAnyClick={false}
+            axis="both"
+            bounds={false}
+            cancel={null}
+            defaultClassName="react-draggable"
+            defaultClassNameDragged="react-draggable-dragged"
+            defaultClassNameDragging="react-draggable-dragging"
+            defaultPosition={
+              Object {
+                "x": 0,
+                "y": 0,
+              }
+            }
+            disabled={false}
+            enableUserSelectHack={true}
+            grid={null}
+            handle={null}
+            key="test2"
+            offsetParent={null}
+            onDrag={[Function]}
+            onMouseDown={[Function]}
+            onStart={[Function]}
+            onStop={[Function]}
+            position={
+              Object {
+                "x": 20,
+                "y": 150,
+              }
+            }
+            scale={1}
+            transform={null}
+          >
+            <DraggableCore
+              allowAnyClick={false}
+              axis="both"
+              bounds={false}
+              cancel={null}
+              defaultClassName="react-draggable"
+              defaultClassNameDragged="react-draggable-dragged"
+              defaultClassNameDragging="react-draggable-dragging"
+              defaultPosition={
+                Object {
+                  "x": 0,
+                  "y": 0,
+                }
+              }
+              disabled={false}
+              enableUserSelectHack={true}
+              grid={null}
+              handle={null}
+              offsetParent={null}
+              onDrag={[Function]}
+              onMouseDown={[Function]}
+              onStart={[Function]}
+              onStop={[Function]}
+              position={
+                Object {
                   "x": 20,
                   "y": 150,
-                },
-                "test3": Object {
-                  "style": Object {
+                }
+              }
+              scale={1}
+              transform={null}
+            >
+              <div
+                className="BlockGroup animate-appear react-draggable"
+                data={
+                  Object {
+                    "test1": Object {
+                      "style": Object {
+                        "background": "#F96",
+                        "border": "1px solid #aaa",
+                        "borderRadius": "10px",
+                        "height": 80,
+                        "width": 100,
+                      },
+                      "x": 90,
+                      "y": 50,
+                    },
+                    "test2": Object {
+                      "style": Object {
+                        "background": "#F96",
+                        "border": "1px solid #aaa",
+                        "borderRadius": "10px",
+                        "height": 80,
+                        "width": 100,
+                      },
+                      "x": 20,
+                      "y": 150,
+                    },
+                    "test3": Object {
+                      "style": Object {
+                        "background": "#F96",
+                        "border": "1px solid #aaa",
+                        "borderRadius": "10px",
+                        "height": 80,
+                        "width": 100,
+                      },
+                      "x": 100,
+                      "y": 100,
+                    },
+                  }
+                }
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
                     "background": "#F96",
                     "border": "1px solid #aaa",
                     "borderRadius": "10px",
                     "height": 80,
+                    "touchAction": "none",
+                    "transform": "translate(20px,150px)",
                     "width": 100,
-                  },
+                  }
+                }
+                transform={null}
+              />
+            </DraggableCore>
+          </Draggable>
+          <Draggable
+            allowAnyClick={false}
+            axis="both"
+            bounds={false}
+            cancel={null}
+            defaultClassName="react-draggable"
+            defaultClassNameDragged="react-draggable-dragged"
+            defaultClassNameDragging="react-draggable-dragging"
+            defaultPosition={
+              Object {
+                "x": 0,
+                "y": 0,
+              }
+            }
+            disabled={false}
+            enableUserSelectHack={true}
+            grid={null}
+            handle={null}
+            key="test3"
+            offsetParent={null}
+            onDrag={[Function]}
+            onMouseDown={[Function]}
+            onStart={[Function]}
+            onStop={[Function]}
+            position={
+              Object {
+                "x": 100,
+                "y": 100,
+              }
+            }
+            scale={1}
+            transform={null}
+          >
+            <DraggableCore
+              allowAnyClick={false}
+              axis="both"
+              bounds={false}
+              cancel={null}
+              defaultClassName="react-draggable"
+              defaultClassNameDragged="react-draggable-dragged"
+              defaultClassNameDragging="react-draggable-dragging"
+              defaultPosition={
+                Object {
+                  "x": 0,
+                  "y": 0,
+                }
+              }
+              disabled={false}
+              enableUserSelectHack={true}
+              grid={null}
+              handle={null}
+              offsetParent={null}
+              onDrag={[Function]}
+              onMouseDown={[Function]}
+              onStart={[Function]}
+              onStop={[Function]}
+              position={
+                Object {
                   "x": 100,
                   "y": 100,
-                },
+                }
               }
-            }
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            style={
-              Object {
-                "background": "#F96",
-                "border": "1px solid #aaa",
-                "borderRadius": "10px",
-                "height": 80,
-                "touchAction": "none",
-                "transform": "translate(90px,50px)",
-                "width": 100,
-              }
-            }
-            transform={null}
-          />
-        </DraggableCore>
-      </Draggable>
-      <Draggable
-        allowAnyClick={false}
-        axis="both"
-        bounds={false}
-        cancel={null}
-        defaultClassName="react-draggable"
-        defaultClassNameDragged="react-draggable-dragged"
-        defaultClassNameDragging="react-draggable-dragging"
-        defaultPosition={
-          Object {
-            "x": 0,
-            "y": 0,
-          }
-        }
-        disabled={false}
-        enableUserSelectHack={true}
-        grid={null}
-        handle={null}
-        key="test2"
-        offsetParent={null}
-        onDrag={[Function]}
-        onMouseDown={[Function]}
-        onStart={[Function]}
-        onStop={[Function]}
-        position={
-          Object {
-            "x": 20,
-            "y": 150,
-          }
-        }
-        scale={1}
-        transform={null}
-      >
-        <DraggableCore
-          allowAnyClick={false}
-          axis="both"
-          bounds={false}
-          cancel={null}
-          defaultClassName="react-draggable"
-          defaultClassNameDragged="react-draggable-dragged"
-          defaultClassNameDragging="react-draggable-dragging"
-          defaultPosition={
-            Object {
-              "x": 0,
-              "y": 0,
-            }
-          }
-          disabled={false}
-          enableUserSelectHack={true}
-          grid={null}
-          handle={null}
-          offsetParent={null}
-          onDrag={[Function]}
-          onMouseDown={[Function]}
-          onStart={[Function]}
-          onStop={[Function]}
-          position={
-            Object {
-              "x": 20,
-              "y": 150,
-            }
-          }
-          scale={1}
-          transform={null}
-        >
-          <div
-            className="BlockGroup animate-appear react-draggable"
-            data={
-              Object {
-                "test1": Object {
-                  "style": Object {
+              scale={1}
+              transform={null}
+            >
+              <div
+                className="BlockGroup animate-appear react-draggable"
+                data={
+                  Object {
+                    "test1": Object {
+                      "style": Object {
+                        "background": "#F96",
+                        "border": "1px solid #aaa",
+                        "borderRadius": "10px",
+                        "height": 80,
+                        "width": 100,
+                      },
+                      "x": 90,
+                      "y": 50,
+                    },
+                    "test2": Object {
+                      "style": Object {
+                        "background": "#F96",
+                        "border": "1px solid #aaa",
+                        "borderRadius": "10px",
+                        "height": 80,
+                        "width": 100,
+                      },
+                      "x": 20,
+                      "y": 150,
+                    },
+                    "test3": Object {
+                      "style": Object {
+                        "background": "#F96",
+                        "border": "1px solid #aaa",
+                        "borderRadius": "10px",
+                        "height": 80,
+                        "width": 100,
+                      },
+                      "x": 100,
+                      "y": 100,
+                    },
+                  }
+                }
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
                     "background": "#F96",
                     "border": "1px solid #aaa",
                     "borderRadius": "10px",
                     "height": 80,
+                    "touchAction": "none",
+                    "transform": "translate(100px,100px)",
                     "width": 100,
-                  },
-                  "x": 90,
-                  "y": 50,
-                },
-                "test2": Object {
-                  "style": Object {
-                    "background": "#F96",
-                    "border": "1px solid #aaa",
-                    "borderRadius": "10px",
-                    "height": 80,
-                    "width": 100,
-                  },
-                  "x": 20,
-                  "y": 150,
-                },
-                "test3": Object {
-                  "style": Object {
-                    "background": "#F96",
-                    "border": "1px solid #aaa",
-                    "borderRadius": "10px",
-                    "height": 80,
-                    "width": 100,
-                  },
-                  "x": 100,
-                  "y": 100,
-                },
-              }
-            }
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            style={
-              Object {
-                "background": "#F96",
-                "border": "1px solid #aaa",
-                "borderRadius": "10px",
-                "height": 80,
-                "touchAction": "none",
-                "transform": "translate(20px,150px)",
-                "width": 100,
-              }
-            }
-            transform={null}
-          />
-        </DraggableCore>
-      </Draggable>
-      <Draggable
-        allowAnyClick={false}
-        axis="both"
-        bounds={false}
-        cancel={null}
-        defaultClassName="react-draggable"
-        defaultClassNameDragged="react-draggable-dragged"
-        defaultClassNameDragging="react-draggable-dragging"
-        defaultPosition={
-          Object {
-            "x": 0,
-            "y": 0,
-          }
-        }
-        disabled={false}
-        enableUserSelectHack={true}
-        grid={null}
-        handle={null}
-        key="test3"
-        offsetParent={null}
-        onDrag={[Function]}
-        onMouseDown={[Function]}
-        onStart={[Function]}
-        onStop={[Function]}
-        position={
-          Object {
-            "x": 100,
-            "y": 100,
-          }
-        }
-        scale={1}
-        transform={null}
-      >
-        <DraggableCore
-          allowAnyClick={false}
-          axis="both"
-          bounds={false}
-          cancel={null}
-          defaultClassName="react-draggable"
-          defaultClassNameDragged="react-draggable-dragged"
-          defaultClassNameDragging="react-draggable-dragging"
-          defaultPosition={
-            Object {
-              "x": 0,
-              "y": 0,
-            }
-          }
-          disabled={false}
-          enableUserSelectHack={true}
-          grid={null}
-          handle={null}
-          offsetParent={null}
-          onDrag={[Function]}
-          onMouseDown={[Function]}
-          onStart={[Function]}
-          onStop={[Function]}
-          position={
-            Object {
-              "x": 100,
-              "y": 100,
-            }
-          }
-          scale={1}
-          transform={null}
-        >
-          <div
-            className="BlockGroup animate-appear react-draggable"
-            data={
-              Object {
-                "test1": Object {
-                  "style": Object {
-                    "background": "#F96",
-                    "border": "1px solid #aaa",
-                    "borderRadius": "10px",
-                    "height": 80,
-                    "width": 100,
-                  },
-                  "x": 90,
-                  "y": 50,
-                },
-                "test2": Object {
-                  "style": Object {
-                    "background": "#F96",
-                    "border": "1px solid #aaa",
-                    "borderRadius": "10px",
-                    "height": 80,
-                    "width": 100,
-                  },
-                  "x": 20,
-                  "y": 150,
-                },
-                "test3": Object {
-                  "style": Object {
-                    "background": "#F96",
-                    "border": "1px solid #aaa",
-                    "borderRadius": "10px",
-                    "height": 80,
-                    "width": 100,
-                  },
-                  "x": 100,
-                  "y": 100,
-                },
-              }
-            }
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            style={
-              Object {
-                "background": "#F96",
-                "border": "1px solid #aaa",
-                "borderRadius": "10px",
-                "height": 80,
-                "touchAction": "none",
-                "transform": "translate(100px,100px)",
-                "width": 100,
-              }
-            }
-            transform={null}
-          />
-        </DraggableCore>
-      </Draggable>
-    </Block>
-    <LineGroup
-      data={Object {}}
-    />
-    <TagGroup
-      data={Object {}}
-      onChange={[Function]}
-    />
-  </div>
+                  }
+                }
+                transform={null}
+              />
+            </DraggableCore>
+          </Draggable>
+        </Block>
+        <LineGroup
+          data={Object {}}
+        />
+        <TagGroup
+          data={Object {}}
+          onChange={[Function]}
+        />
+      </div>
+    </DraggableCore>
+  </Draggable>
 </Canvas>
 `;
 
@@ -460,32 +533,105 @@ exports[`Canvas Canvas renders correctly 1`] = `
     }
   }
 >
-  <div
-    className="Canvas"
-    data={Object {}}
-    onDragOver={[Function]}
-    onDrop={[Function]}
-    style={
+  <Draggable
+    allowAnyClick={false}
+    axis="both"
+    bounds={false}
+    cancel={null}
+    defaultClassName="react-draggable"
+    defaultClassNameDragged="react-draggable-dragged"
+    defaultClassNameDragging="react-draggable-dragging"
+    defaultPosition={
       Object {
-        "height": "100%",
-        "width": "100%",
+        "x": 0,
+        "y": 0,
       }
     }
+    disabled={false}
+    enableUserSelectHack={true}
+    grid={null}
+    handle={null}
+    offsetParent={null}
+    onDrag={[Function]}
+    onMouseDown={[Function]}
+    onStart={[Function]}
+    onStop={[Function]}
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1}
+    transform={null}
   >
-    <Block
-      className=""
-      data={Object {}}
-      lineData={Object {}}
-      onChange={[Function]}
-    />
-    <LineGroup
-      data={Object {}}
-    />
-    <TagGroup
-      data={Object {}}
-      onChange={[Function]}
-    />
-  </div>
+    <DraggableCore
+      allowAnyClick={false}
+      axis="both"
+      bounds={false}
+      cancel={null}
+      defaultClassName="react-draggable"
+      defaultClassNameDragged="react-draggable-dragged"
+      defaultClassNameDragging="react-draggable-dragging"
+      defaultPosition={
+        Object {
+          "x": 0,
+          "y": 0,
+        }
+      }
+      disabled={false}
+      enableUserSelectHack={true}
+      grid={null}
+      handle={null}
+      offsetParent={null}
+      onDrag={[Function]}
+      onMouseDown={[Function]}
+      onStart={[Function]}
+      onStop={[Function]}
+      position={
+        Object {
+          "x": 0,
+          "y": 0,
+        }
+      }
+      scale={1}
+      transform={null}
+    >
+      <div
+        className="Canvas react-draggable"
+        data={Object {}}
+        onDragOver={[Function]}
+        onDrop={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        style={
+          Object {
+            "height": "100%",
+            "touchAction": "none",
+            "transform": "translate(0px,0px)",
+            "width": "100%",
+          }
+        }
+        transform={null}
+      >
+        <Block
+          className=""
+          data={Object {}}
+          lineData={Object {}}
+          onChange={[Function]}
+        />
+        <LineGroup
+          data={Object {}}
+        />
+        <TagGroup
+          data={Object {}}
+          onChange={[Function]}
+        />
+      </div>
+    </DraggableCore>
+  </Draggable>
 </Canvas>
 `;
 
@@ -528,6 +674,10 @@ exports[`Canvas when passing data, canvas should render mapping correctly 1`] = 
           "x": 253,
           "y": 525,
         },
+      },
+      "CanvasPosition": Object {
+        "x": 184,
+        "y": 205,
       },
       "LineGroup": Object {
         "line-592694": Object {
@@ -580,936 +730,1013 @@ exports[`Canvas when passing data, canvas should render mapping correctly 1`] = 
     }
   }
 >
-  <div
-    className="Canvas"
-    data={
+  <Draggable
+    allowAnyClick={false}
+    axis="both"
+    bounds={false}
+    cancel={null}
+    defaultClassName="react-draggable"
+    defaultClassNameDragged="react-draggable-dragged"
+    defaultClassNameDragging="react-draggable-dragging"
+    defaultPosition={
       Object {
-        "BlockGroup": Object {
-          "block-623187": Object {
-            "style": Object {
-              "background": "#F96",
-              "border": "1px solid #aaa",
-              "borderRadius": "10px",
-              "height": 80,
-              "width": 100,
-            },
-            "x": 158,
-            "y": 256,
-          },
-          "block-624018": Object {
-            "style": Object {
-              "background": "#F96",
-              "border": "1px solid #aaa",
-              "borderRadius": "10px",
-              "height": 80,
-              "width": 100,
-            },
-            "x": 367,
-            "y": 368,
-          },
-          "block-73377": Object {
-            "style": Object {
-              "background": "#F96",
-              "border": "1px solid #aaa",
-              "borderRadius": "10px",
-              "height": 80,
-              "width": 100,
-            },
-            "x": 253,
-            "y": 525,
-          },
-        },
-        "LineGroup": Object {
-          "line-592694": Object {
-            "fromKey": "block-623187",
-            "toKey": "block-624018",
-          },
-          "line-77619": Object {
-            "fromKey": "block-73377",
-            "toKey": "block-623187",
-          },
-        },
-        "TagGroup": Object {
-          "tag-626505": Object {
-            "editable": false,
-            "input": "test",
-            "style": Object {
-              "height": 32,
-              "width": 100,
-            },
-            "x": 167,
-            "y": 284,
-          },
-          "tag-629962": Object {
-            "editable": false,
-            "input": "test2",
-            "style": Object {
-              "height": 32,
-              "width": 100,
-            },
-            "x": 405,
-            "y": 398,
-          },
-          "tag-80986": Object {
-            "editable": false,
-            "input": "test3",
-            "style": Object {
-              "height": 32,
-              "width": 100,
-            },
-            "x": 286,
-            "y": 555,
-          },
-        },
+        "x": 0,
+        "y": 0,
       }
     }
-    onDragOver={[Function]}
-    onDrop={[Function]}
-    style={
+    disabled={false}
+    enableUserSelectHack={true}
+    grid={null}
+    handle={null}
+    offsetParent={null}
+    onDrag={[Function]}
+    onMouseDown={[Function]}
+    onStart={[Function]}
+    onStop={[Function]}
+    position={
       Object {
-        "height": "100%",
-        "width": "100%",
+        "x": 184,
+        "y": 205,
       }
     }
+    scale={1}
+    transform={null}
   >
-    <Block
-      className=""
-      data={
+    <DraggableCore
+      allowAnyClick={false}
+      axis="both"
+      bounds={false}
+      cancel={null}
+      defaultClassName="react-draggable"
+      defaultClassNameDragged="react-draggable-dragged"
+      defaultClassNameDragging="react-draggable-dragging"
+      defaultPosition={
         Object {
-          "block-623187": Object {
-            "style": Object {
-              "background": "#F96",
-              "border": "1px solid #aaa",
-              "borderRadius": "10px",
-              "height": 80,
-              "width": 100,
-            },
-            "x": 158,
-            "y": 256,
-          },
-          "block-624018": Object {
-            "style": Object {
-              "background": "#F96",
-              "border": "1px solid #aaa",
-              "borderRadius": "10px",
-              "height": 80,
-              "width": 100,
-            },
-            "x": 367,
-            "y": 368,
-          },
-          "block-73377": Object {
-            "style": Object {
-              "background": "#F96",
-              "border": "1px solid #aaa",
-              "borderRadius": "10px",
-              "height": 80,
-              "width": 100,
-            },
-            "x": 253,
-            "y": 525,
-          },
+          "x": 0,
+          "y": 0,
         }
       }
-      lineData={
+      disabled={false}
+      enableUserSelectHack={true}
+      grid={null}
+      handle={null}
+      offsetParent={null}
+      onDrag={[Function]}
+      onMouseDown={[Function]}
+      onStart={[Function]}
+      onStop={[Function]}
+      position={
         Object {
-          "line-592694": Object {
-            "fromKey": "block-623187",
-            "toKey": "block-624018",
-          },
-          "line-77619": Object {
-            "fromKey": "block-73377",
-            "toKey": "block-623187",
-          },
+          "x": 184,
+          "y": 205,
         }
       }
-      onChange={[Function]}
+      scale={1}
+      transform={null}
     >
-      <Draggable
-        allowAnyClick={false}
-        axis="both"
-        bounds={false}
-        cancel={null}
-        defaultClassName="react-draggable"
-        defaultClassNameDragged="react-draggable-dragged"
-        defaultClassNameDragging="react-draggable-dragging"
-        defaultPosition={
+      <div
+        className="Canvas react-draggable"
+        data={
           Object {
-            "x": 0,
-            "y": 0,
-          }
-        }
-        disabled={false}
-        enableUserSelectHack={true}
-        grid={null}
-        handle={null}
-        key="block-623187"
-        offsetParent={null}
-        onDrag={[Function]}
-        onMouseDown={[Function]}
-        onStart={[Function]}
-        onStop={[Function]}
-        position={
-          Object {
-            "x": 158,
-            "y": 256,
-          }
-        }
-        scale={1}
-        transform={null}
-      >
-        <DraggableCore
-          allowAnyClick={false}
-          axis="both"
-          bounds={false}
-          cancel={null}
-          defaultClassName="react-draggable"
-          defaultClassNameDragged="react-draggable-dragged"
-          defaultClassNameDragging="react-draggable-dragging"
-          defaultPosition={
-            Object {
-              "x": 0,
-              "y": 0,
-            }
-          }
-          disabled={false}
-          enableUserSelectHack={true}
-          grid={null}
-          handle={null}
-          offsetParent={null}
-          onDrag={[Function]}
-          onMouseDown={[Function]}
-          onStart={[Function]}
-          onStop={[Function]}
-          position={
-            Object {
-              "x": 158,
-              "y": 256,
-            }
-          }
-          scale={1}
-          transform={null}
-        >
-          <div
-            className="BlockGroup animate-appear react-draggable"
-            data={
-              Object {
-                "block-623187": Object {
-                  "style": Object {
-                    "background": "#F96",
-                    "border": "1px solid #aaa",
-                    "borderRadius": "10px",
-                    "height": 80,
-                    "width": 100,
-                  },
-                  "x": 158,
-                  "y": 256,
+            "BlockGroup": Object {
+              "block-623187": Object {
+                "style": Object {
+                  "background": "#F96",
+                  "border": "1px solid #aaa",
+                  "borderRadius": "10px",
+                  "height": 80,
+                  "width": 100,
                 },
-                "block-624018": Object {
-                  "style": Object {
-                    "background": "#F96",
-                    "border": "1px solid #aaa",
-                    "borderRadius": "10px",
-                    "height": 80,
-                    "width": 100,
-                  },
-                  "x": 367,
-                  "y": 368,
+                "x": 158,
+                "y": 256,
+              },
+              "block-624018": Object {
+                "style": Object {
+                  "background": "#F96",
+                  "border": "1px solid #aaa",
+                  "borderRadius": "10px",
+                  "height": 80,
+                  "width": 100,
                 },
-                "block-73377": Object {
-                  "style": Object {
-                    "background": "#F96",
-                    "border": "1px solid #aaa",
-                    "borderRadius": "10px",
-                    "height": 80,
-                    "width": 100,
-                  },
-                  "x": 253,
-                  "y": 525,
+                "x": 367,
+                "y": 368,
+              },
+              "block-73377": Object {
+                "style": Object {
+                  "background": "#F96",
+                  "border": "1px solid #aaa",
+                  "borderRadius": "10px",
+                  "height": 80,
+                  "width": 100,
                 },
-              }
-            }
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            style={
-              Object {
-                "background": "#F96",
-                "border": "1px solid #aaa",
-                "borderRadius": "10px",
-                "height": 80,
-                "touchAction": "none",
-                "transform": "translate(158px,256px)",
-                "width": 100,
-              }
-            }
-            transform={null}
-          />
-        </DraggableCore>
-      </Draggable>
-      <Draggable
-        allowAnyClick={false}
-        axis="both"
-        bounds={false}
-        cancel={null}
-        defaultClassName="react-draggable"
-        defaultClassNameDragged="react-draggable-dragged"
-        defaultClassNameDragging="react-draggable-dragging"
-        defaultPosition={
-          Object {
-            "x": 0,
-            "y": 0,
-          }
-        }
-        disabled={false}
-        enableUserSelectHack={true}
-        grid={null}
-        handle={null}
-        key="block-624018"
-        offsetParent={null}
-        onDrag={[Function]}
-        onMouseDown={[Function]}
-        onStart={[Function]}
-        onStop={[Function]}
-        position={
-          Object {
-            "x": 367,
-            "y": 368,
-          }
-        }
-        scale={1}
-        transform={null}
-      >
-        <DraggableCore
-          allowAnyClick={false}
-          axis="both"
-          bounds={false}
-          cancel={null}
-          defaultClassName="react-draggable"
-          defaultClassNameDragged="react-draggable-dragged"
-          defaultClassNameDragging="react-draggable-dragging"
-          defaultPosition={
-            Object {
-              "x": 0,
-              "y": 0,
-            }
-          }
-          disabled={false}
-          enableUserSelectHack={true}
-          grid={null}
-          handle={null}
-          offsetParent={null}
-          onDrag={[Function]}
-          onMouseDown={[Function]}
-          onStart={[Function]}
-          onStop={[Function]}
-          position={
-            Object {
-              "x": 367,
-              "y": 368,
-            }
-          }
-          scale={1}
-          transform={null}
-        >
-          <div
-            className="BlockGroup animate-appear react-draggable"
-            data={
-              Object {
-                "block-623187": Object {
-                  "style": Object {
-                    "background": "#F96",
-                    "border": "1px solid #aaa",
-                    "borderRadius": "10px",
-                    "height": 80,
-                    "width": 100,
-                  },
-                  "x": 158,
-                  "y": 256,
-                },
-                "block-624018": Object {
-                  "style": Object {
-                    "background": "#F96",
-                    "border": "1px solid #aaa",
-                    "borderRadius": "10px",
-                    "height": 80,
-                    "width": 100,
-                  },
-                  "x": 367,
-                  "y": 368,
-                },
-                "block-73377": Object {
-                  "style": Object {
-                    "background": "#F96",
-                    "border": "1px solid #aaa",
-                    "borderRadius": "10px",
-                    "height": 80,
-                    "width": 100,
-                  },
-                  "x": 253,
-                  "y": 525,
-                },
-              }
-            }
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            style={
-              Object {
-                "background": "#F96",
-                "border": "1px solid #aaa",
-                "borderRadius": "10px",
-                "height": 80,
-                "touchAction": "none",
-                "transform": "translate(367px,368px)",
-                "width": 100,
-              }
-            }
-            transform={null}
-          />
-        </DraggableCore>
-      </Draggable>
-      <Draggable
-        allowAnyClick={false}
-        axis="both"
-        bounds={false}
-        cancel={null}
-        defaultClassName="react-draggable"
-        defaultClassNameDragged="react-draggable-dragged"
-        defaultClassNameDragging="react-draggable-dragging"
-        defaultPosition={
-          Object {
-            "x": 0,
-            "y": 0,
-          }
-        }
-        disabled={false}
-        enableUserSelectHack={true}
-        grid={null}
-        handle={null}
-        key="block-73377"
-        offsetParent={null}
-        onDrag={[Function]}
-        onMouseDown={[Function]}
-        onStart={[Function]}
-        onStop={[Function]}
-        position={
-          Object {
-            "x": 253,
-            "y": 525,
-          }
-        }
-        scale={1}
-        transform={null}
-      >
-        <DraggableCore
-          allowAnyClick={false}
-          axis="both"
-          bounds={false}
-          cancel={null}
-          defaultClassName="react-draggable"
-          defaultClassNameDragged="react-draggable-dragged"
-          defaultClassNameDragging="react-draggable-dragging"
-          defaultPosition={
-            Object {
-              "x": 0,
-              "y": 0,
-            }
-          }
-          disabled={false}
-          enableUserSelectHack={true}
-          grid={null}
-          handle={null}
-          offsetParent={null}
-          onDrag={[Function]}
-          onMouseDown={[Function]}
-          onStart={[Function]}
-          onStop={[Function]}
-          position={
-            Object {
-              "x": 253,
-              "y": 525,
-            }
-          }
-          scale={1}
-          transform={null}
-        >
-          <div
-            className="BlockGroup animate-appear react-draggable"
-            data={
-              Object {
-                "block-623187": Object {
-                  "style": Object {
-                    "background": "#F96",
-                    "border": "1px solid #aaa",
-                    "borderRadius": "10px",
-                    "height": 80,
-                    "width": 100,
-                  },
-                  "x": 158,
-                  "y": 256,
-                },
-                "block-624018": Object {
-                  "style": Object {
-                    "background": "#F96",
-                    "border": "1px solid #aaa",
-                    "borderRadius": "10px",
-                    "height": 80,
-                    "width": 100,
-                  },
-                  "x": 367,
-                  "y": 368,
-                },
-                "block-73377": Object {
-                  "style": Object {
-                    "background": "#F96",
-                    "border": "1px solid #aaa",
-                    "borderRadius": "10px",
-                    "height": 80,
-                    "width": 100,
-                  },
-                  "x": 253,
-                  "y": 525,
-                },
-              }
-            }
-            onClick={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            style={
-              Object {
-                "background": "#F96",
-                "border": "1px solid #aaa",
-                "borderRadius": "10px",
-                "height": 80,
-                "touchAction": "none",
-                "transform": "translate(253px,525px)",
-                "width": 100,
-              }
-            }
-            transform={null}
-          />
-        </DraggableCore>
-      </Draggable>
-    </Block>
-    <LineGroup
-      data={
-        Object {
-          "line-592694": Object {
-            "fromKey": "block-623187",
-            "toKey": "block-624018",
-          },
-          "line-77619": Object {
-            "fromKey": "block-73377",
-            "toKey": "block-623187",
-          },
-        }
-      }
-    />
-    <TagGroup
-      data={
-        Object {
-          "tag-626505": Object {
-            "editable": false,
-            "input": "test",
-            "style": Object {
-              "height": 32,
-              "width": 100,
+                "x": 253,
+                "y": 525,
+              },
             },
-            "x": 167,
-            "y": 284,
-          },
-          "tag-629962": Object {
-            "editable": false,
-            "input": "test2",
-            "style": Object {
-              "height": 32,
-              "width": 100,
+            "CanvasPosition": Object {
+              "x": 184,
+              "y": 205,
             },
-            "x": 405,
-            "y": 398,
-          },
-          "tag-80986": Object {
-            "editable": false,
-            "input": "test3",
-            "style": Object {
-              "height": 32,
-              "width": 100,
+            "LineGroup": Object {
+              "line-592694": Object {
+                "fromKey": "block-623187",
+                "toKey": "block-624018",
+              },
+              "line-77619": Object {
+                "fromKey": "block-73377",
+                "toKey": "block-623187",
+              },
             },
-            "x": 286,
-            "y": 555,
-          },
-        }
-      }
-      onChange={[Function]}
-    >
-      <Draggable
-        allowAnyClick={false}
-        axis="both"
-        bounds={false}
-        cancel={null}
-        defaultClassName="react-draggable"
-        defaultClassNameDragged="react-draggable-dragged"
-        defaultClassNameDragging="react-draggable-dragging"
-        defaultPosition={
-          Object {
-            "x": 0,
-            "y": 0,
+            "TagGroup": Object {
+              "tag-626505": Object {
+                "editable": false,
+                "input": "test",
+                "style": Object {
+                  "height": 32,
+                  "width": 100,
+                },
+                "x": 167,
+                "y": 284,
+              },
+              "tag-629962": Object {
+                "editable": false,
+                "input": "test2",
+                "style": Object {
+                  "height": 32,
+                  "width": 100,
+                },
+                "x": 405,
+                "y": 398,
+              },
+              "tag-80986": Object {
+                "editable": false,
+                "input": "test3",
+                "style": Object {
+                  "height": 32,
+                  "width": 100,
+                },
+                "x": 286,
+                "y": 555,
+              },
+            },
           }
         }
-        disabled={false}
-        enableUserSelectHack={true}
-        grid={null}
-        handle={null}
-        key="tag-626505"
-        offsetParent={null}
-        onDrag={[Function]}
+        onDragOver={[Function]}
+        onDrop={[Function]}
         onMouseDown={[Function]}
-        onStart={[Function]}
-        onStop={[Function]}
-        position={
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        style={
           Object {
-            "x": 167,
-            "y": 284,
+            "height": "100%",
+            "touchAction": "none",
+            "transform": "translate(184px,205px)",
+            "width": "100%",
           }
         }
-        scale={1}
         transform={null}
       >
-        <DraggableCore
-          allowAnyClick={false}
-          axis="both"
-          bounds={false}
-          cancel={null}
-          defaultClassName="react-draggable"
-          defaultClassNameDragged="react-draggable-dragged"
-          defaultClassNameDragging="react-draggable-dragging"
-          defaultPosition={
+        <Block
+          className=""
+          data={
             Object {
-              "x": 0,
-              "y": 0,
+              "block-623187": Object {
+                "style": Object {
+                  "background": "#F96",
+                  "border": "1px solid #aaa",
+                  "borderRadius": "10px",
+                  "height": 80,
+                  "width": 100,
+                },
+                "x": 158,
+                "y": 256,
+              },
+              "block-624018": Object {
+                "style": Object {
+                  "background": "#F96",
+                  "border": "1px solid #aaa",
+                  "borderRadius": "10px",
+                  "height": 80,
+                  "width": 100,
+                },
+                "x": 367,
+                "y": 368,
+              },
+              "block-73377": Object {
+                "style": Object {
+                  "background": "#F96",
+                  "border": "1px solid #aaa",
+                  "borderRadius": "10px",
+                  "height": 80,
+                  "width": 100,
+                },
+                "x": 253,
+                "y": 525,
+              },
             }
           }
-          disabled={false}
-          enableUserSelectHack={true}
-          grid={null}
-          handle={null}
-          offsetParent={null}
-          onDrag={[Function]}
-          onMouseDown={[Function]}
-          onStart={[Function]}
-          onStop={[Function]}
-          position={
+          lineData={
             Object {
-              "x": 167,
-              "y": 284,
+              "line-592694": Object {
+                "fromKey": "block-623187",
+                "toKey": "block-624018",
+              },
+              "line-77619": Object {
+                "fromKey": "block-73377",
+                "toKey": "block-623187",
+              },
             }
           }
-          scale={1}
-          transform={null}
+          onChange={[Function]}
         >
-          <div
-            className="TagGroup animate-appear react-draggable"
-            data={
+          <Draggable
+            allowAnyClick={false}
+            axis="both"
+            bounds={false}
+            cancel={null}
+            defaultClassName="react-draggable"
+            defaultClassNameDragged="react-draggable-dragged"
+            defaultClassNameDragging="react-draggable-dragging"
+            defaultPosition={
               Object {
-                "tag-626505": Object {
-                  "editable": false,
-                  "input": "test",
-                  "style": Object {
-                    "height": 32,
-                    "width": 100,
-                  },
-                  "x": 167,
-                  "y": 284,
-                },
-                "tag-629962": Object {
-                  "editable": false,
-                  "input": "test2",
-                  "style": Object {
-                    "height": 32,
-                    "width": 100,
-                  },
-                  "x": 405,
-                  "y": 398,
-                },
-                "tag-80986": Object {
-                  "editable": false,
-                  "input": "test3",
-                  "style": Object {
-                    "height": 32,
-                    "width": 100,
-                  },
-                  "x": 286,
-                  "y": 555,
-                },
+                "x": 0,
+                "y": 0,
               }
             }
-            onDoubleClick={[Function]}
+            disabled={false}
+            enableUserSelectHack={true}
+            grid={null}
+            handle={null}
+            key="block-623187"
+            offsetParent={null}
+            onDrag={[Function]}
             onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            style={
+            onStart={[Function]}
+            onStop={[Function]}
+            position={
               Object {
-                "height": 32,
-                "touchAction": "none",
-                "transform": "translate(167px,284px)",
-                "width": 100,
+                "x": 158,
+                "y": 256,
               }
             }
+            scale={1}
             transform={null}
           >
-            test
-          </div>
-        </DraggableCore>
-      </Draggable>
-      <Draggable
-        allowAnyClick={false}
-        axis="both"
-        bounds={false}
-        cancel={null}
-        defaultClassName="react-draggable"
-        defaultClassNameDragged="react-draggable-dragged"
-        defaultClassNameDragging="react-draggable-dragging"
-        defaultPosition={
-          Object {
-            "x": 0,
-            "y": 0,
-          }
-        }
-        disabled={false}
-        enableUserSelectHack={true}
-        grid={null}
-        handle={null}
-        key="tag-629962"
-        offsetParent={null}
-        onDrag={[Function]}
-        onMouseDown={[Function]}
-        onStart={[Function]}
-        onStop={[Function]}
-        position={
-          Object {
-            "x": 405,
-            "y": 398,
-          }
-        }
-        scale={1}
-        transform={null}
-      >
-        <DraggableCore
-          allowAnyClick={false}
-          axis="both"
-          bounds={false}
-          cancel={null}
-          defaultClassName="react-draggable"
-          defaultClassNameDragged="react-draggable-dragged"
-          defaultClassNameDragging="react-draggable-dragging"
-          defaultPosition={
-            Object {
-              "x": 0,
-              "y": 0,
-            }
-          }
-          disabled={false}
-          enableUserSelectHack={true}
-          grid={null}
-          handle={null}
-          offsetParent={null}
-          onDrag={[Function]}
-          onMouseDown={[Function]}
-          onStart={[Function]}
-          onStop={[Function]}
-          position={
-            Object {
-              "x": 405,
-              "y": 398,
-            }
-          }
-          scale={1}
-          transform={null}
-        >
-          <div
-            className="TagGroup animate-appear react-draggable"
-            data={
+            <DraggableCore
+              allowAnyClick={false}
+              axis="both"
+              bounds={false}
+              cancel={null}
+              defaultClassName="react-draggable"
+              defaultClassNameDragged="react-draggable-dragged"
+              defaultClassNameDragging="react-draggable-dragging"
+              defaultPosition={
+                Object {
+                  "x": 0,
+                  "y": 0,
+                }
+              }
+              disabled={false}
+              enableUserSelectHack={true}
+              grid={null}
+              handle={null}
+              offsetParent={null}
+              onDrag={[Function]}
+              onMouseDown={[Function]}
+              onStart={[Function]}
+              onStop={[Function]}
+              position={
+                Object {
+                  "x": 158,
+                  "y": 256,
+                }
+              }
+              scale={1}
+              transform={null}
+            >
+              <div
+                className="BlockGroup animate-appear react-draggable"
+                data={
+                  Object {
+                    "block-623187": Object {
+                      "style": Object {
+                        "background": "#F96",
+                        "border": "1px solid #aaa",
+                        "borderRadius": "10px",
+                        "height": 80,
+                        "width": 100,
+                      },
+                      "x": 158,
+                      "y": 256,
+                    },
+                    "block-624018": Object {
+                      "style": Object {
+                        "background": "#F96",
+                        "border": "1px solid #aaa",
+                        "borderRadius": "10px",
+                        "height": 80,
+                        "width": 100,
+                      },
+                      "x": 367,
+                      "y": 368,
+                    },
+                    "block-73377": Object {
+                      "style": Object {
+                        "background": "#F96",
+                        "border": "1px solid #aaa",
+                        "borderRadius": "10px",
+                        "height": 80,
+                        "width": 100,
+                      },
+                      "x": 253,
+                      "y": 525,
+                    },
+                  }
+                }
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "background": "#F96",
+                    "border": "1px solid #aaa",
+                    "borderRadius": "10px",
+                    "height": 80,
+                    "touchAction": "none",
+                    "transform": "translate(158px,256px)",
+                    "width": 100,
+                  }
+                }
+                transform={null}
+              />
+            </DraggableCore>
+          </Draggable>
+          <Draggable
+            allowAnyClick={false}
+            axis="both"
+            bounds={false}
+            cancel={null}
+            defaultClassName="react-draggable"
+            defaultClassNameDragged="react-draggable-dragged"
+            defaultClassNameDragging="react-draggable-dragging"
+            defaultPosition={
               Object {
-                "tag-626505": Object {
-                  "editable": false,
-                  "input": "test",
-                  "style": Object {
-                    "height": 32,
-                    "width": 100,
-                  },
-                  "x": 167,
-                  "y": 284,
-                },
-                "tag-629962": Object {
-                  "editable": false,
-                  "input": "test2",
-                  "style": Object {
-                    "height": 32,
-                    "width": 100,
-                  },
-                  "x": 405,
-                  "y": 398,
-                },
-                "tag-80986": Object {
-                  "editable": false,
-                  "input": "test3",
-                  "style": Object {
-                    "height": 32,
-                    "width": 100,
-                  },
-                  "x": 286,
-                  "y": 555,
-                },
+                "x": 0,
+                "y": 0,
               }
             }
-            onDoubleClick={[Function]}
+            disabled={false}
+            enableUserSelectHack={true}
+            grid={null}
+            handle={null}
+            key="block-624018"
+            offsetParent={null}
+            onDrag={[Function]}
             onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            style={
+            onStart={[Function]}
+            onStop={[Function]}
+            position={
               Object {
-                "height": 32,
-                "touchAction": "none",
-                "transform": "translate(405px,398px)",
-                "width": 100,
+                "x": 367,
+                "y": 368,
               }
             }
+            scale={1}
             transform={null}
           >
-            test2
-          </div>
-        </DraggableCore>
-      </Draggable>
-      <Draggable
-        allowAnyClick={false}
-        axis="both"
-        bounds={false}
-        cancel={null}
-        defaultClassName="react-draggable"
-        defaultClassNameDragged="react-draggable-dragged"
-        defaultClassNameDragging="react-draggable-dragging"
-        defaultPosition={
-          Object {
-            "x": 0,
-            "y": 0,
-          }
-        }
-        disabled={false}
-        enableUserSelectHack={true}
-        grid={null}
-        handle={null}
-        key="tag-80986"
-        offsetParent={null}
-        onDrag={[Function]}
-        onMouseDown={[Function]}
-        onStart={[Function]}
-        onStop={[Function]}
-        position={
-          Object {
-            "x": 286,
-            "y": 555,
-          }
-        }
-        scale={1}
-        transform={null}
-      >
-        <DraggableCore
-          allowAnyClick={false}
-          axis="both"
-          bounds={false}
-          cancel={null}
-          defaultClassName="react-draggable"
-          defaultClassNameDragged="react-draggable-dragged"
-          defaultClassNameDragging="react-draggable-dragging"
-          defaultPosition={
-            Object {
-              "x": 0,
-              "y": 0,
-            }
-          }
-          disabled={false}
-          enableUserSelectHack={true}
-          grid={null}
-          handle={null}
-          offsetParent={null}
-          onDrag={[Function]}
-          onMouseDown={[Function]}
-          onStart={[Function]}
-          onStop={[Function]}
-          position={
-            Object {
-              "x": 286,
-              "y": 555,
-            }
-          }
-          scale={1}
-          transform={null}
-        >
-          <div
-            className="TagGroup animate-appear react-draggable"
-            data={
+            <DraggableCore
+              allowAnyClick={false}
+              axis="both"
+              bounds={false}
+              cancel={null}
+              defaultClassName="react-draggable"
+              defaultClassNameDragged="react-draggable-dragged"
+              defaultClassNameDragging="react-draggable-dragging"
+              defaultPosition={
+                Object {
+                  "x": 0,
+                  "y": 0,
+                }
+              }
+              disabled={false}
+              enableUserSelectHack={true}
+              grid={null}
+              handle={null}
+              offsetParent={null}
+              onDrag={[Function]}
+              onMouseDown={[Function]}
+              onStart={[Function]}
+              onStop={[Function]}
+              position={
+                Object {
+                  "x": 367,
+                  "y": 368,
+                }
+              }
+              scale={1}
+              transform={null}
+            >
+              <div
+                className="BlockGroup animate-appear react-draggable"
+                data={
+                  Object {
+                    "block-623187": Object {
+                      "style": Object {
+                        "background": "#F96",
+                        "border": "1px solid #aaa",
+                        "borderRadius": "10px",
+                        "height": 80,
+                        "width": 100,
+                      },
+                      "x": 158,
+                      "y": 256,
+                    },
+                    "block-624018": Object {
+                      "style": Object {
+                        "background": "#F96",
+                        "border": "1px solid #aaa",
+                        "borderRadius": "10px",
+                        "height": 80,
+                        "width": 100,
+                      },
+                      "x": 367,
+                      "y": 368,
+                    },
+                    "block-73377": Object {
+                      "style": Object {
+                        "background": "#F96",
+                        "border": "1px solid #aaa",
+                        "borderRadius": "10px",
+                        "height": 80,
+                        "width": 100,
+                      },
+                      "x": 253,
+                      "y": 525,
+                    },
+                  }
+                }
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "background": "#F96",
+                    "border": "1px solid #aaa",
+                    "borderRadius": "10px",
+                    "height": 80,
+                    "touchAction": "none",
+                    "transform": "translate(367px,368px)",
+                    "width": 100,
+                  }
+                }
+                transform={null}
+              />
+            </DraggableCore>
+          </Draggable>
+          <Draggable
+            allowAnyClick={false}
+            axis="both"
+            bounds={false}
+            cancel={null}
+            defaultClassName="react-draggable"
+            defaultClassNameDragged="react-draggable-dragged"
+            defaultClassNameDragging="react-draggable-dragging"
+            defaultPosition={
               Object {
-                "tag-626505": Object {
-                  "editable": false,
-                  "input": "test",
-                  "style": Object {
-                    "height": 32,
-                    "width": 100,
-                  },
-                  "x": 167,
-                  "y": 284,
-                },
-                "tag-629962": Object {
-                  "editable": false,
-                  "input": "test2",
-                  "style": Object {
-                    "height": 32,
-                    "width": 100,
-                  },
-                  "x": 405,
-                  "y": 398,
-                },
-                "tag-80986": Object {
-                  "editable": false,
-                  "input": "test3",
-                  "style": Object {
-                    "height": 32,
-                    "width": 100,
-                  },
-                  "x": 286,
-                  "y": 555,
-                },
+                "x": 0,
+                "y": 0,
               }
             }
-            onDoubleClick={[Function]}
+            disabled={false}
+            enableUserSelectHack={true}
+            grid={null}
+            handle={null}
+            key="block-73377"
+            offsetParent={null}
+            onDrag={[Function]}
             onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            style={
+            onStart={[Function]}
+            onStop={[Function]}
+            position={
               Object {
-                "height": 32,
-                "touchAction": "none",
-                "transform": "translate(286px,555px)",
-                "width": 100,
+                "x": 253,
+                "y": 525,
               }
             }
+            scale={1}
             transform={null}
           >
-            test3
-          </div>
-        </DraggableCore>
-      </Draggable>
-    </TagGroup>
-  </div>
+            <DraggableCore
+              allowAnyClick={false}
+              axis="both"
+              bounds={false}
+              cancel={null}
+              defaultClassName="react-draggable"
+              defaultClassNameDragged="react-draggable-dragged"
+              defaultClassNameDragging="react-draggable-dragging"
+              defaultPosition={
+                Object {
+                  "x": 0,
+                  "y": 0,
+                }
+              }
+              disabled={false}
+              enableUserSelectHack={true}
+              grid={null}
+              handle={null}
+              offsetParent={null}
+              onDrag={[Function]}
+              onMouseDown={[Function]}
+              onStart={[Function]}
+              onStop={[Function]}
+              position={
+                Object {
+                  "x": 253,
+                  "y": 525,
+                }
+              }
+              scale={1}
+              transform={null}
+            >
+              <div
+                className="BlockGroup animate-appear react-draggable"
+                data={
+                  Object {
+                    "block-623187": Object {
+                      "style": Object {
+                        "background": "#F96",
+                        "border": "1px solid #aaa",
+                        "borderRadius": "10px",
+                        "height": 80,
+                        "width": 100,
+                      },
+                      "x": 158,
+                      "y": 256,
+                    },
+                    "block-624018": Object {
+                      "style": Object {
+                        "background": "#F96",
+                        "border": "1px solid #aaa",
+                        "borderRadius": "10px",
+                        "height": 80,
+                        "width": 100,
+                      },
+                      "x": 367,
+                      "y": 368,
+                    },
+                    "block-73377": Object {
+                      "style": Object {
+                        "background": "#F96",
+                        "border": "1px solid #aaa",
+                        "borderRadius": "10px",
+                        "height": 80,
+                        "width": 100,
+                      },
+                      "x": 253,
+                      "y": 525,
+                    },
+                  }
+                }
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "background": "#F96",
+                    "border": "1px solid #aaa",
+                    "borderRadius": "10px",
+                    "height": 80,
+                    "touchAction": "none",
+                    "transform": "translate(253px,525px)",
+                    "width": 100,
+                  }
+                }
+                transform={null}
+              />
+            </DraggableCore>
+          </Draggable>
+        </Block>
+        <LineGroup
+          data={
+            Object {
+              "line-592694": Object {
+                "fromKey": "block-623187",
+                "toKey": "block-624018",
+              },
+              "line-77619": Object {
+                "fromKey": "block-73377",
+                "toKey": "block-623187",
+              },
+            }
+          }
+        />
+        <TagGroup
+          data={
+            Object {
+              "tag-626505": Object {
+                "editable": false,
+                "input": "test",
+                "style": Object {
+                  "height": 32,
+                  "width": 100,
+                },
+                "x": 167,
+                "y": 284,
+              },
+              "tag-629962": Object {
+                "editable": false,
+                "input": "test2",
+                "style": Object {
+                  "height": 32,
+                  "width": 100,
+                },
+                "x": 405,
+                "y": 398,
+              },
+              "tag-80986": Object {
+                "editable": false,
+                "input": "test3",
+                "style": Object {
+                  "height": 32,
+                  "width": 100,
+                },
+                "x": 286,
+                "y": 555,
+              },
+            }
+          }
+          onChange={[Function]}
+        >
+          <Draggable
+            allowAnyClick={false}
+            axis="both"
+            bounds={false}
+            cancel={null}
+            defaultClassName="react-draggable"
+            defaultClassNameDragged="react-draggable-dragged"
+            defaultClassNameDragging="react-draggable-dragging"
+            defaultPosition={
+              Object {
+                "x": 0,
+                "y": 0,
+              }
+            }
+            disabled={false}
+            enableUserSelectHack={true}
+            grid={null}
+            handle={null}
+            key="tag-626505"
+            offsetParent={null}
+            onDrag={[Function]}
+            onMouseDown={[Function]}
+            onStart={[Function]}
+            onStop={[Function]}
+            position={
+              Object {
+                "x": 167,
+                "y": 284,
+              }
+            }
+            scale={1}
+            transform={null}
+          >
+            <DraggableCore
+              allowAnyClick={false}
+              axis="both"
+              bounds={false}
+              cancel={null}
+              defaultClassName="react-draggable"
+              defaultClassNameDragged="react-draggable-dragged"
+              defaultClassNameDragging="react-draggable-dragging"
+              defaultPosition={
+                Object {
+                  "x": 0,
+                  "y": 0,
+                }
+              }
+              disabled={false}
+              enableUserSelectHack={true}
+              grid={null}
+              handle={null}
+              offsetParent={null}
+              onDrag={[Function]}
+              onMouseDown={[Function]}
+              onStart={[Function]}
+              onStop={[Function]}
+              position={
+                Object {
+                  "x": 167,
+                  "y": 284,
+                }
+              }
+              scale={1}
+              transform={null}
+            >
+              <div
+                className="TagGroup animate-appear react-draggable"
+                data={
+                  Object {
+                    "tag-626505": Object {
+                      "editable": false,
+                      "input": "test",
+                      "style": Object {
+                        "height": 32,
+                        "width": 100,
+                      },
+                      "x": 167,
+                      "y": 284,
+                    },
+                    "tag-629962": Object {
+                      "editable": false,
+                      "input": "test2",
+                      "style": Object {
+                        "height": 32,
+                        "width": 100,
+                      },
+                      "x": 405,
+                      "y": 398,
+                    },
+                    "tag-80986": Object {
+                      "editable": false,
+                      "input": "test3",
+                      "style": Object {
+                        "height": 32,
+                        "width": 100,
+                      },
+                      "x": 286,
+                      "y": 555,
+                    },
+                  }
+                }
+                onDoubleClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "height": 32,
+                    "touchAction": "none",
+                    "transform": "translate(167px,284px)",
+                    "width": 100,
+                  }
+                }
+                transform={null}
+              >
+                test
+              </div>
+            </DraggableCore>
+          </Draggable>
+          <Draggable
+            allowAnyClick={false}
+            axis="both"
+            bounds={false}
+            cancel={null}
+            defaultClassName="react-draggable"
+            defaultClassNameDragged="react-draggable-dragged"
+            defaultClassNameDragging="react-draggable-dragging"
+            defaultPosition={
+              Object {
+                "x": 0,
+                "y": 0,
+              }
+            }
+            disabled={false}
+            enableUserSelectHack={true}
+            grid={null}
+            handle={null}
+            key="tag-629962"
+            offsetParent={null}
+            onDrag={[Function]}
+            onMouseDown={[Function]}
+            onStart={[Function]}
+            onStop={[Function]}
+            position={
+              Object {
+                "x": 405,
+                "y": 398,
+              }
+            }
+            scale={1}
+            transform={null}
+          >
+            <DraggableCore
+              allowAnyClick={false}
+              axis="both"
+              bounds={false}
+              cancel={null}
+              defaultClassName="react-draggable"
+              defaultClassNameDragged="react-draggable-dragged"
+              defaultClassNameDragging="react-draggable-dragging"
+              defaultPosition={
+                Object {
+                  "x": 0,
+                  "y": 0,
+                }
+              }
+              disabled={false}
+              enableUserSelectHack={true}
+              grid={null}
+              handle={null}
+              offsetParent={null}
+              onDrag={[Function]}
+              onMouseDown={[Function]}
+              onStart={[Function]}
+              onStop={[Function]}
+              position={
+                Object {
+                  "x": 405,
+                  "y": 398,
+                }
+              }
+              scale={1}
+              transform={null}
+            >
+              <div
+                className="TagGroup animate-appear react-draggable"
+                data={
+                  Object {
+                    "tag-626505": Object {
+                      "editable": false,
+                      "input": "test",
+                      "style": Object {
+                        "height": 32,
+                        "width": 100,
+                      },
+                      "x": 167,
+                      "y": 284,
+                    },
+                    "tag-629962": Object {
+                      "editable": false,
+                      "input": "test2",
+                      "style": Object {
+                        "height": 32,
+                        "width": 100,
+                      },
+                      "x": 405,
+                      "y": 398,
+                    },
+                    "tag-80986": Object {
+                      "editable": false,
+                      "input": "test3",
+                      "style": Object {
+                        "height": 32,
+                        "width": 100,
+                      },
+                      "x": 286,
+                      "y": 555,
+                    },
+                  }
+                }
+                onDoubleClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "height": 32,
+                    "touchAction": "none",
+                    "transform": "translate(405px,398px)",
+                    "width": 100,
+                  }
+                }
+                transform={null}
+              >
+                test2
+              </div>
+            </DraggableCore>
+          </Draggable>
+          <Draggable
+            allowAnyClick={false}
+            axis="both"
+            bounds={false}
+            cancel={null}
+            defaultClassName="react-draggable"
+            defaultClassNameDragged="react-draggable-dragged"
+            defaultClassNameDragging="react-draggable-dragging"
+            defaultPosition={
+              Object {
+                "x": 0,
+                "y": 0,
+              }
+            }
+            disabled={false}
+            enableUserSelectHack={true}
+            grid={null}
+            handle={null}
+            key="tag-80986"
+            offsetParent={null}
+            onDrag={[Function]}
+            onMouseDown={[Function]}
+            onStart={[Function]}
+            onStop={[Function]}
+            position={
+              Object {
+                "x": 286,
+                "y": 555,
+              }
+            }
+            scale={1}
+            transform={null}
+          >
+            <DraggableCore
+              allowAnyClick={false}
+              axis="both"
+              bounds={false}
+              cancel={null}
+              defaultClassName="react-draggable"
+              defaultClassNameDragged="react-draggable-dragged"
+              defaultClassNameDragging="react-draggable-dragging"
+              defaultPosition={
+                Object {
+                  "x": 0,
+                  "y": 0,
+                }
+              }
+              disabled={false}
+              enableUserSelectHack={true}
+              grid={null}
+              handle={null}
+              offsetParent={null}
+              onDrag={[Function]}
+              onMouseDown={[Function]}
+              onStart={[Function]}
+              onStop={[Function]}
+              position={
+                Object {
+                  "x": 286,
+                  "y": 555,
+                }
+              }
+              scale={1}
+              transform={null}
+            >
+              <div
+                className="TagGroup animate-appear react-draggable"
+                data={
+                  Object {
+                    "tag-626505": Object {
+                      "editable": false,
+                      "input": "test",
+                      "style": Object {
+                        "height": 32,
+                        "width": 100,
+                      },
+                      "x": 167,
+                      "y": 284,
+                    },
+                    "tag-629962": Object {
+                      "editable": false,
+                      "input": "test2",
+                      "style": Object {
+                        "height": 32,
+                        "width": 100,
+                      },
+                      "x": 405,
+                      "y": 398,
+                    },
+                    "tag-80986": Object {
+                      "editable": false,
+                      "input": "test3",
+                      "style": Object {
+                        "height": 32,
+                        "width": 100,
+                      },
+                      "x": 286,
+                      "y": 555,
+                    },
+                  }
+                }
+                onDoubleClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "height": 32,
+                    "touchAction": "none",
+                    "transform": "translate(286px,555px)",
+                    "width": 100,
+                  }
+                }
+                transform={null}
+              >
+                test3
+              </div>
+            </DraggableCore>
+          </Draggable>
+        </TagGroup>
+      </div>
+    </DraggableCore>
+  </Draggable>
 </Canvas>
 `;
