@@ -26,7 +26,7 @@ export default class Canvas extends Component {
       const { BlockGroup, TagGroup, LineGroup, CanvasPosition } = data;
 
       let position = nextState.position;
-      if (position.x == 0 && position.y == 0) {
+      if (position.x == 0 && position.y == 0 && CanvasPosition) {
         position = CanvasPosition;
       }
 
@@ -104,11 +104,7 @@ export default class Canvas extends Component {
 
     DataCollector.set('CanvasPosition', position);
     return (
-      <Draggable
-        onDrag={this.handleDrag}
-        onStop={this.handleDrag}
-        position={position}
-      >
+      <Draggable onDrag={this.handleDrag} position={position}>
         <div
           className={classNames('Canvas', className)}
           onDragOver={preventDefault}

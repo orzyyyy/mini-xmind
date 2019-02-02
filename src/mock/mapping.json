@@ -60,6 +60,5 @@
   "LineGroup": {
     "line-77619": { "fromKey": "block-73377", "toKey": "block-623187" },
     "line-592694": { "fromKey": "block-623187", "toKey": "block-624018" }
-  },
-  "CanvasPosition": { "x": 184, "y": 205 }
+  }
 }
