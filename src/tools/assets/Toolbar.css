@@ -3,6 +3,7 @@
   position: fixed;
   left: 5px;
   top: 40%;
+  z-index: 3;
 }
 
 .Toolbar ul li {
