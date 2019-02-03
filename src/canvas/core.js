@@ -107,7 +107,7 @@ export default class Canvas extends Component {
   };
 
   render = () => {
-    const { className, ...rest } = this.props;
+    const { className, orientation, ...rest } = this.props;
     const { blockProps, linesProps, tagProps, position } = this.state;
 
     DataCollector.set('CanvasPosition', position);
@@ -128,7 +128,11 @@ export default class Canvas extends Component {
             onChange={this.handleBlockChange}
             lineData={linesProps}
           />
-          <LineGroup data={linesProps} offset={position} />
+          <LineGroup
+            data={linesProps}
+            offset={position}
+            orientation={orientation}
+          />
           <TagGroup data={tagProps} onChange={this.handleTagChange} />
         </div>
       </Draggable>

@@ -12,7 +12,7 @@ export default class SteppedLine extends PureComponent {
   };
 
   static defaultProps = {
-    orientation: 'v',
+    orientation: 'h',
     className: '',
     style: {},
   };
