@@ -267,6 +267,7 @@ exports[`demo render correctly 1`] = `
           },
         }
       }
+      orientation="h"
       style={Object {}}
     >
       <Draggable
@@ -939,6 +940,7 @@ exports[`demo render correctly 1`] = `
                   "y": 230,
                 }
               }
+              orientation="h"
             />
             <TagGroup
               data={

@@ -4,6 +4,7 @@ exports[`Canvas Block renders correctly 1`] = `
 <Canvas
   className=""
   data={Object {}}
+  orientation="h"
   style={
     Object {
       "height": "100%",
@@ -517,6 +518,7 @@ exports[`Canvas Block renders correctly 1`] = `
               "y": 0,
             }
           }
+          orientation="h"
         />
         <TagGroup
           data={Object {}}
@@ -532,6 +534,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
 <Canvas
   className=""
   data={Object {}}
+  orientation="h"
   style={
     Object {
       "height": "100%",
@@ -636,6 +639,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
               "y": 0,
             }
           }
+          orientation="h"
         />
         <TagGroup
           data={Object {}}
@@ -735,6 +739,7 @@ exports[`Canvas when passing data, canvas should render mapping correctly 1`] = 
       },
     }
   }
+  orientation="h"
   style={
     Object {
       "height": "100%",
@@ -1354,6 +1359,7 @@ exports[`Canvas when passing data, canvas should render mapping correctly 1`] = 
               "y": 230,
             }
           }
+          orientation="h"
         />
         <TagGroup
           data={
