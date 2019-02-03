@@ -16,12 +16,14 @@ export default class Canvas extends Component {
     style: PropTypes.object,
     className: PropTypes.string,
     data: PropTypes.object,
+    orientation: PropTypes.oneOf(['h', 'v', 'horizonal', 'vertical']),
   };
 
   static defaultProps = {
     style: {},
     className: '',
     data: {},
+    orientation: 'h',
   };
 
   static getDerivedStateFromProps(nextProps, nextState) {
@@ -74,10 +76,10 @@ export default class Canvas extends Component {
     }
     dragItem = dragItem ? JSON.parse(dragItem) : {};
     const { value, style } = dragItem;
-    let { blockProps, tagProps } = this.state;
+    let { blockProps, tagProps, position } = this.state;
     const { clientX, clientY } = e;
-    const x = clientX - style.width / 2;
-    const y = clientY - style.height / 2;
+    const x = clientX - style.height / 2 - position.x;
+    const y = clientY - style.height / 2 - position.y;
 
     switch (value) {
       case 'block':
