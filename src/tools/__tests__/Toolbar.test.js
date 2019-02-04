@@ -1,9 +1,18 @@
 import React from 'react';
 import { mount } from 'enzyme';
 const testDist = process.env.LIB_DIR === 'dist';
-const Toolbar = testDist
-  ? require('../../../lib/toolbar').default
-  : require('../Toolbar').default;
+let Toolbar;
+switch (process.env.LIB_DIR) {
+  case 'dist':
+    Toolbar = require('../../../dist/lib/toolbar').default;
+    break;
+  case 'lib':
+    Toolbar = require('../../../lib/toolbar').default;
+    break;
+  default:
+    Toolbar = require('..').default;
+    break;
+}
 import { tools } from '../../options/tools';
 import 'nino-cli/scripts/setup';
 
