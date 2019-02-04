@@ -1,13 +1,12 @@
 import React from 'react';
 import { mount } from 'enzyme';
-const testDist = process.env.LIB_DIR === 'dist';
 let Toolbar;
 switch (process.env.LIB_DIR) {
   case 'dist':
     Toolbar = require('../../../dist/lib/toolbar').default;
     break;
   case 'lib':
-    Toolbar = require('../../../lib/toolbar').default;
+    Toolbar = require('../../../lib/tools').default;
     break;
   default:
     Toolbar = require('..').default;
