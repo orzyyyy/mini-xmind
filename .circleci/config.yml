@@ -45,11 +45,22 @@ jobs:
       - checkout
       - *attach_workspace
       - run: npm run build
-      - run: node ./scripts/dekko.js
+      - run: node ./scripts/dekko-dist.js
       - persist_to_workspace:
           root: ~/mini-xmind
           paths:
             - dist
+  compile:
+    <<: *container_config
+    steps:
+      - checkout
+      - *attach_workspace
+      - run: npm run compile
+      - run: node ./scripts/dekko-lib.js
+      - persist_to_workspace:
+          root: ~/mini-xmind
+          paths:
+            - lib
   test_dist:
     <<: *container_config
     steps:
@@ -59,6 +70,15 @@ jobs:
           command: npm test -- -u
           environment:
             LIB_DIR: dist
+  test_lib:
+    <<: *container_config
+    steps:
+      - checkout
+      - *attach_workspace
+      - run:
+          command: npm test -- -u
+          environment:
+            LIB_DIR: lib
 
 workflows:
   version: 2
@@ -68,9 +88,15 @@ workflows:
       - dist:
           requires:
             - setup
+      - compile:
+          requires:
+            - setup
       - test_dist:
           requires:
             - dist
+      - test_lib:
+          requires:
+            - compile
       - test:
           requires:
             - setup

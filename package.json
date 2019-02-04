@@ -6,7 +6,7 @@
     "test": "nino test",
     "test:u": "nino test -u",
     "build": "nino koei -c ./scripts/nino.koei.js",
-    "compile": "babel --out-dir ./lib ./src --presets=@babel/preset-react,@babel/preset-env --plugins=@babel/plugin-proposal-class-properties,@babel/plugin-syntax-dynamic-import",
+    "compile": "nino compile",
     "dev": "nino koei -w-d",
     "lint": "npx eslint .",
     "prettier": "node ./scripts/prettier.js",

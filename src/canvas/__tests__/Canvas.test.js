@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 const testDist = process.env.LIB_DIR === 'dist';
 const Canvas = testDist
-  ? require('../../../dist/lib/canvas').default
+  ? require('../../../lib/canvas').default
   : require('..').default;
 import Listener from '../../utils/GlobalListener';
 import mapping from '../../mock/mapping.json';
