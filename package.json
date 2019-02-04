@@ -2,10 +2,11 @@
   "name": "mini-xmind",
   "version": "1.1.0",
   "scripts": {
-    "start": "nino go",
+    "start": "nino go -e ./src/go.js",
     "test": "nino test",
     "test:u": "nino test -u",
     "build": "nino koei -c ./scripts/nino.koei.js",
+    "compile": "nino compile",
     "dev": "nino koei -w-d",
     "lint": "npx eslint .",
     "prettier": "node ./scripts/prettier.js",
@@ -14,10 +15,11 @@
     "pub": "git push origin master && npm publish"
   },
   "license": "MIT",
+  "main": "lib/index",
   "dependencies": {
-    "antd": "^3.13.0",
+    "antd": "^3.13.1",
     "dekko": "^0.2.1",
-    "nino-cli": "^0.2.7",
+    "nino-cli": "^0.3.0",
     "omit.js": "^1.0.0",
     "react-draggable": "^3.1.1"
   },

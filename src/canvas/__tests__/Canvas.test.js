@@ -1,9 +1,17 @@
 import React from 'react';
 import { mount } from 'enzyme';
-const testDist = process.env.LIB_DIR === 'dist';
-const Canvas = testDist
-  ? require('../../../dist/lib/canvas').default
-  : require('..').default;
+let Canvas;
+switch (process.env.LIB_DIR) {
+  case 'dist':
+    Canvas = require('../../../dist/lib/canvas').default;
+    break;
+  case 'lib':
+    Canvas = require('../../../lib/canvas').default;
+    break;
+  default:
+    Canvas = require('..').default;
+    break;
+}
 import Listener from '../../utils/GlobalListener';
 import mapping from '../../mock/mapping.json';
 import 'nino-cli/scripts/setup';

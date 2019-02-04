@@ -5,3 +5,4 @@
 /.circleci/
 /.github/
 .prettierrc
+/dist/
