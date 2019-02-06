@@ -71,7 +71,7 @@ export default class TagGroup extends Component {
             {...rest}
           >
             <Input
-              className="animate-appear not-draggable"
+              className="animate-appear"
               onChange={e =>
                 this.handleChange(data[key], key, 'input', e.target.value)
               }
@@ -92,7 +92,6 @@ export default class TagGroup extends Component {
           key={key}
           position={{ x, y }}
           onDrag={e => onChange && onChange(data)}
-          cancel=".not-draggable"
         >
           <div
             className={classNames('TagGroup', className, 'animate-appear')}
