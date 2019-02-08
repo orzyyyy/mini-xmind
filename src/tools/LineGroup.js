@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { SteppedLineTo } from '../line';
-import omit from 'omit.js';
 
 export default class LineGroup extends Component {
   static propTypes = {
@@ -40,7 +39,8 @@ export default class LineGroup extends Component {
       const { from, to } = data[lineKey];
 
       DataCollector.set('LineGroup', {
-        [lineKey]: omit(data[lineKey], ['from', 'to']),
+        // [lineKey]: omit(data[lineKey], ['from', 'to']),
+        [lineKey]: data[lineKey],
       });
       return (
         <SteppedLineTo

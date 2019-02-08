@@ -25,7 +25,14 @@ export default class Demo extends Component {
   };
 
   outputData = () => {
-    let data = DataCollector.getAll();
+    let data = Object.assign({}, DataCollector.getAll());
+    this.setState({ data });
+
+    for (let key in data['LineGroup']) {
+      delete data['LineGroup'][key].from;
+      delete data['LineGroup'][key].to;
+    }
+
     const treeData = JSON.stringify(data);
     // eslint-disable-next-line
     console.log(treeData);
