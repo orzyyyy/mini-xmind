@@ -4,6 +4,7 @@ import mapping from '../mock/mapping.json';
 import Toolbar from '../tools';
 import { Button } from 'antd';
 import './assets/demo.css';
+import { getOutput } from '../utils';
 
 export default class Demo extends Component {
   constructor(props) {
@@ -25,18 +26,9 @@ export default class Demo extends Component {
   };
 
   outputData = () => {
-    let data = Object.assign({}, DataCollector.getAll());
-    this.setState({ data });
-
-    for (let key in data['LineGroup']) {
-      delete data['LineGroup'][key].from;
-      delete data['LineGroup'][key].to;
-    }
-
-    const treeData = JSON.stringify(data);
+    const { dataJSON } = getOutput();
     // eslint-disable-next-line
-    console.log(treeData);
-    return data;
+    console.log(dataJSON);
   };
 
   render = () => {
