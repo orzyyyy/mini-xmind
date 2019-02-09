@@ -15,7 +15,7 @@ export default class Demo extends Component {
   }
 
   componentDidMount = () => {
-    if (fetch) {
+    if (window.fetch) {
       fetch('../mock/mapping.json')
         .then(result => result.json())
         .then(data => this.setState({ data }));
@@ -25,7 +25,7 @@ export default class Demo extends Component {
   };
 
   outputData = () => {
-    let data = DataCollector.getAll();
+    const data = DataCollector.getAll();
     this.setState({ data });
     const treeData = JSON.stringify(data);
     // eslint-disable-next-line
