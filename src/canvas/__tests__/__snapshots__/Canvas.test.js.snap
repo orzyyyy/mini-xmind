@@ -625,7 +625,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
         }
         transform={null}
       >
-        <Block
+        <BlockGroup
           className=""
           data={Object {}}
           lineData={Object {}}
@@ -697,11 +697,31 @@ exports[`Canvas when passing data, canvas should render mapping correctly 1`] = 
       },
       "LineGroup": Object {
         "line-592694": Object {
+          "from": <div
+            class="BlockGroup animate-appear react-draggable"
+            data="[object Object]"
+            style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+          />,
           "fromKey": "block-623187",
+          "to": <div
+            class="BlockGroup animate-appear react-draggable"
+            data="[object Object]"
+            style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+          />,
           "toKey": "block-624018",
         },
         "line-77619": Object {
+          "from": <div
+            class="BlockGroup animate-appear react-draggable"
+            data="[object Object]"
+            style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+          />,
           "fromKey": "block-73377",
+          "to": <div
+            class="BlockGroup animate-appear react-draggable"
+            data="[object Object]"
+            style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+          />,
           "toKey": "block-623187",
         },
       },
@@ -856,11 +876,31 @@ exports[`Canvas when passing data, canvas should render mapping correctly 1`] = 
             },
             "LineGroup": Object {
               "line-592694": Object {
+                "from": <div
+                  class="BlockGroup animate-appear react-draggable"
+                  data="[object Object]"
+                  style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                />,
                 "fromKey": "block-623187",
+                "to": <div
+                  class="BlockGroup animate-appear react-draggable"
+                  data="[object Object]"
+                  style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                />,
                 "toKey": "block-624018",
               },
               "line-77619": Object {
+                "from": <div
+                  class="BlockGroup animate-appear react-draggable"
+                  data="[object Object]"
+                  style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                />,
                 "fromKey": "block-73377",
+                "to": <div
+                  class="BlockGroup animate-appear react-draggable"
+                  data="[object Object]"
+                  style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                />,
                 "toKey": "block-623187",
               },
             },
@@ -914,7 +954,7 @@ exports[`Canvas when passing data, canvas should render mapping correctly 1`] = 
         }
         transform={null}
       >
-        <Block
+        <BlockGroup
           className=""
           data={
             Object {
@@ -956,11 +996,31 @@ exports[`Canvas when passing data, canvas should render mapping correctly 1`] = 
           lineData={
             Object {
               "line-592694": Object {
+                "from": <div
+                  class="BlockGroup animate-appear react-draggable"
+                  data="[object Object]"
+                  style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                />,
                 "fromKey": "block-623187",
+                "to": <div
+                  class="BlockGroup animate-appear react-draggable"
+                  data="[object Object]"
+                  style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                />,
                 "toKey": "block-624018",
               },
               "line-77619": Object {
+                "from": <div
+                  class="BlockGroup animate-appear react-draggable"
+                  data="[object Object]"
+                  style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                />,
                 "fromKey": "block-73377",
+                "to": <div
+                  class="BlockGroup animate-appear react-draggable"
+                  data="[object Object]"
+                  style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                />,
                 "toKey": "block-623187",
               },
             }
@@ -1339,16 +1399,36 @@ exports[`Canvas when passing data, canvas should render mapping correctly 1`] = 
               />
             </DraggableCore>
           </Draggable>
-        </Block>
+        </BlockGroup>
         <LineGroup
           data={
             Object {
               "line-592694": Object {
+                "from": <div
+                  class="BlockGroup animate-appear react-draggable"
+                  data="[object Object]"
+                  style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                />,
                 "fromKey": "block-623187",
+                "to": <div
+                  class="BlockGroup animate-appear react-draggable"
+                  data="[object Object]"
+                  style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                />,
                 "toKey": "block-624018",
               },
               "line-77619": Object {
+                "from": <div
+                  class="BlockGroup animate-appear react-draggable"
+                  data="[object Object]"
+                  style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                />,
                 "fromKey": "block-73377",
+                "to": <div
+                  class="BlockGroup animate-appear react-draggable"
+                  data="[object Object]"
+                  style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                />,
                 "toKey": "block-623187",
               },
             }
