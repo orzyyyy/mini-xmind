@@ -41,8 +41,8 @@ const blockProps = {
   },
 };
 
-const createWrapper = () =>
-  mount(<Canvas style={{ width: '100%', height: '100%' }} />);
+const createWrapper = (...props) =>
+  mount(<Canvas style={{ width: '100%', height: '100%' }} {...props} />);
 
 describe('Canvas', () => {
   beforeEach(() => {

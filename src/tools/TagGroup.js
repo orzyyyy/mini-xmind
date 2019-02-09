@@ -18,7 +18,7 @@ export default class TagGroup extends Component {
     onChange: noop,
   };
 
-  static getDerivedStateFromProps(nextProps) {
+  static getDerivedStateFromProps(nextProps, nextState) {
     return { data: nextProps.data };
   }
 
@@ -30,18 +30,16 @@ export default class TagGroup extends Component {
     };
   }
 
-  componentDidMount = () => {};
-
   handleStop = ({ x, y }, key) => {
     const { data, onChange } = this.props;
 
     data[key] = Object.assign({}, data[key], { x, y });
 
-    onChange && onChange(data);
+    onChange(data);
   };
 
   handleChange = (item, key, targetKey, targetValue) => {
-    let { data } = this.state;
+    const { data } = this.state;
     data[key] = item;
     data[key][targetKey] = targetValue;
 
@@ -91,7 +89,7 @@ export default class TagGroup extends Component {
           onStop={(e, item) => this.handleStop(item, key)}
           key={key}
           position={{ x, y }}
-          onDrag={e => onChange && onChange(data)}
+          onDrag={e => onChange(data)}
         >
           <div
             className={classNames('TagGroup', className, 'animate-appear')}

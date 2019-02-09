@@ -90,11 +90,12 @@ export default class BlockGroup extends Component {
     };
   }
 
-  componentDidUpdate = (prevProps, prevState, snapshot) => {
+  componentDidUpdate = prevProps => {
     const { lineData, onChange, data } = this.props;
+    const firstLine = Object.values(lineData)[0];
     if (
       Object.keys(lineData).length != Object.keys(prevProps.lineData).length ||
-      !(Object.values(lineData)[0] && Object.values(lineData)[0].from)
+      !(firstLine && firstLine.from)
     ) {
       onChange(data, addBlockDom(lineData, blockDOM));
     }
