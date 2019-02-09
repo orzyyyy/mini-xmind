@@ -60,20 +60,9 @@ export default class Block extends Component {
     this.checkBlockClickList = {};
   }
 
-  static getDerivedStateFromProps(nextProps, nextState) {
-    const { data, onChange } = nextProps;
-
+  static getDerivedStateFromProps(nextProps) {
+    const { data } = nextProps;
     mapping = Object.assign({}, mapping, nextProps.lineData);
-    if (
-      Object.keys(nextProps.lineData).length !=
-      Object.keys(nextState.lineData).length
-    ) {
-      // hack: when lineData is loaded, blockDOM is not mounted
-      setTimeout(() => {
-        const lineData = addBlockDom(nextProps.lineData, blockDOM);
-        onChange && onChange(data, lineData);
-      }, 0);
-    }
 
     return {
       data,
@@ -81,19 +70,23 @@ export default class Block extends Component {
     };
   }
 
-  componentDidMount = () => {
-    const { props } = this;
-    const { lineData } = props;
-
-    addBlockDom(lineData, blockDOM);
+  componentDidUpdate = (prevProps, prevState, snapshot) => {
+    const { lineData, onChange, data } = this.props;
+    if (
+      Object.keys(lineData).length != Object.keys(prevProps.lineData).length ||
+      !(Object.values(lineData)[0] && Object.values(lineData)[0].from)
+    ) {
+      onChange(data, addBlockDom(lineData, blockDOM));
+    }
   };
 
   handleStop = ({ x, y }, blockKey) => {
-    const { data, onChange } = this.props;
+    const { data, onChange, lineData } = this.props;
 
     data[blockKey] = Object.assign({}, data[blockKey], { x, y });
+    const result = addBlockDom(lineData, blockDOM);
 
-    onChange && onChange(data);
+    onChange(data, result);
   };
 
   // when Block clicked twice, generate a Line
@@ -122,7 +115,7 @@ export default class Block extends Component {
         lineKey,
       );
 
-      onChange && onChange(data, result);
+      onChange(data, result);
 
       this.checkBlockClickList = {};
       // record mapping for arrow
@@ -212,7 +205,7 @@ export default class Block extends Component {
           onStop={(e, item) => this.handleStop(item, blockKey)}
           key={blockKey}
           position={{ x, y }}
-          onDrag={e => onChange && onChange(data)}
+          onDrag={e => onChange(data)}
           onStart={this.handleDragStart}
         >
           <div

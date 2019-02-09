@@ -26,6 +26,7 @@ export default class Demo extends Component {
 
   outputData = () => {
     let data = DataCollector.getAll();
+    this.setState({ data });
     const treeData = JSON.stringify(data);
     // eslint-disable-next-line
     console.log(treeData);
