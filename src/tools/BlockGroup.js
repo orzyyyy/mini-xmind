@@ -11,8 +11,10 @@ import './assets/BlockGroup.css';
 // one Line is mapping to two Block
 // to record it here
 let mapping = {};
-
+// to save refs
 let blockDOM = {};
+// to save the key of currently dragging Block
+let currentBlock = '';
 
 const addBlockDom = (lineData, blockDOM) => {
   for (let key in lineData) {
@@ -33,7 +35,22 @@ const addBlockDom = (lineData, blockDOM) => {
   return lineData;
 };
 
-export default class Block extends Component {
+const isSameBlockCoordinate = (nextProps, nextState) => {
+  const blockKey = currentBlock;
+  if (!blockKey) {
+    return false;
+  }
+  const currentProps = nextProps.data[blockKey];
+  const currentState = nextState.data[blockKey];
+
+  if (currentProps.x != currentState.x || currentProps.y != currentState.y) {
+    return true;
+  }
+
+  return false;
+};
+
+export default class BlockGroup extends Component {
   static propTypes = {
     className: PropTypes.string,
     data: PropTypes.object,
@@ -60,12 +77,15 @@ export default class Block extends Component {
     this.checkBlockClickList = {};
   }
 
-  static getDerivedStateFromProps(nextProps) {
-    const { data } = nextProps;
+  static getDerivedStateFromProps(nextProps, nextState) {
     mapping = Object.assign({}, mapping, nextProps.lineData);
 
+    if (isSameBlockCoordinate(nextProps, nextState)) {
+      return { lineData: nextProps.lineData };
+    }
+
     return {
-      data,
+      data: nextProps.data,
       lineData: nextProps.lineData,
     };
   }
@@ -193,6 +213,11 @@ export default class Block extends Component {
     stopPropagation(e);
   };
 
+  handleDrag = blockKey => {
+    currentBlock = blockKey;
+    this.props.onChange(this.state.data);
+  };
+
   render() {
     const { className, onChange, ...rest } = this.props;
     const { data } = this.state;
@@ -205,7 +230,7 @@ export default class Block extends Component {
           onStop={(e, item) => this.handleStop(item, blockKey)}
           key={blockKey}
           position={{ x, y }}
-          onDrag={e => onChange(data)}
+          onDrag={e => this.handleDrag(blockKey)}
           onStart={this.handleDragStart}
         >
           <div
