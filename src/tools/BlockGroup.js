@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Draggable from 'react-draggable';
-import { noop } from '../utils/commonUtil';
+import { noop, isSameCoordinate } from '../utils/commonUtil';
 import { generateKey, stopPropagation } from '../utils/LineUtil';
 import omit from 'omit.js';
 import './assets/BlockGroup.css';
@@ -33,21 +33,6 @@ const addBlockDom = (lineData, blockDOM) => {
     }
   }
   return lineData;
-};
-
-const isSameBlockCoordinate = (nextProps, nextState) => {
-  const blockKey = currentBlock;
-  if (!blockKey) {
-    return false;
-  }
-  const currentProps = nextProps.data[blockKey];
-  const currentState = nextState.data[blockKey];
-
-  if (currentProps.x != currentState.x || currentProps.y != currentState.y) {
-    return true;
-  }
-
-  return false;
 };
 
 export default class BlockGroup extends Component {
@@ -80,7 +65,7 @@ export default class BlockGroup extends Component {
   static getDerivedStateFromProps(nextProps, nextState) {
     mapping = Object.assign({}, mapping, nextProps.lineData);
 
-    if (isSameBlockCoordinate(nextProps, nextState)) {
+    if (isSameCoordinate(nextProps, nextState, currentBlock)) {
       return { lineData: nextProps.lineData };
     }
 

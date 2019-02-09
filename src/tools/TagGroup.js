@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Draggable from 'react-draggable';
 import { Input } from 'antd';
-import { noop } from '../utils/commonUtil';
+import { noop, isSameCoordinate } from '../utils/commonUtil';
 import './assets/TagGroup.css';
 import { stopPropagation } from '../utils/LineUtil';
+
+// to save the key of currently dragging Tag
+let currentTag = '';
 
 export default class TagGroup extends Component {
   static propTypes = {
@@ -19,6 +22,9 @@ export default class TagGroup extends Component {
   };
 
   static getDerivedStateFromProps(nextProps, nextState) {
+    if (isSameCoordinate(nextProps, nextState, currentTag)) {
+      return null;
+    }
     return { data: nextProps.data };
   }
 
@@ -48,6 +54,11 @@ export default class TagGroup extends Component {
 
   handleDragStart = e => {
     stopPropagation(e);
+  };
+
+  handleDrag = key => {
+    currentTag = key;
+    this.props.onChange(this.props.data);
   };
 
   render = () => {
@@ -89,7 +100,7 @@ export default class TagGroup extends Component {
           onStop={(e, item) => this.handleStop(item, key)}
           key={key}
           position={{ x, y }}
-          onDrag={e => onChange(data)}
+          onDrag={e => this.handleDrag(key)}
         >
           <div
             className={classNames('TagGroup', className, 'animate-appear')}
