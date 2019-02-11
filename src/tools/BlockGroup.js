@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Draggable from 'react-draggable';
-import { noop } from '../utils/commonUtil';
+import { noop, isSameCoordinate } from '../utils/commonUtil';
 import { generateKey, stopPropagation } from '../utils/LineUtil';
 import omit from 'omit.js';
 import './assets/BlockGroup.css';
@@ -11,8 +11,10 @@ import './assets/BlockGroup.css';
 // one Line is mapping to two Block
 // to record it here
 let mapping = {};
-
+// to save refs
 let blockDOM = {};
+// to save the key of currently dragging Block
+let currentBlock = '';
 
 const addBlockDom = (lineData, blockDOM) => {
   for (let key in lineData) {
@@ -33,7 +35,7 @@ const addBlockDom = (lineData, blockDOM) => {
   return lineData;
 };
 
-export default class Block extends Component {
+export default class BlockGroup extends Component {
   static propTypes = {
     className: PropTypes.string,
     data: PropTypes.object,
@@ -61,39 +63,36 @@ export default class Block extends Component {
   }
 
   static getDerivedStateFromProps(nextProps, nextState) {
-    const { data, onChange } = nextProps;
-
     mapping = Object.assign({}, mapping, nextProps.lineData);
-    if (
-      Object.keys(nextProps.lineData).length !=
-      Object.keys(nextState.lineData).length
-    ) {
-      // hack: when lineData is loaded, blockDOM is not mounted
-      setTimeout(() => {
-        const lineData = addBlockDom(nextProps.lineData, blockDOM);
-        onChange && onChange(data, lineData);
-      }, 0);
+
+    if (isSameCoordinate(nextProps, nextState, currentBlock)) {
+      return { lineData: nextProps.lineData };
     }
 
     return {
-      data,
+      data: nextProps.data,
       lineData: nextProps.lineData,
     };
   }
 
-  componentDidMount = () => {
-    const { props } = this;
-    const { lineData } = props;
-
-    addBlockDom(lineData, blockDOM);
+  componentDidUpdate = prevProps => {
+    const { lineData, onChange, data } = this.props;
+    const firstLine = Object.values(lineData)[0];
+    if (
+      Object.keys(lineData).length != Object.keys(prevProps.lineData).length ||
+      !(firstLine && firstLine.from)
+    ) {
+      onChange(data, addBlockDom(lineData, blockDOM));
+    }
   };
 
   handleStop = ({ x, y }, blockKey) => {
-    const { data, onChange } = this.props;
+    const { data, onChange, lineData } = this.props;
 
     data[blockKey] = Object.assign({}, data[blockKey], { x, y });
+    const result = addBlockDom(lineData, blockDOM);
 
-    onChange && onChange(data);
+    onChange(data, result);
   };
 
   // when Block clicked twice, generate a Line
@@ -122,7 +121,7 @@ export default class Block extends Component {
         lineKey,
       );
 
-      onChange && onChange(data, result);
+      onChange(data, result);
 
       this.checkBlockClickList = {};
       // record mapping for arrow
@@ -200,6 +199,11 @@ export default class Block extends Component {
     stopPropagation(e);
   };
 
+  handleDrag = blockKey => {
+    currentBlock = blockKey;
+    this.props.onChange(this.state.data);
+  };
+
   render() {
     const { className, onChange, ...rest } = this.props;
     const { data } = this.state;
@@ -212,7 +216,7 @@ export default class Block extends Component {
           onStop={(e, item) => this.handleStop(item, blockKey)}
           key={blockKey}
           position={{ x, y }}
-          onDrag={e => onChange && onChange(data)}
+          onDrag={e => this.handleDrag(blockKey)}
           onStart={this.handleDragStart}
         >
           <div

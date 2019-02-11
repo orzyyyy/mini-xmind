@@ -455,7 +455,7 @@ exports[`demo render correctly 1`] = `
             }
             transform={null}
           >
-            <Block
+            <BlockGroup
               className=""
               data={
                 Object {
@@ -900,7 +900,7 @@ exports[`demo render correctly 1`] = `
                   />
                 </DraggableCore>
               </Draggable>
-            </Block>
+            </BlockGroup>
             <LineGroup
               data={
                 Object {
@@ -941,7 +941,534 @@ exports[`demo render correctly 1`] = `
                 }
               }
               orientation="h"
-            />
+            >
+              <div
+                className="LineGroup"
+              >
+                <SteppedLineTo
+                  className="animate-appear"
+                  data={
+                    Object {
+                      "line-592694": Object {
+                        "from": <div
+                          class="BlockGroup animate-appear react-draggable"
+                          data="[object Object]"
+                          style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                        />,
+                        "fromKey": "block-623187",
+                        "to": <div
+                          class="BlockGroup animate-appear react-draggable"
+                          data="[object Object]"
+                          style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                        />,
+                        "toKey": "block-624018",
+                      },
+                      "line-77619": Object {
+                        "from": <div
+                          class="BlockGroup animate-appear react-draggable"
+                          data="[object Object]"
+                          style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                        />,
+                        "fromKey": "block-73377",
+                        "to": <div
+                          class="BlockGroup animate-appear react-draggable"
+                          data="[object Object]"
+                          style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                        />,
+                        "toKey": "block-623187",
+                      },
+                    }
+                  }
+                  from={
+                    <div
+                      class="BlockGroup animate-appear react-draggable"
+                      data="[object Object]"
+                      style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                    />
+                  }
+                  key="line-77619"
+                  offset={
+                    Object {
+                      "x": -67,
+                      "y": 230,
+                    }
+                  }
+                  orientation="h"
+                  style={Object {}}
+                  to={
+                    <div
+                      class="BlockGroup animate-appear react-draggable"
+                      data="[object Object]"
+                      style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                    />
+                  }
+                >
+                  <div
+                    className="stepped-line-to animate-appear"
+                  >
+                    <SteppedLine
+                      className="animate-appear"
+                      data={
+                        Object {
+                          "line-592694": Object {
+                            "from": <div
+                              class="BlockGroup animate-appear react-draggable"
+                              data="[object Object]"
+                              style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                            />,
+                            "fromKey": "block-623187",
+                            "to": <div
+                              class="BlockGroup animate-appear react-draggable"
+                              data="[object Object]"
+                              style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                            />,
+                            "toKey": "block-624018",
+                          },
+                          "line-77619": Object {
+                            "from": <div
+                              class="BlockGroup animate-appear react-draggable"
+                              data="[object Object]"
+                              style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                            />,
+                            "fromKey": "block-73377",
+                            "to": <div
+                              class="BlockGroup animate-appear react-draggable"
+                              data="[object Object]"
+                              style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                            />,
+                            "toKey": "block-623187",
+                          },
+                        }
+                      }
+                      from={
+                        <div
+                          class="BlockGroup animate-appear react-draggable"
+                          data="[object Object]"
+                          style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                        />
+                      }
+                      offset={
+                        Object {
+                          "x": -67,
+                          "y": 230,
+                        }
+                      }
+                      orientation="h"
+                      style={Object {}}
+                      to={
+                        <div
+                          class="BlockGroup animate-appear react-draggable"
+                          data="[object Object]"
+                          style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                        />
+                      }
+                      x0={67}
+                      x1={67}
+                      y0={-230}
+                      y1={-230}
+                    >
+                      <Line
+                        className="animate-appear"
+                        data={
+                          Object {
+                            "line-592694": Object {
+                              "from": <div
+                                class="BlockGroup animate-appear react-draggable"
+                                data="[object Object]"
+                                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                              />,
+                              "fromKey": "block-623187",
+                              "to": <div
+                                class="BlockGroup animate-appear react-draggable"
+                                data="[object Object]"
+                                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                              />,
+                              "toKey": "block-624018",
+                            },
+                            "line-77619": Object {
+                              "from": <div
+                                class="BlockGroup animate-appear react-draggable"
+                                data="[object Object]"
+                                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                              />,
+                              "fromKey": "block-73377",
+                              "to": <div
+                                class="BlockGroup animate-appear react-draggable"
+                                data="[object Object]"
+                                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                              />,
+                              "toKey": "block-623187",
+                            },
+                          }
+                        }
+                        from={
+                          <div
+                            class="BlockGroup animate-appear react-draggable"
+                            data="[object Object]"
+                            style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                          />
+                        }
+                        offset={
+                          Object {
+                            "x": -67,
+                            "y": 230,
+                          }
+                        }
+                        orientation="h"
+                        style={Object {}}
+                        to={
+                          <div
+                            class="BlockGroup animate-appear react-draggable"
+                            data="[object Object]"
+                            style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                          />
+                        }
+                        x0={67}
+                        x1={67}
+                        y0={-230}
+                        y1={-230}
+                      >
+                        <div
+                          className="line-placeholder"
+                        >
+                          <div
+                            className="animate-appear"
+                            data={
+                              Object {
+                                "line-592694": Object {
+                                  "from": <div
+                                    class="BlockGroup animate-appear react-draggable"
+                                    data="[object Object]"
+                                    style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                                  />,
+                                  "fromKey": "block-623187",
+                                  "to": <div
+                                    class="BlockGroup animate-appear react-draggable"
+                                    data="[object Object]"
+                                    style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                                  />,
+                                  "toKey": "block-624018",
+                                },
+                                "line-77619": Object {
+                                  "from": <div
+                                    class="BlockGroup animate-appear react-draggable"
+                                    data="[object Object]"
+                                    style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                                  />,
+                                  "fromKey": "block-73377",
+                                  "to": <div
+                                    class="BlockGroup animate-appear react-draggable"
+                                    data="[object Object]"
+                                    style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                                  />,
+                                  "toKey": "block-623187",
+                                },
+                              }
+                            }
+                            from={
+                              <div
+                                class="BlockGroup animate-appear react-draggable"
+                                data="[object Object]"
+                                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                              />
+                            }
+                            offset={
+                              Object {
+                                "x": -67,
+                                "y": 230,
+                              }
+                            }
+                            orientation="h"
+                            style={
+                              Object {
+                                "borderTopColor": "#ddd",
+                                "borderTopStyle": "solid",
+                                "borderTopWidth": 1,
+                                "left": "67px",
+                                "position": "absolute",
+                                "top": "-230px",
+                                "transform": "rotate(0deg)",
+                                "transformOrigin": "0 0",
+                                "width": "0px",
+                                "zIndex": "1",
+                              }
+                            }
+                            to={
+                              <div
+                                class="BlockGroup animate-appear react-draggable"
+                                data="[object Object]"
+                                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                              />
+                            }
+                          />
+                        </div>
+                      </Line>
+                    </SteppedLine>
+                  </div>
+                </SteppedLineTo>
+                <SteppedLineTo
+                  className="animate-appear"
+                  data={
+                    Object {
+                      "line-592694": Object {
+                        "from": <div
+                          class="BlockGroup animate-appear react-draggable"
+                          data="[object Object]"
+                          style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                        />,
+                        "fromKey": "block-623187",
+                        "to": <div
+                          class="BlockGroup animate-appear react-draggable"
+                          data="[object Object]"
+                          style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                        />,
+                        "toKey": "block-624018",
+                      },
+                      "line-77619": Object {
+                        "from": <div
+                          class="BlockGroup animate-appear react-draggable"
+                          data="[object Object]"
+                          style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                        />,
+                        "fromKey": "block-73377",
+                        "to": <div
+                          class="BlockGroup animate-appear react-draggable"
+                          data="[object Object]"
+                          style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                        />,
+                        "toKey": "block-623187",
+                      },
+                    }
+                  }
+                  from={
+                    <div
+                      class="BlockGroup animate-appear react-draggable"
+                      data="[object Object]"
+                      style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                    />
+                  }
+                  key="line-592694"
+                  offset={
+                    Object {
+                      "x": -67,
+                      "y": 230,
+                    }
+                  }
+                  orientation="h"
+                  style={Object {}}
+                  to={
+                    <div
+                      class="BlockGroup animate-appear react-draggable"
+                      data="[object Object]"
+                      style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                    />
+                  }
+                >
+                  <div
+                    className="stepped-line-to animate-appear"
+                  >
+                    <SteppedLine
+                      className="animate-appear"
+                      data={
+                        Object {
+                          "line-592694": Object {
+                            "from": <div
+                              class="BlockGroup animate-appear react-draggable"
+                              data="[object Object]"
+                              style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                            />,
+                            "fromKey": "block-623187",
+                            "to": <div
+                              class="BlockGroup animate-appear react-draggable"
+                              data="[object Object]"
+                              style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                            />,
+                            "toKey": "block-624018",
+                          },
+                          "line-77619": Object {
+                            "from": <div
+                              class="BlockGroup animate-appear react-draggable"
+                              data="[object Object]"
+                              style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                            />,
+                            "fromKey": "block-73377",
+                            "to": <div
+                              class="BlockGroup animate-appear react-draggable"
+                              data="[object Object]"
+                              style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                            />,
+                            "toKey": "block-623187",
+                          },
+                        }
+                      }
+                      from={
+                        <div
+                          class="BlockGroup animate-appear react-draggable"
+                          data="[object Object]"
+                          style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                        />
+                      }
+                      offset={
+                        Object {
+                          "x": -67,
+                          "y": 230,
+                        }
+                      }
+                      orientation="h"
+                      style={Object {}}
+                      to={
+                        <div
+                          class="BlockGroup animate-appear react-draggable"
+                          data="[object Object]"
+                          style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                        />
+                      }
+                      x0={67}
+                      x1={67}
+                      y0={-230}
+                      y1={-230}
+                    >
+                      <Line
+                        className="animate-appear"
+                        data={
+                          Object {
+                            "line-592694": Object {
+                              "from": <div
+                                class="BlockGroup animate-appear react-draggable"
+                                data="[object Object]"
+                                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                              />,
+                              "fromKey": "block-623187",
+                              "to": <div
+                                class="BlockGroup animate-appear react-draggable"
+                                data="[object Object]"
+                                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                              />,
+                              "toKey": "block-624018",
+                            },
+                            "line-77619": Object {
+                              "from": <div
+                                class="BlockGroup animate-appear react-draggable"
+                                data="[object Object]"
+                                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                              />,
+                              "fromKey": "block-73377",
+                              "to": <div
+                                class="BlockGroup animate-appear react-draggable"
+                                data="[object Object]"
+                                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                              />,
+                              "toKey": "block-623187",
+                            },
+                          }
+                        }
+                        from={
+                          <div
+                            class="BlockGroup animate-appear react-draggable"
+                            data="[object Object]"
+                            style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                          />
+                        }
+                        offset={
+                          Object {
+                            "x": -67,
+                            "y": 230,
+                          }
+                        }
+                        orientation="h"
+                        style={Object {}}
+                        to={
+                          <div
+                            class="BlockGroup animate-appear react-draggable"
+                            data="[object Object]"
+                            style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                          />
+                        }
+                        x0={67}
+                        x1={67}
+                        y0={-230}
+                        y1={-230}
+                      >
+                        <div
+                          className="line-placeholder"
+                        >
+                          <div
+                            className="animate-appear"
+                            data={
+                              Object {
+                                "line-592694": Object {
+                                  "from": <div
+                                    class="BlockGroup animate-appear react-draggable"
+                                    data="[object Object]"
+                                    style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                                  />,
+                                  "fromKey": "block-623187",
+                                  "to": <div
+                                    class="BlockGroup animate-appear react-draggable"
+                                    data="[object Object]"
+                                    style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                                  />,
+                                  "toKey": "block-624018",
+                                },
+                                "line-77619": Object {
+                                  "from": <div
+                                    class="BlockGroup animate-appear react-draggable"
+                                    data="[object Object]"
+                                    style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                                  />,
+                                  "fromKey": "block-73377",
+                                  "to": <div
+                                    class="BlockGroup animate-appear react-draggable"
+                                    data="[object Object]"
+                                    style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                                  />,
+                                  "toKey": "block-623187",
+                                },
+                              }
+                            }
+                            from={
+                              <div
+                                class="BlockGroup animate-appear react-draggable"
+                                data="[object Object]"
+                                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                              />
+                            }
+                            offset={
+                              Object {
+                                "x": -67,
+                                "y": 230,
+                              }
+                            }
+                            orientation="h"
+                            style={
+                              Object {
+                                "borderTopColor": "#ddd",
+                                "borderTopStyle": "solid",
+                                "borderTopWidth": 1,
+                                "left": "67px",
+                                "position": "absolute",
+                                "top": "-230px",
+                                "transform": "rotate(0deg)",
+                                "transformOrigin": "0 0",
+                                "width": "0px",
+                                "zIndex": "1",
+                              }
+                            }
+                            to={
+                              <div
+                                class="BlockGroup animate-appear react-draggable"
+                                data="[object Object]"
+                                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                              />
+                            }
+                          />
+                        </div>
+                      </Line>
+                    </SteppedLine>
+                  </div>
+                </SteppedLineTo>
+              </div>
+            </LineGroup>
             <TagGroup
               data={
                 Object {

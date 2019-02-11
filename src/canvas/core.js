@@ -78,7 +78,7 @@ export default class Canvas extends Component {
     const { value, style } = dragItem;
     let { blockProps, tagProps, position } = this.state;
     const { clientX, clientY } = e;
-    const x = clientX - style.height / 2 - position.x;
+    const x = clientX - style.width / 2 - position.x;
     const y = clientY - style.height / 2 - position.y;
 
     switch (value) {

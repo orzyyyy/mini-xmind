@@ -4,7 +4,6 @@
   "scripts": {
     "start": "nino go -e ./src/go.js",
     "test": "nino test",
-    "test:u": "nino test -u",
     "build": "nino koei -c ./scripts/nino.koei.js",
     "compile": "nino compile",
     "dev": "nino koei -w-d",
@@ -12,7 +11,7 @@
     "prettier": "node ./scripts/prettier.js",
     "lint-staged": "lint-staged",
     "backup": "npm config set registry=https://registry.npmjs.org && npm publish && npm config set registry=https://registry.npm.taobao.org",
-    "pub": "git push origin master && npm publish"
+    "pub": "npm run compile && git push origin master && npm publish"
   },
   "description": "A tool to make mind-mapping easier",
   "files": [

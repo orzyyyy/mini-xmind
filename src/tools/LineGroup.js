@@ -20,6 +20,8 @@ export default class LineGroup extends Component {
 
       if (from && to) {
         newState[key] = data[key];
+      } else {
+        break;
       }
     }
 
