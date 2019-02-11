@@ -16,31 +16,6 @@ import Listener from '../../utils/GlobalListener';
 import mapping from '../../mock/mapping.json';
 import 'nino-cli/scripts/setup';
 
-const style = {
-  width: 100,
-  height: 80,
-  background: '#F96',
-  borderRadius: '10px',
-  border: '1px solid #aaa',
-};
-const blockProps = {
-  test1: {
-    x: 90,
-    y: 50,
-    style,
-  },
-  test2: {
-    x: 20,
-    y: 150,
-    style,
-  },
-  test3: {
-    x: 100,
-    y: 100,
-    style,
-  },
-};
-
 const createWrapper = (...props) =>
   mount(<Canvas style={{ width: '100%', height: '100%' }} {...props} />);
 
@@ -55,20 +30,21 @@ describe('Canvas', () => {
 
   it('Canvas renders correctly', () => {
     const wrapper = createWrapper();
+    wrapper.setProps({ data: mapping });
+
     expect(wrapper).toMatchSnapshot();
   });
 
   it('Block renders correctly', () => {
     const wrapper = createWrapper();
-    wrapper.setState({ blockProps });
+    wrapper.setProps({ data: mapping });
 
     expect(wrapper.find('.BlockGroup').length).toBe(3);
-    expect(wrapper).toMatchSnapshot();
   });
 
   it('when Block is clicked, Line renders correctly', () => {
     const wrapper = createWrapper();
-    wrapper.setState({ blockProps });
+    wrapper.setProps({ data: mapping });
 
     const blocks = wrapper.find('.BlockGroup');
     blocks.at(0).simulate('click');
@@ -84,16 +60,16 @@ describe('Canvas', () => {
 
   it('should not render redundant Line', () => {
     const wrapper = createWrapper();
-    wrapper.setState({ blockProps });
+    wrapper.setProps({ data: mapping });
 
     const blocks = wrapper.find('.BlockGroup');
     blocks.at(0).simulate('click');
     blocks.at(1).simulate('click');
-    expect(wrapper.find('.stepped-line-to').length).toBe(1);
+    expect(wrapper.find('.stepped-line-to').length).toBe(3);
 
     blocks.at(0).simulate('click');
     blocks.at(1).simulate('click');
-    expect(wrapper.find('.stepped-line-to').length).toBe(1);
+    expect(wrapper.find('.stepped-line-to').length).toBe(3);
   });
 
   it('when passing data, canvas should render mapping correctly', () => {
@@ -102,6 +78,5 @@ describe('Canvas', () => {
 
     expect(wrapper.find('.BlockGroup').length).toBe(3);
     expect(wrapper.find('.TagGroup').length).toBe(3);
-    expect(wrapper).toMatchSnapshot();
   });
 });
