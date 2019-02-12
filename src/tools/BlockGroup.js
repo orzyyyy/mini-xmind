@@ -83,7 +83,7 @@ export default class BlockGroup extends Component {
     const hasNewLine = keysLength(lineData) != keysLength(prevProps.lineData);
 
     if (!(firstLine && firstLine.from)) {
-      if (hasNewLine && keysLength(lineData) != 0) {
+      if (hasNewLine || keysLength(lineData) != 0) {
         onChange(data, addBlockDom(lineData, blockDOM));
       }
     }

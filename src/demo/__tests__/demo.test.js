@@ -26,4 +26,12 @@ describe('demo', () => {
     );
     expect(mapping).toEqual(data);
   });
+
+  it('when state changed, Line should render correctly', () => {
+    const wrapper = mount(<Demo />);
+    const data = wrapper.instance().outputData();
+    wrapper.setState({ data });
+    wrapper.update();
+    expect(wrapper.find('.stepped-line-to').length).toBe(2);
+  });
 });
