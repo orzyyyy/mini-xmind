@@ -16,6 +16,8 @@ let blockDOM = {};
 // to save the key of currently dragging Block
 let currentBlock = '';
 
+const keysLength = obj => Object.keys(obj).length;
+
 const addBlockDom = (lineData, blockDOM) => {
   for (let key in lineData) {
     const { fromKey, toKey } = lineData[key];
@@ -78,11 +80,12 @@ export default class BlockGroup extends Component {
   componentDidUpdate = prevProps => {
     const { lineData, onChange, data } = this.props;
     const firstLine = Object.values(lineData)[0];
-    if (
-      Object.keys(lineData).length != Object.keys(prevProps.lineData).length ||
-      !(firstLine && firstLine.from)
-    ) {
-      onChange(data, addBlockDom(lineData, blockDOM));
+    const hasNewLine = keysLength(lineData) != keysLength(prevProps.lineData);
+
+    if (!(firstLine && firstLine.from)) {
+      if (currentBlock && hasNewLine && keysLength(lineData) != 0) {
+        onChange(data, addBlockDom(lineData, blockDOM));
+      }
     }
   };
 
@@ -110,7 +113,7 @@ export default class BlockGroup extends Component {
       checkBlockClickList[blockKey].time = new Date().getTime();
     }
 
-    if (Object.keys(checkBlockClickList).length == 2) {
+    if (keysLength(checkBlockClickList) == 2) {
       if (!this.shouldPaintLine(checkBlockClickList, lineData)) {
         this.checkBlockClickList = {};
         return;
@@ -169,7 +172,7 @@ export default class BlockGroup extends Component {
   };
 
   shouldPaintLine = (checkBlockClickList, linesProps) => {
-    if (!Object.keys(linesProps).length) {
+    if (!keysLength(linesProps)) {
       return true;
     }
 
