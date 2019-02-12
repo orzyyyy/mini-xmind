@@ -31,14 +31,12 @@ describe('Canvas', () => {
   it('Canvas renders correctly', () => {
     const wrapper = createWrapper();
     wrapper.setProps({ data: mapping });
-
     expect(wrapper).toMatchSnapshot();
   });
 
   it('Block renders correctly', () => {
     const wrapper = createWrapper();
     wrapper.setProps({ data: mapping });
-
     expect(wrapper.find('.BlockGroup').length).toBe(3);
   });
 
@@ -78,5 +76,10 @@ describe('Canvas', () => {
 
     expect(wrapper.find('.BlockGroup').length).toBe(3);
     expect(wrapper.find('.TagGroup').length).toBe(3);
+  });
+
+  it('when data is null, it should render correctly', () => {
+    const wrapper = createWrapper({ data: null });
+    expect(wrapper).toMatchSnapshot();
   });
 });
