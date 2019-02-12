@@ -11,7 +11,7 @@
     "prettier": "node ./scripts/prettier.js",
     "lint-staged": "lint-staged",
     "backup": "npm config set registry=https://registry.npmjs.org && npm publish && npm config set registry=https://registry.npm.taobao.org",
-    "pub": "npm run compile && git push origin master && npm publish"
+    "pub": "npm run build && npm run compile && git push origin master && npm publish"
   },
   "description": "A tool to make mind-mapping easier",
   "files": [
