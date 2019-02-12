@@ -1196,11 +1196,127 @@ exports[`Canvas Canvas renders correctly 1`] = `
 
 exports[`Canvas when data is null, it should render correctly 1`] = `
 <Canvas
-  0={
+  className=""
+  data={null}
+  orientation="h"
+  style={
     Object {
-      "data": null,
+      "height": "100%",
+      "width": "100%",
     }
   }
+>
+  <Draggable
+    allowAnyClick={false}
+    axis="both"
+    bounds={false}
+    cancel={null}
+    defaultClassName="react-draggable"
+    defaultClassNameDragged="react-draggable-dragged"
+    defaultClassNameDragging="react-draggable-dragging"
+    defaultPosition={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    disabled={false}
+    enableUserSelectHack={true}
+    grid={null}
+    handle={null}
+    offsetParent={null}
+    onDrag={[Function]}
+    onMouseDown={[Function]}
+    onStart={[Function]}
+    onStop={[Function]}
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1}
+    transform={null}
+  >
+    <DraggableCore
+      allowAnyClick={false}
+      axis="both"
+      bounds={false}
+      cancel={null}
+      defaultClassName="react-draggable"
+      defaultClassNameDragged="react-draggable-dragged"
+      defaultClassNameDragging="react-draggable-dragging"
+      defaultPosition={
+        Object {
+          "x": 0,
+          "y": 0,
+        }
+      }
+      disabled={false}
+      enableUserSelectHack={true}
+      grid={null}
+      handle={null}
+      offsetParent={null}
+      onDrag={[Function]}
+      onMouseDown={[Function]}
+      onStart={[Function]}
+      onStop={[Function]}
+      position={
+        Object {
+          "x": 0,
+          "y": 0,
+        }
+      }
+      scale={1}
+      transform={null}
+    >
+      <div
+        className="Canvas react-draggable"
+        data={null}
+        onDragOver={[Function]}
+        onDrop={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        style={
+          Object {
+            "height": "100%",
+            "touchAction": "none",
+            "transform": "translate(0px,0px)",
+            "width": "100%",
+          }
+        }
+        transform={null}
+      >
+        <BlockGroup
+          className=""
+          data={Object {}}
+          lineData={Object {}}
+          onChange={[Function]}
+        />
+        <LineGroup
+          data={Object {}}
+          offset={
+            Object {
+              "x": 0,
+              "y": 0,
+            }
+          }
+          orientation="h"
+        />
+        <TagGroup
+          data={Object {}}
+          onChange={[Function]}
+        />
+      </div>
+    </DraggableCore>
+  </Draggable>
+</Canvas>
+`;
+
+exports[`Canvas when data is null, it should render correctly 2`] = `
+<Canvas
   className=""
   data={Object {}}
   orientation="h"
@@ -1276,11 +1392,127 @@ exports[`Canvas when data is null, it should render correctly 1`] = `
       transform={null}
     >
       <div
-        0={
+        className="Canvas react-draggable"
+        data={Object {}}
+        onDragOver={[Function]}
+        onDrop={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        style={
           Object {
-            "data": null,
+            "height": "100%",
+            "touchAction": "none",
+            "transform": "translate(0px,0px)",
+            "width": "100%",
           }
         }
+        transform={null}
+      >
+        <BlockGroup
+          className=""
+          data={Object {}}
+          lineData={Object {}}
+          onChange={[Function]}
+        />
+        <LineGroup
+          data={Object {}}
+          offset={
+            Object {
+              "x": 0,
+              "y": 0,
+            }
+          }
+          orientation="h"
+        />
+        <TagGroup
+          data={Object {}}
+          onChange={[Function]}
+        />
+      </div>
+    </DraggableCore>
+  </Draggable>
+</Canvas>
+`;
+
+exports[`Canvas when data is null, it should render correctly 3`] = `
+<Canvas
+  className=""
+  data={Object {}}
+  orientation="h"
+  style={
+    Object {
+      "height": "100%",
+      "width": "100%",
+    }
+  }
+>
+  <Draggable
+    allowAnyClick={false}
+    axis="both"
+    bounds={false}
+    cancel={null}
+    defaultClassName="react-draggable"
+    defaultClassNameDragged="react-draggable-dragged"
+    defaultClassNameDragging="react-draggable-dragging"
+    defaultPosition={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    disabled={false}
+    enableUserSelectHack={true}
+    grid={null}
+    handle={null}
+    offsetParent={null}
+    onDrag={[Function]}
+    onMouseDown={[Function]}
+    onStart={[Function]}
+    onStop={[Function]}
+    position={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    scale={1}
+    transform={null}
+  >
+    <DraggableCore
+      allowAnyClick={false}
+      axis="both"
+      bounds={false}
+      cancel={null}
+      defaultClassName="react-draggable"
+      defaultClassNameDragged="react-draggable-dragged"
+      defaultClassNameDragging="react-draggable-dragging"
+      defaultPosition={
+        Object {
+          "x": 0,
+          "y": 0,
+        }
+      }
+      disabled={false}
+      enableUserSelectHack={true}
+      grid={null}
+      handle={null}
+      offsetParent={null}
+      onDrag={[Function]}
+      onMouseDown={[Function]}
+      onStart={[Function]}
+      onStop={[Function]}
+      position={
+        Object {
+          "x": 0,
+          "y": 0,
+        }
+      }
+      scale={1}
+      transform={null}
+    >
+      <div
         className="Canvas react-draggable"
         data={Object {}}
         onDragOver={[Function]}
