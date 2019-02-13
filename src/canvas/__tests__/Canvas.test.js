@@ -79,7 +79,12 @@ describe('Canvas', () => {
   });
 
   it('when data is null, it should render correctly', () => {
-    const wrapper = createWrapper({ data: null });
+    const wrapper = createWrapper();
+    wrapper.setProps({ data: null });
+    expect(wrapper).toMatchSnapshot();
+    wrapper.setProps({ data: undefined });
+    expect(wrapper).toMatchSnapshot();
+    wrapper.setProps({ data: {} });
     expect(wrapper).toMatchSnapshot();
   });
 });

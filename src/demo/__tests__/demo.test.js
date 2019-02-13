@@ -4,13 +4,19 @@ import Demo from '..';
 import Listener from '../../utils/GlobalListener';
 import 'nino-cli/scripts/setup';
 
+// eslint-disable-next-line
+const log = console.log;
 describe('demo', () => {
   beforeEach(() => {
     window.DataCollector = new Listener();
+    // eslint-disable-next-line
+    console.log = function() {};
   });
 
   afterEach(() => {
     window.DataCollector = null;
+    // eslint-disable-next-line
+    console.log = log;
   });
 
   it('render correctly', () => {

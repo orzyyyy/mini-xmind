@@ -27,7 +27,7 @@ export default class Canvas extends Component {
   };
 
   static getDerivedStateFromProps(nextProps, nextState) {
-    const data = nextProps.data;
+    const data = nextProps.data || {};
     if (Object.keys(data) != 0) {
       const { BlockGroup, TagGroup, LineGroup, CanvasPosition } = data;
 
