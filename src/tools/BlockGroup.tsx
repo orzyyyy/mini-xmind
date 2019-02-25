@@ -9,9 +9,9 @@ import './assets/BlockGroup.css';
 
 // one Line is mapping to two Block
 // to record it here
-let mapping = {};
+let mapping: any = {};
 // to save refs
-let blockDOM = {};
+let blockDOM: any = {};
 // to save the key of currently dragging Block
 let currentBlock = '';
 const keysLength = (obj: object) => Object.keys(obj).length;
@@ -220,15 +220,15 @@ export default class BlockGroup extends Component<
       const { x, y, style } = data[blockKey];
       return (
         <Draggable
-          onStop={(e, item) => this.handleStop(item, blockKey)}
+          onStop={(_, item) => this.handleStop(item, blockKey)}
           key={blockKey}
           position={{ x, y }}
-          onDrag={e => this.handleDrag(blockKey)}
+          onDrag={_ => this.handleDrag(blockKey)}
           onStart={this.handleDragStart}
         >
           <div
             className={classNames('BlockGroup', 'animate-appear', className)}
-            onClick={e => this.handleBlockClick(blockKey)}
+            onClick={_ => this.handleBlockClick(blockKey)}
             ref={ref => this.saveBlock(ref, blockKey)}
             style={style}
             {...omit(rest, ['lineData'])}

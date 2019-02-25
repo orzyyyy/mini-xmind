@@ -1,23 +1,15 @@
 {
   "compilerOptions": {
-    "declaration": true,
-    "strict": true,
-    "outDir": "lib",
-    "module": "commonjs",
-    "target": "es5",
-    "lib": ["es6", "dom"],
-    "sourceMap": true,
-    "jsx": "react",
-    "esModuleInterop": true,
+    "strictNullChecks": true,
     "moduleResolution": "node",
-    "rootDirs": ["./src"],
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
-    "suppressImplicitAnyIndexErrors": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "jsx": "preserve",
+    "noUnusedParameters": true,
     "noUnusedLocals": true,
-    "allowJs": false,
-    "noImplicitThis": false,
-    "experimentalDecorators": true
+    "noImplicitAny": true,
+    "target": "es6",
+    "lib": ["dom", "es7"]
   },
   "exclude": [
     "node_modules",

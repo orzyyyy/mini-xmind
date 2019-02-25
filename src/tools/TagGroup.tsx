@@ -104,10 +104,10 @@ export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
       return (
         <Draggable
           onStart={this.handleDragStart}
-          onStop={(e, item) => this.handleStop(item, key)}
+          onStop={(_, item) => this.handleStop(item, key)}
           key={key}
           position={{ x, y }}
-          onDrag={e => this.handleDrag(key)}
+          onDrag={_ => this.handleDrag(key)}
         >
           <div
             className={classNames('TagGroup', className, 'animate-appear')}
