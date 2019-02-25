@@ -43,7 +43,7 @@
     "lint-staged"
   ],
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,css}": [
+    "*.{ts,tsx}": [
       "npm run prettier",
       "git add"
     ]
