@@ -1,20 +1,20 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 
 const defaultBorderColor = '#ddd';
 const defaultBorderStyle = 'solid';
 const defaultBorderWidth = 1;
 
-export default class Line extends PureComponent {
-  static propTypes = {
-    x0: PropTypes.number.isRequired,
-    y0: PropTypes.number.isRequired,
-    x1: PropTypes.number.isRequired,
-    y1: PropTypes.number.isRequired,
-    className: PropTypes.string,
-    style: PropTypes.object,
-  };
+export interface LineProps {
+  x0: number;
+  y0: number;
+  x1: number;
+  y1: number;
+  className?: string;
+  style?: any;
+  zIndex?: any;
+}
 
+export default class Line extends PureComponent<LineProps> {
   static defaultProps = {
     className: '',
     style: {},
@@ -38,7 +38,7 @@ export default class Line extends PureComponent {
       top: `${y0}px`,
       left: `${x0}px`,
       width: `${length}px`,
-      zIndex: Number.isFinite(zIndex) ? String(zIndex) : '1',
+      zIndex: zIndex && Number.isFinite(zIndex) ? String(zIndex) : '1',
       transform: `rotate(${angle}deg)`,
       // Rotate around (x0, y0)
       transformOrigin: '0 0',
@@ -57,7 +57,11 @@ export default class Line extends PureComponent {
 
     return (
       <div className="line-placeholder">
-        <div ref={el => (this.el = el)} {...rest} {...props} />
+        <div
+          // ref={el => (this.el = el)}
+          {...rest}
+          {...props}
+        />
       </div>
     );
   }

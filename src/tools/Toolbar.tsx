@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
-
 import { Icon } from 'antd';
 import { tools } from '../options/tools';
 import './assets/Toolbar.css';
 
 export default class Toolbar extends Component {
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  onDragStart = (e, item) => {
+  onDragStart = (e: any, item: any) => {
     e.dataTransfer.effectAllowed = 'copy';
-
     e.dataTransfer.setData('dragItem', JSON.stringify(item));
   };
 
@@ -20,7 +14,7 @@ export default class Toolbar extends Component {
       <div className="Toolbar">
         <ul>
           {tools.map((item, i) => {
-            const { key, value } = item;
+            const { key } = item;
             return (
               <li
                 draggable

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import Line from './core';
 
 const defaultAnchor = { x: 0.5, y: 0.5 };
-
-function parseAnchor(value) {
+function parseAnchor(value: any) {
   if (!value) {
     return defaultAnchor;
   }
@@ -20,7 +19,7 @@ function parseAnchor(value) {
   );
 }
 
-function parseAnchorText(value) {
+function parseAnchorText(value: string) {
   // Try to infer the relevant axis.
   switch (value) {
     case 'top':
@@ -39,7 +38,7 @@ function parseAnchorText(value) {
   return null;
 }
 
-function parseAnchorPercent(value) {
+function parseAnchorPercent(value: string) {
   const percent = parseFloat(value) / 100;
   if (isNaN(percent) || !isFinite(percent)) {
     throw new Error(`LinkTo could not parse percent value "${value}"`);
@@ -47,18 +46,25 @@ function parseAnchorPercent(value) {
   return percent;
 }
 
-let staticFromAnchor, staticToAnchor;
+let staticFromAnchor: any, staticToAnchor: any;
 
-export default class LineTo extends Component {
-  static propTypes = {
-    className: PropTypes.string,
-    style: PropTypes.object,
-    from: PropTypes.object.isRequired,
-    to: PropTypes.object.isRequired,
-    fromAnchor: PropTypes.string,
-    toAnchor: PropTypes.string,
-    offset: PropTypes.object,
-  };
+export interface LineToProps {
+  className?: string;
+  style?: any;
+  from: any;
+  to: any;
+  fromAnchor?: string;
+  toAnchor?: string;
+  offset?: { x: number; y: number };
+  orientation?: 'h' | 'v' | 'horizonal' | 'vertical' | string;
+}
+export interface LineToState {
+  fromAnchor?: string;
+  toAnchor?: string;
+}
+
+export default class LineTo extends Component<LineToProps, LineToState> {
+  private t: any = null;
 
   static defaultProps = {
     className: '',
@@ -66,20 +72,23 @@ export default class LineTo extends Component {
     offset: { x: 0, y: 0 },
   };
 
-  static getDerivedStateFromProps(nextProps, state) {
-    let newState = {};
-    if (nextProps.fromAnchor !== state.fromAnchor) {
+  static getDerivedStateFromProps(
+    nextProps: LineToProps,
+    nextState: LineToState,
+  ) {
+    const newState = {} as LineToState;
+    if (nextProps.fromAnchor !== nextState.fromAnchor) {
       staticFromAnchor = parseAnchor(nextProps.fromAnchor);
       newState.fromAnchor = nextProps.fromAnchor;
     }
-    if (nextProps.toAnchor !== state.toAnchor) {
+    if (nextProps.toAnchor !== nextState.toAnchor) {
       staticToAnchor = parseAnchor(nextProps.toAnchor);
       newState.toAnchor = nextProps.toAnchor;
     }
     return newState;
   }
 
-  constructor(props) {
+  constructor(props: LineToProps) {
     super(props);
 
     this.state = {
@@ -98,12 +107,8 @@ export default class LineTo extends Component {
     }
   }
 
-  detect() {
-    const { from, to, offset } = this.props;
-
-    if (!from || !to) {
-      return;
-    }
+  detect = () => {
+    const { from, to, offset = { x: 0, y: 0 } } = this.props;
 
     const anchor0 = staticFromAnchor;
     const anchor1 = staticToAnchor;
@@ -120,7 +125,7 @@ export default class LineTo extends Component {
     const y1 = box1.top + box1.height * anchor1.y + offsetY;
 
     return { x0, y0, x1, y1 };
-  }
+  };
 
   render() {
     const points = this.detect();

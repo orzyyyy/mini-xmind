@@ -1,4 +1,4 @@
-const placements = ['top', 'bottom', 'left', 'right'];
+// const placements = ['top', 'bottom', 'left', 'right'];
 //   _________
 //  |         |
 //  | target  |
@@ -9,7 +9,10 @@ const placements = ['top', 'bottom', 'left', 'right'];
 //          |  relative  |
 //          |____________|
 //
-export const getPlacement = ({ x: x0, y: y0 }, { x: x1, y: y1 }) => {
+export const getPlacement = (
+  { x: x0, y: y0 }: { x: number; y: number },
+  { x: x1, y: y1 }: { x: number; y: number },
+) => {
   let fromAnchor, toAnchor;
   // when the origin is determined, relative need to
   // calculate relative coordinate
@@ -70,26 +73,29 @@ export const getPlacement = ({ x: x0, y: y0 }, { x: x1, y: y1 }) => {
   return { fromAnchor, toAnchor };
 };
 
-const getRelativeOrigin = (target, relative) => {
+const getRelativeOrigin = (
+  target: { x: number; y: number },
+  relative: { x: number; y: number },
+) => {
   const { x: x0, y: y0 } = target;
   const { x: x1, y: y1 } = relative;
 
   return { x: x1 - x0, y: y1 - y0 };
 };
 
-export function preventDefault(e) {
+export function preventDefault(e: any) {
   e.preventDefault();
 }
 
-export function stopPropagation(e) {
+export function stopPropagation(e: any) {
   e.stopPropagation();
 }
 
-export const generateKey = name => {
+export const generateKey = (name: string) => {
   return `${name}-${new Date().getTime() % 1000000}`;
 };
 
-export const getRelativeLinesByBlockKey = (blockKey, mapping) => {
+export const getRelativeLinesByBlockKey = (blockKey: string, mapping: any) => {
   let lineKeys = [];
 
   for (let key in mapping) {
