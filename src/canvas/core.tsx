@@ -108,7 +108,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
     }
   };
 
-  handleDrag = (event: any, { x, y }: { x: number; y: number }) => {
+  handleDrag = (_: any, { x, y }: { x: number; y: number }) => {
     this.setState({ position: { x, y } });
   };
 

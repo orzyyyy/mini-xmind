@@ -22,7 +22,7 @@ export default class LineGroup extends Component<
 
   static getDerivedStateFromProps(nextProps: LineGroupProps) {
     const data = nextProps.data;
-    const newState = {};
+    const newState: any = {};
     for (let key in data) {
       const { from, to } = data[key];
 
