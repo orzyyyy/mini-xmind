@@ -23,11 +23,12 @@
   "dependencies": {
     "antd": "^3.13.1",
     "dekko": "^0.2.1",
-    "nino-cli": "^0.3.0",
     "omit.js": "^1.0.0",
     "react-draggable": "^3.1.1"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.7",
+    "@types/enzyme": "^3.9.0",
     "@types/react": "^16.8.4",
     "@types/react-dom": "^16.8.2",
     "eslint": "^5.12.0",
@@ -35,7 +36,8 @@
     "lint-staged": "^8.1.0",
     "nino-cli": "^0.4.0",
     "pre-commit": "^1.2.2",
-    "prettier": "^1.15.3"
+    "prettier": "^1.15.3",
+    "ts-loader": "^5.3.3"
   },
   "pre-commit": [
     "lint-staged"

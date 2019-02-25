@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import LineGroup from '../tools/LineGroup';
 import {
@@ -11,14 +10,20 @@ import BlockGroup from '../tools/BlockGroup';
 import TagGroup from '../tools/TagGroup';
 import Draggable from 'react-draggable';
 
-export default class Canvas extends Component {
-  static propTypes = {
-    style: PropTypes.object,
-    className: PropTypes.string,
-    data: PropTypes.object,
-    orientation: PropTypes.oneOf(['h', 'v', 'horizonal', 'vertical']),
-  };
+export interface CanvasProps {
+  style?: any;
+  className?: string;
+  data?: any;
+  orientation?: 'h' | 'v' | 'horizonal' | 'vertical' | string;
+}
+export interface CanvasState {
+  blockProps?: any;
+  linesProps?: any;
+  tagProps?: any;
+  position: { x: number; y: number };
+}
 
+export default class Canvas extends Component<CanvasProps, CanvasState> {
   static defaultProps = {
     style: {},
     className: '',
@@ -26,9 +31,12 @@ export default class Canvas extends Component {
     orientation: 'h',
   };
 
-  static getDerivedStateFromProps(nextProps, nextState) {
+  static getDerivedStateFromProps(
+    nextProps: CanvasProps,
+    nextState: CanvasState,
+  ) {
     const data = nextProps.data || {};
-    if (Object.keys(data) != 0) {
+    if (Object.keys(data).length !== 0) {
       const { BlockGroup, TagGroup, LineGroup, CanvasPosition } = data;
 
       let position = nextState.position;
@@ -46,7 +54,7 @@ export default class Canvas extends Component {
     return null;
   }
 
-  constructor(props) {
+  constructor(props: CanvasProps) {
     super(props);
 
     this.state = {
@@ -58,18 +66,18 @@ export default class Canvas extends Component {
   }
 
   // to repaint Line instantly
-  handleBlockChange = (blockProps, linesProps) => {
+  handleBlockChange = (blockProps: any, linesProps: any) => {
     this.setState({ blockProps });
     if (linesProps) {
       this.setState({ linesProps });
     }
   };
 
-  handleTagChange = tagProps => {
+  handleTagChange = (tagProps: any) => {
     this.setState({ tagProps });
   };
 
-  onDrop = e => {
+  onDrop = (e: any) => {
     let dragItem = e.dataTransfer.getData('dragItem');
     if (!dragItem) {
       return;
@@ -100,11 +108,11 @@ export default class Canvas extends Component {
     }
   };
 
-  handleDrag = (event, { x, y }) => {
+  handleDrag = (event: any, { x, y }: { x: number; y: number }) => {
     this.setState({ position: { x, y } });
   };
 
-  handleDragStart = e => {
+  handleDragStart = (e: any) => {
     stopPropagation(e);
   };
 
@@ -112,7 +120,7 @@ export default class Canvas extends Component {
     const { className, orientation, ...rest } = this.props;
     const { blockProps, linesProps, tagProps, position } = this.state;
 
-    DataCollector.set('CanvasPosition', position);
+    (window as any).DataCollector.set('CanvasPosition', position);
     return (
       <Draggable
         onDrag={this.handleDrag}

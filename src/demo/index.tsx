@@ -5,12 +5,34 @@ import Toolbar from '../tools';
 import { Button } from 'antd';
 import './assets/demo.css';
 
-export default class Demo extends Component {
-  constructor(props) {
+export interface CanvasPosition {
+  x: number;
+  y: number;
+}
+export interface BlockGroup {}
+export interface TagGroup {}
+export interface LineGroup {}
+
+export interface DemoState {
+  data: {
+    CanvasPosition: CanvasPosition;
+    BlockGroup: BlockGroup;
+    TagGroup: TagGroup;
+    LineGroup: LineGroup;
+  };
+}
+
+export default class Demo extends Component<any, DemoState> {
+  constructor(props: any) {
     super(props);
 
     this.state = {
-      data: {},
+      data: {
+        CanvasPosition: { x: 0, y: 0 },
+        BlockGroup: {},
+        TagGroup: {},
+        LineGroup: {},
+      },
     };
   }
 
@@ -25,7 +47,7 @@ export default class Demo extends Component {
   };
 
   outputData = () => {
-    const data = DataCollector.getAll();
+    const data = (window as any).DataCollector.getAll();
     this.setState({ data });
     const treeData = JSON.stringify(data);
     // eslint-disable-next-line

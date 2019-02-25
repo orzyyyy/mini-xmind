@@ -1,34 +1,35 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Draggable from 'react-draggable';
 import { Input } from 'antd';
-import { noop, isSameCoordinate } from '../utils/commonUtil';
+import { isSameCoordinate } from '../utils/commonUtil';
 import './assets/TagGroup.css';
 import { stopPropagation } from '../utils/LineUtil';
 
 // to save the key of currently dragging Tag
 let currentTag = '';
 
-export default class TagGroup extends Component {
-  static propTypes = {
-    data: PropTypes.object,
-    onChange: PropTypes.func,
-  };
+export interface TagGroupProps {
+  data?: any;
+  onChange?: (data: any) => void;
+  className?: string;
+}
+export interface TagGroupState {
+  data?: any;
+}
 
-  static defaultProps = {
-    data: {},
-    onChange: noop,
-  };
-
-  static getDerivedStateFromProps(nextProps, nextState) {
+export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
+  static getDerivedStateFromProps(
+    nextProps: TagGroupProps,
+    nextState: TagGroupState,
+  ) {
     if (isSameCoordinate(nextProps, nextState, currentTag)) {
       return null;
     }
     return { data: nextProps.data };
   }
 
-  constructor(props) {
+  constructor(props: TagGroupProps) {
     super(props);
 
     this.state = {
@@ -36,15 +37,20 @@ export default class TagGroup extends Component {
     };
   }
 
-  handleStop = ({ x, y }, key) => {
+  handleStop = ({ x, y }: { x: number; y: number }, key: string) => {
     const { data, onChange } = this.props;
 
     data[key] = Object.assign({}, data[key], { x, y });
 
-    onChange(data);
+    onChange && onChange(data);
   };
 
-  handleChange = (item, key, targetKey, targetValue) => {
+  handleChange = (
+    item: any,
+    key: string,
+    targetKey: string,
+    targetValue: boolean | string,
+  ) => {
     const { data } = this.state;
     data[key] = item;
     data[key][targetKey] = targetValue;
@@ -52,20 +58,21 @@ export default class TagGroup extends Component {
     this.setState({ data });
   };
 
-  handleDragStart = e => {
+  handleDragStart = (e: any) => {
     stopPropagation(e);
   };
 
-  handleDrag = key => {
+  handleDrag = (key: string) => {
+    const { onChange } = this.props;
     currentTag = key;
-    this.props.onChange(this.props.data);
+    onChange && onChange(this.props.data);
   };
 
   render = () => {
     const { className, onChange, ...rest } = this.props;
     const { data } = this.state;
 
-    DataCollector.set('TagGroup', data);
+    (window as any).DataCollector.set('TagGroup', data);
     return Object.keys(data).map(key => {
       const { x, y, style, editable } = data[key];
 

@@ -1,6 +1,13 @@
+import { BlockGroupProps, BlockGroupState } from '../tools/BlockGroup';
+import { TagGroupProps, TagGroupState } from '../tools/TagGroup';
+
 export function noop() {}
 
-export const isSameCoordinate = (nextProps, nextState, currentKey) => {
+export const isSameCoordinate = (
+  nextProps: BlockGroupProps | TagGroupProps,
+  nextState: BlockGroupState | TagGroupState,
+  currentKey?: string,
+) => {
   if (!currentKey) {
     return false;
   }
