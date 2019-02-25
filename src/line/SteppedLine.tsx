@@ -1,16 +1,19 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-
 import Line from './core';
 const defaultBorderWidth = 1;
 
-export default class SteppedLine extends PureComponent {
-  static propTypes = {
-    orientation: PropTypes.oneOf(['h', 'v', 'horizonal', 'vertical']),
-    className: PropTypes.string,
-    style: PropTypes.object,
-  };
+export interface SteppedLineProps {
+  orientation?: 'h' | 'v' | 'horizonal' | 'vertical' | string;
+  className?: string;
+  style?: any;
+  x0: number;
+  y0: number;
+  x1: number;
+  y1: number;
+  borderWidth?: number;
+}
 
+export default class SteppedLine extends PureComponent<SteppedLineProps> {
   static defaultProps = {
     orientation: 'h',
     className: '',
@@ -18,14 +21,13 @@ export default class SteppedLine extends PureComponent {
   };
 
   renderVertical = () => {
-    const { x0, y0, x1, y1 } = this.props;
+    const { x0, y0, x1, y1, borderWidth = defaultBorderWidth } = this.props;
 
     const dx = x1 - x0;
     if (dx === 0) {
       return <Line {...this.props} />;
     }
 
-    const borderWidth = this.props.borderWidth || defaultBorderWidth;
     const y2 = (y0 + y1) / 2;
 
     const xOffset = dx > 0 ? borderWidth : 0;
@@ -42,14 +44,13 @@ export default class SteppedLine extends PureComponent {
   };
 
   renderHorizontal = () => {
-    const { x0, y0, x1, y1 } = this.props;
+    const { x0, y0, x1, y1, borderWidth = defaultBorderWidth } = this.props;
 
     const dy = y1 - y0;
     if (dy === 0) {
       return <Line {...this.props} />;
     }
 
-    const borderWidth = this.props.borderWidth || defaultBorderWidth;
     const x2 = (x0 + x1) / 2;
 
     const yOffset = dy < 0 ? borderWidth : 0;

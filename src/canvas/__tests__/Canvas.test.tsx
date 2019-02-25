@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-let Canvas;
+let Canvas: any;
 switch (process.env.LIB_DIR) {
   case 'dist':
     Canvas = require('../../../dist/lib/canvas').default;
@@ -16,16 +16,16 @@ import Listener from '../../utils/GlobalListener';
 import mapping from '../../mock/mapping.json';
 import 'nino-cli/scripts/setup';
 
-const createWrapper = (...props) =>
+const createWrapper = (...props: Array<any>) =>
   mount(<Canvas style={{ width: '100%', height: '100%' }} {...props} />);
 
 describe('Canvas', () => {
   beforeEach(() => {
-    window.DataCollector = new Listener();
+    (window as any).DataCollector = new Listener();
   });
 
   afterEach(() => {
-    window.DataCollector = null;
+    (window as any).DataCollector = null;
   });
 
   it('Canvas renders correctly', () => {

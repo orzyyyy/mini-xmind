@@ -34,16 +34,16 @@ describe('Line', () => {
     );
     expect(wrapper).toMatchSnapshot();
 
-    const x0 = wrapper
+    const x0: string = wrapper
       .find('SteppedLine')
       .at(0)
       .prop('x0');
-    expect(x0 + 100).toBe(0);
+    expect(parseFloat(x0) + 100).toBe(0);
 
-    const y0 = wrapper
+    const y0: string = wrapper
       .find('SteppedLine')
       .at(0)
       .prop('y0');
-    expect(y0 + 100).toBe(0);
+    expect(parseFloat(y0) + 100).toBe(0);
   });
 });

@@ -2,6 +2,6 @@
 import Canvas from './core';
 import Listener from '../utils/GlobalListener';
 
-window.DataCollector = new Listener();
+(window as any).DataCollector = new Listener();
 
 export default Canvas;

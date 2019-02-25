@@ -456,7 +456,6 @@ exports[`demo render correctly 1`] = `
             transform={null}
           >
             <BlockGroup
-              className=""
               data={
                 Object {
                   "block-623187": Object {

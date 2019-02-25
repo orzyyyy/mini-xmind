@@ -1,11 +1,12 @@
 export default class GlobalListener {
-  constructor(root) {
+  private listeners: any;
+  private meta: any;
+  constructor() {
     this.listeners = {};
-    this.root = root;
     this.meta = {};
   }
 
-  on = (key, callback) => {
+  on = (key: string, callback: (...rest: Array<any>) => void) => {
     if (!this.listeners[key]) {
       this.listeners[key] = [];
     }
@@ -15,7 +16,7 @@ export default class GlobalListener {
     return this;
   };
 
-  do = (key, detail) => {
+  do = (key: string, detail: any) => {
     const listeners = this.listeners[key] || [];
 
     for (let item of listeners) {
@@ -25,7 +26,7 @@ export default class GlobalListener {
     return this;
   };
 
-  set = (key, data) => {
+  set = (key: string, data: any) => {
     this.meta[key] = Object.assign({}, this.meta[key], data);
 
     return this;
@@ -35,7 +36,7 @@ export default class GlobalListener {
     return this.meta;
   };
 
-  get = key => {
+  get = (key: string) => {
     return this.meta[key];
   };
 
@@ -43,5 +44,5 @@ export default class GlobalListener {
     this.meta = {};
   };
 
-  isListenerExist = name => !!this.listeners[name];
+  isListenerExist = (name: string) => !!this.listeners[name];
 }

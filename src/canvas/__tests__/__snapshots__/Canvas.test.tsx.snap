@@ -304,7 +304,6 @@ exports[`Canvas Canvas renders correctly 1`] = `
         transform={null}
       >
         <BlockGroup
-          className=""
           data={
             Object {
               "block-623187": Object {
@@ -1290,7 +1289,6 @@ exports[`Canvas when data is null, it should render correctly 1`] = `
         transform={null}
       >
         <BlockGroup
-          className=""
           data={Object {}}
           lineData={Object {}}
           onChange={[Function]}
@@ -1411,7 +1409,6 @@ exports[`Canvas when data is null, it should render correctly 2`] = `
         transform={null}
       >
         <BlockGroup
-          className=""
           data={Object {}}
           lineData={Object {}}
           onChange={[Function]}
@@ -1532,7 +1529,6 @@ exports[`Canvas when data is null, it should render correctly 3`] = `
         transform={null}
       >
         <BlockGroup
-          className=""
           data={Object {}}
           lineData={Object {}}
           onChange={[Function]}

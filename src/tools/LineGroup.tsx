@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { SteppedLineTo } from '../line';
 import omit from 'omit.js';
 
-export default class LineGroup extends Component {
-  static propTypes = {
-    data: PropTypes.object,
-  };
+export interface LineGroupProps {
+  offset?: { x: number; y: number };
+  data?: any;
+  orientation?: 'h' | 'v' | 'horizonal' | 'vertical' | string;
+}
+export interface LineGroupState {
+  data?: any;
+}
 
+export default class LineGroup extends Component<
+  LineGroupProps,
+  LineGroupState
+> {
   static defaultProps = {
+    offset: {},
     data: {},
   };
 
-  static getDerivedStateFromProps(nextProps) {
+  static getDerivedStateFromProps(nextProps: LineGroupProps) {
     const data = nextProps.data;
     const newState = {};
     for (let key in data) {
@@ -28,7 +36,7 @@ export default class LineGroup extends Component {
     return { data: newState };
   }
 
-  constructor(props) {
+  constructor(props: LineGroupProps) {
     super(props);
 
     this.state = {
@@ -36,12 +44,12 @@ export default class LineGroup extends Component {
     };
   }
 
-  generateLines = data => {
+  generateLines = (data: any) => {
     const { offset, ...rest } = this.props;
     return Object.keys(data).map(lineKey => {
       const { from, to } = data[lineKey];
 
-      DataCollector.set('LineGroup', {
+      (window as any).DataCollector.set('LineGroup', {
         [lineKey]: omit(data[lineKey], ['from', 'to']),
       });
       return (
