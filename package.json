@@ -45,7 +45,6 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css}": [
       "npm run prettier",
-      "npx eslint .",
       "git add"
     ]
   }
