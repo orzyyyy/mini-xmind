@@ -26,6 +26,7 @@
     "docs",
     ".circleci",
     ".github",
+    "lib",
     "**/__tests__/**"
   ],
   "typings": "./index.d.ts"
