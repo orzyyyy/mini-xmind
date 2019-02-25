@@ -2,9 +2,9 @@
   "compilerOptions": {
     "declaration": true,
     "strict": true,
-    "outDir": "dist",
-    "module": "esnext",
-    "target": "es2016",
+    "outDir": "lib",
+    "module": "commonjs",
+    "target": "es5",
     "lib": ["es6", "dom"],
     "sourceMap": true,
     "jsx": "react",
@@ -25,7 +25,8 @@
     "scripts",
     "docs",
     ".circleci",
-    ".github"
+    ".github",
+    "**/__tests__/**"
   ],
   "typings": "./index.d.ts"
 }
