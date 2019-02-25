@@ -1,0 +1,1910 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`demo render correctly 1`] = `
+<Demo>
+  <div
+    className="Demo"
+  >
+    <Toolbar>
+      <div
+        className="Toolbar"
+      >
+        <ul>
+          <li
+            draggable={true}
+            key="tool-0"
+            onDragStart={[Function]}
+          >
+            <Icon
+              style={
+                Object {
+                  "fontSize": 20,
+                }
+              }
+              type="minus"
+            >
+              <LocaleReceiver
+                componentName="Icon"
+              >
+                <i
+                  aria-label="icon: minus"
+                  className="anticon anticon-minus"
+                  style={
+                    Object {
+                      "fontSize": 20,
+                    }
+                  }
+                >
+                  <IconReact
+                    className=""
+                    type="minus-o"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className=""
+                      data-icon="minus"
+                      fill="currentColor"
+                      height="1em"
+                      key="svg-minus"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"
+                        key="svg-minus-svg-0"
+                      />
+                    </svg>
+                  </IconReact>
+                </i>
+              </LocaleReceiver>
+            </Icon>
+          </li>
+          <li
+            draggable={true}
+            key="tool-1"
+            onDragStart={[Function]}
+          >
+            <Icon
+              style={
+                Object {
+                  "fontSize": 20,
+                }
+              }
+              type="border"
+            >
+              <LocaleReceiver
+                componentName="Icon"
+              >
+                <i
+                  aria-label="icon: border"
+                  className="anticon anticon-border"
+                  style={
+                    Object {
+                      "fontSize": 20,
+                    }
+                  }
+                >
+                  <IconReact
+                    className=""
+                    type="border-o"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className=""
+                      data-icon="border"
+                      fill="currentColor"
+                      height="1em"
+                      key="svg-border"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z"
+                        key="svg-border-svg-0"
+                      />
+                    </svg>
+                  </IconReact>
+                </i>
+              </LocaleReceiver>
+            </Icon>
+          </li>
+          <li
+            draggable={true}
+            key="tool-2"
+            onDragStart={[Function]}
+          >
+            <Icon
+              style={
+                Object {
+                  "fontSize": 20,
+                }
+              }
+              type="tag"
+            >
+              <LocaleReceiver
+                componentName="Icon"
+              >
+                <i
+                  aria-label="icon: tag"
+                  className="anticon anticon-tag"
+                  style={
+                    Object {
+                      "fontSize": 20,
+                    }
+                  }
+                >
+                  <IconReact
+                    className=""
+                    type="tag-o"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className=""
+                      data-icon="tag"
+                      fill="currentColor"
+                      height="1em"
+                      key="svg-tag"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M938 458.8l-29.6-312.6c-1.5-16.2-14.4-29-30.6-30.6L565.2 86h-.4c-3.2 0-5.7 1-7.6 2.9L88.9 557.2a9.96 9.96 0 0 0 0 14.1l363.8 363.8c1.9 1.9 4.4 2.9 7.1 2.9s5.2-1 7.1-2.9l468.3-468.3c2-2.1 3-5 2.8-8zM459.7 834.7L189.3 564.3 589 164.6 836 188l23.4 247-399.7 399.7zM680 256c-48.5 0-88 39.5-88 88s39.5 88 88 88 88-39.5 88-88-39.5-88-88-88zm0 120c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"
+                        key="svg-tag-svg-0"
+                      />
+                    </svg>
+                  </IconReact>
+                </i>
+              </LocaleReceiver>
+            </Icon>
+          </li>
+        </ul>
+      </div>
+    </Toolbar>
+    <Canvas
+      className="canvas-wrapper"
+      data={
+        Object {
+          "BlockGroup": Object {
+            "block-623187": Object {
+              "style": Object {
+                "background": "#F96",
+                "border": "1px solid #aaa",
+                "borderRadius": "10px",
+                "height": 80,
+                "width": 100,
+              },
+              "x": 158,
+              "y": 256,
+            },
+            "block-624018": Object {
+              "style": Object {
+                "background": "#F96",
+                "border": "1px solid #aaa",
+                "borderRadius": "10px",
+                "height": 80,
+                "width": 100,
+              },
+              "x": 367,
+              "y": 368,
+            },
+            "block-73377": Object {
+              "style": Object {
+                "background": "#F96",
+                "border": "1px solid #aaa",
+                "borderRadius": "10px",
+                "height": 80,
+                "width": 100,
+              },
+              "x": 253,
+              "y": 525,
+            },
+          },
+          "CanvasPosition": Object {
+            "x": -67,
+            "y": 230,
+          },
+          "LineGroup": Object {
+            "line-592694": Object {
+              "from": <div
+                class="BlockGroup animate-appear react-draggable"
+                data="[object Object]"
+                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+              />,
+              "fromKey": "block-623187",
+              "to": <div
+                class="BlockGroup animate-appear react-draggable"
+                data="[object Object]"
+                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+              />,
+              "toKey": "block-624018",
+            },
+            "line-77619": Object {
+              "from": <div
+                class="BlockGroup animate-appear react-draggable"
+                data="[object Object]"
+                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+              />,
+              "fromKey": "block-73377",
+              "to": <div
+                class="BlockGroup animate-appear react-draggable"
+                data="[object Object]"
+                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+              />,
+              "toKey": "block-623187",
+            },
+          },
+          "TagGroup": Object {
+            "tag-626505": Object {
+              "editable": false,
+              "input": "test",
+              "style": Object {
+                "height": 32,
+                "width": 100,
+              },
+              "x": 167,
+              "y": 284,
+            },
+            "tag-629962": Object {
+              "editable": false,
+              "input": "test2",
+              "style": Object {
+                "height": 32,
+                "width": 100,
+              },
+              "x": 405,
+              "y": 398,
+            },
+            "tag-80986": Object {
+              "editable": false,
+              "input": "test3",
+              "style": Object {
+                "height": 32,
+                "width": 100,
+              },
+              "x": 286,
+              "y": 555,
+            },
+          },
+        }
+      }
+      orientation="h"
+      style={Object {}}
+    >
+      <Draggable
+        allowAnyClick={false}
+        axis="both"
+        bounds={false}
+        cancel={null}
+        defaultClassName="react-draggable"
+        defaultClassNameDragged="react-draggable-dragged"
+        defaultClassNameDragging="react-draggable-dragging"
+        defaultPosition={
+          Object {
+            "x": 0,
+            "y": 0,
+          }
+        }
+        disabled={false}
+        enableUserSelectHack={true}
+        grid={null}
+        handle={null}
+        offsetParent={null}
+        onDrag={[Function]}
+        onMouseDown={[Function]}
+        onStart={[Function]}
+        onStop={[Function]}
+        position={
+          Object {
+            "x": -67,
+            "y": 230,
+          }
+        }
+        scale={1}
+        transform={null}
+      >
+        <DraggableCore
+          allowAnyClick={false}
+          axis="both"
+          bounds={false}
+          cancel={null}
+          defaultClassName="react-draggable"
+          defaultClassNameDragged="react-draggable-dragged"
+          defaultClassNameDragging="react-draggable-dragging"
+          defaultPosition={
+            Object {
+              "x": 0,
+              "y": 0,
+            }
+          }
+          disabled={false}
+          enableUserSelectHack={true}
+          grid={null}
+          handle={null}
+          offsetParent={null}
+          onDrag={[Function]}
+          onMouseDown={[Function]}
+          onStart={[Function]}
+          onStop={[Function]}
+          position={
+            Object {
+              "x": -67,
+              "y": 230,
+            }
+          }
+          scale={1}
+          transform={null}
+        >
+          <div
+            className="Canvas canvas-wrapper react-draggable"
+            data={
+              Object {
+                "BlockGroup": Object {
+                  "block-623187": Object {
+                    "style": Object {
+                      "background": "#F96",
+                      "border": "1px solid #aaa",
+                      "borderRadius": "10px",
+                      "height": 80,
+                      "width": 100,
+                    },
+                    "x": 158,
+                    "y": 256,
+                  },
+                  "block-624018": Object {
+                    "style": Object {
+                      "background": "#F96",
+                      "border": "1px solid #aaa",
+                      "borderRadius": "10px",
+                      "height": 80,
+                      "width": 100,
+                    },
+                    "x": 367,
+                    "y": 368,
+                  },
+                  "block-73377": Object {
+                    "style": Object {
+                      "background": "#F96",
+                      "border": "1px solid #aaa",
+                      "borderRadius": "10px",
+                      "height": 80,
+                      "width": 100,
+                    },
+                    "x": 253,
+                    "y": 525,
+                  },
+                },
+                "CanvasPosition": Object {
+                  "x": -67,
+                  "y": 230,
+                },
+                "LineGroup": Object {
+                  "line-592694": Object {
+                    "from": <div
+                      class="BlockGroup animate-appear react-draggable"
+                      data="[object Object]"
+                      style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                    />,
+                    "fromKey": "block-623187",
+                    "to": <div
+                      class="BlockGroup animate-appear react-draggable"
+                      data="[object Object]"
+                      style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                    />,
+                    "toKey": "block-624018",
+                  },
+                  "line-77619": Object {
+                    "from": <div
+                      class="BlockGroup animate-appear react-draggable"
+                      data="[object Object]"
+                      style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                    />,
+                    "fromKey": "block-73377",
+                    "to": <div
+                      class="BlockGroup animate-appear react-draggable"
+                      data="[object Object]"
+                      style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                    />,
+                    "toKey": "block-623187",
+                  },
+                },
+                "TagGroup": Object {
+                  "tag-626505": Object {
+                    "editable": false,
+                    "input": "test",
+                    "style": Object {
+                      "height": 32,
+                      "width": 100,
+                    },
+                    "x": 167,
+                    "y": 284,
+                  },
+                  "tag-629962": Object {
+                    "editable": false,
+                    "input": "test2",
+                    "style": Object {
+                      "height": 32,
+                      "width": 100,
+                    },
+                    "x": 405,
+                    "y": 398,
+                  },
+                  "tag-80986": Object {
+                    "editable": false,
+                    "input": "test3",
+                    "style": Object {
+                      "height": 32,
+                      "width": 100,
+                    },
+                    "x": 286,
+                    "y": 555,
+                  },
+                },
+              }
+            }
+            onDragOver={[Function]}
+            onDrop={[Function]}
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchStart={[Function]}
+            style={
+              Object {
+                "touchAction": "none",
+                "transform": "translate(-67px,230px)",
+              }
+            }
+            transform={null}
+          >
+            <BlockGroup
+              data={
+                Object {
+                  "block-623187": Object {
+                    "style": Object {
+                      "background": "#F96",
+                      "border": "1px solid #aaa",
+                      "borderRadius": "10px",
+                      "height": 80,
+                      "width": 100,
+                    },
+                    "x": 158,
+                    "y": 256,
+                  },
+                  "block-624018": Object {
+                    "style": Object {
+                      "background": "#F96",
+                      "border": "1px solid #aaa",
+                      "borderRadius": "10px",
+                      "height": 80,
+                      "width": 100,
+                    },
+                    "x": 367,
+                    "y": 368,
+                  },
+                  "block-73377": Object {
+                    "style": Object {
+                      "background": "#F96",
+                      "border": "1px solid #aaa",
+                      "borderRadius": "10px",
+                      "height": 80,
+                      "width": 100,
+                    },
+                    "x": 253,
+                    "y": 525,
+                  },
+                }
+              }
+              lineData={
+                Object {
+                  "line-592694": Object {
+                    "from": <div
+                      class="BlockGroup animate-appear react-draggable"
+                      data="[object Object]"
+                      style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                    />,
+                    "fromKey": "block-623187",
+                    "to": <div
+                      class="BlockGroup animate-appear react-draggable"
+                      data="[object Object]"
+                      style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                    />,
+                    "toKey": "block-624018",
+                  },
+                  "line-77619": Object {
+                    "from": <div
+                      class="BlockGroup animate-appear react-draggable"
+                      data="[object Object]"
+                      style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                    />,
+                    "fromKey": "block-73377",
+                    "to": <div
+                      class="BlockGroup animate-appear react-draggable"
+                      data="[object Object]"
+                      style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                    />,
+                    "toKey": "block-623187",
+                  },
+                }
+              }
+              onChange={[Function]}
+            >
+              <Draggable
+                allowAnyClick={false}
+                axis="both"
+                bounds={false}
+                cancel={null}
+                defaultClassName="react-draggable"
+                defaultClassNameDragged="react-draggable-dragged"
+                defaultClassNameDragging="react-draggable-dragging"
+                defaultPosition={
+                  Object {
+                    "x": 0,
+                    "y": 0,
+                  }
+                }
+                disabled={false}
+                enableUserSelectHack={true}
+                grid={null}
+                handle={null}
+                key="block-623187"
+                offsetParent={null}
+                onDrag={[Function]}
+                onMouseDown={[Function]}
+                onStart={[Function]}
+                onStop={[Function]}
+                position={
+                  Object {
+                    "x": 158,
+                    "y": 256,
+                  }
+                }
+                scale={1}
+                transform={null}
+              >
+                <DraggableCore
+                  allowAnyClick={false}
+                  axis="both"
+                  bounds={false}
+                  cancel={null}
+                  defaultClassName="react-draggable"
+                  defaultClassNameDragged="react-draggable-dragged"
+                  defaultClassNameDragging="react-draggable-dragging"
+                  defaultPosition={
+                    Object {
+                      "x": 0,
+                      "y": 0,
+                    }
+                  }
+                  disabled={false}
+                  enableUserSelectHack={true}
+                  grid={null}
+                  handle={null}
+                  offsetParent={null}
+                  onDrag={[Function]}
+                  onMouseDown={[Function]}
+                  onStart={[Function]}
+                  onStop={[Function]}
+                  position={
+                    Object {
+                      "x": 158,
+                      "y": 256,
+                    }
+                  }
+                  scale={1}
+                  transform={null}
+                >
+                  <div
+                    className="BlockGroup animate-appear react-draggable"
+                    data={
+                      Object {
+                        "block-623187": Object {
+                          "style": Object {
+                            "background": "#F96",
+                            "border": "1px solid #aaa",
+                            "borderRadius": "10px",
+                            "height": 80,
+                            "width": 100,
+                          },
+                          "x": 158,
+                          "y": 256,
+                        },
+                        "block-624018": Object {
+                          "style": Object {
+                            "background": "#F96",
+                            "border": "1px solid #aaa",
+                            "borderRadius": "10px",
+                            "height": 80,
+                            "width": 100,
+                          },
+                          "x": 367,
+                          "y": 368,
+                        },
+                        "block-73377": Object {
+                          "style": Object {
+                            "background": "#F96",
+                            "border": "1px solid #aaa",
+                            "borderRadius": "10px",
+                            "height": 80,
+                            "width": 100,
+                          },
+                          "x": 253,
+                          "y": 525,
+                        },
+                      }
+                    }
+                    onClick={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                    style={
+                      Object {
+                        "background": "#F96",
+                        "border": "1px solid #aaa",
+                        "borderRadius": "10px",
+                        "height": 80,
+                        "touchAction": "none",
+                        "transform": "translate(158px,256px)",
+                        "width": 100,
+                      }
+                    }
+                    transform={null}
+                  />
+                </DraggableCore>
+              </Draggable>
+              <Draggable
+                allowAnyClick={false}
+                axis="both"
+                bounds={false}
+                cancel={null}
+                defaultClassName="react-draggable"
+                defaultClassNameDragged="react-draggable-dragged"
+                defaultClassNameDragging="react-draggable-dragging"
+                defaultPosition={
+                  Object {
+                    "x": 0,
+                    "y": 0,
+                  }
+                }
+                disabled={false}
+                enableUserSelectHack={true}
+                grid={null}
+                handle={null}
+                key="block-624018"
+                offsetParent={null}
+                onDrag={[Function]}
+                onMouseDown={[Function]}
+                onStart={[Function]}
+                onStop={[Function]}
+                position={
+                  Object {
+                    "x": 367,
+                    "y": 368,
+                  }
+                }
+                scale={1}
+                transform={null}
+              >
+                <DraggableCore
+                  allowAnyClick={false}
+                  axis="both"
+                  bounds={false}
+                  cancel={null}
+                  defaultClassName="react-draggable"
+                  defaultClassNameDragged="react-draggable-dragged"
+                  defaultClassNameDragging="react-draggable-dragging"
+                  defaultPosition={
+                    Object {
+                      "x": 0,
+                      "y": 0,
+                    }
+                  }
+                  disabled={false}
+                  enableUserSelectHack={true}
+                  grid={null}
+                  handle={null}
+                  offsetParent={null}
+                  onDrag={[Function]}
+                  onMouseDown={[Function]}
+                  onStart={[Function]}
+                  onStop={[Function]}
+                  position={
+                    Object {
+                      "x": 367,
+                      "y": 368,
+                    }
+                  }
+                  scale={1}
+                  transform={null}
+                >
+                  <div
+                    className="BlockGroup animate-appear react-draggable"
+                    data={
+                      Object {
+                        "block-623187": Object {
+                          "style": Object {
+                            "background": "#F96",
+                            "border": "1px solid #aaa",
+                            "borderRadius": "10px",
+                            "height": 80,
+                            "width": 100,
+                          },
+                          "x": 158,
+                          "y": 256,
+                        },
+                        "block-624018": Object {
+                          "style": Object {
+                            "background": "#F96",
+                            "border": "1px solid #aaa",
+                            "borderRadius": "10px",
+                            "height": 80,
+                            "width": 100,
+                          },
+                          "x": 367,
+                          "y": 368,
+                        },
+                        "block-73377": Object {
+                          "style": Object {
+                            "background": "#F96",
+                            "border": "1px solid #aaa",
+                            "borderRadius": "10px",
+                            "height": 80,
+                            "width": 100,
+                          },
+                          "x": 253,
+                          "y": 525,
+                        },
+                      }
+                    }
+                    onClick={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                    style={
+                      Object {
+                        "background": "#F96",
+                        "border": "1px solid #aaa",
+                        "borderRadius": "10px",
+                        "height": 80,
+                        "touchAction": "none",
+                        "transform": "translate(367px,368px)",
+                        "width": 100,
+                      }
+                    }
+                    transform={null}
+                  />
+                </DraggableCore>
+              </Draggable>
+              <Draggable
+                allowAnyClick={false}
+                axis="both"
+                bounds={false}
+                cancel={null}
+                defaultClassName="react-draggable"
+                defaultClassNameDragged="react-draggable-dragged"
+                defaultClassNameDragging="react-draggable-dragging"
+                defaultPosition={
+                  Object {
+                    "x": 0,
+                    "y": 0,
+                  }
+                }
+                disabled={false}
+                enableUserSelectHack={true}
+                grid={null}
+                handle={null}
+                key="block-73377"
+                offsetParent={null}
+                onDrag={[Function]}
+                onMouseDown={[Function]}
+                onStart={[Function]}
+                onStop={[Function]}
+                position={
+                  Object {
+                    "x": 253,
+                    "y": 525,
+                  }
+                }
+                scale={1}
+                transform={null}
+              >
+                <DraggableCore
+                  allowAnyClick={false}
+                  axis="both"
+                  bounds={false}
+                  cancel={null}
+                  defaultClassName="react-draggable"
+                  defaultClassNameDragged="react-draggable-dragged"
+                  defaultClassNameDragging="react-draggable-dragging"
+                  defaultPosition={
+                    Object {
+                      "x": 0,
+                      "y": 0,
+                    }
+                  }
+                  disabled={false}
+                  enableUserSelectHack={true}
+                  grid={null}
+                  handle={null}
+                  offsetParent={null}
+                  onDrag={[Function]}
+                  onMouseDown={[Function]}
+                  onStart={[Function]}
+                  onStop={[Function]}
+                  position={
+                    Object {
+                      "x": 253,
+                      "y": 525,
+                    }
+                  }
+                  scale={1}
+                  transform={null}
+                >
+                  <div
+                    className="BlockGroup animate-appear react-draggable"
+                    data={
+                      Object {
+                        "block-623187": Object {
+                          "style": Object {
+                            "background": "#F96",
+                            "border": "1px solid #aaa",
+                            "borderRadius": "10px",
+                            "height": 80,
+                            "width": 100,
+                          },
+                          "x": 158,
+                          "y": 256,
+                        },
+                        "block-624018": Object {
+                          "style": Object {
+                            "background": "#F96",
+                            "border": "1px solid #aaa",
+                            "borderRadius": "10px",
+                            "height": 80,
+                            "width": 100,
+                          },
+                          "x": 367,
+                          "y": 368,
+                        },
+                        "block-73377": Object {
+                          "style": Object {
+                            "background": "#F96",
+                            "border": "1px solid #aaa",
+                            "borderRadius": "10px",
+                            "height": 80,
+                            "width": 100,
+                          },
+                          "x": 253,
+                          "y": 525,
+                        },
+                      }
+                    }
+                    onClick={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                    style={
+                      Object {
+                        "background": "#F96",
+                        "border": "1px solid #aaa",
+                        "borderRadius": "10px",
+                        "height": 80,
+                        "touchAction": "none",
+                        "transform": "translate(253px,525px)",
+                        "width": 100,
+                      }
+                    }
+                    transform={null}
+                  />
+                </DraggableCore>
+              </Draggable>
+            </BlockGroup>
+            <LineGroup
+              data={
+                Object {
+                  "line-592694": Object {
+                    "from": <div
+                      class="BlockGroup animate-appear react-draggable"
+                      data="[object Object]"
+                      style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                    />,
+                    "fromKey": "block-623187",
+                    "to": <div
+                      class="BlockGroup animate-appear react-draggable"
+                      data="[object Object]"
+                      style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                    />,
+                    "toKey": "block-624018",
+                  },
+                  "line-77619": Object {
+                    "from": <div
+                      class="BlockGroup animate-appear react-draggable"
+                      data="[object Object]"
+                      style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                    />,
+                    "fromKey": "block-73377",
+                    "to": <div
+                      class="BlockGroup animate-appear react-draggable"
+                      data="[object Object]"
+                      style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                    />,
+                    "toKey": "block-623187",
+                  },
+                }
+              }
+              offset={
+                Object {
+                  "x": -67,
+                  "y": 230,
+                }
+              }
+              orientation="h"
+            >
+              <div
+                className="LineGroup"
+              >
+                <SteppedLineTo
+                  className="animate-appear"
+                  data={
+                    Object {
+                      "line-592694": Object {
+                        "from": <div
+                          class="BlockGroup animate-appear react-draggable"
+                          data="[object Object]"
+                          style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                        />,
+                        "fromKey": "block-623187",
+                        "to": <div
+                          class="BlockGroup animate-appear react-draggable"
+                          data="[object Object]"
+                          style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                        />,
+                        "toKey": "block-624018",
+                      },
+                      "line-77619": Object {
+                        "from": <div
+                          class="BlockGroup animate-appear react-draggable"
+                          data="[object Object]"
+                          style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                        />,
+                        "fromKey": "block-73377",
+                        "to": <div
+                          class="BlockGroup animate-appear react-draggable"
+                          data="[object Object]"
+                          style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                        />,
+                        "toKey": "block-623187",
+                      },
+                    }
+                  }
+                  from={
+                    <div
+                      class="BlockGroup animate-appear react-draggable"
+                      data="[object Object]"
+                      style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                    />
+                  }
+                  key="line-77619"
+                  offset={
+                    Object {
+                      "x": -67,
+                      "y": 230,
+                    }
+                  }
+                  orientation="h"
+                  style={Object {}}
+                  to={
+                    <div
+                      class="BlockGroup animate-appear react-draggable"
+                      data="[object Object]"
+                      style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                    />
+                  }
+                >
+                  <div
+                    className="stepped-line-to animate-appear"
+                  >
+                    <SteppedLine
+                      className="animate-appear"
+                      data={
+                        Object {
+                          "line-592694": Object {
+                            "from": <div
+                              class="BlockGroup animate-appear react-draggable"
+                              data="[object Object]"
+                              style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                            />,
+                            "fromKey": "block-623187",
+                            "to": <div
+                              class="BlockGroup animate-appear react-draggable"
+                              data="[object Object]"
+                              style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                            />,
+                            "toKey": "block-624018",
+                          },
+                          "line-77619": Object {
+                            "from": <div
+                              class="BlockGroup animate-appear react-draggable"
+                              data="[object Object]"
+                              style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                            />,
+                            "fromKey": "block-73377",
+                            "to": <div
+                              class="BlockGroup animate-appear react-draggable"
+                              data="[object Object]"
+                              style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                            />,
+                            "toKey": "block-623187",
+                          },
+                        }
+                      }
+                      from={
+                        <div
+                          class="BlockGroup animate-appear react-draggable"
+                          data="[object Object]"
+                          style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                        />
+                      }
+                      offset={
+                        Object {
+                          "x": -67,
+                          "y": 230,
+                        }
+                      }
+                      orientation="h"
+                      style={Object {}}
+                      to={
+                        <div
+                          class="BlockGroup animate-appear react-draggable"
+                          data="[object Object]"
+                          style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                        />
+                      }
+                      x0={67}
+                      x1={67}
+                      y0={-230}
+                      y1={-230}
+                    >
+                      <Line
+                        className="animate-appear"
+                        data={
+                          Object {
+                            "line-592694": Object {
+                              "from": <div
+                                class="BlockGroup animate-appear react-draggable"
+                                data="[object Object]"
+                                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                              />,
+                              "fromKey": "block-623187",
+                              "to": <div
+                                class="BlockGroup animate-appear react-draggable"
+                                data="[object Object]"
+                                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                              />,
+                              "toKey": "block-624018",
+                            },
+                            "line-77619": Object {
+                              "from": <div
+                                class="BlockGroup animate-appear react-draggable"
+                                data="[object Object]"
+                                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                              />,
+                              "fromKey": "block-73377",
+                              "to": <div
+                                class="BlockGroup animate-appear react-draggable"
+                                data="[object Object]"
+                                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                              />,
+                              "toKey": "block-623187",
+                            },
+                          }
+                        }
+                        from={
+                          <div
+                            class="BlockGroup animate-appear react-draggable"
+                            data="[object Object]"
+                            style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                          />
+                        }
+                        offset={
+                          Object {
+                            "x": -67,
+                            "y": 230,
+                          }
+                        }
+                        orientation="h"
+                        style={Object {}}
+                        to={
+                          <div
+                            class="BlockGroup animate-appear react-draggable"
+                            data="[object Object]"
+                            style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                          />
+                        }
+                        x0={67}
+                        x1={67}
+                        y0={-230}
+                        y1={-230}
+                      >
+                        <div
+                          className="line-placeholder"
+                        >
+                          <div
+                            className="animate-appear"
+                            data={
+                              Object {
+                                "line-592694": Object {
+                                  "from": <div
+                                    class="BlockGroup animate-appear react-draggable"
+                                    data="[object Object]"
+                                    style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                                  />,
+                                  "fromKey": "block-623187",
+                                  "to": <div
+                                    class="BlockGroup animate-appear react-draggable"
+                                    data="[object Object]"
+                                    style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                                  />,
+                                  "toKey": "block-624018",
+                                },
+                                "line-77619": Object {
+                                  "from": <div
+                                    class="BlockGroup animate-appear react-draggable"
+                                    data="[object Object]"
+                                    style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                                  />,
+                                  "fromKey": "block-73377",
+                                  "to": <div
+                                    class="BlockGroup animate-appear react-draggable"
+                                    data="[object Object]"
+                                    style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                                  />,
+                                  "toKey": "block-623187",
+                                },
+                              }
+                            }
+                            from={
+                              <div
+                                class="BlockGroup animate-appear react-draggable"
+                                data="[object Object]"
+                                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                              />
+                            }
+                            offset={
+                              Object {
+                                "x": -67,
+                                "y": 230,
+                              }
+                            }
+                            orientation="h"
+                            style={
+                              Object {
+                                "borderTopColor": "#ddd",
+                                "borderTopStyle": "solid",
+                                "borderTopWidth": 1,
+                                "left": "67px",
+                                "position": "absolute",
+                                "top": "-230px",
+                                "transform": "rotate(0deg)",
+                                "transformOrigin": "0 0",
+                                "width": "0px",
+                                "zIndex": "1",
+                              }
+                            }
+                            to={
+                              <div
+                                class="BlockGroup animate-appear react-draggable"
+                                data="[object Object]"
+                                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                              />
+                            }
+                          />
+                        </div>
+                      </Line>
+                    </SteppedLine>
+                  </div>
+                </SteppedLineTo>
+                <SteppedLineTo
+                  className="animate-appear"
+                  data={
+                    Object {
+                      "line-592694": Object {
+                        "from": <div
+                          class="BlockGroup animate-appear react-draggable"
+                          data="[object Object]"
+                          style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                        />,
+                        "fromKey": "block-623187",
+                        "to": <div
+                          class="BlockGroup animate-appear react-draggable"
+                          data="[object Object]"
+                          style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                        />,
+                        "toKey": "block-624018",
+                      },
+                      "line-77619": Object {
+                        "from": <div
+                          class="BlockGroup animate-appear react-draggable"
+                          data="[object Object]"
+                          style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                        />,
+                        "fromKey": "block-73377",
+                        "to": <div
+                          class="BlockGroup animate-appear react-draggable"
+                          data="[object Object]"
+                          style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                        />,
+                        "toKey": "block-623187",
+                      },
+                    }
+                  }
+                  from={
+                    <div
+                      class="BlockGroup animate-appear react-draggable"
+                      data="[object Object]"
+                      style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                    />
+                  }
+                  key="line-592694"
+                  offset={
+                    Object {
+                      "x": -67,
+                      "y": 230,
+                    }
+                  }
+                  orientation="h"
+                  style={Object {}}
+                  to={
+                    <div
+                      class="BlockGroup animate-appear react-draggable"
+                      data="[object Object]"
+                      style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                    />
+                  }
+                >
+                  <div
+                    className="stepped-line-to animate-appear"
+                  >
+                    <SteppedLine
+                      className="animate-appear"
+                      data={
+                        Object {
+                          "line-592694": Object {
+                            "from": <div
+                              class="BlockGroup animate-appear react-draggable"
+                              data="[object Object]"
+                              style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                            />,
+                            "fromKey": "block-623187",
+                            "to": <div
+                              class="BlockGroup animate-appear react-draggable"
+                              data="[object Object]"
+                              style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                            />,
+                            "toKey": "block-624018",
+                          },
+                          "line-77619": Object {
+                            "from": <div
+                              class="BlockGroup animate-appear react-draggable"
+                              data="[object Object]"
+                              style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                            />,
+                            "fromKey": "block-73377",
+                            "to": <div
+                              class="BlockGroup animate-appear react-draggable"
+                              data="[object Object]"
+                              style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                            />,
+                            "toKey": "block-623187",
+                          },
+                        }
+                      }
+                      from={
+                        <div
+                          class="BlockGroup animate-appear react-draggable"
+                          data="[object Object]"
+                          style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                        />
+                      }
+                      offset={
+                        Object {
+                          "x": -67,
+                          "y": 230,
+                        }
+                      }
+                      orientation="h"
+                      style={Object {}}
+                      to={
+                        <div
+                          class="BlockGroup animate-appear react-draggable"
+                          data="[object Object]"
+                          style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                        />
+                      }
+                      x0={67}
+                      x1={67}
+                      y0={-230}
+                      y1={-230}
+                    >
+                      <Line
+                        className="animate-appear"
+                        data={
+                          Object {
+                            "line-592694": Object {
+                              "from": <div
+                                class="BlockGroup animate-appear react-draggable"
+                                data="[object Object]"
+                                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                              />,
+                              "fromKey": "block-623187",
+                              "to": <div
+                                class="BlockGroup animate-appear react-draggable"
+                                data="[object Object]"
+                                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                              />,
+                              "toKey": "block-624018",
+                            },
+                            "line-77619": Object {
+                              "from": <div
+                                class="BlockGroup animate-appear react-draggable"
+                                data="[object Object]"
+                                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                              />,
+                              "fromKey": "block-73377",
+                              "to": <div
+                                class="BlockGroup animate-appear react-draggable"
+                                data="[object Object]"
+                                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                              />,
+                              "toKey": "block-623187",
+                            },
+                          }
+                        }
+                        from={
+                          <div
+                            class="BlockGroup animate-appear react-draggable"
+                            data="[object Object]"
+                            style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                          />
+                        }
+                        offset={
+                          Object {
+                            "x": -67,
+                            "y": 230,
+                          }
+                        }
+                        orientation="h"
+                        style={Object {}}
+                        to={
+                          <div
+                            class="BlockGroup animate-appear react-draggable"
+                            data="[object Object]"
+                            style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                          />
+                        }
+                        x0={67}
+                        x1={67}
+                        y0={-230}
+                        y1={-230}
+                      >
+                        <div
+                          className="line-placeholder"
+                        >
+                          <div
+                            className="animate-appear"
+                            data={
+                              Object {
+                                "line-592694": Object {
+                                  "from": <div
+                                    class="BlockGroup animate-appear react-draggable"
+                                    data="[object Object]"
+                                    style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                                  />,
+                                  "fromKey": "block-623187",
+                                  "to": <div
+                                    class="BlockGroup animate-appear react-draggable"
+                                    data="[object Object]"
+                                    style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                                  />,
+                                  "toKey": "block-624018",
+                                },
+                                "line-77619": Object {
+                                  "from": <div
+                                    class="BlockGroup animate-appear react-draggable"
+                                    data="[object Object]"
+                                    style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
+                                  />,
+                                  "fromKey": "block-73377",
+                                  "to": <div
+                                    class="BlockGroup animate-appear react-draggable"
+                                    data="[object Object]"
+                                    style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                                  />,
+                                  "toKey": "block-623187",
+                                },
+                              }
+                            }
+                            from={
+                              <div
+                                class="BlockGroup animate-appear react-draggable"
+                                data="[object Object]"
+                                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
+                              />
+                            }
+                            offset={
+                              Object {
+                                "x": -67,
+                                "y": 230,
+                              }
+                            }
+                            orientation="h"
+                            style={
+                              Object {
+                                "borderTopColor": "#ddd",
+                                "borderTopStyle": "solid",
+                                "borderTopWidth": 1,
+                                "left": "67px",
+                                "position": "absolute",
+                                "top": "-230px",
+                                "transform": "rotate(0deg)",
+                                "transformOrigin": "0 0",
+                                "width": "0px",
+                                "zIndex": "1",
+                              }
+                            }
+                            to={
+                              <div
+                                class="BlockGroup animate-appear react-draggable"
+                                data="[object Object]"
+                                style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
+                              />
+                            }
+                          />
+                        </div>
+                      </Line>
+                    </SteppedLine>
+                  </div>
+                </SteppedLineTo>
+              </div>
+            </LineGroup>
+            <TagGroup
+              data={
+                Object {
+                  "tag-626505": Object {
+                    "editable": false,
+                    "input": "test",
+                    "style": Object {
+                      "height": 32,
+                      "width": 100,
+                    },
+                    "x": 167,
+                    "y": 284,
+                  },
+                  "tag-629962": Object {
+                    "editable": false,
+                    "input": "test2",
+                    "style": Object {
+                      "height": 32,
+                      "width": 100,
+                    },
+                    "x": 405,
+                    "y": 398,
+                  },
+                  "tag-80986": Object {
+                    "editable": false,
+                    "input": "test3",
+                    "style": Object {
+                      "height": 32,
+                      "width": 100,
+                    },
+                    "x": 286,
+                    "y": 555,
+                  },
+                }
+              }
+              onChange={[Function]}
+            >
+              <Draggable
+                allowAnyClick={false}
+                axis="both"
+                bounds={false}
+                cancel={null}
+                defaultClassName="react-draggable"
+                defaultClassNameDragged="react-draggable-dragged"
+                defaultClassNameDragging="react-draggable-dragging"
+                defaultPosition={
+                  Object {
+                    "x": 0,
+                    "y": 0,
+                  }
+                }
+                disabled={false}
+                enableUserSelectHack={true}
+                grid={null}
+                handle={null}
+                key="tag-626505"
+                offsetParent={null}
+                onDrag={[Function]}
+                onMouseDown={[Function]}
+                onStart={[Function]}
+                onStop={[Function]}
+                position={
+                  Object {
+                    "x": 167,
+                    "y": 284,
+                  }
+                }
+                scale={1}
+                transform={null}
+              >
+                <DraggableCore
+                  allowAnyClick={false}
+                  axis="both"
+                  bounds={false}
+                  cancel={null}
+                  defaultClassName="react-draggable"
+                  defaultClassNameDragged="react-draggable-dragged"
+                  defaultClassNameDragging="react-draggable-dragging"
+                  defaultPosition={
+                    Object {
+                      "x": 0,
+                      "y": 0,
+                    }
+                  }
+                  disabled={false}
+                  enableUserSelectHack={true}
+                  grid={null}
+                  handle={null}
+                  offsetParent={null}
+                  onDrag={[Function]}
+                  onMouseDown={[Function]}
+                  onStart={[Function]}
+                  onStop={[Function]}
+                  position={
+                    Object {
+                      "x": 167,
+                      "y": 284,
+                    }
+                  }
+                  scale={1}
+                  transform={null}
+                >
+                  <div
+                    className="TagGroup animate-appear react-draggable"
+                    data={
+                      Object {
+                        "tag-626505": Object {
+                          "editable": false,
+                          "input": "test",
+                          "style": Object {
+                            "height": 32,
+                            "width": 100,
+                          },
+                          "x": 167,
+                          "y": 284,
+                        },
+                        "tag-629962": Object {
+                          "editable": false,
+                          "input": "test2",
+                          "style": Object {
+                            "height": 32,
+                            "width": 100,
+                          },
+                          "x": 405,
+                          "y": 398,
+                        },
+                        "tag-80986": Object {
+                          "editable": false,
+                          "input": "test3",
+                          "style": Object {
+                            "height": 32,
+                            "width": 100,
+                          },
+                          "x": 286,
+                          "y": 555,
+                        },
+                      }
+                    }
+                    onDoubleClick={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                    style={
+                      Object {
+                        "height": 32,
+                        "touchAction": "none",
+                        "transform": "translate(167px,284px)",
+                        "width": 100,
+                      }
+                    }
+                    transform={null}
+                  >
+                    test
+                  </div>
+                </DraggableCore>
+              </Draggable>
+              <Draggable
+                allowAnyClick={false}
+                axis="both"
+                bounds={false}
+                cancel={null}
+                defaultClassName="react-draggable"
+                defaultClassNameDragged="react-draggable-dragged"
+                defaultClassNameDragging="react-draggable-dragging"
+                defaultPosition={
+                  Object {
+                    "x": 0,
+                    "y": 0,
+                  }
+                }
+                disabled={false}
+                enableUserSelectHack={true}
+                grid={null}
+                handle={null}
+                key="tag-629962"
+                offsetParent={null}
+                onDrag={[Function]}
+                onMouseDown={[Function]}
+                onStart={[Function]}
+                onStop={[Function]}
+                position={
+                  Object {
+                    "x": 405,
+                    "y": 398,
+                  }
+                }
+                scale={1}
+                transform={null}
+              >
+                <DraggableCore
+                  allowAnyClick={false}
+                  axis="both"
+                  bounds={false}
+                  cancel={null}
+                  defaultClassName="react-draggable"
+                  defaultClassNameDragged="react-draggable-dragged"
+                  defaultClassNameDragging="react-draggable-dragging"
+                  defaultPosition={
+                    Object {
+                      "x": 0,
+                      "y": 0,
+                    }
+                  }
+                  disabled={false}
+                  enableUserSelectHack={true}
+                  grid={null}
+                  handle={null}
+                  offsetParent={null}
+                  onDrag={[Function]}
+                  onMouseDown={[Function]}
+                  onStart={[Function]}
+                  onStop={[Function]}
+                  position={
+                    Object {
+                      "x": 405,
+                      "y": 398,
+                    }
+                  }
+                  scale={1}
+                  transform={null}
+                >
+                  <div
+                    className="TagGroup animate-appear react-draggable"
+                    data={
+                      Object {
+                        "tag-626505": Object {
+                          "editable": false,
+                          "input": "test",
+                          "style": Object {
+                            "height": 32,
+                            "width": 100,
+                          },
+                          "x": 167,
+                          "y": 284,
+                        },
+                        "tag-629962": Object {
+                          "editable": false,
+                          "input": "test2",
+                          "style": Object {
+                            "height": 32,
+                            "width": 100,
+                          },
+                          "x": 405,
+                          "y": 398,
+                        },
+                        "tag-80986": Object {
+                          "editable": false,
+                          "input": "test3",
+                          "style": Object {
+                            "height": 32,
+                            "width": 100,
+                          },
+                          "x": 286,
+                          "y": 555,
+                        },
+                      }
+                    }
+                    onDoubleClick={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                    style={
+                      Object {
+                        "height": 32,
+                        "touchAction": "none",
+                        "transform": "translate(405px,398px)",
+                        "width": 100,
+                      }
+                    }
+                    transform={null}
+                  >
+                    test2
+                  </div>
+                </DraggableCore>
+              </Draggable>
+              <Draggable
+                allowAnyClick={false}
+                axis="both"
+                bounds={false}
+                cancel={null}
+                defaultClassName="react-draggable"
+                defaultClassNameDragged="react-draggable-dragged"
+                defaultClassNameDragging="react-draggable-dragging"
+                defaultPosition={
+                  Object {
+                    "x": 0,
+                    "y": 0,
+                  }
+                }
+                disabled={false}
+                enableUserSelectHack={true}
+                grid={null}
+                handle={null}
+                key="tag-80986"
+                offsetParent={null}
+                onDrag={[Function]}
+                onMouseDown={[Function]}
+                onStart={[Function]}
+                onStop={[Function]}
+                position={
+                  Object {
+                    "x": 286,
+                    "y": 555,
+                  }
+                }
+                scale={1}
+                transform={null}
+              >
+                <DraggableCore
+                  allowAnyClick={false}
+                  axis="both"
+                  bounds={false}
+                  cancel={null}
+                  defaultClassName="react-draggable"
+                  defaultClassNameDragged="react-draggable-dragged"
+                  defaultClassNameDragging="react-draggable-dragging"
+                  defaultPosition={
+                    Object {
+                      "x": 0,
+                      "y": 0,
+                    }
+                  }
+                  disabled={false}
+                  enableUserSelectHack={true}
+                  grid={null}
+                  handle={null}
+                  offsetParent={null}
+                  onDrag={[Function]}
+                  onMouseDown={[Function]}
+                  onStart={[Function]}
+                  onStop={[Function]}
+                  position={
+                    Object {
+                      "x": 286,
+                      "y": 555,
+                    }
+                  }
+                  scale={1}
+                  transform={null}
+                >
+                  <div
+                    className="TagGroup animate-appear react-draggable"
+                    data={
+                      Object {
+                        "tag-626505": Object {
+                          "editable": false,
+                          "input": "test",
+                          "style": Object {
+                            "height": 32,
+                            "width": 100,
+                          },
+                          "x": 167,
+                          "y": 284,
+                        },
+                        "tag-629962": Object {
+                          "editable": false,
+                          "input": "test2",
+                          "style": Object {
+                            "height": 32,
+                            "width": 100,
+                          },
+                          "x": 405,
+                          "y": 398,
+                        },
+                        "tag-80986": Object {
+                          "editable": false,
+                          "input": "test3",
+                          "style": Object {
+                            "height": 32,
+                            "width": 100,
+                          },
+                          "x": 286,
+                          "y": 555,
+                        },
+                      }
+                    }
+                    onDoubleClick={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                    style={
+                      Object {
+                        "height": 32,
+                        "touchAction": "none",
+                        "transform": "translate(286px,555px)",
+                        "width": 100,
+                      }
+                    }
+                    transform={null}
+                  >
+                    test3
+                  </div>
+                </DraggableCore>
+              </Draggable>
+            </TagGroup>
+          </div>
+        </DraggableCore>
+      </Draggable>
+    </Canvas>
+    <Button
+      block={false}
+      ghost={false}
+      loading={false}
+      onClick={[Function]}
+      style={
+        Object {
+          "left": 10,
+          "position": "absolute",
+          "top": 10,
+        }
+      }
+      type="primary"
+    >
+      <Wave>
+        <button
+          className="ant-btn ant-btn-primary"
+          onClick={[Function]}
+          style={
+            Object {
+              "left": 10,
+              "position": "absolute",
+              "top": 10,
+            }
+          }
+          type="button"
+        >
+          <span
+            key=".0"
+          >
+            save
+          </span>
+        </button>
+      </Wave>
+    </Button>
+  </div>
+</Demo>
+`;
