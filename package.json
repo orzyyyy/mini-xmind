@@ -32,7 +32,6 @@
     "@types/react": "^16.8.4",
     "@types/react-dom": "^16.8.2",
     "eslint": "^5.12.0",
-    "husky": "^1.3.1",
     "lint-staged": "^8.1.0",
     "nino-cli": "^0.5.0",
     "pre-commit": "^1.2.2",
