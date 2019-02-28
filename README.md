@@ -2,6 +2,9 @@
 
 # mini-xmind
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/breathing-is-fun/mini-xmind.svg)](https://greenkeeper.io/)
+
+
 ![img](./docs/assets/demo.gif)
 
 what you see in gif is the all what the repo do, just as title, a web tool for mini mind-mapping
