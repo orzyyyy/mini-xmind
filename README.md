@@ -2,7 +2,7 @@
 
 ![CircleCI](https://img.shields.io/circleci/project/github/breathing-is-fun/mini-xmind/master.svg)
 [![Greenkeeper badge](https://badges.greenkeeper.io/breathing-is-fun/mini-xmind.svg)](https://greenkeeper.io/)
-
+[![codecov](https://codecov.io/gh/breathing-is-fun/mini-xmind/branch/master/graph/badge.svg)](https://codecov.io/gh/breathing-is-fun/mini-xmind)
 
 ![img](./docs/assets/demo.gif)
 
@@ -15,73 +15,73 @@ npm install mini-xmind --save-dev
 ```
 
 ```javascript
-import { Canvas, Toolbar } from 'mini-xmind';
+import { Canvas, Toolbar } from "mini-xmind";
 
 export class Demo extends React.Component {
   render = () => {
     const data = {
       BlockGroup: {
-        'block-623187': {
+        "block-623187": {
           x: 158,
           y: 256,
           style: {
             width: 100,
             height: 80,
-            background: '#F96',
-            borderRadius: '10px',
-            border: '1px solid #aaa',
-          },
+            background: "#F96",
+            borderRadius: "10px",
+            border: "1px solid #aaa"
+          }
         },
-        'block-624018': {
+        "block-624018": {
           x: 367,
           y: 368,
           style: {
             width: 100,
             height: 80,
-            background: '#F96',
-            borderRadius: '10px',
-            border: '1px solid #aaa',
-          },
+            background: "#F96",
+            borderRadius: "10px",
+            border: "1px solid #aaa"
+          }
         },
-        'block-73377': {
+        "block-73377": {
           x: 253,
           y: 525,
           style: {
             width: 100,
             height: 80,
-            background: '#F96',
-            borderRadius: '10px',
-            border: '1px solid #aaa',
-          },
-        },
+            background: "#F96",
+            borderRadius: "10px",
+            border: "1px solid #aaa"
+          }
+        }
       },
       TagGroup: {
-        'tag-626505': {
+        "tag-626505": {
           x: 167,
           y: 284,
           style: { width: 100, height: 32 },
           editable: false,
-          input: 'test',
+          input: "test"
         },
-        'tag-629962': {
+        "tag-629962": {
           x: 405,
           y: 398,
           style: { width: 100, height: 32 },
           editable: false,
-          input: 'test2',
+          input: "test2"
         },
-        'tag-80986': {
+        "tag-80986": {
           x: 286,
           y: 555,
           style: { width: 100, height: 32 },
           editable: false,
-          input: 'test3',
-        },
+          input: "test3"
+        }
       },
       LineGroup: {
-        'line-77619': { fromKey: 'block-73377', toKey: 'block-623187' },
-        'line-592694': { fromKey: 'block-623187', toKey: 'block-624018' },
-      },
+        "line-77619": { fromKey: "block-73377", toKey: "block-623187" },
+        "line-592694": { fromKey: "block-623187", toKey: "block-624018" }
+      }
     };
 
     return (
