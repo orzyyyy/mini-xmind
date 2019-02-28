@@ -1,7 +1,6 @@
-![CircleCI](https://img.shields.io/circleci/project/github/breathing-is-fun/mini-xmind/master.svg)
-
 # mini-xmind
 
+![CircleCI](https://img.shields.io/circleci/project/github/breathing-is-fun/mini-xmind/master.svg)
 [![Greenkeeper badge](https://badges.greenkeeper.io/breathing-is-fun/mini-xmind.svg)](https://greenkeeper.io/)
 
 
