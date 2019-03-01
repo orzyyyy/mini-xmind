@@ -1,5 +1,7 @@
-import { getPlacement } from '../LineUtil';
+import { getPlacement, preventDefault, stopPropagation } from '../LineUtil';
 import 'nino-cli/scripts/setup';
+import { mount } from 'enzyme';
+import React from 'react';
 
 describe('LineUtil', () => {
   it('getPlacement works correctly', () => {
@@ -59,5 +61,39 @@ describe('LineUtil', () => {
     );
     expect(fourthQuadrantBottomInstance.fromAnchor).toBe('bottom');
     expect(fourthQuadrantBottomInstance.toAnchor).toBe('right');
+  });
+
+  it('preventDefault should work', () => {
+    const defaultEvent = jest.fn();
+    class Demo extends React.Component {
+      render = () => <button onClick={preventDefault}>test</button>;
+    }
+    const wrapper = mount(<Demo />);
+    wrapper
+      .find('button')
+      .at(0)
+      .simulate('click', () => {
+        preventDefault: () => {
+          defaultEvent();
+        };
+      });
+    expect(defaultEvent).not.toBeCalled();
+  });
+
+  it('stopPropagation should work', () => {
+    const defaultEvent = jest.fn();
+    class Demo extends React.Component {
+      render = () => <button onClick={stopPropagation}>test</button>;
+    }
+    const wrapper = mount(<Demo />);
+    wrapper
+      .find('button')
+      .at(0)
+      .simulate('click', () => {
+        stopPropagation: () => {
+          defaultEvent();
+        };
+      });
+    expect(defaultEvent).not.toBeCalled();
   });
 });
