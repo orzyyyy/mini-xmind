@@ -82,6 +82,9 @@ export default class BlockGroup extends Component<
 
   componentDidUpdate = (prevProps: BlockGroupProps) => {
     const { lineData, onChange, data } = this.props;
+    if (!lineData) {
+      return;
+    }
     const firstLine: any = Object.values(lineData)[0];
     const hasNewLine = keysLength(lineData) != keysLength(prevProps.lineData);
 
