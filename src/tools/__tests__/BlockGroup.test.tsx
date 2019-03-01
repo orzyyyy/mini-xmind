@@ -3,10 +3,10 @@ import { mount } from 'enzyme';
 let BlockGroup: any;
 switch (process.env.LIB_DIR) {
   case 'dist':
-    BlockGroup = require('../../../dist/lib/BlockGroup').default;
+    BlockGroup = require('../../../dist/lib/toolbar').default;
     break;
   case 'lib':
-    BlockGroup = require('../../../lib/BlockGroup').default;
+    BlockGroup = require('../../../lib/tools').BlockGroup;
     break;
   default:
     BlockGroup = require('../BlockGroup').default;
