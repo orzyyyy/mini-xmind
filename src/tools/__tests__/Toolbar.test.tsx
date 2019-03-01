@@ -6,10 +6,10 @@ switch (process.env.LIB_DIR) {
     Toolbar = require('../../../dist/lib/toolbar').default;
     break;
   case 'lib':
-    Toolbar = require('../../../lib/tools').default;
+    Toolbar = require('../../../lib/toolbar').default;
     break;
   default:
-    Toolbar = require('..').default;
+    Toolbar = require('../Toolbar').default;
     break;
 }
 import { tools } from '../../options/tools';
