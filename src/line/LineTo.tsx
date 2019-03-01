@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Line from './core';
 
 const defaultAnchor = { x: 0.5, y: 0.5 };
-function parseAnchor(value: any) {
+export function parseAnchor(value: any) {
   if (!value) {
     return defaultAnchor;
   }
@@ -19,7 +19,7 @@ function parseAnchor(value: any) {
   );
 }
 
-function parseAnchorText(value: string) {
+export function parseAnchorText(value: string) {
   // Try to infer the relevant axis.
   switch (value) {
     case 'top':

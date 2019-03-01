@@ -112,6 +112,6 @@ describe('LineUtil', () => {
           'line-592694': { fromKey: 'block-623187', toKey: 'block-624018' },
         },
       }),
-    ).toBe([]);
+    ).toEqual([]);
   });
 });
