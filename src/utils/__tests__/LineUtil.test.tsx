@@ -1,4 +1,9 @@
-import { getPlacement, preventDefault, stopPropagation } from '../LineUtil';
+import {
+  getPlacement,
+  preventDefault,
+  stopPropagation,
+  getRelativeLinesByBlockKey,
+} from '../LineUtil';
 import 'nino-cli/scripts/setup';
 import { mount } from 'enzyme';
 import React from 'react';
@@ -95,5 +100,18 @@ describe('LineUtil', () => {
         };
       });
     expect(defaultEvent).not.toBeCalled();
+  });
+
+  it('getRelativeLinesByBlockKey should work', () => {
+    expect(
+      getRelativeLinesByBlockKey('block-73377', {
+        'block-623187': {},
+        'block-624018': {},
+        LineGroup: {
+          'line-77619': { fromKey: 'block-73377', toKey: 'block-623187' },
+          'line-592694': { fromKey: 'block-623187', toKey: 'block-624018' },
+        },
+      }),
+    ).toBe([]);
   });
 });
