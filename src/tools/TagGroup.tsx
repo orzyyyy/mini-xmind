@@ -26,6 +26,9 @@ export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
     if (isSameCoordinate(nextProps, nextState, currentTag)) {
       return null;
     }
+    if (!nextProps.data) {
+      return null;
+    }
     return { data: nextProps.data };
   }
 
