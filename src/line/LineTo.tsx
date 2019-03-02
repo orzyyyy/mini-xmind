@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import Line from './core';
 
 const defaultAnchor = { x: 0.5, y: 0.5 };
-function parseAnchor(value: any) {
+export function parseAnchor(value: string | undefined) {
   if (!value) {
     return defaultAnchor;
   }
   const parts = value.split(' ');
   if (parts.length > 2) {
-    throw new Error('LinkTo anchor format is "<x> <y>"');
+    return 'LinkTo anchor format is "<x> <y>"';
   }
   const [x, y] = parts;
   return Object.assign(
@@ -19,7 +19,7 @@ function parseAnchor(value: any) {
   );
 }
 
-function parseAnchorText(value: string) {
+export function parseAnchorText(value: string) {
   // Try to infer the relevant axis.
   switch (value) {
     case 'top':
@@ -38,10 +38,10 @@ function parseAnchorText(value: string) {
   return null;
 }
 
-function parseAnchorPercent(value: string) {
+export function parseAnchorPercent(value: string) {
   const percent = parseFloat(value) / 100;
   if (isNaN(percent) || !isFinite(percent)) {
-    throw new Error(`LinkTo could not parse percent value "${value}"`);
+    return `LinkTo could not parse percent value: ${value}`;
   }
   return percent;
 }
@@ -64,8 +64,6 @@ export interface LineToState {
 }
 
 export default class LineTo extends Component<LineToProps, LineToState> {
-  private t: any = null;
-
   static defaultProps = {
     className: '',
     style: {},
@@ -98,13 +96,6 @@ export default class LineTo extends Component<LineToProps, LineToState> {
 
     staticFromAnchor = parseAnchor(props.fromAnchor);
     staticToAnchor = parseAnchor(props.toAnchor);
-  }
-
-  componentWillUnmount() {
-    if (this.t) {
-      clearTimeout(this.t);
-      this.t = null;
-    }
   }
 
   detect = () => {

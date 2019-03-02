@@ -87,4 +87,34 @@ describe('Canvas', () => {
     wrapper.setProps({ data: {} });
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('onDrop should return when dragItem is null', () => {
+    const wrapper: any = createWrapper().instance();
+    const event: any = {};
+    event.dataTransfer = {};
+    event.dataTransfer.getData = () => {
+      return false;
+    };
+    expect(wrapper.onDrop(event)).toBe(false);
+  });
+
+  it('onDrop should update blockProps when droping a Block', () => {
+    const wrapper: any = createWrapper().instance();
+    const event: any = {};
+    event.clientX = 100;
+    event.clientY = 100;
+    event.dataTransfer = {};
+    event.dataTransfer.getData = () => {
+      return "{\"key\":\"border\",\"value\":\"block\",\"style\":{\"width\":100,\"height\":80}}";
+    };
+    const value = wrapper.onDrop(event);
+    expect(value).toEqual({
+      style: {
+        height: 80,
+        width: 100,
+      },
+      x: 50,
+      y: 60,
+    });
+  });
 });
