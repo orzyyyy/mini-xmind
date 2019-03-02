@@ -28,4 +28,58 @@ describe('TagGroup', () => {
     const wrapper = mount(<TagGroup />);
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('editable should work correctly', () => {
+    const data = {
+      tag: {
+        editable: false,
+        input: 'test',
+      },
+    };
+    const wrapper = mount(<TagGroup data={data} />);
+    expect(wrapper.find('.TagGroup').text()).toBe('test');
+    wrapper.setProps({
+      data: {
+        tag: {
+          editable: true,
+          input: 'test1',
+        },
+      },
+    });
+    expect(wrapper.find('input').prop('value')).toBe('test1');
+  });
+
+  it('double click should work correctly', () => {
+    const data = {
+      tag: {
+        editable: false,
+        input: 'test',
+      },
+    };
+    const wrapper = mount(<TagGroup data={data} />);
+    wrapper.find('.TagGroup').simulate('doubleclick');
+    expect(wrapper.state('data')).toEqual({
+      tag: {
+        editable: true,
+        input: 'test',
+      },
+    });
+  });
+
+  it('when input changed, state should update', () => {
+    const data = {
+      tag: {
+        editable: true,
+        input: 'test',
+      },
+    };
+    const wrapper = mount(<TagGroup data={data} />);
+    wrapper.find('input').simulate('change', { target: { value: 'test1' } });
+    expect(wrapper.state('data')).toEqual({
+      tag: {
+        editable: true,
+        input: 'test1',
+      },
+    });
+  });
 });
