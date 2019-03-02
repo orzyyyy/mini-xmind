@@ -80,7 +80,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
   onDrop = (e: any) => {
     let dragItem = e.dataTransfer.getData('dragItem');
     if (!dragItem) {
-      return;
+      return false;
     }
     dragItem = dragItem ? JSON.parse(dragItem) : {};
     const { value, style } = dragItem;
@@ -106,6 +106,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
       default:
         break;
     }
+    return { x, y, style };
   };
 
   handleDrag = (_: any, { x, y }: { x: number; y: number }) => {
