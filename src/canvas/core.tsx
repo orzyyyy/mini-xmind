@@ -6,8 +6,7 @@ import {
   generateKey,
   stopPropagation,
 } from '../utils/LineUtil';
-import BlockGroup from '../tools/BlockGroup';
-import TagGroup from '../tools/TagGroup';
+import { TagGroup, BlockGroup } from '../tools';
 import Draggable from 'react-draggable';
 
 export interface CanvasProps {
