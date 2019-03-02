@@ -1131,7 +1131,7 @@ exports[`demo render correctly 1`] = `
                           className="line-placeholder"
                         >
                           <div
-                            className="animate-appear"
+                            className="line-placeholder-item animate-appear"
                             data={
                               Object {
                                 "line-592694": Object {
@@ -1392,7 +1392,7 @@ exports[`demo render correctly 1`] = `
                           className="line-placeholder"
                         >
                           <div
-                            className="animate-appear"
+                            className="line-placeholder-item animate-appear"
                             data={
                               Object {
                                 "line-592694": Object {

@@ -127,7 +127,7 @@ exports[`Line Line renders correctly 1`] = `
           className="line-placeholder"
         >
           <div
-            className=""
+            className="line-placeholder-item"
             from={
               <div>
                 
@@ -310,7 +310,7 @@ exports[`Line offset works well 1`] = `
           className="line-placeholder"
         >
           <div
-            className=""
+            className="line-placeholder-item"
             from={
               <div>
                 
