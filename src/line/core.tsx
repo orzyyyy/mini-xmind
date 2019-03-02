@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-
+import classNames from 'classnames';
 const defaultBorderColor = '#ddd';
 const defaultBorderStyle = 'solid';
 const defaultBorderWidth = 1;
@@ -16,7 +16,6 @@ export interface LineProps {
 
 export default class Line extends PureComponent<LineProps> {
   static defaultProps = {
-    className: '',
     style: {},
     x0: 0,
     y0: 0,
@@ -50,17 +49,12 @@ export default class Line extends PureComponent<LineProps> {
       borderTopWidth: defaultBorderWidth,
     };
 
-    const props = {
-      className,
-      style: Object.assign({}, defaultStyle, positionStyle, style),
-    };
-
     return (
       <div className="line-placeholder">
         <div
-          // ref={el => (this.el = el)}
+          className={classNames('line-placeholder-item', className)}
           {...rest}
-          {...props}
+          style={Object.assign({}, defaultStyle, positionStyle, style)}
         />
       </div>
     );
