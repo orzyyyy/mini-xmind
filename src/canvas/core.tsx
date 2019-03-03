@@ -83,7 +83,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
       return false;
     }
     dragItem = dragItem ? JSON.parse(dragItem) : {};
-    const { value, style } = dragItem;
+    const { value, style = { width: 100, height: 80 } } = dragItem;
     let { blockProps, tagProps, position } = this.state;
     const { clientX, clientY } = e;
     const x = clientX - style.width / 2 - position.x;
@@ -91,7 +91,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
 
     switch (value) {
       case 'block':
-        blockProps[generateKey('block')] = { x, y, style };
+        blockProps[generateKey('block')] = { x, y };
         this.setState({ blockProps });
         break;
 

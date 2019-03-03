@@ -9,13 +9,6 @@ export const tools = [
   {
     key: 'border',
     value: 'block',
-    style: {
-      width: 100,
-      height: 80,
-      background: '#F96',
-      borderRadius: '10px',
-      border: '1px solid #aaa',
-    },
   },
   {
     key: 'tag',
