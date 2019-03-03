@@ -37,14 +37,14 @@ describe('Canvas', () => {
   it('Block renders correctly', () => {
     const wrapper = createWrapper();
     wrapper.setProps({ data: mapping });
-    expect(wrapper.find('.BlockGroup').length).toBe(3);
+    expect(wrapper.find('.block-group').length).toBe(3);
   });
 
   it('when Block is clicked, Line renders correctly', () => {
     const wrapper = createWrapper();
     wrapper.setProps({ data: mapping });
 
-    const blocks = wrapper.find('.BlockGroup');
+    const blocks = wrapper.find('.block-group');
     blocks.at(0).simulate('click');
     blocks.at(1).simulate('click');
 
@@ -60,7 +60,7 @@ describe('Canvas', () => {
     const wrapper = createWrapper();
     wrapper.setProps({ data: mapping });
 
-    const blocks = wrapper.find('.BlockGroup');
+    const blocks = wrapper.find('.block-group');
     blocks.at(0).simulate('click');
     blocks.at(1).simulate('click');
     expect(wrapper.find('.stepped-line-to').length).toBe(3);
@@ -74,7 +74,7 @@ describe('Canvas', () => {
     const wrapper = createWrapper();
     wrapper.setProps({ data: mapping });
 
-    expect(wrapper.find('.BlockGroup').length).toBe(3);
+    expect(wrapper.find('.block-group').length).toBe(3);
     expect(wrapper.find('.TagGroup').length).toBe(3);
   });
 
