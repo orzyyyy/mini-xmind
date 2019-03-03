@@ -37,13 +37,7 @@ export default class Demo extends Component<any, DemoState> {
   }
 
   componentDidMount = () => {
-    if (window.fetch) {
-      fetch('../mock/mapping.json')
-        .then(result => result.json())
-        .then(data => this.setState({ data }));
-    } else {
-      this.setState({ data: mapping });
-    }
+    this.setState({ data: mapping });
   };
 
   outputData = () => {
