@@ -103,17 +103,13 @@ export default class LineTo extends Component<LineToProps, LineToState> {
 
     const anchor0 = staticFromAnchor;
     const anchor1 = staticToAnchor;
-
-    const box0 = from.getBoundingClientRect();
-    const box1 = to.getBoundingClientRect();
-
     const offsetX = window.pageXOffset - offset.x;
     const offsetY = window.pageYOffset - offset.y;
 
-    const x0 = box0.left + box0.width * anchor0.x + offsetX;
-    const x1 = box1.left + box1.width * anchor1.x + offsetX;
-    const y0 = box0.top + box0.height * anchor0.y + offsetY;
-    const y1 = box1.top + box1.height * anchor1.y + offsetY;
+    const x0 = from.left + from.width * anchor0.x + offsetX;
+    const x1 = to.left + to.width * anchor1.x + offsetX;
+    const y0 = from.top + from.height * anchor0.y + offsetY;
+    const y1 = to.top + to.height * anchor1.y + offsetY;
 
     return { x0, y0, x1, y1 };
   };

@@ -4,17 +4,12 @@ exports[`Line Line renders correctly 1`] = `
 <SteppedLineTo
   className=""
   from={
-    <div>
-      
-  
-      <div
-        style="position: absolute; top: 0px; left: 0px;"
-      >
-        from
-      </div>
-      
-
-    </div>
+    Object {
+      "height": 0,
+      "left": 0,
+      "top": 0,
+      "width": 0,
+    }
   }
   offset={
     Object {
@@ -25,17 +20,12 @@ exports[`Line Line renders correctly 1`] = `
   orientation="v"
   style={Object {}}
   to={
-    <div>
-      
-
-      <div
-        style="position: absolute; top: 0px; left: 100px;"
-      >
-        from
-      </div>
-      
-
-    </div>
+    Object {
+      "height": 0,
+      "left": 100,
+      "top": 0,
+      "width": 0,
+    }
   }
 >
   <div
@@ -44,17 +34,12 @@ exports[`Line Line renders correctly 1`] = `
     <SteppedLine
       className=""
       from={
-        <div>
-          
-  
-          <div
-            style="position: absolute; top: 0px; left: 0px;"
-          >
-            from
-          </div>
-          
-
-        </div>
+        Object {
+          "height": 0,
+          "left": 0,
+          "top": 0,
+          "width": 0,
+        }
       }
       offset={
         Object {
@@ -65,119 +50,250 @@ exports[`Line Line renders correctly 1`] = `
       orientation="v"
       style={Object {}}
       to={
-        <div>
-          
-
-          <div
-            style="position: absolute; top: 0px; left: 100px;"
-          >
-            from
-          </div>
-          
-
-        </div>
+        Object {
+          "height": 0,
+          "left": 100,
+          "top": 0,
+          "width": 0,
+        }
       }
       x0={0}
-      x1={0}
+      x1={100}
       y0={0}
       y1={0}
     >
-      <Line
-        className=""
-        from={
-          <div>
-            
-  
-            <div
-              style="position: absolute; top: 0px; left: 0px;"
-            >
-              from
-            </div>
-            
-
-          </div>
-        }
-        offset={
-          Object {
-            "x": 0,
-            "y": 0,
-          }
-        }
-        orientation="v"
-        style={Object {}}
-        to={
-          <div>
-            
-
-            <div
-              style="position: absolute; top: 0px; left: 100px;"
-            >
-              from
-            </div>
-            
-
-          </div>
-        }
-        x0={0}
-        x1={0}
-        y0={0}
-        y1={0}
+      <div
+        className="stepped-lineto"
       >
-        <div
-          className="line-placeholder"
+        <Line
+          className=""
+          from={
+            Object {
+              "height": 0,
+              "left": 0,
+              "top": 0,
+              "width": 0,
+            }
+          }
+          offset={
+            Object {
+              "x": 0,
+              "y": 0,
+            }
+          }
+          orientation="v"
+          style={Object {}}
+          to={
+            Object {
+              "height": 0,
+              "left": 100,
+              "top": 0,
+              "width": 0,
+            }
+          }
+          x0={0}
+          x1={0}
+          y0={0}
+          y1={0}
         >
           <div
-            className="line-placeholder-item"
-            from={
-              <div>
-                
-  
-                <div
-                  style="position: absolute; top: 0px; left: 0px;"
-                >
-                  from
-                </div>
-                
-
-              </div>
-            }
-            offset={
-              Object {
-                "x": 0,
-                "y": 0,
+            className="line-placeholder"
+          >
+            <div
+              className="line-placeholder-item"
+              from={
+                Object {
+                  "height": 0,
+                  "left": 0,
+                  "top": 0,
+                  "width": 0,
+                }
               }
-            }
-            orientation="v"
-            style={
-              Object {
-                "borderTopColor": "#ddd",
-                "borderTopStyle": "solid",
-                "borderTopWidth": 1,
-                "left": "0px",
-                "position": "absolute",
-                "top": "0px",
-                "transform": "rotate(0deg)",
-                "transformOrigin": "0 0",
-                "width": "0px",
-                "zIndex": "1",
+              offset={
+                Object {
+                  "x": 0,
+                  "y": 0,
+                }
               }
+              orientation="v"
+              style={
+                Object {
+                  "borderTopColor": "#ddd",
+                  "borderTopStyle": "solid",
+                  "borderTopWidth": 1,
+                  "left": "0px",
+                  "position": "absolute",
+                  "top": "0px",
+                  "transform": "rotate(0deg)",
+                  "transformOrigin": "0 0",
+                  "width": "0px",
+                  "zIndex": "1",
+                }
+              }
+              to={
+                Object {
+                  "height": 0,
+                  "left": 100,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+            />
+          </div>
+        </Line>
+        <Line
+          className=""
+          from={
+            Object {
+              "height": 0,
+              "left": 0,
+              "top": 0,
+              "width": 0,
             }
-            to={
-              <div>
-                
-
-                <div
-                  style="position: absolute; top: 0px; left: 100px;"
-                >
-                  from
-                </div>
-                
-
-              </div>
+          }
+          offset={
+            Object {
+              "x": 0,
+              "y": 0,
             }
-          />
-        </div>
-      </Line>
+          }
+          orientation="v"
+          style={Object {}}
+          to={
+            Object {
+              "height": 0,
+              "left": 100,
+              "top": 0,
+              "width": 0,
+            }
+          }
+          x0={100}
+          x1={100}
+          y0={0}
+          y1={0}
+        >
+          <div
+            className="line-placeholder"
+          >
+            <div
+              className="line-placeholder-item"
+              from={
+                Object {
+                  "height": 0,
+                  "left": 0,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+              offset={
+                Object {
+                  "x": 0,
+                  "y": 0,
+                }
+              }
+              orientation="v"
+              style={
+                Object {
+                  "borderTopColor": "#ddd",
+                  "borderTopStyle": "solid",
+                  "borderTopWidth": 1,
+                  "left": "100px",
+                  "position": "absolute",
+                  "top": "0px",
+                  "transform": "rotate(0deg)",
+                  "transformOrigin": "0 0",
+                  "width": "0px",
+                  "zIndex": "1",
+                }
+              }
+              to={
+                Object {
+                  "height": 0,
+                  "left": 100,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+            />
+          </div>
+        </Line>
+        <Line
+          className=""
+          from={
+            Object {
+              "height": 0,
+              "left": 0,
+              "top": 0,
+              "width": 0,
+            }
+          }
+          offset={
+            Object {
+              "x": 0,
+              "y": 0,
+            }
+          }
+          orientation="v"
+          style={Object {}}
+          to={
+            Object {
+              "height": 0,
+              "left": 100,
+              "top": 0,
+              "width": 0,
+            }
+          }
+          x0={-1}
+          x1={100}
+          y0={0}
+          y1={0}
+        >
+          <div
+            className="line-placeholder"
+          >
+            <div
+              className="line-placeholder-item"
+              from={
+                Object {
+                  "height": 0,
+                  "left": 0,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+              offset={
+                Object {
+                  "x": 0,
+                  "y": 0,
+                }
+              }
+              orientation="v"
+              style={
+                Object {
+                  "borderTopColor": "#ddd",
+                  "borderTopStyle": "solid",
+                  "borderTopWidth": 1,
+                  "left": "-1px",
+                  "position": "absolute",
+                  "top": "0px",
+                  "transform": "rotate(0deg)",
+                  "transformOrigin": "0 0",
+                  "width": "101px",
+                  "zIndex": "1",
+                }
+              }
+              to={
+                Object {
+                  "height": 0,
+                  "left": 100,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+            />
+          </div>
+        </Line>
+      </div>
     </SteppedLine>
   </div>
 </SteppedLineTo>
@@ -187,17 +303,12 @@ exports[`Line offset works well 1`] = `
 <SteppedLineTo
   className=""
   from={
-    <div>
-      
-  
-      <div
-        style="position: absolute; top: 0px; left: 0px;"
-      >
-        from
-      </div>
-      
-
-    </div>
+    Object {
+      "height": 0,
+      "left": 0,
+      "top": 0,
+      "width": 0,
+    }
   }
   offset={
     Object {
@@ -208,17 +319,12 @@ exports[`Line offset works well 1`] = `
   orientation="v"
   style={Object {}}
   to={
-    <div>
-      
-
-      <div
-        style="position: absolute; top: 0px; left: 100px;"
-      >
-        from
-      </div>
-      
-
-    </div>
+    Object {
+      "height": 0,
+      "left": 100,
+      "top": 0,
+      "width": 0,
+    }
   }
 >
   <div
@@ -227,17 +333,12 @@ exports[`Line offset works well 1`] = `
     <SteppedLine
       className=""
       from={
-        <div>
-          
-  
-          <div
-            style="position: absolute; top: 0px; left: 0px;"
-          >
-            from
-          </div>
-          
-
-        </div>
+        Object {
+          "height": 0,
+          "left": 0,
+          "top": 0,
+          "width": 0,
+        }
       }
       offset={
         Object {
@@ -248,119 +349,250 @@ exports[`Line offset works well 1`] = `
       orientation="v"
       style={Object {}}
       to={
-        <div>
-          
-
-          <div
-            style="position: absolute; top: 0px; left: 100px;"
-          >
-            from
-          </div>
-          
-
-        </div>
+        Object {
+          "height": 0,
+          "left": 100,
+          "top": 0,
+          "width": 0,
+        }
       }
       x0={-100}
-      x1={-100}
+      x1={0}
       y0={-100}
       y1={-100}
     >
-      <Line
-        className=""
-        from={
-          <div>
-            
-  
-            <div
-              style="position: absolute; top: 0px; left: 0px;"
-            >
-              from
-            </div>
-            
-
-          </div>
-        }
-        offset={
-          Object {
-            "x": 100,
-            "y": 100,
-          }
-        }
-        orientation="v"
-        style={Object {}}
-        to={
-          <div>
-            
-
-            <div
-              style="position: absolute; top: 0px; left: 100px;"
-            >
-              from
-            </div>
-            
-
-          </div>
-        }
-        x0={-100}
-        x1={-100}
-        y0={-100}
-        y1={-100}
+      <div
+        className="stepped-lineto"
       >
-        <div
-          className="line-placeholder"
+        <Line
+          className=""
+          from={
+            Object {
+              "height": 0,
+              "left": 0,
+              "top": 0,
+              "width": 0,
+            }
+          }
+          offset={
+            Object {
+              "x": 100,
+              "y": 100,
+            }
+          }
+          orientation="v"
+          style={Object {}}
+          to={
+            Object {
+              "height": 0,
+              "left": 100,
+              "top": 0,
+              "width": 0,
+            }
+          }
+          x0={-100}
+          x1={-100}
+          y0={-100}
+          y1={-100}
         >
           <div
-            className="line-placeholder-item"
-            from={
-              <div>
-                
-  
-                <div
-                  style="position: absolute; top: 0px; left: 0px;"
-                >
-                  from
-                </div>
-                
-
-              </div>
-            }
-            offset={
-              Object {
-                "x": 100,
-                "y": 100,
+            className="line-placeholder"
+          >
+            <div
+              className="line-placeholder-item"
+              from={
+                Object {
+                  "height": 0,
+                  "left": 0,
+                  "top": 0,
+                  "width": 0,
+                }
               }
-            }
-            orientation="v"
-            style={
-              Object {
-                "borderTopColor": "#ddd",
-                "borderTopStyle": "solid",
-                "borderTopWidth": 1,
-                "left": "-100px",
-                "position": "absolute",
-                "top": "-100px",
-                "transform": "rotate(0deg)",
-                "transformOrigin": "0 0",
-                "width": "0px",
-                "zIndex": "1",
+              offset={
+                Object {
+                  "x": 100,
+                  "y": 100,
+                }
               }
+              orientation="v"
+              style={
+                Object {
+                  "borderTopColor": "#ddd",
+                  "borderTopStyle": "solid",
+                  "borderTopWidth": 1,
+                  "left": "-100px",
+                  "position": "absolute",
+                  "top": "-100px",
+                  "transform": "rotate(0deg)",
+                  "transformOrigin": "0 0",
+                  "width": "0px",
+                  "zIndex": "1",
+                }
+              }
+              to={
+                Object {
+                  "height": 0,
+                  "left": 100,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+            />
+          </div>
+        </Line>
+        <Line
+          className=""
+          from={
+            Object {
+              "height": 0,
+              "left": 0,
+              "top": 0,
+              "width": 0,
             }
-            to={
-              <div>
-                
-
-                <div
-                  style="position: absolute; top: 0px; left: 100px;"
-                >
-                  from
-                </div>
-                
-
-              </div>
+          }
+          offset={
+            Object {
+              "x": 100,
+              "y": 100,
             }
-          />
-        </div>
-      </Line>
+          }
+          orientation="v"
+          style={Object {}}
+          to={
+            Object {
+              "height": 0,
+              "left": 100,
+              "top": 0,
+              "width": 0,
+            }
+          }
+          x0={0}
+          x1={0}
+          y0={-100}
+          y1={-100}
+        >
+          <div
+            className="line-placeholder"
+          >
+            <div
+              className="line-placeholder-item"
+              from={
+                Object {
+                  "height": 0,
+                  "left": 0,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+              offset={
+                Object {
+                  "x": 100,
+                  "y": 100,
+                }
+              }
+              orientation="v"
+              style={
+                Object {
+                  "borderTopColor": "#ddd",
+                  "borderTopStyle": "solid",
+                  "borderTopWidth": 1,
+                  "left": "0px",
+                  "position": "absolute",
+                  "top": "-100px",
+                  "transform": "rotate(0deg)",
+                  "transformOrigin": "0 0",
+                  "width": "0px",
+                  "zIndex": "1",
+                }
+              }
+              to={
+                Object {
+                  "height": 0,
+                  "left": 100,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+            />
+          </div>
+        </Line>
+        <Line
+          className=""
+          from={
+            Object {
+              "height": 0,
+              "left": 0,
+              "top": 0,
+              "width": 0,
+            }
+          }
+          offset={
+            Object {
+              "x": 100,
+              "y": 100,
+            }
+          }
+          orientation="v"
+          style={Object {}}
+          to={
+            Object {
+              "height": 0,
+              "left": 100,
+              "top": 0,
+              "width": 0,
+            }
+          }
+          x0={-101}
+          x1={0}
+          y0={-100}
+          y1={-100}
+        >
+          <div
+            className="line-placeholder"
+          >
+            <div
+              className="line-placeholder-item"
+              from={
+                Object {
+                  "height": 0,
+                  "left": 0,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+              offset={
+                Object {
+                  "x": 100,
+                  "y": 100,
+                }
+              }
+              orientation="v"
+              style={
+                Object {
+                  "borderTopColor": "#ddd",
+                  "borderTopStyle": "solid",
+                  "borderTopWidth": 1,
+                  "left": "-101px",
+                  "position": "absolute",
+                  "top": "-100px",
+                  "transform": "rotate(0deg)",
+                  "transformOrigin": "0 0",
+                  "width": "101px",
+                  "zIndex": "1",
+                }
+              }
+              to={
+                Object {
+                  "height": 0,
+                  "left": 100,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+            />
+          </div>
+        </Line>
+      </div>
     </SteppedLine>
   </div>
 </SteppedLineTo>

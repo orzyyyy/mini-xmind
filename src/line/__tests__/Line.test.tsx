@@ -3,15 +3,19 @@ import { mount } from 'enzyme';
 import { SteppedLineTo } from '..';
 import 'nino-cli/scripts/setup';
 
-const from = document.createElement('div');
-from.innerHTML = `
-  <div style="position: absolute; top: 0px; left: 0px;">from</div>
-`;
+const from = {
+  width: 0,
+  height: 0,
+  left: 0,
+  top: 0,
+};
 
-const to = document.createElement('div');
-to.innerHTML = `
-<div style="position: absolute; top: 0px; left: 100px;">from</div>
-`;
+const to = {
+  width: 0,
+  height: 0,
+  left: 100,
+  top: 0,
+};
 
 describe('Line', () => {
   it('Line renders correctly', () => {
@@ -34,16 +38,10 @@ describe('Line', () => {
     );
     expect(wrapper).toMatchSnapshot();
 
-    const x0: string = wrapper
-      .find('SteppedLine')
-      .at(0)
-      .prop('x0');
+    const x0: string = wrapper.find('SteppedLine').prop('x0');
     expect(parseFloat(x0) + 100).toBe(0);
 
-    const y0: string = wrapper
-      .find('SteppedLine')
-      .at(0)
-      .prop('y0');
+    const y0: string = wrapper.find('SteppedLine').prop('y0');
     expect(parseFloat(y0) + 100).toBe(0);
   });
 });

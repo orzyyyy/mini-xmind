@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import Draggable from 'react-draggable';
 import { isSameCoordinate } from '../utils/commonUtil';
@@ -174,7 +173,9 @@ export default class BlockGroup extends Component<
   };
 
   saveBlock = (ref: HTMLDivElement | null, blockKey: string) => {
-    blockDOM[blockKey] = ReactDOM.findDOMNode(ref);
+    if (ref) {
+      blockDOM[blockKey] = ref.getBoundingClientRect();
+    }
   };
 
   shouldPaintLine = (checkBlockClickList: any, linesProps: any) => {
