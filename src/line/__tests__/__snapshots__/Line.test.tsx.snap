@@ -97,49 +97,16 @@ exports[`Line Line renders correctly 1`] = `
           y1={0}
         >
           <div
-            className="line-placeholder"
-          >
-            <div
-              className="line-placeholder-item"
-              from={
-                Object {
-                  "height": 0,
-                  "left": 0,
-                  "top": 0,
-                  "width": 0,
-                }
+            className="line-core"
+            style={
+              Object {
+                "left": "0px",
+                "top": "0px",
+                "transform": "rotate(0deg)",
+                "width": "0px",
               }
-              offset={
-                Object {
-                  "x": 0,
-                  "y": 0,
-                }
-              }
-              orientation="v"
-              style={
-                Object {
-                  "borderTopColor": "#ddd",
-                  "borderTopStyle": "solid",
-                  "borderTopWidth": 1,
-                  "left": "0px",
-                  "position": "absolute",
-                  "top": "0px",
-                  "transform": "rotate(0deg)",
-                  "transformOrigin": "0 0",
-                  "width": "0px",
-                  "zIndex": "1",
-                }
-              }
-              to={
-                Object {
-                  "height": 0,
-                  "left": 100,
-                  "top": 0,
-                  "width": 0,
-                }
-              }
-            />
-          </div>
+            }
+          />
         </Line>
         <Line
           className=""
@@ -173,49 +140,16 @@ exports[`Line Line renders correctly 1`] = `
           y1={0}
         >
           <div
-            className="line-placeholder"
-          >
-            <div
-              className="line-placeholder-item"
-              from={
-                Object {
-                  "height": 0,
-                  "left": 0,
-                  "top": 0,
-                  "width": 0,
-                }
+            className="line-core"
+            style={
+              Object {
+                "left": "100px",
+                "top": "0px",
+                "transform": "rotate(0deg)",
+                "width": "0px",
               }
-              offset={
-                Object {
-                  "x": 0,
-                  "y": 0,
-                }
-              }
-              orientation="v"
-              style={
-                Object {
-                  "borderTopColor": "#ddd",
-                  "borderTopStyle": "solid",
-                  "borderTopWidth": 1,
-                  "left": "100px",
-                  "position": "absolute",
-                  "top": "0px",
-                  "transform": "rotate(0deg)",
-                  "transformOrigin": "0 0",
-                  "width": "0px",
-                  "zIndex": "1",
-                }
-              }
-              to={
-                Object {
-                  "height": 0,
-                  "left": 100,
-                  "top": 0,
-                  "width": 0,
-                }
-              }
-            />
-          </div>
+            }
+          />
         </Line>
         <Line
           className=""
@@ -249,49 +183,16 @@ exports[`Line Line renders correctly 1`] = `
           y1={0}
         >
           <div
-            className="line-placeholder"
-          >
-            <div
-              className="line-placeholder-item"
-              from={
-                Object {
-                  "height": 0,
-                  "left": 0,
-                  "top": 0,
-                  "width": 0,
-                }
+            className="line-core"
+            style={
+              Object {
+                "left": "-1px",
+                "top": "0px",
+                "transform": "rotate(0deg)",
+                "width": "101px",
               }
-              offset={
-                Object {
-                  "x": 0,
-                  "y": 0,
-                }
-              }
-              orientation="v"
-              style={
-                Object {
-                  "borderTopColor": "#ddd",
-                  "borderTopStyle": "solid",
-                  "borderTopWidth": 1,
-                  "left": "-1px",
-                  "position": "absolute",
-                  "top": "0px",
-                  "transform": "rotate(0deg)",
-                  "transformOrigin": "0 0",
-                  "width": "101px",
-                  "zIndex": "1",
-                }
-              }
-              to={
-                Object {
-                  "height": 0,
-                  "left": 100,
-                  "top": 0,
-                  "width": 0,
-                }
-              }
-            />
-          </div>
+            }
+          />
         </Line>
       </div>
     </SteppedLine>
@@ -396,49 +297,16 @@ exports[`Line offset works well 1`] = `
           y1={-100}
         >
           <div
-            className="line-placeholder"
-          >
-            <div
-              className="line-placeholder-item"
-              from={
-                Object {
-                  "height": 0,
-                  "left": 0,
-                  "top": 0,
-                  "width": 0,
-                }
+            className="line-core"
+            style={
+              Object {
+                "left": "-100px",
+                "top": "-100px",
+                "transform": "rotate(0deg)",
+                "width": "0px",
               }
-              offset={
-                Object {
-                  "x": 100,
-                  "y": 100,
-                }
-              }
-              orientation="v"
-              style={
-                Object {
-                  "borderTopColor": "#ddd",
-                  "borderTopStyle": "solid",
-                  "borderTopWidth": 1,
-                  "left": "-100px",
-                  "position": "absolute",
-                  "top": "-100px",
-                  "transform": "rotate(0deg)",
-                  "transformOrigin": "0 0",
-                  "width": "0px",
-                  "zIndex": "1",
-                }
-              }
-              to={
-                Object {
-                  "height": 0,
-                  "left": 100,
-                  "top": 0,
-                  "width": 0,
-                }
-              }
-            />
-          </div>
+            }
+          />
         </Line>
         <Line
           className=""
@@ -472,49 +340,16 @@ exports[`Line offset works well 1`] = `
           y1={-100}
         >
           <div
-            className="line-placeholder"
-          >
-            <div
-              className="line-placeholder-item"
-              from={
-                Object {
-                  "height": 0,
-                  "left": 0,
-                  "top": 0,
-                  "width": 0,
-                }
+            className="line-core"
+            style={
+              Object {
+                "left": "0px",
+                "top": "-100px",
+                "transform": "rotate(0deg)",
+                "width": "0px",
               }
-              offset={
-                Object {
-                  "x": 100,
-                  "y": 100,
-                }
-              }
-              orientation="v"
-              style={
-                Object {
-                  "borderTopColor": "#ddd",
-                  "borderTopStyle": "solid",
-                  "borderTopWidth": 1,
-                  "left": "0px",
-                  "position": "absolute",
-                  "top": "-100px",
-                  "transform": "rotate(0deg)",
-                  "transformOrigin": "0 0",
-                  "width": "0px",
-                  "zIndex": "1",
-                }
-              }
-              to={
-                Object {
-                  "height": 0,
-                  "left": 100,
-                  "top": 0,
-                  "width": 0,
-                }
-              }
-            />
-          </div>
+            }
+          />
         </Line>
         <Line
           className=""
@@ -548,49 +383,16 @@ exports[`Line offset works well 1`] = `
           y1={-100}
         >
           <div
-            className="line-placeholder"
-          >
-            <div
-              className="line-placeholder-item"
-              from={
-                Object {
-                  "height": 0,
-                  "left": 0,
-                  "top": 0,
-                  "width": 0,
-                }
+            className="line-core"
+            style={
+              Object {
+                "left": "-101px",
+                "top": "-100px",
+                "transform": "rotate(0deg)",
+                "width": "101px",
               }
-              offset={
-                Object {
-                  "x": 100,
-                  "y": 100,
-                }
-              }
-              orientation="v"
-              style={
-                Object {
-                  "borderTopColor": "#ddd",
-                  "borderTopStyle": "solid",
-                  "borderTopWidth": 1,
-                  "left": "-101px",
-                  "position": "absolute",
-                  "top": "-100px",
-                  "transform": "rotate(0deg)",
-                  "transformOrigin": "0 0",
-                  "width": "101px",
-                  "zIndex": "1",
-                }
-              }
-              to={
-                Object {
-                  "height": 0,
-                  "left": 100,
-                  "top": 0,
-                  "width": 0,
-                }
-              }
-            />
-          </div>
+            }
+          />
         </Line>
       </div>
     </SteppedLine>

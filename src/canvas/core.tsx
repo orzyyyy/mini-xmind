@@ -16,6 +16,7 @@ export interface CanvasProps {
   orientation?: 'h' | 'v' | 'horizonal' | 'vertical' | string;
   blockClassName?: string;
   tagClassName?: string;
+  lineClassName?: string;
 }
 export interface CanvasState {
   blockProps?: any;
@@ -133,6 +134,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
       orientation,
       blockClassName,
       tagClassName,
+      lineClassName,
       ...rest
     } = this.props;
     const { blockProps, linesProps, tagProps, position } = this.state;
@@ -160,6 +162,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
             data={linesProps}
             offset={position}
             orientation={orientation}
+            className={lineClassName}
           />
           <TagGroup
             data={tagProps}

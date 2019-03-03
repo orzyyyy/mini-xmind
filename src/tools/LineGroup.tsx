@@ -6,6 +6,7 @@ export interface LineGroupProps {
   offset?: { x: number; y: number };
   data?: any;
   orientation?: 'h' | 'v' | 'horizonal' | 'vertical' | string;
+  className?: string;
 }
 export interface LineGroupState {
   data?: any;

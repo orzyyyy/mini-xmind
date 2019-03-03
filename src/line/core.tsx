@@ -1,8 +1,6 @@
 import React, { PureComponent } from 'react';
 import classNames from 'classnames';
-const defaultBorderColor = '#ddd';
-const defaultBorderStyle = 'solid';
-const defaultBorderWidth = 1;
+import './assets/Line.css';
 
 export interface LineProps {
   x0: number;
@@ -10,13 +8,10 @@ export interface LineProps {
   x1: number;
   y1: number;
   className?: string;
-  style?: any;
-  zIndex?: any;
 }
 
 export default class Line extends PureComponent<LineProps> {
   static defaultProps = {
-    style: {},
     x0: 0,
     y0: 0,
     x1: 0,
@@ -24,39 +19,21 @@ export default class Line extends PureComponent<LineProps> {
   };
 
   render() {
-    const { x0, y0, x1, y1, style, zIndex, className, ...rest } = this.props;
-
+    const { x0, y0, x1, y1, className } = this.props;
     const dy = y1 - y0;
     const dx = x1 - x0;
-
     const angle = (Math.atan2(dy, dx) * 180) / Math.PI;
-    const length = Math.sqrt(dx * dx + dy * dy);
-
-    const positionStyle = {
-      position: 'absolute',
-      top: `${y0}px`,
-      left: `${x0}px`,
-      width: `${length}px`,
-      zIndex: zIndex && Number.isFinite(zIndex) ? String(zIndex) : '1',
-      transform: `rotate(${angle}deg)`,
-      // Rotate around (x0, y0)
-      transformOrigin: '0 0',
-    };
-
-    const defaultStyle = {
-      borderTopColor: defaultBorderColor,
-      borderTopStyle: defaultBorderStyle,
-      borderTopWidth: defaultBorderWidth,
-    };
-
+    const width = Math.sqrt(dx * dx + dy * dy);
     return (
-      <div className="line-placeholder">
-        <div
-          className={classNames('line-placeholder-item', className)}
-          {...rest}
-          style={Object.assign({}, defaultStyle, positionStyle, style)}
-        />
-      </div>
+      <div
+        className={classNames('line-core', className)}
+        style={{
+          top: `${y0}px`,
+          left: `${x0}px`,
+          width: `${width}px`,
+          transform: `rotate(${angle}deg)`,
+        }}
+      />
     );
   }
 }

@@ -1,0 +1,7 @@
+.line-core {
+  border: 1px solid #ddd;
+  /* Rotate around (x0, y0) */
+  transform-origin: 0 0;
+  position: absolute;
+  z-index: 1;
+}
