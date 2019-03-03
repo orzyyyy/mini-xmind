@@ -63,7 +63,7 @@ exports[`Line Line renders correctly 1`] = `
       y1={0}
     >
       <div
-        className="stepped-lineto"
+        className="stepped-line"
       >
         <Line
           className=""
@@ -263,7 +263,7 @@ exports[`Line offset works well 1`] = `
       y1={-100}
     >
       <div
-        className="stepped-lineto"
+        className="stepped-line"
       >
         <Line
           className=""

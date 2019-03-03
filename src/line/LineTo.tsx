@@ -46,8 +46,6 @@ export function parseAnchorPercent(value: string) {
   return percent;
 }
 
-let staticFromAnchor: any, staticToAnchor: any;
-
 export interface LineToProps {
   className?: string;
   style?: any;
@@ -59,11 +57,16 @@ export interface LineToProps {
   orientation?: 'h' | 'v' | 'horizonal' | 'vertical' | string;
 }
 export interface LineToState {
-  fromAnchor?: string;
-  toAnchor?: string;
+  offsetX: number;
+  offsetY: number;
 }
 
 export default class LineTo extends Component<LineToProps, LineToState> {
+  state = {
+    offsetX: 0,
+    offsetY: 0,
+  };
+
   static defaultProps = {
     className: '',
     style: {},
@@ -74,48 +77,32 @@ export default class LineTo extends Component<LineToProps, LineToState> {
     nextProps: LineToProps,
     nextState: LineToState,
   ) {
-    const newState = {} as LineToState;
-    if (nextProps.fromAnchor !== nextState.fromAnchor) {
-      staticFromAnchor = parseAnchor(nextProps.fromAnchor);
-      newState.fromAnchor = nextProps.fromAnchor;
+    const { offset: parentOffset } = nextProps;
+    if (
+      parentOffset &&
+      (parentOffset.x !== nextState.offsetX ||
+        parentOffset.y !== nextState.offsetY)
+    ) {
+      return { offsetX: parentOffset.x, offsetY: parentOffset.y };
     }
-    if (nextProps.toAnchor !== nextState.toAnchor) {
-      staticToAnchor = parseAnchor(nextProps.toAnchor);
-      newState.toAnchor = nextProps.toAnchor;
-    }
-    return newState;
-  }
-
-  constructor(props: LineToProps) {
-    super(props);
-
-    this.state = {
-      fromAnchor: props.fromAnchor,
-      toAnchor: props.toAnchor,
-    };
-
-    staticFromAnchor = parseAnchor(props.fromAnchor);
-    staticToAnchor = parseAnchor(props.toAnchor);
+    return null;
   }
 
   detect = () => {
     const { from, to, offset = { x: 0, y: 0 } } = this.props;
 
-    const anchor0 = staticFromAnchor;
-    const anchor1 = staticToAnchor;
     const offsetX = window.pageXOffset - offset.x;
     const offsetY = window.pageYOffset - offset.y;
 
-    const x0 = from.left + from.width * anchor0.x + offsetX;
-    const x1 = to.left + to.width * anchor1.x + offsetX;
-    const y0 = from.top + from.height * anchor0.y + offsetY;
-    const y1 = to.top + to.height * anchor1.y + offsetY;
+    const x0 = from.left + from.width * defaultAnchor.x + offsetX;
+    const x1 = to.left + to.width * defaultAnchor.x + offsetX;
+    const y0 = from.top + from.height * defaultAnchor.y + offsetY;
+    const y1 = to.top + to.height * defaultAnchor.y + offsetY;
 
     return { x0, y0, x1, y1 };
   };
 
-  render() {
-    const points = this.detect();
-    return points ? <Line {...points} {...this.props} /> : null;
-  }
+  render = () => {
+    return <Line {...this.detect()} {...this.props} />;
+  };
 }
