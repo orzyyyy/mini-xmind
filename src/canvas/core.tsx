@@ -99,9 +99,6 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
         this.setState({ blockProps });
         break;
 
-      case 'line':
-        break;
-
       case 'input':
         defaultWidth = 100;
         defaultHeight = 32;
