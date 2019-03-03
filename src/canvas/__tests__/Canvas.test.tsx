@@ -126,7 +126,7 @@ describe('Canvas', () => {
     const value = wrapper.onDrop(event);
     expect(value).toEqual({
       x: 50,
-      y: 60,
+      y: 84,
     });
   });
 });
