@@ -28,9 +28,51 @@ describe('demo', () => {
     const wrapper = mount(<Demo />);
     const instance: any = wrapper.instance();
     const data = instance.outputData();
-    const mapping = JSON.parse(
-      '{"CanvasPosition":{"x":-67,"y":230},"BlockGroup":{"block-623187":{"x":158,"y":256},"block-624018":{"x":367,"y":368},"block-73377":{"x":253,"y":525}},"TagGroup":{"tag-626505":{"x":167,"y":284,"style":{"width":100,"height":32},"editable":false,"input":"test"},"tag-629962":{"x":405,"y":398,"style":{"width":100,"height":32},"editable":false,"input":"test2"},"tag-80986":{"x":286,"y":555,"style":{"width":100,"height":32},"editable":false,"input":"test3"}},"LineGroup":{"line-77619":{"fromKey":"block-73377","toKey":"block-623187"},"line-592694":{"fromKey":"block-623187","toKey":"block-624018"}}}',
-    );
+    const mapping = {
+      BlockGroup: {
+        'block-623187': { x: 132, y: 118 },
+        'block-624018': { x: 426, y: -50 },
+        'block-73377': { x: 428, y: 306 },
+      },
+      CanvasPosition: { x: -67, y: 230 },
+      LineGroup: {
+        'line-592694': {
+          from: { bottom: 0, height: 0, left: 0, right: 0, top: 0, width: 0 },
+          fromKey: 'block-623187',
+          to: { bottom: 0, height: 0, left: 0, right: 0, top: 0, width: 0 },
+          toKey: 'block-624018',
+        },
+        'line-77619': {
+          from: { bottom: 0, height: 0, left: 0, right: 0, top: 0, width: 0 },
+          fromKey: 'block-73377',
+          to: { bottom: 0, height: 0, left: 0, right: 0, top: 0, width: 0 },
+          toKey: 'block-623187',
+        },
+      },
+      TagGroup: {
+        'tag-626505': {
+          editable: false,
+          input: 'test',
+          style: { height: 32, width: 100 },
+          x: 169,
+          y: 144,
+        },
+        'tag-629962': {
+          editable: false,
+          input: 'test2',
+          style: { height: 32, width: 100 },
+          x: 462,
+          y: -23,
+        },
+        'tag-80986': {
+          editable: false,
+          input: 'test3',
+          style: { height: 32, width: 100 },
+          x: 463,
+          y: 333,
+        },
+      },
+    };
     expect(mapping).toEqual(data);
   });
 

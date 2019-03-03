@@ -166,16 +166,16 @@ exports[`demo render correctly 1`] = `
         Object {
           "BlockGroup": Object {
             "block-623187": Object {
-              "x": 158,
-              "y": 256,
+              "x": 132,
+              "y": 118,
             },
             "block-624018": Object {
-              "x": 367,
-              "y": 368,
+              "x": 426,
+              "y": -50,
             },
             "block-73377": Object {
-              "x": 253,
-              "y": 525,
+              "x": 428,
+              "y": 306,
             },
           },
           "CanvasPosition": Object {
@@ -232,8 +232,8 @@ exports[`demo render correctly 1`] = `
                 "height": 32,
                 "width": 100,
               },
-              "x": 167,
-              "y": 284,
+              "x": 169,
+              "y": 144,
             },
             "tag-629962": Object {
               "editable": false,
@@ -242,8 +242,8 @@ exports[`demo render correctly 1`] = `
                 "height": 32,
                 "width": 100,
               },
-              "x": 405,
-              "y": 398,
+              "x": 462,
+              "y": -23,
             },
             "tag-80986": Object {
               "editable": false,
@@ -252,8 +252,8 @@ exports[`demo render correctly 1`] = `
                 "height": 32,
                 "width": 100,
               },
-              "x": 286,
-              "y": 555,
+              "x": 463,
+              "y": 333,
             },
           },
         }
@@ -331,16 +331,16 @@ exports[`demo render correctly 1`] = `
               Object {
                 "BlockGroup": Object {
                   "block-623187": Object {
-                    "x": 158,
-                    "y": 256,
+                    "x": 132,
+                    "y": 118,
                   },
                   "block-624018": Object {
-                    "x": 367,
-                    "y": 368,
+                    "x": 426,
+                    "y": -50,
                   },
                   "block-73377": Object {
-                    "x": 253,
-                    "y": 525,
+                    "x": 428,
+                    "y": 306,
                   },
                 },
                 "CanvasPosition": Object {
@@ -397,8 +397,8 @@ exports[`demo render correctly 1`] = `
                       "height": 32,
                       "width": 100,
                     },
-                    "x": 167,
-                    "y": 284,
+                    "x": 169,
+                    "y": 144,
                   },
                   "tag-629962": Object {
                     "editable": false,
@@ -407,8 +407,8 @@ exports[`demo render correctly 1`] = `
                       "height": 32,
                       "width": 100,
                     },
-                    "x": 405,
-                    "y": 398,
+                    "x": 462,
+                    "y": -23,
                   },
                   "tag-80986": Object {
                     "editable": false,
@@ -417,8 +417,8 @@ exports[`demo render correctly 1`] = `
                       "height": 32,
                       "width": 100,
                     },
-                    "x": 286,
-                    "y": 555,
+                    "x": 463,
+                    "y": 333,
                   },
                 },
               }
@@ -441,16 +441,16 @@ exports[`demo render correctly 1`] = `
               data={
                 Object {
                   "block-623187": Object {
-                    "x": 158,
-                    "y": 256,
+                    "x": 132,
+                    "y": 118,
                   },
                   "block-624018": Object {
-                    "x": 367,
-                    "y": 368,
+                    "x": 426,
+                    "y": -50,
                   },
                   "block-73377": Object {
-                    "x": 253,
-                    "y": 525,
+                    "x": 428,
+                    "y": 306,
                   },
                 }
               }
@@ -532,8 +532,8 @@ exports[`demo render correctly 1`] = `
                 onStop={[Function]}
                 position={
                   Object {
-                    "x": 158,
-                    "y": 256,
+                    "x": 132,
+                    "y": 118,
                   }
                 }
                 scale={1}
@@ -564,8 +564,8 @@ exports[`demo render correctly 1`] = `
                   onStop={[Function]}
                   position={
                     Object {
-                      "x": 158,
-                      "y": 256,
+                      "x": 132,
+                      "y": 118,
                     }
                   }
                   scale={1}
@@ -576,16 +576,16 @@ exports[`demo render correctly 1`] = `
                     data={
                       Object {
                         "block-623187": Object {
-                          "x": 158,
-                          "y": 256,
+                          "x": 132,
+                          "y": 118,
                         },
                         "block-624018": Object {
-                          "x": 367,
-                          "y": 368,
+                          "x": 426,
+                          "y": -50,
                         },
                         "block-73377": Object {
-                          "x": 253,
-                          "y": 525,
+                          "x": 428,
+                          "y": 306,
                         },
                       }
                     }
@@ -603,7 +603,7 @@ exports[`demo render correctly 1`] = `
                     style={
                       Object {
                         "touchAction": "none",
-                        "transform": "translate(158px,256px)",
+                        "transform": "translate(132px,118px)",
                       }
                     }
                     transform={null}
@@ -636,8 +636,8 @@ exports[`demo render correctly 1`] = `
                 onStop={[Function]}
                 position={
                   Object {
-                    "x": 367,
-                    "y": 368,
+                    "x": 426,
+                    "y": -50,
                   }
                 }
                 scale={1}
@@ -668,8 +668,8 @@ exports[`demo render correctly 1`] = `
                   onStop={[Function]}
                   position={
                     Object {
-                      "x": 367,
-                      "y": 368,
+                      "x": 426,
+                      "y": -50,
                     }
                   }
                   scale={1}
@@ -680,16 +680,16 @@ exports[`demo render correctly 1`] = `
                     data={
                       Object {
                         "block-623187": Object {
-                          "x": 158,
-                          "y": 256,
+                          "x": 132,
+                          "y": 118,
                         },
                         "block-624018": Object {
-                          "x": 367,
-                          "y": 368,
+                          "x": 426,
+                          "y": -50,
                         },
                         "block-73377": Object {
-                          "x": 253,
-                          "y": 525,
+                          "x": 428,
+                          "y": 306,
                         },
                       }
                     }
@@ -707,7 +707,7 @@ exports[`demo render correctly 1`] = `
                     style={
                       Object {
                         "touchAction": "none",
-                        "transform": "translate(367px,368px)",
+                        "transform": "translate(426px,-50px)",
                       }
                     }
                     transform={null}
@@ -740,8 +740,8 @@ exports[`demo render correctly 1`] = `
                 onStop={[Function]}
                 position={
                   Object {
-                    "x": 253,
-                    "y": 525,
+                    "x": 428,
+                    "y": 306,
                   }
                 }
                 scale={1}
@@ -772,8 +772,8 @@ exports[`demo render correctly 1`] = `
                   onStop={[Function]}
                   position={
                     Object {
-                      "x": 253,
-                      "y": 525,
+                      "x": 428,
+                      "y": 306,
                     }
                   }
                   scale={1}
@@ -784,16 +784,16 @@ exports[`demo render correctly 1`] = `
                     data={
                       Object {
                         "block-623187": Object {
-                          "x": 158,
-                          "y": 256,
+                          "x": 132,
+                          "y": 118,
                         },
                         "block-624018": Object {
-                          "x": 367,
-                          "y": 368,
+                          "x": 426,
+                          "y": -50,
                         },
                         "block-73377": Object {
-                          "x": 253,
-                          "y": 525,
+                          "x": 428,
+                          "y": 306,
                         },
                       }
                     }
@@ -811,7 +811,7 @@ exports[`demo render correctly 1`] = `
                     style={
                       Object {
                         "touchAction": "none",
-                        "transform": "translate(253px,525px)",
+                        "transform": "translate(428px,306px)",
                       }
                     }
                     transform={null}
@@ -1391,8 +1391,8 @@ exports[`demo render correctly 1`] = `
                       "height": 32,
                       "width": 100,
                     },
-                    "x": 167,
-                    "y": 284,
+                    "x": 169,
+                    "y": 144,
                   },
                   "tag-629962": Object {
                     "editable": false,
@@ -1401,8 +1401,8 @@ exports[`demo render correctly 1`] = `
                       "height": 32,
                       "width": 100,
                     },
-                    "x": 405,
-                    "y": 398,
+                    "x": 462,
+                    "y": -23,
                   },
                   "tag-80986": Object {
                     "editable": false,
@@ -1411,8 +1411,8 @@ exports[`demo render correctly 1`] = `
                       "height": 32,
                       "width": 100,
                     },
-                    "x": 286,
-                    "y": 555,
+                    "x": 463,
+                    "y": 333,
                   },
                 }
               }
@@ -1444,8 +1444,8 @@ exports[`demo render correctly 1`] = `
                 onStop={[Function]}
                 position={
                   Object {
-                    "x": 167,
-                    "y": 284,
+                    "x": 169,
+                    "y": 144,
                   }
                 }
                 scale={1}
@@ -1476,8 +1476,8 @@ exports[`demo render correctly 1`] = `
                   onStop={[Function]}
                   position={
                     Object {
-                      "x": 167,
-                      "y": 284,
+                      "x": 169,
+                      "y": 144,
                     }
                   }
                   scale={1}
@@ -1494,8 +1494,8 @@ exports[`demo render correctly 1`] = `
                             "height": 32,
                             "width": 100,
                           },
-                          "x": 167,
-                          "y": 284,
+                          "x": 169,
+                          "y": 144,
                         },
                         "tag-629962": Object {
                           "editable": false,
@@ -1504,8 +1504,8 @@ exports[`demo render correctly 1`] = `
                             "height": 32,
                             "width": 100,
                           },
-                          "x": 405,
-                          "y": 398,
+                          "x": 462,
+                          "y": -23,
                         },
                         "tag-80986": Object {
                           "editable": false,
@@ -1514,8 +1514,8 @@ exports[`demo render correctly 1`] = `
                             "height": 32,
                             "width": 100,
                           },
-                          "x": 286,
-                          "y": 555,
+                          "x": 463,
+                          "y": 333,
                         },
                       }
                     }
@@ -1527,7 +1527,7 @@ exports[`demo render correctly 1`] = `
                     style={
                       Object {
                         "touchAction": "none",
-                        "transform": "translate(167px,284px)",
+                        "transform": "translate(169px,144px)",
                       }
                     }
                     transform={null}
@@ -1562,8 +1562,8 @@ exports[`demo render correctly 1`] = `
                 onStop={[Function]}
                 position={
                   Object {
-                    "x": 405,
-                    "y": 398,
+                    "x": 462,
+                    "y": -23,
                   }
                 }
                 scale={1}
@@ -1594,8 +1594,8 @@ exports[`demo render correctly 1`] = `
                   onStop={[Function]}
                   position={
                     Object {
-                      "x": 405,
-                      "y": 398,
+                      "x": 462,
+                      "y": -23,
                     }
                   }
                   scale={1}
@@ -1612,8 +1612,8 @@ exports[`demo render correctly 1`] = `
                             "height": 32,
                             "width": 100,
                           },
-                          "x": 167,
-                          "y": 284,
+                          "x": 169,
+                          "y": 144,
                         },
                         "tag-629962": Object {
                           "editable": false,
@@ -1622,8 +1622,8 @@ exports[`demo render correctly 1`] = `
                             "height": 32,
                             "width": 100,
                           },
-                          "x": 405,
-                          "y": 398,
+                          "x": 462,
+                          "y": -23,
                         },
                         "tag-80986": Object {
                           "editable": false,
@@ -1632,8 +1632,8 @@ exports[`demo render correctly 1`] = `
                             "height": 32,
                             "width": 100,
                           },
-                          "x": 286,
-                          "y": 555,
+                          "x": 463,
+                          "y": 333,
                         },
                       }
                     }
@@ -1645,7 +1645,7 @@ exports[`demo render correctly 1`] = `
                     style={
                       Object {
                         "touchAction": "none",
-                        "transform": "translate(405px,398px)",
+                        "transform": "translate(462px,-23px)",
                       }
                     }
                     transform={null}
@@ -1680,8 +1680,8 @@ exports[`demo render correctly 1`] = `
                 onStop={[Function]}
                 position={
                   Object {
-                    "x": 286,
-                    "y": 555,
+                    "x": 463,
+                    "y": 333,
                   }
                 }
                 scale={1}
@@ -1712,8 +1712,8 @@ exports[`demo render correctly 1`] = `
                   onStop={[Function]}
                   position={
                     Object {
-                      "x": 286,
-                      "y": 555,
+                      "x": 463,
+                      "y": 333,
                     }
                   }
                   scale={1}
@@ -1730,8 +1730,8 @@ exports[`demo render correctly 1`] = `
                             "height": 32,
                             "width": 100,
                           },
-                          "x": 167,
-                          "y": 284,
+                          "x": 169,
+                          "y": 144,
                         },
                         "tag-629962": Object {
                           "editable": false,
@@ -1740,8 +1740,8 @@ exports[`demo render correctly 1`] = `
                             "height": 32,
                             "width": 100,
                           },
-                          "x": 405,
-                          "y": 398,
+                          "x": 462,
+                          "y": -23,
                         },
                         "tag-80986": Object {
                           "editable": false,
@@ -1750,8 +1750,8 @@ exports[`demo render correctly 1`] = `
                             "height": 32,
                             "width": 100,
                           },
-                          "x": 286,
-                          "y": 555,
+                          "x": 463,
+                          "y": 333,
                         },
                       }
                     }
@@ -1763,7 +1763,7 @@ exports[`demo render correctly 1`] = `
                     style={
                       Object {
                         "touchAction": "none",
-                        "transform": "translate(286px,555px)",
+                        "transform": "translate(463px,333px)",
                       }
                     }
                     transform={null}

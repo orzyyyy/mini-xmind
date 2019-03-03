@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { SteppedLineTo } from '../line';
-import omit from 'omit.js';
 
 export interface LineGroupProps {
   offset?: { x: number; y: number };
@@ -50,7 +49,7 @@ export default class LineGroup extends Component<
     return Object.keys(data).map(lineKey => {
       const { from, to } = data[lineKey];
       (window as any).DataCollector.set('LineGroup', {
-        [lineKey]: omit(data[lineKey], ['from', 'to']),
+        [lineKey]: data[lineKey],
       });
       return (
         <SteppedLineTo
