@@ -46,31 +46,43 @@ exports[`Canvas Canvas renders correctly 1`] = `
       },
       "LineGroup": Object {
         "line-592694": Object {
-          "from": <div
-            class="BlockGroup animate-appear react-draggable"
-            data="[object Object]"
-            style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
-          />,
+          "from": Object {
+            "bottom": 0,
+            "height": 0,
+            "left": 0,
+            "right": 0,
+            "top": 0,
+            "width": 0,
+          },
           "fromKey": "block-623187",
-          "to": <div
-            class="BlockGroup animate-appear react-draggable"
-            data="[object Object]"
-            style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
-          />,
+          "to": Object {
+            "bottom": 0,
+            "height": 0,
+            "left": 0,
+            "right": 0,
+            "top": 0,
+            "width": 0,
+          },
           "toKey": "block-624018",
         },
         "line-77619": Object {
-          "from": <div
-            class="BlockGroup animate-appear react-draggable"
-            data="[object Object]"
-            style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
-          />,
+          "from": Object {
+            "bottom": 0,
+            "height": 0,
+            "left": 0,
+            "right": 0,
+            "top": 0,
+            "width": 0,
+          },
           "fromKey": "block-73377",
-          "to": <div
-            class="BlockGroup animate-appear react-draggable"
-            data="[object Object]"
-            style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
-          />,
+          "to": Object {
+            "bottom": 0,
+            "height": 0,
+            "left": 0,
+            "right": 0,
+            "top": 0,
+            "width": 0,
+          },
           "toKey": "block-623187",
         },
       },
@@ -225,31 +237,43 @@ exports[`Canvas Canvas renders correctly 1`] = `
             },
             "LineGroup": Object {
               "line-592694": Object {
-                "from": <div
-                  class="BlockGroup animate-appear react-draggable"
-                  data="[object Object]"
-                  style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
-                />,
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
                 "fromKey": "block-623187",
-                "to": <div
-                  class="BlockGroup animate-appear react-draggable"
-                  data="[object Object]"
-                  style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
-                />,
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
                 "toKey": "block-624018",
               },
               "line-77619": Object {
-                "from": <div
-                  class="BlockGroup animate-appear react-draggable"
-                  data="[object Object]"
-                  style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
-                />,
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
                 "fromKey": "block-73377",
-                "to": <div
-                  class="BlockGroup animate-appear react-draggable"
-                  data="[object Object]"
-                  style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
-                />,
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
                 "toKey": "block-623187",
               },
             },
@@ -344,31 +368,43 @@ exports[`Canvas Canvas renders correctly 1`] = `
           lineData={
             Object {
               "line-592694": Object {
-                "from": <div
-                  class="BlockGroup animate-appear react-draggable"
-                  data="[object Object]"
-                  style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
-                />,
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
                 "fromKey": "block-623187",
-                "to": <div
-                  class="BlockGroup animate-appear react-draggable"
-                  data="[object Object]"
-                  style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
-                />,
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
                 "toKey": "block-624018",
               },
               "line-77619": Object {
-                "from": <div
-                  class="BlockGroup animate-appear react-draggable"
-                  data="[object Object]"
-                  style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
-                />,
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
                 "fromKey": "block-73377",
-                "to": <div
-                  class="BlockGroup animate-appear react-draggable"
-                  data="[object Object]"
-                  style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
-                />,
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
                 "toKey": "block-623187",
               },
             }
@@ -752,31 +788,43 @@ exports[`Canvas Canvas renders correctly 1`] = `
           data={
             Object {
               "line-592694": Object {
-                "from": <div
-                  class="BlockGroup animate-appear react-draggable"
-                  data="[object Object]"
-                  style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
-                />,
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
                 "fromKey": "block-623187",
-                "to": <div
-                  class="BlockGroup animate-appear react-draggable"
-                  data="[object Object]"
-                  style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(367px,368px);"
-                />,
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
                 "toKey": "block-624018",
               },
               "line-77619": Object {
-                "from": <div
-                  class="BlockGroup animate-appear react-draggable"
-                  data="[object Object]"
-                  style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(253px,525px);"
-                />,
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
                 "fromKey": "block-73377",
-                "to": <div
-                  class="BlockGroup animate-appear react-draggable"
-                  data="[object Object]"
-                  style="width: 100px; height: 80px; background: rgb(255, 153, 102); border-radius: 10px; border: 1px solid #aaa; transform: translate(158px,256px);"
-                />,
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
                 "toKey": "block-623187",
               },
             }
