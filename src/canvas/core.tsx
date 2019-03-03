@@ -110,9 +110,6 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
         };
         this.setState({ tagProps });
         break;
-
-      default:
-        break;
     }
     return {
       x: clientX - defaultWidth / 2 - position.x,

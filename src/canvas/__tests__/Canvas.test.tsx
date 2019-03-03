@@ -113,4 +113,20 @@ describe('Canvas', () => {
       y: 60,
     });
   });
+
+  it('onDrop should update tagProps when droping a Tag', () => {
+    const wrapper: any = createWrapper().instance();
+    const event: any = {};
+    event.clientX = 100;
+    event.clientY = 100;
+    event.dataTransfer = {};
+    event.dataTransfer.getData = () => {
+      return "{\"key\":\"border\",\"value\":\"input\",\"style\":{\"width\":100,\"height\":80}}";
+    };
+    const value = wrapper.onDrop(event);
+    expect(value).toEqual({
+      x: 50,
+      y: 60,
+    });
+  });
 });
