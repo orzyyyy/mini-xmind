@@ -23,27 +23,16 @@ exports[`SteppedLine renderHorizontal should work well 1`] = `
       y1={1}
     >
       <div
-        className="line-placeholder"
-      >
-        <div
-          className="line-placeholder-item"
-          orientation="horizonal"
-          style={
-            Object {
-              "borderTopColor": "#ddd",
-              "borderTopStyle": "solid",
-              "borderTopWidth": 1,
-              "left": "1px",
-              "position": "absolute",
-              "top": "1px",
-              "transform": "rotate(180deg)",
-              "transformOrigin": "0 0",
-              "width": "0.5px",
-              "zIndex": "1",
-            }
+        className="line-core"
+        style={
+          Object {
+            "left": "1px",
+            "top": "1px",
+            "transform": "rotate(180deg)",
+            "width": "0.5px",
           }
-        />
-      </div>
+        }
+      />
     </Line>
     <Line
       className=""
@@ -55,27 +44,16 @@ exports[`SteppedLine renderHorizontal should work well 1`] = `
       y1={0}
     >
       <div
-        className="line-placeholder"
-      >
-        <div
-          className="line-placeholder-item"
-          orientation="horizonal"
-          style={
-            Object {
-              "borderTopColor": "#ddd",
-              "borderTopStyle": "solid",
-              "borderTopWidth": 1,
-              "left": "0px",
-              "position": "absolute",
-              "top": "0px",
-              "transform": "rotate(0deg)",
-              "transformOrigin": "0 0",
-              "width": "0.5px",
-              "zIndex": "1",
-            }
+        className="line-core"
+        style={
+          Object {
+            "left": "0px",
+            "top": "0px",
+            "transform": "rotate(0deg)",
+            "width": "0.5px",
           }
-        />
-      </div>
+        }
+      />
     </Line>
     <Line
       className=""
@@ -87,27 +65,16 @@ exports[`SteppedLine renderHorizontal should work well 1`] = `
       y1={1}
     >
       <div
-        className="line-placeholder"
-      >
-        <div
-          className="line-placeholder-item"
-          orientation="horizonal"
-          style={
-            Object {
-              "borderTopColor": "#ddd",
-              "borderTopStyle": "solid",
-              "borderTopWidth": 1,
-              "left": "0.5px",
-              "position": "absolute",
-              "top": "-1px",
-              "transform": "rotate(90deg)",
-              "transformOrigin": "0 0",
-              "width": "2px",
-              "zIndex": "1",
-            }
+        className="line-core"
+        style={
+          Object {
+            "left": "0.5px",
+            "top": "-1px",
+            "transform": "rotate(90deg)",
+            "width": "2px",
           }
-        />
-      </div>
+        }
+      />
     </Line>
   </div>
 </SteppedLine>
@@ -136,27 +103,16 @@ exports[`SteppedLine renderVertical should work well 1`] = `
       y1={0.5}
     >
       <div
-        className="line-placeholder"
-      >
-        <div
-          className="line-placeholder-item"
-          orientation="vertical"
-          style={
-            Object {
-              "borderTopColor": "#ddd",
-              "borderTopStyle": "solid",
-              "borderTopWidth": 1,
-              "left": "1px",
-              "position": "absolute",
-              "top": "1px",
-              "transform": "rotate(-90deg)",
-              "transformOrigin": "0 0",
-              "width": "0.5px",
-              "zIndex": "1",
-            }
+        className="line-core"
+        style={
+          Object {
+            "left": "1px",
+            "top": "1px",
+            "transform": "rotate(-90deg)",
+            "width": "0.5px",
           }
-        />
-      </div>
+        }
+      />
     </Line>
     <Line
       className=""
@@ -168,27 +124,16 @@ exports[`SteppedLine renderVertical should work well 1`] = `
       y1={0.5}
     >
       <div
-        className="line-placeholder"
-      >
-        <div
-          className="line-placeholder-item"
-          orientation="vertical"
-          style={
-            Object {
-              "borderTopColor": "#ddd",
-              "borderTopStyle": "solid",
-              "borderTopWidth": 1,
-              "left": "0px",
-              "position": "absolute",
-              "top": "0px",
-              "transform": "rotate(90deg)",
-              "transformOrigin": "0 0",
-              "width": "0.5px",
-              "zIndex": "1",
-            }
+        className="line-core"
+        style={
+          Object {
+            "left": "0px",
+            "top": "0px",
+            "transform": "rotate(90deg)",
+            "width": "0.5px",
           }
-        />
-      </div>
+        }
+      />
     </Line>
     <Line
       className=""
@@ -200,27 +145,16 @@ exports[`SteppedLine renderVertical should work well 1`] = `
       y1={0.5}
     >
       <div
-        className="line-placeholder"
-      >
-        <div
-          className="line-placeholder-item"
-          orientation="vertical"
-          style={
-            Object {
-              "borderTopColor": "#ddd",
-              "borderTopStyle": "solid",
-              "borderTopWidth": 1,
-              "left": "0px",
-              "position": "absolute",
-              "top": "0.5px",
-              "transform": "rotate(0deg)",
-              "transformOrigin": "0 0",
-              "width": "1px",
-              "zIndex": "1",
-            }
+        className="line-core"
+        style={
+          Object {
+            "left": "0px",
+            "top": "0.5px",
+            "transform": "rotate(0deg)",
+            "width": "1px",
           }
-        />
-      </div>
+        }
+      />
     </Line>
   </div>
 </SteppedLine>

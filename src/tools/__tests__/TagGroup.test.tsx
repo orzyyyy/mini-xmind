@@ -37,7 +37,7 @@ describe('TagGroup', () => {
       },
     };
     const wrapper = mount(<TagGroup data={data} />);
-    expect(wrapper.find('.TagGroup').text()).toBe('test');
+    expect(wrapper.find('.tag-group').text()).toBe('test');
     wrapper.setProps({
       data: {
         tag: {
@@ -57,7 +57,7 @@ describe('TagGroup', () => {
       },
     };
     const wrapper = mount(<TagGroup data={data} />);
-    wrapper.find('.TagGroup').simulate('doubleclick');
+    wrapper.find('.tag-group').simulate('doubleclick');
     expect(wrapper.state('data')).toEqual({
       tag: {
         editable: true,

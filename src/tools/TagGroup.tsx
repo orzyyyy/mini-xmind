@@ -23,10 +23,7 @@ export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
     nextProps: TagGroupProps,
     nextState: TagGroupState,
   ) {
-    if (isSameCoordinate(nextProps, nextState, currentTag)) {
-      return null;
-    }
-    if (!nextProps.data) {
+    if (isSameCoordinate(nextProps, nextState, currentTag) || !nextProps.data) {
       return null;
     }
     return { data: nextProps.data };
@@ -72,20 +69,26 @@ export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
   };
 
   render = () => {
-    const { className, onChange, ...rest } = this.props;
+    const { className: parentClassName, onChange, ...rest } = this.props;
     const { data } = this.state;
 
     (window as any).DataCollector.set('TagGroup', data);
     return Object.keys(data).map(key => {
-      const { x, y, style, editable } = data[key];
+      const { x, y, editable, className: tagClassName } = data[key];
+      const targetClassName = classNames(
+        'tag-group',
+        'animate-appear',
+        parentClassName,
+        tagClassName,
+      );
 
       if (editable) {
         return (
           <div
-            className={classNames('TagGroup', className)}
-            style={Object.assign({}, style, {
+            className={targetClassName}
+            style={{
               transform: `translate(${x}px, ${y}px)`,
-            })}
+            }}
             key={key}
             {...rest}
           >
@@ -113,8 +116,7 @@ export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
           onDrag={_ => this.handleDrag(key)}
         >
           <div
-            className={classNames('TagGroup', className, 'animate-appear')}
-            style={style}
+            className={targetClassName}
             onDoubleClick={() =>
               this.handleChange(data[key], key, 'editable', true)
             }

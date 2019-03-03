@@ -166,35 +166,14 @@ exports[`demo render correctly 1`] = `
         Object {
           "BlockGroup": Object {
             "block-623187": Object {
-              "style": Object {
-                "background": "#F96",
-                "border": "1px solid #aaa",
-                "borderRadius": "10px",
-                "height": 80,
-                "width": 100,
-              },
               "x": 158,
               "y": 256,
             },
             "block-624018": Object {
-              "style": Object {
-                "background": "#F96",
-                "border": "1px solid #aaa",
-                "borderRadius": "10px",
-                "height": 80,
-                "width": 100,
-              },
               "x": 367,
               "y": 368,
             },
             "block-73377": Object {
-              "style": Object {
-                "background": "#F96",
-                "border": "1px solid #aaa",
-                "borderRadius": "10px",
-                "height": 80,
-                "width": 100,
-              },
               "x": 253,
               "y": 525,
             },
@@ -352,35 +331,14 @@ exports[`demo render correctly 1`] = `
               Object {
                 "BlockGroup": Object {
                   "block-623187": Object {
-                    "style": Object {
-                      "background": "#F96",
-                      "border": "1px solid #aaa",
-                      "borderRadius": "10px",
-                      "height": 80,
-                      "width": 100,
-                    },
                     "x": 158,
                     "y": 256,
                   },
                   "block-624018": Object {
-                    "style": Object {
-                      "background": "#F96",
-                      "border": "1px solid #aaa",
-                      "borderRadius": "10px",
-                      "height": 80,
-                      "width": 100,
-                    },
                     "x": 367,
                     "y": 368,
                   },
                   "block-73377": Object {
-                    "style": Object {
-                      "background": "#F96",
-                      "border": "1px solid #aaa",
-                      "borderRadius": "10px",
-                      "height": 80,
-                      "width": 100,
-                    },
                     "x": 253,
                     "y": 525,
                   },
@@ -483,35 +441,14 @@ exports[`demo render correctly 1`] = `
               data={
                 Object {
                   "block-623187": Object {
-                    "style": Object {
-                      "background": "#F96",
-                      "border": "1px solid #aaa",
-                      "borderRadius": "10px",
-                      "height": 80,
-                      "width": 100,
-                    },
                     "x": 158,
                     "y": 256,
                   },
                   "block-624018": Object {
-                    "style": Object {
-                      "background": "#F96",
-                      "border": "1px solid #aaa",
-                      "borderRadius": "10px",
-                      "height": 80,
-                      "width": 100,
-                    },
                     "x": 367,
                     "y": 368,
                   },
                   "block-73377": Object {
-                    "style": Object {
-                      "background": "#F96",
-                      "border": "1px solid #aaa",
-                      "borderRadius": "10px",
-                      "height": 80,
-                      "width": 100,
-                    },
                     "x": 253,
                     "y": 525,
                   },
@@ -629,39 +566,18 @@ exports[`demo render correctly 1`] = `
                   transform={null}
                 >
                   <div
-                    className="BlockGroup animate-appear react-draggable"
+                    className="block-group animate-appear react-draggable"
                     data={
                       Object {
                         "block-623187": Object {
-                          "style": Object {
-                            "background": "#F96",
-                            "border": "1px solid #aaa",
-                            "borderRadius": "10px",
-                            "height": 80,
-                            "width": 100,
-                          },
                           "x": 158,
                           "y": 256,
                         },
                         "block-624018": Object {
-                          "style": Object {
-                            "background": "#F96",
-                            "border": "1px solid #aaa",
-                            "borderRadius": "10px",
-                            "height": 80,
-                            "width": 100,
-                          },
                           "x": 367,
                           "y": 368,
                         },
                         "block-73377": Object {
-                          "style": Object {
-                            "background": "#F96",
-                            "border": "1px solid #aaa",
-                            "borderRadius": "10px",
-                            "height": 80,
-                            "width": 100,
-                          },
                           "x": 253,
                           "y": 525,
                         },
@@ -674,13 +590,8 @@ exports[`demo render correctly 1`] = `
                     onTouchStart={[Function]}
                     style={
                       Object {
-                        "background": "#F96",
-                        "border": "1px solid #aaa",
-                        "borderRadius": "10px",
-                        "height": 80,
                         "touchAction": "none",
                         "transform": "translate(158px,256px)",
-                        "width": 100,
                       }
                     }
                     transform={null}
@@ -753,39 +664,18 @@ exports[`demo render correctly 1`] = `
                   transform={null}
                 >
                   <div
-                    className="BlockGroup animate-appear react-draggable"
+                    className="block-group animate-appear react-draggable"
                     data={
                       Object {
                         "block-623187": Object {
-                          "style": Object {
-                            "background": "#F96",
-                            "border": "1px solid #aaa",
-                            "borderRadius": "10px",
-                            "height": 80,
-                            "width": 100,
-                          },
                           "x": 158,
                           "y": 256,
                         },
                         "block-624018": Object {
-                          "style": Object {
-                            "background": "#F96",
-                            "border": "1px solid #aaa",
-                            "borderRadius": "10px",
-                            "height": 80,
-                            "width": 100,
-                          },
                           "x": 367,
                           "y": 368,
                         },
                         "block-73377": Object {
-                          "style": Object {
-                            "background": "#F96",
-                            "border": "1px solid #aaa",
-                            "borderRadius": "10px",
-                            "height": 80,
-                            "width": 100,
-                          },
                           "x": 253,
                           "y": 525,
                         },
@@ -798,13 +688,8 @@ exports[`demo render correctly 1`] = `
                     onTouchStart={[Function]}
                     style={
                       Object {
-                        "background": "#F96",
-                        "border": "1px solid #aaa",
-                        "borderRadius": "10px",
-                        "height": 80,
                         "touchAction": "none",
                         "transform": "translate(367px,368px)",
-                        "width": 100,
                       }
                     }
                     transform={null}
@@ -877,39 +762,18 @@ exports[`demo render correctly 1`] = `
                   transform={null}
                 >
                   <div
-                    className="BlockGroup animate-appear react-draggable"
+                    className="block-group animate-appear react-draggable"
                     data={
                       Object {
                         "block-623187": Object {
-                          "style": Object {
-                            "background": "#F96",
-                            "border": "1px solid #aaa",
-                            "borderRadius": "10px",
-                            "height": 80,
-                            "width": 100,
-                          },
                           "x": 158,
                           "y": 256,
                         },
                         "block-624018": Object {
-                          "style": Object {
-                            "background": "#F96",
-                            "border": "1px solid #aaa",
-                            "borderRadius": "10px",
-                            "height": 80,
-                            "width": 100,
-                          },
                           "x": 367,
                           "y": 368,
                         },
                         "block-73377": Object {
-                          "style": Object {
-                            "background": "#F96",
-                            "border": "1px solid #aaa",
-                            "borderRadius": "10px",
-                            "height": 80,
-                            "width": 100,
-                          },
                           "x": 253,
                           "y": 525,
                         },
@@ -922,13 +786,8 @@ exports[`demo render correctly 1`] = `
                     onTouchStart={[Function]}
                     style={
                       Object {
-                        "background": "#F96",
-                        "border": "1px solid #aaa",
-                        "borderRadius": "10px",
-                        "height": 80,
                         "touchAction": "none",
                         "transform": "translate(253px,525px)",
-                        "width": 100,
                       }
                     }
                     transform={null}
@@ -993,7 +852,7 @@ exports[`demo render correctly 1`] = `
                 className="LineGroup"
               >
                 <SteppedLineTo
-                  className="animate-appear"
+                  className=""
                   data={
                     Object {
                       "line-592694": Object {
@@ -1069,10 +928,10 @@ exports[`demo render correctly 1`] = `
                   }
                 >
                   <div
-                    className="stepped-line-to animate-appear"
+                    className="stepped-line-to"
                   >
                     <SteppedLine
-                      className="animate-appear"
+                      className=""
                       data={
                         Object {
                           "line-592694": Object {
@@ -1151,7 +1010,7 @@ exports[`demo render correctly 1`] = `
                       y1={-230}
                     >
                       <Line
-                        className="animate-appear"
+                        className=""
                         data={
                           Object {
                             "line-592694": Object {
@@ -1230,103 +1089,22 @@ exports[`demo render correctly 1`] = `
                         y1={-230}
                       >
                         <div
-                          className="line-placeholder"
-                        >
-                          <div
-                            className="line-placeholder-item animate-appear"
-                            data={
-                              Object {
-                                "line-592694": Object {
-                                  "from": Object {
-                                    "bottom": 0,
-                                    "height": 0,
-                                    "left": 0,
-                                    "right": 0,
-                                    "top": 0,
-                                    "width": 0,
-                                  },
-                                  "fromKey": "block-623187",
-                                  "to": Object {
-                                    "bottom": 0,
-                                    "height": 0,
-                                    "left": 0,
-                                    "right": 0,
-                                    "top": 0,
-                                    "width": 0,
-                                  },
-                                  "toKey": "block-624018",
-                                },
-                                "line-77619": Object {
-                                  "from": Object {
-                                    "bottom": 0,
-                                    "height": 0,
-                                    "left": 0,
-                                    "right": 0,
-                                    "top": 0,
-                                    "width": 0,
-                                  },
-                                  "fromKey": "block-73377",
-                                  "to": Object {
-                                    "bottom": 0,
-                                    "height": 0,
-                                    "left": 0,
-                                    "right": 0,
-                                    "top": 0,
-                                    "width": 0,
-                                  },
-                                  "toKey": "block-623187",
-                                },
-                              }
+                          className="line-core"
+                          style={
+                            Object {
+                              "left": "67px",
+                              "top": "-230px",
+                              "transform": "rotate(0deg)",
+                              "width": "0px",
                             }
-                            from={
-                              Object {
-                                "bottom": 0,
-                                "height": 0,
-                                "left": 0,
-                                "right": 0,
-                                "top": 0,
-                                "width": 0,
-                              }
-                            }
-                            offset={
-                              Object {
-                                "x": -67,
-                                "y": 230,
-                              }
-                            }
-                            orientation="h"
-                            style={
-                              Object {
-                                "borderTopColor": "#ddd",
-                                "borderTopStyle": "solid",
-                                "borderTopWidth": 1,
-                                "left": "67px",
-                                "position": "absolute",
-                                "top": "-230px",
-                                "transform": "rotate(0deg)",
-                                "transformOrigin": "0 0",
-                                "width": "0px",
-                                "zIndex": "1",
-                              }
-                            }
-                            to={
-                              Object {
-                                "bottom": 0,
-                                "height": 0,
-                                "left": 0,
-                                "right": 0,
-                                "top": 0,
-                                "width": 0,
-                              }
-                            }
-                          />
-                        </div>
+                          }
+                        />
                       </Line>
                     </SteppedLine>
                   </div>
                 </SteppedLineTo>
                 <SteppedLineTo
-                  className="animate-appear"
+                  className=""
                   data={
                     Object {
                       "line-592694": Object {
@@ -1402,10 +1180,10 @@ exports[`demo render correctly 1`] = `
                   }
                 >
                   <div
-                    className="stepped-line-to animate-appear"
+                    className="stepped-line-to"
                   >
                     <SteppedLine
-                      className="animate-appear"
+                      className=""
                       data={
                         Object {
                           "line-592694": Object {
@@ -1484,7 +1262,7 @@ exports[`demo render correctly 1`] = `
                       y1={-230}
                     >
                       <Line
-                        className="animate-appear"
+                        className=""
                         data={
                           Object {
                             "line-592694": Object {
@@ -1563,97 +1341,16 @@ exports[`demo render correctly 1`] = `
                         y1={-230}
                       >
                         <div
-                          className="line-placeholder"
-                        >
-                          <div
-                            className="line-placeholder-item animate-appear"
-                            data={
-                              Object {
-                                "line-592694": Object {
-                                  "from": Object {
-                                    "bottom": 0,
-                                    "height": 0,
-                                    "left": 0,
-                                    "right": 0,
-                                    "top": 0,
-                                    "width": 0,
-                                  },
-                                  "fromKey": "block-623187",
-                                  "to": Object {
-                                    "bottom": 0,
-                                    "height": 0,
-                                    "left": 0,
-                                    "right": 0,
-                                    "top": 0,
-                                    "width": 0,
-                                  },
-                                  "toKey": "block-624018",
-                                },
-                                "line-77619": Object {
-                                  "from": Object {
-                                    "bottom": 0,
-                                    "height": 0,
-                                    "left": 0,
-                                    "right": 0,
-                                    "top": 0,
-                                    "width": 0,
-                                  },
-                                  "fromKey": "block-73377",
-                                  "to": Object {
-                                    "bottom": 0,
-                                    "height": 0,
-                                    "left": 0,
-                                    "right": 0,
-                                    "top": 0,
-                                    "width": 0,
-                                  },
-                                  "toKey": "block-623187",
-                                },
-                              }
+                          className="line-core"
+                          style={
+                            Object {
+                              "left": "67px",
+                              "top": "-230px",
+                              "transform": "rotate(0deg)",
+                              "width": "0px",
                             }
-                            from={
-                              Object {
-                                "bottom": 0,
-                                "height": 0,
-                                "left": 0,
-                                "right": 0,
-                                "top": 0,
-                                "width": 0,
-                              }
-                            }
-                            offset={
-                              Object {
-                                "x": -67,
-                                "y": 230,
-                              }
-                            }
-                            orientation="h"
-                            style={
-                              Object {
-                                "borderTopColor": "#ddd",
-                                "borderTopStyle": "solid",
-                                "borderTopWidth": 1,
-                                "left": "67px",
-                                "position": "absolute",
-                                "top": "-230px",
-                                "transform": "rotate(0deg)",
-                                "transformOrigin": "0 0",
-                                "width": "0px",
-                                "zIndex": "1",
-                              }
-                            }
-                            to={
-                              Object {
-                                "bottom": 0,
-                                "height": 0,
-                                "left": 0,
-                                "right": 0,
-                                "top": 0,
-                                "width": 0,
-                              }
-                            }
-                          />
-                        </div>
+                          }
+                        />
                       </Line>
                     </SteppedLine>
                   </div>
@@ -1763,7 +1460,7 @@ exports[`demo render correctly 1`] = `
                   transform={null}
                 >
                   <div
-                    className="TagGroup animate-appear react-draggable"
+                    className="tag-group animate-appear react-draggable"
                     data={
                       Object {
                         "tag-626505": Object {
@@ -1805,10 +1502,8 @@ exports[`demo render correctly 1`] = `
                     onTouchStart={[Function]}
                     style={
                       Object {
-                        "height": 32,
                         "touchAction": "none",
                         "transform": "translate(167px,284px)",
-                        "width": 100,
                       }
                     }
                     transform={null}
@@ -1883,7 +1578,7 @@ exports[`demo render correctly 1`] = `
                   transform={null}
                 >
                   <div
-                    className="TagGroup animate-appear react-draggable"
+                    className="tag-group animate-appear react-draggable"
                     data={
                       Object {
                         "tag-626505": Object {
@@ -1925,10 +1620,8 @@ exports[`demo render correctly 1`] = `
                     onTouchStart={[Function]}
                     style={
                       Object {
-                        "height": 32,
                         "touchAction": "none",
                         "transform": "translate(405px,398px)",
-                        "width": 100,
                       }
                     }
                     transform={null}
@@ -2003,7 +1696,7 @@ exports[`demo render correctly 1`] = `
                   transform={null}
                 >
                   <div
-                    className="TagGroup animate-appear react-draggable"
+                    className="tag-group animate-appear react-draggable"
                     data={
                       Object {
                         "tag-626505": Object {
@@ -2045,10 +1738,8 @@ exports[`demo render correctly 1`] = `
                     onTouchStart={[Function]}
                     style={
                       Object {
-                        "height": 32,
                         "touchAction": "none",
                         "transform": "translate(286px,555px)",
-                        "width": 100,
                       }
                     }
                     transform={null}

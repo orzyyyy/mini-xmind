@@ -207,12 +207,12 @@ export default class BlockGroup extends Component<
   };
 
   render() {
-    const { className, onChange, ...rest } = this.props;
+    const { className: parentClassName, onChange, ...rest } = this.props;
     const { data } = this.state;
 
     (window as any).DataCollector.set('BlockGroup', data);
     return Object.keys(data).map(blockKey => {
-      const { x, y, style } = data[blockKey];
+      const { x, y, className: blockClassName } = data[blockKey];
       return (
         <Draggable
           key={blockKey}
@@ -221,10 +221,14 @@ export default class BlockGroup extends Component<
           onStart={this.handleDragStart}
         >
           <div
-            className={classNames('BlockGroup', 'animate-appear', className)}
+            className={classNames(
+              'block-group',
+              'animate-appear',
+              parentClassName,
+              blockClassName,
+            )}
             onClick={_ => this.handleBlockClick(blockKey)}
             ref={ref => this.saveBlock(ref, blockKey)}
-            style={style}
             {...omit(rest, ['lineData'])}
           />
         </Draggable>

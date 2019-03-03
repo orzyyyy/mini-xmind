@@ -1,8 +1,10 @@
-.TagGroup {
+.tag-group {
   position: absolute;
   cursor: pointer;
   user-select: none;
   z-index: 3;
+  width: 100px;
+  height: 32px;
 }
 
 .animate-appear {
@@ -11,7 +13,7 @@
 
 @keyframes appear {
   0% {
-    opacity: 0
+    opacity: 0;
   }
   100% {
     opacity: 1;

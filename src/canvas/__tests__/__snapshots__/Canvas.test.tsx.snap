@@ -7,35 +7,14 @@ exports[`Canvas Canvas renders correctly 1`] = `
     Object {
       "BlockGroup": Object {
         "block-623187": Object {
-          "style": Object {
-            "background": "#F96",
-            "border": "1px solid #aaa",
-            "borderRadius": "10px",
-            "height": 80,
-            "width": 100,
-          },
           "x": 158,
           "y": 256,
         },
         "block-624018": Object {
-          "style": Object {
-            "background": "#F96",
-            "border": "1px solid #aaa",
-            "borderRadius": "10px",
-            "height": 80,
-            "width": 100,
-          },
           "x": 367,
           "y": 368,
         },
         "block-73377": Object {
-          "style": Object {
-            "background": "#F96",
-            "border": "1px solid #aaa",
-            "borderRadius": "10px",
-            "height": 80,
-            "width": 100,
-          },
           "x": 253,
           "y": 525,
         },
@@ -198,35 +177,14 @@ exports[`Canvas Canvas renders correctly 1`] = `
           Object {
             "BlockGroup": Object {
               "block-623187": Object {
-                "style": Object {
-                  "background": "#F96",
-                  "border": "1px solid #aaa",
-                  "borderRadius": "10px",
-                  "height": 80,
-                  "width": 100,
-                },
                 "x": 158,
                 "y": 256,
               },
               "block-624018": Object {
-                "style": Object {
-                  "background": "#F96",
-                  "border": "1px solid #aaa",
-                  "borderRadius": "10px",
-                  "height": 80,
-                  "width": 100,
-                },
                 "x": 367,
                 "y": 368,
               },
               "block-73377": Object {
-                "style": Object {
-                  "background": "#F96",
-                  "border": "1px solid #aaa",
-                  "borderRadius": "10px",
-                  "height": 80,
-                  "width": 100,
-                },
                 "x": 253,
                 "y": 525,
               },
@@ -331,35 +289,14 @@ exports[`Canvas Canvas renders correctly 1`] = `
           data={
             Object {
               "block-623187": Object {
-                "style": Object {
-                  "background": "#F96",
-                  "border": "1px solid #aaa",
-                  "borderRadius": "10px",
-                  "height": 80,
-                  "width": 100,
-                },
                 "x": 158,
                 "y": 256,
               },
               "block-624018": Object {
-                "style": Object {
-                  "background": "#F96",
-                  "border": "1px solid #aaa",
-                  "borderRadius": "10px",
-                  "height": 80,
-                  "width": 100,
-                },
                 "x": 367,
                 "y": 368,
               },
               "block-73377": Object {
-                "style": Object {
-                  "background": "#F96",
-                  "border": "1px solid #aaa",
-                  "borderRadius": "10px",
-                  "height": 80,
-                  "width": 100,
-                },
                 "x": 253,
                 "y": 525,
               },
@@ -477,39 +414,18 @@ exports[`Canvas Canvas renders correctly 1`] = `
               transform={null}
             >
               <div
-                className="BlockGroup animate-appear react-draggable"
+                className="block-group animate-appear react-draggable"
                 data={
                   Object {
                     "block-623187": Object {
-                      "style": Object {
-                        "background": "#F96",
-                        "border": "1px solid #aaa",
-                        "borderRadius": "10px",
-                        "height": 80,
-                        "width": 100,
-                      },
                       "x": 158,
                       "y": 256,
                     },
                     "block-624018": Object {
-                      "style": Object {
-                        "background": "#F96",
-                        "border": "1px solid #aaa",
-                        "borderRadius": "10px",
-                        "height": 80,
-                        "width": 100,
-                      },
                       "x": 367,
                       "y": 368,
                     },
                     "block-73377": Object {
-                      "style": Object {
-                        "background": "#F96",
-                        "border": "1px solid #aaa",
-                        "borderRadius": "10px",
-                        "height": 80,
-                        "width": 100,
-                      },
                       "x": 253,
                       "y": 525,
                     },
@@ -522,13 +438,8 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 onTouchStart={[Function]}
                 style={
                   Object {
-                    "background": "#F96",
-                    "border": "1px solid #aaa",
-                    "borderRadius": "10px",
-                    "height": 80,
                     "touchAction": "none",
                     "transform": "translate(158px,256px)",
-                    "width": 100,
                   }
                 }
                 transform={null}
@@ -601,39 +512,18 @@ exports[`Canvas Canvas renders correctly 1`] = `
               transform={null}
             >
               <div
-                className="BlockGroup animate-appear react-draggable"
+                className="block-group animate-appear react-draggable"
                 data={
                   Object {
                     "block-623187": Object {
-                      "style": Object {
-                        "background": "#F96",
-                        "border": "1px solid #aaa",
-                        "borderRadius": "10px",
-                        "height": 80,
-                        "width": 100,
-                      },
                       "x": 158,
                       "y": 256,
                     },
                     "block-624018": Object {
-                      "style": Object {
-                        "background": "#F96",
-                        "border": "1px solid #aaa",
-                        "borderRadius": "10px",
-                        "height": 80,
-                        "width": 100,
-                      },
                       "x": 367,
                       "y": 368,
                     },
                     "block-73377": Object {
-                      "style": Object {
-                        "background": "#F96",
-                        "border": "1px solid #aaa",
-                        "borderRadius": "10px",
-                        "height": 80,
-                        "width": 100,
-                      },
                       "x": 253,
                       "y": 525,
                     },
@@ -646,13 +536,8 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 onTouchStart={[Function]}
                 style={
                   Object {
-                    "background": "#F96",
-                    "border": "1px solid #aaa",
-                    "borderRadius": "10px",
-                    "height": 80,
                     "touchAction": "none",
                     "transform": "translate(367px,368px)",
-                    "width": 100,
                   }
                 }
                 transform={null}
@@ -725,39 +610,18 @@ exports[`Canvas Canvas renders correctly 1`] = `
               transform={null}
             >
               <div
-                className="BlockGroup animate-appear react-draggable"
+                className="block-group animate-appear react-draggable"
                 data={
                   Object {
                     "block-623187": Object {
-                      "style": Object {
-                        "background": "#F96",
-                        "border": "1px solid #aaa",
-                        "borderRadius": "10px",
-                        "height": 80,
-                        "width": 100,
-                      },
                       "x": 158,
                       "y": 256,
                     },
                     "block-624018": Object {
-                      "style": Object {
-                        "background": "#F96",
-                        "border": "1px solid #aaa",
-                        "borderRadius": "10px",
-                        "height": 80,
-                        "width": 100,
-                      },
                       "x": 367,
                       "y": 368,
                     },
                     "block-73377": Object {
-                      "style": Object {
-                        "background": "#F96",
-                        "border": "1px solid #aaa",
-                        "borderRadius": "10px",
-                        "height": 80,
-                        "width": 100,
-                      },
                       "x": 253,
                       "y": 525,
                     },
@@ -770,13 +634,8 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 onTouchStart={[Function]}
                 style={
                   Object {
-                    "background": "#F96",
-                    "border": "1px solid #aaa",
-                    "borderRadius": "10px",
-                    "height": 80,
                     "touchAction": "none",
                     "transform": "translate(253px,525px)",
-                    "width": 100,
                   }
                 }
                 transform={null}
@@ -940,7 +799,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
               transform={null}
             >
               <div
-                className="TagGroup animate-appear react-draggable"
+                className="tag-group animate-appear react-draggable"
                 data={
                   Object {
                     "tag-626505": Object {
@@ -982,10 +841,8 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 onTouchStart={[Function]}
                 style={
                   Object {
-                    "height": 32,
                     "touchAction": "none",
                     "transform": "translate(167px,284px)",
-                    "width": 100,
                   }
                 }
                 transform={null}
@@ -1060,7 +917,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
               transform={null}
             >
               <div
-                className="TagGroup animate-appear react-draggable"
+                className="tag-group animate-appear react-draggable"
                 data={
                   Object {
                     "tag-626505": Object {
@@ -1102,10 +959,8 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 onTouchStart={[Function]}
                 style={
                   Object {
-                    "height": 32,
                     "touchAction": "none",
                     "transform": "translate(405px,398px)",
-                    "width": 100,
                   }
                 }
                 transform={null}
@@ -1180,7 +1035,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
               transform={null}
             >
               <div
-                className="TagGroup animate-appear react-draggable"
+                className="tag-group animate-appear react-draggable"
                 data={
                   Object {
                     "tag-626505": Object {
@@ -1222,10 +1077,8 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 onTouchStart={[Function]}
                 style={
                   Object {
-                    "height": 32,
                     "touchAction": "none",
                     "transform": "translate(286px,555px)",
-                    "width": 100,
                   }
                 }
                 transform={null}
