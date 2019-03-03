@@ -94,13 +94,10 @@ export default class BlockGroup extends Component<
     }
   };
 
-  handleStop = ({ x, y }: { x: number; y: number }, blockKey: string) => {
+  handleDrag = ({ x, y }: { x: number; y: number }, blockKey: string) => {
     const { data, onChange, lineData } = this.props;
-
     data[blockKey] = Object.assign({}, data[blockKey], { x, y });
-    const result = addBlockDom(lineData, blockDOM);
-
-    onChange && onChange(data, result);
+    onChange && onChange(data, addBlockDom(lineData, blockDOM));
   };
 
   // when Block clicked twice, generate a Line
@@ -209,12 +206,6 @@ export default class BlockGroup extends Component<
     stopPropagation(e);
   };
 
-  handleDrag = (blockKey: string) => {
-    const { onChange } = this.props;
-    currentBlock = blockKey;
-    onChange && onChange(this.state.data);
-  };
-
   render() {
     const { className: parentClassName, onChange, ...rest } = this.props;
     const { data } = this.state;
@@ -224,10 +215,9 @@ export default class BlockGroup extends Component<
       const { x, y, className: blockClassName } = data[blockKey];
       return (
         <Draggable
-          onStop={(_, item) => this.handleStop(item, blockKey)}
           key={blockKey}
           position={{ x, y }}
-          onDrag={_ => this.handleDrag(blockKey)}
+          onDrag={(_, item) => this.handleDrag(item, blockKey)}
           onStart={this.handleDragStart}
         >
           <div
