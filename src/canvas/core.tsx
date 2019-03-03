@@ -14,6 +14,7 @@ export interface CanvasProps {
   className?: string;
   data?: any;
   orientation?: 'h' | 'v' | 'horizonal' | 'vertical' | string;
+  blockClassName?: string;
 }
 export interface CanvasState {
   blockProps?: any;
@@ -117,7 +118,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
   };
 
   render = () => {
-    const { className, orientation, ...rest } = this.props;
+    const { className, orientation, blockClassName, ...rest } = this.props;
     const { blockProps, linesProps, tagProps, position } = this.state;
 
     (window as any).DataCollector.set('CanvasPosition', position);
@@ -137,6 +138,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
             data={blockProps}
             onChange={this.handleBlockChange}
             lineData={linesProps}
+            className={blockClassName}
           />
           <LineGroup
             data={linesProps}
