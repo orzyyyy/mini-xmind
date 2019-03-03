@@ -38,7 +38,7 @@ jobs:
     steps:
       - checkout
       - *attach_workspace
-      - run: nino test -d
+      - run: npm run codecov
       - run: bash <(curl -s https://codecov.io/bash) -t 31625cdc-8c32-47d0-a303-baf981cab0f5
   dist:
     <<: *container_config
