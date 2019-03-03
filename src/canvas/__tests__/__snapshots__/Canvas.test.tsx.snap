@@ -799,7 +799,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
               transform={null}
             >
               <div
-                className="TagGroup animate-appear react-draggable"
+                className="tag-group animate-appear react-draggable"
                 data={
                   Object {
                     "tag-626505": Object {
@@ -841,10 +841,8 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 onTouchStart={[Function]}
                 style={
                   Object {
-                    "height": 32,
                     "touchAction": "none",
                     "transform": "translate(167px,284px)",
-                    "width": 100,
                   }
                 }
                 transform={null}
@@ -919,7 +917,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
               transform={null}
             >
               <div
-                className="TagGroup animate-appear react-draggable"
+                className="tag-group animate-appear react-draggable"
                 data={
                   Object {
                     "tag-626505": Object {
@@ -961,10 +959,8 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 onTouchStart={[Function]}
                 style={
                   Object {
-                    "height": 32,
                     "touchAction": "none",
                     "transform": "translate(405px,398px)",
-                    "width": 100,
                   }
                 }
                 transform={null}
@@ -1039,7 +1035,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
               transform={null}
             >
               <div
-                className="TagGroup animate-appear react-draggable"
+                className="tag-group animate-appear react-draggable"
                 data={
                   Object {
                     "tag-626505": Object {
@@ -1081,10 +1077,8 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 onTouchStart={[Function]}
                 style={
                   Object {
-                    "height": 32,
                     "touchAction": "none",
                     "transform": "translate(286px,555px)",
-                    "width": 100,
                   }
                 }
                 transform={null}

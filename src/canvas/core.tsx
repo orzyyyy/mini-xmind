@@ -15,6 +15,7 @@ export interface CanvasProps {
   data?: any;
   orientation?: 'h' | 'v' | 'horizonal' | 'vertical' | string;
   blockClassName?: string;
+  tagClassName?: string;
 }
 export interface CanvasState {
   blockProps?: any;
@@ -83,15 +84,18 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
       return false;
     }
     dragItem = dragItem ? JSON.parse(dragItem) : {};
-    const { value, style = { width: 100, height: 80 } } = dragItem;
+    const { value } = dragItem;
     let { blockProps, tagProps, position } = this.state;
     const { clientX, clientY } = e;
-    const x = clientX - style.width / 2 - position.x;
-    const y = clientY - style.height / 2 - position.y;
+    let defaultWidth = 100;
+    let defaultHeight = 80;
 
     switch (value) {
       case 'block':
-        blockProps[generateKey('block')] = { x, y };
+        blockProps[generateKey('block')] = {
+          x: clientX - defaultWidth / 2 - position.x,
+          y: clientY - defaultHeight / 2 - position.y,
+        };
         this.setState({ blockProps });
         break;
 
@@ -99,14 +103,23 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
         break;
 
       case 'input':
-        tagProps[generateKey('tag')] = { x, y, style, editable: true };
+        defaultWidth = 100;
+        defaultHeight = 32;
+        tagProps[generateKey('tag')] = {
+          x: clientX - defaultWidth / 2 - position.x,
+          y: clientY - defaultHeight / 2 - position.y,
+          editable: true,
+        };
         this.setState({ tagProps });
         break;
 
       default:
         break;
     }
-    return { x, y, style };
+    return {
+      x: clientX - defaultWidth / 2 - position.x,
+      y: clientY - defaultHeight / 2 - position.y,
+    };
   };
 
   handleDrag = (_: any, { x, y }: { x: number; y: number }) => {
@@ -118,7 +131,13 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
   };
 
   render = () => {
-    const { className, orientation, blockClassName, ...rest } = this.props;
+    const {
+      className,
+      orientation,
+      blockClassName,
+      tagClassName,
+      ...rest
+    } = this.props;
     const { blockProps, linesProps, tagProps, position } = this.state;
 
     (window as any).DataCollector.set('CanvasPosition', position);
@@ -145,7 +164,11 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
             offset={position}
             orientation={orientation}
           />
-          <TagGroup data={tagProps} onChange={this.handleTagChange} />
+          <TagGroup
+            data={tagProps}
+            onChange={this.handleTagChange}
+            className={tagClassName}
+          />
         </div>
       </Draggable>
     );

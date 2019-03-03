@@ -1,6 +1,3 @@
-// key: for type of Icon
-// value: id
-// style: class of tool's wrapper
 export const tools = [
   {
     key: 'minus',
@@ -13,9 +10,6 @@ export const tools = [
   {
     key: 'tag',
     value: 'input',
-    style: {
-      width: 100,
-      height: 32,
-    },
+    editable: true,
   },
 ];

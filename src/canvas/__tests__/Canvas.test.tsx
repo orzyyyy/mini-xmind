@@ -75,7 +75,7 @@ describe('Canvas', () => {
     wrapper.setProps({ data: mapping });
 
     expect(wrapper.find('.block-group').length).toBe(3);
-    expect(wrapper.find('.TagGroup').length).toBe(3);
+    expect(wrapper.find('.tag-group').length).toBe(3);
   });
 
   it('when data is null, it should render correctly', () => {
@@ -109,10 +109,6 @@ describe('Canvas', () => {
     };
     const value = wrapper.onDrop(event);
     expect(value).toEqual({
-      style: {
-        height: 80,
-        width: 100,
-      },
       x: 50,
       y: 60,
     });
