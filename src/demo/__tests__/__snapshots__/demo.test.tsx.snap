@@ -498,6 +498,12 @@ exports[`demo render correctly 1`] = `
                   },
                 }
               }
+              offset={
+                Object {
+                  "x": -67,
+                  "y": 230,
+                }
+              }
               onChange={[Function]}
             >
               <Draggable
@@ -581,6 +587,12 @@ exports[`demo render correctly 1`] = `
                           "x": 253,
                           "y": 525,
                         },
+                      }
+                    }
+                    offset={
+                      Object {
+                        "x": -67,
+                        "y": 230,
                       }
                     }
                     onClick={[Function]}
@@ -681,6 +693,12 @@ exports[`demo render correctly 1`] = `
                         },
                       }
                     }
+                    offset={
+                      Object {
+                        "x": -67,
+                        "y": 230,
+                      }
+                    }
                     onClick={[Function]}
                     onMouseDown={[Function]}
                     onMouseUp={[Function]}
@@ -777,6 +795,12 @@ exports[`demo render correctly 1`] = `
                           "x": 253,
                           "y": 525,
                         },
+                      }
+                    }
+                    offset={
+                      Object {
+                        "x": -67,
+                        "y": 230,
                       }
                     }
                     onClick={[Function]}

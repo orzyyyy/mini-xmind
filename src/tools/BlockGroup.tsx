@@ -39,6 +39,7 @@ export interface BlockGroupProps {
   data?: any;
   lineData?: any;
   onChange?: (data: any, lineData?: any) => void;
+  offset?: { x: number; y: number };
 }
 export interface BlockGroupState {
   data?: any;
@@ -86,9 +87,20 @@ export default class BlockGroup extends Component<
     }
     const firstLine: any = Object.values(lineData)[0];
     const hasNewLine = keysLength(lineData) != keysLength(prevProps.lineData);
-
     if (!(firstLine && firstLine.from)) {
       if (hasNewLine || keysLength(lineData) != 0) {
+        onChange && onChange(data, addBlockDom(lineData, blockDOM));
+      }
+    }
+    // it's a hack
+    // when dragging canvas, LineData can't update
+    // add this to force update
+    // so Line will be repainted instantly
+    if (this.props.offset && prevProps.offset) {
+      if (
+        this.props.offset.x !== prevProps.offset.x ||
+        this.props.offset.y !== prevProps.offset.y
+      ) {
         onChange && onChange(data, addBlockDom(lineData, blockDOM));
       }
     }

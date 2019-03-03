@@ -346,6 +346,12 @@ exports[`Canvas Canvas renders correctly 1`] = `
               },
             }
           }
+          offset={
+            Object {
+              "x": -67,
+              "y": 230,
+            }
+          }
           onChange={[Function]}
         >
           <Draggable
@@ -429,6 +435,12 @@ exports[`Canvas Canvas renders correctly 1`] = `
                       "x": 253,
                       "y": 525,
                     },
+                  }
+                }
+                offset={
+                  Object {
+                    "x": -67,
+                    "y": 230,
                   }
                 }
                 onClick={[Function]}
@@ -529,6 +541,12 @@ exports[`Canvas Canvas renders correctly 1`] = `
                     },
                   }
                 }
+                offset={
+                  Object {
+                    "x": -67,
+                    "y": 230,
+                  }
+                }
                 onClick={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
@@ -625,6 +643,12 @@ exports[`Canvas Canvas renders correctly 1`] = `
                       "x": 253,
                       "y": 525,
                     },
+                  }
+                }
+                offset={
+                  Object {
+                    "x": -67,
+                    "y": 230,
                   }
                 }
                 onClick={[Function]}
@@ -1192,6 +1216,12 @@ exports[`Canvas when data is null, it should render correctly 1`] = `
         <BlockGroup
           data={Object {}}
           lineData={Object {}}
+          offset={
+            Object {
+              "x": 0,
+              "y": 0,
+            }
+          }
           onChange={[Function]}
         />
         <LineGroup
@@ -1312,6 +1342,12 @@ exports[`Canvas when data is null, it should render correctly 2`] = `
         <BlockGroup
           data={Object {}}
           lineData={Object {}}
+          offset={
+            Object {
+              "x": 0,
+              "y": 0,
+            }
+          }
           onChange={[Function]}
         />
         <LineGroup
@@ -1432,6 +1468,12 @@ exports[`Canvas when data is null, it should render correctly 3`] = `
         <BlockGroup
           data={Object {}}
           lineData={Object {}}
+          offset={
+            Object {
+              "x": 0,
+              "y": 0,
+            }
+          }
           onChange={[Function]}
         />
         <LineGroup

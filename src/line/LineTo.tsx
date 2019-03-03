@@ -51,8 +51,6 @@ export interface LineToProps {
   style?: any;
   from: any;
   to: any;
-  fromAnchor?: string;
-  toAnchor?: string;
   offset?: { x: number; y: number };
   orientation?: 'h' | 'v' | 'horizonal' | 'vertical' | string;
 }

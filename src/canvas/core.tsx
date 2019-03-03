@@ -153,6 +153,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
           {...rest}
         >
           <BlockGroup
+            offset={position}
             data={blockProps}
             onChange={this.handleBlockChange}
             lineData={linesProps}
