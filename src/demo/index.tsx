@@ -61,11 +61,7 @@ export default class Demo extends Component<any, DemoState> {
     return (
       <div className="Demo">
         <Toolbar />
-        <Canvas
-          className="canvas-wrapper"
-          data={data}
-          tagClassName="tag-default"
-        />
+        <Canvas className="canvas-wrapper" data={data} />
         <Button
           onClick={this.outputData}
           type="primary"

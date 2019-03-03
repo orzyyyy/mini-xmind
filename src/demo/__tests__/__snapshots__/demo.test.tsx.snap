@@ -260,7 +260,6 @@ exports[`demo render correctly 1`] = `
       }
       orientation="h"
       style={Object {}}
-      tagClassName="tag-default"
     >
       <Draggable
         allowAnyClick={false}
@@ -1521,7 +1520,6 @@ exports[`demo render correctly 1`] = `
               </div>
             </LineGroup>
             <TagGroup
-              className="tag-default"
               data={
                 Object {
                   "tag-626505": Object {
@@ -1624,7 +1622,7 @@ exports[`demo render correctly 1`] = `
                   transform={null}
                 >
                   <div
-                    className="tag-group animate-appear tag-default react-draggable"
+                    className="tag-group animate-appear react-draggable"
                     data={
                       Object {
                         "tag-626505": Object {
@@ -1742,7 +1740,7 @@ exports[`demo render correctly 1`] = `
                   transform={null}
                 >
                   <div
-                    className="tag-group animate-appear tag-default react-draggable"
+                    className="tag-group animate-appear react-draggable"
                     data={
                       Object {
                         "tag-626505": Object {
@@ -1860,7 +1858,7 @@ exports[`demo render correctly 1`] = `
                   transform={null}
                 >
                   <div
-                    className="tag-group animate-appear tag-default react-draggable"
+                    className="tag-group animate-appear react-draggable"
                     data={
                       Object {
                         "tag-626505": Object {
