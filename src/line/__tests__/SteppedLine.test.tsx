@@ -103,4 +103,9 @@ describe('SteppedLine', () => {
       '2px',
     );
   });
+
+  it('when orientation is null, return null', () => {
+    const wrapper = mount(<SteppedLine x0={1} y0={1} x1={0} y1={0} />);
+    expect(wrapper).toEqual({});
+  });
 });
