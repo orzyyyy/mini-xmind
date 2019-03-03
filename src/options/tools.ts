@@ -16,7 +16,6 @@ export const tools = [
       borderRadius: '10px',
       border: '1px solid #aaa',
     },
-    className: 'block-orange',
   },
   {
     key: 'tag',
@@ -25,6 +24,5 @@ export const tools = [
       width: 100,
       height: 32,
     },
-    className: 'tag-default',
   },
 ];
