@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import Draggable from 'react-draggable';
-import { isSameCoordinate } from '../utils/commonUtil';
 import { generateKey, stopPropagation } from '../utils/LineUtil';
 import omit from 'omit.js';
 import './assets/BlockGroup.css';
@@ -11,8 +10,6 @@ import './assets/BlockGroup.css';
 let mapping: any = {};
 // to save refs
 let blockDOM: any = {};
-// to save the key of currently dragging Block
-let currentBlock = '';
 const keysLength = (obj: object) => Object.keys(obj).length;
 
 const addBlockDom = (lineData: any, blockDOM: any) => {
@@ -64,16 +61,8 @@ export default class BlockGroup extends Component<
     this.checkBlockClickList = {};
   }
 
-  static getDerivedStateFromProps(
-    nextProps: BlockGroupProps,
-    nextState: BlockGroupState,
-  ) {
+  static getDerivedStateFromProps(nextProps: BlockGroupProps) {
     mapping = Object.assign({}, mapping, nextProps.lineData);
-
-    if (isSameCoordinate(nextProps, nextState, currentBlock)) {
-      return { lineData: nextProps.lineData };
-    }
-
     return {
       data: nextProps.data,
       lineData: nextProps.lineData,

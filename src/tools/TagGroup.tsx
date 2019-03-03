@@ -2,12 +2,8 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import Draggable from 'react-draggable';
 import { Input } from 'antd';
-import { isSameCoordinate } from '../utils/commonUtil';
 import './assets/TagGroup.css';
 import { stopPropagation } from '../utils/LineUtil';
-
-// to save the key of currently dragging Tag
-let currentTag = '';
 
 export interface TagGroupProps {
   data?: any;
@@ -19,12 +15,9 @@ export interface TagGroupState {
 }
 
 export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
-  static getDerivedStateFromProps(
-    nextProps: TagGroupProps,
-    nextState: TagGroupState,
-  ) {
-    if (isSameCoordinate(nextProps, nextState, currentTag) || !nextProps.data) {
-      return null;
+  static getDerivedStateFromProps(nextProps: TagGroupProps) {
+    if (!nextProps.data) {
+      return { data: {} };
     }
     return { data: nextProps.data };
   }
@@ -62,9 +55,8 @@ export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
     stopPropagation(e);
   };
 
-  handleDrag = (key: string) => {
+  handleDrag = () => {
     const { onChange } = this.props;
-    currentTag = key;
     onChange && onChange(this.props.data);
   };
 
@@ -113,7 +105,7 @@ export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
           onStop={(_, item) => this.handleStop(item, key)}
           key={key}
           position={{ x, y }}
-          onDrag={_ => this.handleDrag(key)}
+          onDrag={this.handleDrag}
         >
           <div
             className={targetClassName}
