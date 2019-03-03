@@ -1,6 +1,6 @@
 export default class GlobalListener {
-  private listeners: any;
-  private meta: any;
+  listeners: any;
+  meta: any;
   constructor() {
     this.listeners = {};
     this.meta = {};
