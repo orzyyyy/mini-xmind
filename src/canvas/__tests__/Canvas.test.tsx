@@ -13,7 +13,7 @@ switch (process.env.LIB_DIR) {
     break;
 }
 import Listener from '../../utils/GlobalListener';
-import mapping from '../../mock/mapping.json';
+import { mapping } from '../../mock/mapping';
 import 'nino-cli/scripts/setup';
 
 const createWrapper = (...props: Array<any>) =>
