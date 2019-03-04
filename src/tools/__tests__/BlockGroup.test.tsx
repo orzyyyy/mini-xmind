@@ -2,9 +2,6 @@ import React from 'react';
 import { mount } from 'enzyme';
 let BlockGroup: any;
 switch (process.env.LIB_DIR) {
-  case 'dist':
-    BlockGroup = require('../../../dist/lib/toolbar').default;
-    break;
   case 'lib':
     BlockGroup = require('../../../lib/tools').BlockGroup;
     break;

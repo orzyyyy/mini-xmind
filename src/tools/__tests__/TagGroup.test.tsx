@@ -2,9 +2,6 @@ import React from 'react';
 import { mount } from 'enzyme';
 let TagGroup: any;
 switch (process.env.LIB_DIR) {
-  case 'dist':
-    TagGroup = require('../../../dist/lib/toolbar').TagGroup;
-    break;
   case 'lib':
     TagGroup = require('../../../lib/tools').TagGroup;
     break;

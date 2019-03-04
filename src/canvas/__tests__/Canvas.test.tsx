@@ -2,9 +2,6 @@ import React from 'react';
 import { mount } from 'enzyme';
 let Canvas: any;
 switch (process.env.LIB_DIR) {
-  case 'dist':
-    Canvas = require('../../../dist/lib/canvas').default;
-    break;
   case 'lib':
     Canvas = require('../../../lib/canvas').default;
     break;
