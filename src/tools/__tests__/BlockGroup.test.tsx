@@ -44,4 +44,45 @@ describe('BlockGroup', () => {
     );
     expect(onChange).not.toBeCalled();
   });
+
+  it('when dragging, onChange should be called', () => {
+    const onChange = jest.fn();
+    const wrapper: any = mount(
+      <BlockGroup
+        data={{
+          'block-442566': {
+            x: 571,
+            y: 320,
+            style: {
+              width: 100,
+              height: 80,
+            },
+          },
+        }}
+        lineData={undefined}
+        onChange={onChange}
+      />,
+    ).instance();
+    wrapper.handleDrag({ x: 0, y: 0 }, 'block');
+    expect(onChange).toBeCalled();
+  });
+
+  it('shouldPaintLine', () => {
+    const wrapper: any = mount(
+      <BlockGroup
+        data={{
+          'block-442566': {
+            x: 571,
+            y: 320,
+            style: {
+              width: 100,
+              height: 80,
+            },
+          },
+        }}
+        lineData={undefined}
+      />,
+    ).instance();
+    expect(wrapper.shouldPaintLine(null, {})).toBe(true);
+  });
 });
