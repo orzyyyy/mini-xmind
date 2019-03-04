@@ -82,4 +82,38 @@ describe('TagGroup', () => {
       },
     });
   });
+
+  it('when drag stopped, onChange should be called', () => {
+    const onChange = jest.fn();
+    const wrapper: any = mount(
+      <TagGroup
+        onChange={onChange}
+        data={{
+          tag: {
+            editable: true,
+            input: 'test',
+          },
+        }}
+      />,
+    ).instance();
+    wrapper.handleStop({ x: 0, y: 0, key: 'test' });
+    expect(onChange).toBeCalled();
+  });
+
+  it('when dragging, onChange should be called', () => {
+    const onChange = jest.fn();
+    const wrapper: any = mount(
+      <TagGroup
+        onChange={onChange}
+        data={{
+          tag: {
+            editable: true,
+            input: 'test',
+          },
+        }}
+      />,
+    ).instance();
+    wrapper.handleDrag();
+    expect(onChange).toBeCalled();
+  });
 });
