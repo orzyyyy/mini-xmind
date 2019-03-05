@@ -46,6 +46,8 @@ jobs:
       - checkout
       - *attach_workspace
       - run: npm run compile
+      - run: ls -l lib
+      - run: ls -l lib/tools
       - run: node ./scripts/dekko-lib.js
       - persist_to_workspace:
           root: ~/mini-xmind
