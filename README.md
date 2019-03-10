@@ -1,8 +1,7 @@
 # mini-xmind
 
-![CircleCI](https://img.shields.io/circleci/project/github/breathing-is-fun/mini-xmind/master.svg)
-[![Greenkeeper badge](https://badges.greenkeeper.io/breathing-is-fun/mini-xmind.svg)](https://greenkeeper.io/)
-[![codecov](https://codecov.io/gh/breathing-is-fun/mini-xmind/branch/master/graph/badge.svg)](https://codecov.io/gh/breathing-is-fun/mini-xmind)
+![CircleCI](https://img.shields.io/circleci/project/github/zy410419243/mini-xmind/master.svg)
+[![codecov](https://codecov.io/gh/zy410419243/mini-xmind/branch/master/graph/badge.svg)](https://codecov.io/gh/zy410419243/mini-xmind)
 
 ![img](./docs/assets/demo.gif)
 
@@ -77,7 +76,7 @@ export class Demo extends React.Component {
 # develop
 
 ```bash
-git clone https://github.com/breathing-is-fun/mini-xmind.git
+git clone https://github.com/zy410419243/mini-xmind.git
 
 cd mini-xmind
 
