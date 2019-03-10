@@ -33,8 +33,19 @@ const addBlockDom = (lineData: any, blockDOM: any) => {
 
 export interface BlockGroupProps {
   className?: string;
-  data?: any;
-  lineData?: any;
+  data: { [blockKey: string]: { x: number; y: number } };
+  lineData: {
+    [lineKey: string]: {
+      x: number;
+      y: number;
+      width: number;
+      height: number;
+      top: number;
+      right: number;
+      bottom: number;
+      left: number;
+    };
+  };
   onChange?: (data: any, lineData?: any) => void;
   offset?: { x: number; y: number };
 }
