@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Canvas from '../canvas';
 import mapping from '../mock/mapping.json';
 import Toolbar from '../tools';
-import { Button } from 'antd';
 import './assets/demo.css';
 
 export interface CanvasPosition {
@@ -56,13 +55,12 @@ export default class Demo extends Component<any, DemoState> {
       <div className="Demo">
         <Toolbar />
         <Canvas className="canvas-wrapper" data={data} />
-        <Button
+        <button
           onClick={this.outputData}
-          type="primary"
           style={{ position: 'absolute', top: 10, left: 10 }}
         >
           save
-        </Button>
+        </button>
       </div>
     );
   };
