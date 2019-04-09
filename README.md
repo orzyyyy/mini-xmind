@@ -5,7 +5,9 @@
 
 ![img](./docs/assets/demo.gif)
 
-what you see in gif is the all what the repo do, just as title, a web tool for mini mind-mapping
+what you see in gif is the all what the repo do, just as title, a web tool for mini mind-mapping.
+
+online demo: https://zy410419243.github.io/mini-xmind/
 
 # usage
 
