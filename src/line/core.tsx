@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import classNames from 'classnames';
-import './assets/Line.css';
+import './css/Line.css';
 
 export interface LineProps {
   x0: number;

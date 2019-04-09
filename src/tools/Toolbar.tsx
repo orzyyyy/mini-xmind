@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Icon } from 'antd';
 import { tools } from '../options/tools';
-import './assets/Toolbar.css';
+import './css/Toolbar.css';
 
 export default class Toolbar extends Component {
   onDragStart = (e: any, item: any) => {

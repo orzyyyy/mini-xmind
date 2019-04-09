@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import Draggable from 'react-draggable';
 import { Input } from 'antd';
-import './assets/TagGroup.css';
+import './css/TagGroup.css';
 import { stopPropagation } from '../utils/LineUtil';
 
 export interface TagGroupProps {

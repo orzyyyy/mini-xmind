@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import Draggable from 'react-draggable';
 import { generateKey, stopPropagation } from '../utils/LineUtil';
 import omit from 'omit.js';
-import './assets/BlockGroup.css';
+import './css/BlockGroup.css';
 
 // one Line is mapping to two Block
 // to record it here
