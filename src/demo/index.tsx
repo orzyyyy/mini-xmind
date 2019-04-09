@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Canvas from '../canvas';
 import mapping from '../mock/mapping.json';
 import Toolbar from '../tools';
-import './assets/demo.css';
+import './css/demo.css';
 
 export interface CanvasPosition {
   x: number;
