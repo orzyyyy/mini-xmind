@@ -4,15 +4,14 @@
   "scripts": {
     "start": "nino go -e ./src/go",
     "test": "nino test",
-    "build": "nino koei -c ./scripts/nino.koei.js",
-    "compile": "nino compile",
+    "build": "tsc && nino koei -c ./scripts/nino.koei.js",
+    "compile": "tsc && nino compile",
     "codecov": "nino test -d",
-    "dev": "nino koei -w-d",
     "lint": "npx eslint .",
     "prettier": "nino prettier",
     "lint-staged": "lint-staged",
     "backup": "npm config set registry=https://registry.npmjs.org && npm publish && npm config set registry=https://registry.npm.taobao.org",
-    "pub": "npm run build && npm run compile && git push origin master && npm publish"
+    "pub": "tsc && npm run build && npm run compile && git push origin master && npm publish"
   },
   "description": "A tool to make mind-mapping easier",
   "files": [
@@ -22,22 +21,16 @@
   "license": "MIT",
   "main": "lib/index",
   "dependencies": {
-    "antd": "^3.13.1",
-    "dekko": "^0.2.1",
-    "omit.js": "^1.0.0",
-    "react-draggable": "^3.1.1"
+    "antd": "^3.16.2",
+    "react-draggable": "^3.2.1"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.7",
-    "@types/enzyme": "^3.9.0",
-    "@types/react": "^16.8.4",
-    "@types/react-dom": "^16.8.2",
-    "eslint": "^5.12.0",
-    "lint-staged": "^8.1.0",
-    "nino-cli": "^0.6.3",
-    "pre-commit": "^1.2.2",
-    "prettier": "^1.15.3",
-    "ts-loader": "^5.3.3"
+    "@types/enzyme": "^3.9.1",
+    "@types/react": "^16.8.13",
+    "@types/react-dom": "^16.8.3",
+    "dekko": "^0.2.1",
+    "nino-cli": "^0.7.2"
   },
   "pre-commit": [
     "lint-staged"
