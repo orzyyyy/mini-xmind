@@ -1777,10 +1777,7 @@ exports[`demo render correctly 1`] = `
         </DraggableCore>
       </Draggable>
     </Canvas>
-    <Button
-      block={false}
-      ghost={false}
-      loading={false}
+    <button
       onClick={[Function]}
       style={
         Object {
@@ -1789,29 +1786,9 @@ exports[`demo render correctly 1`] = `
           "top": 10,
         }
       }
-      type="primary"
     >
-      <Wave>
-        <button
-          className="ant-btn ant-btn-primary"
-          onClick={[Function]}
-          style={
-            Object {
-              "left": 10,
-              "position": "absolute",
-              "top": 10,
-            }
-          }
-          type="button"
-        >
-          <span
-            key=".0"
-          >
-            save
-          </span>
-        </button>
-      </Wave>
-    </Button>
+      save
+    </button>
   </div>
 </Demo>
 `;
