@@ -6,11 +6,12 @@ module.exports = {
   devtool: 'source-map',
   entry: {
     'lib/canvas': path.join(cwd + '/src/canvas'),
-    'lib/toolbar': path.join(cwd + '/src/tools')
+    'lib/toolbar': path.join(cwd + '/src/tools'),
+    ninoninoni: path.join(cwd, '/src/go'),
   },
   output: {
     path: path.join(cwd + '/dist'),
     filename: '[name].js',
-    libraryTarget: 'umd'
-  }
+    libraryTarget: 'umd',
+  },
 };
