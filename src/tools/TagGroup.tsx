@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import Draggable from 'react-draggable';
 import { Input } from 'antd';
+import PropTypes from 'prop-types';
 import './css/TagGroup.css';
 import { stopPropagation } from '../utils/LineUtil';
 
@@ -15,6 +16,10 @@ export interface TagGroupState {
 }
 
 export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
+  static contextTypes = {
+    getData: PropTypes.func,
+  };
+
   static getDerivedStateFromProps(nextProps: TagGroupProps) {
     if (!nextProps.data) {
       return { data: {} };
@@ -63,8 +68,10 @@ export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
   render = () => {
     const { className: parentClassName, onChange, ...rest } = this.props;
     const { data } = this.state;
+    const { getData } = this.context;
 
     (window as any).DataCollector.set('TagGroup', data);
+    getData(data, 'TagGroup');
     return Object.keys(data).map(key => {
       const { x, y, editable, className: tagClassName } = data[key];
       const targetClassName = classNames(

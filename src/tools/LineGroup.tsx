@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { SteppedLineTo } from '../line';
+import PropTypes from 'prop-types';
 
 export interface LineGroupProps {
   offset?: { x: number; y: number };
@@ -18,6 +19,10 @@ export default class LineGroup extends Component<
   static defaultProps = {
     offset: {},
     data: {},
+  };
+
+  static contextTypes = {
+    getData: PropTypes.func,
   };
 
   static getDerivedStateFromProps(nextProps: LineGroupProps) {
@@ -46,6 +51,8 @@ export default class LineGroup extends Component<
 
   generateLines = (data: any) => {
     const { offset, ...rest } = this.props;
+    const { getData } = this.context;
+    getData(data, 'LineGroup');
     return Object.keys(data).map(lineKey => {
       const { from, to } = data[lineKey];
       (window as any).DataCollector.set('LineGroup', {

@@ -8,16 +8,12 @@ export interface CanvasPosition {
   x: number;
   y: number;
 }
-export interface BlockGroup {}
-export interface TagGroup {}
-export interface LineGroup {}
-
 export interface DemoState {
   data: {
     CanvasPosition: CanvasPosition;
-    BlockGroup: BlockGroup;
-    TagGroup: TagGroup;
-    LineGroup: LineGroup;
+    BlockGroup: any;
+    TagGroup: any;
+    LineGroup: any;
   };
 }
 
@@ -48,13 +44,21 @@ export default class Demo extends Component<any, DemoState> {
     return data;
   };
 
+  handleChange = (data: any) => {
+    console.log(data);
+  };
+
   render = () => {
     const { data } = this.state;
 
     return (
       <div className="Demo">
         <Toolbar />
-        <Canvas className="canvas-wrapper" data={data} />
+        <Canvas
+          className="canvas-wrapper"
+          data={data}
+          onChange={this.handleChange}
+        />
         <button
           onClick={this.outputData}
           style={{ position: 'absolute', top: 10, left: 10 }}

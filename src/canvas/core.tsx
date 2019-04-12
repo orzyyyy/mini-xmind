@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import LineGroup from '../tools/LineGroup';
+import PropTypes from 'prop-types';
 import {
   preventDefault,
   generateKey,
@@ -17,6 +18,7 @@ export interface CanvasProps {
   blockClassName?: string;
   tagClassName?: string;
   lineClassName?: string;
+  onChange?: (data: any) => void;
 }
 export interface CanvasState {
   blockProps?: any;
@@ -25,12 +27,18 @@ export interface CanvasState {
   position: { x: number; y: number };
 }
 
+let dataCollector: any = {};
+
 export default class Canvas extends Component<CanvasProps, CanvasState> {
   static defaultProps = {
     style: {},
     className: '',
     data: {},
     orientation: 'h',
+  };
+
+  static childContextTypes = {
+    getData: PropTypes.func,
   };
 
   static getDerivedStateFromProps(
@@ -56,16 +64,24 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
     return null;
   }
 
-  constructor(props: CanvasProps) {
-    super(props);
+  state: CanvasState = {
+    blockProps: {},
+    linesProps: {},
+    tagProps: {},
+    position: { x: 0, y: 0 },
+  };
 
-    this.state = {
-      blockProps: {},
-      linesProps: {},
-      tagProps: {},
-      position: { x: 0, y: 0 },
+  getChildContext() {
+    return {
+      getData: this.handleUnityAllDatas,
     };
   }
+
+  handleUnityAllDatas = (data: any, type: string) => {
+    const { onChange } = this.props;
+    dataCollector[type] = data;
+    onChange && onChange(dataCollector);
+  };
 
   // to repaint Line instantly
   handleBlockChange = (blockProps: any, linesProps: any) => {
@@ -86,7 +102,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
     }
     dragItem = dragItem ? JSON.parse(dragItem) : {};
     const { value } = dragItem;
-    let { blockProps, tagProps, position } = this.state;
+    const { blockProps, tagProps, position } = this.state;
     const { clientX, clientY } = e;
     let defaultWidth = 100;
     let defaultHeight = 80;
@@ -121,9 +137,9 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
     this.setState({ position: { x, y } });
   };
 
-  handleDragStart = (e: any) => {
+  handleDragStart(e: any) {
     stopPropagation(e);
-  };
+  }
 
   render = () => {
     const {
@@ -137,6 +153,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
     const { blockProps, linesProps, tagProps, position } = this.state;
 
     (window as any).DataCollector.set('CanvasPosition', position);
+    this.handleUnityAllDatas(position, 'CanvasPosition');
     return (
       <Draggable
         onDrag={this.handleDrag}

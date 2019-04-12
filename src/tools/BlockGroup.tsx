@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import Draggable from 'react-draggable';
 import { generateKey, stopPropagation } from '../utils/LineUtil';
+import PropTypes from 'prop-types';
 import omit from 'omit.js';
 import './css/BlockGroup.css';
 
@@ -10,7 +11,7 @@ import './css/BlockGroup.css';
 let mapping: any = {};
 // to save refs
 let blockDOM: any = {};
-const keysLength = (obj: object) => Object.keys(obj).length;
+const getKeyLength = (obj: object) => Object.keys(obj).length;
 
 const addBlockDom = (lineData: any, blockDOM: any) => {
   for (let key in lineData) {
@@ -80,15 +81,20 @@ export default class BlockGroup extends Component<
     };
   }
 
+  static contextTypes = {
+    getData: PropTypes.func,
+  };
+
   componentDidUpdate = (prevProps: BlockGroupProps) => {
     const { lineData, onChange, data } = this.props;
     if (!lineData) {
       return;
     }
     const firstLine: any = Object.values(lineData)[0];
-    const hasNewLine = keysLength(lineData) != keysLength(prevProps.lineData);
+    const hasNewLine =
+      getKeyLength(lineData) != getKeyLength(prevProps.lineData);
     if (!(firstLine && firstLine.from)) {
-      if (hasNewLine || keysLength(lineData) != 0) {
+      if (hasNewLine || getKeyLength(lineData) != 0) {
         onChange && onChange(data, addBlockDom(lineData, blockDOM));
       }
     }
@@ -113,7 +119,7 @@ export default class BlockGroup extends Component<
   };
 
   // when Block clicked twice, generate a Line
-  // and clear checkBlockClickList
+  // and clean checkBlockClickList up
   handleBlockClick = (blockKey: string) => {
     let { checkBlockClickList } = this;
     let { onChange } = this.props;
@@ -127,7 +133,7 @@ export default class BlockGroup extends Component<
       checkBlockClickList[blockKey].time = new Date().getTime();
     }
 
-    if (keysLength(checkBlockClickList) == 2) {
+    if (getKeyLength(checkBlockClickList) == 2) {
       if (!this.shouldPaintLine(checkBlockClickList, lineData)) {
         this.checkBlockClickList = {};
         return;
@@ -188,7 +194,7 @@ export default class BlockGroup extends Component<
   };
 
   shouldPaintLine = (checkBlockClickList: any, linesProps: any) => {
-    if (!keysLength(linesProps)) {
+    if (!getKeyLength(linesProps)) {
       return true;
     }
 
@@ -220,9 +226,11 @@ export default class BlockGroup extends Component<
 
   render() {
     const { className: parentClassName, onChange, ...rest } = this.props;
+    const { getData } = this.context;
     const { data } = this.state;
 
     (window as any).DataCollector.set('BlockGroup', data);
+    getData(data, 'BlockGroup');
     return Object.keys(data).map(blockKey => {
       const { x, y, className: blockClassName } = data[blockKey];
       return (
@@ -239,7 +247,7 @@ export default class BlockGroup extends Component<
               parentClassName,
               blockClassName,
             )}
-            onClick={_ => this.handleBlockClick(blockKey)}
+            onClick={() => this.handleBlockClick(blockKey)}
             ref={ref => this.saveBlock(ref, blockKey)}
             {...omit(rest, ['lineData'])}
           />
