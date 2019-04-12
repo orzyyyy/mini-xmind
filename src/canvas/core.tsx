@@ -69,23 +69,29 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
 
   // to repaint Line instantly
   handleBlockChange = (blockProps: any, linesProps: any) => {
+    const { onChange } = this.props;
     this.handleUnityAllDatas(blockProps, 'BlockGroup');
-    this.setState({ blockProps });
+    this.handleUnityAllDatas(linesProps, 'LineGroup');
+    if (!onChange) {
+      this.setState({ blockProps });
+    }
     if (linesProps) {
-      this.handleUnityAllDatas(linesProps, 'LineGroup');
-      this.setState({ linesProps });
+      if (!onChange) {
+        this.setState({ linesProps });
+      }
     }
   };
 
   handleTagChange = (tagProps: any) => {
     this.handleUnityAllDatas(tagProps, 'TagGroup');
-    this.setState({ tagProps });
   };
 
   handleUnityAllDatas = (data: any, type: string) => {
     const { onChange } = this.props;
     dataCollector[type] = data;
-    onChange && onChange(dataCollector);
+    if (onChange) {
+      onChange(dataCollector);
+    }
   };
 
   onDrop = (e: any) => {
