@@ -17,6 +17,7 @@ export interface CanvasProps {
   blockClassName?: string;
   tagClassName?: string;
   lineClassName?: string;
+  onChange?: (item: any) => void;
 }
 export interface CanvasState {
   blockProps?: any;
@@ -25,7 +26,16 @@ export interface CanvasState {
   position: { x: number; y: number };
 }
 
+let dataCollector: any = {};
+
 export default class Canvas extends Component<CanvasProps, CanvasState> {
+  state: CanvasState = {
+    blockProps: {},
+    linesProps: {},
+    tagProps: {},
+    position: { x: 0, y: 0 },
+  };
+
   static defaultProps = {
     style: {},
     className: '',
@@ -44,6 +54,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
       let position = nextState.position;
       if (position.x == 0 && position.y == 0 && CanvasPosition) {
         position = CanvasPosition;
+        dataCollector['CanvasPosition'] = CanvasPosition;
       }
 
       return {
@@ -56,27 +67,25 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
     return null;
   }
 
-  constructor(props: CanvasProps) {
-    super(props);
-
-    this.state = {
-      blockProps: {},
-      linesProps: {},
-      tagProps: {},
-      position: { x: 0, y: 0 },
-    };
-  }
-
   // to repaint Line instantly
   handleBlockChange = (blockProps: any, linesProps: any) => {
+    this.handleUnityAllDatas(blockProps, 'BlockGroup');
     this.setState({ blockProps });
     if (linesProps) {
+      this.handleUnityAllDatas(linesProps, 'LineGroup');
       this.setState({ linesProps });
     }
   };
 
   handleTagChange = (tagProps: any) => {
+    this.handleUnityAllDatas(tagProps, 'TagGroup');
     this.setState({ tagProps });
+  };
+
+  handleUnityAllDatas = (data: any, type: string) => {
+    const { onChange } = this.props;
+    dataCollector[type] = data;
+    onChange && onChange(dataCollector);
   };
 
   onDrop = (e: any) => {
@@ -118,6 +127,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
   };
 
   handleDrag = (_: any, { x, y }: { x: number; y: number }) => {
+    this.handleUnityAllDatas({ x, y }, 'CanvasPosition');
     this.setState({ position: { x, y } });
   };
 

@@ -48,13 +48,22 @@ export default class Demo extends Component<any, DemoState> {
     return data;
   };
 
+  handleChange = (data: any) => {
+    console.log(data);
+    this.setState({ data });
+  };
+
   render = () => {
     const { data } = this.state;
 
     return (
       <div className="Demo">
         <Toolbar />
-        <Canvas className="canvas-wrapper" data={data} />
+        <Canvas
+          className="canvas-wrapper"
+          data={data}
+          onChange={this.handleChange}
+        />
         <button
           onClick={this.outputData}
           style={{ position: 'absolute', top: 10, left: 10 }}

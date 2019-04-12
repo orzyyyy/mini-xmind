@@ -15,19 +15,21 @@ export interface TagGroupState {
 }
 
 export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
-  static getDerivedStateFromProps(nextProps: TagGroupProps) {
+  state: TagGroupState = {
+    data: {},
+  };
+
+  static getDerivedStateFromProps(
+    nextProps: TagGroupProps,
+    nextState: TagGroupState,
+  ) {
+    if (Object.keys(nextState.data).length === 0 && nextProps.onChange) {
+      nextProps.onChange(nextProps.data);
+    }
     if (!nextProps.data) {
       return { data: {} };
     }
     return { data: nextProps.data };
-  }
-
-  constructor(props: TagGroupProps) {
-    super(props);
-
-    this.state = {
-      data: {},
-    };
   }
 
   handleStop = ({ x, y }: { x: number; y: number }, key: string) => {
@@ -57,7 +59,7 @@ export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
 
   handleDrag = () => {
     const { onChange } = this.props;
-    onChange && onChange(this.props.data);
+    onChange && onChange(this.state.data);
   };
 
   render = () => {
