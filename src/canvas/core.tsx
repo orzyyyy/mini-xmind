@@ -17,7 +17,7 @@ export interface CanvasProps {
   blockClassName?: string;
   tagClassName?: string;
   lineClassName?: string;
-  onChange?: (item: any) => void;
+  onChange: (item: any) => void;
 }
 export interface CanvasState {
   blockProps?: any;
@@ -76,18 +76,12 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
       this.setState({ blockProps });
     }
     if (linesProps) {
-      if (!onChange) {
-        this.setState({ linesProps });
-      }
+      this.setState({ linesProps });
     }
   };
 
   handleTagChange = (tagProps: any) => {
-    const { onChange } = this.props;
     this.handleUnityAllDatas(tagProps, 'TagGroup');
-    if (!onChange) {
-      this.setState({ tagProps });
-    }
   };
 
   handleUnityAllDatas = (data: any, type: string) => {

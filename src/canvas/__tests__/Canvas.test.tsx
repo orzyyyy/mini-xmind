@@ -14,14 +14,7 @@ import { mapping } from '../../mock/mapping';
 import 'nino-cli/scripts/setup';
 
 const createWrapper = (...props: Array<any>) => {
-  const onChange = jest.fn();
-  return mount(
-    <Canvas
-      style={{ width: '100%', height: '100%' }}
-      onChange={onChange}
-      {...props}
-    />,
-  );
+  return mount(<Canvas style={{ width: '100%', height: '100%' }} {...props} />);
 };
 
 describe('Canvas', () => {
