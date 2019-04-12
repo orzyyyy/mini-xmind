@@ -39,9 +39,21 @@ export default class Demo extends Component<any, DemoState> {
     this.setState({ data: mapping });
   };
 
+  debounce = (fun: any, delay: number) => (args: any) => {
+    clearTimeout(fun.id);
+    fun.id = setTimeout(function() {
+      fun.call(this, args);
+    }, delay);
+  };
+
   handleChange = (data: any) => {
+    this.debounce(this.useDebounce, 1000)(data);
     this.setState({ data });
   };
+
+  useDebounce(data: any) {
+    console.log(data);
+  }
 
   render = () => {
     const { data } = this.state;
