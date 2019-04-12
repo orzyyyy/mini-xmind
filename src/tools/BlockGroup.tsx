@@ -226,7 +226,7 @@ export default class BlockGroup extends Component<
 
   render() {
     const { className: parentClassName, onChange, ...rest } = this.props;
-    const { getData } = this.context;
+    const { getData = function() {} } = this.context;
     const { data } = this.state;
 
     (window as any).DataCollector.set('BlockGroup', data);

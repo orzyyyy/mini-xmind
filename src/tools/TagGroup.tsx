@@ -68,7 +68,7 @@ export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
   render = () => {
     const { className: parentClassName, onChange, ...rest } = this.props;
     const { data } = this.state;
-    const { getData } = this.context;
+    const { getData = function() {} } = this.context;
 
     (window as any).DataCollector.set('TagGroup', data);
     getData(data, 'TagGroup');

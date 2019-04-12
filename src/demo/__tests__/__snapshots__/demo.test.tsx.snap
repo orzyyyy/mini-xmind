@@ -258,6 +258,7 @@ exports[`demo render correctly 1`] = `
           },
         }
       }
+      onChange={[Function]}
       orientation="h"
       style={Object {}}
     >
@@ -423,6 +424,7 @@ exports[`demo render correctly 1`] = `
                 },
               }
             }
+            onChange={[Function]}
             onDragOver={[Function]}
             onDrop={[Function]}
             onMouseDown={[Function]}

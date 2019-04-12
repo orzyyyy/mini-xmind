@@ -51,7 +51,7 @@ export default class LineGroup extends Component<
 
   generateLines = (data: any) => {
     const { offset, ...rest } = this.props;
-    const { getData } = this.context;
+    const { getData = function() {} } = this.context;
     getData(data, 'LineGroup');
     return Object.keys(data).map(lineKey => {
       const { from, to } = data[lineKey];
