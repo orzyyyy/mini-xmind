@@ -32,6 +32,7 @@
     "@types/react-dom": "^16.8.3",
     "dekko": "^0.2.1",
     "gh-pages": "^2.0.1",
+    "lint-staged": "^8.1.5",
     "nino-cli": "^0.7.2"
   },
   "pre-commit": [
