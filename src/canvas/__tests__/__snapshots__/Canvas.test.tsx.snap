@@ -99,6 +99,414 @@ exports[`Canvas Canvas renders correctly 1`] = `
       },
     }
   }
+  onChange={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "BlockGroup": Object {
+              "block-623187": Object {
+                "x": 132,
+                "y": 118,
+              },
+              "block-624018": Object {
+                "x": 426,
+                "y": -50,
+              },
+              "block-73377": Object {
+                "x": 428,
+                "y": 306,
+              },
+            },
+            "CanvasPosition": Object {
+              "x": -67,
+              "y": 230,
+            },
+            "LineGroup": Object {
+              "line-592694": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-623187",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-624018",
+              },
+              "line-77619": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-73377",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-623187",
+              },
+            },
+            "TagGroup": Object {
+              "tag-626505": Object {
+                "editable": false,
+                "input": "test",
+                "style": Object {
+                  "height": 32,
+                  "width": 100,
+                },
+                "x": 169,
+                "y": 144,
+              },
+              "tag-629962": Object {
+                "editable": false,
+                "input": "test2",
+                "style": Object {
+                  "height": 32,
+                  "width": 100,
+                },
+                "x": 462,
+                "y": -23,
+              },
+              "tag-80986": Object {
+                "editable": false,
+                "input": "test3",
+                "style": Object {
+                  "height": 32,
+                  "width": 100,
+                },
+                "x": 463,
+                "y": 333,
+              },
+            },
+          },
+        ],
+        Array [
+          Object {
+            "BlockGroup": Object {
+              "block-623187": Object {
+                "x": 132,
+                "y": 118,
+              },
+              "block-624018": Object {
+                "x": 426,
+                "y": -50,
+              },
+              "block-73377": Object {
+                "x": 428,
+                "y": 306,
+              },
+            },
+            "CanvasPosition": Object {
+              "x": -67,
+              "y": 230,
+            },
+            "LineGroup": Object {
+              "line-592694": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-623187",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-624018",
+              },
+              "line-77619": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-73377",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-623187",
+              },
+            },
+            "TagGroup": Object {
+              "tag-626505": Object {
+                "editable": false,
+                "input": "test",
+                "style": Object {
+                  "height": 32,
+                  "width": 100,
+                },
+                "x": 169,
+                "y": 144,
+              },
+              "tag-629962": Object {
+                "editable": false,
+                "input": "test2",
+                "style": Object {
+                  "height": 32,
+                  "width": 100,
+                },
+                "x": 462,
+                "y": -23,
+              },
+              "tag-80986": Object {
+                "editable": false,
+                "input": "test3",
+                "style": Object {
+                  "height": 32,
+                  "width": 100,
+                },
+                "x": 463,
+                "y": 333,
+              },
+            },
+          },
+        ],
+        Array [
+          Object {
+            "BlockGroup": Object {
+              "block-623187": Object {
+                "x": 132,
+                "y": 118,
+              },
+              "block-624018": Object {
+                "x": 426,
+                "y": -50,
+              },
+              "block-73377": Object {
+                "x": 428,
+                "y": 306,
+              },
+            },
+            "CanvasPosition": Object {
+              "x": -67,
+              "y": 230,
+            },
+            "LineGroup": Object {
+              "line-592694": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-623187",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-624018",
+              },
+              "line-77619": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-73377",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-623187",
+              },
+            },
+            "TagGroup": Object {
+              "tag-626505": Object {
+                "editable": false,
+                "input": "test",
+                "style": Object {
+                  "height": 32,
+                  "width": 100,
+                },
+                "x": 169,
+                "y": 144,
+              },
+              "tag-629962": Object {
+                "editable": false,
+                "input": "test2",
+                "style": Object {
+                  "height": 32,
+                  "width": 100,
+                },
+                "x": 462,
+                "y": -23,
+              },
+              "tag-80986": Object {
+                "editable": false,
+                "input": "test3",
+                "style": Object {
+                  "height": 32,
+                  "width": 100,
+                },
+                "x": 463,
+                "y": 333,
+              },
+            },
+          },
+        ],
+        Array [
+          Object {
+            "BlockGroup": Object {
+              "block-623187": Object {
+                "x": 132,
+                "y": 118,
+              },
+              "block-624018": Object {
+                "x": 426,
+                "y": -50,
+              },
+              "block-73377": Object {
+                "x": 428,
+                "y": 306,
+              },
+            },
+            "CanvasPosition": Object {
+              "x": -67,
+              "y": 230,
+            },
+            "LineGroup": Object {
+              "line-592694": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-623187",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-624018",
+              },
+              "line-77619": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-73377",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-623187",
+              },
+            },
+            "TagGroup": Object {
+              "tag-626505": Object {
+                "editable": false,
+                "input": "test",
+                "style": Object {
+                  "height": 32,
+                  "width": 100,
+                },
+                "x": 169,
+                "y": 144,
+              },
+              "tag-629962": Object {
+                "editable": false,
+                "input": "test2",
+                "style": Object {
+                  "height": 32,
+                  "width": 100,
+                },
+                "x": 462,
+                "y": -23,
+              },
+              "tag-80986": Object {
+                "editable": false,
+                "input": "test3",
+                "style": Object {
+                  "height": 32,
+                  "width": 100,
+                },
+                "x": 463,
+                "y": 333,
+              },
+            },
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
   orientation="h"
   style={
     Object {
@@ -267,6 +675,414 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 "y": 333,
               },
             },
+          }
+        }
+        onChange={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                Object {
+                  "BlockGroup": Object {
+                    "block-623187": Object {
+                      "x": 132,
+                      "y": 118,
+                    },
+                    "block-624018": Object {
+                      "x": 426,
+                      "y": -50,
+                    },
+                    "block-73377": Object {
+                      "x": 428,
+                      "y": 306,
+                    },
+                  },
+                  "CanvasPosition": Object {
+                    "x": -67,
+                    "y": 230,
+                  },
+                  "LineGroup": Object {
+                    "line-592694": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-623187",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-624018",
+                    },
+                    "line-77619": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-73377",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-623187",
+                    },
+                  },
+                  "TagGroup": Object {
+                    "tag-626505": Object {
+                      "editable": false,
+                      "input": "test",
+                      "style": Object {
+                        "height": 32,
+                        "width": 100,
+                      },
+                      "x": 169,
+                      "y": 144,
+                    },
+                    "tag-629962": Object {
+                      "editable": false,
+                      "input": "test2",
+                      "style": Object {
+                        "height": 32,
+                        "width": 100,
+                      },
+                      "x": 462,
+                      "y": -23,
+                    },
+                    "tag-80986": Object {
+                      "editable": false,
+                      "input": "test3",
+                      "style": Object {
+                        "height": 32,
+                        "width": 100,
+                      },
+                      "x": 463,
+                      "y": 333,
+                    },
+                  },
+                },
+              ],
+              Array [
+                Object {
+                  "BlockGroup": Object {
+                    "block-623187": Object {
+                      "x": 132,
+                      "y": 118,
+                    },
+                    "block-624018": Object {
+                      "x": 426,
+                      "y": -50,
+                    },
+                    "block-73377": Object {
+                      "x": 428,
+                      "y": 306,
+                    },
+                  },
+                  "CanvasPosition": Object {
+                    "x": -67,
+                    "y": 230,
+                  },
+                  "LineGroup": Object {
+                    "line-592694": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-623187",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-624018",
+                    },
+                    "line-77619": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-73377",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-623187",
+                    },
+                  },
+                  "TagGroup": Object {
+                    "tag-626505": Object {
+                      "editable": false,
+                      "input": "test",
+                      "style": Object {
+                        "height": 32,
+                        "width": 100,
+                      },
+                      "x": 169,
+                      "y": 144,
+                    },
+                    "tag-629962": Object {
+                      "editable": false,
+                      "input": "test2",
+                      "style": Object {
+                        "height": 32,
+                        "width": 100,
+                      },
+                      "x": 462,
+                      "y": -23,
+                    },
+                    "tag-80986": Object {
+                      "editable": false,
+                      "input": "test3",
+                      "style": Object {
+                        "height": 32,
+                        "width": 100,
+                      },
+                      "x": 463,
+                      "y": 333,
+                    },
+                  },
+                },
+              ],
+              Array [
+                Object {
+                  "BlockGroup": Object {
+                    "block-623187": Object {
+                      "x": 132,
+                      "y": 118,
+                    },
+                    "block-624018": Object {
+                      "x": 426,
+                      "y": -50,
+                    },
+                    "block-73377": Object {
+                      "x": 428,
+                      "y": 306,
+                    },
+                  },
+                  "CanvasPosition": Object {
+                    "x": -67,
+                    "y": 230,
+                  },
+                  "LineGroup": Object {
+                    "line-592694": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-623187",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-624018",
+                    },
+                    "line-77619": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-73377",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-623187",
+                    },
+                  },
+                  "TagGroup": Object {
+                    "tag-626505": Object {
+                      "editable": false,
+                      "input": "test",
+                      "style": Object {
+                        "height": 32,
+                        "width": 100,
+                      },
+                      "x": 169,
+                      "y": 144,
+                    },
+                    "tag-629962": Object {
+                      "editable": false,
+                      "input": "test2",
+                      "style": Object {
+                        "height": 32,
+                        "width": 100,
+                      },
+                      "x": 462,
+                      "y": -23,
+                    },
+                    "tag-80986": Object {
+                      "editable": false,
+                      "input": "test3",
+                      "style": Object {
+                        "height": 32,
+                        "width": 100,
+                      },
+                      "x": 463,
+                      "y": 333,
+                    },
+                  },
+                },
+              ],
+              Array [
+                Object {
+                  "BlockGroup": Object {
+                    "block-623187": Object {
+                      "x": 132,
+                      "y": 118,
+                    },
+                    "block-624018": Object {
+                      "x": 426,
+                      "y": -50,
+                    },
+                    "block-73377": Object {
+                      "x": 428,
+                      "y": 306,
+                    },
+                  },
+                  "CanvasPosition": Object {
+                    "x": -67,
+                    "y": 230,
+                  },
+                  "LineGroup": Object {
+                    "line-592694": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-623187",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-624018",
+                    },
+                    "line-77619": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-73377",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-623187",
+                    },
+                  },
+                  "TagGroup": Object {
+                    "tag-626505": Object {
+                      "editable": false,
+                      "input": "test",
+                      "style": Object {
+                        "height": 32,
+                        "width": 100,
+                      },
+                      "x": 169,
+                      "y": 144,
+                    },
+                    "tag-629962": Object {
+                      "editable": false,
+                      "input": "test2",
+                      "style": Object {
+                        "height": 32,
+                        "width": 100,
+                      },
+                      "x": 462,
+                      "y": -23,
+                    },
+                    "tag-80986": Object {
+                      "editable": false,
+                      "input": "test3",
+                      "style": Object {
+                        "height": 32,
+                        "width": 100,
+                      },
+                      "x": 463,
+                      "y": 333,
+                    },
+                  },
+                },
+              ],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
           }
         }
         onDragOver={[Function]}
@@ -2043,6 +2859,192 @@ exports[`Canvas when data is null, it should render correctly 1`] = `
 <Canvas
   className=""
   data={null}
+  onChange={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "BlockGroup": Object {
+              "block-623187": Object {
+                "x": 132,
+                "y": 118,
+              },
+              "block-624018": Object {
+                "x": 426,
+                "y": -50,
+              },
+              "block-73377": Object {
+                "x": 428,
+                "y": 306,
+              },
+            },
+            "CanvasPosition": Object {
+              "x": -67,
+              "y": 230,
+            },
+            "LineGroup": Object {
+              "line-555134": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-624018",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-73377",
+              },
+              "line-592694": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-623187",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-624018",
+              },
+              "line-77619": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-73377",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-623187",
+              },
+            },
+            "TagGroup": Object {},
+          },
+        ],
+        Array [
+          Object {
+            "BlockGroup": Object {
+              "block-623187": Object {
+                "x": 132,
+                "y": 118,
+              },
+              "block-624018": Object {
+                "x": 426,
+                "y": -50,
+              },
+              "block-73377": Object {
+                "x": 428,
+                "y": 306,
+              },
+            },
+            "CanvasPosition": Object {
+              "x": -67,
+              "y": 230,
+            },
+            "LineGroup": Object {
+              "line-555134": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-624018",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-73377",
+              },
+              "line-592694": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-623187",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-624018",
+              },
+              "line-77619": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-73377",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-623187",
+              },
+            },
+            "TagGroup": Object {},
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
   orientation="h"
   style={
     Object {
@@ -2118,6 +3120,192 @@ exports[`Canvas when data is null, it should render correctly 1`] = `
       <div
         className="Canvas react-draggable"
         data={null}
+        onChange={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                Object {
+                  "BlockGroup": Object {
+                    "block-623187": Object {
+                      "x": 132,
+                      "y": 118,
+                    },
+                    "block-624018": Object {
+                      "x": 426,
+                      "y": -50,
+                    },
+                    "block-73377": Object {
+                      "x": 428,
+                      "y": 306,
+                    },
+                  },
+                  "CanvasPosition": Object {
+                    "x": -67,
+                    "y": 230,
+                  },
+                  "LineGroup": Object {
+                    "line-555134": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-624018",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-73377",
+                    },
+                    "line-592694": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-623187",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-624018",
+                    },
+                    "line-77619": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-73377",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-623187",
+                    },
+                  },
+                  "TagGroup": Object {},
+                },
+              ],
+              Array [
+                Object {
+                  "BlockGroup": Object {
+                    "block-623187": Object {
+                      "x": 132,
+                      "y": 118,
+                    },
+                    "block-624018": Object {
+                      "x": 426,
+                      "y": -50,
+                    },
+                    "block-73377": Object {
+                      "x": 428,
+                      "y": 306,
+                    },
+                  },
+                  "CanvasPosition": Object {
+                    "x": -67,
+                    "y": 230,
+                  },
+                  "LineGroup": Object {
+                    "line-555134": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-624018",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-73377",
+                    },
+                    "line-592694": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-623187",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-624018",
+                    },
+                    "line-77619": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-73377",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-623187",
+                    },
+                  },
+                  "TagGroup": Object {},
+                },
+              ],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
+          }
+        }
         onDragOver={[Function]}
         onDrop={[Function]}
         onMouseDown={[Function]}
@@ -2169,6 +3357,281 @@ exports[`Canvas when data is null, it should render correctly 2`] = `
 <Canvas
   className=""
   data={Object {}}
+  onChange={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "BlockGroup": Object {
+              "block-623187": Object {
+                "x": 132,
+                "y": 118,
+              },
+              "block-624018": Object {
+                "x": 426,
+                "y": -50,
+              },
+              "block-73377": Object {
+                "x": 428,
+                "y": 306,
+              },
+            },
+            "CanvasPosition": Object {
+              "x": -67,
+              "y": 230,
+            },
+            "LineGroup": Object {
+              "line-555134": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-624018",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-73377",
+              },
+              "line-592694": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-623187",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-624018",
+              },
+              "line-77619": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-73377",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-623187",
+              },
+            },
+            "TagGroup": Object {},
+          },
+        ],
+        Array [
+          Object {
+            "BlockGroup": Object {
+              "block-623187": Object {
+                "x": 132,
+                "y": 118,
+              },
+              "block-624018": Object {
+                "x": 426,
+                "y": -50,
+              },
+              "block-73377": Object {
+                "x": 428,
+                "y": 306,
+              },
+            },
+            "CanvasPosition": Object {
+              "x": -67,
+              "y": 230,
+            },
+            "LineGroup": Object {
+              "line-555134": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-624018",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-73377",
+              },
+              "line-592694": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-623187",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-624018",
+              },
+              "line-77619": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-73377",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-623187",
+              },
+            },
+            "TagGroup": Object {},
+          },
+        ],
+        Array [
+          Object {
+            "BlockGroup": Object {
+              "block-623187": Object {
+                "x": 132,
+                "y": 118,
+              },
+              "block-624018": Object {
+                "x": 426,
+                "y": -50,
+              },
+              "block-73377": Object {
+                "x": 428,
+                "y": 306,
+              },
+            },
+            "CanvasPosition": Object {
+              "x": -67,
+              "y": 230,
+            },
+            "LineGroup": Object {
+              "line-555134": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-624018",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-73377",
+              },
+              "line-592694": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-623187",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-624018",
+              },
+              "line-77619": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-73377",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-623187",
+              },
+            },
+            "TagGroup": Object {},
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
   orientation="h"
   style={
     Object {
@@ -2244,6 +3707,281 @@ exports[`Canvas when data is null, it should render correctly 2`] = `
       <div
         className="Canvas react-draggable"
         data={Object {}}
+        onChange={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                Object {
+                  "BlockGroup": Object {
+                    "block-623187": Object {
+                      "x": 132,
+                      "y": 118,
+                    },
+                    "block-624018": Object {
+                      "x": 426,
+                      "y": -50,
+                    },
+                    "block-73377": Object {
+                      "x": 428,
+                      "y": 306,
+                    },
+                  },
+                  "CanvasPosition": Object {
+                    "x": -67,
+                    "y": 230,
+                  },
+                  "LineGroup": Object {
+                    "line-555134": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-624018",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-73377",
+                    },
+                    "line-592694": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-623187",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-624018",
+                    },
+                    "line-77619": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-73377",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-623187",
+                    },
+                  },
+                  "TagGroup": Object {},
+                },
+              ],
+              Array [
+                Object {
+                  "BlockGroup": Object {
+                    "block-623187": Object {
+                      "x": 132,
+                      "y": 118,
+                    },
+                    "block-624018": Object {
+                      "x": 426,
+                      "y": -50,
+                    },
+                    "block-73377": Object {
+                      "x": 428,
+                      "y": 306,
+                    },
+                  },
+                  "CanvasPosition": Object {
+                    "x": -67,
+                    "y": 230,
+                  },
+                  "LineGroup": Object {
+                    "line-555134": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-624018",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-73377",
+                    },
+                    "line-592694": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-623187",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-624018",
+                    },
+                    "line-77619": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-73377",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-623187",
+                    },
+                  },
+                  "TagGroup": Object {},
+                },
+              ],
+              Array [
+                Object {
+                  "BlockGroup": Object {
+                    "block-623187": Object {
+                      "x": 132,
+                      "y": 118,
+                    },
+                    "block-624018": Object {
+                      "x": 426,
+                      "y": -50,
+                    },
+                    "block-73377": Object {
+                      "x": 428,
+                      "y": 306,
+                    },
+                  },
+                  "CanvasPosition": Object {
+                    "x": -67,
+                    "y": 230,
+                  },
+                  "LineGroup": Object {
+                    "line-555134": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-624018",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-73377",
+                    },
+                    "line-592694": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-623187",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-624018",
+                    },
+                    "line-77619": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-73377",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-623187",
+                    },
+                  },
+                  "TagGroup": Object {},
+                },
+              ],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
+          }
+        }
         onDragOver={[Function]}
         onDrop={[Function]}
         onMouseDown={[Function]}
@@ -2295,6 +4033,370 @@ exports[`Canvas when data is null, it should render correctly 3`] = `
 <Canvas
   className=""
   data={Object {}}
+  onChange={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Object {
+            "BlockGroup": Object {
+              "block-623187": Object {
+                "x": 132,
+                "y": 118,
+              },
+              "block-624018": Object {
+                "x": 426,
+                "y": -50,
+              },
+              "block-73377": Object {
+                "x": 428,
+                "y": 306,
+              },
+            },
+            "CanvasPosition": Object {
+              "x": -67,
+              "y": 230,
+            },
+            "LineGroup": Object {
+              "line-555134": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-624018",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-73377",
+              },
+              "line-592694": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-623187",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-624018",
+              },
+              "line-77619": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-73377",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-623187",
+              },
+            },
+            "TagGroup": Object {},
+          },
+        ],
+        Array [
+          Object {
+            "BlockGroup": Object {
+              "block-623187": Object {
+                "x": 132,
+                "y": 118,
+              },
+              "block-624018": Object {
+                "x": 426,
+                "y": -50,
+              },
+              "block-73377": Object {
+                "x": 428,
+                "y": 306,
+              },
+            },
+            "CanvasPosition": Object {
+              "x": -67,
+              "y": 230,
+            },
+            "LineGroup": Object {
+              "line-555134": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-624018",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-73377",
+              },
+              "line-592694": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-623187",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-624018",
+              },
+              "line-77619": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-73377",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-623187",
+              },
+            },
+            "TagGroup": Object {},
+          },
+        ],
+        Array [
+          Object {
+            "BlockGroup": Object {
+              "block-623187": Object {
+                "x": 132,
+                "y": 118,
+              },
+              "block-624018": Object {
+                "x": 426,
+                "y": -50,
+              },
+              "block-73377": Object {
+                "x": 428,
+                "y": 306,
+              },
+            },
+            "CanvasPosition": Object {
+              "x": -67,
+              "y": 230,
+            },
+            "LineGroup": Object {
+              "line-555134": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-624018",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-73377",
+              },
+              "line-592694": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-623187",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-624018",
+              },
+              "line-77619": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-73377",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-623187",
+              },
+            },
+            "TagGroup": Object {},
+          },
+        ],
+        Array [
+          Object {
+            "BlockGroup": Object {
+              "block-623187": Object {
+                "x": 132,
+                "y": 118,
+              },
+              "block-624018": Object {
+                "x": 426,
+                "y": -50,
+              },
+              "block-73377": Object {
+                "x": 428,
+                "y": 306,
+              },
+            },
+            "CanvasPosition": Object {
+              "x": -67,
+              "y": 230,
+            },
+            "LineGroup": Object {
+              "line-555134": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-624018",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-73377",
+              },
+              "line-592694": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-623187",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-624018",
+              },
+              "line-77619": Object {
+                "from": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "fromKey": "block-73377",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                },
+                "toKey": "block-623187",
+              },
+            },
+            "TagGroup": Object {},
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
   orientation="h"
   style={
     Object {
@@ -2370,6 +4472,370 @@ exports[`Canvas when data is null, it should render correctly 3`] = `
       <div
         className="Canvas react-draggable"
         data={Object {}}
+        onChange={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                Object {
+                  "BlockGroup": Object {
+                    "block-623187": Object {
+                      "x": 132,
+                      "y": 118,
+                    },
+                    "block-624018": Object {
+                      "x": 426,
+                      "y": -50,
+                    },
+                    "block-73377": Object {
+                      "x": 428,
+                      "y": 306,
+                    },
+                  },
+                  "CanvasPosition": Object {
+                    "x": -67,
+                    "y": 230,
+                  },
+                  "LineGroup": Object {
+                    "line-555134": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-624018",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-73377",
+                    },
+                    "line-592694": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-623187",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-624018",
+                    },
+                    "line-77619": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-73377",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-623187",
+                    },
+                  },
+                  "TagGroup": Object {},
+                },
+              ],
+              Array [
+                Object {
+                  "BlockGroup": Object {
+                    "block-623187": Object {
+                      "x": 132,
+                      "y": 118,
+                    },
+                    "block-624018": Object {
+                      "x": 426,
+                      "y": -50,
+                    },
+                    "block-73377": Object {
+                      "x": 428,
+                      "y": 306,
+                    },
+                  },
+                  "CanvasPosition": Object {
+                    "x": -67,
+                    "y": 230,
+                  },
+                  "LineGroup": Object {
+                    "line-555134": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-624018",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-73377",
+                    },
+                    "line-592694": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-623187",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-624018",
+                    },
+                    "line-77619": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-73377",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-623187",
+                    },
+                  },
+                  "TagGroup": Object {},
+                },
+              ],
+              Array [
+                Object {
+                  "BlockGroup": Object {
+                    "block-623187": Object {
+                      "x": 132,
+                      "y": 118,
+                    },
+                    "block-624018": Object {
+                      "x": 426,
+                      "y": -50,
+                    },
+                    "block-73377": Object {
+                      "x": 428,
+                      "y": 306,
+                    },
+                  },
+                  "CanvasPosition": Object {
+                    "x": -67,
+                    "y": 230,
+                  },
+                  "LineGroup": Object {
+                    "line-555134": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-624018",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-73377",
+                    },
+                    "line-592694": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-623187",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-624018",
+                    },
+                    "line-77619": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-73377",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-623187",
+                    },
+                  },
+                  "TagGroup": Object {},
+                },
+              ],
+              Array [
+                Object {
+                  "BlockGroup": Object {
+                    "block-623187": Object {
+                      "x": 132,
+                      "y": 118,
+                    },
+                    "block-624018": Object {
+                      "x": 426,
+                      "y": -50,
+                    },
+                    "block-73377": Object {
+                      "x": 428,
+                      "y": 306,
+                    },
+                  },
+                  "CanvasPosition": Object {
+                    "x": -67,
+                    "y": 230,
+                  },
+                  "LineGroup": Object {
+                    "line-555134": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-624018",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-73377",
+                    },
+                    "line-592694": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-623187",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-624018",
+                    },
+                    "line-77619": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-73377",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-623187",
+                    },
+                  },
+                  "TagGroup": Object {},
+                },
+              ],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
+          }
+        }
         onDragOver={[Function]}
         onDrop={[Function]}
         onMouseDown={[Function]}

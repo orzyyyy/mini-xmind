@@ -83,7 +83,11 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
   };
 
   handleTagChange = (tagProps: any) => {
+    const { onChange } = this.props;
     this.handleUnityAllDatas(tagProps, 'TagGroup');
+    if (!onChange) {
+      this.setState({ tagProps });
+    }
   };
 
   handleUnityAllDatas = (data: any, type: string) => {
