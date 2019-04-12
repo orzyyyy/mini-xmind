@@ -39,17 +39,7 @@ export default class Demo extends Component<any, DemoState> {
     this.setState({ data: mapping });
   };
 
-  outputData = () => {
-    const data = (window as any).DataCollector.getAll();
-    this.setState({ data });
-    const treeData = JSON.stringify(data);
-    // eslint-disable-next-line
-    console.log(treeData);
-    return data;
-  };
-
   handleChange = (data: any) => {
-    console.log(data);
     this.setState({ data });
   };
 
@@ -64,12 +54,6 @@ export default class Demo extends Component<any, DemoState> {
           data={data}
           onChange={this.handleChange}
         />
-        <button
-          onClick={this.outputData}
-          style={{ position: 'absolute', top: 10, left: 10 }}
-        >
-          save
-        </button>
       </div>
     );
   };
