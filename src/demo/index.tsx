@@ -39,13 +39,8 @@ export default class Demo extends Component<any, DemoState> {
     this.setState({ data: mapping });
   };
 
-  outputData = () => {
-    const data = (window as any).DataCollector.getAll();
+  handleChange = (data: any) => {
     this.setState({ data });
-    const treeData = JSON.stringify(data);
-    // eslint-disable-next-line
-    console.log(treeData);
-    return data;
   };
 
   render = () => {
@@ -54,13 +49,11 @@ export default class Demo extends Component<any, DemoState> {
     return (
       <div className="Demo">
         <Toolbar />
-        <Canvas className="canvas-wrapper" data={data} />
-        <button
-          onClick={this.outputData}
-          style={{ position: 'absolute', top: 10, left: 10 }}
-        >
-          save
-        </button>
+        <Canvas
+          className="canvas-wrapper"
+          data={data}
+          onChange={this.handleChange}
+        />
       </div>
     );
   };

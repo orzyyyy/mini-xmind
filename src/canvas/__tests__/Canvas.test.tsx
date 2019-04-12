@@ -13,8 +13,9 @@ import Listener from '../../utils/GlobalListener';
 import { mapping } from '../../mock/mapping';
 import 'nino-cli/scripts/setup';
 
-const createWrapper = (...props: Array<any>) =>
-  mount(<Canvas style={{ width: '100%', height: '100%' }} {...props} />);
+const createWrapper = (...props: Array<any>) => {
+  return mount(<Canvas style={{ width: '100%', height: '100%' }} {...props} />);
+};
 
 describe('Canvas', () => {
   beforeEach(() => {
@@ -41,6 +42,7 @@ describe('Canvas', () => {
     const wrapper = createWrapper();
     wrapper.setProps({ data: mapping });
 
+    expect(Object.keys(wrapper.state('linesProps')).length).toBe(2);
     const blocks = wrapper.find('.block-group');
     blocks.at(0).simulate('click');
     blocks.at(1).simulate('click');
@@ -50,7 +52,7 @@ describe('Canvas', () => {
 
     blocks.at(0).simulate('click');
     blocks.at(2).simulate('click');
-    expect(wrapper.find('.stepped-line-to').length).toBe(3);
+    expect(Object.keys(wrapper.state('linesProps')).length).toBe(3);
   });
 
   it('should not render redundant Line', () => {

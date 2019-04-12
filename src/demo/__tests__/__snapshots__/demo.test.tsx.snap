@@ -261,6 +261,7 @@ exports[`demo render correctly 1`] = `
           },
         }
       }
+      onChange={[Function]}
       orientation="h"
       style={Object {}}
     >
@@ -426,6 +427,7 @@ exports[`demo render correctly 1`] = `
                 },
               }
             }
+            onChange={[Function]}
             onDragOver={[Function]}
             onDrop={[Function]}
             onMouseDown={[Function]}
@@ -1780,18 +1782,6 @@ exports[`demo render correctly 1`] = `
         </DraggableCore>
       </Draggable>
     </Canvas>
-    <button
-      onClick={[Function]}
-      style={
-        Object {
-          "left": 10,
-          "position": "absolute",
-          "top": 10,
-        }
-      }
-    >
-      save
-    </button>
   </div>
 </Demo>
 `;
