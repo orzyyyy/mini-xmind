@@ -68,7 +68,6 @@ export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
     const { className: parentClassName, onChange, ...rest } = this.props;
     const { data } = this.state;
 
-    (window as any).DataCollector.set('TagGroup', data);
     return Object.keys(data).map(key => {
       const { x, y, editable, className: tagClassName } = data[key];
       const targetClassName = classNames(

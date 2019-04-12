@@ -9,18 +9,9 @@ switch (process.env.LIB_DIR) {
     BlockGroup = require('../BlockGroup').default;
     break;
 }
-import Listener from '../../utils/GlobalListener';
 import 'nino-cli/scripts/setup';
 
 describe('BlockGroup', () => {
-  beforeEach(() => {
-    (window as any).DataCollector = new Listener();
-  });
-
-  afterEach(() => {
-    (window as any).DataCollector = null;
-  });
-
   it("when lineData is null, onChange shouldn't be called", () => {
     const onChange = jest.fn();
     mount(

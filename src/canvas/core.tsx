@@ -158,7 +158,6 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
     } = this.props;
     const { blockProps, linesProps, tagProps, position } = this.state;
 
-    (window as any).DataCollector.set('CanvasPosition', position);
     return (
       <Draggable
         onDrag={this.handleDrag}

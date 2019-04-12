@@ -48,9 +48,6 @@ export default class LineGroup extends Component<
     const { offset, ...rest } = this.props;
     return Object.keys(data).map(lineKey => {
       const { from, to } = data[lineKey];
-      (window as any).DataCollector.set('LineGroup', {
-        [lineKey]: data[lineKey],
-      });
       return (
         <SteppedLineTo
           from={from}

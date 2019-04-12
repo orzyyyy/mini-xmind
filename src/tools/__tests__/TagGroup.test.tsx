@@ -9,18 +9,9 @@ switch (process.env.LIB_DIR) {
     TagGroup = require('..').TagGroup;
     break;
 }
-import Listener from '../../utils/GlobalListener';
 import 'nino-cli/scripts/setup';
 
 describe('TagGroup', () => {
-  beforeEach(() => {
-    (window as any).DataCollector = new Listener();
-  });
-
-  afterEach(() => {
-    (window as any).DataCollector = null;
-  });
-
   it('when data is null, render correctly', () => {
     const wrapper = mount(<TagGroup />);
     expect(wrapper).toMatchSnapshot();

@@ -222,7 +222,6 @@ export default class BlockGroup extends Component<
     const { className: parentClassName, onChange, ...rest } = this.props;
     const { data } = this.state;
 
-    (window as any).DataCollector.set('BlockGroup', data);
     return Object.keys(data).map(blockKey => {
       const { x, y, className: blockClassName } = data[blockKey];
       return (

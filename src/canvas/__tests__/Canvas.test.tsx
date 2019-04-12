@@ -9,7 +9,6 @@ switch (process.env.LIB_DIR) {
     Canvas = require('..').default;
     break;
 }
-import Listener from '../../utils/GlobalListener';
 import { mapping } from '../../mock/mapping';
 import 'nino-cli/scripts/setup';
 
@@ -18,14 +17,6 @@ const createWrapper = (...props: Array<any>) => {
 };
 
 describe('Canvas', () => {
-  beforeEach(() => {
-    (window as any).DataCollector = new Listener();
-  });
-
-  afterEach(() => {
-    (window as any).DataCollector = null;
-  });
-
   it('Canvas renders correctly', () => {
     const wrapper = createWrapper();
     wrapper.setProps({ data: mapping });
