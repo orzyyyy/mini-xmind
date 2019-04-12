@@ -48,6 +48,17 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
     nextState: CanvasState,
   ) {
     const data = nextProps.data || {};
+    // hack
+    // don't know why when change Input in TagGroup,
+    // it would return a event object that unexpected
+    if (Object.keys(data).length > 4) {
+      return {
+        blockProps: dataCollector.BlockGroup,
+        tagProps: dataCollector.TagGroup,
+        linesProps: dataCollector.LineGroup,
+        position: dataCollector.CanvasPosition,
+      };
+    }
     if (Object.keys(data).length !== 0) {
       const { BlockGroup, TagGroup, LineGroup, CanvasPosition } = data;
 
@@ -69,12 +80,9 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
 
   // to repaint Line instantly
   handleBlockChange = (blockProps: any, linesProps: any) => {
-    const { onChange } = this.props;
     this.handleUnityAllDatas(blockProps, 'BlockGroup');
     this.handleUnityAllDatas(linesProps, 'LineGroup');
-    if (!onChange) {
-      this.setState({ blockProps });
-    }
+    this.setState({ blockProps });
     if (linesProps) {
       this.setState({ linesProps });
     }

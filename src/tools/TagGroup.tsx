@@ -34,9 +34,7 @@ export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
 
   handleStop = ({ x, y }: { x: number; y: number }, key: string) => {
     const { data, onChange } = this.props;
-
     data[key] = Object.assign({}, data[key], { x, y });
-
     onChange && onChange(data);
   };
 
@@ -46,10 +44,14 @@ export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
     targetKey: string,
     targetValue: boolean | string,
   ) => {
+    const { onChange } = this.props;
     const { data } = this.state;
     data[key] = item;
     data[key][targetKey] = targetValue;
 
+    if (onChange) {
+      onChange(data);
+    }
     this.setState({ data });
   };
 
