@@ -34,6 +34,8 @@ export function parseAnchorText(value: string) {
       return { y: 1 };
     case 'right':
       return { x: 1 };
+    default:
+      break;
   }
   return null;
 }
@@ -60,11 +62,6 @@ export interface LineToState {
 }
 
 export default class LineTo extends Component<LineToProps, LineToState> {
-  state = {
-    offsetX: 0,
-    offsetY: 0,
-  };
-
   static defaultProps = {
     className: '',
     style: {},
@@ -85,6 +82,10 @@ export default class LineTo extends Component<LineToProps, LineToState> {
     }
     return null;
   }
+  state = {
+    offsetX: 0,
+    offsetY: 0,
+  };
 
   detect = () => {
     const { from, to, offset = { x: 0, y: 0 } } = this.props;

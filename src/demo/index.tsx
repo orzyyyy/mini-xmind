@@ -52,6 +52,7 @@ export default class Demo extends Component<any, DemoState> {
   };
 
   useDebounce(data: any) {
+    // tslint:disable-next-line
     console.log(data);
   }
 

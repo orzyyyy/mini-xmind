@@ -78,6 +78,7 @@ describe('LineUtil', () => {
       .find('button')
       .at(0)
       .simulate('click', () => {
+        // tslint:disable-next-line
         preventDefault: () => {
           defaultEvent();
         };
@@ -95,6 +96,7 @@ describe('LineUtil', () => {
       .find('button')
       .at(0)
       .simulate('click', () => {
+        // tslint:disable-next-line
         stopPropagation: () => {
           defaultEvent();
         };

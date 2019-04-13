@@ -7,7 +7,7 @@
     "build": "tsc && nino koei -c scripts/nino.koei.js",
     "compile": "tsc && nino compile",
     "codecov": "nino test -d",
-    "lint": "npx eslint .",
+    "lint": "tslint -c tslint.json 'src/**/*.ts[x]'",
     "prettier": "nino prettier",
     "lint-staged": "lint-staged",
     "backup": "npm config set registry=https://registry.npmjs.org && npm publish && npm config set registry=https://registry.npm.taobao.org",
@@ -34,6 +34,10 @@
     "dekko": "^0.2.1",
     "lint-staged": "^8.1.5",
     "nino-cli": "^0.7.2",
+    "tslint": "^5.15.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-react": "^4.0.0",
     "typescript": "^3.4.3"
   },
   "pre-commit": [
