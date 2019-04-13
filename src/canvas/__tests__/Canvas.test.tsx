@@ -5,6 +5,9 @@ switch (process.env.LIB_DIR) {
   case 'lib':
     Canvas = require('../../../lib/canvas').default;
     break;
+  case 'dist':
+    Canvas = require('../../../dist/lib/canvas').default;
+    break;
   default:
     Canvas = require('..').default;
     break;

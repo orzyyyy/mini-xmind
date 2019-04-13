@@ -3,7 +3,7 @@ version: 2
 references:
   container_config: &container_config
     docker:
-      - image: circleci/node:10.0.0
+      - image: circleci/node:11.0.0
     working_directory: ~/mini-xmind
 
   attach_workspace: &attach_workspace
@@ -53,6 +53,15 @@ jobs:
           root: ~/mini-xmind
           paths:
             - lib
+  test_dist:
+    <<: *container_config
+    steps:
+      - checkout
+      - *attach_workspace
+      - run:
+          command: npm test -- -u --maxWorkers=2
+          environment:
+            LIB_DIR: dist
   test_lib:
     <<: *container_config
     steps:
@@ -71,12 +80,18 @@ workflows:
           filters:
             branches:
               ignore: gh-pages
+      - dist:
+          requires:
+            - setup
       - compile:
           requires:
             - setup
       - test_lib:
           requires:
             - compile
+      - test_dist:
+          requires:
+            - dist
       - test:
           requires:
             - setup
