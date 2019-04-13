@@ -13,7 +13,7 @@ const blockDOM: any = {};
 const keysLength = (obj: object) => Object.keys(obj).length;
 
 const addBlockDom = (lineData: any, targetBlockDOM: any) => {
-  for (const key of Object.keys(lineData)) {
+  for (const key of Object.keys(lineData || {})) {
     const { fromKey, toKey } = lineData[key];
     for (const blockKey of Object.keys(targetBlockDOM)) {
       const value = targetBlockDOM[blockKey];
