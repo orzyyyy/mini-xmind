@@ -53,6 +53,19 @@ jobs:
           root: ~/mini-xmind
           paths:
             - lib
+  dist:
+    <<: *container_config
+    steps:
+      - checkout
+      - *attach_workspace
+      - run: npm run build
+      - run: ls dist
+      - run: ls dist/lib
+      - run: node ./scripts/dekko-dist.js
+      - persist_to_workspace:
+          root: ~/mini-xmind
+          paths:
+            - dist
   test_dist:
     <<: *container_config
     steps:
