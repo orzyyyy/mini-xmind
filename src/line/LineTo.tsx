@@ -82,7 +82,7 @@ export default class LineTo extends Component<LineToProps, LineToState> {
     }
     return null;
   }
-  state = {
+  state: LineToState = {
     offsetX: 0,
     offsetY: 0,
   };
