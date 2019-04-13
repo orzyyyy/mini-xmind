@@ -67,7 +67,10 @@ workflows:
   version: 2
   build:
     jobs:
-      - setup
+      - setup:
+          filters:
+            branches:
+              ignore: gh-pages
       - compile:
           requires:
             - setup
