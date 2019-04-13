@@ -26,16 +26,9 @@ export interface CanvasState {
   position: { x: number; y: number };
 }
 
-let dataCollector: any = {};
+const dataCollector: any = {};
 
 export default class Canvas extends Component<CanvasProps, CanvasState> {
-  state: CanvasState = {
-    blockProps: {},
-    linesProps: {},
-    tagProps: {},
-    position: { x: 0, y: 0 },
-  };
-
   static defaultProps = {
     style: {},
     className: '',
@@ -50,7 +43,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
     const data = nextProps.data || {};
     // hack
     // don't know why when change Input in TagGroup,
-    // it would return a event object that unexpected
+    // it would return an event object that unexpected
     if (Object.keys(data).length > 4) {
       return {
         blockProps: dataCollector.BlockGroup,
@@ -60,23 +53,34 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
       };
     }
     if (Object.keys(data).length !== 0) {
-      const { BlockGroup, TagGroup, LineGroup, CanvasPosition } = data;
+      const {
+        BlockGroup: blockProps,
+        TagGroup: tagProps,
+        LineGroup: linesProps,
+        CanvasPosition,
+      } = data;
 
       let position = nextState.position;
-      if (position.x == 0 && position.y == 0 && CanvasPosition) {
+      if (position.x === 0 && position.y === 0 && CanvasPosition) {
         position = CanvasPosition;
-        dataCollector['CanvasPosition'] = CanvasPosition;
+        dataCollector.CanvasPosition = CanvasPosition;
       }
 
       return {
-        blockProps: BlockGroup,
-        tagProps: TagGroup,
-        linesProps: LineGroup,
+        blockProps,
+        tagProps,
+        linesProps,
         position,
       };
     }
     return null;
   }
+  state: CanvasState = {
+    blockProps: {},
+    linesProps: {},
+    tagProps: {},
+    position: { x: 0, y: 0 },
+  };
 
   // to repaint Line instantly
   handleBlockChange = (blockProps: any, linesProps: any) => {
@@ -107,7 +111,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
     }
     dragItem = dragItem ? JSON.parse(dragItem) : {};
     const { value } = dragItem;
-    let { blockProps, tagProps, position } = this.state;
+    const { blockProps, tagProps, position } = this.state;
     const { clientX, clientY } = e;
     let defaultWidth = 100;
     let defaultHeight = 80;
@@ -130,6 +134,8 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
           editable: true,
         };
         this.setState({ tagProps });
+        break;
+      default:
         break;
     }
     return {

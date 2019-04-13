@@ -9,21 +9,20 @@ import './css/BlockGroup.css';
 // to record it here
 let mapping: any = {};
 // to save refs
-let blockDOM: any = {};
+const blockDOM: any = {};
 const keysLength = (obj: object) => Object.keys(obj).length;
 
-const addBlockDom = (lineData: any, blockDOM: any) => {
-  for (let key in lineData) {
+const addBlockDom = (lineData: any, targetBlockDOM: any) => {
+  for (const key of Object.keys(lineData || {})) {
     const { fromKey, toKey } = lineData[key];
+    for (const blockKey of Object.keys(targetBlockDOM)) {
+      const value = targetBlockDOM[blockKey];
 
-    for (let blockKey in blockDOM) {
-      const value = blockDOM[blockKey];
-
-      if (fromKey == blockKey) {
+      if (fromKey === blockKey) {
         lineData[key].from = value;
       }
 
-      if (toKey == blockKey) {
+      if (toKey === blockKey) {
         lineData[key].to = value;
       }
     }
@@ -58,6 +57,13 @@ export default class BlockGroup extends Component<
   BlockGroupProps,
   BlockGroupState
 > {
+  static getDerivedStateFromProps(nextProps: BlockGroupProps) {
+    mapping = Object.assign({}, mapping, nextProps.lineData);
+    return {
+      data: nextProps.data,
+      lineData: nextProps.lineData,
+    };
+  }
   private checkBlockClickList: any;
 
   constructor(props: BlockGroupProps) {
@@ -72,24 +78,18 @@ export default class BlockGroup extends Component<
     this.checkBlockClickList = {};
   }
 
-  static getDerivedStateFromProps(nextProps: BlockGroupProps) {
-    mapping = Object.assign({}, mapping, nextProps.lineData);
-    return {
-      data: nextProps.data,
-      lineData: nextProps.lineData,
-    };
-  }
-
   componentDidUpdate = (prevProps: BlockGroupProps) => {
     const { lineData, onChange, data } = this.props;
     if (!lineData) {
       return;
     }
     const firstLine: any = Object.values(lineData)[0];
-    const hasNewLine = keysLength(lineData) != keysLength(prevProps.lineData);
+    const hasNewLine = keysLength(lineData) !== keysLength(prevProps.lineData);
     if (!(firstLine && firstLine.from)) {
-      if (hasNewLine || keysLength(lineData) != 0) {
-        onChange && onChange(data, addBlockDom(lineData, blockDOM));
+      if (hasNewLine || keysLength(lineData) !== 0) {
+        if (onChange) {
+          onChange(data, addBlockDom(lineData, blockDOM));
+        }
       }
     }
     // it's a hack
@@ -101,7 +101,9 @@ export default class BlockGroup extends Component<
         this.props.offset.x !== prevProps.offset.x ||
         this.props.offset.y !== prevProps.offset.y
       ) {
-        onChange && onChange(data, addBlockDom(lineData, blockDOM));
+        if (onChange) {
+          onChange(data, addBlockDom(lineData, blockDOM));
+        }
       }
     }
   };
@@ -109,14 +111,16 @@ export default class BlockGroup extends Component<
   handleDrag = ({ x, y }: { x: number; y: number }, blockKey: string) => {
     const { data, onChange, lineData } = this.props;
     data[blockKey] = Object.assign({}, data[blockKey], { x, y });
-    onChange && onChange(data, addBlockDom(lineData, blockDOM));
+    if (onChange) {
+      onChange(data, addBlockDom(lineData, blockDOM));
+    }
   };
 
   // when Block clicked twice, generate a Line
   // and clear checkBlockClickList
   handleBlockClick = (blockKey: string) => {
-    let { checkBlockClickList } = this;
-    let { onChange } = this.props;
+    const { checkBlockClickList } = this;
+    const { onChange } = this.props;
     const { lineData, data } = this.state;
     const lineKey = generateKey('line');
 
@@ -127,7 +131,7 @@ export default class BlockGroup extends Component<
       checkBlockClickList[blockKey].time = new Date().getTime();
     }
 
-    if (keysLength(checkBlockClickList) == 2) {
+    if (keysLength(checkBlockClickList) === 2) {
       if (!this.shouldPaintLine(checkBlockClickList, lineData)) {
         this.checkBlockClickList = {};
         return;
@@ -138,7 +142,9 @@ export default class BlockGroup extends Component<
         lineKey,
       );
 
-      onChange && onChange(data, result);
+      if (onChange) {
+        onChange(data, result);
+      }
 
       this.checkBlockClickList = {};
       // record mapping for arrow
@@ -151,7 +157,10 @@ export default class BlockGroup extends Component<
 
   generateLineData = (lineData: any, lineKey: string) => {
     const { checkBlockClickList } = this;
-    let fromNode, toNode, fromKey, toKey;
+    let fromNode;
+    let toNode;
+    let fromKey;
+    let toKey;
     const keys = Object.keys(checkBlockClickList);
 
     if (checkBlockClickList[keys[0]] > checkBlockClickList[keys[1]]) {
@@ -193,9 +202,9 @@ export default class BlockGroup extends Component<
     }
 
     const blocks = Object.keys(checkBlockClickList).toString();
-    for (let key of Object.keys(mapping)) {
-      let fromFlag = false,
-        toFlag = false;
+    for (const key of Object.keys(mapping)) {
+      let fromFlag = false;
+      let toFlag = false;
       const { fromKey, toKey } = mapping[key];
 
       if (blocks.includes(fromKey)) {

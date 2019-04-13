@@ -23,7 +23,7 @@ export default class LineGroup extends Component<
   static getDerivedStateFromProps(nextProps: LineGroupProps) {
     const data = nextProps.data;
     const newState: any = {};
-    for (let key in data) {
+    for (const key of Object.keys(data)) {
       const { from, to } = data[key];
 
       if (from && to) {
@@ -64,7 +64,7 @@ export default class LineGroup extends Component<
   render = () => {
     const { data } = this.state;
 
-    if (Object.keys(data).length == 0) {
+    if (Object.keys(data).length === 0) {
       return null;
     }
 
