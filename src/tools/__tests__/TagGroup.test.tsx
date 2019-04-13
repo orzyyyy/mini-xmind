@@ -104,4 +104,54 @@ describe('TagGroup', () => {
     wrapper.handleDrag();
     expect(onChange).toBeCalled();
   });
+
+  it('when typing in Input, onChange should be called', () => {
+    const onChange = jest.fn();
+    const wrapper = mount(
+      <TagGroup
+        onChange={onChange}
+        data={{
+          tag: {
+            editable: true,
+            input: 'test',
+          },
+        }}
+      />,
+    );
+    wrapper.find('Input').simulate('change', { target: { value: '1' } });
+    expect(onChange).toHaveBeenCalled();
+  });
+
+  it('stopPropagation should work', () => {
+    const stopPropagation = jest.fn();
+    const wrapper: any = mount(
+      <TagGroup
+        data={{
+          tag: {
+            editable: true,
+            input: 'test',
+          },
+        }}
+      />,
+    ).instance();
+    wrapper.handleDragStart({ stopPropagation });
+    expect(stopPropagation).toHaveBeenCalled();
+  });
+
+  it('when blur, onChange should be called', () => {
+    const onChange = jest.fn();
+    const wrapper = mount(
+      <TagGroup
+        onChange={onChange}
+        data={{
+          tag: {
+            editable: true,
+            input: 'test',
+          },
+        }}
+      />,
+    );
+    wrapper.find('Input').simulate('blur');
+    expect(onChange).toHaveBeenCalled();
+  });
 });
