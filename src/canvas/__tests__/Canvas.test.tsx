@@ -122,4 +122,33 @@ describe('Canvas', () => {
       y: 84,
     });
   });
+
+  it('onDrop default return origin', () => {
+    const wrapper: any = createWrapper().instance();
+    const event: any = {};
+    event.clientX = 100;
+    event.clientY = 100;
+    event.dataTransfer = {};
+    event.dataTransfer.getData = () => {
+      return "{\"key\":\"border\",\"value\":\"test\",\"style\":{\"width\":100,\"height\":80}}";
+    };
+    const value = wrapper.onDrop(event);
+    expect(value).toEqual({
+      x: 50,
+      y: 60,
+    });
+  });
+
+  it('handleDrag should work correctly', () => {
+    const wrapper: any = createWrapper();
+    wrapper.instance().handleDrag(null, { x: 1, y: 1 });
+    expect(wrapper.state().position).toEqual({ x: 1, y: 1 });
+  });
+
+  it('stopPropagation should work', () => {
+    const stopPropagation = jest.fn();
+    const wrapper: any = createWrapper().instance();
+    wrapper.handleDragStart({ stopPropagation });
+    expect(stopPropagation).toHaveBeenCalled();
+  });
 });
