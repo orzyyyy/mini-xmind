@@ -21,7 +21,11 @@ export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
     nextProps: TagGroupProps,
     nextState: TagGroupState,
   ) {
-    if (Object.keys(nextState.data).length === 0 && nextProps.onChange) {
+    if (
+      Object.keys(nextProps.data || {}).length !==
+        Object.keys(nextState.data || {}).length &&
+      nextProps.onChange
+    ) {
       nextProps.onChange(nextProps.data);
     }
     if (!nextProps.data) {
@@ -29,6 +33,7 @@ export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
     }
     return { data: nextProps.data };
   }
+
   state: TagGroupState = {
     data: {},
   };
