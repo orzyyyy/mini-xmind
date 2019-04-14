@@ -161,6 +161,12 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
   handleRightClick = ({ key, event, group }: ContextMenuProps) => {
     preventDefault(event);
     delete dataCollector[group][key];
+    for (const lineKey of Object.keys(dataCollector.LineGroup)) {
+      const { fromKey, toKey } = dataCollector.LineGroup[lineKey];
+      if (group === 'BlockGroup' && (fromKey === key || toKey === key)) {
+        delete dataCollector.LineGroup[lineKey];
+      }
+    }
     this.setState({});
   };
 
