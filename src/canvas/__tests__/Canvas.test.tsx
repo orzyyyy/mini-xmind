@@ -15,9 +15,8 @@ switch (process.env.LIB_DIR) {
 import { mapping } from '../../mock/mapping';
 import 'nino-cli/scripts/setup';
 
-const createWrapper = (...props: Array<any>) => {
-  return mount(<Canvas style={{ width: '100%', height: '100%' }} {...props} />);
-};
+const createWrapper = (...props: Array<any>) =>
+  mount(<Canvas style={{ width: '100%', height: '100%' }} {...props} />);
 
 describe('Canvas', () => {
   it('Canvas renders correctly', () => {
@@ -150,5 +149,20 @@ describe('Canvas', () => {
     const wrapper: any = createWrapper().instance();
     wrapper.handleDragStart({ stopPropagation });
     expect(stopPropagation).toHaveBeenCalled();
+  });
+
+  it('right click should work', () => {
+    const wrapper = createWrapper();
+    wrapper.setProps({ data: mapping });
+    wrapper
+      .find('.block-group')
+      .at(0)
+      .simulate('contextmenu');
+    expect(wrapper.find('.block-group').length).toBe(2);
+    wrapper
+      .find('.tag-group')
+      .at(0)
+      .simulate('contextmenu');
+    expect(wrapper.find('.tag-group').length).toBe(2);
   });
 });
