@@ -9,7 +9,7 @@ switch (process.env.LIB_DIR) {
     Toolbar = require('../../../dist/lib/toolbar').default;
     break;
   default:
-    Toolbar = require('..').default;
+    Toolbar = require('../..').Toolbar;
     break;
 }
 import { tools } from '../../options/tools';

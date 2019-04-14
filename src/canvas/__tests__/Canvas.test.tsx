@@ -9,7 +9,7 @@ switch (process.env.LIB_DIR) {
     Canvas = require('../../../dist/lib/canvas').default;
     break;
   default:
-    Canvas = require('..').default;
+    Canvas = require('../..').Canvas;
     break;
 }
 import { mapping } from '../../mock/mapping';
