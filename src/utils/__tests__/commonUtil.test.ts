@@ -1,4 +1,6 @@
 import { isSameCoordinate } from '../commonUtil';
+import { renderToDOM } from '../../go';
+import { render } from 'react-dom';
 
 describe('commonUtil', () => {
   it('when currentKey is null, return', () => {
@@ -33,5 +35,22 @@ describe('commonUtil', () => {
         'block',
       ),
     ).toBe(true);
+  });
+});
+
+describe('go', () => {
+  const originalGetElement = (global as any).document.getElementById;
+  jest.mock('react-dom', () => ({
+    render: jest.fn(),
+  }));
+  beforeEach(() => {
+    (global as any).document.getElementById = () => true;
+  });
+  afterAll(() => {
+    (global as any).document.getElementById = originalGetElement;
+  });
+  it('should call ReactDOM.render', () => {
+    renderToDOM();
+    expect(render).toMatchSnapshot();
   });
 });

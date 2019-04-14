@@ -4,4 +4,10 @@ import Demo from './demo';
 
 const MOUNT_NODE = document.getElementById('root');
 
-ReactDOM.render(<Demo />, MOUNT_NODE);
+function renderToDOM() {
+  if (MOUNT_NODE !== null) {
+    ReactDOM.render(<Demo />, MOUNT_NODE);
+  }
+}
+renderToDOM();
+export { renderToDOM };
