@@ -256,7 +256,7 @@ export default class BlockGroup extends Component<
             )}
             onClick={_ => this.handleBlockClick(blockKey)}
             ref={ref => this.saveBlock(ref, blockKey)}
-            onContextMenu={(e: Event) => {
+            onContextMenu={(e: any) => {
               if (onContextMenu) {
                 onContextMenu({ event: e, key: blockKey, group: 'BlockGroup' });
               }

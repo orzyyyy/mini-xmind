@@ -125,7 +125,7 @@ export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
             onDoubleClick={() =>
               this.handleChange(data[key], key, 'editable', true)
             }
-            onContextMenu={(e: Event) => {
+            onContextMenu={(e: any) => {
               if (onContextMenu) {
                 onContextMenu({ event: e, key, group: 'TagGroup' });
               }
