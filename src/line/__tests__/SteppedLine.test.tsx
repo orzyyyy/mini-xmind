@@ -95,8 +95,17 @@ describe('SteppedLine', () => {
     );
   });
 
-  it('when orientation is null, return null', () => {
-    const wrapper = mount(<SteppedLine x0={1} y0={1} x1={0} y1={0} />);
+  it('orientation should work', () => {
+    const wrapper = mount(
+      <SteppedLine x0={1} y0={1} x1={0} y1={0} orientation="test" />,
+    );
     expect(wrapper).toEqual({});
+  });
+
+  it('return one Line if x1 === x0', () => {
+    const wrapper = mount(
+      <SteppedLine x0={1} y0={1} x1={1} y1={0} orientation="v" />,
+    );
+    expect(wrapper.find('Line').length).toBe(1);
   });
 });
