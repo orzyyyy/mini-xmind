@@ -25,6 +25,11 @@ export interface CanvasState {
   tagProps?: any;
   position: { x: number; y: number };
 }
+export type ContextMenuProps = {
+  event: Event;
+  key: string;
+  group: string;
+};
 
 const dataCollector: any = {};
 
@@ -153,6 +158,12 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
     stopPropagation(e);
   };
 
+  handleRightClick = ({ key, event, group }: ContextMenuProps) => {
+    preventDefault(event);
+    delete dataCollector[group][key];
+    this.setState({});
+  };
+
   render = () => {
     const {
       className,
@@ -182,6 +193,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
             onChange={this.handleBlockChange}
             lineData={linesProps}
             className={blockClassName}
+            onContextMenu={this.handleRightClick}
           />
           <LineGroup
             data={linesProps}
@@ -193,6 +205,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
             data={tagProps}
             onChange={this.handleTagChange}
             className={tagClassName}
+            onContextMenu={this.handleRightClick}
           />
         </div>
       </Draggable>

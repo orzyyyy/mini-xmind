@@ -4,11 +4,13 @@ import Draggable from 'react-draggable';
 import { Input } from 'antd';
 import './css/TagGroup.css';
 import { stopPropagation } from '../utils/LineUtil';
+import { ContextMenuProps } from '../canvas/core';
 
 export interface TagGroupProps {
   data?: any;
   onChange?: (data: any) => void;
   className?: string;
+  onContextMenu?: (item: ContextMenuProps) => void;
 }
 export interface TagGroupState {
   data?: any;
@@ -68,7 +70,12 @@ export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
   };
 
   render = () => {
-    const { className: parentClassName, onChange, ...rest } = this.props;
+    const {
+      className: parentClassName,
+      onChange,
+      onContextMenu,
+      ...rest
+    } = this.props;
     const { data } = this.state;
 
     return Object.keys(data).map(key => {
@@ -118,6 +125,11 @@ export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
             onDoubleClick={() =>
               this.handleChange(data[key], key, 'editable', true)
             }
+            onContextMenu={(e: any) => {
+              if (onContextMenu) {
+                onContextMenu({ event: e, key, group: 'TagGroup' });
+              }
+            }}
             {...rest}
           >
             {data[key].input}

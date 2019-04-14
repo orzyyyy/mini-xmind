@@ -353,6 +353,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
             }
           }
           onChange={[Function]}
+          onContextMenu={[Function]}
         >
           <Draggable
             allowAnyClick={false}
@@ -444,6 +445,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   }
                 }
                 onClick={[Function]}
+                onContextMenu={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
@@ -548,6 +550,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   }
                 }
                 onClick={[Function]}
+                onContextMenu={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
@@ -652,6 +655,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   }
                 }
                 onClick={[Function]}
+                onContextMenu={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
@@ -1677,6 +1681,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
             }
           }
           onChange={[Function]}
+          onContextMenu={[Function]}
         >
           <Draggable
             allowAnyClick={false}
@@ -1779,6 +1784,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
                     },
                   }
                 }
+                onContextMenu={[Function]}
                 onDoubleClick={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
@@ -1897,6 +1903,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
                     },
                   }
                 }
+                onContextMenu={[Function]}
                 onDoubleClick={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
@@ -2015,6 +2022,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
                     },
                   }
                 }
+                onContextMenu={[Function]}
                 onDoubleClick={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
@@ -2144,6 +2152,7 @@ exports[`Canvas when data is null, it should render correctly 1`] = `
             }
           }
           onChange={[Function]}
+          onContextMenu={[Function]}
         />
         <LineGroup
           data={Object {}}
@@ -2158,6 +2167,7 @@ exports[`Canvas when data is null, it should render correctly 1`] = `
         <TagGroup
           data={Object {}}
           onChange={[Function]}
+          onContextMenu={[Function]}
         />
       </div>
     </DraggableCore>
@@ -2270,6 +2280,7 @@ exports[`Canvas when data is null, it should render correctly 2`] = `
             }
           }
           onChange={[Function]}
+          onContextMenu={[Function]}
         />
         <LineGroup
           data={Object {}}
@@ -2284,6 +2295,7 @@ exports[`Canvas when data is null, it should render correctly 2`] = `
         <TagGroup
           data={Object {}}
           onChange={[Function]}
+          onContextMenu={[Function]}
         />
       </div>
     </DraggableCore>
@@ -2396,6 +2408,7 @@ exports[`Canvas when data is null, it should render correctly 3`] = `
             }
           }
           onChange={[Function]}
+          onContextMenu={[Function]}
         />
         <LineGroup
           data={Object {}}
@@ -2410,6 +2423,7 @@ exports[`Canvas when data is null, it should render correctly 3`] = `
         <TagGroup
           data={Object {}}
           onChange={[Function]}
+          onContextMenu={[Function]}
         />
       </div>
     </DraggableCore>
