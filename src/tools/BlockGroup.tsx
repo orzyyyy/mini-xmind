@@ -4,6 +4,7 @@ import Draggable from 'react-draggable';
 import { generateKey, stopPropagation } from '../utils/LineUtil';
 import omit from 'omit.js';
 import './css/BlockGroup.css';
+import { ContextMenuProps } from '../canvas/core';
 
 // one Line is mapping to two Block
 // to record it here
@@ -47,6 +48,7 @@ export interface BlockGroupProps {
   };
   onChange?: (data: any, lineData?: any) => void;
   offset?: { x: number; y: number };
+  onContextMenu?: (item: ContextMenuProps) => void;
 }
 export interface BlockGroupState {
   data?: any;
@@ -228,7 +230,12 @@ export default class BlockGroup extends Component<
   };
 
   render() {
-    const { className: parentClassName, onChange, ...rest } = this.props;
+    const {
+      className: parentClassName,
+      onChange,
+      onContextMenu,
+      ...rest
+    } = this.props;
     const { data } = this.state;
 
     return Object.keys(data).map(blockKey => {
@@ -249,6 +256,11 @@ export default class BlockGroup extends Component<
             )}
             onClick={_ => this.handleBlockClick(blockKey)}
             ref={ref => this.saveBlock(ref, blockKey)}
+            onContextMenu={(e: Event) => {
+              if (onContextMenu) {
+                onContextMenu({ event: e, key: blockKey, group: 'BlockGroup' });
+              }
+            }}
             {...omit(rest, ['lineData'])}
           />
         </Draggable>
