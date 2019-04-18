@@ -3,8 +3,7 @@ const cwd = process.cwd();
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
-  devtool: 'source-map',
+  mode: 'production',
   entry: {
     'lib/canvas': path.join(cwd + '/src/canvas'),
     'lib/toolbar': path.join(cwd + '/src/tools'),
