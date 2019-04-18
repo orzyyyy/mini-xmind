@@ -1,5 +1,6 @@
 const path = require('path');
 const cwd = process.cwd();
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -14,4 +15,12 @@ module.exports = {
     filename: '[name].js',
     libraryTarget: 'umd',
   },
+  plugins: [
+    new CopyWebpackPlugin([
+      {
+        from: path.join(process.cwd(), '.circleci/config.yml'),
+        to: path.join(process.cwd(), 'dist/.circleci/config.yml'),
+      },
+    ]),
+  ],
 };
