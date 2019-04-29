@@ -26,5 +26,6 @@ comment:
   require_changes: no
 
 ignore:
-  - 'src/demo/**/*'
+  - 'src/demo/index.*'
   - 'src/go.*'
+  - 'src/index.*'
