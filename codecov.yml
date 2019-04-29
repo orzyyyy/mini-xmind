@@ -27,3 +27,4 @@ comment:
 
 ignore:
   - 'src/demo/**/*'
+  - 'src/go.*'
