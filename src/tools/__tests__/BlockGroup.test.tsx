@@ -5,6 +5,9 @@ switch (process.env.LIB_DIR) {
   case 'lib':
     BlockGroup = require('../../../lib/tools').BlockGroup;
     break;
+  case 'es':
+    BlockGroup = require('../../../es/tools').BlockGroup;
+    break;
   default:
     BlockGroup = require('../BlockGroup').default;
     break;

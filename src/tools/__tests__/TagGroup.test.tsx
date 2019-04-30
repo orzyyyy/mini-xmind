@@ -5,6 +5,9 @@ switch (process.env.LIB_DIR) {
   case 'lib':
     TagGroup = require('../../../lib/tools').TagGroup;
     break;
+  case 'es':
+    TagGroup = require('../../../es/tools').TagGroup;
+    break;
   default:
     TagGroup = require('..').TagGroup;
     break;

@@ -10,6 +10,14 @@ try {
     .hasDirectory('options')
     .hasDirectory('tools')
     .hasDirectory('utils');
+  $('es')
+    .isDirectory()
+    .hasFile('index.js')
+    .hasDirectory('canvas')
+    .hasDirectory('line')
+    .hasDirectory('options')
+    .hasDirectory('tools')
+    .hasDirectory('utils');
 } catch (error) {
   // eslint-disable-next-line
   console.log(chalk.red('✨ ' + error));
