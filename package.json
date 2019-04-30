@@ -18,10 +18,13 @@
   "description": "A tool to make mind-mapping easier",
   "files": [
     "lib",
-    "dist"
+    "dist",
+    "es"
   ],
   "license": "MIT",
   "main": "lib/index",
+  "module": "es/index.js",
+  "sideEffects": false,
   "dependencies": {
     "antd": "^3.16.6",
     "react-draggable": "^3.3.0"
@@ -34,7 +37,7 @@
     "dekko": "^0.2.1",
     "gh-pages": "^2.0.1",
     "lint-staged": "^8.1.5",
-    "nino-cli": "^0.7.4",
+    "nino-cli": "^0.8.0",
     "tslint": "^5.16.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-eslint-rules": "^5.4.0",
