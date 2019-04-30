@@ -1,5 +1,5 @@
 export const mapping = {
-  CanvasPosition: { x: -67, y: 230 },
+  CanvasPosition: { x: -67, y: 230, z: 0, gap: 1 },
   BlockGroup: {
     'block-623187': { x: 132, y: 118 },
     'block-624018': { x: 426, y: -50 },

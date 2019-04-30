@@ -19,7 +19,7 @@ export interface DemoState {
 export default class Demo extends Component<any, DemoState> {
   state: DemoState = {
     data: {
-      CanvasPosition: { x: 0, y: 0 },
+      CanvasPosition: { x: 0, y: 0, z: 0, gap: 1 },
       BlockGroup: {},
       TagGroup: {},
       LineGroup: {},

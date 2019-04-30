@@ -26,6 +26,8 @@ export type DataSource = {
   CanvasPosition?: {
     x: number;
     y: number;
+    z: number;
+    gap: number;
   };
   BlockGroup?: { [key: string]: { x: number; y: number } };
   TagGroup?: {

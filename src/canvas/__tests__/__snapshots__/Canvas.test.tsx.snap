@@ -20,8 +20,10 @@ exports[`Canvas Canvas renders correctly 1`] = `
         },
       },
       "CanvasPosition": Object {
+        "gap": 1,
         "x": -67,
         "y": 230,
+        "z": 0,
       },
       "LineGroup": Object {
         "line-592694": Object {
@@ -132,8 +134,10 @@ exports[`Canvas Canvas renders correctly 1`] = `
     onStop={[Function]}
     position={
       Object {
+        "gap": 1,
         "x": -67,
         "y": 230,
+        "z": 0,
       }
     }
     scale={1}
@@ -164,8 +168,10 @@ exports[`Canvas Canvas renders correctly 1`] = `
       onStop={[Function]}
       position={
         Object {
+          "gap": 1,
           "x": -67,
           "y": 230,
+          "z": 0,
         }
       }
       scale={1}
@@ -190,8 +196,10 @@ exports[`Canvas Canvas renders correctly 1`] = `
               },
             },
             "CanvasPosition": Object {
+              "gap": 1,
               "x": -67,
               "y": 230,
+              "z": 0,
             },
             "LineGroup": Object {
               "line-592694": Object {
@@ -349,8 +357,10 @@ exports[`Canvas Canvas renders correctly 1`] = `
           }
           offset={
             Object {
+              "gap": 1,
               "x": -67,
               "y": 230,
+              "z": 0,
             }
           }
           onChange={[Function]}
@@ -441,8 +451,10 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 }
                 offset={
                   Object {
+                    "gap": 1,
                     "x": -67,
                     "y": 230,
+                    "z": 0,
                   }
                 }
                 onClick={[Function]}
@@ -546,8 +558,10 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 }
                 offset={
                   Object {
+                    "gap": 1,
                     "x": -67,
                     "y": 230,
+                    "z": 0,
                   }
                 }
                 onClick={[Function]}
@@ -651,8 +665,10 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 }
                 offset={
                   Object {
+                    "gap": 1,
                     "x": -67,
                     "y": 230,
+                    "z": 0,
                   }
                 }
                 onClick={[Function]}
@@ -719,8 +735,10 @@ exports[`Canvas Canvas renders correctly 1`] = `
           }
           offset={
             Object {
+              "gap": 1,
               "x": -67,
               "y": 230,
+              "z": 0,
             }
           }
           orientation="h"
@@ -789,8 +807,10 @@ exports[`Canvas Canvas renders correctly 1`] = `
               key="line-77619"
               offset={
                 Object {
+                  "gap": 1,
                   "x": -67,
                   "y": 230,
+                  "z": 0,
                 }
               }
               orientation="h"
@@ -871,8 +891,10 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   }
                   offset={
                     Object {
+                      "gap": 1,
                       "x": -67,
                       "y": 230,
+                      "z": 0,
                     }
                   }
                   orientation="h"
@@ -957,8 +979,10 @@ exports[`Canvas Canvas renders correctly 1`] = `
                       }
                       offset={
                         Object {
+                          "gap": 1,
                           "x": -67,
                           "y": 230,
+                          "z": 0,
                         }
                       }
                       orientation="h"
@@ -1052,8 +1076,10 @@ exports[`Canvas Canvas renders correctly 1`] = `
                       }
                       offset={
                         Object {
+                          "gap": 1,
                           "x": -67,
                           "y": 230,
+                          "z": 0,
                         }
                       }
                       orientation="h"
@@ -1147,8 +1173,10 @@ exports[`Canvas Canvas renders correctly 1`] = `
                       }
                       offset={
                         Object {
+                          "gap": 1,
                           "x": -67,
                           "y": 230,
+                          "z": 0,
                         }
                       }
                       orientation="h"
@@ -1247,8 +1275,10 @@ exports[`Canvas Canvas renders correctly 1`] = `
               key="line-592694"
               offset={
                 Object {
+                  "gap": 1,
                   "x": -67,
                   "y": 230,
+                  "z": 0,
                 }
               }
               orientation="h"
@@ -1329,8 +1359,10 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   }
                   offset={
                     Object {
+                      "gap": 1,
                       "x": -67,
                       "y": 230,
+                      "z": 0,
                     }
                   }
                   orientation="h"
@@ -1415,8 +1447,10 @@ exports[`Canvas Canvas renders correctly 1`] = `
                       }
                       offset={
                         Object {
+                          "gap": 1,
                           "x": -67,
                           "y": 230,
+                          "z": 0,
                         }
                       }
                       orientation="h"
@@ -1510,8 +1544,10 @@ exports[`Canvas Canvas renders correctly 1`] = `
                       }
                       offset={
                         Object {
+                          "gap": 1,
                           "x": -67,
                           "y": 230,
+                          "z": 0,
                         }
                       }
                       orientation="h"
@@ -1605,8 +1641,10 @@ exports[`Canvas Canvas renders correctly 1`] = `
                       }
                       offset={
                         Object {
+                          "gap": 1,
                           "x": -67,
                           "y": 230,
+                          "z": 0,
                         }
                       }
                       orientation="h"
