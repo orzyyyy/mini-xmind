@@ -165,4 +165,15 @@ describe('Canvas', () => {
       .simulate('contextmenu');
     expect(wrapper.find('.tag-group').length).toBe(2);
   });
+
+  it('onWheel should work', () => {
+    const wrapper = createWrapper();
+    const onWheel = jest.fn();
+    wrapper.setProps({ data: mapping, onWheel });
+    wrapper
+      .find('.Canvas')
+      .props()
+      .onWheel(null);
+    expect(onWheel).toHaveBeenCalledWith(mapping, null);
+  });
 });
