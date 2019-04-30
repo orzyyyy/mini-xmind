@@ -2123,8 +2123,10 @@ exports[`Canvas when data is null, it should render correctly 1`] = `
     onStop={[Function]}
     position={
       Object {
+        "gap": 1,
         "x": 0,
         "y": 0,
+        "z": 0,
       }
     }
     scale={1}
@@ -2155,8 +2157,10 @@ exports[`Canvas when data is null, it should render correctly 1`] = `
       onStop={[Function]}
       position={
         Object {
+          "gap": 1,
           "x": 0,
           "y": 0,
+          "z": 0,
         }
       }
       scale={1}
@@ -2187,8 +2191,10 @@ exports[`Canvas when data is null, it should render correctly 1`] = `
           lineData={Object {}}
           offset={
             Object {
+              "gap": 1,
               "x": 0,
               "y": 0,
+              "z": 0,
             }
           }
           onChange={[Function]}
@@ -2198,8 +2204,10 @@ exports[`Canvas when data is null, it should render correctly 1`] = `
           data={Object {}}
           offset={
             Object {
+              "gap": 1,
               "x": 0,
               "y": 0,
+              "z": 0,
             }
           }
           orientation="h"
@@ -2252,8 +2260,10 @@ exports[`Canvas when data is null, it should render correctly 2`] = `
     onStop={[Function]}
     position={
       Object {
+        "gap": 1,
         "x": 0,
         "y": 0,
+        "z": 0,
       }
     }
     scale={1}
@@ -2284,8 +2294,10 @@ exports[`Canvas when data is null, it should render correctly 2`] = `
       onStop={[Function]}
       position={
         Object {
+          "gap": 1,
           "x": 0,
           "y": 0,
+          "z": 0,
         }
       }
       scale={1}
@@ -2316,8 +2328,10 @@ exports[`Canvas when data is null, it should render correctly 2`] = `
           lineData={Object {}}
           offset={
             Object {
+              "gap": 1,
               "x": 0,
               "y": 0,
+              "z": 0,
             }
           }
           onChange={[Function]}
@@ -2327,8 +2341,10 @@ exports[`Canvas when data is null, it should render correctly 2`] = `
           data={Object {}}
           offset={
             Object {
+              "gap": 1,
               "x": 0,
               "y": 0,
+              "z": 0,
             }
           }
           orientation="h"
@@ -2381,8 +2397,10 @@ exports[`Canvas when data is null, it should render correctly 3`] = `
     onStop={[Function]}
     position={
       Object {
+        "gap": 1,
         "x": 0,
         "y": 0,
+        "z": 0,
       }
     }
     scale={1}
@@ -2413,8 +2431,10 @@ exports[`Canvas when data is null, it should render correctly 3`] = `
       onStop={[Function]}
       position={
         Object {
+          "gap": 1,
           "x": 0,
           "y": 0,
+          "z": 0,
         }
       }
       scale={1}
@@ -2445,8 +2465,10 @@ exports[`Canvas when data is null, it should render correctly 3`] = `
           lineData={Object {}}
           offset={
             Object {
+              "gap": 1,
               "x": 0,
               "y": 0,
+              "z": 0,
             }
           }
           onChange={[Function]}
@@ -2456,8 +2478,10 @@ exports[`Canvas when data is null, it should render correctly 3`] = `
           data={Object {}}
           offset={
             Object {
+              "gap": 1,
               "x": 0,
               "y": 0,
+              "z": 0,
             }
           }
           orientation="h"

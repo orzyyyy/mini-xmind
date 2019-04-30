@@ -141,7 +141,7 @@ describe('Canvas', () => {
   it('handleDrag should work correctly', () => {
     const wrapper: any = createWrapper();
     wrapper.instance().handleDrag(null, { x: 1, y: 1 });
-    expect(wrapper.state().position).toEqual({ x: 1, y: 1 });
+    expect(wrapper.state().position).toEqual({ x: 1, y: 1, z: 0, gap: 1 });
   });
 
   it('stopPropagation should work', () => {
