@@ -63,7 +63,7 @@ export interface CanvasState {
   blockProps?: any;
   linesProps?: any;
   tagProps?: any;
-  position: { x: number; y: number };
+  position: { x: number; y: number; z: number; gap: number };
 }
 export type ContextMenuProps = {
   event: Event;
@@ -110,7 +110,6 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
         position = CanvasPosition;
         dataCollector.CanvasPosition = CanvasPosition;
       }
-
       return {
         blockProps,
         tagProps,
@@ -124,7 +123,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
     blockProps: {},
     linesProps: {},
     tagProps: {},
-    position: { x: 0, y: 0 },
+    position: { x: 0, y: 0, z: 0, gap: 1 },
   };
 
   // to repaint Line instantly
@@ -190,8 +189,9 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
   };
 
   handleDrag = (_: any, { x, y }: { x: number; y: number }) => {
-    this.handleUnityAllDatas({ x, y }, 'CanvasPosition');
-    this.setState({ position: { x, y } });
+    const position = Object.assign({}, this.state.position, { x, y });
+    this.handleUnityAllDatas(position, 'CanvasPosition');
+    this.setState({ position });
   };
 
   handleDragStart = (e: any) => {

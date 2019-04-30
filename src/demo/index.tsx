@@ -47,9 +47,15 @@ export default class Demo extends Component<any, DemoState> {
     console.log(data);
   }
 
-  handleWhellChange = (data: any) => {
-    // tslint:disable-next-line
-    console.log(data);
+  handleWhellChange = (data: any, e: any) => {
+    const { z, gap } = data.CanvasPosition;
+    if (e.deltaY < 0) {
+      // scrolling up
+      data.CanvasPosition.z = z + gap;
+    } else if (e.deltaY > 0) {
+      // scrolling down
+      data.CanvasPosition.z = z - gap;
+    }
     this.setState({ data });
   };
 
