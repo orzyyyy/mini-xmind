@@ -275,6 +275,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
         onMouseUp={[Function]}
         onTouchEnd={[Function]}
         onTouchStart={[Function]}
+        onWheel={[Function]}
         style={
           Object {
             "height": "100%",
@@ -2132,6 +2133,7 @@ exports[`Canvas when data is null, it should render correctly 1`] = `
         onMouseUp={[Function]}
         onTouchEnd={[Function]}
         onTouchStart={[Function]}
+        onWheel={[Function]}
         style={
           Object {
             "height": "100%",
@@ -2260,6 +2262,7 @@ exports[`Canvas when data is null, it should render correctly 2`] = `
         onMouseUp={[Function]}
         onTouchEnd={[Function]}
         onTouchStart={[Function]}
+        onWheel={[Function]}
         style={
           Object {
             "height": "100%",
@@ -2388,6 +2391,7 @@ exports[`Canvas when data is null, it should render correctly 3`] = `
         onMouseUp={[Function]}
         onTouchEnd={[Function]}
         onTouchStart={[Function]}
+        onWheel={[Function]}
         style={
           Object {
             "height": "100%",
