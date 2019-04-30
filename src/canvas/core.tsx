@@ -8,22 +8,62 @@ import {
 } from '../utils/LineUtil';
 import { TagGroup, BlockGroup } from '../tools';
 import Draggable from 'react-draggable';
+import omit from 'omit.js';
 
+export type LineItem =
+  | {
+      x: number;
+      y: number;
+      bottom: number;
+      height: number;
+      left: number;
+      right: number;
+      top: number;
+      width: number;
+    }
+  | DOMRect;
+export type DataSource = {
+  CanvasPosition?: {
+    x: number;
+    y: number;
+    z: number;
+    gap: number;
+  };
+  BlockGroup?: { [key: string]: { x: number; y: number } };
+  TagGroup?: {
+    [key: string]: {
+      x: number;
+      y: number;
+      style?: React.CSSProperties;
+      input: string;
+      editable: boolean;
+    };
+  };
+  LineGroup?: {
+    [key: string]: {
+      fromKey: string;
+      toKey: string;
+      from: LineItem;
+      to: LineItem;
+    };
+  };
+};
 export interface CanvasProps {
   style?: any;
   className?: string;
-  data?: any;
+  data?: DataSource;
   orientation?: 'h' | 'v' | 'horizonal' | 'vertical' | string;
   blockClassName?: string;
   tagClassName?: string;
   lineClassName?: string;
   onChange: (item: any) => void;
+  onWheel?: (item: any, event?: any) => void;
 }
 export interface CanvasState {
   blockProps?: any;
   linesProps?: any;
   tagProps?: any;
-  position: { x: number; y: number };
+  position: { x: number; y: number; z: number; gap: number };
 }
 export type ContextMenuProps = {
   event: Event;
@@ -70,7 +110,6 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
         position = CanvasPosition;
         dataCollector.CanvasPosition = CanvasPosition;
       }
-
       return {
         blockProps,
         tagProps,
@@ -84,7 +123,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
     blockProps: {},
     linesProps: {},
     tagProps: {},
-    position: { x: 0, y: 0 },
+    position: { x: 0, y: 0, z: 0, gap: 1 },
   };
 
   // to repaint Line instantly
@@ -150,8 +189,9 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
   };
 
   handleDrag = (_: any, { x, y }: { x: number; y: number }) => {
-    this.handleUnityAllDatas({ x, y }, 'CanvasPosition');
-    this.setState({ position: { x, y } });
+    const position = Object.assign({}, this.state.position, { x, y });
+    this.handleUnityAllDatas(position, 'CanvasPosition');
+    this.setState({ position });
   };
 
   handleDragStart = (e: any) => {
@@ -168,6 +208,13 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
       }
     }
     this.setState({});
+  };
+
+  handleOnWhell = (e: any) => {
+    const { onWheel } = this.props;
+    if (onWheel) {
+      onWheel(dataCollector, e);
+    }
   };
 
   render = () => {
@@ -191,7 +238,8 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
           className={classNames('Canvas', className)}
           onDragOver={preventDefault}
           onDrop={this.onDrop}
-          {...rest}
+          onWheel={this.handleOnWhell}
+          {...omit(rest, ['onWheel'])}
         >
           <BlockGroup
             offset={position}

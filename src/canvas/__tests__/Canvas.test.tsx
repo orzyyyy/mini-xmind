@@ -141,7 +141,7 @@ describe('Canvas', () => {
   it('handleDrag should work correctly', () => {
     const wrapper: any = createWrapper();
     wrapper.instance().handleDrag(null, { x: 1, y: 1 });
-    expect(wrapper.state().position).toEqual({ x: 1, y: 1 });
+    expect(wrapper.state().position).toEqual({ x: 1, y: 1, z: 0, gap: 1 });
   });
 
   it('stopPropagation should work', () => {
@@ -164,5 +164,16 @@ describe('Canvas', () => {
       .at(0)
       .simulate('contextmenu');
     expect(wrapper.find('.tag-group').length).toBe(2);
+  });
+
+  it('onWheel should work', () => {
+    const wrapper = createWrapper();
+    const onWheel = jest.fn();
+    wrapper.setProps({ data: mapping, onWheel });
+    wrapper
+      .find('.Canvas')
+      .props()
+      .onWheel(null);
+    expect(onWheel).toHaveBeenCalledWith(mapping, null);
   });
 });

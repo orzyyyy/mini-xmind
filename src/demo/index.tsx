@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Canvas from '../canvas';
+import Canvas, { DataSource } from '../canvas';
 import mapping from '../mock/mapping.json';
 import Toolbar from '../tools';
 import './css/demo.css';
@@ -13,27 +13,18 @@ export interface TagGroup {}
 export interface LineGroup {}
 
 export interface DemoState {
-  data: {
-    CanvasPosition: CanvasPosition;
-    BlockGroup: BlockGroup;
-    TagGroup: TagGroup;
-    LineGroup: LineGroup;
-  };
+  data: DataSource;
 }
 
 export default class Demo extends Component<any, DemoState> {
-  constructor(props: any) {
-    super(props);
-
-    this.state = {
-      data: {
-        CanvasPosition: { x: 0, y: 0 },
-        BlockGroup: {},
-        TagGroup: {},
-        LineGroup: {},
-      },
-    };
-  }
+  state: DemoState = {
+    data: {
+      CanvasPosition: { x: 0, y: 0, z: 0, gap: 1 },
+      BlockGroup: {},
+      TagGroup: {},
+      LineGroup: {},
+    },
+  };
 
   componentDidMount = () => {
     this.setState({ data: mapping });
@@ -56,6 +47,18 @@ export default class Demo extends Component<any, DemoState> {
     console.log(data);
   }
 
+  handleWhellChange = (data: any, e: any) => {
+    const { z, gap } = data.CanvasPosition;
+    if (e.deltaY < 0) {
+      // scrolling up
+      data.CanvasPosition.z = z + gap;
+    } else if (e.deltaY > 0) {
+      // scrolling down
+      data.CanvasPosition.z = z - gap;
+    }
+    this.setState({ data });
+  };
+
   render = () => {
     const { data } = this.state;
 
@@ -66,6 +69,7 @@ export default class Demo extends Component<any, DemoState> {
           className="canvas-wrapper"
           data={data}
           onChange={this.handleChange}
+          onWheel={this.handleWhellChange}
         />
       </div>
     );
