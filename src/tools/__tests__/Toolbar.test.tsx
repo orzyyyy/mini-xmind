@@ -5,9 +5,6 @@ switch (process.env.LIB_DIR) {
   case 'lib':
     Toolbar = require('../../../lib/tools').default;
     break;
-  case 'es':
-    Toolbar = require('../../../es/tools').default;
-    break;
   case 'dist':
     Toolbar = require('../../../dist/lib/toolbar').default;
     break;

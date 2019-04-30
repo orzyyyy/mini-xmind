@@ -53,7 +53,6 @@ jobs:
           root: ~/mini-xmind
           paths:
             - lib
-            - es
   dist:
     <<: *container_config
     steps:
@@ -85,15 +84,6 @@ jobs:
           command: npm test -- -u --maxWorkers=2
           environment:
             LIB_DIR: lib
-  test_es:
-    <<: *container_config
-    steps:
-      - checkout
-      - *attach_workspace
-      - run:
-          command: npm test -- -u --maxWorkers=2
-          environment:
-            LIB_DIR: es
 
 workflows:
   version: 2
@@ -110,9 +100,6 @@ workflows:
           requires:
             - setup
       - test_lib:
-          requires:
-            - compile
-      - test_es:
           requires:
             - compile
       - test_dist:
