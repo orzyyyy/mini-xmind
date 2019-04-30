@@ -8,6 +8,7 @@ import {
 } from '../utils/LineUtil';
 import { TagGroup, BlockGroup } from '../tools';
 import Draggable from 'react-draggable';
+import omit from 'omit.js';
 
 export interface CanvasProps {
   style?: any;
@@ -18,6 +19,7 @@ export interface CanvasProps {
   tagClassName?: string;
   lineClassName?: string;
   onChange: (item: any) => void;
+  onWheel?: (item: any, event?: any) => void;
 }
 export interface CanvasState {
   blockProps?: any;
@@ -170,6 +172,13 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
     this.setState({});
   };
 
+  handleOnWhell = (e: any) => {
+    const { onWheel } = this.props;
+    if (onWheel) {
+      onWheel(dataCollector, e);
+    }
+  };
+
   render = () => {
     const {
       className,
@@ -191,7 +200,8 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
           className={classNames('Canvas', className)}
           onDragOver={preventDefault}
           onDrop={this.onDrop}
-          {...rest}
+          onWheel={this.handleOnWhell}
+          {...omit(rest, ['onWheel'])}
         >
           <BlockGroup
             offset={position}

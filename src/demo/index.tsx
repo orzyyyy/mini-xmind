@@ -56,6 +56,12 @@ export default class Demo extends Component<any, DemoState> {
     console.log(data);
   }
 
+  handleWhellChange = (data: any) => {
+    // tslint:disable-next-line
+    console.log(data);
+    this.setState({ data });
+  };
+
   render = () => {
     const { data } = this.state;
 
@@ -66,6 +72,7 @@ export default class Demo extends Component<any, DemoState> {
           className="canvas-wrapper"
           data={data}
           onChange={this.handleChange}
+          onWheel={this.handleWhellChange}
         />
       </div>
     );
