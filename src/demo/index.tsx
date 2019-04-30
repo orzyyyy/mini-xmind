@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Canvas from '../canvas';
+import Canvas, { DataSource } from '../canvas';
 import mapping from '../mock/mapping.json';
 import Toolbar from '../tools';
 import './css/demo.css';
@@ -13,27 +13,18 @@ export interface TagGroup {}
 export interface LineGroup {}
 
 export interface DemoState {
-  data: {
-    CanvasPosition: CanvasPosition;
-    BlockGroup: BlockGroup;
-    TagGroup: TagGroup;
-    LineGroup: LineGroup;
-  };
+  data: DataSource;
 }
 
 export default class Demo extends Component<any, DemoState> {
-  constructor(props: any) {
-    super(props);
-
-    this.state = {
-      data: {
-        CanvasPosition: { x: 0, y: 0 },
-        BlockGroup: {},
-        TagGroup: {},
-        LineGroup: {},
-      },
-    };
-  }
+  state: DemoState = {
+    data: {
+      CanvasPosition: { x: 0, y: 0 },
+      BlockGroup: {},
+      TagGroup: {},
+      LineGroup: {},
+    },
+  };
 
   componentDidMount = () => {
     this.setState({ data: mapping });

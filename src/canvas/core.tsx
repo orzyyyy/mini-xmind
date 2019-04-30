@@ -10,10 +10,46 @@ import { TagGroup, BlockGroup } from '../tools';
 import Draggable from 'react-draggable';
 import omit from 'omit.js';
 
+export type LineItem =
+  | {
+      x: number;
+      y: number;
+      bottom: number;
+      height: number;
+      left: number;
+      right: number;
+      top: number;
+      width: number;
+    }
+  | DOMRect;
+export type DataSource = {
+  CanvasPosition?: {
+    x: number;
+    y: number;
+  };
+  BlockGroup?: { [key: string]: { x: number; y: number } };
+  TagGroup?: {
+    [key: string]: {
+      x: number;
+      y: number;
+      style?: React.CSSProperties;
+      input: string;
+      editable: boolean;
+    };
+  };
+  LineGroup?: {
+    [key: string]: {
+      fromKey: string;
+      toKey: string;
+      from: LineItem;
+      to: LineItem;
+    };
+  };
+};
 export interface CanvasProps {
   style?: any;
   className?: string;
-  data?: any;
+  data?: DataSource;
   orientation?: 'h' | 'v' | 'horizonal' | 'vertical' | string;
   blockClassName?: string;
   tagClassName?: string;
