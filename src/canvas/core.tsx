@@ -140,9 +140,11 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
     this.handleUnityAllDatas(tagProps, 'TagGroup');
   };
 
-  handleUnityAllDatas = (data: any, type: string) => {
+  handleUnityAllDatas = (data?: any, type?: string) => {
     const { onChange } = this.props;
-    dataCollector[type] = data;
+    if (data && type) {
+      dataCollector[type] = data;
+    }
     if (onChange) {
       onChange(dataCollector);
     }
@@ -166,6 +168,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
           x: clientX - defaultWidth / 2 - position.x,
           y: clientY - defaultHeight / 2 - position.y,
         };
+        this.handleUnityAllDatas(blockProps, 'BlockGroup');
         this.setState({ blockProps });
         break;
 
@@ -177,6 +180,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
           y: clientY - defaultHeight / 2 - position.y,
           editable: true,
         };
+        this.handleUnityAllDatas(tagProps, 'TagGroup');
         this.setState({ tagProps });
         break;
       default:
@@ -207,6 +211,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
         delete dataCollector.LineGroup[lineKey];
       }
     }
+    this.handleUnityAllDatas();
     this.setState({});
   };
 
