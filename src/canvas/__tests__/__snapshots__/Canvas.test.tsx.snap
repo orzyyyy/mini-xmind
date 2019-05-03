@@ -2226,7 +2226,19 @@ exports[`Canvas when data is null, it should render correctly 1`] = `
 exports[`Canvas when data is null, it should render correctly 2`] = `
 <Canvas
   className=""
-  data={Object {}}
+  data={
+    Object {
+      "BlockGroup": Object {},
+      "CanvasPosition": Object {
+        "gap": 1,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+      },
+      "LineGroup": Object {},
+      "TagGroup": Object {},
+    }
+  }
   orientation="h"
   style={
     Object {
@@ -2305,7 +2317,19 @@ exports[`Canvas when data is null, it should render correctly 2`] = `
     >
       <div
         className="Canvas react-draggable"
-        data={Object {}}
+        data={
+          Object {
+            "BlockGroup": Object {},
+            "CanvasPosition": Object {
+              "gap": 1,
+              "x": 0,
+              "y": 0,
+              "z": 0,
+            },
+            "LineGroup": Object {},
+            "TagGroup": Object {},
+          }
+        }
         onDragOver={[Function]}
         onDrop={[Function]}
         onMouseDown={[Function]}

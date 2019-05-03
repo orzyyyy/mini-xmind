@@ -31,21 +31,11 @@ const addBlockDom = (lineData: any, targetBlockDOM: any) => {
   return lineData;
 };
 
+export type BlockProps = { [blockKey: string]: { x: number; y: number } };
 export interface BlockGroupProps {
   className?: string;
-  data: { [blockKey: string]: { x: number; y: number } };
-  lineData: {
-    [lineKey: string]: {
-      x: number;
-      y: number;
-      width: number;
-      height: number;
-      top: number;
-      right: number;
-      bottom: number;
-      left: number;
-    };
-  };
+  data?: BlockProps;
+  lineData?: any;
   onChange?: (data: any, lineData?: any) => void;
   offset?: { x: number; y: number };
   onContextMenu?: (item: ContextMenuProps) => void;
@@ -86,7 +76,8 @@ export default class BlockGroup extends Component<
       return;
     }
     const firstLine: any = Object.values(lineData)[0];
-    const hasNewLine = keysLength(lineData) !== keysLength(prevProps.lineData);
+    const hasNewLine =
+      keysLength(lineData) !== keysLength(prevProps.lineData || {});
     if (!(firstLine && firstLine.from)) {
       if (hasNewLine || keysLength(lineData) !== 0) {
         if (onChange) {
@@ -112,7 +103,9 @@ export default class BlockGroup extends Component<
 
   handleDrag = ({ x, y }: { x: number; y: number }, blockKey: string) => {
     const { data, onChange, lineData } = this.props;
-    data[blockKey] = Object.assign({}, data[blockKey], { x, y });
+    if (data) {
+      data[blockKey] = Object.assign({}, data[blockKey], { x, y });
+    }
     if (onChange) {
       onChange(data, addBlockDom(lineData, blockDOM));
     }

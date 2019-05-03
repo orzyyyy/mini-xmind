@@ -1,9 +1,29 @@
 import React, { Component } from 'react';
 import { SteppedLineTo } from '../line';
 
+export type LineItem =
+  | {
+      x: number;
+      y: number;
+      bottom: number;
+      height: number;
+      left: number;
+      right: number;
+      top: number;
+      width: number;
+    }
+  | DOMRect;
+export type LineProps = {
+  [key: string]: {
+    fromKey: string;
+    toKey: string;
+    from: LineItem;
+    to: LineItem;
+  };
+};
 export interface LineGroupProps {
   offset?: { x: number; y: number };
-  data?: any;
+  data?: LineProps;
   orientation?: 'h' | 'v' | 'horizonal' | 'vertical' | string;
   className?: string;
 }
@@ -21,7 +41,7 @@ export default class LineGroup extends Component<
   };
 
   static getDerivedStateFromProps(nextProps: LineGroupProps) {
-    const data = nextProps.data;
+    const data = nextProps.data || {};
     const newState: any = {};
     for (const key of Object.keys(data)) {
       const { from, to } = data[key];

@@ -176,4 +176,18 @@ describe('Canvas', () => {
       .onWheel(null);
     expect(onWheel).toHaveBeenCalledWith(mapping, null);
   });
+
+  it('onChange', () => {
+    if (process.env.LIB_DIR === 'dist') {
+      return;
+    }
+    const wrapper = createWrapper();
+    const onChange = jest.fn();
+    wrapper.setProps({ data: mapping, onChange });
+    wrapper
+      .find('BlockGroup')
+      .props()
+      .onChange(null);
+    expect(onChange).toHaveBeenCalled();
+  });
 });

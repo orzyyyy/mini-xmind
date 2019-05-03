@@ -1,69 +1,44 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
-import LineGroup from '../tools/LineGroup';
+import LineGroup, { LineProps } from '../tools/LineGroup';
 import {
   preventDefault,
   generateKey,
   stopPropagation,
 } from '../utils/LineUtil';
-import { TagGroup, BlockGroup } from '../tools';
+import TagGroup, { TagGroupItem } from '../tools/TagGroup';
+import BlockGroup, { BlockProps } from '../tools/BlockGroup';
 import Draggable from 'react-draggable';
 import omit from 'omit.js';
 
-export type LineItem =
-  | {
-      x: number;
-      y: number;
-      bottom: number;
-      height: number;
-      left: number;
-      right: number;
-      top: number;
-      width: number;
-    }
-  | DOMRect;
+export type CanvasPositionProps = {
+  x: number;
+  y: number;
+  z: number;
+  gap: number;
+};
 export type DataSource = {
-  CanvasPosition?: {
-    x: number;
-    y: number;
-    z: number;
-    gap: number;
-  };
-  BlockGroup?: { [key: string]: { x: number; y: number } };
-  TagGroup?: {
-    [key: string]: {
-      x: number;
-      y: number;
-      style?: React.CSSProperties;
-      input: string;
-      editable: boolean;
-    };
-  };
-  LineGroup?: {
-    [key: string]: {
-      fromKey: string;
-      toKey: string;
-      from: LineItem;
-      to: LineItem;
-    };
-  };
+  CanvasPosition?: CanvasPositionProps;
+  BlockGroup?: BlockProps;
+  TagGroup?: TagGroupItem;
+  LineGroup?: LineProps;
 };
 export interface CanvasProps {
-  style?: any;
+  style?: React.CSSProperties;
   className?: string;
   data?: DataSource;
-  orientation?: 'h' | 'v' | 'horizonal' | 'vertical' | string;
+  orientation?: 'h' | 'v' | 'horizonal' | 'vertical';
   blockClassName?: string;
   tagClassName?: string;
   lineClassName?: string;
-  onChange: (item: any) => void;
-  onWheel?: (item: any, event?: any) => void;
+  onChange: (item: DataSource) => void;
+  onWheel?: (item: DataSource, event?: any) => void;
 }
 export interface CanvasState {
-  blockProps?: any;
-  linesProps?: any;
+  blockProps?: BlockProps;
+  linesProps?: LineProps;
   tagProps?: any;
-  position: { x: number; y: number; z: number; gap: number };
+  position: CanvasPositionProps;
 }
 export type ContextMenuProps = {
   event: Event;
@@ -71,13 +46,19 @@ export type ContextMenuProps = {
   group: string;
 };
 
+const defaultDataSource = {
+  CanvasPosition: { x: 0, y: 0, z: 0, gap: 1 },
+  BlockGroup: {},
+  TagGroup: {},
+  LineGroup: {},
+};
 const dataCollector: any = {};
 
 export default class Canvas extends Component<CanvasProps, CanvasState> {
   static defaultProps = {
     style: {},
     className: '',
-    data: {},
+    data: defaultDataSource,
     orientation: 'h',
   };
 
@@ -85,7 +66,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
     nextProps: CanvasProps,
     nextState: CanvasState,
   ) {
-    const data = nextProps.data || {};
+    const data = nextProps.data || defaultDataSource;
     // hack
     // don't know why when change Input in TagGroup,
     // it would return an event object that unexpected
@@ -127,7 +108,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
   };
 
   // to repaint Line instantly
-  handleBlockChange = (blockProps: any, linesProps: any) => {
+  handleBlockChange = (blockProps: BlockProps, linesProps: LineProps) => {
     this.handleUnityAllDatas(blockProps, 'BlockGroup');
     this.handleUnityAllDatas(linesProps, 'LineGroup');
     this.setState({ blockProps });
@@ -140,7 +121,10 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
     this.handleUnityAllDatas(tagProps, 'TagGroup');
   };
 
-  handleUnityAllDatas = (data?: any, type?: string) => {
+  handleUnityAllDatas = (
+    data?: BlockProps | TagGroupItem | LineProps | CanvasPositionProps,
+    type?: string,
+  ) => {
     const { onChange } = this.props;
     if (data && type) {
       dataCollector[type] = data;
@@ -164,12 +148,14 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
 
     switch (value) {
       case 'block':
-        blockProps[generateKey('block')] = {
-          x: clientX - defaultWidth / 2 - position.x,
-          y: clientY - defaultHeight / 2 - position.y,
-        };
-        this.handleUnityAllDatas(blockProps, 'BlockGroup');
-        this.setState({ blockProps });
+        if (blockProps) {
+          blockProps[generateKey('block')] = {
+            x: clientX - defaultWidth / 2 - position.x,
+            y: clientY - defaultHeight / 2 - position.y,
+          };
+          this.handleUnityAllDatas(blockProps, 'BlockGroup');
+          this.setState({ blockProps });
+        }
         break;
 
       case 'input':
@@ -205,6 +191,9 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
   handleRightClick = ({ key, event, group }: ContextMenuProps) => {
     preventDefault(event);
     delete dataCollector[group][key];
+    if (!dataCollector.LineGroup) {
+      return;
+    }
     for (const lineKey of Object.keys(dataCollector.LineGroup)) {
       const { fromKey, toKey } = dataCollector.LineGroup[lineKey];
       if (group === 'BlockGroup' && (fromKey === key || toKey === key)) {
@@ -244,7 +233,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
           onDragOver={preventDefault}
           onDrop={this.onDrop}
           onWheel={this.handleOnWhell}
-          {...omit(rest, ['onWheel'])}
+          {...omit(rest, ['onWheel', 'onChange'])}
         >
           <BlockGroup
             offset={position}

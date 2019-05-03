@@ -6,14 +6,24 @@ import './css/TagGroup.css';
 import { stopPropagation } from '../utils/LineUtil';
 import { ContextMenuProps } from '../canvas/core';
 
+export type TagGroupItem = {
+  [key: string]: {
+    x: number;
+    y: number;
+    style?: React.CSSProperties;
+    input: string;
+    editable: boolean;
+    className?: string;
+  };
+};
 export interface TagGroupProps {
-  data?: any;
-  onChange?: (data: any) => void;
+  data: TagGroupItem;
+  onChange?: (data: TagGroupItem) => void;
   className?: string;
   onContextMenu?: (item: ContextMenuProps) => void;
 }
 export interface TagGroupState {
-  data?: any;
+  data: TagGroupItem;
 }
 
 export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
@@ -24,7 +34,8 @@ export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
     if (
       Object.keys(nextProps.data || {}).length !==
         Object.keys(nextState.data || {}).length &&
-      nextProps.onChange
+      nextProps.onChange &&
+      nextProps.data
     ) {
       nextProps.onChange(nextProps.data);
     }
@@ -55,7 +66,7 @@ export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
     const { onChange } = this.props;
     const { data } = this.state;
     data[key] = item;
-    data[key][targetKey] = targetValue;
+    (data as any)[key][targetKey] = targetValue;
 
     if (onChange) {
       onChange(data);
