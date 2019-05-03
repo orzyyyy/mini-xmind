@@ -52,7 +52,7 @@ const defaultDataSource = {
   TagGroup: {},
   LineGroup: {},
 };
-const dataCollector: DataSource = defaultDataSource;
+const dataCollector: any = {};
 
 export default class Canvas extends Component<CanvasProps, CanvasState> {
   static defaultProps = {
@@ -127,7 +127,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
   ) => {
     const { onChange } = this.props;
     if (data && type) {
-      (dataCollector as any)[type] = data;
+      dataCollector[type] = data;
     }
     if (onChange) {
       onChange(dataCollector);
@@ -190,7 +190,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
 
   handleRightClick = ({ key, event, group }: ContextMenuProps) => {
     preventDefault(event);
-    delete (dataCollector as any)[group][key];
+    delete dataCollector[group][key];
     if (!dataCollector.LineGroup) {
       return;
     }
@@ -233,7 +233,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
           onDragOver={preventDefault}
           onDrop={this.onDrop}
           onWheel={this.handleOnWhell}
-          {...omit(rest, ['onWheel'])}
+          {...omit(rest, ['onWheel', 'onChange'])}
         >
           <BlockGroup
             offset={position}
