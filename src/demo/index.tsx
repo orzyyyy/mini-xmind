@@ -1,30 +1,11 @@
 import React, { Component } from 'react';
-import Canvas, { DataSource } from '../canvas';
+import Canvas from '../canvas';
 import mapping from '../mock/mapping.json';
 import Toolbar from '../tools';
 import './css/demo.css';
 
-export interface CanvasPosition {
-  x: number;
-  y: number;
-}
-export interface BlockGroup {}
-export interface TagGroup {}
-export interface LineGroup {}
-
-export interface DemoState {
-  data: DataSource;
-}
-
-export default class Demo extends Component<any, DemoState> {
-  state: DemoState = {
-    data: {
-      CanvasPosition: { x: 0, y: 0, z: 0, gap: 1 },
-      BlockGroup: {},
-      TagGroup: {},
-      LineGroup: {},
-    },
-  };
+export default class Demo extends Component {
+  state = { data: {} };
 
   componentDidMount = () => {
     this.setState({ data: mapping });

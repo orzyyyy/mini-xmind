@@ -11,10 +11,10 @@ export const isSameCoordinate = (
   if (!currentKey) {
     return false;
   }
-  const currentProps = nextProps.data[currentKey];
+  const currentProps = (nextProps.data as any)[currentKey];
   const currentState = nextState.data[currentKey];
 
-  if (currentProps.x != currentState.x || currentProps.y != currentState.y) {
+  if (currentProps.x !== currentState.x || currentProps.y !== currentState.y) {
     return true;
   }
 
