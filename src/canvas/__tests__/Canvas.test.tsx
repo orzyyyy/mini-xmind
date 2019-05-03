@@ -178,6 +178,9 @@ describe('Canvas', () => {
   });
 
   it('onChange', () => {
+    if (process.env.LIB_DIR === 'dist') {
+      return;
+    }
     const wrapper = createWrapper();
     const onChange = jest.fn();
     wrapper.setProps({ data: mapping, onChange });
