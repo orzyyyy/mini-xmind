@@ -24,7 +24,9 @@
   "license": "MIT",
   "main": "lib/index",
   "module": "es/index.js",
-  "sideEffects": false,
+  "sideEffects": [
+    "*.css"
+  ],
   "dependencies": {
     "antd": "^3.16.6",
     "react-draggable": "^3.3.0"
