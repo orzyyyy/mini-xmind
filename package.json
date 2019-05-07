@@ -1,6 +1,6 @@
 {
   "name": "mini-xmind",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "scripts": {
     "start": "nino go -e ./src/go",
     "test": "nino test",
