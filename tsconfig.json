@@ -10,7 +10,8 @@
     "noImplicitAny": true,
     "target": "es6",
     "lib": ["dom", "es7"],
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "module": "esNext"
   },
   "exclude": [
     "node_modules",
