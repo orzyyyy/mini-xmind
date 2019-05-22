@@ -56,23 +56,17 @@ export default class BlockGroup extends Component<
       lineData: nextProps.lineData,
     };
   }
-  private checkBlockClickList: any;
 
-  constructor(props: BlockGroupProps) {
-    super(props);
+  state: BlockGroupState = {
+    data: {},
+    lineData: {},
+  };
 
-    this.state = {
-      data: {},
-      lineData: {},
-    };
-
-    // for Line, two point create a line
-    this.checkBlockClickList = {};
-  }
+  private checkBlockClickList: any = {};
 
   componentDidUpdate = (prevProps: BlockGroupProps) => {
     const { lineData, onChange, data } = this.props;
-    if (!lineData) {
+    if (keysLength(lineData) === 0) {
       return;
     }
     const firstLine: any = Object.values(lineData)[0];
