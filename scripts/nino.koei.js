@@ -20,6 +20,10 @@ module.exports = {
         from: path.join(process.cwd(), '.circleci/config.yml'),
         to: path.join(process.cwd(), 'dist/.circleci/config.yml'),
       },
+      {
+        from: path.join(process.cwd(), 'src/favicon.ico'),
+        to: path.join(process.cwd(), 'dist/favicon.ico'),
+      },
     ]),
   ],
 };
