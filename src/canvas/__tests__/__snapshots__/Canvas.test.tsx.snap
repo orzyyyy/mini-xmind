@@ -365,6 +365,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
           }
           onChange={[Function]}
           onContextMenu={[Function]}
+          renderLine={[Function]}
         >
           <Draggable
             allowAnyClick={false}
@@ -384,7 +385,6 @@ exports[`Canvas Canvas renders correctly 1`] = `
             enableUserSelectHack={true}
             grid={null}
             handle={null}
-            key="block-623187"
             offsetParent={null}
             onDrag={[Function]}
             onMouseDown={[Function]}
@@ -491,7 +491,6 @@ exports[`Canvas Canvas renders correctly 1`] = `
             enableUserSelectHack={true}
             grid={null}
             handle={null}
-            key="block-624018"
             offsetParent={null}
             onDrag={[Function]}
             onMouseDown={[Function]}
@@ -598,7 +597,6 @@ exports[`Canvas Canvas renders correctly 1`] = `
             enableUserSelectHack={true}
             grid={null}
             handle={null}
-            key="block-73377"
             offsetParent={null}
             onDrag={[Function]}
             onMouseDown={[Function]}
@@ -687,1003 +685,1003 @@ exports[`Canvas Canvas renders correctly 1`] = `
               />
             </DraggableCore>
           </Draggable>
-        </BlockGroup>
-        <LineGroup
-          data={
-            Object {
-              "line-592694": Object {
-                "from": Object {
-                  "bottom": 0,
-                  "height": 0,
-                  "left": 0,
-                  "right": 0,
-                  "top": 0,
-                  "width": 0,
+          <LineGroup
+            data={
+              Object {
+                "line-592694": Object {
+                  "from": Object {
+                    "bottom": 0,
+                    "height": 0,
+                    "left": 0,
+                    "right": 0,
+                    "top": 0,
+                    "width": 0,
+                  },
+                  "fromKey": "block-623187",
+                  "to": Object {
+                    "bottom": 0,
+                    "height": 0,
+                    "left": 0,
+                    "right": 0,
+                    "top": 0,
+                    "width": 0,
+                  },
+                  "toKey": "block-624018",
                 },
-                "fromKey": "block-623187",
-                "to": Object {
-                  "bottom": 0,
-                  "height": 0,
-                  "left": 0,
-                  "right": 0,
-                  "top": 0,
-                  "width": 0,
+                "line-77619": Object {
+                  "from": Object {
+                    "bottom": 0,
+                    "height": 0,
+                    "left": 0,
+                    "right": 0,
+                    "top": 0,
+                    "width": 0,
+                  },
+                  "fromKey": "block-73377",
+                  "to": Object {
+                    "bottom": 0,
+                    "height": 0,
+                    "left": 0,
+                    "right": 0,
+                    "top": 0,
+                    "width": 0,
+                  },
+                  "toKey": "block-623187",
                 },
-                "toKey": "block-624018",
-              },
-              "line-77619": Object {
-                "from": Object {
-                  "bottom": 0,
-                  "height": 0,
-                  "left": 0,
-                  "right": 0,
-                  "top": 0,
-                  "width": 0,
-                },
-                "fromKey": "block-73377",
-                "to": Object {
-                  "bottom": 0,
-                  "height": 0,
-                  "left": 0,
-                  "right": 0,
-                  "top": 0,
-                  "width": 0,
-                },
-                "toKey": "block-623187",
-              },
+              }
             }
-          }
-          offset={
-            Object {
-              "gap": 1,
-              "x": -67,
-              "y": 230,
-              "z": 0,
+            offset={
+              Object {
+                "gap": 1,
+                "x": -67,
+                "y": 230,
+                "z": 0,
+              }
             }
-          }
-          orientation="h"
-        >
-          <div
-            className="LineGroup"
+            orientation="h"
           >
-            <SteppedLineTo
-              className=""
-              data={
-                Object {
-                  "line-592694": Object {
-                    "from": Object {
-                      "bottom": 0,
-                      "height": 0,
-                      "left": 0,
-                      "right": 0,
-                      "top": 0,
-                      "width": 0,
-                    },
-                    "fromKey": "block-623187",
-                    "to": Object {
-                      "bottom": 0,
-                      "height": 0,
-                      "left": 0,
-                      "right": 0,
-                      "top": 0,
-                      "width": 0,
-                    },
-                    "toKey": "block-624018",
-                  },
-                  "line-77619": Object {
-                    "from": Object {
-                      "bottom": 0,
-                      "height": 0,
-                      "left": 0,
-                      "right": 0,
-                      "top": 0,
-                      "width": 0,
-                    },
-                    "fromKey": "block-73377",
-                    "to": Object {
-                      "bottom": 0,
-                      "height": 0,
-                      "left": 0,
-                      "right": 0,
-                      "top": 0,
-                      "width": 0,
-                    },
-                    "toKey": "block-623187",
-                  },
-                }
-              }
-              from={
-                Object {
-                  "bottom": 616,
-                  "height": 80,
-                  "left": 361,
-                  "right": 461,
-                  "top": 536,
-                  "width": 100,
-                  "x": 361,
-                  "y": 536,
-                }
-              }
-              key="line-77619"
-              offset={
-                Object {
-                  "gap": 1,
-                  "x": -67,
-                  "y": 230,
-                  "z": 0,
-                }
-              }
-              orientation="h"
-              style={Object {}}
-              to={
-                Object {
-                  "bottom": 428,
-                  "height": 80,
-                  "left": 65,
-                  "right": 165,
-                  "top": 348,
-                  "width": 100,
-                  "x": 65,
-                  "y": 348,
-                }
-              }
+            <div
+              className="LineGroup"
             >
-              <div
-                className="stepped-line-to"
+              <SteppedLineTo
+                className=""
+                data={
+                  Object {
+                    "line-592694": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-623187",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-624018",
+                    },
+                    "line-77619": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-73377",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-623187",
+                    },
+                  }
+                }
+                from={
+                  Object {
+                    "bottom": 616,
+                    "height": 80,
+                    "left": 361,
+                    "right": 461,
+                    "top": 536,
+                    "width": 100,
+                    "x": 361,
+                    "y": 536,
+                  }
+                }
+                key="line-77619"
+                offset={
+                  Object {
+                    "gap": 1,
+                    "x": -67,
+                    "y": 230,
+                    "z": 0,
+                  }
+                }
+                orientation="h"
+                style={Object {}}
+                to={
+                  Object {
+                    "bottom": 428,
+                    "height": 80,
+                    "left": 65,
+                    "right": 165,
+                    "top": 348,
+                    "width": 100,
+                    "x": 65,
+                    "y": 348,
+                  }
+                }
               >
-                <SteppedLine
-                  className=""
-                  data={
-                    Object {
-                      "line-592694": Object {
-                        "from": Object {
-                          "bottom": 0,
-                          "height": 0,
-                          "left": 0,
-                          "right": 0,
-                          "top": 0,
-                          "width": 0,
-                        },
-                        "fromKey": "block-623187",
-                        "to": Object {
-                          "bottom": 0,
-                          "height": 0,
-                          "left": 0,
-                          "right": 0,
-                          "top": 0,
-                          "width": 0,
-                        },
-                        "toKey": "block-624018",
-                      },
-                      "line-77619": Object {
-                        "from": Object {
-                          "bottom": 0,
-                          "height": 0,
-                          "left": 0,
-                          "right": 0,
-                          "top": 0,
-                          "width": 0,
-                        },
-                        "fromKey": "block-73377",
-                        "to": Object {
-                          "bottom": 0,
-                          "height": 0,
-                          "left": 0,
-                          "right": 0,
-                          "top": 0,
-                          "width": 0,
-                        },
-                        "toKey": "block-623187",
-                      },
-                    }
-                  }
-                  from={
-                    Object {
-                      "bottom": 616,
-                      "height": 80,
-                      "left": 361,
-                      "right": 461,
-                      "top": 536,
-                      "width": 100,
-                      "x": 361,
-                      "y": 536,
-                    }
-                  }
-                  offset={
-                    Object {
-                      "gap": 1,
-                      "x": -67,
-                      "y": 230,
-                      "z": 0,
-                    }
-                  }
-                  orientation="h"
-                  style={Object {}}
-                  to={
-                    Object {
-                      "bottom": 428,
-                      "height": 80,
-                      "left": 65,
-                      "right": 165,
-                      "top": 348,
-                      "width": 100,
-                      "x": 65,
-                      "y": 348,
-                    }
-                  }
-                  x0={478}
-                  x1={182}
-                  y0={346}
-                  y1={158}
+                <div
+                  className="stepped-line-to"
                 >
-                  <div
-                    className="stepped-line"
+                  <SteppedLine
+                    className=""
+                    data={
+                      Object {
+                        "line-592694": Object {
+                          "from": Object {
+                            "bottom": 0,
+                            "height": 0,
+                            "left": 0,
+                            "right": 0,
+                            "top": 0,
+                            "width": 0,
+                          },
+                          "fromKey": "block-623187",
+                          "to": Object {
+                            "bottom": 0,
+                            "height": 0,
+                            "left": 0,
+                            "right": 0,
+                            "top": 0,
+                            "width": 0,
+                          },
+                          "toKey": "block-624018",
+                        },
+                        "line-77619": Object {
+                          "from": Object {
+                            "bottom": 0,
+                            "height": 0,
+                            "left": 0,
+                            "right": 0,
+                            "top": 0,
+                            "width": 0,
+                          },
+                          "fromKey": "block-73377",
+                          "to": Object {
+                            "bottom": 0,
+                            "height": 0,
+                            "left": 0,
+                            "right": 0,
+                            "top": 0,
+                            "width": 0,
+                          },
+                          "toKey": "block-623187",
+                        },
+                      }
+                    }
+                    from={
+                      Object {
+                        "bottom": 616,
+                        "height": 80,
+                        "left": 361,
+                        "right": 461,
+                        "top": 536,
+                        "width": 100,
+                        "x": 361,
+                        "y": 536,
+                      }
+                    }
+                    offset={
+                      Object {
+                        "gap": 1,
+                        "x": -67,
+                        "y": 230,
+                        "z": 0,
+                      }
+                    }
+                    orientation="h"
+                    style={Object {}}
+                    to={
+                      Object {
+                        "bottom": 428,
+                        "height": 80,
+                        "left": 65,
+                        "right": 165,
+                        "top": 348,
+                        "width": 100,
+                        "x": 65,
+                        "y": 348,
+                      }
+                    }
+                    x0={478}
+                    x1={182}
+                    y0={346}
+                    y1={158}
                   >
-                    <Line
-                      className=""
-                      data={
-                        Object {
-                          "line-592694": Object {
-                            "from": Object {
-                              "bottom": 0,
-                              "height": 0,
-                              "left": 0,
-                              "right": 0,
-                              "top": 0,
-                              "width": 0,
-                            },
-                            "fromKey": "block-623187",
-                            "to": Object {
-                              "bottom": 0,
-                              "height": 0,
-                              "left": 0,
-                              "right": 0,
-                              "top": 0,
-                              "width": 0,
-                            },
-                            "toKey": "block-624018",
-                          },
-                          "line-77619": Object {
-                            "from": Object {
-                              "bottom": 0,
-                              "height": 0,
-                              "left": 0,
-                              "right": 0,
-                              "top": 0,
-                              "width": 0,
-                            },
-                            "fromKey": "block-73377",
-                            "to": Object {
-                              "bottom": 0,
-                              "height": 0,
-                              "left": 0,
-                              "right": 0,
-                              "top": 0,
-                              "width": 0,
-                            },
-                            "toKey": "block-623187",
-                          },
-                        }
-                      }
-                      from={
-                        Object {
-                          "bottom": 616,
-                          "height": 80,
-                          "left": 361,
-                          "right": 461,
-                          "top": 536,
-                          "width": 100,
-                          "x": 361,
-                          "y": 536,
-                        }
-                      }
-                      offset={
-                        Object {
-                          "gap": 1,
-                          "x": -67,
-                          "y": 230,
-                          "z": 0,
-                        }
-                      }
-                      orientation="h"
-                      style={Object {}}
-                      to={
-                        Object {
-                          "bottom": 428,
-                          "height": 80,
-                          "left": 65,
-                          "right": 165,
-                          "top": 348,
-                          "width": 100,
-                          "x": 65,
-                          "y": 348,
-                        }
-                      }
-                      x0={478}
-                      x1={330}
-                      y0={346}
-                      y1={346}
+                    <div
+                      className="stepped-line"
                     >
-                      <div
-                        className="line-core"
-                        style={
+                      <Line
+                        className=""
+                        data={
                           Object {
-                            "left": "478px",
-                            "top": "346px",
-                            "transform": "rotate(180deg)",
-                            "width": "148px",
+                            "line-592694": Object {
+                              "from": Object {
+                                "bottom": 0,
+                                "height": 0,
+                                "left": 0,
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              },
+                              "fromKey": "block-623187",
+                              "to": Object {
+                                "bottom": 0,
+                                "height": 0,
+                                "left": 0,
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              },
+                              "toKey": "block-624018",
+                            },
+                            "line-77619": Object {
+                              "from": Object {
+                                "bottom": 0,
+                                "height": 0,
+                                "left": 0,
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              },
+                              "fromKey": "block-73377",
+                              "to": Object {
+                                "bottom": 0,
+                                "height": 0,
+                                "left": 0,
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              },
+                              "toKey": "block-623187",
+                            },
                           }
                         }
-                      />
-                    </Line>
-                    <Line
-                      className=""
-                      data={
-                        Object {
-                          "line-592694": Object {
-                            "from": Object {
-                              "bottom": 0,
-                              "height": 0,
-                              "left": 0,
-                              "right": 0,
-                              "top": 0,
-                              "width": 0,
-                            },
-                            "fromKey": "block-623187",
-                            "to": Object {
-                              "bottom": 0,
-                              "height": 0,
-                              "left": 0,
-                              "right": 0,
-                              "top": 0,
-                              "width": 0,
-                            },
-                            "toKey": "block-624018",
-                          },
-                          "line-77619": Object {
-                            "from": Object {
-                              "bottom": 0,
-                              "height": 0,
-                              "left": 0,
-                              "right": 0,
-                              "top": 0,
-                              "width": 0,
-                            },
-                            "fromKey": "block-73377",
-                            "to": Object {
-                              "bottom": 0,
-                              "height": 0,
-                              "left": 0,
-                              "right": 0,
-                              "top": 0,
-                              "width": 0,
-                            },
-                            "toKey": "block-623187",
-                          },
-                        }
-                      }
-                      from={
-                        Object {
-                          "bottom": 616,
-                          "height": 80,
-                          "left": 361,
-                          "right": 461,
-                          "top": 536,
-                          "width": 100,
-                          "x": 361,
-                          "y": 536,
-                        }
-                      }
-                      offset={
-                        Object {
-                          "gap": 1,
-                          "x": -67,
-                          "y": 230,
-                          "z": 0,
-                        }
-                      }
-                      orientation="h"
-                      style={Object {}}
-                      to={
-                        Object {
-                          "bottom": 428,
-                          "height": 80,
-                          "left": 65,
-                          "right": 165,
-                          "top": 348,
-                          "width": 100,
-                          "x": 65,
-                          "y": 348,
-                        }
-                      }
-                      x0={182}
-                      x1={330}
-                      y0={158}
-                      y1={158}
-                    >
-                      <div
-                        className="line-core"
-                        style={
+                        from={
                           Object {
-                            "left": "182px",
-                            "top": "158px",
-                            "transform": "rotate(0deg)",
-                            "width": "148px",
+                            "bottom": 616,
+                            "height": 80,
+                            "left": 361,
+                            "right": 461,
+                            "top": 536,
+                            "width": 100,
+                            "x": 361,
+                            "y": 536,
                           }
                         }
-                      />
-                    </Line>
-                    <Line
-                      className=""
-                      data={
-                        Object {
-                          "line-592694": Object {
-                            "from": Object {
-                              "bottom": 0,
-                              "height": 0,
-                              "left": 0,
-                              "right": 0,
-                              "top": 0,
-                              "width": 0,
-                            },
-                            "fromKey": "block-623187",
-                            "to": Object {
-                              "bottom": 0,
-                              "height": 0,
-                              "left": 0,
-                              "right": 0,
-                              "top": 0,
-                              "width": 0,
-                            },
-                            "toKey": "block-624018",
-                          },
-                          "line-77619": Object {
-                            "from": Object {
-                              "bottom": 0,
-                              "height": 0,
-                              "left": 0,
-                              "right": 0,
-                              "top": 0,
-                              "width": 0,
-                            },
-                            "fromKey": "block-73377",
-                            "to": Object {
-                              "bottom": 0,
-                              "height": 0,
-                              "left": 0,
-                              "right": 0,
-                              "top": 0,
-                              "width": 0,
-                            },
-                            "toKey": "block-623187",
-                          },
-                        }
-                      }
-                      from={
-                        Object {
-                          "bottom": 616,
-                          "height": 80,
-                          "left": 361,
-                          "right": 461,
-                          "top": 536,
-                          "width": 100,
-                          "x": 361,
-                          "y": 536,
-                        }
-                      }
-                      offset={
-                        Object {
-                          "gap": 1,
-                          "x": -67,
-                          "y": 230,
-                          "z": 0,
-                        }
-                      }
-                      orientation="h"
-                      style={Object {}}
-                      to={
-                        Object {
-                          "bottom": 428,
-                          "height": 80,
-                          "left": 65,
-                          "right": 165,
-                          "top": 348,
-                          "width": 100,
-                          "x": 65,
-                          "y": 348,
-                        }
-                      }
-                      x0={330}
-                      x1={330}
-                      y0={157}
-                      y1={346}
-                    >
-                      <div
-                        className="line-core"
-                        style={
+                        offset={
                           Object {
-                            "left": "330px",
-                            "top": "157px",
-                            "transform": "rotate(90deg)",
-                            "width": "189px",
+                            "gap": 1,
+                            "x": -67,
+                            "y": 230,
+                            "z": 0,
                           }
                         }
-                      />
-                    </Line>
-                  </div>
-                </SteppedLine>
-              </div>
-            </SteppedLineTo>
-            <SteppedLineTo
-              className=""
-              data={
-                Object {
-                  "line-592694": Object {
-                    "from": Object {
-                      "bottom": 0,
-                      "height": 0,
-                      "left": 0,
-                      "right": 0,
-                      "top": 0,
-                      "width": 0,
+                        orientation="h"
+                        style={Object {}}
+                        to={
+                          Object {
+                            "bottom": 428,
+                            "height": 80,
+                            "left": 65,
+                            "right": 165,
+                            "top": 348,
+                            "width": 100,
+                            "x": 65,
+                            "y": 348,
+                          }
+                        }
+                        x0={478}
+                        x1={330}
+                        y0={346}
+                        y1={346}
+                      >
+                        <div
+                          className="line-core"
+                          style={
+                            Object {
+                              "left": "478px",
+                              "top": "346px",
+                              "transform": "rotate(180deg)",
+                              "width": "148px",
+                            }
+                          }
+                        />
+                      </Line>
+                      <Line
+                        className=""
+                        data={
+                          Object {
+                            "line-592694": Object {
+                              "from": Object {
+                                "bottom": 0,
+                                "height": 0,
+                                "left": 0,
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              },
+                              "fromKey": "block-623187",
+                              "to": Object {
+                                "bottom": 0,
+                                "height": 0,
+                                "left": 0,
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              },
+                              "toKey": "block-624018",
+                            },
+                            "line-77619": Object {
+                              "from": Object {
+                                "bottom": 0,
+                                "height": 0,
+                                "left": 0,
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              },
+                              "fromKey": "block-73377",
+                              "to": Object {
+                                "bottom": 0,
+                                "height": 0,
+                                "left": 0,
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              },
+                              "toKey": "block-623187",
+                            },
+                          }
+                        }
+                        from={
+                          Object {
+                            "bottom": 616,
+                            "height": 80,
+                            "left": 361,
+                            "right": 461,
+                            "top": 536,
+                            "width": 100,
+                            "x": 361,
+                            "y": 536,
+                          }
+                        }
+                        offset={
+                          Object {
+                            "gap": 1,
+                            "x": -67,
+                            "y": 230,
+                            "z": 0,
+                          }
+                        }
+                        orientation="h"
+                        style={Object {}}
+                        to={
+                          Object {
+                            "bottom": 428,
+                            "height": 80,
+                            "left": 65,
+                            "right": 165,
+                            "top": 348,
+                            "width": 100,
+                            "x": 65,
+                            "y": 348,
+                          }
+                        }
+                        x0={182}
+                        x1={330}
+                        y0={158}
+                        y1={158}
+                      >
+                        <div
+                          className="line-core"
+                          style={
+                            Object {
+                              "left": "182px",
+                              "top": "158px",
+                              "transform": "rotate(0deg)",
+                              "width": "148px",
+                            }
+                          }
+                        />
+                      </Line>
+                      <Line
+                        className=""
+                        data={
+                          Object {
+                            "line-592694": Object {
+                              "from": Object {
+                                "bottom": 0,
+                                "height": 0,
+                                "left": 0,
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              },
+                              "fromKey": "block-623187",
+                              "to": Object {
+                                "bottom": 0,
+                                "height": 0,
+                                "left": 0,
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              },
+                              "toKey": "block-624018",
+                            },
+                            "line-77619": Object {
+                              "from": Object {
+                                "bottom": 0,
+                                "height": 0,
+                                "left": 0,
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              },
+                              "fromKey": "block-73377",
+                              "to": Object {
+                                "bottom": 0,
+                                "height": 0,
+                                "left": 0,
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              },
+                              "toKey": "block-623187",
+                            },
+                          }
+                        }
+                        from={
+                          Object {
+                            "bottom": 616,
+                            "height": 80,
+                            "left": 361,
+                            "right": 461,
+                            "top": 536,
+                            "width": 100,
+                            "x": 361,
+                            "y": 536,
+                          }
+                        }
+                        offset={
+                          Object {
+                            "gap": 1,
+                            "x": -67,
+                            "y": 230,
+                            "z": 0,
+                          }
+                        }
+                        orientation="h"
+                        style={Object {}}
+                        to={
+                          Object {
+                            "bottom": 428,
+                            "height": 80,
+                            "left": 65,
+                            "right": 165,
+                            "top": 348,
+                            "width": 100,
+                            "x": 65,
+                            "y": 348,
+                          }
+                        }
+                        x0={330}
+                        x1={330}
+                        y0={157}
+                        y1={346}
+                      >
+                        <div
+                          className="line-core"
+                          style={
+                            Object {
+                              "left": "330px",
+                              "top": "157px",
+                              "transform": "rotate(90deg)",
+                              "width": "189px",
+                            }
+                          }
+                        />
+                      </Line>
+                    </div>
+                  </SteppedLine>
+                </div>
+              </SteppedLineTo>
+              <SteppedLineTo
+                className=""
+                data={
+                  Object {
+                    "line-592694": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-623187",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-624018",
                     },
-                    "fromKey": "block-623187",
-                    "to": Object {
-                      "bottom": 0,
-                      "height": 0,
-                      "left": 0,
-                      "right": 0,
-                      "top": 0,
-                      "width": 0,
+                    "line-77619": Object {
+                      "from": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "fromKey": "block-73377",
+                      "to": Object {
+                        "bottom": 0,
+                        "height": 0,
+                        "left": 0,
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      },
+                      "toKey": "block-623187",
                     },
-                    "toKey": "block-624018",
-                  },
-                  "line-77619": Object {
-                    "from": Object {
-                      "bottom": 0,
-                      "height": 0,
-                      "left": 0,
-                      "right": 0,
-                      "top": 0,
-                      "width": 0,
-                    },
-                    "fromKey": "block-73377",
-                    "to": Object {
-                      "bottom": 0,
-                      "height": 0,
-                      "left": 0,
-                      "right": 0,
-                      "top": 0,
-                      "width": 0,
-                    },
-                    "toKey": "block-623187",
-                  },
+                  }
                 }
-              }
-              from={
-                Object {
-                  "bottom": 428,
-                  "height": 80,
-                  "left": 65,
-                  "right": 165,
-                  "top": 348,
-                  "width": 100,
-                  "x": 65,
-                  "y": 348,
+                from={
+                  Object {
+                    "bottom": 428,
+                    "height": 80,
+                    "left": 65,
+                    "right": 165,
+                    "top": 348,
+                    "width": 100,
+                    "x": 65,
+                    "y": 348,
+                  }
                 }
-              }
-              key="line-592694"
-              offset={
-                Object {
-                  "gap": 1,
-                  "x": -67,
-                  "y": 230,
-                  "z": 0,
+                key="line-592694"
+                offset={
+                  Object {
+                    "gap": 1,
+                    "x": -67,
+                    "y": 230,
+                    "z": 0,
+                  }
                 }
-              }
-              orientation="h"
-              style={Object {}}
-              to={
-                Object {
-                  "bottom": 260,
-                  "height": 80,
-                  "left": 360,
-                  "right": 460,
-                  "top": 180,
-                  "width": 100,
-                  "x": 360,
-                  "y": 180,
+                orientation="h"
+                style={Object {}}
+                to={
+                  Object {
+                    "bottom": 260,
+                    "height": 80,
+                    "left": 360,
+                    "right": 460,
+                    "top": 180,
+                    "width": 100,
+                    "x": 360,
+                    "y": 180,
+                  }
                 }
-              }
-            >
-              <div
-                className="stepped-line-to"
               >
-                <SteppedLine
-                  className=""
-                  data={
-                    Object {
-                      "line-592694": Object {
-                        "from": Object {
-                          "bottom": 0,
-                          "height": 0,
-                          "left": 0,
-                          "right": 0,
-                          "top": 0,
-                          "width": 0,
-                        },
-                        "fromKey": "block-623187",
-                        "to": Object {
-                          "bottom": 0,
-                          "height": 0,
-                          "left": 0,
-                          "right": 0,
-                          "top": 0,
-                          "width": 0,
-                        },
-                        "toKey": "block-624018",
-                      },
-                      "line-77619": Object {
-                        "from": Object {
-                          "bottom": 0,
-                          "height": 0,
-                          "left": 0,
-                          "right": 0,
-                          "top": 0,
-                          "width": 0,
-                        },
-                        "fromKey": "block-73377",
-                        "to": Object {
-                          "bottom": 0,
-                          "height": 0,
-                          "left": 0,
-                          "right": 0,
-                          "top": 0,
-                          "width": 0,
-                        },
-                        "toKey": "block-623187",
-                      },
-                    }
-                  }
-                  from={
-                    Object {
-                      "bottom": 428,
-                      "height": 80,
-                      "left": 65,
-                      "right": 165,
-                      "top": 348,
-                      "width": 100,
-                      "x": 65,
-                      "y": 348,
-                    }
-                  }
-                  offset={
-                    Object {
-                      "gap": 1,
-                      "x": -67,
-                      "y": 230,
-                      "z": 0,
-                    }
-                  }
-                  orientation="h"
-                  style={Object {}}
-                  to={
-                    Object {
-                      "bottom": 260,
-                      "height": 80,
-                      "left": 360,
-                      "right": 460,
-                      "top": 180,
-                      "width": 100,
-                      "x": 360,
-                      "y": 180,
-                    }
-                  }
-                  x0={182}
-                  x1={477}
-                  y0={158}
-                  y1={-10}
+                <div
+                  className="stepped-line-to"
                 >
-                  <div
-                    className="stepped-line"
+                  <SteppedLine
+                    className=""
+                    data={
+                      Object {
+                        "line-592694": Object {
+                          "from": Object {
+                            "bottom": 0,
+                            "height": 0,
+                            "left": 0,
+                            "right": 0,
+                            "top": 0,
+                            "width": 0,
+                          },
+                          "fromKey": "block-623187",
+                          "to": Object {
+                            "bottom": 0,
+                            "height": 0,
+                            "left": 0,
+                            "right": 0,
+                            "top": 0,
+                            "width": 0,
+                          },
+                          "toKey": "block-624018",
+                        },
+                        "line-77619": Object {
+                          "from": Object {
+                            "bottom": 0,
+                            "height": 0,
+                            "left": 0,
+                            "right": 0,
+                            "top": 0,
+                            "width": 0,
+                          },
+                          "fromKey": "block-73377",
+                          "to": Object {
+                            "bottom": 0,
+                            "height": 0,
+                            "left": 0,
+                            "right": 0,
+                            "top": 0,
+                            "width": 0,
+                          },
+                          "toKey": "block-623187",
+                        },
+                      }
+                    }
+                    from={
+                      Object {
+                        "bottom": 428,
+                        "height": 80,
+                        "left": 65,
+                        "right": 165,
+                        "top": 348,
+                        "width": 100,
+                        "x": 65,
+                        "y": 348,
+                      }
+                    }
+                    offset={
+                      Object {
+                        "gap": 1,
+                        "x": -67,
+                        "y": 230,
+                        "z": 0,
+                      }
+                    }
+                    orientation="h"
+                    style={Object {}}
+                    to={
+                      Object {
+                        "bottom": 260,
+                        "height": 80,
+                        "left": 360,
+                        "right": 460,
+                        "top": 180,
+                        "width": 100,
+                        "x": 360,
+                        "y": 180,
+                      }
+                    }
+                    x0={182}
+                    x1={477}
+                    y0={158}
+                    y1={-10}
                   >
-                    <Line
-                      className=""
-                      data={
-                        Object {
-                          "line-592694": Object {
-                            "from": Object {
-                              "bottom": 0,
-                              "height": 0,
-                              "left": 0,
-                              "right": 0,
-                              "top": 0,
-                              "width": 0,
-                            },
-                            "fromKey": "block-623187",
-                            "to": Object {
-                              "bottom": 0,
-                              "height": 0,
-                              "left": 0,
-                              "right": 0,
-                              "top": 0,
-                              "width": 0,
-                            },
-                            "toKey": "block-624018",
-                          },
-                          "line-77619": Object {
-                            "from": Object {
-                              "bottom": 0,
-                              "height": 0,
-                              "left": 0,
-                              "right": 0,
-                              "top": 0,
-                              "width": 0,
-                            },
-                            "fromKey": "block-73377",
-                            "to": Object {
-                              "bottom": 0,
-                              "height": 0,
-                              "left": 0,
-                              "right": 0,
-                              "top": 0,
-                              "width": 0,
-                            },
-                            "toKey": "block-623187",
-                          },
-                        }
-                      }
-                      from={
-                        Object {
-                          "bottom": 428,
-                          "height": 80,
-                          "left": 65,
-                          "right": 165,
-                          "top": 348,
-                          "width": 100,
-                          "x": 65,
-                          "y": 348,
-                        }
-                      }
-                      offset={
-                        Object {
-                          "gap": 1,
-                          "x": -67,
-                          "y": 230,
-                          "z": 0,
-                        }
-                      }
-                      orientation="h"
-                      style={Object {}}
-                      to={
-                        Object {
-                          "bottom": 260,
-                          "height": 80,
-                          "left": 360,
-                          "right": 460,
-                          "top": 180,
-                          "width": 100,
-                          "x": 360,
-                          "y": 180,
-                        }
-                      }
-                      x0={182}
-                      x1={329.5}
-                      y0={158}
-                      y1={158}
+                    <div
+                      className="stepped-line"
                     >
-                      <div
-                        className="line-core"
-                        style={
+                      <Line
+                        className=""
+                        data={
                           Object {
-                            "left": "182px",
-                            "top": "158px",
-                            "transform": "rotate(0deg)",
-                            "width": "147.5px",
+                            "line-592694": Object {
+                              "from": Object {
+                                "bottom": 0,
+                                "height": 0,
+                                "left": 0,
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              },
+                              "fromKey": "block-623187",
+                              "to": Object {
+                                "bottom": 0,
+                                "height": 0,
+                                "left": 0,
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              },
+                              "toKey": "block-624018",
+                            },
+                            "line-77619": Object {
+                              "from": Object {
+                                "bottom": 0,
+                                "height": 0,
+                                "left": 0,
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              },
+                              "fromKey": "block-73377",
+                              "to": Object {
+                                "bottom": 0,
+                                "height": 0,
+                                "left": 0,
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              },
+                              "toKey": "block-623187",
+                            },
                           }
                         }
-                      />
-                    </Line>
-                    <Line
-                      className=""
-                      data={
-                        Object {
-                          "line-592694": Object {
-                            "from": Object {
-                              "bottom": 0,
-                              "height": 0,
-                              "left": 0,
-                              "right": 0,
-                              "top": 0,
-                              "width": 0,
-                            },
-                            "fromKey": "block-623187",
-                            "to": Object {
-                              "bottom": 0,
-                              "height": 0,
-                              "left": 0,
-                              "right": 0,
-                              "top": 0,
-                              "width": 0,
-                            },
-                            "toKey": "block-624018",
-                          },
-                          "line-77619": Object {
-                            "from": Object {
-                              "bottom": 0,
-                              "height": 0,
-                              "left": 0,
-                              "right": 0,
-                              "top": 0,
-                              "width": 0,
-                            },
-                            "fromKey": "block-73377",
-                            "to": Object {
-                              "bottom": 0,
-                              "height": 0,
-                              "left": 0,
-                              "right": 0,
-                              "top": 0,
-                              "width": 0,
-                            },
-                            "toKey": "block-623187",
-                          },
-                        }
-                      }
-                      from={
-                        Object {
-                          "bottom": 428,
-                          "height": 80,
-                          "left": 65,
-                          "right": 165,
-                          "top": 348,
-                          "width": 100,
-                          "x": 65,
-                          "y": 348,
-                        }
-                      }
-                      offset={
-                        Object {
-                          "gap": 1,
-                          "x": -67,
-                          "y": 230,
-                          "z": 0,
-                        }
-                      }
-                      orientation="h"
-                      style={Object {}}
-                      to={
-                        Object {
-                          "bottom": 260,
-                          "height": 80,
-                          "left": 360,
-                          "right": 460,
-                          "top": 180,
-                          "width": 100,
-                          "x": 360,
-                          "y": 180,
-                        }
-                      }
-                      x0={477}
-                      x1={329.5}
-                      y0={-10}
-                      y1={-10}
-                    >
-                      <div
-                        className="line-core"
-                        style={
+                        from={
                           Object {
-                            "left": "477px",
-                            "top": "-10px",
-                            "transform": "rotate(180deg)",
-                            "width": "147.5px",
+                            "bottom": 428,
+                            "height": 80,
+                            "left": 65,
+                            "right": 165,
+                            "top": 348,
+                            "width": 100,
+                            "x": 65,
+                            "y": 348,
                           }
                         }
-                      />
-                    </Line>
-                    <Line
-                      className=""
-                      data={
-                        Object {
-                          "line-592694": Object {
-                            "from": Object {
-                              "bottom": 0,
-                              "height": 0,
-                              "left": 0,
-                              "right": 0,
-                              "top": 0,
-                              "width": 0,
-                            },
-                            "fromKey": "block-623187",
-                            "to": Object {
-                              "bottom": 0,
-                              "height": 0,
-                              "left": 0,
-                              "right": 0,
-                              "top": 0,
-                              "width": 0,
-                            },
-                            "toKey": "block-624018",
-                          },
-                          "line-77619": Object {
-                            "from": Object {
-                              "bottom": 0,
-                              "height": 0,
-                              "left": 0,
-                              "right": 0,
-                              "top": 0,
-                              "width": 0,
-                            },
-                            "fromKey": "block-73377",
-                            "to": Object {
-                              "bottom": 0,
-                              "height": 0,
-                              "left": 0,
-                              "right": 0,
-                              "top": 0,
-                              "width": 0,
-                            },
-                            "toKey": "block-623187",
-                          },
-                        }
-                      }
-                      from={
-                        Object {
-                          "bottom": 428,
-                          "height": 80,
-                          "left": 65,
-                          "right": 165,
-                          "top": 348,
-                          "width": 100,
-                          "x": 65,
-                          "y": 348,
-                        }
-                      }
-                      offset={
-                        Object {
-                          "gap": 1,
-                          "x": -67,
-                          "y": 230,
-                          "z": 0,
-                        }
-                      }
-                      orientation="h"
-                      style={Object {}}
-                      to={
-                        Object {
-                          "bottom": 260,
-                          "height": 80,
-                          "left": 360,
-                          "right": 460,
-                          "top": 180,
-                          "width": 100,
-                          "x": 360,
-                          "y": 180,
-                        }
-                      }
-                      x0={329.5}
-                      x1={329.5}
-                      y0={-11}
-                      y1={158}
-                    >
-                      <div
-                        className="line-core"
-                        style={
+                        offset={
                           Object {
-                            "left": "329.5px",
-                            "top": "-11px",
-                            "transform": "rotate(90deg)",
-                            "width": "169px",
+                            "gap": 1,
+                            "x": -67,
+                            "y": 230,
+                            "z": 0,
                           }
                         }
-                      />
-                    </Line>
-                  </div>
-                </SteppedLine>
-              </div>
-            </SteppedLineTo>
-          </div>
-        </LineGroup>
+                        orientation="h"
+                        style={Object {}}
+                        to={
+                          Object {
+                            "bottom": 260,
+                            "height": 80,
+                            "left": 360,
+                            "right": 460,
+                            "top": 180,
+                            "width": 100,
+                            "x": 360,
+                            "y": 180,
+                          }
+                        }
+                        x0={182}
+                        x1={329.5}
+                        y0={158}
+                        y1={158}
+                      >
+                        <div
+                          className="line-core"
+                          style={
+                            Object {
+                              "left": "182px",
+                              "top": "158px",
+                              "transform": "rotate(0deg)",
+                              "width": "147.5px",
+                            }
+                          }
+                        />
+                      </Line>
+                      <Line
+                        className=""
+                        data={
+                          Object {
+                            "line-592694": Object {
+                              "from": Object {
+                                "bottom": 0,
+                                "height": 0,
+                                "left": 0,
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              },
+                              "fromKey": "block-623187",
+                              "to": Object {
+                                "bottom": 0,
+                                "height": 0,
+                                "left": 0,
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              },
+                              "toKey": "block-624018",
+                            },
+                            "line-77619": Object {
+                              "from": Object {
+                                "bottom": 0,
+                                "height": 0,
+                                "left": 0,
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              },
+                              "fromKey": "block-73377",
+                              "to": Object {
+                                "bottom": 0,
+                                "height": 0,
+                                "left": 0,
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              },
+                              "toKey": "block-623187",
+                            },
+                          }
+                        }
+                        from={
+                          Object {
+                            "bottom": 428,
+                            "height": 80,
+                            "left": 65,
+                            "right": 165,
+                            "top": 348,
+                            "width": 100,
+                            "x": 65,
+                            "y": 348,
+                          }
+                        }
+                        offset={
+                          Object {
+                            "gap": 1,
+                            "x": -67,
+                            "y": 230,
+                            "z": 0,
+                          }
+                        }
+                        orientation="h"
+                        style={Object {}}
+                        to={
+                          Object {
+                            "bottom": 260,
+                            "height": 80,
+                            "left": 360,
+                            "right": 460,
+                            "top": 180,
+                            "width": 100,
+                            "x": 360,
+                            "y": 180,
+                          }
+                        }
+                        x0={477}
+                        x1={329.5}
+                        y0={-10}
+                        y1={-10}
+                      >
+                        <div
+                          className="line-core"
+                          style={
+                            Object {
+                              "left": "477px",
+                              "top": "-10px",
+                              "transform": "rotate(180deg)",
+                              "width": "147.5px",
+                            }
+                          }
+                        />
+                      </Line>
+                      <Line
+                        className=""
+                        data={
+                          Object {
+                            "line-592694": Object {
+                              "from": Object {
+                                "bottom": 0,
+                                "height": 0,
+                                "left": 0,
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              },
+                              "fromKey": "block-623187",
+                              "to": Object {
+                                "bottom": 0,
+                                "height": 0,
+                                "left": 0,
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              },
+                              "toKey": "block-624018",
+                            },
+                            "line-77619": Object {
+                              "from": Object {
+                                "bottom": 0,
+                                "height": 0,
+                                "left": 0,
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              },
+                              "fromKey": "block-73377",
+                              "to": Object {
+                                "bottom": 0,
+                                "height": 0,
+                                "left": 0,
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              },
+                              "toKey": "block-623187",
+                            },
+                          }
+                        }
+                        from={
+                          Object {
+                            "bottom": 428,
+                            "height": 80,
+                            "left": 65,
+                            "right": 165,
+                            "top": 348,
+                            "width": 100,
+                            "x": 65,
+                            "y": 348,
+                          }
+                        }
+                        offset={
+                          Object {
+                            "gap": 1,
+                            "x": -67,
+                            "y": 230,
+                            "z": 0,
+                          }
+                        }
+                        orientation="h"
+                        style={Object {}}
+                        to={
+                          Object {
+                            "bottom": 260,
+                            "height": 80,
+                            "left": 360,
+                            "right": 460,
+                            "top": 180,
+                            "width": 100,
+                            "x": 360,
+                            "y": 180,
+                          }
+                        }
+                        x0={329.5}
+                        x1={329.5}
+                        y0={-11}
+                        y1={158}
+                      >
+                        <div
+                          className="line-core"
+                          style={
+                            Object {
+                              "left": "329.5px",
+                              "top": "-11px",
+                              "transform": "rotate(90deg)",
+                              "width": "169px",
+                            }
+                          }
+                        />
+                      </Line>
+                    </div>
+                  </SteppedLine>
+                </div>
+              </SteppedLineTo>
+            </div>
+          </LineGroup>
+        </BlockGroup>
         <TagGroup
           data={
             Object {
@@ -2199,19 +2197,21 @@ exports[`Canvas when data is null, it should render correctly 1`] = `
           }
           onChange={[Function]}
           onContextMenu={[Function]}
-        />
-        <LineGroup
-          data={Object {}}
-          offset={
-            Object {
-              "gap": 1,
-              "x": 0,
-              "y": 0,
-              "z": 0,
+          renderLine={[Function]}
+        >
+          <LineGroup
+            data={Object {}}
+            offset={
+              Object {
+                "gap": 1,
+                "x": 0,
+                "y": 0,
+                "z": 0,
+              }
             }
-          }
-          orientation="h"
-        />
+            orientation="h"
+          />
+        </BlockGroup>
         <TagGroup
           data={Object {}}
           onChange={[Function]}
@@ -2360,19 +2360,21 @@ exports[`Canvas when data is null, it should render correctly 2`] = `
           }
           onChange={[Function]}
           onContextMenu={[Function]}
-        />
-        <LineGroup
-          data={Object {}}
-          offset={
-            Object {
-              "gap": 1,
-              "x": 0,
-              "y": 0,
-              "z": 0,
+          renderLine={[Function]}
+        >
+          <LineGroup
+            data={Object {}}
+            offset={
+              Object {
+                "gap": 1,
+                "x": 0,
+                "y": 0,
+                "z": 0,
+              }
             }
-          }
-          orientation="h"
-        />
+            orientation="h"
+          />
+        </BlockGroup>
         <TagGroup
           data={Object {}}
           onChange={[Function]}
@@ -2497,19 +2499,21 @@ exports[`Canvas when data is null, it should render correctly 3`] = `
           }
           onChange={[Function]}
           onContextMenu={[Function]}
-        />
-        <LineGroup
-          data={Object {}}
-          offset={
-            Object {
-              "gap": 1,
-              "x": 0,
-              "y": 0,
-              "z": 0,
+          renderLine={[Function]}
+        >
+          <LineGroup
+            data={Object {}}
+            offset={
+              Object {
+                "gap": 1,
+                "x": 0,
+                "y": 0,
+                "z": 0,
+              }
             }
-          }
-          orientation="h"
-        />
+            orientation="h"
+          />
+        </BlockGroup>
         <TagGroup
           data={Object {}}
           onChange={[Function]}

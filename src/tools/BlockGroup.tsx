@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import Draggable from 'react-draggable';
 import { generateKey, stopPropagation } from '../utils/LineUtil';
-import omit from 'omit.js';
 import './css/BlockGroup.css';
 import { ContextMenuProps } from '../canvas/core';
 
@@ -39,6 +38,7 @@ export interface BlockGroupProps {
   onChange?: (data: any, lineData?: any) => void;
   offset?: { x: number; y: number };
   onContextMenu?: (item: ContextMenuProps) => void;
+  renderLine?: (lineData: any) => void;
 }
 export interface BlockGroupState {
   data?: any;
@@ -221,37 +221,49 @@ export default class BlockGroup extends Component<
       className: parentClassName,
       onChange,
       onContextMenu,
+      renderLine,
+      lineData,
       ...rest
     } = this.props;
     const { data } = this.state;
 
-    return Object.keys(data).map(blockKey => {
-      const { x, y, className: blockClassName } = data[blockKey];
-      return (
-        <Draggable
-          key={blockKey}
-          position={{ x, y }}
-          onDrag={(_, item) => this.handleDrag(item, blockKey)}
-          onStart={this.handleDragStart}
-        >
-          <div
-            className={classNames(
-              'block-group',
-              'animate-appear',
-              parentClassName,
-              blockClassName,
-            )}
-            onClick={_ => this.handleBlockClick(blockKey)}
-            ref={ref => this.saveBlock(ref, blockKey)}
-            onContextMenu={(e: any) => {
-              if (onContextMenu) {
-                onContextMenu({ event: e, key: blockKey, group: 'BlockGroup' });
-              }
-            }}
-            {...omit(rest, ['lineData'])}
-          />
-        </Draggable>
-      );
-    });
+    return (
+      <>
+        {Object.keys(data).map(blockKey => {
+          const { x, y, className: blockClassName } = data[blockKey];
+          return (
+            <React.Fragment key={blockKey}>
+              <Draggable
+                position={{ x, y }}
+                onDrag={(_, item) => this.handleDrag(item, blockKey)}
+                onStart={this.handleDragStart}
+              >
+                <div
+                  className={classNames(
+                    'block-group',
+                    'animate-appear',
+                    parentClassName,
+                    blockClassName,
+                  )}
+                  onClick={_ => this.handleBlockClick(blockKey)}
+                  ref={ref => this.saveBlock(ref, blockKey)}
+                  onContextMenu={(e: any) => {
+                    if (onContextMenu) {
+                      onContextMenu({
+                        event: e,
+                        key: blockKey,
+                        group: 'BlockGroup',
+                      });
+                    }
+                  }}
+                  {...rest}
+                />
+              </Draggable>
+            </React.Fragment>
+          );
+        })}
+        {renderLine && renderLine(addBlockDom(lineData, blockDOM))}
+      </>
+    );
   }
 }

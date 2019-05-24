@@ -52,17 +52,12 @@ export default class LineGroup extends Component<
         break;
       }
     }
-
     return { data: newState };
   }
 
-  constructor(props: LineGroupProps) {
-    super(props);
-
-    this.state = {
-      data: {},
-    };
-  }
+  state: LineGroupState = {
+    data: {},
+  };
 
   generateLines = (data: any) => {
     const { offset, ...rest } = this.props;

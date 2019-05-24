@@ -112,9 +112,6 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
     this.handleUnityAllDatas(blockProps, 'BlockGroup');
     this.handleUnityAllDatas(linesProps, 'LineGroup');
     this.setState({ blockProps });
-    if (linesProps) {
-      this.setState({ linesProps });
-    }
   };
 
   handleTagChange = (tagProps: any) => {
@@ -242,12 +239,14 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
             lineData={linesProps}
             className={blockClassName}
             onContextMenu={this.handleRightClick}
-          />
-          <LineGroup
-            data={linesProps}
-            offset={position}
-            orientation={orientation}
-            className={lineClassName}
+            renderLine={lineData => (
+              <LineGroup
+                data={lineData}
+                offset={position}
+                orientation={orientation}
+                className={lineClassName}
+              />
+            )}
           />
           <TagGroup
             data={tagProps}
