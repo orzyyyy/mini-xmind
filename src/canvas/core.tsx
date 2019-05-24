@@ -67,17 +67,6 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
     nextState: CanvasState,
   ) {
     const data = nextProps.data || defaultDataSource;
-    // hack
-    // don't know why when change Input in TagGroup,
-    // it would return an event object that unexpected
-    if (Object.keys(data).length > 4) {
-      return {
-        blockProps: dataCollector.BlockGroup,
-        tagProps: dataCollector.TagGroup,
-        linesProps: dataCollector.LineGroup,
-        position: dataCollector.CanvasPosition,
-      };
-    }
     if (Object.keys(data).length !== 0) {
       const {
         BlockGroup: blockProps,
@@ -100,6 +89,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
     }
     return null;
   }
+
   state: CanvasState = {
     blockProps: {},
     linesProps: {},

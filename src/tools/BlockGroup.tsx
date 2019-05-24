@@ -66,9 +66,6 @@ export default class BlockGroup extends Component<
 
   componentDidUpdate = (prevProps: BlockGroupProps) => {
     const { lineData, onChange, data } = this.props;
-    if (keysLength(lineData) === 0) {
-      return;
-    }
     const firstLine: any = Object.values(lineData)[0];
     const hasNewLine =
       keysLength(lineData) !== keysLength(prevProps.lineData || {});
@@ -232,34 +229,33 @@ export default class BlockGroup extends Component<
         {Object.keys(data).map(blockKey => {
           const { x, y, className: blockClassName } = data[blockKey];
           return (
-            <React.Fragment key={blockKey}>
-              <Draggable
-                position={{ x, y }}
-                onDrag={(_, item) => this.handleDrag(item, blockKey)}
-                onStart={this.handleDragStart}
-              >
-                <div
-                  className={classNames(
-                    'block-group',
-                    'animate-appear',
-                    parentClassName,
-                    blockClassName,
-                  )}
-                  onClick={_ => this.handleBlockClick(blockKey)}
-                  ref={ref => this.saveBlock(ref, blockKey)}
-                  onContextMenu={(e: any) => {
-                    if (onContextMenu) {
-                      onContextMenu({
-                        event: e,
-                        key: blockKey,
-                        group: 'BlockGroup',
-                      });
-                    }
-                  }}
-                  {...rest}
-                />
-              </Draggable>
-            </React.Fragment>
+            <Draggable
+              position={{ x, y }}
+              onDrag={(_, item) => this.handleDrag(item, blockKey)}
+              onStart={this.handleDragStart}
+              key={blockKey}
+            >
+              <div
+                className={classNames(
+                  'block-group',
+                  'animate-appear',
+                  parentClassName,
+                  blockClassName,
+                )}
+                onClick={_ => this.handleBlockClick(blockKey)}
+                ref={ref => this.saveBlock(ref, blockKey)}
+                onContextMenu={(e: any) => {
+                  if (onContextMenu) {
+                    onContextMenu({
+                      event: e,
+                      key: blockKey,
+                      group: 'BlockGroup',
+                    });
+                  }
+                }}
+                {...rest}
+              />
+            </Draggable>
           );
         })}
         {renderLine && renderLine(addBlockDom(lineData, blockDOM))}
