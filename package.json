@@ -22,8 +22,8 @@
     "es"
   ],
   "license": "MIT",
-  "main": "lib/index",
-  "module": "es/index.js",
+  "main": "lib",
+  "module": "es",
   "sideEffects": [
     "*.css"
   ],
