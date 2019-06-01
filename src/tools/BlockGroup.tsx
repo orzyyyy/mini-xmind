@@ -49,6 +49,11 @@ export default class BlockGroup extends Component<
   BlockGroupProps,
   BlockGroupState
 > {
+  static defaultProps = {
+    data: {},
+    lineData: {},
+  };
+
   static getDerivedStateFromProps(nextProps: BlockGroupProps) {
     mapping = Object.assign({}, mapping, nextProps.lineData);
     return {
