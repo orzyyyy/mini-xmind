@@ -33,6 +33,7 @@ export interface CanvasProps {
   lineClassName?: string;
   onChange: (item: DataSource) => void;
   onWheel?: (item: DataSource, event?: any) => void;
+  onClick?: () => void;
 }
 export interface CanvasState {
   blockProps?: BlockProps;
@@ -96,6 +97,8 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
     tagProps: {},
     position: { x: 0, y: 0, z: 0, gap: 1 },
   };
+
+  blockGroupRef: BlockGroup;
 
   // to repaint Line instantly
   handleBlockChange = (blockProps: BlockProps, linesProps: LineProps) => {
@@ -172,6 +175,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
   };
 
   handleDragStart = (e: any) => {
+    this.blockGroupRef.cleanCheckBlockClickList();
     stopPropagation(e);
   };
 
@@ -237,6 +241,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
                 className={lineClassName}
               />
             )}
+            ref={ref => ref && (this.blockGroupRef = ref)}
           />
           <TagGroup
             data={tagProps}
