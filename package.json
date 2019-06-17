@@ -28,23 +28,24 @@
     "*.css"
   ],
   "dependencies": {
-    "antd": "^3.18.2",
+    "antd": "^3.19.4",
     "react-draggable": "^3.3.0"
   },
   "devDependencies": {
-    "@types/classnames": "^2.2.7",
-    "@types/enzyme": "^3.9.2",
-    "@types/react": "^16.8.18",
+    "@types/classnames": "^2.2.8",
+    "@types/enzyme": "^3.9.3",
+    "@types/react": "^16.8.20",
     "@types/react-dom": "^16.8.4",
+    "core-js": "^3.1.4",
     "dekko": "^0.2.1",
     "gh-pages": "^2.0.1",
-    "lint-staged": "^8.1.7",
-    "nino-cli": "^0.8.1",
-    "tslint": "^5.16.0",
+    "lint-staged": "^8.2.1",
+    "nino-cli": "^0.8.2",
+    "tslint": "^5.17.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-eslint-rules": "^5.4.0",
     "tslint-react": "^4.0.0",
-    "typescript": "^3.4.5"
+    "typescript": "^3.5.2"
   },
   "pre-commit": [
     "lint-staged"
