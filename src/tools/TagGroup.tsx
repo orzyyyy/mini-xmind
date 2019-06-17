@@ -113,13 +113,14 @@ export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
             key={key}
             {...rest}
           >
-            <Input
+            <Input.TextArea
               className="animate-appear"
               onChange={e =>
                 this.handleChange(data[key], key, 'input', e.target.value)
               }
               value={data[key].input}
               autoFocus
+              autosize
               onBlur={() =>
                 this.handleChange(data[key], key, 'editable', false)
               }
