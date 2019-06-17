@@ -192,6 +192,9 @@ describe('Canvas', () => {
   });
 
   it('clean checkBlockClickList after clicking canvas', () => {
+    if (process.env.LIB_DIR === 'dist') {
+      return;
+    }
     const wrapper = createWrapper();
     wrapper.setProps({ data: mapping });
 
