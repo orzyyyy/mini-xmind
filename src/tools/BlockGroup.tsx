@@ -218,6 +218,10 @@ export default class BlockGroup extends Component<
     stopPropagation(e);
   };
 
+  cleanCheckBlockClickList() {
+    this.checkBlockClickList = {};
+  }
+
   render() {
     const {
       className: parentClassName,
