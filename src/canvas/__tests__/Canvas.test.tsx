@@ -190,4 +190,15 @@ describe('Canvas', () => {
       .onChange(null);
     expect(onChange).toHaveBeenCalled();
   });
+
+  it('clean checkBlockClickList after clicking canvas', () => {
+    const wrapper = createWrapper();
+    wrapper.setProps({ data: mapping });
+
+    const blocks = wrapper.find('.block-group');
+    blocks.at(0).simulate('click');
+    wrapper.find('Canvas').simulate('click');
+    blocks.at(1).simulate('click');
+    expect(wrapper.find('.stepped-line-to').length).toBe(1);
+  });
 });
