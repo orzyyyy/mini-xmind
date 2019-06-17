@@ -34,7 +34,7 @@ describe('TagGroup', () => {
         },
       },
     });
-    expect(wrapper.find('input').prop('value')).toBe('test1');
+    expect(wrapper.find('TextArea').prop('value')).toBe('test1');
   });
 
   it('double click should work correctly', () => {
@@ -62,7 +62,7 @@ describe('TagGroup', () => {
       },
     };
     const wrapper = mount(<TagGroup data={data} />);
-    wrapper.find('input').simulate('change', { target: { value: 'test1' } });
+    wrapper.find('TextArea').simulate('change', { target: { value: 'test1' } });
     expect(wrapper.state('data')).toEqual({
       tag: {
         editable: true,
@@ -118,7 +118,7 @@ describe('TagGroup', () => {
         }}
       />,
     );
-    wrapper.find('Input').simulate('change', { target: { value: '1' } });
+    wrapper.find('TextArea').simulate('change', { target: { value: '1' } });
     expect(onChange).toHaveBeenCalled();
   });
 
@@ -151,7 +151,7 @@ describe('TagGroup', () => {
         }}
       />,
     );
-    wrapper.find('Input').simulate('blur');
+    wrapper.find('TextArea').simulate('blur');
     expect(onChange).toHaveBeenCalled();
   });
 });
