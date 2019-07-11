@@ -6,7 +6,7 @@
     "test": "nino test",
     "build": "nino koei -c scripts/nino.koei.js",
     "compile": "nino compile",
-    "codecov": "nino test -d",
+    "codecov": "nino test --coverage",
     "lint": "tslint -c tslint.json 'src/**/*.ts[x]'",
     "prettier": "nino prettier",
     "lint-staged": "lint-staged",
