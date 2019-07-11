@@ -39,15 +39,15 @@ describe('commonUtil', () => {
 });
 
 describe('go', () => {
-  const originalGetElement = (global as any).document.getElementById;
+  const originalGetElement = global.document.getElementById;
   jest.mock('react-dom', () => ({
     render: jest.fn(),
   }));
   beforeEach(() => {
-    (global as any).document.getElementById = () => true;
+    global.document.getElementById = () => true;
   });
   afterAll(() => {
-    (global as any).document.getElementById = originalGetElement;
+    global.document.getElementById = originalGetElement;
   });
   it('should call ReactDOM.render', () => {
     renderToDOM();

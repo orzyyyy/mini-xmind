@@ -8,5 +8,3 @@
 *.map
 *.jsx
 
-/src/utils/*.js
-/src/options/*.js

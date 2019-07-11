@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-let Canvas: any;
+let Canvas;
 switch (process.env.LIB_DIR) {
   case 'lib':
     Canvas = require('../../../lib/canvas').default;
@@ -15,7 +15,7 @@ switch (process.env.LIB_DIR) {
 import { mapping } from '../../mock/mapping';
 import 'nino-cli/scripts/setup';
 
-const createWrapper = (...props: Array<any>) =>
+const createWrapper = (...props) =>
   mount(<Canvas style={{ width: '100%', height: '100%' }} {...props} />);
 
 describe('Canvas', () => {
@@ -81,8 +81,8 @@ describe('Canvas', () => {
   });
 
   it('onDrop should return when dragItem is null', () => {
-    const wrapper: any = createWrapper().instance();
-    const event: any = {};
+    const wrapper = createWrapper().instance();
+    const event = {};
     event.dataTransfer = {};
     event.dataTransfer.getData = () => {
       return false;
@@ -91,13 +91,13 @@ describe('Canvas', () => {
   });
 
   it('onDrop should update blockProps when droping a Block', () => {
-    const wrapper: any = createWrapper().instance();
-    const event: any = {};
+    const wrapper = createWrapper().instance();
+    const event = {};
     event.clientX = 100;
     event.clientY = 100;
     event.dataTransfer = {};
     event.dataTransfer.getData = () => {
-      return "{\"key\":\"border\",\"value\":\"block\",\"style\":{\"width\":100,\"height\":80}}";
+      return '{"key":"border","value":"block","style":{"width":100,"height":80}}';
     };
     const value = wrapper.onDrop(event);
     expect(value).toEqual({
@@ -107,13 +107,13 @@ describe('Canvas', () => {
   });
 
   it('onDrop should update tagProps when droping a Tag', () => {
-    const wrapper: any = createWrapper().instance();
-    const event: any = {};
+    const wrapper = createWrapper().instance();
+    const event = {};
     event.clientX = 100;
     event.clientY = 100;
     event.dataTransfer = {};
     event.dataTransfer.getData = () => {
-      return "{\"key\":\"border\",\"value\":\"input\",\"style\":{\"width\":100,\"height\":80}}";
+      return '{"key":"border","value":"input","style":{"width":100,"height":80}}';
     };
     const value = wrapper.onDrop(event);
     expect(value).toEqual({
@@ -123,13 +123,13 @@ describe('Canvas', () => {
   });
 
   it('onDrop default return origin', () => {
-    const wrapper: any = createWrapper().instance();
-    const event: any = {};
+    const wrapper = createWrapper().instance();
+    const event = {};
     event.clientX = 100;
     event.clientY = 100;
     event.dataTransfer = {};
     event.dataTransfer.getData = () => {
-      return "{\"key\":\"border\",\"value\":\"test\",\"style\":{\"width\":100,\"height\":80}}";
+      return '{"key":"border","value":"test","style":{"width":100,"height":80}}';
     };
     const value = wrapper.onDrop(event);
     expect(value).toEqual({
@@ -139,14 +139,14 @@ describe('Canvas', () => {
   });
 
   it('handleDrag should work correctly', () => {
-    const wrapper: any = createWrapper();
+    const wrapper = createWrapper();
     wrapper.instance().handleDrag(null, { x: 1, y: 1 });
     expect(wrapper.state().position).toEqual({ x: 1, y: 1, z: 0, gap: 1 });
   });
 
   it('stopPropagation should work', () => {
     const stopPropagation = jest.fn();
-    const wrapper: any = createWrapper().instance();
+    const wrapper = createWrapper().instance();
     wrapper.handleDragStart({ stopPropagation });
     expect(stopPropagation).toHaveBeenCalled();
   });

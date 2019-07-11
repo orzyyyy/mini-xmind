@@ -11,7 +11,10 @@
     "target": "es6",
     "lib": ["dom", "es7"],
     "resolveJsonModule": true,
-    "module": "esNext"
+    "module": "esNext",
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": "dist"
   },
   "exclude": [
     "node_modules",

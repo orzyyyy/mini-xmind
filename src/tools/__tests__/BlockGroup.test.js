@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-let BlockGroup: any;
+let BlockGroup;
 switch (process.env.LIB_DIR) {
   case 'lib':
     BlockGroup = require('../../../lib/tools').BlockGroup;
@@ -35,7 +35,7 @@ describe('BlockGroup', () => {
 
   it('when dragging, onChange should be called', () => {
     const onChange = jest.fn();
-    const wrapper: any = mount(
+    const wrapper = mount(
       <BlockGroup
         data={{
           'block-442566': {
@@ -56,7 +56,7 @@ describe('BlockGroup', () => {
   });
 
   it('shouldPaintLine', () => {
-    const wrapper: any = mount(
+    const wrapper = mount(
       <BlockGroup
         data={{
           'block-442566': {
