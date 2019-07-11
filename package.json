@@ -39,7 +39,7 @@
     "core-js": "^3.1.4",
     "dekko": "^0.2.1",
     "gh-pages": "^2.0.1",
-    "lint-staged": "^8.2.1",
+    "lint-staged": "^9.0.0",
     "nino-cli": "^1.0.2",
     "tslint": "^5.17.0",
     "tslint-config-prettier": "^1.18.0",
