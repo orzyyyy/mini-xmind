@@ -8,3 +8,4 @@
 *.map
 *.jsx
 
+package-lock.json
