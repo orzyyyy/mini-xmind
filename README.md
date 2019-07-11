@@ -1,11 +1,11 @@
 # mini-xmind
 
-![CircleCI](https://img.shields.io/circleci/project/github/zy410419243/mini-xmind/master.svg)
-[![codecov](https://codecov.io/gh/zy410419243/mini-xmind/branch/master/graph/badge.svg)](https://codecov.io/gh/zy410419243/mini-xmind)
+![CircleCI](https://img.shields.io/circleci/project/github/orzyyyy/mini-xmind/master.svg)
+[![codecov](https://codecov.io/gh/orzyyyy/mini-xmind/branch/master/graph/badge.svg)](https://codecov.io/gh/orzyyyy/mini-xmind)
 
 what you see in gif is the all what the repo do, just as title, a web tool for mini mind-mapping.
 
-online demo: https://zy410419243.github.io/mini-xmind
+online demo: https://orzyyyy.github.io/mini-xmind
 
 ## Screenshots
 
@@ -72,7 +72,7 @@ export default () => (
 ## Development
 
 ```bash
-git clone https://github.com/zy410419243/mini-xmind.git
+git clone https://github.com/orzyyyy/mini-xmind.git
 
 cd mini-xmind
 
