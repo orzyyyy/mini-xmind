@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-let TagGroup: any;
+let TagGroup;
 switch (process.env.LIB_DIR) {
   case 'lib':
     TagGroup = require('../../../lib/tools').TagGroup;
@@ -73,7 +73,7 @@ describe('TagGroup', () => {
 
   it('when drag stopped, onChange should be called', () => {
     const onChange = jest.fn();
-    const wrapper: any = mount(
+    const wrapper = mount(
       <TagGroup
         onChange={onChange}
         data={{
@@ -90,7 +90,7 @@ describe('TagGroup', () => {
 
   it('when dragging, onChange should be called', () => {
     const onChange = jest.fn();
-    const wrapper: any = mount(
+    const wrapper = mount(
       <TagGroup
         onChange={onChange}
         data={{
@@ -124,7 +124,7 @@ describe('TagGroup', () => {
 
   it('stopPropagation should work', () => {
     const stopPropagation = jest.fn();
-    const wrapper: any = mount(
+    const wrapper = mount(
       <TagGroup
         data={{
           tag: {

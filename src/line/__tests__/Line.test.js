@@ -38,10 +38,10 @@ describe('Line', () => {
     );
     expect(wrapper).toMatchSnapshot();
 
-    const x0: string = wrapper.find('SteppedLine').prop('x0');
+    const x0 = wrapper.find('SteppedLine').prop('x0');
     expect(parseFloat(x0) + 100).toBe(0);
 
-    const y0: string = wrapper.find('SteppedLine').prop('y0');
+    const y0 = wrapper.find('SteppedLine').prop('y0');
     expect(parseFloat(y0) + 100).toBe(0);
   });
 });
