@@ -13,7 +13,6 @@ switch (process.env.LIB_DIR) {
     break;
 }
 import { tools } from '../../options/tools';
-import 'nino-cli/scripts/setup';
 
 describe('Toolbar', () => {
   it('toolbar render correctly', () => {

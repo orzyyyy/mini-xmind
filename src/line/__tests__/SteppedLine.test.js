@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import SteppedLine from '../SteppedLine';
-import 'nino-cli/scripts/setup';
 
 describe('SteppedLine', () => {
   const getTargetIndexProps = (wrapper, name, index) =>
