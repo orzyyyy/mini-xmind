@@ -9,7 +9,6 @@ switch (process.env.LIB_DIR) {
     BlockGroup = require('../BlockGroup').default;
     break;
 }
-import 'nino-cli/scripts/setup';
 
 describe('BlockGroup', () => {
   it("when lineData is null, onChange shouldn't be called", () => {

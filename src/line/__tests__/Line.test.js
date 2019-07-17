@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { SteppedLineTo } from '..';
-import 'nino-cli/scripts/setup';
 
 const from = {
   width: 0,

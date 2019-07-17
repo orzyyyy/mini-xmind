@@ -1,5 +1,4 @@
 import { parseAnchor, parseAnchorText, parseAnchorPercent } from '../LineTo';
-import 'nino-cli/scripts/setup';
 
 describe('LineTo', () => {
   it('parseAnchor should work', () => {

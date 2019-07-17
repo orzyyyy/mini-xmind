@@ -9,7 +9,6 @@ switch (process.env.LIB_DIR) {
     TagGroup = require('..').TagGroup;
     break;
 }
-import 'nino-cli/scripts/setup';
 
 describe('TagGroup', () => {
   it('when data is null, render correctly', () => {

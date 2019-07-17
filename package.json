@@ -2,7 +2,7 @@
   "name": "mini-xmind",
   "version": "1.3.0",
   "scripts": {
-    "start": "npm run compile && nino go -e go",
+    "start": "nino go -e go",
     "test": "nino test",
     "build": "nino koei -c scripts/nino.koei.js",
     "compile": "nino compile",
@@ -28,19 +28,19 @@
     "*.css"
   ],
   "dependencies": {
-    "antd": "^3.20.1",
+    "antd": "^3.20.3",
     "react-draggable": "^3.3.0"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.9",
-    "@types/enzyme": "^3.10.2",
+    "@types/enzyme": "^3.10.3",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
     "core-js": "^3.1.4",
     "dekko": "^0.2.1",
     "gh-pages": "^2.0.1",
     "lint-staged": "^9.2.0",
-    "nino-cli": "^1.0.2",
+    "nino-cli": "^1.0.3",
     "tslint": "^5.18.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-eslint-rules": "^5.4.0",

@@ -13,7 +13,6 @@ switch (process.env.LIB_DIR) {
     break;
 }
 import { mapping } from '../../mock/mapping';
-import 'nino-cli/scripts/setup';
 
 const createWrapper = (...props) =>
   mount(<Canvas style={{ width: '100%', height: '100%' }} {...props} />);
