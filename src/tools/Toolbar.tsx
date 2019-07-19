@@ -24,9 +24,7 @@ export default class Toolbar extends Component {
                 <Icon
                   type={key}
                   // onClick={() => this.handleIconClick(value)}
-                  style={{
-                    fontSize: 20,
-                  }}
+                  style={{ fontSize: 20 }}
                 />
               </li>
             );

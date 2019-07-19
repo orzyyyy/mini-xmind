@@ -4,7 +4,6 @@ import Line from './core';
 export interface SteppedLineProps {
   orientation?: 'h' | 'v' | 'horizonal' | 'vertical' | string;
   className?: string;
-  style?: any;
   x0: number;
   y0: number;
   x1: number;

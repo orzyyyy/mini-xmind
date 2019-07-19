@@ -50,7 +50,6 @@ export function parseAnchorPercent(value: string) {
 
 export interface LineToProps {
   className?: string;
-  style?: any;
   from: any;
   to: any;
   offset?: { x: number; y: number };
