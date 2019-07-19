@@ -24,14 +24,13 @@ export type DataSource = {
   LineGroup?: LineProps;
 };
 export interface CanvasProps {
-  style?: React.CSSProperties;
   className?: string;
   data?: DataSource;
   orientation?: 'h' | 'v' | 'horizonal' | 'vertical';
   blockClassName?: string;
   tagClassName?: string;
   lineClassName?: string;
-  onChange: (item: DataSource) => void;
+  onChange?: (item: DataSource) => void;
   onWheel?: (item: DataSource, event?: any) => void;
   onClick?: () => void;
 }
@@ -109,6 +108,7 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
 
   handleTagChange = (tagProps: any) => {
     this.handleUnityAllDatas(tagProps, 'TagGroup');
+    this.setState({ tagProps });
   };
 
   handleUnityAllDatas = (
