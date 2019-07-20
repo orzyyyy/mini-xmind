@@ -6,6 +6,12 @@ import './css/TagGroup.css';
 import { stopPropagation } from '../utils/LineUtil';
 import { ContextMenuProps } from '../canvas/core';
 
+export type TagGroupRenderItem = {
+  item: { input: string; x: number; y: number };
+  key: string;
+  className: string;
+  onContextMenu?: ({ event, key, group }: ContextMenuProps) => void;
+};
 export type TagGroupItem = {
   [key: string]: {
     x: number;
@@ -16,7 +22,7 @@ export type TagGroupItem = {
   };
 };
 export interface TagGroupProps {
-  data: TagGroupItem;
+  data?: TagGroupItem;
   onChange?: (data: TagGroupItem) => void;
   className?: string;
   onContextMenu?: (item: ContextMenuProps) => void;
@@ -50,9 +56,11 @@ export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
 
   handleStop = ({ x, y }: { x: number; y: number }, key: string) => {
     const { data, onChange } = this.props;
-    data[key] = Object.assign({}, data[key], { x, y });
-    if (onChange) {
-      onChange(data);
+    if (data) {
+      data[key] = Object.assign({}, data[key], { x, y });
+      if (onChange) {
+        onChange(data);
+      }
     }
   };
 
@@ -84,74 +92,74 @@ export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
     }
   };
 
+  renderTextArea = ({ item, key, className }: TagGroupRenderItem) => (
+    <div
+      className={className}
+      style={{
+        transform: `translate(${item.x}px, ${item.y}px)`,
+      }}
+      key={key}
+    >
+      <Input.TextArea
+        className="animate-appear"
+        onChange={e => this.handleChange(item, key, 'input', e.target.value)}
+        value={item.input}
+        autoFocus
+        autosize
+        onBlur={() => this.handleChange(item, key, 'editable', false)}
+      />
+    </div>
+  );
+
+  renderTagItem = ({
+    item,
+    key,
+    onContextMenu,
+    className,
+  }: TagGroupRenderItem) => (
+    <Draggable
+      onStart={this.handleDragStart}
+      onStop={(_, jtem) => this.handleStop(jtem, key)}
+      key={key}
+      position={{ x: item.x, y: item.y }}
+      onDrag={this.handleDrag}
+    >
+      <div
+        className={className}
+        onDoubleClick={() => this.handleChange(item, key, 'editable', true)}
+        onContextMenu={(e: any) => {
+          if (onContextMenu) {
+            onContextMenu({ event: e, key, group: 'TagGroup' });
+          }
+        }}
+      >
+        {item.input}
+      </div>
+    </Draggable>
+  );
+
   render = () => {
-    const {
-      className: parentClassName,
-      onChange,
-      onContextMenu,
-      ...rest
-    } = this.props;
+    const { className: parentClassName, onContextMenu } = this.props;
     const { data } = this.state;
 
     return Object.keys(data).map(key => {
-      const { x, y, editable, className: tagClassName } = data[key];
+      const item = data[key];
+      const { editable, className: tagClassName } = item;
       const targetClassName = classNames(
         'tag-group',
         'animate-appear',
         parentClassName,
         tagClassName,
       );
-
       if (editable) {
-        return (
-          <div
-            className={targetClassName}
-            style={{
-              transform: `translate(${x}px, ${y}px)`,
-            }}
-            key={key}
-            {...rest}
-          >
-            <Input.TextArea
-              className="animate-appear"
-              onChange={e =>
-                this.handleChange(data[key], key, 'input', e.target.value)
-              }
-              value={data[key].input}
-              autoFocus
-              autosize
-              onBlur={() =>
-                this.handleChange(data[key], key, 'editable', false)
-              }
-            />
-          </div>
-        );
+        return this.renderTextArea({ item, key, className: targetClassName });
       }
-
-      return (
-        <Draggable
-          onStart={this.handleDragStart}
-          onStop={(_, item) => this.handleStop(item, key)}
-          key={key}
-          position={{ x, y }}
-          onDrag={this.handleDrag}
-        >
-          <div
-            className={targetClassName}
-            onDoubleClick={() =>
-              this.handleChange(data[key], key, 'editable', true)
-            }
-            onContextMenu={(e: any) => {
-              if (onContextMenu) {
-                onContextMenu({ event: e, key, group: 'TagGroup' });
-              }
-            }}
-            {...rest}
-          >
-            {data[key].input}
-          </div>
-        </Draggable>
-      );
+      return this.renderTagItem({
+        item,
+        key,
+        className: targetClassName,
+        onContextMenu,
+      });
     });
   };
 }

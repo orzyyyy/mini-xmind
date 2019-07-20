@@ -1790,40 +1790,6 @@ exports[`Canvas Canvas renders correctly 1`] = `
             >
               <div
                 className="tag-group animate-appear react-draggable"
-                data={
-                  Object {
-                    "tag-626505": Object {
-                      "editable": false,
-                      "input": "test",
-                      "style": Object {
-                        "height": 32,
-                        "width": 100,
-                      },
-                      "x": 169,
-                      "y": 144,
-                    },
-                    "tag-629962": Object {
-                      "editable": false,
-                      "input": "test2",
-                      "style": Object {
-                        "height": 32,
-                        "width": 100,
-                      },
-                      "x": 462,
-                      "y": -23,
-                    },
-                    "tag-80986": Object {
-                      "editable": false,
-                      "input": "test3",
-                      "style": Object {
-                        "height": 32,
-                        "width": 100,
-                      },
-                      "x": 463,
-                      "y": 333,
-                    },
-                  }
-                }
                 onContextMenu={[Function]}
                 onDoubleClick={[Function]}
                 onMouseDown={[Function]}
@@ -1909,40 +1875,6 @@ exports[`Canvas Canvas renders correctly 1`] = `
             >
               <div
                 className="tag-group animate-appear react-draggable"
-                data={
-                  Object {
-                    "tag-626505": Object {
-                      "editable": false,
-                      "input": "test",
-                      "style": Object {
-                        "height": 32,
-                        "width": 100,
-                      },
-                      "x": 169,
-                      "y": 144,
-                    },
-                    "tag-629962": Object {
-                      "editable": false,
-                      "input": "test2",
-                      "style": Object {
-                        "height": 32,
-                        "width": 100,
-                      },
-                      "x": 462,
-                      "y": -23,
-                    },
-                    "tag-80986": Object {
-                      "editable": false,
-                      "input": "test3",
-                      "style": Object {
-                        "height": 32,
-                        "width": 100,
-                      },
-                      "x": 463,
-                      "y": 333,
-                    },
-                  }
-                }
                 onContextMenu={[Function]}
                 onDoubleClick={[Function]}
                 onMouseDown={[Function]}
@@ -2028,40 +1960,6 @@ exports[`Canvas Canvas renders correctly 1`] = `
             >
               <div
                 className="tag-group animate-appear react-draggable"
-                data={
-                  Object {
-                    "tag-626505": Object {
-                      "editable": false,
-                      "input": "test",
-                      "style": Object {
-                        "height": 32,
-                        "width": 100,
-                      },
-                      "x": 169,
-                      "y": 144,
-                    },
-                    "tag-629962": Object {
-                      "editable": false,
-                      "input": "test2",
-                      "style": Object {
-                        "height": 32,
-                        "width": 100,
-                      },
-                      "x": 462,
-                      "y": -23,
-                    },
-                    "tag-80986": Object {
-                      "editable": false,
-                      "input": "test3",
-                      "style": Object {
-                        "height": 32,
-                        "width": 100,
-                      },
-                      "x": 463,
-                      "y": 333,
-                    },
-                  }
-                }
                 onContextMenu={[Function]}
                 onDoubleClick={[Function]}
                 onMouseDown={[Function]}
