@@ -10,7 +10,6 @@ export type TagGroupItem = {
   [key: string]: {
     x: number;
     y: number;
-    style?: React.CSSProperties;
     input: string;
     editable: boolean;
     className?: string;
