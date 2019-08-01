@@ -4,7 +4,7 @@ ghpages.publish(
   'dist',
   {
     dotfiles: true,
-    repo: 'https://github.com/orzyyyy/memo.git',
+    repo: 'https://github.com/orzyyyy/mini-xmind.git',
     user: {
       name: 'orzyyyy',
       email: 'zy410419243@gmail.com',
