@@ -3,7 +3,7 @@
   "version": "1.3.0",
   "scripts": {
     "start": "nino go -e go",
-    "test": "nino test",
+    "test": "nino test --testPathPattern='src'",
     "build": "nino koei -c scripts/nino.koei.js",
     "compile": "nino compile",
     "codecov": "nino test --coverage",
@@ -28,18 +28,18 @@
     "*.css"
   ],
   "dependencies": {
-    "antd": "^3.20.3",
+    "antd": "^3.20.7",
     "react-draggable": "^3.3.0"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.9",
     "@types/enzyme": "^3.10.3",
-    "@types/react": "^16.8.23",
-    "@types/react-dom": "^16.8.4",
+    "@types/react": "^16.8.24",
+    "@types/react-dom": "^16.8.5",
     "core-js": "^3.1.4",
     "dekko": "^0.2.1",
-    "gh-pages": "^2.0.1",
-    "lint-staged": "^9.2.0",
+    "gh-pages": "^2.1.0",
+    "lint-staged": "^9.2.1",
     "nino-cli": "^1.0.3",
     "tslint": "^5.18.0",
     "tslint-config-prettier": "^1.18.0",

@@ -26,5 +26,5 @@
     "lib",
     "**/__tests__/**"
   ],
-  "typings": "./index.d.ts"
+  "typings": "./typings.d.ts"
 }
