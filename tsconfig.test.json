@@ -13,6 +13,6 @@
     "module": "commonjs",
     "outDir": "dist"
   },
-  "typings": "./index.d.ts",
+  "typings": "./typings.d.ts",
   "exclude": ["node_modules", "dist"]
 }
