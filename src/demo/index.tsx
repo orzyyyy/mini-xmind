@@ -25,7 +25,7 @@ export default class Demo extends Component {
 
   useDebounce(data: any) {
     // tslint:disable-next-line
-    console.log(data);
+    console.log(data); // eslint-disable-line
   }
 
   handleWhellChange = (data: any, e: any) => {
