@@ -31,5 +31,21 @@ describe('Toolbar', () => {
       .onDragStart(event, '{ test: 1 }');
     expect(onChange).toBeCalled();
     expect(event.dataTransfer.effectAllowed).toBe('copy');
+
+    wrapper
+      .find('li')
+      .at(1)
+      .props()
+      .onDragStart(event, '{ test: 1 }');
+    expect(onChange).toBeCalled();
+    expect(event.dataTransfer.effectAllowed).toBe('copy');
+
+    wrapper
+      .find('li')
+      .at(2)
+      .props()
+      .onDragStart(event, '{ test: 1 }');
+    expect(onChange).toBeCalled();
+    expect(event.dataTransfer.effectAllowed).toBe('copy');
   });
 });
