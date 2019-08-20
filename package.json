@@ -1,52 +1,33 @@
 {
   "name": "mini-xmind",
   "version": "1.3.0",
-  "scripts": {
-    "start": "nino go -e go",
-    "test": "nino test --testPathPattern='src'",
-    "build": "nino koei",
-    "compile": "nino compile",
-    "codecov": "nino test --coverage",
-    "lint": "tslint -c tslint.json 'src/**/*.ts[x]'",
-    "prettier": "nino prettier",
-    "lint-staged": "lint-staged",
-    "backup": "npm config set registry=https://registry.npmjs.org && npm publish && npm config set registry=https://registry.npm.taobao.org",
-    "pub": "npm run build && npm run compile && git push origin master && npm publish",
-    "pre-deploy": "node scripts/copyCircleCiConfig.js",
-    "deploy": "node scripts/publish"
-  },
   "description": "A tool to make mind-mapping easier",
+  "license": "MIT",
   "files": [
     "lib",
     "dist",
     "es"
   ],
-  "license": "MIT",
-  "main": "lib",
-  "module": "es",
   "sideEffects": [
     "*.css"
   ],
-  "dependencies": {
-    "antd": "^3.20.7",
-    "react-draggable": "^3.3.0"
-  },
-  "devDependencies": {
-    "@types/classnames": "^2.2.9",
-    "@types/enzyme": "^3.10.3",
-    "@types/react": "^16.8.24",
-    "@types/react-dom": "^16.8.5",
-    "core-js": "^3.1.4",
-    "dekko": "^0.2.1",
-    "gh-pages": "^2.1.0",
-    "lint-staged": "^9.2.1",
-    "nino-cli": "^1.1.0",
-    "tslint": "^5.18.0",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-eslint-rules": "^5.4.0",
-    "tslint-react": "^4.0.0",
-    "typescript": "^3.5.3",
-    "walk": "^2.3.14"
+  "main": "lib",
+  "module": "es",
+  "scripts": {
+    "backup": "npm config set registry=https://registry.npmjs.org && npm publish && npm config set registry=https://registry.npm.taobao.org",
+    "build": "nino koei",
+    "clean": "rimraf node_modules package-lock.json dist es lib && npm i",
+    "codecov": "nino test --coverage",
+    "compile": "nino compile",
+    "deploy": "node scripts/publish",
+    "lint": "tslint -c tslint.json 'src/**/*.ts[x]'",
+    "lint-staged": "lint-staged",
+    "pre-deploy": "node scripts/copyCircleCiConfig.js",
+    "prettier": "nino prettier",
+    "pub": "npm run clean && npm run build && npm run compile && git push origin master && npm publish",
+    "sort": "npx sort-package-json",
+    "start": "nino go -e go",
+    "test": "nino test --testPathPattern='src'"
   },
   "pre-commit": [
     "lint-staged"
@@ -57,5 +38,28 @@
       "npm run lint",
       "git add"
     ]
+  },
+  "dependencies": {
+    "antd": "^4.0.0-alpha.2",
+    "react-draggable": "^3.3.0"
+  },
+  "devDependencies": {
+    "@ant-design/icons": "^4.0.0-alpha.8",
+    "@types/classnames": "^2.2.9",
+    "@types/enzyme": "^3.10.3",
+    "@types/react": "^16.8.24",
+    "@types/react-dom": "^16.8.5",
+    "core-js": "^3.1.4",
+    "dekko": "^0.2.1",
+    "gh-pages": "^2.1.0",
+    "lint-staged": "^9.2.1",
+    "nino-cli": "^1.1.0",
+    "rimraf": "^3.0.0",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-react": "^4.0.0",
+    "typescript": "^3.5.3",
+    "walk": "^2.3.14"
   }
 }
