@@ -20,11 +20,11 @@
     "codecov": "nino test --coverage",
     "compile": "nino compile",
     "deploy": "node scripts/publish",
-    "lint": "tslint -c tslint.json 'src/**/*.ts[x]'",
+    "lint": "nino eslint",
     "lint-staged": "lint-staged",
     "pre-deploy": "node scripts/copyCircleCiConfig.js",
     "prettier": "nino prettier",
-    "pub": "npm run clean && npm run build && npm run compile && git push origin master && npm publish",
+    "pub": "npm run build && npm run compile && git push origin master && npm publish",
     "sort": "npx sort-package-json",
     "start": "nino go -e go",
     "test": "nino test --testPathPattern='src'"
@@ -40,26 +40,20 @@
     ]
   },
   "dependencies": {
+    "@ant-design/icons": "^4.0.0-alpha.8",
     "antd": "^4.0.0-alpha.2",
+    "core-js": "^3.1.4",
+    "nino-cli": "^1.1.1",
     "react-draggable": "^3.3.0"
   },
   "devDependencies": {
-    "@ant-design/icons": "^4.0.0-alpha.8",
     "@types/classnames": "^2.2.9",
     "@types/enzyme": "^3.10.3",
     "@types/react": "^16.8.24",
     "@types/react-dom": "^16.8.5",
-    "core-js": "^3.1.4",
     "dekko": "^0.2.1",
     "gh-pages": "^2.1.0",
     "lint-staged": "^9.2.1",
-    "nino-cli": "^1.1.0",
-    "rimraf": "^3.0.0",
-    "tslint": "^5.18.0",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-eslint-rules": "^5.4.0",
-    "tslint-react": "^4.0.0",
-    "typescript": "^3.5.3",
-    "walk": "^2.3.14"
+    "typescript": "^3.5.3"
   }
 }
