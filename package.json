@@ -4,7 +4,7 @@
   "scripts": {
     "start": "nino go -e go",
     "test": "nino test --testPathPattern='src'",
-    "build": "nino koei -c scripts/nino.koei.js",
+    "build": "nino koei",
     "compile": "nino compile",
     "codecov": "nino test --coverage",
     "lint": "tslint -c tslint.json 'src/**/*.ts[x]'",
@@ -40,7 +40,7 @@
     "dekko": "^0.2.1",
     "gh-pages": "^2.1.0",
     "lint-staged": "^9.2.1",
-    "nino-cli": "^1.0.3",
+    "nino-cli": "^1.1.0",
     "tslint": "^5.18.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-eslint-rules": "^5.4.0",
