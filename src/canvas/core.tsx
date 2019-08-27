@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
 import LineGroup, { LineProps } from '../tools/LineGroup';
 import {
@@ -7,9 +7,13 @@ import {
   stopPropagation,
 } from '../utils/LineUtil';
 import TagGroup, { TagGroupItem } from '../tools/TagGroup';
-import BlockGroup, { BlockProps } from '../tools/BlockGroup';
+import BlockGroup, {
+  BlockProps,
+  cleanCheckBlockClickList,
+} from '../tools/BlockGroup';
 import Draggable from 'react-draggable';
 import omit from 'omit.js';
+import { TagProps } from 'antd/lib/tag';
 
 export type CanvasPositionProps = {
   x: number;
@@ -25,7 +29,7 @@ export type DataSource = {
 };
 export interface CanvasProps {
   className?: string;
-  data?: DataSource;
+  data: DataSource;
   orientation?: 'h' | 'v' | 'horizonal' | 'vertical';
   blockClassName?: string;
   tagClassName?: string;
@@ -37,7 +41,7 @@ export interface CanvasProps {
 export interface CanvasState {
   blockProps?: BlockProps;
   linesProps?: LineProps;
-  tagProps?: any;
+  tagProps?: TagProps;
   position: CanvasPositionProps;
 }
 export type ContextMenuProps = {
@@ -46,76 +50,53 @@ export type ContextMenuProps = {
   group: string;
 };
 
-const defaultDataSource = {
-  CanvasPosition: { x: 0, y: 0, z: 0, gap: 1 },
-  BlockGroup: {},
-  TagGroup: {},
-  LineGroup: {},
-};
-const dataCollector: any = {};
+const defaultCanvasPosition = { x: 0, y: 0, z: 0, gap: 1 };
+let dataCollector: any;
 
-export default class Canvas extends Component<CanvasProps, CanvasState> {
-  static defaultProps = {
-    style: {},
-    className: '',
-    data: defaultDataSource,
-    orientation: 'h',
-  };
+const Canvas = ({
+  className,
+  orientation,
+  blockClassName,
+  tagClassName,
+  lineClassName,
+  data,
+  onChange,
+  ...rest
+}: CanvasProps) => {
+  const [blockProps, setBlockProps] = useState(data.BlockGroup || {});
+  const [linesProps, setLineProps] = useState(data.LineGroup || {});
+  const [tagProps, setTagProps] = useState(data.TagGroup || {});
+  const [position, setPosition] = useState(
+    data.CanvasPosition || defaultCanvasPosition,
+  );
 
-  static getDerivedStateFromProps(
-    nextProps: CanvasProps,
-    nextState: CanvasState,
-  ) {
-    const data = nextProps.data || defaultDataSource;
-    if (Object.keys(data).length !== 0) {
-      const {
-        BlockGroup: blockProps,
-        TagGroup: tagProps,
-        LineGroup: linesProps,
-        CanvasPosition,
-      } = data;
-
-      let position = nextState.position;
-      if (position.x === 0 && position.y === 0 && CanvasPosition) {
-        position = CanvasPosition;
-        dataCollector.CanvasPosition = CanvasPosition;
-      }
-      return {
-        blockProps,
-        tagProps,
-        linesProps,
-        position,
-      };
+  useEffect(() => {
+    if (data) {
+      const { BlockGroup, LineGroup, TagGroup, CanvasPosition } = data;
+      setBlockProps(BlockGroup || {});
+      setLineProps(LineGroup || {});
+      setTagProps(TagGroup || {});
+      setPosition(CanvasPosition || defaultCanvasPosition);
+      dataCollector = data;
     }
-    return null;
-  }
+  }, [data]);
 
-  state: CanvasState = {
-    blockProps: {},
-    linesProps: {},
-    tagProps: {},
-    position: { x: 0, y: 0, z: 0, gap: 1 },
+  const handleBlockChange = (blockProps: BlockProps, linesProps: LineProps) => {
+    handleUnityAllDatas(blockProps, 'BlockGroup');
+    handleUnityAllDatas(linesProps, 'LineGroup');
+    setBlockProps(blockProps);
+    setLineProps(linesProps);
   };
 
-  blockGroupRef: BlockGroup;
-
-  // to repaint Line instantly
-  handleBlockChange = (blockProps: BlockProps, linesProps: LineProps) => {
-    this.handleUnityAllDatas(blockProps, 'BlockGroup');
-    this.handleUnityAllDatas(linesProps, 'LineGroup');
-    this.setState({ blockProps });
+  const handleTagChange = (tagProps: any) => {
+    handleUnityAllDatas(tagProps, 'TagGroup');
+    setTagProps(tagProps);
   };
 
-  handleTagChange = (tagProps: any) => {
-    this.handleUnityAllDatas(tagProps, 'TagGroup');
-    this.setState({ tagProps });
-  };
-
-  handleUnityAllDatas = (
+  const handleUnityAllDatas = (
     data?: BlockProps | TagGroupItem | LineProps | CanvasPositionProps,
     type?: string,
   ) => {
-    const { onChange } = this.props;
     if (data && type) {
       dataCollector[type] = data;
     }
@@ -124,14 +105,13 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
     }
   };
 
-  onDrop = (e: any) => {
+  const onDrop = (e: any) => {
     let dragItem = e.dataTransfer.getData('dragItem');
     if (!dragItem) {
       return false;
     }
     dragItem = dragItem ? JSON.parse(dragItem) : {};
     const { value } = dragItem;
-    const { blockProps, tagProps, position } = this.state;
     const { clientX, clientY } = e;
     let defaultWidth = 100;
     let defaultHeight = 80;
@@ -139,25 +119,25 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
     switch (value) {
       case 'block':
         if (blockProps) {
-          blockProps[generateKey('block')] = {
+          (blockProps as any)[generateKey('block')] = {
             x: clientX - defaultWidth / 2 - position.x,
             y: clientY - defaultHeight / 2 - position.y,
           };
-          this.handleUnityAllDatas(blockProps, 'BlockGroup');
-          this.setState({ blockProps });
+          handleUnityAllDatas(blockProps, 'BlockGroup');
+          setBlockProps(blockProps);
         }
         break;
 
       case 'input':
         defaultWidth = 100;
         defaultHeight = 32;
-        tagProps[generateKey('tag')] = {
+        (tagProps as any)[generateKey('tag')] = {
           x: clientX - defaultWidth / 2 - position.x,
           y: clientY - defaultHeight / 2 - position.y,
           editable: true,
         };
-        this.handleUnityAllDatas(tagProps, 'TagGroup');
-        this.setState({ tagProps });
+        handleUnityAllDatas(tagProps, 'TagGroup');
+        setTagProps(tagProps);
         break;
       default:
         break;
@@ -168,18 +148,18 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
     };
   };
 
-  handleDrag = (_: any, { x, y }: { x: number; y: number }) => {
-    const position = Object.assign({}, this.state.position, { x, y });
-    this.handleUnityAllDatas(position, 'CanvasPosition');
-    this.setState({ position });
+  const handleDrag = (_: any, { x, y }: { x: number; y: number }) => {
+    const newPosition = Object.assign({}, position, { x, y });
+    handleUnityAllDatas(newPosition, 'CanvasPosition');
+    setPosition(newPosition);
   };
 
-  handleDragStart = (e: any) => {
-    this.blockGroupRef.cleanCheckBlockClickList();
+  const handleDragStart = (e: any) => {
+    cleanCheckBlockClickList();
     stopPropagation(e);
   };
 
-  handleRightClick = ({ key, event, group }: ContextMenuProps) => {
+  const handleRightClick = ({ key, event, group }: ContextMenuProps) => {
     preventDefault(event);
     delete dataCollector[group][key];
     if (!dataCollector.LineGroup) {
@@ -191,66 +171,53 @@ export default class Canvas extends Component<CanvasProps, CanvasState> {
         delete dataCollector.LineGroup[lineKey];
       }
     }
-    this.handleUnityAllDatas();
-    this.setState({});
+    handleUnityAllDatas();
   };
 
-  handleOnWhell = (e: any) => {
-    const { onWheel } = this.props;
-    if (onWheel) {
-      onWheel(dataCollector, e);
+  const handleOnWhell = (e: any) => {
+    if (rest.onWheel) {
+      rest.onWheel(dataCollector, e);
     }
   };
 
-  render = () => {
-    const {
-      className,
-      orientation,
-      blockClassName,
-      tagClassName,
-      lineClassName,
-      ...rest
-    } = this.props;
-    const { blockProps, linesProps, tagProps, position } = this.state;
-
-    return (
-      <Draggable
-        onDrag={this.handleDrag}
-        position={position}
-        onStart={this.handleDragStart}
+  return (
+    <Draggable
+      onDrag={handleDrag}
+      position={position}
+      onStart={handleDragStart}
+    >
+      <div
+        className={classNames('Canvas', className)}
+        onDragOver={preventDefault}
+        onDrop={onDrop}
+        onWheel={handleOnWhell}
+        {...omit(rest, ['onWheel'])}
       >
-        <div
-          className={classNames('Canvas', className)}
-          onDragOver={preventDefault}
-          onDrop={this.onDrop}
-          onWheel={this.handleOnWhell}
-          {...omit(rest, ['onWheel', 'onChange'])}
-        >
-          <BlockGroup
-            offset={position}
-            data={blockProps}
-            onChange={this.handleBlockChange}
-            lineData={linesProps}
-            className={blockClassName}
-            onContextMenu={this.handleRightClick}
-            renderLine={lineData => (
-              <LineGroup
-                data={lineData}
-                offset={position}
-                orientation={orientation}
-                className={lineClassName}
-              />
-            )}
-            ref={ref => ref && (this.blockGroupRef = ref)}
-          />
-          <TagGroup
-            data={tagProps}
-            onChange={this.handleTagChange}
-            className={tagClassName}
-            onContextMenu={this.handleRightClick}
-          />
-        </div>
-      </Draggable>
-    );
-  };
-}
+        <BlockGroup
+          offset={position}
+          data={blockProps}
+          onChange={handleBlockChange}
+          lineData={linesProps}
+          className={blockClassName}
+          onContextMenu={handleRightClick}
+          renderLine={lineData => (
+            <LineGroup
+              data={lineData}
+              offset={position}
+              orientation={orientation}
+              className={lineClassName}
+            />
+          )}
+        />
+        <TagGroup
+          data={tagProps}
+          onChange={handleTagChange}
+          className={tagClassName}
+          onContextMenu={handleRightClick}
+        />
+      </div>
+    </Draggable>
+  );
+};
+
+export default Canvas;

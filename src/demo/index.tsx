@@ -1,34 +1,34 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Canvas from '../canvas';
 import mapping from '../mock/mapping.json';
 import Toolbar from '../tools';
 import './css/demo.css';
 
-export default class Demo extends Component {
-  state = { data: {} };
+const debounce = (fun: any, delay: number) => (args: any) => {
+  clearTimeout(fun.id);
+  fun.id = setTimeout(function() {
+    fun.call(this, args);
+  }, delay);
+};
 
-  componentDidMount = () => {
-    this.setState({ data: mapping });
+function useDebounce(data: any) {
+  // eslint-disable-next-line
+  console.log(data);
+}
+
+const Demo = () => {
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    setData(mapping);
+  }, []);
+
+  const handleChange = (data: any) => {
+    debounce(useDebounce, 100)(data);
+    setData(data);
   };
 
-  debounce = (fun: any, delay: number) => (args: any) => {
-    clearTimeout(fun.id);
-    fun.id = setTimeout(function() {
-      fun.call(this, args);
-    }, delay);
-  };
-
-  handleChange = (data: any) => {
-    this.debounce(this.useDebounce, 1000)(data);
-    this.setState({ data });
-  };
-
-  useDebounce(data: any) {
-    // tslint:disable-next-line
-    console.log(data); // eslint-disable-line
-  }
-
-  handleWhellChange = (data: any, e: any) => {
+  const handleWhellChange = (data: any, e: any) => {
     const { z, gap } = data.CanvasPosition;
     if (e.deltaY < 0) {
       // scrolling up
@@ -37,22 +37,20 @@ export default class Demo extends Component {
       // scrolling down
       data.CanvasPosition.z = z - gap;
     }
-    this.setState({ data });
+    setData(data);
   };
 
-  render = () => {
-    const { data } = this.state;
+  return (
+    <div className="Demo">
+      <Toolbar />
+      <Canvas
+        className="canvas-wrapper"
+        data={data}
+        onChange={handleChange}
+        onWheel={handleWhellChange}
+      />
+    </div>
+  );
+};
 
-    return (
-      <div className="Demo">
-        <Toolbar />
-        <Canvas
-          className="canvas-wrapper"
-          data={data}
-          onChange={this.handleChange}
-          onWheel={this.handleWhellChange}
-        />
-      </div>
-    );
-  };
-}
+export default Demo;
