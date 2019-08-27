@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import LineGroup, { LineProps } from '../tools/LineGroup';
 import {
@@ -38,10 +38,10 @@ export interface CanvasProps {
   onClick?: () => void;
 }
 export interface CanvasState {
-  blockProps?: BlockProps;
-  linesProps?: LineProps;
-  tagProps?: TagProps;
-  position: CanvasPositionProps;
+  newBlockProps?: BlockProps;
+  newLinesProps?: LineProps;
+  newTagProps?: TagProps;
+  newPosition?: CanvasPositionProps;
 }
 export type ContextMenuProps = {
   event: Event;
@@ -63,45 +63,23 @@ const Canvas = ({
   onWheel,
   ...rest
 }: CanvasProps) => {
-  const [blockProps, setBlockProps] = useState(data.BlockGroup || {});
-  const [linesProps, setLineProps] = useState(data.LineGroup || {});
-  const [tagProps, setTagProps] = useState(data.TagGroup || {});
-  const [position, setPosition] = useState(
-    data.CanvasPosition || defaultCanvasPosition,
-  );
+  let blockProps = data.BlockGroup || {};
+  let linesProps = data.LineGroup || {};
+  let tagProps = data.TagGroup || {};
+  let position = data.CanvasPosition || defaultCanvasPosition;
 
-  useEffect(() => {
-    if (data) {
-      const { BlockGroup, LineGroup, TagGroup, CanvasPosition } = data;
-      setBlockProps(BlockGroup || {});
-      setLineProps(LineGroup || {});
-      setTagProps(TagGroup || {});
-      setPosition(CanvasPosition || defaultCanvasPosition);
-      dataCollector = data;
-    }
-  }, [data]);
-
-  const handleBlockChange = (blockProps: BlockProps, linesProps: LineProps) => {
-    handleUnityAllDatas(blockProps, 'BlockGroup');
-    handleUnityAllDatas(linesProps, 'LineGroup');
-    setBlockProps(blockProps);
-    setLineProps(linesProps);
-  };
-
-  const handleTagChange = (tagProps: any) => {
-    handleUnityAllDatas(tagProps, 'TagGroup');
-    setTagProps(tagProps);
-  };
-
-  const handleUnityAllDatas = (
-    data?: BlockProps | TagGroupItem | LineProps | CanvasPositionProps,
-    type?: string,
+  const handleBlockChange = (
+    newBlockProps: BlockProps,
+    newLinesProps: LineProps,
   ) => {
-    if (data && type) {
-      dataCollector[type] = data;
-    }
     if (onChange) {
-      onChange(dataCollector);
+      onChange(getTarData({ newBlockProps, newLinesProps }));
+    }
+  };
+
+  const handleTagChange = (newTagProps: any) => {
+    if (onChange) {
+      onChange(getTarData({ newTagProps }));
     }
   };
 
@@ -115,43 +93,42 @@ const Canvas = ({
     const { clientX, clientY } = e;
     let defaultWidth = 100;
     let defaultHeight = 80;
+    const newBlockProps: any = {};
+    const newTagProps: any = {};
 
     switch (value) {
       case 'block':
-        if (blockProps) {
-          (blockProps as any)[generateKey('block')] = {
-            x: clientX - defaultWidth / 2 - position.x,
-            y: clientY - defaultHeight / 2 - position.y,
-          };
-          handleUnityAllDatas(blockProps, 'BlockGroup');
-          setBlockProps(blockProps);
+        newBlockProps[generateKey('block')] = {
+          x: clientX - defaultWidth / 2 - position.x,
+          y: clientY - defaultHeight / 2 - position.y,
+        };
+        if (onChange) {
+          onChange(getTarData({ newBlockProps }));
         }
         break;
 
       case 'input':
         defaultWidth = 100;
         defaultHeight = 32;
-        (tagProps as any)[generateKey('tag')] = {
+        newTagProps[generateKey('tag')] = {
           x: clientX - defaultWidth / 2 - position.x,
           y: clientY - defaultHeight / 2 - position.y,
           editable: true,
         };
-        handleUnityAllDatas(tagProps, 'TagGroup');
-        setTagProps(tagProps);
+        if (onChange) {
+          onChange(getTarData({ newTagProps }));
+        }
         break;
       default:
         break;
     }
-    return {
-      x: clientX - defaultWidth / 2 - position.x,
-      y: clientY - defaultHeight / 2 - position.y,
-    };
   };
 
   const handleDrag = (_: any, { x, y }: { x: number; y: number }) => {
     const newPosition = Object.assign({}, position, { x, y });
-    handleUnityAllDatas(newPosition, 'CanvasPosition');
-    setPosition(newPosition);
+    if (onChange) {
+      onChange(getTarData({ newPosition }));
+    }
   };
 
   const handleDragStart = (e: any) => {
@@ -171,13 +148,29 @@ const Canvas = ({
         delete dataCollector.LineGroup[lineKey];
       }
     }
-    handleUnityAllDatas();
+    if (onChange) {
+      onChange(getTarData({}));
+    }
   };
 
   const handleOnWhell = (e: any) => {
     if (onWheel) {
-      onWheel(dataCollector, e);
+      onWheel(getTarData({}), e);
     }
+  };
+
+  const getTarData = ({
+    newBlockProps,
+    newLinesProps,
+    newTagProps,
+    newPosition,
+  }: CanvasState) => {
+    return {
+      BlockGroup: Object.assign({}, blockProps, newBlockProps),
+      LineGroup: Object.assign({}, linesProps, newLinesProps),
+      TagGroup: Object.assign({}, tagProps, newTagProps),
+      CanvasPosition: Object.assign({}, position, newPosition),
+    };
   };
 
   return (
