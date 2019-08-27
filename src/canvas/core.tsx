@@ -12,7 +12,6 @@ import BlockGroup, {
   cleanCheckBlockClickList,
 } from '../tools/BlockGroup';
 import Draggable from 'react-draggable';
-import omit from 'omit.js';
 import { TagProps } from 'antd/lib/tag';
 
 export type CanvasPositionProps = {
@@ -61,6 +60,7 @@ const Canvas = ({
   lineClassName,
   data,
   onChange,
+  onWheel,
   ...rest
 }: CanvasProps) => {
   const [blockProps, setBlockProps] = useState(data.BlockGroup || {});
@@ -175,8 +175,8 @@ const Canvas = ({
   };
 
   const handleOnWhell = (e: any) => {
-    if (rest.onWheel) {
-      rest.onWheel(dataCollector, e);
+    if (onWheel) {
+      onWheel(dataCollector, e);
     }
   };
 
@@ -191,7 +191,7 @@ const Canvas = ({
         onDragOver={preventDefault}
         onDrop={onDrop}
         onWheel={handleOnWhell}
-        {...omit(rest, ['onWheel'])}
+        {...rest}
       >
         <BlockGroup
           offset={position}
