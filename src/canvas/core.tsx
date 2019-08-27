@@ -50,7 +50,6 @@ export type ContextMenuProps = {
 };
 
 const defaultCanvasPosition = { x: 0, y: 0, z: 0, gap: 1 };
-let dataCollector: any;
 
 const Canvas = ({
   className,
@@ -138,18 +137,32 @@ const Canvas = ({
 
   const handleRightClick = ({ key, event, group }: ContextMenuProps) => {
     preventDefault(event);
-    delete dataCollector[group][key];
-    if (!dataCollector.LineGroup) {
-      return;
+    switch (group) {
+      case 'BlockGroup':
+        delete blockProps[key];
+        break;
+
+      case 'TagGroup':
+        delete tagProps[key];
+        break;
+
+      default:
+        break;
     }
-    for (const lineKey of Object.keys(dataCollector.LineGroup)) {
-      const { fromKey, toKey } = dataCollector.LineGroup[lineKey];
+    for (const lineKey of Object.keys(linesProps)) {
+      const { fromKey, toKey } = linesProps[lineKey];
       if (group === 'BlockGroup' && (fromKey === key || toKey === key)) {
-        delete dataCollector.LineGroup[lineKey];
+        delete linesProps[lineKey];
       }
     }
     if (onChange) {
-      onChange(getTarData({}));
+      onChange(
+        getTarData({
+          newBlockProps: blockProps,
+          newLinesProps: linesProps,
+          newTagProps: tagProps,
+        }),
+      );
     }
   };
 
