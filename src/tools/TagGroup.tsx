@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import Draggable from 'react-draggable';
 import { Input } from 'antd';
 import './css/TagGroup.css';
-import { stopPropagation } from '../utils/LineUtil';
+import { stopPropagation, preventDefault } from '../utils/LineUtil';
 import { ContextMenuProps } from '../canvas/core';
 
 export type TagGroupRenderItem = {
@@ -22,7 +22,7 @@ export type TagGroupItem = {
   };
 };
 export interface TagGroupProps {
-  data?: TagGroupItem;
+  data: TagGroupItem;
   onChange?: (data: TagGroupItem) => void;
   className?: string;
   onContextMenu?: (item: ContextMenuProps) => void;
@@ -31,68 +31,38 @@ export interface TagGroupState {
   data: TagGroupItem;
 }
 
-export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
-  static getDerivedStateFromProps(
-    nextProps: TagGroupProps,
-    nextState: TagGroupState,
-  ) {
-    if (
-      Object.keys(nextProps.data || {}).length !==
-        Object.keys(nextState.data || {}).length &&
-      nextProps.onChange &&
-      nextProps.data
-    ) {
-      nextProps.onChange(nextProps.data);
-    }
-    if (!nextProps.data) {
-      return { data: {} };
-    }
-    return { data: nextProps.data };
-  }
-
-  state: TagGroupState = {
-    data: {},
-  };
-
-  handleStop = ({ x, y }: { x: number; y: number }, key: string) => {
-    const { data, onChange } = this.props;
-    if (data) {
-      data[key] = Object.assign({}, data[key], { x, y });
-      if (onChange) {
-        onChange(data);
-      }
-    }
-  };
-
-  handleChange = (
+const TagGroup = ({
+  data,
+  onChange,
+  onContextMenu,
+  className: parentClassName,
+}: TagGroupProps) => {
+  const handleChange = (
     item: any,
     key: string,
     targetKey: string,
     targetValue: boolean | string,
   ) => {
-    const { onChange } = this.props;
-    const { data } = this.state;
     data[key] = item;
     (data as any)[key][targetKey] = targetValue;
 
     if (onChange) {
-      onChange(data);
+      onChange(Object.assign({}, data, { [key]: item }));
     }
-    this.setState({ data });
   };
 
-  handleDragStart = (e: any) => {
+  const handleDragStart = (e: any) => {
     stopPropagation(e);
+    preventDefault(e);
   };
 
-  handleDrag = () => {
-    const { onChange } = this.props;
+  const handleDrag = ({ x, y }: any, key: string) => {
     if (onChange) {
-      onChange(this.state.data);
+      onChange(Object.assign({}, data, { [key]: { ...data[key], x, y } }));
     }
   };
 
-  renderTextArea = ({ item, key, className }: TagGroupRenderItem) => (
+  const renderTextArea = ({ item, key, className }: TagGroupRenderItem) => (
     <div
       className={className}
       style={{
@@ -102,31 +72,30 @@ export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
     >
       <Input.TextArea
         className="animate-appear"
-        onChange={e => this.handleChange(item, key, 'input', e.target.value)}
+        onChange={e => handleChange(item, key, 'input', e.target.value)}
         value={item.input}
         autoFocus
         autosize
-        onBlur={() => this.handleChange(item, key, 'editable', false)}
+        onBlur={() => handleChange(item, key, 'editable', false)}
       />
     </div>
   );
 
-  renderTagItem = ({
+  const renderTagItem = ({
     item,
     key,
     onContextMenu,
     className,
   }: TagGroupRenderItem) => (
     <Draggable
-      onStart={this.handleDragStart}
-      onStop={(_, jtem) => this.handleStop(jtem, key)}
+      onStart={handleDragStart}
       key={key}
       position={{ x: item.x, y: item.y }}
-      onDrag={this.handleDrag}
+      onDrag={(_: any, jtem) => handleDrag(jtem, key)}
     >
       <div
         className={className}
-        onDoubleClick={() => this.handleChange(item, key, 'editable', true)}
+        onDoubleClick={() => handleChange(item, key, 'editable', true)}
         onContextMenu={(e: any) => {
           if (onContextMenu) {
             onContextMenu({ event: e, key, group: 'TagGroup' });
@@ -138,28 +107,29 @@ export default class TagGroup extends Component<TagGroupProps, TagGroupState> {
     </Draggable>
   );
 
-  render = () => {
-    const { className: parentClassName, onContextMenu } = this.props;
-    const { data } = this.state;
+  return (
+    <>
+      {Object.keys(data).map(key => {
+        const item = (data as any)[key];
+        const { editable, className: tagClassName } = item;
+        const targetClassName = classNames(
+          'tag-group',
+          'animate-appear',
+          parentClassName,
+          tagClassName,
+        );
+        if (editable) {
+          return renderTextArea({ item, key, className: targetClassName });
+        }
+        return renderTagItem({
+          item,
+          key,
+          className: targetClassName,
+          onContextMenu,
+        });
+      })}
+    </>
+  );
+};
 
-    return Object.keys(data).map(key => {
-      const item = data[key];
-      const { editable, className: tagClassName } = item;
-      const targetClassName = classNames(
-        'tag-group',
-        'animate-appear',
-        parentClassName,
-        tagClassName,
-      );
-      if (editable) {
-        return this.renderTextArea({ item, key, className: targetClassName });
-      }
-      return this.renderTagItem({
-        item,
-        key,
-        className: targetClassName,
-        onContextMenu,
-      });
-    });
-  };
-}
+export default TagGroup;

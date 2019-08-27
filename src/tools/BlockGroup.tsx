@@ -1,10 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import Draggable from 'react-draggable';
-import { generateKey, stopPropagation } from '../utils/LineUtil';
+import {
+  generateKey,
+  stopPropagation,
+  preventDefault,
+} from '../utils/LineUtil';
 import './css/BlockGroup.css';
 import { ContextMenuProps } from '../canvas/core';
 
+export type BlockProps = { [blockKey: string]: { x: number; y: number } };
+export interface BlockGroupProps {
+  className?: string;
+  data: BlockProps;
+  lineData?: any;
+  onChange?: (data: any, lineData?: any) => void;
+  offset?: { x: number; y: number };
+  onContextMenu?: (item: ContextMenuProps) => void;
+  renderLine: (lineData: any) => void;
+}
+export interface BlockGroupState {
+  data?: any;
+  lineData?: any;
+}
+
+let checkBlockClickList: any = {};
 // one Line is mapping to two Block
 // to record it here
 let mapping: any = {};
@@ -17,11 +37,9 @@ const addBlockDom = (lineData: any, targetBlockDOM: any) => {
     const { fromKey, toKey } = lineData[key];
     for (const blockKey of Object.keys(targetBlockDOM)) {
       const value = targetBlockDOM[blockKey];
-
       if (fromKey === blockKey) {
         lineData[key].from = value;
       }
-
       if (toKey === blockKey) {
         lineData[key].to = value;
       }
@@ -30,89 +48,96 @@ const addBlockDom = (lineData: any, targetBlockDOM: any) => {
   return lineData;
 };
 
-export type BlockProps = { [blockKey: string]: { x: number; y: number } };
-export interface BlockGroupProps {
-  className?: string;
-  data?: BlockProps;
-  lineData?: any;
-  onChange?: (data: any, lineData?: any) => void;
-  offset?: { x: number; y: number };
-  onContextMenu?: (item: ContextMenuProps) => void;
-  renderLine?: (lineData: any) => void;
-}
-export interface BlockGroupState {
-  data?: any;
-  lineData?: any;
-}
+export const cleanCheckBlockClickList = () => {
+  checkBlockClickList = {};
+};
 
-export default class BlockGroup extends Component<
-  BlockGroupProps,
-  BlockGroupState
-> {
-  static defaultProps = {
-    data: {},
-    lineData: {},
-  };
+const generateLineData = (lineData: any, lineKey: string) => {
+  let fromNode;
+  let toNode;
+  let fromKey;
+  let toKey;
+  const keys = Object.keys(checkBlockClickList);
 
-  static getDerivedStateFromProps(nextProps: BlockGroupProps) {
-    mapping = Object.assign({}, mapping, nextProps.lineData);
-    return {
-      data: nextProps.data,
-      lineData: nextProps.lineData,
-    };
+  if (checkBlockClickList[keys[0]] > checkBlockClickList[keys[1]]) {
+    fromKey = keys[1];
+    toKey = keys[0];
+  } else {
+    fromKey = keys[0];
+    toKey = keys[1];
   }
 
-  state: BlockGroupState = {
-    data: {},
-    lineData: {},
+  fromNode = checkBlockClickList[fromKey].current;
+  toNode = checkBlockClickList[toKey].current;
+
+  const common = {
+    fromKey,
+    toKey,
+  };
+  lineData[lineKey] = {
+    ...common,
+    from: fromNode,
+    to: toNode,
   };
 
-  private checkBlockClickList: any = {};
-
-  componentDidUpdate = (prevProps: BlockGroupProps) => {
-    const { lineData, onChange, data } = this.props;
-    const firstLine: any = Object.values(lineData)[0];
-    const hasNewLine =
-      keysLength(lineData) !== keysLength(prevProps.lineData || {});
-    if (!(firstLine && firstLine.from)) {
-      if (hasNewLine || keysLength(lineData) !== 0) {
-        if (onChange) {
-          onChange(data, addBlockDom(lineData, blockDOM));
-        }
-      }
-    }
-    // it's a hack
-    // when dragging canvas, LineData can't update
-    // add this to force update
-    // so Line will be repainted instantly
-    if (this.props.offset && prevProps.offset) {
-      if (
-        this.props.offset.x !== prevProps.offset.x ||
-        this.props.offset.y !== prevProps.offset.y
-      ) {
-        if (onChange) {
-          onChange(data, addBlockDom(lineData, blockDOM));
-        }
-      }
-    }
+  return {
+    result: lineData,
+    ...common,
   };
+};
 
-  handleDrag = ({ x, y }: { x: number; y: number }, blockKey: string) => {
-    const { data, onChange, lineData } = this.props;
-    if (data) {
-      data[blockKey] = Object.assign({}, data[blockKey], { x, y });
+export const shouldPaintLine = (checkBlockClickList: any, linesProps: any) => {
+  if (!keysLength(linesProps)) {
+    return true;
+  }
+
+  const blocks = Object.keys(checkBlockClickList).toString();
+  for (const key of Object.keys(mapping)) {
+    let fromFlag = false;
+    let toFlag = false;
+    const { fromKey, toKey } = mapping[key];
+
+    if (blocks.includes(fromKey)) {
+      fromFlag = true;
     }
+
+    if (blocks.includes(toKey)) {
+      toFlag = true;
+    }
+
+    if (fromFlag && toFlag) {
+      return false;
+    }
+  }
+  return true;
+};
+
+const handleDragStart = (e: any) => {
+  stopPropagation(e);
+  preventDefault(e);
+};
+
+const BlockGroup = ({
+  className: parentClassName,
+  onChange,
+  onContextMenu,
+  renderLine,
+  lineData,
+  data,
+  ...rest
+}: BlockGroupProps) => {
+  const handleDrag = ({ x, y }: { x: number; y: number }, blockKey: string) => {
     if (onChange) {
-      onChange(data, addBlockDom(lineData, blockDOM));
+      onChange(
+        Object.assign({}, data, { [blockKey]: { x, y } }),
+        addBlockDom(lineData, blockDOM),
+      );
     }
   };
 
   // when Block clicked twice, generate a Line
   // and clear checkBlockClickList
-  handleBlockClick = (blockKey: string) => {
-    const { checkBlockClickList } = this;
-    const { onChange } = this.props;
-    const { lineData, data } = this.state;
+  const handleBlockClick = (blockKey: string) => {
     const lineKey = generateKey('line');
 
     checkBlockClickList[blockKey] = { current: blockDOM[blockKey] };
@@ -123,21 +148,18 @@ export default class BlockGroup extends Component<
     }
 
     if (keysLength(checkBlockClickList) === 2) {
-      if (!this.shouldPaintLine(checkBlockClickList, lineData)) {
-        this.checkBlockClickList = {};
+      if (!shouldPaintLine(checkBlockClickList, lineData)) {
+        checkBlockClickList = {};
         return;
       }
 
-      const { result, fromKey, toKey } = this.generateLineData(
-        lineData,
-        lineKey,
-      );
+      const { result, fromKey, toKey } = generateLineData(lineData, lineKey);
 
       if (onChange) {
         onChange(data, result);
       }
 
-      this.checkBlockClickList = {};
+      checkBlockClickList = {};
       // record mapping for arrow
       mapping[lineKey] = {
         fromKey,
@@ -146,129 +168,45 @@ export default class BlockGroup extends Component<
     }
   };
 
-  generateLineData = (lineData: any, lineKey: string) => {
-    const { checkBlockClickList } = this;
-    let fromNode;
-    let toNode;
-    let fromKey;
-    let toKey;
-    const keys = Object.keys(checkBlockClickList);
+  return (
+    <>
+      {Object.keys(data).map(blockKey => {
+        const { x, y, className: blockClassName } = (data as any)[blockKey];
+        return (
+          <Draggable
+            position={{ x, y }}
+            onDrag={(_, item) => handleDrag(item, blockKey)}
+            onStart={handleDragStart}
+            key={blockKey}
+          >
+            <div
+              className={classNames(
+                'block-group',
+                'animate-appear',
+                parentClassName,
+                blockClassName,
+              )}
+              onClick={() => handleBlockClick(blockKey)}
+              ref={ref =>
+                ref && (blockDOM[blockKey] = ref.getBoundingClientRect())
+              }
+              onContextMenu={(e: any) => {
+                if (onContextMenu) {
+                  onContextMenu({
+                    event: e,
+                    key: blockKey,
+                    group: 'BlockGroup',
+                  });
+                }
+              }}
+              {...rest}
+            />
+          </Draggable>
+        );
+      })}
+      {renderLine(addBlockDom(lineData, blockDOM))}
+    </>
+  );
+};
 
-    if (checkBlockClickList[keys[0]] > checkBlockClickList[keys[1]]) {
-      fromKey = keys[1];
-      toKey = keys[0];
-    } else {
-      fromKey = keys[0];
-      toKey = keys[1];
-    }
-
-    fromNode = checkBlockClickList[fromKey].current;
-    toNode = checkBlockClickList[toKey].current;
-
-    const common = {
-      fromKey,
-      toKey,
-    };
-    lineData[lineKey] = {
-      ...common,
-      from: fromNode,
-      to: toNode,
-    };
-
-    return {
-      result: lineData,
-      ...common,
-    };
-  };
-
-  saveBlock = (ref: HTMLDivElement | null, blockKey: string) => {
-    if (ref) {
-      blockDOM[blockKey] = ref.getBoundingClientRect();
-    }
-  };
-
-  shouldPaintLine = (checkBlockClickList: any, linesProps: any) => {
-    if (!keysLength(linesProps)) {
-      return true;
-    }
-
-    const blocks = Object.keys(checkBlockClickList).toString();
-    for (const key of Object.keys(mapping)) {
-      let fromFlag = false;
-      let toFlag = false;
-      const { fromKey, toKey } = mapping[key];
-
-      if (blocks.includes(fromKey)) {
-        fromFlag = true;
-      }
-
-      if (blocks.includes(toKey)) {
-        toFlag = true;
-      }
-
-      if (fromFlag && toFlag) {
-        return false;
-      }
-    }
-
-    return true;
-  };
-
-  handleDragStart = (e: any) => {
-    stopPropagation(e);
-  };
-
-  cleanCheckBlockClickList() {
-    this.checkBlockClickList = {};
-  }
-
-  render() {
-    const {
-      className: parentClassName,
-      onChange,
-      onContextMenu,
-      renderLine,
-      lineData,
-      ...rest
-    } = this.props;
-    const { data } = this.state;
-
-    return (
-      <>
-        {Object.keys(data).map(blockKey => {
-          const { x, y, className: blockClassName } = data[blockKey];
-          return (
-            <Draggable
-              position={{ x, y }}
-              onDrag={(_, item) => this.handleDrag(item, blockKey)}
-              onStart={this.handleDragStart}
-              key={blockKey}
-            >
-              <div
-                className={classNames(
-                  'block-group',
-                  'animate-appear',
-                  parentClassName,
-                  blockClassName,
-                )}
-                onClick={_ => this.handleBlockClick(blockKey)}
-                ref={ref => this.saveBlock(ref, blockKey)}
-                onContextMenu={(e: any) => {
-                  if (onContextMenu) {
-                    onContextMenu({
-                      event: e,
-                      key: blockKey,
-                      group: 'BlockGroup',
-                    });
-                  }
-                }}
-                {...rest}
-              />
-            </Draggable>
-          );
-        })}
-        {renderLine && renderLine(addBlockDom(lineData, blockDOM))}
-      </>
-    );
-  }
-}
+export default BlockGroup;

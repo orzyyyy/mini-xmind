@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { SteppedLineTo } from '../line';
 
 export type LineItem =
@@ -23,66 +23,27 @@ export type LineProps = {
 };
 export interface LineGroupProps {
   offset?: { x: number; y: number };
-  data?: LineProps;
+  data: LineProps;
   orientation?: 'h' | 'v' | 'horizonal' | 'vertical' | string;
   className?: string;
 }
-export interface LineGroupState {
-  data?: any;
-}
 
-export default class LineGroup extends Component<
-  LineGroupProps,
-  LineGroupState
-> {
-  static defaultProps = {
-    offset: {},
-    data: {},
-  };
+const generateLines = ({ offset, data, ...rest }: LineGroupProps) => {
+  return Object.keys(data).map(lineKey => {
+    const { from, to } = data[lineKey];
+    return (
+      <SteppedLineTo
+        from={from}
+        to={to}
+        key={lineKey}
+        offset={offset}
+        className="animate-appear"
+        {...rest}
+      />
+    );
+  });
+};
 
-  static getDerivedStateFromProps(nextProps: LineGroupProps) {
-    const data = nextProps.data || {};
-    const newState: any = {};
-    for (const key of Object.keys(data)) {
-      const { from, to } = data[key];
+const LineGroup = (props: LineGroupProps) => <>{generateLines(props)}</>;
 
-      if (from && to) {
-        newState[key] = data[key];
-      } else {
-        break;
-      }
-    }
-    return { data: newState };
-  }
-
-  state: LineGroupState = {
-    data: {},
-  };
-
-  generateLines = (data: any) => {
-    const { offset, ...rest } = this.props;
-    return Object.keys(data).map(lineKey => {
-      const { from, to } = data[lineKey];
-      return (
-        <SteppedLineTo
-          from={from}
-          to={to}
-          key={lineKey}
-          offset={offset}
-          className="animate-appear"
-          {...rest}
-        />
-      );
-    });
-  };
-
-  render = () => {
-    const { data } = this.state;
-
-    if (Object.keys(data).length === 0) {
-      return null;
-    }
-
-    return <div className="LineGroup">{this.generateLines(data)}</div>;
-  };
-}
+export default LineGroup;
