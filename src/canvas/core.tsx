@@ -62,10 +62,10 @@ const Canvas = ({
   onWheel,
   ...rest
 }: CanvasProps) => {
-  let blockProps = data.BlockGroup || {};
-  let linesProps = data.LineGroup || {};
-  let tagProps = data.TagGroup || {};
-  let position = data.CanvasPosition || defaultCanvasPosition;
+  let blockProps = (data && data.BlockGroup) || {};
+  let linesProps = (data && data.LineGroup) || {};
+  let tagProps = (data && data.TagGroup) || {};
+  let position = (data && data.CanvasPosition) || defaultCanvasPosition;
 
   const handleBlockChange = (
     newBlockProps: BlockProps,

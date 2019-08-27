@@ -25,5 +25,6 @@
     ".github",
     "lib",
     "**/__tests__/**"
-  ]
+  ],
+  "typings": "./typings.d.ts"
 }

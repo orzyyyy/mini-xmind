@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { shouldPaintLine } from '../BlockGroup';
 let BlockGroup;
 switch (process.env.LIB_DIR) {
   case 'lib':
@@ -13,6 +14,7 @@ switch (process.env.LIB_DIR) {
 describe('BlockGroup', () => {
   it("when lineData is null, onChange shouldn't be called", () => {
     const onChange = jest.fn();
+    const renderLine = jest.fn();
     mount(
       <BlockGroup
         data={{
@@ -27,6 +29,7 @@ describe('BlockGroup', () => {
         }}
         lineData={undefined}
         onChange={onChange}
+        renderLine={renderLine}
       />,
     );
     expect(onChange).not.toBeCalled();
@@ -34,6 +37,7 @@ describe('BlockGroup', () => {
 
   it('when dragging, onChange should be called', () => {
     const onChange = jest.fn();
+    const renderLine = jest.fn();
     const wrapper = mount(
       <BlockGroup
         data={{
@@ -48,28 +52,17 @@ describe('BlockGroup', () => {
         }}
         lineData={undefined}
         onChange={onChange}
+        renderLine={renderLine}
       />,
-    ).instance();
-    wrapper.handleDrag({ x: 0, y: 0 }, 'block');
+    );
+    wrapper
+      .find('Draggable')
+      .props()
+      .onDrag({ x: 0, y: 0 }, 'block-442566');
     expect(onChange).toBeCalled();
   });
 
   it('shouldPaintLine', () => {
-    const wrapper = mount(
-      <BlockGroup
-        data={{
-          'block-442566': {
-            x: 571,
-            y: 320,
-            style: {
-              width: 100,
-              height: 80,
-            },
-          },
-        }}
-        lineData={undefined}
-      />,
-    ).instance();
-    expect(wrapper.shouldPaintLine(null, {})).toBe(true);
+    expect(shouldPaintLine(null, {})).toBe(true);
   });
 });

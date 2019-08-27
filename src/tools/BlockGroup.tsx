@@ -86,7 +86,7 @@ const generateLineData = (lineData: any, lineKey: string) => {
   };
 };
 
-const shouldPaintLine = (checkBlockClickList: any, linesProps: any) => {
+export const shouldPaintLine = (checkBlockClickList: any, linesProps: any) => {
   if (!keysLength(linesProps)) {
     return true;
   }
