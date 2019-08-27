@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import Draggable from 'react-draggable';
 import {
@@ -37,11 +37,9 @@ const addBlockDom = (lineData: any, targetBlockDOM: any) => {
     const { fromKey, toKey } = lineData[key];
     for (const blockKey of Object.keys(targetBlockDOM)) {
       const value = targetBlockDOM[blockKey];
-
       if (fromKey === blockKey) {
         lineData[key].from = value;
       }
-
       if (toKey === blockKey) {
         lineData[key].to = value;
       }
@@ -128,18 +126,6 @@ const BlockGroup = ({
   data,
   ...rest
 }: BlockGroupProps) => {
-  const BlockWrapperRef = useRef(null);
-
-  useEffect(() => {
-    if (BlockWrapperRef.current) {
-      Object.keys(data).map(blockKey => {
-        blockDOM[
-          blockKey
-        ] = (BlockWrapperRef as any).current.getBoundingClientRect();
-      });
-    }
-  });
-
   const handleDrag = ({ x, y }: { x: number; y: number }, blockKey: string) => {
     data[blockKey] = Object.assign({}, data[blockKey], { x, y });
     if (onChange) {
@@ -199,7 +185,9 @@ const BlockGroup = ({
                 blockClassName,
               )}
               onClick={() => handleBlockClick(blockKey)}
-              ref={BlockWrapperRef}
+              ref={ref =>
+                ref && (blockDOM[blockKey] = ref.getBoundingClientRect())
+              }
               onContextMenu={(e: any) => {
                 if (onContextMenu) {
                   onContextMenu({
