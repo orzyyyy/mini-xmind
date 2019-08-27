@@ -26,39 +26,6 @@ describe('Canvas', () => {
     expect(wrapper.find('.block-group').length).toBe(3);
   });
 
-  // it('when Block is clicked, Line renders correctly', done => {
-  //   const onChange = data => {
-  //     expect(Object.keys(data.LineGroup).length).toBe(4);
-  //     done();
-  //   };
-  //   const wrapper = mount(<Canvas data={mapping} onChange={onChange} />);
-
-  //   expect(Object.keys(wrapper.find('LineGroup').props().data).length).toBe(2);
-  //   const blocks = wrapper.find('.block-group');
-  //   blocks.at(0).simulate('click');
-  //   blocks.at(1).simulate('click');
-
-  //   blocks.at(1).simulate('click');
-  //   blocks.at(2).simulate('click');
-
-  //   blocks.at(0).simulate('click');
-  //   blocks.at(2).simulate('click');
-  //   expect(onChange).toHaveBeenCalled();
-  // });
-
-  // it('should not render redundant Line', () => {
-  //   const wrapper = mount(<Canvas data={mapping} />);
-
-  //   const blocks = wrapper.find('.block-group');
-  //   blocks.at(0).simulate('click');
-  //   blocks.at(1).simulate('click');
-  //   expect(wrapper.find('.stepped-line-to').length).toBe(4);
-
-  //   blocks.at(0).simulate('click');
-  //   blocks.at(1).simulate('click');
-  //   expect(wrapper.find('.stepped-line-to').length).toBe(4);
-  // });
-
   it('render mapping correctly when passing data', () => {
     const wrapper = mount(<Canvas data={mapping} />);
 
@@ -193,17 +160,4 @@ describe('Canvas', () => {
       .onChange(null);
     expect(onChange).toHaveBeenCalled();
   });
-
-  // it('clean checkBlockClickList after clicking canvas', () => {
-  //   if (process.env.LIB_DIR === 'dist') {
-  //     return;
-  //   }
-  //   const onChange = jest.fn();
-  //   const wrapper = mount(<Canvas data={mapping} onChange={onChange} />);
-  //   const blocks = wrapper.find('.block-group');
-  //   blocks.at(0).simulate('click');
-  //   wrapper.find('Canvas').simulate('click');
-  //   blocks.at(1).simulate('click');
-  //   expect(wrapper.find('.stepped-line-to').length).toBe(1);
-  // });
 });

@@ -102,25 +102,6 @@ describe('TagGroup', () => {
     expect(onChange).toHaveBeenCalled();
   });
 
-  // it('stopPropagation should work', () => {
-  //   const stopPropagation = jest.fn();
-  //   const wrapper = mount(
-  //     <TagGroup
-  //       data={{
-  //         tag: {
-  //           editable: false,
-  //           input: 'test',
-  //         },
-  //       }}
-  //     />,
-  //   );
-  //   wrapper
-  //     .find('Draggable')
-  //     .props()
-  //     .onStart();
-  //   expect(stopPropagation).toHaveBeenCalled();
-  // });
-
   it('when blur, onChange should be called', () => {
     const onChange = jest.fn();
     const wrapper = mount(
