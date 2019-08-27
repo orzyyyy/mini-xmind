@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import Draggable from 'react-draggable';
 import { Input } from 'antd';
 import './css/TagGroup.css';
-import { stopPropagation } from '../utils/LineUtil';
+import { stopPropagation, preventDefault } from '../utils/LineUtil';
 import { ContextMenuProps } from '../canvas/core';
 
 export type TagGroupRenderItem = {
@@ -37,13 +37,6 @@ const TagGroup = ({
   onContextMenu,
   className: parentClassName,
 }: TagGroupProps) => {
-  const handleStop = ({ x, y }: { x: number; y: number }, key: string) => {
-    data[key] = Object.assign({}, data[key], { x, y });
-    if (onChange) {
-      onChange(data);
-    }
-  };
-
   const handleChange = (
     item: any,
     key: string,
@@ -54,17 +47,18 @@ const TagGroup = ({
     (data as any)[key][targetKey] = targetValue;
 
     if (onChange) {
-      onChange(data);
+      onChange(Object.assign({}, data, { [key]: item }));
     }
   };
 
   const handleDragStart = (e: any) => {
     stopPropagation(e);
+    preventDefault(e);
   };
 
-  const handleDrag = () => {
+  const handleDrag = ({ x, y }: any, key: string) => {
     if (onChange) {
-      onChange(data);
+      onChange(Object.assign({}, data, { [key]: { ...data[key], x, y } }));
     }
   };
 
@@ -95,10 +89,9 @@ const TagGroup = ({
   }: TagGroupRenderItem) => (
     <Draggable
       onStart={handleDragStart}
-      onStop={(_, jtem) => handleStop(jtem, key)}
       key={key}
       position={{ x: item.x, y: item.y }}
-      onDrag={handleDrag}
+      onDrag={(_: any, jtem) => handleDrag(jtem, key)}
     >
       <div
         className={className}

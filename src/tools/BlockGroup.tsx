@@ -127,9 +127,11 @@ const BlockGroup = ({
   ...rest
 }: BlockGroupProps) => {
   const handleDrag = ({ x, y }: { x: number; y: number }, blockKey: string) => {
-    data[blockKey] = Object.assign({}, data[blockKey], { x, y });
     if (onChange) {
-      onChange(data, addBlockDom(lineData, blockDOM));
+      onChange(
+        Object.assign({}, data, { [blockKey]: { x, y } }),
+        addBlockDom(lineData, blockDOM),
+      );
     }
   };
 
