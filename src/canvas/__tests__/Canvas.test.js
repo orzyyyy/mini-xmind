@@ -139,6 +139,9 @@ describe('Canvas', () => {
   });
 
   it('right click should work', () => {
+    if (process.env.LIB_DIR === 'dist') {
+      return;
+    }
     const onChange = jest.fn();
     const wrapper = mount(<Canvas data={mapping} onChange={onChange} />);
     const preventDefault = jest.fn();
