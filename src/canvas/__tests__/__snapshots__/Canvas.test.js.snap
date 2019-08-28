@@ -611,7 +611,6 @@ exports[`Canvas Canvas renders correctly 1`] = `
             }
           >
             <SteppedLineTo
-              className=""
               from={
                 Object {
                   "bottom": 616,
@@ -633,7 +632,6 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   "z": 0,
                 }
               }
-              style={Object {}}
               to={
                 Object {
                   "bottom": 428,
@@ -647,218 +645,201 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 }
               }
             >
-              <div
-                className="stepped-line-to"
+              <SteppedLine
+                from={
+                  Object {
+                    "bottom": 616,
+                    "height": 80,
+                    "left": 361,
+                    "right": 461,
+                    "top": 536,
+                    "width": 100,
+                    "x": 361,
+                    "y": 536,
+                  }
+                }
+                offset={
+                  Object {
+                    "gap": 1,
+                    "x": -67,
+                    "y": 230,
+                    "z": 0,
+                  }
+                }
+                to={
+                  Object {
+                    "bottom": 428,
+                    "height": 80,
+                    "left": 65,
+                    "right": 165,
+                    "top": 348,
+                    "width": 100,
+                    "x": 65,
+                    "y": 348,
+                  }
+                }
+                x0={478}
+                x1={182}
+                y0={346}
+                y1={158}
               >
-                <SteppedLine
-                  className=""
-                  from={
-                    Object {
-                      "bottom": 616,
-                      "height": 80,
-                      "left": 361,
-                      "right": 461,
-                      "top": 536,
-                      "width": 100,
-                      "x": 361,
-                      "y": 536,
-                    }
-                  }
-                  offset={
-                    Object {
-                      "gap": 1,
-                      "x": -67,
-                      "y": 230,
-                      "z": 0,
-                    }
-                  }
-                  orientation="h"
-                  style={Object {}}
-                  to={
-                    Object {
-                      "bottom": 428,
-                      "height": 80,
-                      "left": 65,
-                      "right": 165,
-                      "top": 348,
-                      "width": 100,
-                      "x": 65,
-                      "y": 348,
-                    }
-                  }
-                  x0={478}
-                  x1={182}
-                  y0={346}
-                  y1={158}
+                <div
+                  className="stepped-line"
                 >
-                  <div
-                    className="stepped-line"
+                  <Line
+                    from={
+                      Object {
+                        "bottom": 616,
+                        "height": 80,
+                        "left": 361,
+                        "right": 461,
+                        "top": 536,
+                        "width": 100,
+                        "x": 361,
+                        "y": 536,
+                      }
+                    }
+                    offset={
+                      Object {
+                        "gap": 1,
+                        "x": -67,
+                        "y": 230,
+                        "z": 0,
+                      }
+                    }
+                    to={
+                      Object {
+                        "bottom": 428,
+                        "height": 80,
+                        "left": 65,
+                        "right": 165,
+                        "top": 348,
+                        "width": 100,
+                        "x": 65,
+                        "y": 348,
+                      }
+                    }
+                    x0={478}
+                    x1={330}
+                    y0={346}
+                    y1={346}
                   >
-                    <Line
-                      className=""
-                      from={
+                    <div
+                      className="line-core"
+                      style={
                         Object {
-                          "bottom": 616,
-                          "height": 80,
-                          "left": 361,
-                          "right": 461,
-                          "top": 536,
-                          "width": 100,
-                          "x": 361,
-                          "y": 536,
+                          "left": "478px",
+                          "top": "346px",
+                          "transform": "rotate(180deg)",
+                          "width": "148px",
                         }
                       }
-                      offset={
+                    />
+                  </Line>
+                  <Line
+                    from={
+                      Object {
+                        "bottom": 616,
+                        "height": 80,
+                        "left": 361,
+                        "right": 461,
+                        "top": 536,
+                        "width": 100,
+                        "x": 361,
+                        "y": 536,
+                      }
+                    }
+                    offset={
+                      Object {
+                        "gap": 1,
+                        "x": -67,
+                        "y": 230,
+                        "z": 0,
+                      }
+                    }
+                    to={
+                      Object {
+                        "bottom": 428,
+                        "height": 80,
+                        "left": 65,
+                        "right": 165,
+                        "top": 348,
+                        "width": 100,
+                        "x": 65,
+                        "y": 348,
+                      }
+                    }
+                    x0={182}
+                    x1={330}
+                    y0={158}
+                    y1={158}
+                  >
+                    <div
+                      className="line-core"
+                      style={
                         Object {
-                          "gap": 1,
-                          "x": -67,
-                          "y": 230,
-                          "z": 0,
+                          "left": "182px",
+                          "top": "158px",
+                          "transform": "rotate(0deg)",
+                          "width": "148px",
                         }
                       }
-                      orientation="h"
-                      style={Object {}}
-                      to={
+                    />
+                  </Line>
+                  <Line
+                    from={
+                      Object {
+                        "bottom": 616,
+                        "height": 80,
+                        "left": 361,
+                        "right": 461,
+                        "top": 536,
+                        "width": 100,
+                        "x": 361,
+                        "y": 536,
+                      }
+                    }
+                    offset={
+                      Object {
+                        "gap": 1,
+                        "x": -67,
+                        "y": 230,
+                        "z": 0,
+                      }
+                    }
+                    to={
+                      Object {
+                        "bottom": 428,
+                        "height": 80,
+                        "left": 65,
+                        "right": 165,
+                        "top": 348,
+                        "width": 100,
+                        "x": 65,
+                        "y": 348,
+                      }
+                    }
+                    x0={330}
+                    x1={330}
+                    y0={157}
+                    y1={346}
+                  >
+                    <div
+                      className="line-core"
+                      style={
                         Object {
-                          "bottom": 428,
-                          "height": 80,
-                          "left": 65,
-                          "right": 165,
-                          "top": 348,
-                          "width": 100,
-                          "x": 65,
-                          "y": 348,
+                          "left": "330px",
+                          "top": "157px",
+                          "transform": "rotate(90deg)",
+                          "width": "189px",
                         }
                       }
-                      x0={478}
-                      x1={330}
-                      y0={346}
-                      y1={346}
-                    >
-                      <div
-                        className="line-core"
-                        style={
-                          Object {
-                            "left": "478px",
-                            "top": "346px",
-                            "transform": "rotate(180deg)",
-                            "width": "148px",
-                          }
-                        }
-                      />
-                    </Line>
-                    <Line
-                      className=""
-                      from={
-                        Object {
-                          "bottom": 616,
-                          "height": 80,
-                          "left": 361,
-                          "right": 461,
-                          "top": 536,
-                          "width": 100,
-                          "x": 361,
-                          "y": 536,
-                        }
-                      }
-                      offset={
-                        Object {
-                          "gap": 1,
-                          "x": -67,
-                          "y": 230,
-                          "z": 0,
-                        }
-                      }
-                      orientation="h"
-                      style={Object {}}
-                      to={
-                        Object {
-                          "bottom": 428,
-                          "height": 80,
-                          "left": 65,
-                          "right": 165,
-                          "top": 348,
-                          "width": 100,
-                          "x": 65,
-                          "y": 348,
-                        }
-                      }
-                      x0={182}
-                      x1={330}
-                      y0={158}
-                      y1={158}
-                    >
-                      <div
-                        className="line-core"
-                        style={
-                          Object {
-                            "left": "182px",
-                            "top": "158px",
-                            "transform": "rotate(0deg)",
-                            "width": "148px",
-                          }
-                        }
-                      />
-                    </Line>
-                    <Line
-                      className=""
-                      from={
-                        Object {
-                          "bottom": 616,
-                          "height": 80,
-                          "left": 361,
-                          "right": 461,
-                          "top": 536,
-                          "width": 100,
-                          "x": 361,
-                          "y": 536,
-                        }
-                      }
-                      offset={
-                        Object {
-                          "gap": 1,
-                          "x": -67,
-                          "y": 230,
-                          "z": 0,
-                        }
-                      }
-                      orientation="h"
-                      style={Object {}}
-                      to={
-                        Object {
-                          "bottom": 428,
-                          "height": 80,
-                          "left": 65,
-                          "right": 165,
-                          "top": 348,
-                          "width": 100,
-                          "x": 65,
-                          "y": 348,
-                        }
-                      }
-                      x0={330}
-                      x1={330}
-                      y0={157}
-                      y1={346}
-                    >
-                      <div
-                        className="line-core"
-                        style={
-                          Object {
-                            "left": "330px",
-                            "top": "157px",
-                            "transform": "rotate(90deg)",
-                            "width": "189px",
-                          }
-                        }
-                      />
-                    </Line>
-                  </div>
-                </SteppedLine>
-              </div>
+                    />
+                  </Line>
+                </div>
+              </SteppedLine>
             </SteppedLineTo>
             <SteppedLineTo
-              className=""
               from={
                 Object {
                   "bottom": 428,
@@ -880,7 +861,6 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   "z": 0,
                 }
               }
-              style={Object {}}
               to={
                 Object {
                   "bottom": 260,
@@ -894,215 +874,199 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 }
               }
             >
-              <div
-                className="stepped-line-to"
+              <SteppedLine
+                from={
+                  Object {
+                    "bottom": 428,
+                    "height": 80,
+                    "left": 65,
+                    "right": 165,
+                    "top": 348,
+                    "width": 100,
+                    "x": 65,
+                    "y": 348,
+                  }
+                }
+                offset={
+                  Object {
+                    "gap": 1,
+                    "x": -67,
+                    "y": 230,
+                    "z": 0,
+                  }
+                }
+                to={
+                  Object {
+                    "bottom": 260,
+                    "height": 80,
+                    "left": 360,
+                    "right": 460,
+                    "top": 180,
+                    "width": 100,
+                    "x": 360,
+                    "y": 180,
+                  }
+                }
+                x0={182}
+                x1={477}
+                y0={158}
+                y1={-10}
               >
-                <SteppedLine
-                  className=""
-                  from={
-                    Object {
-                      "bottom": 428,
-                      "height": 80,
-                      "left": 65,
-                      "right": 165,
-                      "top": 348,
-                      "width": 100,
-                      "x": 65,
-                      "y": 348,
-                    }
-                  }
-                  offset={
-                    Object {
-                      "gap": 1,
-                      "x": -67,
-                      "y": 230,
-                      "z": 0,
-                    }
-                  }
-                  orientation="h"
-                  style={Object {}}
-                  to={
-                    Object {
-                      "bottom": 260,
-                      "height": 80,
-                      "left": 360,
-                      "right": 460,
-                      "top": 180,
-                      "width": 100,
-                      "x": 360,
-                      "y": 180,
-                    }
-                  }
-                  x0={182}
-                  x1={477}
-                  y0={158}
-                  y1={-10}
+                <div
+                  className="stepped-line"
                 >
-                  <div
-                    className="stepped-line"
+                  <Line
+                    from={
+                      Object {
+                        "bottom": 428,
+                        "height": 80,
+                        "left": 65,
+                        "right": 165,
+                        "top": 348,
+                        "width": 100,
+                        "x": 65,
+                        "y": 348,
+                      }
+                    }
+                    offset={
+                      Object {
+                        "gap": 1,
+                        "x": -67,
+                        "y": 230,
+                        "z": 0,
+                      }
+                    }
+                    to={
+                      Object {
+                        "bottom": 260,
+                        "height": 80,
+                        "left": 360,
+                        "right": 460,
+                        "top": 180,
+                        "width": 100,
+                        "x": 360,
+                        "y": 180,
+                      }
+                    }
+                    x0={182}
+                    x1={329.5}
+                    y0={158}
+                    y1={158}
                   >
-                    <Line
-                      className=""
-                      from={
+                    <div
+                      className="line-core"
+                      style={
                         Object {
-                          "bottom": 428,
-                          "height": 80,
-                          "left": 65,
-                          "right": 165,
-                          "top": 348,
-                          "width": 100,
-                          "x": 65,
-                          "y": 348,
+                          "left": "182px",
+                          "top": "158px",
+                          "transform": "rotate(0deg)",
+                          "width": "147.5px",
                         }
                       }
-                      offset={
+                    />
+                  </Line>
+                  <Line
+                    from={
+                      Object {
+                        "bottom": 428,
+                        "height": 80,
+                        "left": 65,
+                        "right": 165,
+                        "top": 348,
+                        "width": 100,
+                        "x": 65,
+                        "y": 348,
+                      }
+                    }
+                    offset={
+                      Object {
+                        "gap": 1,
+                        "x": -67,
+                        "y": 230,
+                        "z": 0,
+                      }
+                    }
+                    to={
+                      Object {
+                        "bottom": 260,
+                        "height": 80,
+                        "left": 360,
+                        "right": 460,
+                        "top": 180,
+                        "width": 100,
+                        "x": 360,
+                        "y": 180,
+                      }
+                    }
+                    x0={477}
+                    x1={329.5}
+                    y0={-10}
+                    y1={-10}
+                  >
+                    <div
+                      className="line-core"
+                      style={
                         Object {
-                          "gap": 1,
-                          "x": -67,
-                          "y": 230,
-                          "z": 0,
+                          "left": "477px",
+                          "top": "-10px",
+                          "transform": "rotate(180deg)",
+                          "width": "147.5px",
                         }
                       }
-                      orientation="h"
-                      style={Object {}}
-                      to={
+                    />
+                  </Line>
+                  <Line
+                    from={
+                      Object {
+                        "bottom": 428,
+                        "height": 80,
+                        "left": 65,
+                        "right": 165,
+                        "top": 348,
+                        "width": 100,
+                        "x": 65,
+                        "y": 348,
+                      }
+                    }
+                    offset={
+                      Object {
+                        "gap": 1,
+                        "x": -67,
+                        "y": 230,
+                        "z": 0,
+                      }
+                    }
+                    to={
+                      Object {
+                        "bottom": 260,
+                        "height": 80,
+                        "left": 360,
+                        "right": 460,
+                        "top": 180,
+                        "width": 100,
+                        "x": 360,
+                        "y": 180,
+                      }
+                    }
+                    x0={329.5}
+                    x1={329.5}
+                    y0={-11}
+                    y1={158}
+                  >
+                    <div
+                      className="line-core"
+                      style={
                         Object {
-                          "bottom": 260,
-                          "height": 80,
-                          "left": 360,
-                          "right": 460,
-                          "top": 180,
-                          "width": 100,
-                          "x": 360,
-                          "y": 180,
+                          "left": "329.5px",
+                          "top": "-11px",
+                          "transform": "rotate(90deg)",
+                          "width": "169px",
                         }
                       }
-                      x0={182}
-                      x1={329.5}
-                      y0={158}
-                      y1={158}
-                    >
-                      <div
-                        className="line-core"
-                        style={
-                          Object {
-                            "left": "182px",
-                            "top": "158px",
-                            "transform": "rotate(0deg)",
-                            "width": "147.5px",
-                          }
-                        }
-                      />
-                    </Line>
-                    <Line
-                      className=""
-                      from={
-                        Object {
-                          "bottom": 428,
-                          "height": 80,
-                          "left": 65,
-                          "right": 165,
-                          "top": 348,
-                          "width": 100,
-                          "x": 65,
-                          "y": 348,
-                        }
-                      }
-                      offset={
-                        Object {
-                          "gap": 1,
-                          "x": -67,
-                          "y": 230,
-                          "z": 0,
-                        }
-                      }
-                      orientation="h"
-                      style={Object {}}
-                      to={
-                        Object {
-                          "bottom": 260,
-                          "height": 80,
-                          "left": 360,
-                          "right": 460,
-                          "top": 180,
-                          "width": 100,
-                          "x": 360,
-                          "y": 180,
-                        }
-                      }
-                      x0={477}
-                      x1={329.5}
-                      y0={-10}
-                      y1={-10}
-                    >
-                      <div
-                        className="line-core"
-                        style={
-                          Object {
-                            "left": "477px",
-                            "top": "-10px",
-                            "transform": "rotate(180deg)",
-                            "width": "147.5px",
-                          }
-                        }
-                      />
-                    </Line>
-                    <Line
-                      className=""
-                      from={
-                        Object {
-                          "bottom": 428,
-                          "height": 80,
-                          "left": 65,
-                          "right": 165,
-                          "top": 348,
-                          "width": 100,
-                          "x": 65,
-                          "y": 348,
-                        }
-                      }
-                      offset={
-                        Object {
-                          "gap": 1,
-                          "x": -67,
-                          "y": 230,
-                          "z": 0,
-                        }
-                      }
-                      orientation="h"
-                      style={Object {}}
-                      to={
-                        Object {
-                          "bottom": 260,
-                          "height": 80,
-                          "left": 360,
-                          "right": 460,
-                          "top": 180,
-                          "width": 100,
-                          "x": 360,
-                          "y": 180,
-                        }
-                      }
-                      x0={329.5}
-                      x1={329.5}
-                      y0={-11}
-                      y1={158}
-                    >
-                      <div
-                        className="line-core"
-                        style={
-                          Object {
-                            "left": "329.5px",
-                            "top": "-11px",
-                            "transform": "rotate(90deg)",
-                            "width": "169px",
-                          }
-                        }
-                      />
-                    </Line>
-                  </div>
-                </SteppedLine>
-              </div>
+                    />
+                  </Line>
+                </div>
+              </SteppedLine>
             </SteppedLineTo>
           </LineGroup>
         </BlockGroup>

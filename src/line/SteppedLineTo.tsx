@@ -1,11 +1,9 @@
 import React from 'react';
-import LineTo from './LineTo';
+import { detect, LineToProps } from './LineTo';
 import SteppedLine from './SteppedLine';
 
-export default class SteppedLineTo extends LineTo {
-  render = () => (
-    <div className="stepped-line-to">
-      <SteppedLine {...this.detect()} {...this.props} />
-    </div>
-  );
-}
+const SteppedLineTo = (props: LineToProps) => (
+  <SteppedLine {...detect(props)} {...props} />
+);
+
+export default SteppedLineTo;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Line from './core';
 
 const defaultAnchor = { x: 0.5, y: 0.5 };
@@ -60,47 +60,18 @@ export interface LineToState {
   offsetY: number;
 }
 
-export default class LineTo extends Component<LineToProps, LineToState> {
-  static defaultProps = {
-    className: '',
-    style: {},
-    offset: { x: 0, y: 0 },
-  };
+export const detect = ({ from, to, offset = { x: 0, y: 0 } }: LineToProps) => {
+  const offsetX = window.pageXOffset - offset.x;
+  const offsetY = window.pageYOffset - offset.y;
 
-  static getDerivedStateFromProps(
-    nextProps: LineToProps,
-    nextState: LineToState,
-  ) {
-    const { offset: parentOffset } = nextProps;
-    if (
-      parentOffset &&
-      (parentOffset.x !== nextState.offsetX ||
-        parentOffset.y !== nextState.offsetY)
-    ) {
-      return { offsetX: parentOffset.x, offsetY: parentOffset.y };
-    }
-    return null;
-  }
-  state: LineToState = {
-    offsetX: 0,
-    offsetY: 0,
-  };
+  const x0 = from.left + from.width * defaultAnchor.x + offsetX;
+  const x1 = to.left + to.width * defaultAnchor.x + offsetX;
+  const y0 = from.top + from.height * defaultAnchor.y + offsetY;
+  const y1 = to.top + to.height * defaultAnchor.y + offsetY;
 
-  detect = () => {
-    const { from, to, offset = { x: 0, y: 0 } } = this.props;
+  return { x0, y0, x1, y1 };
+};
 
-    const offsetX = window.pageXOffset - offset.x;
-    const offsetY = window.pageYOffset - offset.y;
+const LineTo = (props: LineToProps) => <Line {...detect(props)} {...props} />;
 
-    const x0 = from.left + from.width * defaultAnchor.x + offsetX;
-    const x1 = to.left + to.width * defaultAnchor.x + offsetX;
-    const y0 = from.top + from.height * defaultAnchor.y + offsetY;
-    const y1 = to.top + to.height * defaultAnchor.y + offsetY;
-
-    return { x0, y0, x1, y1 };
-  };
-
-  render = () => {
-    return <Line {...this.detect()} {...this.props} />;
-  };
-}
+export default LineTo;

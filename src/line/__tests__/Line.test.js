@@ -22,7 +22,7 @@ describe('Line', () => {
       <SteppedLineTo from={from} to={to} key="line-test" orientation="v" />,
     );
     expect(wrapper).toMatchSnapshot();
-    expect(wrapper.find('.stepped-line-to').length).toBe(1);
+    expect(wrapper.find('.stepped-line').length).toBe(1);
   });
 
   it('offset works well', () => {
