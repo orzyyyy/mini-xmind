@@ -178,6 +178,9 @@ describe('Canvas', () => {
   });
 
   it('handleTagChange', () => {
+    if (process.env.LIB_DIR === 'dist') {
+      return;
+    }
     const onChange = jest.fn();
     const wrapper = mount(<Canvas data={mapping} onChange={onChange} />);
     wrapper
