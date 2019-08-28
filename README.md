@@ -3,16 +3,17 @@
 ![CircleCI](https://img.shields.io/circleci/project/github/orzyyyy/mini-xmind/master.svg)
 [![codecov](https://codecov.io/gh/orzyyyy/mini-xmind/branch/master/graph/badge.svg)](https://codecov.io/gh/orzyyyy/mini-xmind)
 
-what you see in gif is the all what the repo do, just as title, a web tool for mini mind-mapping.
+A web tool for mini mind-mapping.
 
-online demo: https://orzyyyy.github.io/mini-xmind
+Online demo: https://orzyyyy.github.io/mini-xmind
 
 ## Usage
 
 ```javascript
+import React, { useState, useEffect } from 'react';
 import { Canvas, Toolbar } from 'mini-xmind';
 
-const data = {
+const dataSource = {
   CanvasPosition: { x: -67, y: 230 },
   BlockGroup: {
     'block-623187': {
@@ -57,42 +58,41 @@ const data = {
   },
 };
 
-export default () => (
-  <div className="Demo">
-    <Toolbar />
-    <Canvas className="canvas-wrapper" data={data} />
-  </div>
-);
+export default () => {
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    setData(dataSource);
+  }, []);
+
+  const onChange = newData => {
+    setData(newData);
+  };
+
+  return (
+    <>
+      <Toolbar />
+      <Canvas className="canvas-wrapper" data={data} onChange={onChange} />
+    </>
+  );
+};
 ```
 
 ## Development
 
 ```bash
-git clone https://github.com/orzyyyy/mini-xmind.git
-
-cd mini-xmind
-
-npm install
-
-npm start
-
-http://localhost:9099
+$ git clone https://github.com/orzyyyy/mini-xmind.git
+$ cd mini-xmind
+$ npm install
+$ npm start
 ```
 
-## Example
-
-http://localhost:9099/
+Open your browser and visit <http://localhost:9099>
 
 ## Test Case
 
 ```
 npm test
-```
-
-## Coverage
-
-```
-npm run coverage
 ```
 
 ## API
@@ -103,8 +103,8 @@ There is no prop for now, just render
 
 ### Canvas props
 
-| Property    | Description                                         | Type                                                                                         | Default |
-| ----------- | --------------------------------------------------- | -------------------------------------------------------------------------------------------- | ------- |
-| data        | What you want to paint in canvas                    | object, { BlockGroup: {}, TagGroup: {}, LineGroup: {}, CanvasPosition: {} }                  | {}      |
-| orientation | The direction of Line startting                     | enum, ['h', 'v', 'horizonal', 'vertical'], h == horizonal && v = vertical                    | h       |
-| onChange    | Return all data when dragging or typing in TagGroup | (dataCollector: { BlockGroup: {}, TagGroup: {}, LineGroup: {}, CanvasPosition: {} }) => void | -       |
+| Property    | Description                                         | Type                                                                                                                                               | Default   |
+| ----------- | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| data        | what you want to paint in canvas                    | [DataSource](https://github.com/orzyyyy/mini-xmind/blob/0b83c704edf98fac54dc5117f120565b28244877/src/canvas/core.tsx#L23)                          | {}        |
+| orientation | the direction of Line startting                     | enum, ['horizonal', 'vertical']                                                                                                                    | horizonal |
+| onChange    | return all data when dragging or typing in TagGroup | (dataCollector: [DataSource](https://github.com/orzyyyy/mini-xmind/blob/0b83c704edf98fac54dc5117f120565b28244877/src/canvas/core.tsx#L23)) => void | -         |
