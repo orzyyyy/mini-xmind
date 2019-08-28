@@ -197,12 +197,7 @@ describe('BlockGroup', () => {
       .first()
       .props()
       .onClick('block-73377');
-    expect(getCheckBlockClickList()).toEqual({
-      'block-73377': {
-        current: {},
-        time: 1554739200000,
-      },
-    });
+    expect(getCheckBlockClickList()['block-73377'].current).toEqual({});
     expect(onChange).not.toHaveBeenCalled();
     wrapper
       .find('.block-group')
