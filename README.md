@@ -7,10 +7,6 @@ what you see in gif is the all what the repo do, just as title, a web tool for m
 
 online demo: https://orzyyyy.github.io/mini-xmind
 
-## Screenshots
-
-![img](./docs/assets/demo.gif)
-
 ## Usage
 
 ```javascript
@@ -103,7 +99,7 @@ npm run coverage
 
 ### Toolbar props
 
-There is no prop for now, just render it.
+There is no prop for now, just render
 
 ### Canvas props
 
