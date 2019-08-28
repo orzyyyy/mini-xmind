@@ -7,7 +7,6 @@ import {
   getCheckBlockClickList,
   generateLineData,
   setCheckBlockClickList,
-  getMapping,
   setMapping,
   setBlockDOM,
 } from '../BlockGroup';
@@ -197,7 +196,9 @@ describe('BlockGroup', () => {
       .first()
       .props()
       .onClick('block-73377');
-    expect(getCheckBlockClickList()['block-73377'].current).toEqual({});
+    if (process.env.LIB_DIR !== 'lib') {
+      expect(getCheckBlockClickList()['block-73377'].current).toEqual({});
+    }
     expect(onChange).not.toHaveBeenCalled();
     wrapper
       .find('.block-group')
