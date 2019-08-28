@@ -29,7 +29,7 @@ let checkBlockClickList: any = {};
 // to record it here
 let mapping: any = {};
 // to save refs
-const blockDOM: any = {};
+let blockDOM: any = {};
 const keysLength = (obj: object) => Object.keys(obj).length;
 
 const addBlockDom = (lineData: any, targetBlockDOM: any) => {
@@ -48,18 +48,41 @@ const addBlockDom = (lineData: any, targetBlockDOM: any) => {
   return lineData;
 };
 
+export const getMapping = () => mapping;
+
+export const setMapping = (target: any, notMerge?: boolean) => {
+  mapping = notMerge ? target : Object.assign({}, mapping, target);
+  return mapping;
+};
+
+export const getBlockDOM = () => blockDOM;
+
+export const setBlockDOM = (target: any, notMerge?: boolean) => {
+  blockDOM = notMerge ? target : Object.assign({}, blockDOM, target);
+  return blockDOM;
+};
+
 export const cleanCheckBlockClickList = () => {
   checkBlockClickList = {};
 };
 
-const generateLineData = (lineData: any, lineKey: string) => {
+export const getCheckBlockClickList = () => checkBlockClickList;
+
+export const setCheckBlockClickList = (target: any, notMerge?: boolean) => {
+  checkBlockClickList = notMerge
+    ? target
+    : Object.assign({}, checkBlockClickList, target);
+  return checkBlockClickList;
+};
+
+export const generateLineData = (lineData: any, lineKey: string) => {
   let fromNode;
   let toNode;
   let fromKey;
   let toKey;
   const keys = Object.keys(checkBlockClickList);
 
-  if (checkBlockClickList[keys[0]] > checkBlockClickList[keys[1]]) {
+  if (checkBlockClickList[keys[0]].time > checkBlockClickList[keys[1]].time) {
     fromKey = keys[1];
     toKey = keys[0];
   } else {
