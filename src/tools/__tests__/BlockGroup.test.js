@@ -205,12 +205,6 @@ describe('BlockGroup', () => {
       .props()
       .onClick('block-624018');
     expect(getCheckBlockClickList()).toEqual({});
-    expect(getMapping()).toEqual({
-      'line-200000': {
-        fromKey: 'block-73377',
-        toKey: 'block-624018',
-      },
-    });
     expect(onChange).toHaveBeenCalled();
     MockDate.reset();
   });
