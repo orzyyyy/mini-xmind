@@ -43,7 +43,8 @@ describe('Canvas', () => {
   });
 
   it('onDrop should return when dragItem is null', () => {
-    const wrapper = mount(<Canvas data={mapping} />);
+    const onChange = jest.fn();
+    const wrapper = mount(<Canvas data={mapping} onChange={onChange} />);
     const event = {};
     event.dataTransfer = {};
     event.dataTransfer.getData = () => {
@@ -56,6 +57,15 @@ describe('Canvas', () => {
         .props()
         .onDrop(event),
     ).toBe(false);
+    event.dataTransfer.getData = () => {
+      return '{"key":"border","value":"","style":{"width":100,"height":80}}';
+    };
+    wrapper
+      .find('.react-draggable')
+      .first()
+      .props()
+      .onDrop(event);
+    expect(onChange).not.toHaveBeenCalled();
   });
 
   it('onDrop should update blockProps when droping a Block', () => {
@@ -114,6 +124,12 @@ describe('Canvas', () => {
     const preventDefault = jest.fn();
     const event = { preventDefault };
     wrapper
+      .find('TagGroup')
+      .first()
+      .props()
+      .onContextMenu({ group: '', event, key: 'tag-626505' });
+    expect(onChange).toHaveBeenCalled();
+    wrapper
       .find('BlockGroup')
       .first()
       .props()
@@ -159,5 +175,29 @@ describe('Canvas', () => {
       .props()
       .onChange(null);
     expect(onChange).toHaveBeenCalled();
+  });
+
+  it('handleTagChange', () => {
+    if (process.env.LIB_DIR === 'dist') {
+      return;
+    }
+    const onChange = jest.fn();
+    const wrapper = mount(<Canvas data={mapping} onChange={onChange} />);
+    wrapper
+      .find('TagGroup')
+      .props()
+      .onChange();
+    expect(onChange).toHaveBeenCalledWith(mapping);
+  });
+
+  it('handleDragStart', () => {
+    const stopPropagation = jest.fn();
+    const wrapper = mount(<Canvas data={mapping} />);
+    wrapper
+      .find('Draggable')
+      .first()
+      .props()
+      .onStart({ stopPropagation });
+    expect(stopPropagation).toHaveBeenCalled();
   });
 });
