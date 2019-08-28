@@ -207,6 +207,75 @@ describe('BlockGroup', () => {
       .onClick('block-624018');
     expect(getCheckBlockClickList()).toEqual({});
     expect(onChange).toHaveBeenCalled();
+    setMapping(
+      { test1: { fromKey: 'block-73377', toKey: 'block-624018' } },
+      true,
+    );
+    setBlockDOM({ 'block-73377': {}, 'block-624018': {} });
+    setCheckBlockClickList({ 'block-73377': {}, 'block-624018': {} }, true);
+    expect(
+      wrapper
+        .find('.block-group')
+        .first()
+        .props()
+        .onClick('block-73377'),
+    ).toBe();
     MockDate.reset();
+  });
+
+  it('handleDragStart', () => {
+    const stopPropagation = jest.fn();
+    const preventDefault = jest.fn();
+    const renderLine = jest.fn();
+    const wrapper = mount(
+      <BlockGroup
+        data={{
+          'block-442566': {
+            x: 571,
+            y: 320,
+            style: {
+              width: 100,
+              height: 80,
+            },
+          },
+        }}
+        lineData={undefined}
+        renderLine={renderLine}
+      />,
+    );
+    wrapper
+      .find('Draggable')
+      .first()
+      .props()
+      .onStart({ stopPropagation, preventDefault });
+    expect(preventDefault).toHaveBeenCalled();
+    expect(stopPropagation).toHaveBeenCalled();
+  });
+
+  it('onContextMenu', () => {
+    const renderLine = jest.fn();
+    const onContextMenu = jest.fn();
+    const wrapper = mount(
+      <BlockGroup
+        data={{
+          'block-442566': {
+            x: 571,
+            y: 320,
+            style: {
+              width: 100,
+              height: 80,
+            },
+          },
+        }}
+        lineData={undefined}
+        renderLine={renderLine}
+        onContextMenu={onContextMenu}
+      />,
+    );
+    wrapper
+      .find('.block-group')
+      .props()
+      .onContextMenu();
+    expect(onContextMenu).toHaveBeenCalled();
   });
 });
