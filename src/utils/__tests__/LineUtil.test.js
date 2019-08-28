@@ -115,5 +115,11 @@ describe('LineUtil', () => {
         },
       }),
     ).toEqual([]);
+    expect(
+      getRelativeLinesByBlockKey('block-73377', {
+        'line-77619': { fromKey: 'block-73377', toKey: 'block-623187' },
+        'line-592694': { fromKey: 'block-623187', toKey: 'block-624018' },
+      }),
+    ).toEqual(['line-77619']);
   });
 });
