@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { handleDragStart } from '../TagGroup';
 let TagGroup;
 switch (process.env.LIB_DIR) {
   case 'lib':
@@ -117,5 +118,45 @@ describe('TagGroup', () => {
     );
     wrapper.find('TextArea').simulate('blur');
     expect(onChange).toHaveBeenCalled();
+  });
+
+  it('onContextMenu', () => {
+    const onContextMenu = jest.fn();
+    const wrapper = mount(
+      <TagGroup
+        onContextMenu={onContextMenu}
+        data={{
+          tag: {
+            editable: false,
+            input: 'test',
+          },
+        }}
+      />,
+    );
+    wrapper
+      .find('.tag-group')
+      .props()
+      .onContextMenu();
+    expect(onContextMenu).toHaveBeenCalled();
+  });
+
+  it('Draggable.onStart', () => {
+    const preventDefault = jest.fn();
+    const stopPropagation = jest.fn();
+    const wrapper = mount(
+      <TagGroup
+        data={{
+          tag: {
+            editable: false,
+            input: 'test',
+          },
+        }}
+      />,
+    );
+    wrapper
+      .find('Draggable')
+      .props()
+      .onStart({ preventDefault, stopPropagation });
+    expect(preventDefault).toHaveBeenCalled();
   });
 });

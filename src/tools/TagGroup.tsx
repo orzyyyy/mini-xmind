@@ -31,6 +31,11 @@ export interface TagGroupState {
   data: TagGroupItem;
 }
 
+const handleDragStart = (e: any) => {
+  stopPropagation(e);
+  preventDefault(e);
+};
+
 const TagGroup = ({
   data,
   onChange,
@@ -49,11 +54,6 @@ const TagGroup = ({
     if (onChange) {
       onChange(Object.assign({}, data, { [key]: item }));
     }
-  };
-
-  const handleDragStart = (e: any) => {
-    stopPropagation(e);
-    preventDefault(e);
   };
 
   const handleDrag = ({ x, y }: any, key: string) => {
