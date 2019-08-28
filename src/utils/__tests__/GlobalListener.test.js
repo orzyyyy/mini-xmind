@@ -41,4 +41,9 @@ describe('GlobalListener', () => {
     listener.clear();
     expect(listener.meta).toEqual({});
   });
+
+  it('getAll', () => {
+    const listener = new Listener();
+    expect(listener.getAll()).toEqual({});
+  });
 });
