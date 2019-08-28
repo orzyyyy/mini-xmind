@@ -4,6 +4,7 @@ describe('LineTo', () => {
   it('parseAnchor should work', () => {
     expect(parseAnchor('1 2')).toEqual({ x: 0.01, y: 0.02 });
     expect(parseAnchor('1 2 3')).toBe('LinkTo anchor format is "<x> <y>"');
+    expect(parseAnchor()).toEqual({ x: 0.5, y: 0.5 });
   });
 
   it('parseAnchorText should work', () => {
@@ -15,6 +16,7 @@ describe('LineTo', () => {
     expect(parseAnchorText('right')).toEqual({ x: 1 });
     expect(parseAnchorText('')).toEqual(null);
   });
+
   it('parseAnchorPercent should work', () => {
     expect(parseAnchorPercent('1')).toEqual(0.01);
     expect(parseAnchorPercent('test')).toBe(
