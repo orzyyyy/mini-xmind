@@ -14,7 +14,6 @@
   "main": "lib",
   "module": "es",
   "scripts": {
-    "backup": "npm config set registry=https://registry.npmjs.org && npm publish && npm config set registry=https://registry.npm.taobao.org",
     "build": "nino koei",
     "clean": "rimraf node_modules package-lock.json dist es lib && npm i",
     "codecov": "nino test --coverage",
@@ -22,7 +21,6 @@
     "deploy": "node scripts/publish",
     "lint": "nino eslint",
     "lint-staged": "lint-staged",
-    "pre-deploy": "node scripts/copyCircleCiConfig.js",
     "prettier": "nino prettier",
     "pub": "npm run build && npm run compile && git push origin master && npm publish",
     "sort": "npx sort-package-json",
