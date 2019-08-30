@@ -140,11 +140,11 @@ const Canvas = ({
   const handleRightClick = ({ key, event, group }: ContextMenuProps) => {
     preventDefault(event);
     switch (group) {
-      case 'BlockGroup':
+      case 'block-group':
         delete blockProps[key];
         break;
 
-      case 'TagGroup':
+      case 'tag-group':
         delete tagProps[key];
         break;
 

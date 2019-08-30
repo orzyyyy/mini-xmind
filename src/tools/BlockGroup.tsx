@@ -127,7 +127,6 @@ const BlockGroup = ({
   lineData,
   data,
   getCleanClickList,
-  ...rest
 }: BlockGroupProps) => {
   const [blockDom, setBlockDom]: any = useState({});
   const [lineMapping, setLineMapping]: any = useState({});
@@ -165,7 +164,7 @@ const BlockGroup = ({
         clickList,
       );
 
-      // clean up after draw a line
+      // clean up after drawing a line
       cleanClickList();
       // record mapping for arrow
       setLineMapping(
@@ -226,11 +225,10 @@ const BlockGroup = ({
                   onContextMenu({
                     event: e,
                     key: blockKey,
-                    group: 'BlockGroup',
+                    group: 'block-group',
                   });
                 }
               }}
-              {...rest}
             />
           </Draggable>
         );

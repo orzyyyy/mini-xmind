@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Canvas, { DataSource } from '../canvas';
+import Canvas, { DataSource } from '../canvas/core';
 import mapping from '../mock/mapping.json';
-import Toolbar from '../tools';
+import Toolbar from '../tools/Toolbar';
 import './css/demo.css';
 
 const Demo = () => {

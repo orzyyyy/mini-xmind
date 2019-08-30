@@ -125,7 +125,7 @@ TagGroupProps) => {
         onDoubleClick={() => handleChange(item, key, 'editable', true)}
         onContextMenu={(e: any) => {
           if (onContextMenu) {
-            onContextMenu({ event: e, key, group: 'TagGroup' });
+            onContextMenu({ event: e, key, group: 'tag-group' });
           }
         }}
         ref={ref =>
