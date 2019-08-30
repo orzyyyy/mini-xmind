@@ -1,0 +1,189 @@
+import React, { useState, useEffect } from 'react';
+import { convertDomRect2Object } from '../utils/commonUtil';
+import { generateKey } from '../utils/LineUtil';
+import { ContextMenuProps, DataSource } from './core';
+import { BlockProps } from '../tools/BlockGroup';
+import { LineProps } from '../tools/LineGroup';
+
+export interface NinoZoneProps {
+  targetKey: string;
+  onContextMenu: (item: ContextMenuProps) => void;
+  onChange: (data: DataSource, targetDom: any) => void;
+  data: BlockProps;
+  lineData: LineProps;
+  getCleanClickList: (clean: Function) => void;
+  name: 'block-group' | 'tag-group';
+  className: string;
+}
+
+let targetDom: any = {};
+export const getTargetDom = () => targetDom;
+export const setTargetDom = (target: any, notMerge?: boolean) => {
+  targetDom = notMerge ? target : Object.assign({}, targetDom, target);
+  return targetDom;
+};
+
+const generateLineData = (
+  lineData: LineProps,
+  lineKey: string,
+  clickList: any,
+) => {
+  let fromNode;
+  let toNode;
+  let fromKey;
+  let toKey;
+  const keys = Object.keys(clickList);
+
+  if (clickList[keys[0]].time > clickList[keys[1]].time) {
+    fromKey = keys[1];
+    toKey = keys[0];
+  } else {
+    fromKey = keys[0];
+    toKey = keys[1];
+  }
+
+  fromNode = clickList[fromKey].current;
+  toNode = clickList[toKey].current;
+
+  const common = {
+    fromKey,
+    toKey,
+  };
+  lineData[lineKey] = {
+    ...common,
+    from: fromNode,
+    to: toNode,
+  };
+
+  return {
+    result: lineData,
+    ...common,
+  };
+};
+
+const shouldPaintLine = (
+  clickList: any,
+  lineData: LineProps,
+  lineMapping: any,
+) => {
+  if (!Object.keys(lineData).length) {
+    return true;
+  }
+
+  const blocks = Object.keys(clickList).toString();
+  for (const key of Object.keys(lineMapping)) {
+    let fromFlag = false;
+    let toFlag = false;
+    const { fromKey, toKey } = lineMapping[key];
+
+    if (blocks.includes(fromKey)) {
+      fromFlag = true;
+    }
+
+    if (blocks.includes(toKey)) {
+      toFlag = true;
+    }
+
+    if (fromFlag && toFlag) {
+      return false;
+    }
+  }
+  return true;
+};
+
+const NinoZone = ({
+  targetKey,
+  onContextMenu,
+  onChange,
+  data,
+  lineData,
+  getCleanClickList,
+  name,
+  className,
+}: NinoZoneProps) => {
+  const [lineMapping, setLineMapping]: any = useState({});
+  const [clickList, setClickList]: any = useState({});
+
+  const cleanClickList = () => {
+    setClickList({});
+  };
+
+  useEffect(() => {
+    if (getCleanClickList) {
+      getCleanClickList(cleanClickList);
+    }
+  }, []);
+
+  const saveRef = (targetRef: HTMLDivElement | null) => {
+    if (targetRef) {
+      const convert = convertDomRect2Object(targetRef.getBoundingClientRect());
+      const target = {
+        [targetKey]: convert,
+      };
+      const targetDom = getTargetDom();
+      const item = targetDom[targetKey];
+      const result = Object.assign(targetDom, target);
+      if (!item) {
+        setTargetDom(result);
+        return;
+      }
+      if (item && JSON.stringify(convert) !== JSON.stringify(item)) {
+        setTargetDom(result);
+      }
+    }
+  };
+
+  const onClick = () => {
+    const lineKey = generateKey('line');
+    clickList[targetKey] = { current: (getTargetDom() as any)[targetKey] };
+
+    // to record which Block is the starting point
+    if (!('time' in clickList[targetKey])) {
+      clickList[targetKey].time = new Date().getTime();
+      setClickList(clickList);
+    }
+
+    if (Object.keys(clickList).length === 2) {
+      if (!shouldPaintLine(clickList, lineData, lineMapping)) {
+        setClickList({});
+        return;
+      }
+
+      const { result, fromKey, toKey } = generateLineData(
+        lineData,
+        lineKey,
+        clickList,
+      );
+
+      // clean up after drawing a line
+      setClickList({});
+      // record mapping for arrow
+      setLineMapping(
+        Object.assign({}, lineMapping, { [lineKey]: { fromKey, toKey } }),
+      );
+
+      if (onChange) {
+        onChange(data, result);
+      }
+    }
+  };
+
+  return (
+    <div
+      onClick={onClick}
+      ref={saveRef}
+      className={className}
+      onContextMenu={(e: any) => {
+        if (onContextMenu) {
+          onContextMenu({
+            event: e,
+            key: targetKey,
+            group: name,
+          });
+        }
+      }}
+    />
+  );
+};
+
+export default NinoZone;
