@@ -26,10 +26,36 @@ export interface TagGroupProps {
   onChange?: (data: TagGroupItem) => void;
   className?: string;
   onContextMenu?: (item: ContextMenuProps) => void;
+  renderLine?: (TagItemDom: any) => void;
 }
 export interface TagGroupState {
   data: TagGroupItem;
 }
+
+// to save refs
+let TagItemDom: any = {};
+
+export const getTagItemDom = () => {
+  const result: any = {};
+  for (const key of Object.keys(TagItemDom)) {
+    const item = TagItemDom[key];
+    result[key] = {
+      top: item.top,
+      right: item.right,
+      bottom: item.bottom,
+      left: item.left,
+      width: item.width,
+      height: item.height,
+      x: item.x,
+      y: item.y,
+    };
+  }
+  return result;
+};
+
+export const setTagItemDom = (target: any, notMerge?: boolean) => {
+  TagItemDom = notMerge ? target : Object.assign({}, TagItemDom, target);
+};
 
 const handleDragStart = (e: any) => {
   stopPropagation(e);
@@ -41,7 +67,8 @@ const TagGroup = ({
   onChange,
   onContextMenu,
   className: parentClassName,
-}: TagGroupProps) => {
+}: // renderLine,
+TagGroupProps) => {
   const handleChange = (
     item: any,
     key: string,
@@ -101,6 +128,9 @@ const TagGroup = ({
             onContextMenu({ event: e, key, group: 'TagGroup' });
           }
         }}
+        ref={ref =>
+          ref && setTagItemDom({ [key]: ref.getBoundingClientRect() })
+        }
       >
         {item.input}
       </div>
@@ -128,6 +158,7 @@ const TagGroup = ({
           onContextMenu,
         });
       })}
+      {/* {renderLine && renderLine(getTagItemDom())} */}
     </>
   );
 };

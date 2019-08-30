@@ -9,7 +9,7 @@ import {
 import TagGroup, { TagGroupItem } from '../tools/TagGroup';
 import BlockGroup, {
   BlockProps,
-  cleanCheckBlockClickList,
+  updateLineDataByTargetDom,
 } from '../tools/BlockGroup';
 import Draggable from 'react-draggable';
 import { TagProps } from 'antd/lib/tag';
@@ -26,16 +26,18 @@ export type DataSource = {
   TagGroup?: TagGroupItem;
   LineGroup?: LineProps;
 };
+export type OrientationProps = 'h' | 'v' | 'horizonal' | 'vertical';
 export interface CanvasProps {
   className?: string;
   data: DataSource;
-  orientation?: 'h' | 'v' | 'horizonal' | 'vertical';
+  orientation?: OrientationProps;
   blockClassName?: string;
   tagClassName?: string;
   lineClassName?: string;
   onChange?: (item: DataSource) => void;
   onWheel?: (item: DataSource, event?: any) => void;
   onClick?: () => void;
+  mode?: 'scattered' | 'unified';
 }
 export interface CanvasState {
   newBlockProps?: BlockProps;
@@ -49,17 +51,19 @@ export type ContextMenuProps = {
   group: string;
 };
 
-const defaultCanvasPosition = { x: 0, y: 0, z: 0, gap: 1 };
+export const defaultCanvasPosition = { x: 0, y: 0, z: 0, gap: 1 };
+let blockGroupCleanClickList: Function;
 
 const Canvas = ({
   className,
-  orientation,
+  orientation = 'horizonal',
   blockClassName,
   tagClassName,
   lineClassName,
   data,
   onChange,
   onWheel,
+  mode = 'scattered',
   ...rest
 }: CanvasProps) => {
   let blockProps = (data && data.BlockGroup) || {};
@@ -67,16 +71,14 @@ const Canvas = ({
   let tagProps = (data && data.TagGroup) || {};
   let position = (data && data.CanvasPosition) || defaultCanvasPosition;
 
-  const handleBlockChange = (
-    newBlockProps: BlockProps,
-    newLinesProps: LineProps,
-  ) => {
+  const handleBlockChange = (newBlockProps: BlockProps, blockDOM: any) => {
     if (onChange) {
+      const newLinesProps = updateLineDataByTargetDom(linesProps, blockDOM);
       onChange(getTarData({ newBlockProps, newLinesProps }));
     }
   };
 
-  const handleTagChange = (newTagProps: any) => {
+  const handleTagChange = (newTagProps: TagGroupItem) => {
     if (onChange) {
       onChange(getTarData({ newTagProps }));
     }
@@ -130,8 +132,8 @@ const Canvas = ({
     }
   };
 
-  const handleDragStart = (e: any) => {
-    cleanCheckBlockClickList();
+  const handleDragStart = (e: MouseEvent) => {
+    blockGroupCleanClickList();
     stopPropagation(e);
   };
 
@@ -151,7 +153,7 @@ const Canvas = ({
     }
     for (const lineKey of Object.keys(linesProps)) {
       const { fromKey, toKey } = linesProps[lineKey];
-      if (group === 'BlockGroup' && (fromKey === key || toKey === key)) {
+      if (fromKey === key || toKey === key) {
         delete linesProps[lineKey];
       }
     }
@@ -186,6 +188,15 @@ const Canvas = ({
     };
   };
 
+  const renderLineGroup = (targetDom: any) => (
+    <LineGroup
+      data={updateLineDataByTargetDom(linesProps, targetDom)}
+      offset={position}
+      orientation={orientation}
+      className={lineClassName}
+    />
+  );
+
   return (
     <Draggable
       onDrag={handleDrag}
@@ -199,28 +210,27 @@ const Canvas = ({
         onWheel={handleOnWhell}
         {...rest}
       >
-        <BlockGroup
-          offset={position}
-          data={blockProps}
-          onChange={handleBlockChange}
-          lineData={linesProps}
-          className={blockClassName}
-          onContextMenu={handleRightClick}
-          renderLine={lineData => (
-            <LineGroup
-              data={lineData}
+        {
+          <>
+            <BlockGroup
               offset={position}
-              orientation={orientation}
-              className={lineClassName}
+              data={blockProps}
+              onChange={handleBlockChange}
+              lineData={linesProps}
+              className={blockClassName}
+              onContextMenu={handleRightClick}
+              renderLine={renderLineGroup}
+              getCleanClickList={func => (blockGroupCleanClickList = func)}
             />
-          )}
-        />
-        <TagGroup
-          data={tagProps}
-          onChange={handleTagChange}
-          className={tagClassName}
-          onContextMenu={handleRightClick}
-        />
+            <TagGroup
+              data={tagProps}
+              onChange={handleTagChange}
+              className={tagClassName}
+              onContextMenu={handleRightClick}
+              renderLine={renderLineGroup}
+            />
+          </>
+        }
       </div>
     </Draggable>
   );

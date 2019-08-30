@@ -1,20 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Canvas from '../canvas';
+import Canvas, { DataSource } from '../canvas';
 import mapping from '../mock/mapping.json';
 import Toolbar from '../tools';
 import './css/demo.css';
-
-const debounce = (fun: any, delay: number) => (args: any) => {
-  clearTimeout(fun.id);
-  fun.id = setTimeout(function() {
-    fun.call(this, args);
-  }, delay);
-};
-
-function useDebounce(data: any) {
-  // eslint-disable-next-line
-  console.log(data);
-}
 
 const Demo = () => {
   const [data, setData] = useState({});
@@ -23,21 +11,22 @@ const Demo = () => {
     setData(mapping);
   }, []);
 
-  const handleChange = (data: any) => {
-    debounce(useDebounce, 100)(data);
+  const handleChange = (data: DataSource) => {
     setData(data);
   };
 
-  const handleWhellChange = (data: any, e: any) => {
-    const { z, gap } = data.CanvasPosition;
-    if (e.deltaY < 0) {
-      // scrolling up
-      data.CanvasPosition.z = z + gap;
-    } else if (e.deltaY > 0) {
-      // scrolling down
-      data.CanvasPosition.z = z - gap;
+  const handleWhellChange = (data: DataSource, e: any) => {
+    if (data.CanvasPosition) {
+      const { z, gap } = data.CanvasPosition;
+      if (e.deltaY < 0) {
+        // scrolling up
+        data.CanvasPosition.z = z + gap;
+      } else if (e.deltaY > 0) {
+        // scrolling down
+        data.CanvasPosition.z = z - gap;
+      }
+      setData(data);
     }
-    setData(data);
   };
 
   return (
