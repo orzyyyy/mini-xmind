@@ -7,9 +7,8 @@ import {
   preventDefault,
 } from '../utils/LineUtil';
 import './css/BlockGroup.css';
-import { ContextMenuProps } from '../canvas/core';
+import { ContextMenuProps, DataSource } from '../canvas/core';
 import { LineProps } from './LineGroup';
-import { DataSource } from '../../es/canvas';
 import { convertDomRect2Object } from '../utils/commonUtil';
 
 export type BlockProps = { [blockKey: string]: { x: number; y: number } };
@@ -21,7 +20,7 @@ export interface BlockGroupProps {
   offset?: { x: number; y: number };
   onContextMenu?: (item: ContextMenuProps) => void;
   renderLine: (blockDOM: any) => void;
-  getCleanClickList: (clean: Function) => void;
+  getCleanClickList?: (clean: Function) => void;
 }
 export interface BlockGroupState {
   data?: DataSource;
@@ -45,6 +44,74 @@ export const updateLineDataByTargetDom = (
     }
   }
   return lineData;
+};
+
+export const generateLineData = (
+  lineData: any,
+  lineKey: string,
+  clickList: any,
+) => {
+  let fromNode;
+  let toNode;
+  let fromKey;
+  let toKey;
+  const keys = Object.keys(clickList);
+
+  if (clickList[keys[0]].time > clickList[keys[1]].time) {
+    fromKey = keys[1];
+    toKey = keys[0];
+  } else {
+    fromKey = keys[0];
+    toKey = keys[1];
+  }
+
+  fromNode = clickList[fromKey].current;
+  toNode = clickList[toKey].current;
+
+  const common = {
+    fromKey,
+    toKey,
+  };
+  lineData[lineKey] = {
+    ...common,
+    from: fromNode,
+    to: toNode,
+  };
+
+  return {
+    result: lineData,
+    ...common,
+  };
+};
+
+export const shouldPaintLine = (
+  clickList: any,
+  lineData: any,
+  lineMapping: any,
+) => {
+  if (!Object.keys(lineData).length) {
+    return true;
+  }
+
+  const blocks = Object.keys(clickList).toString();
+  for (const key of Object.keys(lineMapping)) {
+    let fromFlag = false;
+    let toFlag = false;
+    const { fromKey, toKey } = lineMapping[key];
+
+    if (blocks.includes(fromKey)) {
+      fromFlag = true;
+    }
+
+    if (blocks.includes(toKey)) {
+      toFlag = true;
+    }
+
+    if (fromFlag && toFlag) {
+      return false;
+    }
+  }
+  return true;
 };
 
 const handleDragStart = (e: any) => {
@@ -71,101 +138,44 @@ const BlockGroup = ({
   };
 
   useEffect(() => {
-    getCleanClickList(cleanClickList);
+    if (getCleanClickList) {
+      getCleanClickList(cleanClickList);
+    }
   }, []);
 
-  const shouldPaintLine = (clickList: any, linesProps: any) => {
-    if (!Object.keys(linesProps).length) {
-      return true;
-    }
-
-    const blocks = Object.keys(clickList).toString();
-    for (const key of Object.keys(lineMapping)) {
-      let fromFlag = false;
-      let toFlag = false;
-      const { fromKey, toKey } = lineMapping[key];
-
-      if (blocks.includes(fromKey)) {
-        fromFlag = true;
-      }
-
-      if (blocks.includes(toKey)) {
-        toFlag = true;
-      }
-
-      if (fromFlag && toFlag) {
-        return false;
-      }
-    }
-    return true;
-  };
-
-  const handleBlockClick = (
-    blockKey: string,
-    data: DataSource,
-    lineData: LineProps,
-    onChange?: (data: DataSource, lineData?: LineProps) => void,
-  ) => {
+  const handleBlockClick = (blockKey: string) => {
     const lineKey = generateKey('line');
-
     clickList[blockKey] = { current: (blockDom as any)[blockKey] };
 
-    // to know which Block is starting point
+    // to record which Block is the starting point
     if (!('time' in clickList[blockKey])) {
       clickList[blockKey].time = new Date().getTime();
+      setClickList(clickList);
     }
 
     if (Object.keys(clickList).length === 2) {
-      if (!shouldPaintLine(clickList, lineData)) {
+      if (!shouldPaintLine(clickList, lineData, lineMapping)) {
         cleanClickList();
         return;
       }
 
-      const { result, fromKey, toKey } = generateLineData(lineData, lineKey);
-
-      if (onChange) {
-        onChange(data, result);
-      }
+      const { result, fromKey, toKey } = generateLineData(
+        lineData,
+        lineKey,
+        clickList,
+      );
 
       // clean up after draw a line
       cleanClickList();
       // record mapping for arrow
-      setLineMapping({ [lineKey]: { fromKey, toKey } });
+      setLineMapping(
+        Object.assign({}, lineMapping, { [lineKey]: { fromKey, toKey } }),
+      );
+
+      if (onChange) {
+        onChange(data, result);
+      }
     }
-  };
-
-  const generateLineData = (lineData: any, lineKey: string) => {
-    let fromNode;
-    let toNode;
-    let fromKey;
-    let toKey;
-    const keys = Object.keys(clickList);
-
-    if (clickList[keys[0]].time > clickList[keys[1]].time) {
-      fromKey = keys[1];
-      toKey = keys[0];
-    } else {
-      fromKey = keys[0];
-      toKey = keys[1];
-    }
-
-    fromNode = clickList[fromKey].current;
-    toNode = clickList[toKey].current;
-
-    const common = {
-      fromKey,
-      toKey,
-    };
-    lineData[lineKey] = {
-      ...common,
-      from: fromNode,
-      to: toNode,
-    };
-
-    return {
-      result: lineData,
-      ...common,
-    };
   };
 
   const handleDrag = ({ x, y }: { x: number; y: number }, blockKey: string) => {
@@ -209,9 +219,7 @@ const BlockGroup = ({
                 parentClassName,
                 blockClassName,
               )}
-              onClick={() =>
-                handleBlockClick(blockKey, data, lineData, onChange)
-              }
+              onClick={() => handleBlockClick(blockKey)}
               ref={ref => saveRef(ref, blockKey)}
               onContextMenu={(e: any) => {
                 if (onContextMenu) {
