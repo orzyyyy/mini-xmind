@@ -1,5 +1,5 @@
 const path = require('path');
-const cwd = cwd;
+const cwd = process.cwd();
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
