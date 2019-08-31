@@ -16,7 +16,6 @@ export interface BlockGroupProps {
   offset?: { x: number; y: number };
   onContextMenu: (item: ContextMenuProps) => void;
   renderLine: (blockDOM: any) => void;
-  getCleanClickList: (clean: Function) => void;
 }
 export interface BlockGroupState {
   data?: DataSource;
@@ -52,7 +51,6 @@ const BlockGroup = ({
   data,
   onChange,
   renderLine,
-  getCleanClickList,
   lineData,
   onContextMenu,
 }: BlockGroupProps) => {
@@ -76,22 +74,23 @@ const BlockGroup = ({
             onStart={handleDragStart}
             key={blockKey}
           >
-            <NinoZone
-              targetKey={blockKey}
-              className={classNames(
-                name,
-                'animate-appear',
-                parentClassName,
-                blockClassName,
-              )}
-              data={data}
-              lineData={lineData}
-              onContextMenu={onContextMenu}
-              name="block-group"
-              onChange={onChange}
-              key={`nino-zone-${blockKey}`}
-              getCleanClickList={getCleanClickList}
-            />
+            <div>
+              <NinoZone
+                className={classNames(
+                  'block-group',
+                  'animate-appear',
+                  parentClassName,
+                  blockClassName,
+                )}
+                targetKey={blockKey}
+                data={data}
+                lineData={lineData}
+                onContextMenu={onContextMenu}
+                name="block-group"
+                onChange={onChange}
+                key={`nino-zone-${blockKey}`}
+              />
+            </div>
           </Draggable>
         );
       })}

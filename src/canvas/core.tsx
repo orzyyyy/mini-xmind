@@ -13,6 +13,7 @@ import BlockGroup, {
 } from '../tools/BlockGroup';
 import Draggable from 'react-draggable';
 import { TagProps } from 'antd/lib/tag';
+import { setClickList } from './nino-zone';
 
 export type CanvasPositionProps = {
   x: number;
@@ -52,7 +53,6 @@ export type ContextMenuProps = {
 };
 
 export const defaultCanvasPosition = { x: 0, y: 0, z: 0, gap: 1 };
-let blockGroupCleanClickList: Function;
 
 const Canvas = ({
   className,
@@ -133,7 +133,7 @@ const Canvas = ({
   };
 
   const handleDragStart = (e: MouseEvent) => {
-    blockGroupCleanClickList();
+    setClickList({});
     stopPropagation(e);
   };
 
@@ -220,7 +220,6 @@ const Canvas = ({
               className={blockClassName}
               onContextMenu={handleRightClick}
               renderLine={renderLineGroup}
-              getCleanClickList={func => (blockGroupCleanClickList = func)}
             />
             <TagGroup
               data={tagProps}

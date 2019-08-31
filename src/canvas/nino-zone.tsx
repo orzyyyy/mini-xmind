@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { convertDomRect2Object } from '../utils/commonUtil';
 import { generateKey } from '../utils/LineUtil';
 import { ContextMenuProps, DataSource } from './core';
@@ -11,9 +11,8 @@ export interface NinoZoneProps {
   onChange: (data: DataSource, targetDom: any) => void;
   data: BlockProps;
   lineData: LineProps;
-  getCleanClickList: (clean: Function) => void;
   name: 'block-group' | 'tag-group';
-  className: string;
+  className?: string;
 }
 
 let targetDom: any = {};
@@ -21,6 +20,20 @@ export const getTargetDom = () => targetDom;
 export const setTargetDom = (target: any, notMerge?: boolean) => {
   targetDom = notMerge ? target : Object.assign({}, targetDom, target);
   return targetDom;
+};
+
+let lineMapping: any = {};
+export const getLineMapping = () => lineMapping;
+export const setLineMapping = (target: any, notMerge?: boolean) => {
+  lineMapping = notMerge ? target : Object.assign({}, lineMapping, target);
+  return lineMapping;
+};
+
+let clickList: any = {};
+export const getClickList = () => clickList;
+export const setClickList = (target: any, notMerge?: boolean) => {
+  clickList = notMerge ? target : Object.assign({}, clickList, target);
+  return clickList;
 };
 
 const generateLineData = (
@@ -97,23 +110,9 @@ const NinoZone = ({
   onChange,
   data,
   lineData,
-  getCleanClickList,
   name,
   className,
 }: NinoZoneProps) => {
-  const [lineMapping, setLineMapping]: any = useState({});
-  const [clickList, setClickList]: any = useState({});
-
-  const cleanClickList = () => {
-    setClickList({});
-  };
-
-  useEffect(() => {
-    if (getCleanClickList) {
-      getCleanClickList(cleanClickList);
-    }
-  }, []);
-
   const saveRef = (targetRef: HTMLDivElement | null) => {
     if (targetRef) {
       const convert = convertDomRect2Object(targetRef.getBoundingClientRect());
@@ -140,7 +139,7 @@ const NinoZone = ({
     // to record which Block is the starting point
     if (!('time' in clickList[targetKey])) {
       clickList[targetKey].time = new Date().getTime();
-      setClickList(clickList);
+      // setClickList(clickList);
     }
 
     if (Object.keys(clickList).length === 2) {
