@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 let TagGroup;
 switch (process.env.LIB_DIR) {
   case 'lib':
-    TagGroup = require('../../../lib/tools').TagGroup;
+    TagGroup = require('../../../lib/tools/TagGroup').default;
     break;
   default:
     TagGroup = require('../TagGroup').default;

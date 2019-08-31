@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 let Toolbar;
 switch (process.env.LIB_DIR) {
   case 'lib':
-    Toolbar = require('../../../lib/tools').default;
+    Toolbar = require('../../../lib/tools/Toolbar').default;
     break;
   default:
     Toolbar = require('../..').Toolbar;

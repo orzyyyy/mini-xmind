@@ -10,7 +10,7 @@ import {
 let BlockGroup;
 switch (process.env.LIB_DIR) {
   case 'lib':
-    BlockGroup = require('../../../lib/tools').BlockGroup;
+    BlockGroup = require('../../../lib/tools/BlockGroup').default;
     break;
   default:
     BlockGroup = require('../BlockGroup').default;

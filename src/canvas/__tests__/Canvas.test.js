@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 let Canvas;
 switch (process.env.LIB_DIR) {
   case 'lib':
-    Canvas = require('../../../lib/canvas').default;
+    Canvas = require('../../../lib/core').default;
     break;
   case 'dist':
     Canvas = require('../../../dist/lib/canvas').default;
