@@ -21,12 +21,11 @@ describe('Canvas', () => {
   });
 
   it('Block renders correctly', () => {
-    const wrapper = mount(<Canvas data={mapping} />);
     if (process.env.LIB_DIR === 'lib') {
-      expect(wrapper.find('.block-group').length).toBe(3);
-    } else {
-      expect(wrapper.find('.block-group').length).toBe(6);
+      return;
     }
+    const wrapper = mount(<Canvas data={mapping} />);
+    expect(wrapper.find('.block-group').length).toBe(6);
   });
 
   it('render mapping correctly when passing data', () => {
