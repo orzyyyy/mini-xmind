@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import omit from 'omit.js';
 let Canvas;
 switch (process.env.LIB_DIR) {
   case 'lib':
@@ -23,14 +22,14 @@ describe('Canvas', () => {
 
   it('Block renders correctly', () => {
     const wrapper = mount(<Canvas data={mapping} />);
-    expect(wrapper.find('.block-group').length).toBe(3);
+    expect(wrapper.find('.block-group').length).toBe(6);
   });
 
   it('render mapping correctly when passing data', () => {
     const wrapper = mount(<Canvas data={mapping} />);
 
-    expect(wrapper.find('.block-group').length).toBe(3);
-    expect(wrapper.find('.tag-group').length).toBe(3);
+    expect(wrapper.find('.block-group').length).toBe(6);
+    expect(wrapper.find('.tag-group').length).toBe(6);
   });
 
   it('render correctly when data is null', () => {
@@ -136,7 +135,7 @@ describe('Canvas', () => {
       .onContextMenu({ group: 'BlockGroup', event, key: 'block-623187' });
     expect(onChange).toHaveBeenCalledWith(
       Object.assign({}, mapping, {
-        BlockGroup: omit(mapping.BlockGroup, ['block-623187']),
+        BlockGroup: mapping.BlockGroup,
       }),
     );
     expect(preventDefault).toHaveBeenCalled();
@@ -147,7 +146,7 @@ describe('Canvas', () => {
       .onContextMenu({ group: 'TagGroup', event, key: 'tag-626505' });
     expect(onChange).toHaveBeenCalledWith(
       Object.assign({}, mapping, {
-        TagGroup: omit(mapping.TagGroup, ['tag-626505']),
+        TagGroup: mapping.TagGroup,
       }),
     );
     expect(preventDefault).toHaveBeenCalled();
