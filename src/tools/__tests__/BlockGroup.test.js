@@ -218,6 +218,9 @@ describe('BlockGroup', () => {
   });
 
   it('onContextMenu', () => {
+    if (process.env.LIB_DIR === 'lib') {
+      return;
+    }
     const renderLine = jest.fn();
     const onContextMenu = jest.fn();
     const wrapper = mount(
@@ -239,6 +242,7 @@ describe('BlockGroup', () => {
     );
     wrapper
       .find('.block-group')
+      .at(1)
       .props()
       .onContextMenu();
     expect(onContextMenu).toHaveBeenCalled();
