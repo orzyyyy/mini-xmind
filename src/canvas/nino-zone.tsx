@@ -141,8 +141,8 @@ const NinoZone = ({
     // to record which Block is the starting point
     if (!('time' in clickList[targetKey])) {
       clickList[targetKey].time = new Date().getTime();
-      // setClickList(clickList);
     }
+    setClickList(clickList);
 
     if (Object.keys(clickList).length === 2) {
       if (!shouldPaintLine(clickList, lineData, lineMapping)) {

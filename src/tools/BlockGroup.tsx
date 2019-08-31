@@ -15,7 +15,6 @@ export interface BlockGroupProps {
   onChange: (data: DataSource, blockDOM: any) => void;
   offset?: { x: number; y: number };
   onContextMenu: (item: ContextMenuProps) => void;
-  renderLine: (blockDOM: any) => void;
 }
 export interface BlockGroupState {
   data?: DataSource;
@@ -50,7 +49,6 @@ const BlockGroup = ({
   className: parentClassName,
   data,
   onChange,
-  renderLine,
   lineData,
   onContextMenu,
 }: BlockGroupProps) => {
@@ -94,7 +92,6 @@ const BlockGroup = ({
           </Draggable>
         );
       })}
-      {renderLine(getTargetDom())}
     </>
   );
 };

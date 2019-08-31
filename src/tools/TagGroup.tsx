@@ -5,7 +5,7 @@ import { Input } from 'antd';
 import './css/TagGroup.css';
 import { stopPropagation, preventDefault } from '../utils/LineUtil';
 import { ContextMenuProps } from '../canvas/core';
-import NinoZone, { getTargetDom } from '../canvas/nino-zone';
+import NinoZone from '../canvas/nino-zone';
 import { LineProps } from './LineGroup';
 
 export type TagGroupRenderItem = {
@@ -28,7 +28,6 @@ export interface TagGroupProps {
   onChange: (data: TagGroupItem) => void;
   className?: string;
   onContextMenu: (item: ContextMenuProps) => void;
-  renderLine?: (TagItemDom: any) => void;
   lineData: LineProps;
 }
 export interface TagGroupState {
@@ -45,7 +44,6 @@ const TagGroup = ({
   onChange,
   onContextMenu,
   className: parentClassName,
-  renderLine,
   lineData,
 }: TagGroupProps) => {
   const handleChange = (
@@ -142,7 +140,6 @@ const TagGroup = ({
           onContextMenu,
         });
       })}
-      {renderLine && renderLine(getTargetDom())}
     </>
   );
 };

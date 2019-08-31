@@ -13,7 +13,7 @@ import BlockGroup, {
 } from '../tools/BlockGroup';
 import Draggable from 'react-draggable';
 import { TagProps } from 'antd/lib/tag';
-import { setClickList } from './nino-zone';
+import { setClickList, getTargetDom } from './nino-zone';
 
 export type CanvasPositionProps = {
   x: number;
@@ -219,7 +219,6 @@ const Canvas = ({
               lineData={linesProps}
               className={blockClassName}
               onContextMenu={handleRightClick}
-              renderLine={renderLineGroup}
             />
             <TagGroup
               data={tagProps}
@@ -227,10 +226,10 @@ const Canvas = ({
               className={tagClassName}
               lineData={linesProps}
               onContextMenu={handleRightClick}
-              renderLine={renderLineGroup}
             />
           </>
         }
+        {renderLineGroup(getTargetDom())}
       </div>
     </Draggable>
   );
