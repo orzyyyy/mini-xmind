@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Canvas, { DataSource } from '../canvas/core';
-import mapping from '../mock/mapping.DragTagGroup.json';
+import mapping from '../mock/mapping.json';
 import Toolbar from '../tools/Toolbar';
 import './css/demo.css';
 
