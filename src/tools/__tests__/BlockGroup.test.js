@@ -46,35 +46,6 @@ const defaultCheckBlockClickList1 = {
   },
 };
 
-const defaultCheckBlockClickList2 = {
-  'block-73377': {
-    current: {
-      bottom: 616,
-      height: 80,
-      left: 361,
-      right: 461,
-      top: 536,
-      width: 100,
-      x: 361,
-      y: 536,
-    },
-    time: 1566984176547,
-  },
-  'block-624018': {
-    current: {
-      bottom: 260,
-      height: 80,
-      left: 359,
-      right: 459,
-      top: 180,
-      width: 100,
-      x: 359,
-      y: 180,
-    },
-    time: 1566984174971,
-  },
-};
-
 describe('BlockGroup', () => {
   it("when lineData is null, onChange shouldn't be called", () => {
     const onChange = jest.fn();

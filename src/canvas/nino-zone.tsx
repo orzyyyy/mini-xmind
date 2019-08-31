@@ -37,11 +37,7 @@ export const setClickList = (target: any, notMerge?: boolean) => {
   return clickList;
 };
 
-const generateLineData = (
-  lineData: LineProps,
-  lineKey: string,
-  clickList: any,
-) => {
+export const generateLineData = (lineData: LineProps, lineKey: string) => {
   let fromNode;
   let toNode;
   let fromKey;
@@ -75,11 +71,7 @@ const generateLineData = (
   };
 };
 
-const shouldPaintLine = (
-  clickList: any,
-  lineData: LineProps,
-  lineMapping: any,
-) => {
+export const shouldPaintLine = (clickList: any, lineData: LineProps) => {
   if (!Object.keys(lineData).length) {
     return true;
   }
@@ -145,16 +137,12 @@ const NinoZone = ({
     setClickList(clickList);
 
     if (Object.keys(clickList).length === 2) {
-      if (!shouldPaintLine(clickList, lineData, lineMapping)) {
+      if (!shouldPaintLine(clickList, lineData)) {
         setClickList({}, true);
         return;
       }
 
-      const { result, fromKey, toKey } = generateLineData(
-        lineData,
-        lineKey,
-        clickList,
-      );
+      const { result, fromKey, toKey } = generateLineData(lineData, lineKey);
 
       // clean up after drawing a line
       setClickList({}, true);
