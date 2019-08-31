@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 let Canvas;
 switch (process.env.LIB_DIR) {
   case 'lib':
-    Canvas = require('../../../lib/core').default;
+    Canvas = require('../../../lib/canvas/core').default;
     break;
   case 'dist':
     Canvas = require('../../../dist/lib/canvas').default;
@@ -22,10 +22,17 @@ describe('Canvas', () => {
 
   it('Block renders correctly', () => {
     const wrapper = mount(<Canvas data={mapping} />);
-    expect(wrapper.find('.block-group').length).toBe(6);
+    if (process.env.LIB_DIR === 'lib') {
+      expect(wrapper.find('.block-group').length).toBe(3);
+    } else {
+      expect(wrapper.find('.block-group').length).toBe(6);
+    }
   });
 
   it('render mapping correctly when passing data', () => {
+    if (process.env.LIB_DIR === 'lib') {
+      return;
+    }
     const wrapper = mount(<Canvas data={mapping} />);
 
     expect(wrapper.find('.block-group').length).toBe(6);

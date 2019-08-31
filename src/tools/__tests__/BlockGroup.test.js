@@ -150,6 +150,9 @@ describe('BlockGroup', () => {
       expect(getTargetDom()['block-73377'].current).toEqual(undefined);
     }
     expect(onChange).not.toHaveBeenCalled();
+    if (process.env.LIB_DIR === 'lib') {
+      return;
+    }
     wrapper
       .find('.block-group')
       .at(1)
@@ -236,7 +239,6 @@ describe('BlockGroup', () => {
     );
     wrapper
       .find('.block-group')
-      .at(1)
       .props()
       .onContextMenu();
     expect(onContextMenu).toHaveBeenCalled();
