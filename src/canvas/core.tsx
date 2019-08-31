@@ -225,6 +225,7 @@ const Canvas = ({
               data={tagProps}
               onChange={handleTagChange}
               className={tagClassName}
+              lineData={linesProps}
               onContextMenu={handleRightClick}
               renderLine={renderLineGroup}
             />

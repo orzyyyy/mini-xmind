@@ -5,12 +5,14 @@ import { Input } from 'antd';
 import './css/TagGroup.css';
 import { stopPropagation, preventDefault } from '../utils/LineUtil';
 import { ContextMenuProps } from '../canvas/core';
+import NinoZone, { getTargetDom } from '../canvas/nino-zone';
+import { LineProps } from './LineGroup';
 
 export type TagGroupRenderItem = {
   item: { input: string; x: number; y: number };
   key: string;
   className: string;
-  onContextMenu?: ({ event, key, group }: ContextMenuProps) => void;
+  onContextMenu: ({ event, key, group }: ContextMenuProps) => void;
 };
 export type TagGroupItem = {
   [key: string]: {
@@ -23,39 +25,15 @@ export type TagGroupItem = {
 };
 export interface TagGroupProps {
   data: TagGroupItem;
-  onChange?: (data: TagGroupItem) => void;
+  onChange: (data: TagGroupItem) => void;
   className?: string;
-  onContextMenu?: (item: ContextMenuProps) => void;
+  onContextMenu: (item: ContextMenuProps) => void;
   renderLine?: (TagItemDom: any) => void;
+  lineData: LineProps;
 }
 export interface TagGroupState {
   data: TagGroupItem;
 }
-
-// to save refs
-let TagItemDom: any = {};
-
-export const getTagItemDom = () => {
-  const result: any = {};
-  for (const key of Object.keys(TagItemDom)) {
-    const item = TagItemDom[key];
-    result[key] = {
-      top: item.top,
-      right: item.right,
-      bottom: item.bottom,
-      left: item.left,
-      width: item.width,
-      height: item.height,
-      x: item.x,
-      y: item.y,
-    };
-  }
-  return result;
-};
-
-export const setTagItemDom = (target: any, notMerge?: boolean) => {
-  TagItemDom = notMerge ? target : Object.assign({}, TagItemDom, target);
-};
 
 const handleDragStart = (e: any) => {
   stopPropagation(e);
@@ -67,8 +45,9 @@ const TagGroup = ({
   onChange,
   onContextMenu,
   className: parentClassName,
-}: // renderLine,
-TagGroupProps) => {
+  renderLine,
+  lineData,
+}: TagGroupProps) => {
   const handleChange = (
     item: any,
     key: string,
@@ -120,19 +99,19 @@ TagGroupProps) => {
       position={{ x: item.x, y: item.y }}
       onDrag={(_: any, jtem) => handleDrag(jtem, key)}
     >
-      <div
-        className={className}
-        onDoubleClick={() => handleChange(item, key, 'editable', true)}
-        onContextMenu={(e: any) => {
-          if (onContextMenu) {
-            onContextMenu({ event: e, key, group: 'tag-group' });
-          }
-        }}
-        ref={ref =>
-          ref && setTagItemDom({ [key]: ref.getBoundingClientRect() })
-        }
-      >
-        {item.input}
+      <div onDoubleClick={() => handleChange(item, key, 'editable', true)}>
+        <NinoZone
+          className={className}
+          onContextMenu={onContextMenu}
+          name="tag-group"
+          onChange={onChange}
+          key={`nino-zone-${key}`}
+          targetKey={key}
+          data={data}
+          lineData={lineData}
+        >
+          {item.input}
+        </NinoZone>
       </div>
     </Draggable>
   );
@@ -149,7 +128,12 @@ TagGroupProps) => {
           tagClassName,
         );
         if (editable) {
-          return renderTextArea({ item, key, className: targetClassName });
+          return renderTextArea({
+            item,
+            key,
+            className: targetClassName,
+            onContextMenu: () => {},
+          });
         }
         return renderTagItem({
           item,
@@ -158,7 +142,7 @@ TagGroupProps) => {
           onContextMenu,
         });
       })}
-      {/* {renderLine && renderLine(getTagItemDom())} */}
+      {renderLine && renderLine(getTargetDom())}
     </>
   );
 };

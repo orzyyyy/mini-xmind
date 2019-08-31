@@ -1,8 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import Canvas, { DataSource } from '../canvas/core';
-import mapping from '../mock/mapping.json';
+import mapping from '../mock/mapping.DragTagGroup.json';
 import Toolbar from '../tools/Toolbar';
 import './css/demo.css';
+
+const debounce = (fun: any, delay: number) => (args: any) => {
+  clearTimeout(fun.id);
+  fun.id = setTimeout(function() {
+    fun.call(this, args);
+  }, delay);
+};
+
+function useDebounce(data: any) {
+  // eslint-disable-next-line
+  console.log(data);
+}
 
 const Demo = () => {
   const [data, setData] = useState({});
@@ -12,6 +24,7 @@ const Demo = () => {
   }, []);
 
   const handleChange = (data: DataSource) => {
+    debounce(useDebounce, 100)(data);
     setData(data);
   };
 

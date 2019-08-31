@@ -10,9 +10,10 @@ export interface NinoZoneProps {
   onContextMenu: (item: ContextMenuProps) => void;
   onChange: (data: DataSource, targetDom: any) => void;
   data: BlockProps;
-  lineData: LineProps;
+  lineData?: LineProps;
   name: 'block-group' | 'tag-group';
   className?: string;
+  children?: any;
 }
 
 let targetDom: any = {};
@@ -109,9 +110,10 @@ const NinoZone = ({
   onContextMenu,
   onChange,
   data,
-  lineData,
+  lineData = {},
   name,
   className,
+  children,
 }: NinoZoneProps) => {
   const saveRef = (targetRef: HTMLDivElement | null) => {
     if (targetRef) {
@@ -173,15 +175,15 @@ const NinoZone = ({
       ref={saveRef}
       className={className}
       onContextMenu={(e: any) => {
-        if (onContextMenu) {
-          onContextMenu({
-            event: e,
-            key: targetKey,
-            group: name,
-          });
-        }
+        onContextMenu({
+          event: e,
+          key: targetKey,
+          group: name,
+        });
       }}
-    />
+    >
+      {children}
+    </div>
   );
 };
 
