@@ -146,7 +146,7 @@ const NinoZone = ({
 
     if (Object.keys(clickList).length === 2) {
       if (!shouldPaintLine(clickList, lineData, lineMapping)) {
-        setClickList({});
+        setClickList({}, true);
         return;
       }
 
@@ -157,7 +157,7 @@ const NinoZone = ({
       );
 
       // clean up after drawing a line
-      setClickList({});
+      setClickList({}, true);
       // record mapping for arrow
       setLineMapping(
         Object.assign({}, lineMapping, { [lineKey]: { fromKey, toKey } }),
