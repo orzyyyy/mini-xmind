@@ -1,13 +1,12 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { handleDragStart } from '../TagGroup';
 let TagGroup;
 switch (process.env.LIB_DIR) {
   case 'lib':
-    TagGroup = require('../../../lib/tools').TagGroup;
+    TagGroup = require('../../../lib/tools/TagGroup').default;
     break;
   default:
-    TagGroup = require('..').TagGroup;
+    TagGroup = require('../TagGroup').default;
     break;
 }
 
@@ -20,7 +19,12 @@ describe('TagGroup', () => {
       },
     };
     const wrapper = mount(<TagGroup data={data} />);
-    expect(wrapper.find('.tag-group').text()).toBe('test');
+    expect(
+      wrapper
+        .find('.tag-group')
+        .at(1)
+        .text(),
+    ).toBe('test');
     wrapper.setProps({
       data: {
         tag: {
@@ -40,7 +44,10 @@ describe('TagGroup', () => {
       },
     };
     const wrapper = mount(<TagGroup data={data} />);
-    wrapper.find('.tag-group').simulate('doubleclick');
+    wrapper
+      .find('.tag-group')
+      .at(1)
+      .simulate('doubleclick');
     expect(wrapper.find('TagGroup').props().data).toEqual({
       tag: {
         editable: true,
@@ -135,6 +142,7 @@ describe('TagGroup', () => {
     );
     wrapper
       .find('.tag-group')
+      .at(1)
       .props()
       .onContextMenu();
     expect(onContextMenu).toHaveBeenCalled();

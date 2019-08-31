@@ -273,7 +273,6 @@ exports[`Canvas Canvas renders correctly 1`] = `
           }
           onChange={[Function]}
           onContextMenu={[Function]}
-          renderLine={[Function]}
         >
           <Draggable
             allowAnyClick={false}
@@ -341,17 +340,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
               transform={null}
             >
               <div
-                className="block-group animate-appear react-draggable"
-                offset={
-                  Object {
-                    "gap": 1,
-                    "x": -67,
-                    "y": 230,
-                    "z": 0,
-                  }
-                }
-                onClick={[Function]}
-                onContextMenu={[Function]}
+                className="react-draggable"
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
@@ -363,7 +352,90 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   }
                 }
                 transform={null}
-              />
+              >
+                <NinoZone
+                  className="block-group animate-appear"
+                  data={
+                    Object {
+                      "block-623187": Object {
+                        "x": 132,
+                        "y": 118,
+                      },
+                      "block-624018": Object {
+                        "x": 426,
+                        "y": -50,
+                      },
+                      "block-73377": Object {
+                        "x": 428,
+                        "y": 306,
+                      },
+                    }
+                  }
+                  key="nino-zone-block-623187"
+                  lineData={
+                    Object {
+                      "line-592694": Object {
+                        "from": Object {
+                          "bottom": 428,
+                          "height": 80,
+                          "left": 65,
+                          "right": 165,
+                          "top": 348,
+                          "width": 100,
+                          "x": 65,
+                          "y": 348,
+                        },
+                        "fromKey": "block-623187",
+                        "to": Object {
+                          "bottom": 260,
+                          "height": 80,
+                          "left": 360,
+                          "right": 460,
+                          "top": 180,
+                          "width": 100,
+                          "x": 360,
+                          "y": 180,
+                        },
+                        "toKey": "block-624018",
+                      },
+                      "line-77619": Object {
+                        "from": Object {
+                          "bottom": 616,
+                          "height": 80,
+                          "left": 361,
+                          "right": 461,
+                          "top": 536,
+                          "width": 100,
+                          "x": 361,
+                          "y": 536,
+                        },
+                        "fromKey": "block-73377",
+                        "to": Object {
+                          "bottom": 428,
+                          "height": 80,
+                          "left": 65,
+                          "right": 165,
+                          "top": 348,
+                          "width": 100,
+                          "x": 65,
+                          "y": 348,
+                        },
+                        "toKey": "block-623187",
+                      },
+                    }
+                  }
+                  name="block-group"
+                  onChange={[Function]}
+                  onContextMenu={[Function]}
+                  targetKey="block-623187"
+                >
+                  <div
+                    className="block-group animate-appear"
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                  />
+                </NinoZone>
+              </div>
             </DraggableCore>
           </Draggable>
           <Draggable
@@ -432,17 +504,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
               transform={null}
             >
               <div
-                className="block-group animate-appear react-draggable"
-                offset={
-                  Object {
-                    "gap": 1,
-                    "x": -67,
-                    "y": 230,
-                    "z": 0,
-                  }
-                }
-                onClick={[Function]}
-                onContextMenu={[Function]}
+                className="react-draggable"
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
@@ -454,7 +516,90 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   }
                 }
                 transform={null}
-              />
+              >
+                <NinoZone
+                  className="block-group animate-appear"
+                  data={
+                    Object {
+                      "block-623187": Object {
+                        "x": 132,
+                        "y": 118,
+                      },
+                      "block-624018": Object {
+                        "x": 426,
+                        "y": -50,
+                      },
+                      "block-73377": Object {
+                        "x": 428,
+                        "y": 306,
+                      },
+                    }
+                  }
+                  key="nino-zone-block-624018"
+                  lineData={
+                    Object {
+                      "line-592694": Object {
+                        "from": Object {
+                          "bottom": 428,
+                          "height": 80,
+                          "left": 65,
+                          "right": 165,
+                          "top": 348,
+                          "width": 100,
+                          "x": 65,
+                          "y": 348,
+                        },
+                        "fromKey": "block-623187",
+                        "to": Object {
+                          "bottom": 260,
+                          "height": 80,
+                          "left": 360,
+                          "right": 460,
+                          "top": 180,
+                          "width": 100,
+                          "x": 360,
+                          "y": 180,
+                        },
+                        "toKey": "block-624018",
+                      },
+                      "line-77619": Object {
+                        "from": Object {
+                          "bottom": 616,
+                          "height": 80,
+                          "left": 361,
+                          "right": 461,
+                          "top": 536,
+                          "width": 100,
+                          "x": 361,
+                          "y": 536,
+                        },
+                        "fromKey": "block-73377",
+                        "to": Object {
+                          "bottom": 428,
+                          "height": 80,
+                          "left": 65,
+                          "right": 165,
+                          "top": 348,
+                          "width": 100,
+                          "x": 65,
+                          "y": 348,
+                        },
+                        "toKey": "block-623187",
+                      },
+                    }
+                  }
+                  name="block-group"
+                  onChange={[Function]}
+                  onContextMenu={[Function]}
+                  targetKey="block-624018"
+                >
+                  <div
+                    className="block-group animate-appear"
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                  />
+                </NinoZone>
+              </div>
             </DraggableCore>
           </Draggable>
           <Draggable
@@ -523,17 +668,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
               transform={null}
             >
               <div
-                className="block-group animate-appear react-draggable"
-                offset={
-                  Object {
-                    "gap": 1,
-                    "x": -67,
-                    "y": 230,
-                    "z": 0,
-                  }
-                }
-                onClick={[Function]}
-                onContextMenu={[Function]}
+                className="react-draggable"
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
@@ -545,530 +680,92 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   }
                 }
                 transform={null}
-              />
+              >
+                <NinoZone
+                  className="block-group animate-appear"
+                  data={
+                    Object {
+                      "block-623187": Object {
+                        "x": 132,
+                        "y": 118,
+                      },
+                      "block-624018": Object {
+                        "x": 426,
+                        "y": -50,
+                      },
+                      "block-73377": Object {
+                        "x": 428,
+                        "y": 306,
+                      },
+                    }
+                  }
+                  key="nino-zone-block-73377"
+                  lineData={
+                    Object {
+                      "line-592694": Object {
+                        "from": Object {
+                          "bottom": 428,
+                          "height": 80,
+                          "left": 65,
+                          "right": 165,
+                          "top": 348,
+                          "width": 100,
+                          "x": 65,
+                          "y": 348,
+                        },
+                        "fromKey": "block-623187",
+                        "to": Object {
+                          "bottom": 260,
+                          "height": 80,
+                          "left": 360,
+                          "right": 460,
+                          "top": 180,
+                          "width": 100,
+                          "x": 360,
+                          "y": 180,
+                        },
+                        "toKey": "block-624018",
+                      },
+                      "line-77619": Object {
+                        "from": Object {
+                          "bottom": 616,
+                          "height": 80,
+                          "left": 361,
+                          "right": 461,
+                          "top": 536,
+                          "width": 100,
+                          "x": 361,
+                          "y": 536,
+                        },
+                        "fromKey": "block-73377",
+                        "to": Object {
+                          "bottom": 428,
+                          "height": 80,
+                          "left": 65,
+                          "right": 165,
+                          "top": 348,
+                          "width": 100,
+                          "x": 65,
+                          "y": 348,
+                        },
+                        "toKey": "block-623187",
+                      },
+                    }
+                  }
+                  name="block-group"
+                  onChange={[Function]}
+                  onContextMenu={[Function]}
+                  targetKey="block-73377"
+                >
+                  <div
+                    className="block-group animate-appear"
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                  />
+                </NinoZone>
+              </div>
             </DraggableCore>
           </Draggable>
-          <LineGroup
-            data={
-              Object {
-                "line-592694": Object {
-                  "from": Object {
-                    "bottom": 428,
-                    "height": 80,
-                    "left": 65,
-                    "right": 165,
-                    "top": 348,
-                    "width": 100,
-                    "x": 65,
-                    "y": 348,
-                  },
-                  "fromKey": "block-623187",
-                  "to": Object {
-                    "bottom": 260,
-                    "height": 80,
-                    "left": 360,
-                    "right": 460,
-                    "top": 180,
-                    "width": 100,
-                    "x": 360,
-                    "y": 180,
-                  },
-                  "toKey": "block-624018",
-                },
-                "line-77619": Object {
-                  "from": Object {
-                    "bottom": 616,
-                    "height": 80,
-                    "left": 361,
-                    "right": 461,
-                    "top": 536,
-                    "width": 100,
-                    "x": 361,
-                    "y": 536,
-                  },
-                  "fromKey": "block-73377",
-                  "to": Object {
-                    "bottom": 428,
-                    "height": 80,
-                    "left": 65,
-                    "right": 165,
-                    "top": 348,
-                    "width": 100,
-                    "x": 65,
-                    "y": 348,
-                  },
-                  "toKey": "block-623187",
-                },
-              }
-            }
-            offset={
-              Object {
-                "gap": 1,
-                "x": -67,
-                "y": 230,
-                "z": 0,
-              }
-            }
-          >
-            <SteppedLineTo
-              from={
-                Object {
-                  "bottom": 616,
-                  "height": 80,
-                  "left": 361,
-                  "right": 461,
-                  "top": 536,
-                  "width": 100,
-                  "x": 361,
-                  "y": 536,
-                }
-              }
-              key="line-77619"
-              offset={
-                Object {
-                  "gap": 1,
-                  "x": -67,
-                  "y": 230,
-                  "z": 0,
-                }
-              }
-              to={
-                Object {
-                  "bottom": 428,
-                  "height": 80,
-                  "left": 65,
-                  "right": 165,
-                  "top": 348,
-                  "width": 100,
-                  "x": 65,
-                  "y": 348,
-                }
-              }
-            >
-              <SteppedLine
-                from={
-                  Object {
-                    "bottom": 616,
-                    "height": 80,
-                    "left": 361,
-                    "right": 461,
-                    "top": 536,
-                    "width": 100,
-                    "x": 361,
-                    "y": 536,
-                  }
-                }
-                offset={
-                  Object {
-                    "gap": 1,
-                    "x": -67,
-                    "y": 230,
-                    "z": 0,
-                  }
-                }
-                to={
-                  Object {
-                    "bottom": 428,
-                    "height": 80,
-                    "left": 65,
-                    "right": 165,
-                    "top": 348,
-                    "width": 100,
-                    "x": 65,
-                    "y": 348,
-                  }
-                }
-                x0={478}
-                x1={182}
-                y0={346}
-                y1={158}
-              >
-                <div
-                  className="stepped-line"
-                >
-                  <Line
-                    from={
-                      Object {
-                        "bottom": 616,
-                        "height": 80,
-                        "left": 361,
-                        "right": 461,
-                        "top": 536,
-                        "width": 100,
-                        "x": 361,
-                        "y": 536,
-                      }
-                    }
-                    offset={
-                      Object {
-                        "gap": 1,
-                        "x": -67,
-                        "y": 230,
-                        "z": 0,
-                      }
-                    }
-                    to={
-                      Object {
-                        "bottom": 428,
-                        "height": 80,
-                        "left": 65,
-                        "right": 165,
-                        "top": 348,
-                        "width": 100,
-                        "x": 65,
-                        "y": 348,
-                      }
-                    }
-                    x0={478}
-                    x1={330}
-                    y0={346}
-                    y1={346}
-                  >
-                    <div
-                      className="line-core"
-                      style={
-                        Object {
-                          "left": "478px",
-                          "top": "346px",
-                          "transform": "rotate(180deg)",
-                          "width": "148px",
-                        }
-                      }
-                    />
-                  </Line>
-                  <Line
-                    from={
-                      Object {
-                        "bottom": 616,
-                        "height": 80,
-                        "left": 361,
-                        "right": 461,
-                        "top": 536,
-                        "width": 100,
-                        "x": 361,
-                        "y": 536,
-                      }
-                    }
-                    offset={
-                      Object {
-                        "gap": 1,
-                        "x": -67,
-                        "y": 230,
-                        "z": 0,
-                      }
-                    }
-                    to={
-                      Object {
-                        "bottom": 428,
-                        "height": 80,
-                        "left": 65,
-                        "right": 165,
-                        "top": 348,
-                        "width": 100,
-                        "x": 65,
-                        "y": 348,
-                      }
-                    }
-                    x0={182}
-                    x1={330}
-                    y0={158}
-                    y1={158}
-                  >
-                    <div
-                      className="line-core"
-                      style={
-                        Object {
-                          "left": "182px",
-                          "top": "158px",
-                          "transform": "rotate(0deg)",
-                          "width": "148px",
-                        }
-                      }
-                    />
-                  </Line>
-                  <Line
-                    from={
-                      Object {
-                        "bottom": 616,
-                        "height": 80,
-                        "left": 361,
-                        "right": 461,
-                        "top": 536,
-                        "width": 100,
-                        "x": 361,
-                        "y": 536,
-                      }
-                    }
-                    offset={
-                      Object {
-                        "gap": 1,
-                        "x": -67,
-                        "y": 230,
-                        "z": 0,
-                      }
-                    }
-                    to={
-                      Object {
-                        "bottom": 428,
-                        "height": 80,
-                        "left": 65,
-                        "right": 165,
-                        "top": 348,
-                        "width": 100,
-                        "x": 65,
-                        "y": 348,
-                      }
-                    }
-                    x0={330}
-                    x1={330}
-                    y0={157}
-                    y1={346}
-                  >
-                    <div
-                      className="line-core"
-                      style={
-                        Object {
-                          "left": "330px",
-                          "top": "157px",
-                          "transform": "rotate(90deg)",
-                          "width": "189px",
-                        }
-                      }
-                    />
-                  </Line>
-                </div>
-              </SteppedLine>
-            </SteppedLineTo>
-            <SteppedLineTo
-              from={
-                Object {
-                  "bottom": 428,
-                  "height": 80,
-                  "left": 65,
-                  "right": 165,
-                  "top": 348,
-                  "width": 100,
-                  "x": 65,
-                  "y": 348,
-                }
-              }
-              key="line-592694"
-              offset={
-                Object {
-                  "gap": 1,
-                  "x": -67,
-                  "y": 230,
-                  "z": 0,
-                }
-              }
-              to={
-                Object {
-                  "bottom": 260,
-                  "height": 80,
-                  "left": 360,
-                  "right": 460,
-                  "top": 180,
-                  "width": 100,
-                  "x": 360,
-                  "y": 180,
-                }
-              }
-            >
-              <SteppedLine
-                from={
-                  Object {
-                    "bottom": 428,
-                    "height": 80,
-                    "left": 65,
-                    "right": 165,
-                    "top": 348,
-                    "width": 100,
-                    "x": 65,
-                    "y": 348,
-                  }
-                }
-                offset={
-                  Object {
-                    "gap": 1,
-                    "x": -67,
-                    "y": 230,
-                    "z": 0,
-                  }
-                }
-                to={
-                  Object {
-                    "bottom": 260,
-                    "height": 80,
-                    "left": 360,
-                    "right": 460,
-                    "top": 180,
-                    "width": 100,
-                    "x": 360,
-                    "y": 180,
-                  }
-                }
-                x0={182}
-                x1={477}
-                y0={158}
-                y1={-10}
-              >
-                <div
-                  className="stepped-line"
-                >
-                  <Line
-                    from={
-                      Object {
-                        "bottom": 428,
-                        "height": 80,
-                        "left": 65,
-                        "right": 165,
-                        "top": 348,
-                        "width": 100,
-                        "x": 65,
-                        "y": 348,
-                      }
-                    }
-                    offset={
-                      Object {
-                        "gap": 1,
-                        "x": -67,
-                        "y": 230,
-                        "z": 0,
-                      }
-                    }
-                    to={
-                      Object {
-                        "bottom": 260,
-                        "height": 80,
-                        "left": 360,
-                        "right": 460,
-                        "top": 180,
-                        "width": 100,
-                        "x": 360,
-                        "y": 180,
-                      }
-                    }
-                    x0={182}
-                    x1={329.5}
-                    y0={158}
-                    y1={158}
-                  >
-                    <div
-                      className="line-core"
-                      style={
-                        Object {
-                          "left": "182px",
-                          "top": "158px",
-                          "transform": "rotate(0deg)",
-                          "width": "147.5px",
-                        }
-                      }
-                    />
-                  </Line>
-                  <Line
-                    from={
-                      Object {
-                        "bottom": 428,
-                        "height": 80,
-                        "left": 65,
-                        "right": 165,
-                        "top": 348,
-                        "width": 100,
-                        "x": 65,
-                        "y": 348,
-                      }
-                    }
-                    offset={
-                      Object {
-                        "gap": 1,
-                        "x": -67,
-                        "y": 230,
-                        "z": 0,
-                      }
-                    }
-                    to={
-                      Object {
-                        "bottom": 260,
-                        "height": 80,
-                        "left": 360,
-                        "right": 460,
-                        "top": 180,
-                        "width": 100,
-                        "x": 360,
-                        "y": 180,
-                      }
-                    }
-                    x0={477}
-                    x1={329.5}
-                    y0={-10}
-                    y1={-10}
-                  >
-                    <div
-                      className="line-core"
-                      style={
-                        Object {
-                          "left": "477px",
-                          "top": "-10px",
-                          "transform": "rotate(180deg)",
-                          "width": "147.5px",
-                        }
-                      }
-                    />
-                  </Line>
-                  <Line
-                    from={
-                      Object {
-                        "bottom": 428,
-                        "height": 80,
-                        "left": 65,
-                        "right": 165,
-                        "top": 348,
-                        "width": 100,
-                        "x": 65,
-                        "y": 348,
-                      }
-                    }
-                    offset={
-                      Object {
-                        "gap": 1,
-                        "x": -67,
-                        "y": 230,
-                        "z": 0,
-                      }
-                    }
-                    to={
-                      Object {
-                        "bottom": 260,
-                        "height": 80,
-                        "left": 360,
-                        "right": 460,
-                        "top": 180,
-                        "width": 100,
-                        "x": 360,
-                        "y": 180,
-                      }
-                    }
-                    x0={329.5}
-                    x1={329.5}
-                    y0={-11}
-                    y1={158}
-                  >
-                    <div
-                      className="line-core"
-                      style={
-                        Object {
-                          "left": "329.5px",
-                          "top": "-11px",
-                          "transform": "rotate(90deg)",
-                          "width": "169px",
-                        }
-                      }
-                    />
-                  </Line>
-                </div>
-              </SteppedLine>
-            </SteppedLineTo>
-          </LineGroup>
         </BlockGroup>
         <TagGroup
           data={
@@ -1102,6 +799,58 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 },
                 "x": 463,
                 "y": 333,
+              },
+            }
+          }
+          lineData={
+            Object {
+              "line-592694": Object {
+                "from": Object {
+                  "bottom": 428,
+                  "height": 80,
+                  "left": 65,
+                  "right": 165,
+                  "top": 348,
+                  "width": 100,
+                  "x": 65,
+                  "y": 348,
+                },
+                "fromKey": "block-623187",
+                "to": Object {
+                  "bottom": 260,
+                  "height": 80,
+                  "left": 360,
+                  "right": 460,
+                  "top": 180,
+                  "width": 100,
+                  "x": 360,
+                  "y": 180,
+                },
+                "toKey": "block-624018",
+              },
+              "line-77619": Object {
+                "from": Object {
+                  "bottom": 616,
+                  "height": 80,
+                  "left": 361,
+                  "right": 461,
+                  "top": 536,
+                  "width": 100,
+                  "x": 361,
+                  "y": 536,
+                },
+                "fromKey": "block-73377",
+                "to": Object {
+                  "bottom": 428,
+                  "height": 80,
+                  "left": 65,
+                  "right": 165,
+                  "top": 348,
+                  "width": 100,
+                  "x": 65,
+                  "y": 348,
+                },
+                "toKey": "block-623187",
               },
             }
           }
@@ -1174,8 +923,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
               transform={null}
             >
               <div
-                className="tag-group animate-appear react-draggable"
-                onContextMenu={[Function]}
+                className="react-draggable"
                 onDoubleClick={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
@@ -1189,7 +937,108 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 }
                 transform={null}
               >
-                test
+                <NinoZone
+                  className="tag-group animate-appear"
+                  data={
+                    Object {
+                      "tag-626505": Object {
+                        "editable": false,
+                        "input": "test",
+                        "style": Object {
+                          "height": 32,
+                          "width": 100,
+                        },
+                        "x": 169,
+                        "y": 144,
+                      },
+                      "tag-629962": Object {
+                        "editable": false,
+                        "input": "test2",
+                        "style": Object {
+                          "height": 32,
+                          "width": 100,
+                        },
+                        "x": 462,
+                        "y": -23,
+                      },
+                      "tag-80986": Object {
+                        "editable": false,
+                        "input": "test3",
+                        "style": Object {
+                          "height": 32,
+                          "width": 100,
+                        },
+                        "x": 463,
+                        "y": 333,
+                      },
+                    }
+                  }
+                  key="nino-zone-tag-626505"
+                  lineData={
+                    Object {
+                      "line-592694": Object {
+                        "from": Object {
+                          "bottom": 428,
+                          "height": 80,
+                          "left": 65,
+                          "right": 165,
+                          "top": 348,
+                          "width": 100,
+                          "x": 65,
+                          "y": 348,
+                        },
+                        "fromKey": "block-623187",
+                        "to": Object {
+                          "bottom": 260,
+                          "height": 80,
+                          "left": 360,
+                          "right": 460,
+                          "top": 180,
+                          "width": 100,
+                          "x": 360,
+                          "y": 180,
+                        },
+                        "toKey": "block-624018",
+                      },
+                      "line-77619": Object {
+                        "from": Object {
+                          "bottom": 616,
+                          "height": 80,
+                          "left": 361,
+                          "right": 461,
+                          "top": 536,
+                          "width": 100,
+                          "x": 361,
+                          "y": 536,
+                        },
+                        "fromKey": "block-73377",
+                        "to": Object {
+                          "bottom": 428,
+                          "height": 80,
+                          "left": 65,
+                          "right": 165,
+                          "top": 348,
+                          "width": 100,
+                          "x": 65,
+                          "y": 348,
+                        },
+                        "toKey": "block-623187",
+                      },
+                    }
+                  }
+                  name="tag-group"
+                  onChange={[Function]}
+                  onContextMenu={[Function]}
+                  targetKey="tag-626505"
+                >
+                  <div
+                    className="tag-group animate-appear"
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                  >
+                    test
+                  </div>
+                </NinoZone>
               </div>
             </DraggableCore>
           </Draggable>
@@ -1259,8 +1108,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
               transform={null}
             >
               <div
-                className="tag-group animate-appear react-draggable"
-                onContextMenu={[Function]}
+                className="react-draggable"
                 onDoubleClick={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
@@ -1274,7 +1122,108 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 }
                 transform={null}
               >
-                test2
+                <NinoZone
+                  className="tag-group animate-appear"
+                  data={
+                    Object {
+                      "tag-626505": Object {
+                        "editable": false,
+                        "input": "test",
+                        "style": Object {
+                          "height": 32,
+                          "width": 100,
+                        },
+                        "x": 169,
+                        "y": 144,
+                      },
+                      "tag-629962": Object {
+                        "editable": false,
+                        "input": "test2",
+                        "style": Object {
+                          "height": 32,
+                          "width": 100,
+                        },
+                        "x": 462,
+                        "y": -23,
+                      },
+                      "tag-80986": Object {
+                        "editable": false,
+                        "input": "test3",
+                        "style": Object {
+                          "height": 32,
+                          "width": 100,
+                        },
+                        "x": 463,
+                        "y": 333,
+                      },
+                    }
+                  }
+                  key="nino-zone-tag-629962"
+                  lineData={
+                    Object {
+                      "line-592694": Object {
+                        "from": Object {
+                          "bottom": 428,
+                          "height": 80,
+                          "left": 65,
+                          "right": 165,
+                          "top": 348,
+                          "width": 100,
+                          "x": 65,
+                          "y": 348,
+                        },
+                        "fromKey": "block-623187",
+                        "to": Object {
+                          "bottom": 260,
+                          "height": 80,
+                          "left": 360,
+                          "right": 460,
+                          "top": 180,
+                          "width": 100,
+                          "x": 360,
+                          "y": 180,
+                        },
+                        "toKey": "block-624018",
+                      },
+                      "line-77619": Object {
+                        "from": Object {
+                          "bottom": 616,
+                          "height": 80,
+                          "left": 361,
+                          "right": 461,
+                          "top": 536,
+                          "width": 100,
+                          "x": 361,
+                          "y": 536,
+                        },
+                        "fromKey": "block-73377",
+                        "to": Object {
+                          "bottom": 428,
+                          "height": 80,
+                          "left": 65,
+                          "right": 165,
+                          "top": 348,
+                          "width": 100,
+                          "x": 65,
+                          "y": 348,
+                        },
+                        "toKey": "block-623187",
+                      },
+                    }
+                  }
+                  name="tag-group"
+                  onChange={[Function]}
+                  onContextMenu={[Function]}
+                  targetKey="tag-629962"
+                >
+                  <div
+                    className="tag-group animate-appear"
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                  >
+                    test2
+                  </div>
+                </NinoZone>
               </div>
             </DraggableCore>
           </Draggable>
@@ -1344,8 +1293,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
               transform={null}
             >
               <div
-                className="tag-group animate-appear react-draggable"
-                onContextMenu={[Function]}
+                className="react-draggable"
                 onDoubleClick={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
@@ -1359,11 +1307,644 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 }
                 transform={null}
               >
-                test3
+                <NinoZone
+                  className="tag-group animate-appear"
+                  data={
+                    Object {
+                      "tag-626505": Object {
+                        "editable": false,
+                        "input": "test",
+                        "style": Object {
+                          "height": 32,
+                          "width": 100,
+                        },
+                        "x": 169,
+                        "y": 144,
+                      },
+                      "tag-629962": Object {
+                        "editable": false,
+                        "input": "test2",
+                        "style": Object {
+                          "height": 32,
+                          "width": 100,
+                        },
+                        "x": 462,
+                        "y": -23,
+                      },
+                      "tag-80986": Object {
+                        "editable": false,
+                        "input": "test3",
+                        "style": Object {
+                          "height": 32,
+                          "width": 100,
+                        },
+                        "x": 463,
+                        "y": 333,
+                      },
+                    }
+                  }
+                  key="nino-zone-tag-80986"
+                  lineData={
+                    Object {
+                      "line-592694": Object {
+                        "from": Object {
+                          "bottom": 428,
+                          "height": 80,
+                          "left": 65,
+                          "right": 165,
+                          "top": 348,
+                          "width": 100,
+                          "x": 65,
+                          "y": 348,
+                        },
+                        "fromKey": "block-623187",
+                        "to": Object {
+                          "bottom": 260,
+                          "height": 80,
+                          "left": 360,
+                          "right": 460,
+                          "top": 180,
+                          "width": 100,
+                          "x": 360,
+                          "y": 180,
+                        },
+                        "toKey": "block-624018",
+                      },
+                      "line-77619": Object {
+                        "from": Object {
+                          "bottom": 616,
+                          "height": 80,
+                          "left": 361,
+                          "right": 461,
+                          "top": 536,
+                          "width": 100,
+                          "x": 361,
+                          "y": 536,
+                        },
+                        "fromKey": "block-73377",
+                        "to": Object {
+                          "bottom": 428,
+                          "height": 80,
+                          "left": 65,
+                          "right": 165,
+                          "top": 348,
+                          "width": 100,
+                          "x": 65,
+                          "y": 348,
+                        },
+                        "toKey": "block-623187",
+                      },
+                    }
+                  }
+                  name="tag-group"
+                  onChange={[Function]}
+                  onContextMenu={[Function]}
+                  targetKey="tag-80986"
+                >
+                  <div
+                    className="tag-group animate-appear"
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                  >
+                    test3
+                  </div>
+                </NinoZone>
               </div>
             </DraggableCore>
           </Draggable>
         </TagGroup>
+        <LineGroup
+          data={
+            Object {
+              "line-592694": Object {
+                "from": Object {
+                  "bottom": 428,
+                  "height": 80,
+                  "left": 65,
+                  "right": 165,
+                  "top": 348,
+                  "width": 100,
+                  "x": 65,
+                  "y": 348,
+                },
+                "fromKey": "block-623187",
+                "to": Object {
+                  "bottom": 260,
+                  "height": 80,
+                  "left": 360,
+                  "right": 460,
+                  "top": 180,
+                  "width": 100,
+                  "x": 360,
+                  "y": 180,
+                },
+                "toKey": "block-624018",
+              },
+              "line-77619": Object {
+                "from": Object {
+                  "bottom": 616,
+                  "height": 80,
+                  "left": 361,
+                  "right": 461,
+                  "top": 536,
+                  "width": 100,
+                  "x": 361,
+                  "y": 536,
+                },
+                "fromKey": "block-73377",
+                "to": Object {
+                  "bottom": 428,
+                  "height": 80,
+                  "left": 65,
+                  "right": 165,
+                  "top": 348,
+                  "width": 100,
+                  "x": 65,
+                  "y": 348,
+                },
+                "toKey": "block-623187",
+              },
+            }
+          }
+          offset={
+            Object {
+              "gap": 1,
+              "x": -67,
+              "y": 230,
+              "z": 0,
+            }
+          }
+          orientation="horizonal"
+        >
+          <SteppedLineTo
+            from={
+              Object {
+                "bottom": 616,
+                "height": 80,
+                "left": 361,
+                "right": 461,
+                "top": 536,
+                "width": 100,
+                "x": 361,
+                "y": 536,
+              }
+            }
+            key="line-77619"
+            offset={
+              Object {
+                "gap": 1,
+                "x": -67,
+                "y": 230,
+                "z": 0,
+              }
+            }
+            orientation="horizonal"
+            to={
+              Object {
+                "bottom": 428,
+                "height": 80,
+                "left": 65,
+                "right": 165,
+                "top": 348,
+                "width": 100,
+                "x": 65,
+                "y": 348,
+              }
+            }
+          >
+            <SteppedLine
+              from={
+                Object {
+                  "bottom": 616,
+                  "height": 80,
+                  "left": 361,
+                  "right": 461,
+                  "top": 536,
+                  "width": 100,
+                  "x": 361,
+                  "y": 536,
+                }
+              }
+              offset={
+                Object {
+                  "gap": 1,
+                  "x": -67,
+                  "y": 230,
+                  "z": 0,
+                }
+              }
+              orientation="horizonal"
+              to={
+                Object {
+                  "bottom": 428,
+                  "height": 80,
+                  "left": 65,
+                  "right": 165,
+                  "top": 348,
+                  "width": 100,
+                  "x": 65,
+                  "y": 348,
+                }
+              }
+              x0={478}
+              x1={182}
+              y0={346}
+              y1={158}
+            >
+              <div
+                className="stepped-line"
+              >
+                <Line
+                  from={
+                    Object {
+                      "bottom": 616,
+                      "height": 80,
+                      "left": 361,
+                      "right": 461,
+                      "top": 536,
+                      "width": 100,
+                      "x": 361,
+                      "y": 536,
+                    }
+                  }
+                  offset={
+                    Object {
+                      "gap": 1,
+                      "x": -67,
+                      "y": 230,
+                      "z": 0,
+                    }
+                  }
+                  orientation="horizonal"
+                  to={
+                    Object {
+                      "bottom": 428,
+                      "height": 80,
+                      "left": 65,
+                      "right": 165,
+                      "top": 348,
+                      "width": 100,
+                      "x": 65,
+                      "y": 348,
+                    }
+                  }
+                  x0={478}
+                  x1={330}
+                  y0={346}
+                  y1={346}
+                >
+                  <div
+                    className="line-core"
+                    style={
+                      Object {
+                        "left": "478px",
+                        "top": "346px",
+                        "transform": "rotate(180deg)",
+                        "width": "148px",
+                      }
+                    }
+                  />
+                </Line>
+                <Line
+                  from={
+                    Object {
+                      "bottom": 616,
+                      "height": 80,
+                      "left": 361,
+                      "right": 461,
+                      "top": 536,
+                      "width": 100,
+                      "x": 361,
+                      "y": 536,
+                    }
+                  }
+                  offset={
+                    Object {
+                      "gap": 1,
+                      "x": -67,
+                      "y": 230,
+                      "z": 0,
+                    }
+                  }
+                  orientation="horizonal"
+                  to={
+                    Object {
+                      "bottom": 428,
+                      "height": 80,
+                      "left": 65,
+                      "right": 165,
+                      "top": 348,
+                      "width": 100,
+                      "x": 65,
+                      "y": 348,
+                    }
+                  }
+                  x0={182}
+                  x1={330}
+                  y0={158}
+                  y1={158}
+                >
+                  <div
+                    className="line-core"
+                    style={
+                      Object {
+                        "left": "182px",
+                        "top": "158px",
+                        "transform": "rotate(0deg)",
+                        "width": "148px",
+                      }
+                    }
+                  />
+                </Line>
+                <Line
+                  from={
+                    Object {
+                      "bottom": 616,
+                      "height": 80,
+                      "left": 361,
+                      "right": 461,
+                      "top": 536,
+                      "width": 100,
+                      "x": 361,
+                      "y": 536,
+                    }
+                  }
+                  offset={
+                    Object {
+                      "gap": 1,
+                      "x": -67,
+                      "y": 230,
+                      "z": 0,
+                    }
+                  }
+                  orientation="horizonal"
+                  to={
+                    Object {
+                      "bottom": 428,
+                      "height": 80,
+                      "left": 65,
+                      "right": 165,
+                      "top": 348,
+                      "width": 100,
+                      "x": 65,
+                      "y": 348,
+                    }
+                  }
+                  x0={330}
+                  x1={330}
+                  y0={157}
+                  y1={346}
+                >
+                  <div
+                    className="line-core"
+                    style={
+                      Object {
+                        "left": "330px",
+                        "top": "157px",
+                        "transform": "rotate(90deg)",
+                        "width": "189px",
+                      }
+                    }
+                  />
+                </Line>
+              </div>
+            </SteppedLine>
+          </SteppedLineTo>
+          <SteppedLineTo
+            from={
+              Object {
+                "bottom": 428,
+                "height": 80,
+                "left": 65,
+                "right": 165,
+                "top": 348,
+                "width": 100,
+                "x": 65,
+                "y": 348,
+              }
+            }
+            key="line-592694"
+            offset={
+              Object {
+                "gap": 1,
+                "x": -67,
+                "y": 230,
+                "z": 0,
+              }
+            }
+            orientation="horizonal"
+            to={
+              Object {
+                "bottom": 260,
+                "height": 80,
+                "left": 360,
+                "right": 460,
+                "top": 180,
+                "width": 100,
+                "x": 360,
+                "y": 180,
+              }
+            }
+          >
+            <SteppedLine
+              from={
+                Object {
+                  "bottom": 428,
+                  "height": 80,
+                  "left": 65,
+                  "right": 165,
+                  "top": 348,
+                  "width": 100,
+                  "x": 65,
+                  "y": 348,
+                }
+              }
+              offset={
+                Object {
+                  "gap": 1,
+                  "x": -67,
+                  "y": 230,
+                  "z": 0,
+                }
+              }
+              orientation="horizonal"
+              to={
+                Object {
+                  "bottom": 260,
+                  "height": 80,
+                  "left": 360,
+                  "right": 460,
+                  "top": 180,
+                  "width": 100,
+                  "x": 360,
+                  "y": 180,
+                }
+              }
+              x0={182}
+              x1={477}
+              y0={158}
+              y1={-10}
+            >
+              <div
+                className="stepped-line"
+              >
+                <Line
+                  from={
+                    Object {
+                      "bottom": 428,
+                      "height": 80,
+                      "left": 65,
+                      "right": 165,
+                      "top": 348,
+                      "width": 100,
+                      "x": 65,
+                      "y": 348,
+                    }
+                  }
+                  offset={
+                    Object {
+                      "gap": 1,
+                      "x": -67,
+                      "y": 230,
+                      "z": 0,
+                    }
+                  }
+                  orientation="horizonal"
+                  to={
+                    Object {
+                      "bottom": 260,
+                      "height": 80,
+                      "left": 360,
+                      "right": 460,
+                      "top": 180,
+                      "width": 100,
+                      "x": 360,
+                      "y": 180,
+                    }
+                  }
+                  x0={182}
+                  x1={329.5}
+                  y0={158}
+                  y1={158}
+                >
+                  <div
+                    className="line-core"
+                    style={
+                      Object {
+                        "left": "182px",
+                        "top": "158px",
+                        "transform": "rotate(0deg)",
+                        "width": "147.5px",
+                      }
+                    }
+                  />
+                </Line>
+                <Line
+                  from={
+                    Object {
+                      "bottom": 428,
+                      "height": 80,
+                      "left": 65,
+                      "right": 165,
+                      "top": 348,
+                      "width": 100,
+                      "x": 65,
+                      "y": 348,
+                    }
+                  }
+                  offset={
+                    Object {
+                      "gap": 1,
+                      "x": -67,
+                      "y": 230,
+                      "z": 0,
+                    }
+                  }
+                  orientation="horizonal"
+                  to={
+                    Object {
+                      "bottom": 260,
+                      "height": 80,
+                      "left": 360,
+                      "right": 460,
+                      "top": 180,
+                      "width": 100,
+                      "x": 360,
+                      "y": 180,
+                    }
+                  }
+                  x0={477}
+                  x1={329.5}
+                  y0={-10}
+                  y1={-10}
+                >
+                  <div
+                    className="line-core"
+                    style={
+                      Object {
+                        "left": "477px",
+                        "top": "-10px",
+                        "transform": "rotate(180deg)",
+                        "width": "147.5px",
+                      }
+                    }
+                  />
+                </Line>
+                <Line
+                  from={
+                    Object {
+                      "bottom": 428,
+                      "height": 80,
+                      "left": 65,
+                      "right": 165,
+                      "top": 348,
+                      "width": 100,
+                      "x": 65,
+                      "y": 348,
+                    }
+                  }
+                  offset={
+                    Object {
+                      "gap": 1,
+                      "x": -67,
+                      "y": 230,
+                      "z": 0,
+                    }
+                  }
+                  orientation="horizonal"
+                  to={
+                    Object {
+                      "bottom": 260,
+                      "height": 80,
+                      "left": 360,
+                      "right": 460,
+                      "top": 180,
+                      "width": 100,
+                      "x": 360,
+                      "y": 180,
+                    }
+                  }
+                  x0={329.5}
+                  x1={329.5}
+                  y0={-11}
+                  y1={158}
+                >
+                  <div
+                    className="line-core"
+                    style={
+                      Object {
+                        "left": "329.5px",
+                        "top": "-11px",
+                        "transform": "rotate(90deg)",
+                        "width": "169px",
+                      }
+                    }
+                  />
+                </Line>
+              </div>
+            </SteppedLine>
+          </SteppedLineTo>
+        </LineGroup>
       </div>
     </DraggableCore>
   </Draggable>
@@ -1472,24 +2053,24 @@ exports[`Canvas render correctly when data is null 1`] = `
           }
           onChange={[Function]}
           onContextMenu={[Function]}
-          renderLine={[Function]}
-        >
-          <LineGroup
-            data={Object {}}
-            offset={
-              Object {
-                "gap": 1,
-                "x": 0,
-                "y": 0,
-                "z": 0,
-              }
-            }
-          />
-        </BlockGroup>
+        />
         <TagGroup
           data={Object {}}
+          lineData={Object {}}
           onChange={[Function]}
           onContextMenu={[Function]}
+        />
+        <LineGroup
+          data={Object {}}
+          offset={
+            Object {
+              "gap": 1,
+              "x": 0,
+              "y": 0,
+              "z": 0,
+            }
+          }
+          orientation="horizonal"
         />
       </div>
     </DraggableCore>
@@ -1597,24 +2178,24 @@ exports[`Canvas render correctly when data is null 2`] = `
           }
           onChange={[Function]}
           onContextMenu={[Function]}
-          renderLine={[Function]}
-        >
-          <LineGroup
-            data={Object {}}
-            offset={
-              Object {
-                "gap": 1,
-                "x": 0,
-                "y": 0,
-                "z": 0,
-              }
-            }
-          />
-        </BlockGroup>
+        />
         <TagGroup
           data={Object {}}
+          lineData={Object {}}
           onChange={[Function]}
           onContextMenu={[Function]}
+        />
+        <LineGroup
+          data={Object {}}
+          offset={
+            Object {
+              "gap": 1,
+              "x": 0,
+              "y": 0,
+              "z": 0,
+            }
+          }
+          orientation="horizonal"
         />
       </div>
     </DraggableCore>
@@ -1724,24 +2305,24 @@ exports[`Canvas render correctly when data is null 3`] = `
           }
           onChange={[Function]}
           onContextMenu={[Function]}
-          renderLine={[Function]}
-        >
-          <LineGroup
-            data={Object {}}
-            offset={
-              Object {
-                "gap": 1,
-                "x": 0,
-                "y": 0,
-                "z": 0,
-              }
-            }
-          />
-        </BlockGroup>
+        />
         <TagGroup
           data={Object {}}
+          lineData={Object {}}
           onChange={[Function]}
           onContextMenu={[Function]}
+        />
+        <LineGroup
+          data={Object {}}
+          offset={
+            Object {
+              "gap": 1,
+              "x": 0,
+              "y": 0,
+              "z": 0,
+            }
+          }
+          orientation="horizonal"
         />
       </div>
     </DraggableCore>

@@ -3,8 +3,6 @@
   cursor: pointer;
   user-select: none;
   z-index: 3;
-  width: 100px;
-  height: 32px;
 }
 
 .animate-appear {

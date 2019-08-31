@@ -1,39 +1,31 @@
 import React from 'react';
-import classNames from 'classnames';
 import Draggable from 'react-draggable';
-import {
-  generateKey,
-  stopPropagation,
-  preventDefault,
-} from '../utils/LineUtil';
+import { stopPropagation, preventDefault } from '../utils/LineUtil';
 import './css/BlockGroup.css';
-import { ContextMenuProps } from '../canvas/core';
+import { ContextMenuProps, DataSource } from '../canvas/core';
+import { LineProps } from './LineGroup';
+import NinoZone, { getTargetDom } from '../canvas/nino-zone';
+import classNames from 'classnames';
 
 export type BlockProps = { [blockKey: string]: { x: number; y: number } };
 export interface BlockGroupProps {
   className?: string;
   data: BlockProps;
-  lineData?: any;
-  onChange?: (data: any, lineData?: any) => void;
+  lineData: LineProps;
+  onChange: (data: DataSource, blockDOM: any) => void;
   offset?: { x: number; y: number };
-  onContextMenu?: (item: ContextMenuProps) => void;
-  renderLine: (lineData: any) => void;
+  onContextMenu: (item: ContextMenuProps) => void;
 }
 export interface BlockGroupState {
-  data?: any;
-  lineData?: any;
+  data?: DataSource;
+  lineData?: LineProps;
 }
 
-let checkBlockClickList: any = {};
-// one Line is mapping to two Block
-// to record it here
-let mapping: any = {};
-// to save refs
-let blockDOM: any = {};
-const keysLength = (obj: object) => Object.keys(obj).length;
-
-const addBlockDom = (lineData: any, targetBlockDOM: any) => {
-  for (const key of Object.keys(lineData || {})) {
+export const updateLineDataByTargetDom = (
+  lineData: LineProps,
+  targetBlockDOM: any,
+) => {
+  for (const key of Object.keys(lineData)) {
     const { fromKey, toKey } = lineData[key];
     for (const blockKey of Object.keys(targetBlockDOM)) {
       const value = targetBlockDOM[blockKey];
@@ -48,93 +40,6 @@ const addBlockDom = (lineData: any, targetBlockDOM: any) => {
   return lineData;
 };
 
-export const getMapping = () => mapping;
-
-export const setMapping = (target: any, notMerge?: boolean) => {
-  mapping = notMerge ? target : Object.assign({}, mapping, target);
-  return mapping;
-};
-
-export const getBlockDOM = () => blockDOM;
-
-export const setBlockDOM = (target: any, notMerge?: boolean) => {
-  blockDOM = notMerge ? target : Object.assign({}, blockDOM, target);
-  return blockDOM;
-};
-
-export const cleanCheckBlockClickList = () => {
-  checkBlockClickList = {};
-};
-
-export const getCheckBlockClickList = () => checkBlockClickList;
-
-export const setCheckBlockClickList = (target: any, notMerge?: boolean) => {
-  checkBlockClickList = notMerge
-    ? target
-    : Object.assign({}, checkBlockClickList, target);
-  return checkBlockClickList;
-};
-
-export const generateLineData = (lineData: any, lineKey: string) => {
-  let fromNode;
-  let toNode;
-  let fromKey;
-  let toKey;
-  const keys = Object.keys(checkBlockClickList);
-
-  if (checkBlockClickList[keys[0]].time > checkBlockClickList[keys[1]].time) {
-    fromKey = keys[1];
-    toKey = keys[0];
-  } else {
-    fromKey = keys[0];
-    toKey = keys[1];
-  }
-
-  fromNode = checkBlockClickList[fromKey].current;
-  toNode = checkBlockClickList[toKey].current;
-
-  const common = {
-    fromKey,
-    toKey,
-  };
-  lineData[lineKey] = {
-    ...common,
-    from: fromNode,
-    to: toNode,
-  };
-
-  return {
-    result: lineData,
-    ...common,
-  };
-};
-
-export const shouldPaintLine = (checkBlockClickList: any, linesProps: any) => {
-  if (!keysLength(linesProps)) {
-    return true;
-  }
-
-  const blocks = Object.keys(checkBlockClickList).toString();
-  for (const key of Object.keys(mapping)) {
-    let fromFlag = false;
-    let toFlag = false;
-    const { fromKey, toKey } = mapping[key];
-
-    if (blocks.includes(fromKey)) {
-      fromFlag = true;
-    }
-
-    if (blocks.includes(toKey)) {
-      toFlag = true;
-    }
-
-    if (fromFlag && toFlag) {
-      return false;
-    }
-  }
-  return true;
-};
-
 const handleDragStart = (e: any) => {
   stopPropagation(e);
   preventDefault(e);
@@ -142,52 +47,17 @@ const handleDragStart = (e: any) => {
 
 const BlockGroup = ({
   className: parentClassName,
-  onChange,
-  onContextMenu,
-  renderLine,
-  lineData,
   data,
-  ...rest
+  onChange,
+  lineData,
+  onContextMenu,
 }: BlockGroupProps) => {
   const handleDrag = ({ x, y }: { x: number; y: number }, blockKey: string) => {
     if (onChange) {
       onChange(
         Object.assign({}, data, { [blockKey]: { x, y } }),
-        addBlockDom(lineData, blockDOM),
+        getTargetDom(),
       );
-    }
-  };
-
-  // when Block clicked twice, generate a Line
-  // and clear checkBlockClickList
-  const handleBlockClick = (blockKey: string) => {
-    const lineKey = generateKey('line');
-
-    checkBlockClickList[blockKey] = { current: blockDOM[blockKey] };
-
-    // to know which Block is starting point
-    if (!('time' in checkBlockClickList[blockKey])) {
-      checkBlockClickList[blockKey].time = new Date().getTime();
-    }
-
-    if (keysLength(checkBlockClickList) === 2) {
-      if (!shouldPaintLine(checkBlockClickList, lineData)) {
-        checkBlockClickList = {};
-        return;
-      }
-
-      const { result, fromKey, toKey } = generateLineData(lineData, lineKey);
-
-      if (onChange) {
-        onChange(data, result);
-      }
-
-      checkBlockClickList = {};
-      // record mapping for arrow
-      mapping[lineKey] = {
-        fromKey,
-        toKey,
-      };
     }
   };
 
@@ -202,32 +72,26 @@ const BlockGroup = ({
             onStart={handleDragStart}
             key={blockKey}
           >
-            <div
-              className={classNames(
-                'block-group',
-                'animate-appear',
-                parentClassName,
-                blockClassName,
-              )}
-              onClick={() => handleBlockClick(blockKey)}
-              ref={ref =>
-                ref && (blockDOM[blockKey] = ref.getBoundingClientRect())
-              }
-              onContextMenu={(e: any) => {
-                if (onContextMenu) {
-                  onContextMenu({
-                    event: e,
-                    key: blockKey,
-                    group: 'BlockGroup',
-                  });
-                }
-              }}
-              {...rest}
-            />
+            <div>
+              <NinoZone
+                className={classNames(
+                  'block-group',
+                  'animate-appear',
+                  parentClassName,
+                  blockClassName,
+                )}
+                targetKey={blockKey}
+                data={data}
+                lineData={lineData}
+                onContextMenu={onContextMenu}
+                name="block-group"
+                onChange={onChange}
+                key={`nino-zone-${blockKey}`}
+              />
+            </div>
           </Draggable>
         );
       })}
-      {renderLine(addBlockDom(lineData, blockDOM))}
     </>
   );
 };

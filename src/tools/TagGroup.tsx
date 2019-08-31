@@ -5,12 +5,14 @@ import { Input } from 'antd';
 import './css/TagGroup.css';
 import { stopPropagation, preventDefault } from '../utils/LineUtil';
 import { ContextMenuProps } from '../canvas/core';
+import NinoZone from '../canvas/nino-zone';
+import { LineProps } from './LineGroup';
 
 export type TagGroupRenderItem = {
   item: { input: string; x: number; y: number };
   key: string;
   className: string;
-  onContextMenu?: ({ event, key, group }: ContextMenuProps) => void;
+  onContextMenu: ({ event, key, group }: ContextMenuProps) => void;
 };
 export type TagGroupItem = {
   [key: string]: {
@@ -23,9 +25,10 @@ export type TagGroupItem = {
 };
 export interface TagGroupProps {
   data: TagGroupItem;
-  onChange?: (data: TagGroupItem) => void;
+  onChange: (data: TagGroupItem) => void;
   className?: string;
-  onContextMenu?: (item: ContextMenuProps) => void;
+  onContextMenu: (item: ContextMenuProps) => void;
+  lineData: LineProps;
 }
 export interface TagGroupState {
   data: TagGroupItem;
@@ -41,6 +44,7 @@ const TagGroup = ({
   onChange,
   onContextMenu,
   className: parentClassName,
+  lineData,
 }: TagGroupProps) => {
   const handleChange = (
     item: any,
@@ -93,16 +97,19 @@ const TagGroup = ({
       position={{ x: item.x, y: item.y }}
       onDrag={(_: any, jtem) => handleDrag(jtem, key)}
     >
-      <div
-        className={className}
-        onDoubleClick={() => handleChange(item, key, 'editable', true)}
-        onContextMenu={(e: any) => {
-          if (onContextMenu) {
-            onContextMenu({ event: e, key, group: 'TagGroup' });
-          }
-        }}
-      >
-        {item.input}
+      <div onDoubleClick={() => handleChange(item, key, 'editable', true)}>
+        <NinoZone
+          className={className}
+          onContextMenu={onContextMenu}
+          name="tag-group"
+          onChange={onChange}
+          key={`nino-zone-${key}`}
+          targetKey={key}
+          data={data}
+          lineData={lineData}
+        >
+          {item.input}
+        </NinoZone>
       </div>
     </Draggable>
   );
@@ -119,7 +126,12 @@ const TagGroup = ({
           tagClassName,
         );
         if (editable) {
-          return renderTextArea({ item, key, className: targetClassName });
+          return renderTextArea({
+            item,
+            key,
+            className: targetClassName,
+            onContextMenu: () => {},
+          });
         }
         return renderTagItem({
           item,
