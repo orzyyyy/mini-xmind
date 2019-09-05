@@ -38,8 +38,7 @@ jobs:
     steps:
       - checkout
       - *attach_workspace
-      - run: npm run codecov
-      - run: bash <(curl -s https://codecov.io/bash) -t 31625cdc-8c32-47d0-a303-baf981cab0f5
+      - run: npm run test
   compile:
     <<: *container_config
     steps:
@@ -66,18 +65,6 @@ jobs:
           root: ~/mini-xmind
           paths:
             - dist
-  deploy:
-    <<: *container_config
-    steps:
-      - checkout
-      - *attach_workspace
-      - add_ssh_keys:
-          fingerprints:
-            - 'ff:02:5b:2b:aa:25:27:80:71:82:c0:b0:14:1b:a9:3b'
-      - run:
-          name: deploy
-          when: on_success
-          command: npm run deploy
   test_dist:
     <<: *container_config
     steps:
@@ -123,9 +110,3 @@ workflows:
       - lint:
           requires:
             - setup
-      - deploy:
-          requires:
-            - test_dist
-          filters:
-            branches:
-              only: master
