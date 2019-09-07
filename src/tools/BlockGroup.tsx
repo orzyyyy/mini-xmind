@@ -68,7 +68,7 @@ const BlockGroup = ({
         return (
           <Draggable
             position={{ x, y }}
-            onDrag={(_, item) => handleDrag(item, blockKey)}
+            onDrag={(_: any, item: any) => handleDrag(item, blockKey)}
             onStart={handleDragStart}
             key={blockKey}
           >
