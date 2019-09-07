@@ -5,4 +5,7 @@ module.exports = {
   webpack: {
     entry: path.join(cwd, '/src/go'),
   },
+  devServer: {
+    open: true,
+  },
 };
