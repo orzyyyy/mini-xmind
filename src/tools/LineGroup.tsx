@@ -1,5 +1,5 @@
 import React from 'react';
-import { SteppedLineTo } from '../line';
+import SteppedLine, { OrientationProps } from '../line/SteppedLine';
 
 export type LineItem =
   | {
@@ -24,7 +24,7 @@ export type LineProps = {
 export interface LineGroupProps {
   offset?: { x: number; y: number };
   data: LineProps;
-  orientation?: 'h' | 'v' | 'horizonal' | 'vertical' | string;
+  orientation?: OrientationProps;
   className?: string;
 }
 
@@ -34,7 +34,7 @@ const LineGroup = ({ offset, data, ...rest }: LineGroupProps) => {
       {Object.keys(data).map(lineKey => {
         const { from, to } = data[lineKey];
         return (
-          <SteppedLineTo
+          <SteppedLine
             from={from}
             to={to}
             key={lineKey}

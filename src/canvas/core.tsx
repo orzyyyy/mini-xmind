@@ -14,6 +14,7 @@ import BlockGroup, {
 import Draggable from 'react-draggable';
 import { TagProps } from 'antd/lib/tag';
 import { setClickList, getTargetDom } from './nino-zone';
+import { OrientationProps } from '../line/SteppedLine';
 
 export type CanvasPositionProps = {
   x: number;
@@ -27,7 +28,6 @@ export type DataSource = {
   TagGroup?: TagGroupItem;
   LineGroup?: LineProps;
 };
-export type OrientationProps = 'h' | 'v' | 'horizonal' | 'vertical';
 export interface CanvasProps {
   className?: string;
   data: DataSource;

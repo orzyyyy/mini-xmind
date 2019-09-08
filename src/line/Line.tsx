@@ -8,9 +8,17 @@ export interface LineProps {
   x1: number;
   y1: number;
   className?: string;
+  style?: React.CSSProperties;
 }
 
-const Line = ({ x0 = 0, y0 = 0, x1 = 0, y1 = 0, className }: LineProps) => {
+const Line = ({
+  x0 = 0,
+  y0 = 0,
+  x1 = 0,
+  y1 = 0,
+  className,
+  style,
+}: LineProps) => {
   const dy = y1 - y0;
   const dx = x1 - x0;
   const angle = (Math.atan2(dy, dx) * 180) / Math.PI;
@@ -18,12 +26,13 @@ const Line = ({ x0 = 0, y0 = 0, x1 = 0, y1 = 0, className }: LineProps) => {
   return (
     <div
       className={classNames('line-core', className)}
-      style={{
-        top: `${y0}px`,
-        left: `${x0}px`,
-        width: `${width}px`,
-        transform: `rotate(${angle}deg)`,
-      }}
+      style={Object.assign(
+        {
+          width: `${width}px`,
+          transform: `translate3d(${x0}px, ${y0}px, 0) rotate(${angle}deg)`,
+        },
+        style,
+      )}
     />
   );
 };
