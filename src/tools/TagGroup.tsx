@@ -95,7 +95,7 @@ const TagGroup = ({
       onStart={handleDragStart}
       key={key}
       position={{ x: item.x, y: item.y }}
-      onDrag={(_: any, jtem) => handleDrag(jtem, key)}
+      onDrag={(_: any, jtem: any) => handleDrag(jtem, key)}
     >
       <div onDoubleClick={() => handleChange(item, key, 'editable', true)}>
         <NinoZone
