@@ -80,7 +80,7 @@ jobs:
       - checkout
       - *attach_workspace
       - run:
-          command: npm test -- -u
+          command: npm test -- -u --maxWorkers=2
           environment:
             LIB_DIR: lib
 
