@@ -3,6 +3,7 @@ import {
   preventDefault,
   stopPropagation,
   getRelativeLinesByBlockKey,
+  getLineCoordinates,
 } from '../LineUtil';
 import 'nino-cli/scripts/setup';
 import { mount } from 'enzyme';
@@ -25,40 +26,40 @@ describe('LineUtil', () => {
 
     const firstQuadrantTopInstance = getPlacement(target, firstQuadrantTop);
     expect(firstQuadrantTopInstance.fromAnchor).toBe('top');
-    expect(firstQuadrantTopInstance.toAnchor).toBe('bottom');
+    expect(firstQuadrantTopInstance.toAnchor).toBe('right');
 
     const firstQuadrantBottomInstance = getPlacement(
       target,
       firstQuadrantBottom,
     );
     expect(firstQuadrantBottomInstance.fromAnchor).toBe('top');
-    expect(firstQuadrantBottomInstance.toAnchor).toBe('left');
+    expect(firstQuadrantBottomInstance.toAnchor).toBe('right');
 
     const secondQuadrantTopInstance = getPlacement(target, secondQuadrantTop);
     expect(secondQuadrantTopInstance.fromAnchor).toBe('top');
-    expect(secondQuadrantTopInstance.toAnchor).toBe('bottom');
+    expect(secondQuadrantTopInstance.toAnchor).toBe('left');
 
     const secondQuadrantBottomInstance = getPlacement(
       target,
       secondQuadrantBottom,
     );
     expect(secondQuadrantBottomInstance.fromAnchor).toBe('top');
-    expect(secondQuadrantBottomInstance.toAnchor).toBe('right');
+    expect(secondQuadrantBottomInstance.toAnchor).toBe('left');
 
     const thirdQuadrantTopInstance = getPlacement(target, thirdQuadrantTop);
     expect(thirdQuadrantTopInstance.fromAnchor).toBe('bottom');
-    expect(thirdQuadrantTopInstance.toAnchor).toBe('right');
+    expect(thirdQuadrantTopInstance.toAnchor).toBe('left');
 
     const thirdQuadrantBottomInstance = getPlacement(
       target,
       thirdQuadrantBottom,
     );
     expect(thirdQuadrantBottomInstance.fromAnchor).toBe('bottom');
-    expect(thirdQuadrantBottomInstance.toAnchor).toBe('top');
+    expect(thirdQuadrantBottomInstance.toAnchor).toBe('left');
 
     const fourthQuadrantTopInstance = getPlacement(target, fourthQuadrantTop);
     expect(fourthQuadrantTopInstance.fromAnchor).toBe('bottom');
-    expect(fourthQuadrantTopInstance.toAnchor).toBe('left');
+    expect(fourthQuadrantTopInstance.toAnchor).toBe('right');
 
     const fourthQuadrantBottomInstance = getPlacement(
       target,
@@ -121,5 +122,56 @@ describe('LineUtil', () => {
         'line-592694': { fromKey: 'block-623187', toKey: 'block-624018' },
       }),
     ).toEqual(['line-77619']);
+  });
+
+  it('getLineCoordinates', () => {
+    expect(
+      getLineCoordinates(
+        { width: 100, x: 468, y: 242 },
+        { width: 100, x: 408, y: 502 },
+        { x: 0, y: 0 },
+      ),
+    ).toEqual({
+      centerX: 488,
+      firstLineVisible: false,
+      secondLineVisible: true,
+      thirdLineVisible: false,
+      x0: 568,
+      x1: 408,
+      y0: 242,
+      y1: 502,
+    });
+    expect(
+      getLineCoordinates(
+        { width: 100, x: 361, y: 687 },
+        { width: 100, x: 409, y: 503 },
+        { x: 0, y: 0 },
+      ),
+    ).toEqual({
+      centerX: 435,
+      firstLineVisible: false,
+      secondLineVisible: true,
+      thirdLineVisible: false,
+      x0: 461,
+      x1: 409,
+      y0: 687,
+      y1: 503,
+    });
+    expect(
+      getLineCoordinates(
+        { width: 100, x: 469, y: 695 },
+        { width: 100, x: 409, y: 503 },
+        { x: 0, y: 0 },
+      ),
+    ).toEqual({
+      centerX: 489,
+      firstLineVisible: false,
+      secondLineVisible: true,
+      thirdLineVisible: false,
+      x0: 569,
+      x1: 409,
+      y0: 695,
+      y1: 503,
+    });
   });
 });
