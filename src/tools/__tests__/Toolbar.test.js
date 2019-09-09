@@ -1,14 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-let Toolbar;
-switch (process.env.LIB_DIR) {
-  case 'lib':
-    Toolbar = require('../../../lib/tools/Toolbar').default;
-    break;
-  default:
-    Toolbar = require('../..').Toolbar;
-    break;
-}
+import Toolbar from '../Toolbar';
 
 describe('Toolbar', () => {
   it('toolbar render correctly', () => {

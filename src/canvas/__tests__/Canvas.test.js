@@ -1,17 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-let Canvas;
-switch (process.env.LIB_DIR) {
-  case 'lib':
-    Canvas = require('../../../lib/canvas/core').default;
-    break;
-  case 'dist':
-    Canvas = require('../../../dist/lib/canvas').default;
-    break;
-  default:
-    Canvas = require('../..').Canvas;
-    break;
-}
+import Canvas from '../core';
 import { mapping } from '../../mock/mapping';
 
 describe('Canvas', () => {
