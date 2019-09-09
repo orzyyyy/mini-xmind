@@ -1,15 +1,18 @@
+//
 // Generally speaking, `from` is the target, `to` is the relative
+//
+////////////////////////////////////////////////////////////////////
 //   _________
 //  |         |
 //  | target  |
 //  |_________|
-//      |                  =======> bottom right
-//      |         _____________
-//      |________|            |
+//                         =======> bottom right
+//                _____________
+//               |            |
 //               |  relative  |
 //               |____________|
 //
-//
+////////////////////////////////////////////////////////////////////
 //                               _________
 //                              |         |
 //                              | target  |
@@ -20,7 +23,34 @@
 //            |  relative  |
 //            |____________|
 //
-const getPlacement = (
+////////////////////////////////////////////////////////////////////
+//
+//             _____________
+//            |            |
+//            |  relative  |
+//            |____________|
+//
+//                                =======> top left
+//                                       _________
+//                                      |         |
+//                                      | target  |
+//                                      |_________|
+//
+////////////////////////////////////////////////////////////////////
+//
+//                                         _____________
+//                                        |            |
+//                                        |  relative  |
+//                                        |____________|
+//
+//                                =======> top right
+//
+//                 __________
+//                |         |
+//                | target  |
+//                |_________|
+//
+export const getPlacement = (
   { x: x0, y: y0 }: { x: number; y: number },
   { x: x1, y: y1 }: { x: number; y: number },
 ) => {
@@ -62,7 +92,6 @@ export const getRelativeLinesByBlockKey = (blockKey: string, mapping: any) => {
 };
 
 export const getLineCoordinates = (from: any, to: any, offset: any) => {
-  // todo
   let firstLineVisible = true;
   let secondLineVisible = true;
   let thirdLineVisible = true;
@@ -80,10 +109,12 @@ export const getLineCoordinates = (from: any, to: any, offset: any) => {
   const toHeight = to.height || 0;
   const centerX = (from.x + to.x + fromWidth) / 2 + offsetX;
 
-  let x0 = from.x + offsetX + fromWidth;
-  let x1 = to.x + offsetX;
-  let y0 = from.y + offsetY + fromHeight / 2;
-  let y1 = to.y + offsetY + toHeight / 2;
+  let x0, x1, y0, y1;
+
+  x0 = from.x + offsetX + fromWidth;
+  x1 = to.x + offsetX;
+  y0 = from.y + offsetY + fromHeight / 2;
+  y1 = to.y + offsetY + toHeight / 2;
 
   if (from.x >= to.x + toWidth) {
     x0 = x0 - fromWidth;
@@ -137,6 +168,7 @@ export const getLineCoordinates = (from: any, to: any, offset: any) => {
     y0 = y0 - toHeight / 2;
     y1 = y1 + fromHeight / 2;
   }
+
   return {
     x0,
     x1,

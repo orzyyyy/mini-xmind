@@ -1,6 +1,6 @@
 # mini-xmind
 
-![CircleCI](https://img.shields.io/circleci/project/github/orzyyyy/mini-xmind/master.svg)
+[![CircleCI](https://img.shields.io/circleci/project/github/orzyyyy/mini-xmind/master.svg)](https://circleci.com/gh/orzyyyy/mini-xmind)
 [![codecov](https://codecov.io/gh/orzyyyy/mini-xmind/branch/master/graph/badge.svg)](https://codecov.io/gh/orzyyyy/mini-xmind)
 
 A web tool for mini mind-mapping.
@@ -103,8 +103,7 @@ There is no prop for now, just render
 
 ### Canvas props
 
-| Property    | Description                                         | Type                                                                                                                                               | Default   |
-| ----------- | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| data        | what you want to paint in canvas                    | [DataSource](https://github.com/orzyyyy/mini-xmind/blob/0b83c704edf98fac54dc5117f120565b28244877/src/canvas/core.tsx#L23)                          | {}        |
-| orientation | the direction of Line startting                     | enum, ['horizonal', 'vertical']                                                                                                                    | horizonal |
-| onChange    | return all data when dragging or typing in TagGroup | (dataCollector: [DataSource](https://github.com/orzyyyy/mini-xmind/blob/0b83c704edf98fac54dc5117f120565b28244877/src/canvas/core.tsx#L23)) => void | -         |
+| Property | Description                                         | Type                                                                                                                                               | Default |
+| -------- | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| data     | what you want to paint in canvas                    | [DataSource](https://github.com/orzyyyy/mini-xmind/blob/0b83c704edf98fac54dc5117f120565b28244877/src/canvas/core.tsx#L23)                          | {}      |
+| onChange | return all data when dragging or typing in TagGroup | (dataCollector: [DataSource](https://github.com/orzyyyy/mini-xmind/blob/0b83c704edf98fac54dc5117f120565b28244877/src/canvas/core.tsx#L23)) => void | -       |

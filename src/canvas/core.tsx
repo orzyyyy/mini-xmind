@@ -38,7 +38,6 @@ export interface CanvasProps {
   onChange?: (item: DataSource) => void;
   onWheel?: (item: DataSource, event?: any) => void;
   onClick?: () => void;
-  mode?: 'scattered' | 'unified';
 }
 export interface CanvasState {
   newBlockProps?: BlockProps;
@@ -63,7 +62,6 @@ const Canvas = ({
   data,
   onChange,
   onWheel,
-  mode = 'scattered',
   ...rest
 }: CanvasProps) => {
   let blockProps = (data && data.BlockGroup) || {};

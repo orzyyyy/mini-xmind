@@ -28,24 +28,22 @@ export interface LineGroupProps {
   className?: string;
 }
 
-const LineGroup = ({ offset, data, ...rest }: LineGroupProps) => {
-  return (
-    <>
-      {Object.keys(data).map(lineKey => {
-        const { from, to } = data[lineKey];
-        return (
-          <SteppedLine
-            from={from}
-            to={to}
-            key={lineKey}
-            offset={offset}
-            className="animate-appear"
-            {...rest}
-          />
-        );
-      })}
-    </>
-  );
-};
+const LineGroup = ({ offset, data, ...rest }: LineGroupProps) => (
+  <>
+    {Object.keys(data).map(lineKey => {
+      const { from, to } = data[lineKey];
+      return (
+        <SteppedLine
+          from={from}
+          to={to}
+          key={lineKey}
+          offset={offset}
+          className="animate-appear"
+          {...rest}
+        />
+      );
+    })}
+  </>
+);
 
 export default LineGroup;
