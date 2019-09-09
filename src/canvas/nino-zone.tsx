@@ -24,14 +24,12 @@ export const setTargetDom = (target: any, notMerge?: boolean) => {
 };
 
 let lineMapping: any = {};
-export const getLineMapping = () => lineMapping;
 export const setLineMapping = (target: any, notMerge?: boolean) => {
   lineMapping = notMerge ? target : Object.assign({}, lineMapping, target);
   return lineMapping;
 };
 
 let clickList: any = {};
-export const getClickList = () => clickList;
 export const setClickList = (target: any, notMerge?: boolean) => {
   clickList = notMerge ? target : Object.assign({}, clickList, target);
   return clickList;

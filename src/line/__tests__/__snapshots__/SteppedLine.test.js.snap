@@ -1,141 +1,79 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SteppedLine renderHorizontal should work well 1`] = `
+exports[`SteppedLine render correctly 1`] = `
 <SteppedLine
-  orientation="horizonal"
-  x0={1}
-  x1={0}
-  y0={1}
-  y1={0}
+  from={
+    Object {
+      "bottom": 616,
+      "height": 80,
+      "left": 361,
+      "right": 461,
+      "top": 536,
+      "width": 100,
+      "x": 361,
+      "y": 536,
+    }
+  }
+  to={
+    Object {
+      "bottom": 428,
+      "height": 80,
+      "left": 65,
+      "right": 165,
+      "top": 348,
+      "width": 100,
+      "x": 65,
+      "y": 348,
+    }
+  }
 >
   <div
     className="stepped-line"
   >
     <Line
-      orientation="horizonal"
-      x0={1}
-      x1={0.5}
-      y0={1}
-      y1={1}
+      x0={361}
+      x1={263}
+      y0={576}
+      y1={576}
     >
       <div
         className="line-core"
         style={
           Object {
-            "left": "1px",
-            "top": "1px",
-            "transform": "rotate(180deg)",
-            "width": "0.5px",
+            "transform": "translate3d(361px, 576px, 0) rotate(180deg)",
+            "width": "98px",
           }
         }
       />
     </Line>
     <Line
-      orientation="horizonal"
-      x0={0}
-      x1={0.5}
-      y0={0}
-      y1={0}
+      x0={263}
+      x1={263}
+      y0={576}
+      y1={388}
     >
       <div
         className="line-core"
         style={
           Object {
-            "left": "0px",
-            "top": "0px",
-            "transform": "rotate(0deg)",
-            "width": "0.5px",
+            "transform": "translate3d(263px, 576px, 0) rotate(-90deg)",
+            "width": "188px",
           }
         }
       />
     </Line>
     <Line
-      orientation="horizonal"
-      x0={0.5}
-      x1={0.5}
-      y0={-1}
-      y1={1}
+      x0={263}
+      x1={165}
+      y0={388}
+      y1={388}
     >
       <div
         className="line-core"
         style={
           Object {
-            "left": "0.5px",
-            "top": "-1px",
-            "transform": "rotate(90deg)",
-            "width": "2px",
-          }
-        }
-      />
-    </Line>
-  </div>
-</SteppedLine>
-`;
-
-exports[`SteppedLine renderVertical should work well 1`] = `
-<SteppedLine
-  orientation="vertical"
-  x0={1}
-  x1={0}
-  y0={1}
-  y1={0}
->
-  <div
-    className="stepped-line"
-  >
-    <Line
-      orientation="vertical"
-      x0={1}
-      x1={1}
-      y0={1}
-      y1={0.5}
-    >
-      <div
-        className="line-core"
-        style={
-          Object {
-            "left": "1px",
-            "top": "1px",
-            "transform": "rotate(-90deg)",
-            "width": "0.5px",
-          }
-        }
-      />
-    </Line>
-    <Line
-      orientation="vertical"
-      x0={0}
-      x1={0}
-      y0={0}
-      y1={0.5}
-    >
-      <div
-        className="line-core"
-        style={
-          Object {
-            "left": "0px",
-            "top": "0px",
-            "transform": "rotate(90deg)",
-            "width": "0.5px",
-          }
-        }
-      />
-    </Line>
-    <Line
-      orientation="vertical"
-      x0={0}
-      x1={1}
-      y0={0.5}
-      y1={0.5}
-    >
-      <div
-        className="line-core"
-        style={
-          Object {
-            "left": "0px",
-            "top": "0.5px",
-            "transform": "rotate(0deg)",
-            "width": "1px",
+            "transform": "translate3d(263px, 388px, 0) rotate(180deg)",
+            "width": "98px",
           }
         }
       />

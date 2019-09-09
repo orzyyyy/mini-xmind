@@ -138,7 +138,7 @@ describe('Canvas', () => {
       .find('BlockGroup')
       .first()
       .props()
-      .onContextMenu({ group: 'BlockGroup', event, key: 'block-623187' });
+      .onContextMenu({ group: 'block-group', event, key: 'block-623187' });
     expect(onChange).toHaveBeenCalledWith(
       Object.assign({}, mapping, {
         BlockGroup: mapping.BlockGroup,
@@ -149,7 +149,7 @@ describe('Canvas', () => {
       .find('TagGroup')
       .first()
       .props()
-      .onContextMenu({ group: 'TagGroup', event, key: 'tag-626505' });
+      .onContextMenu({ group: 'tag-group', event, key: 'tag-626505' });
     expect(onChange).toHaveBeenCalledWith(
       Object.assign({}, mapping, {
         TagGroup: mapping.TagGroup,
