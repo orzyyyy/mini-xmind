@@ -1,6 +1,6 @@
 # mini-xmind
 
-[![CircleCI](https://img.shields.io/circleci/project/github/orzyyyy/mini-xmind/master.svg)](https://circleci.com/gh/orzyyyy/mini-xmind)
+![badge](https://action-badges.now.sh/orzyyyy/mini-xmind)
 [![codecov](https://codecov.io/gh/orzyyyy/mini-xmind/branch/master/graph/badge.svg)](https://codecov.io/gh/orzyyyy/mini-xmind)
 
 A web tool for mini mind-mapping.
