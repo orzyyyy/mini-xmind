@@ -1,6 +1,5 @@
 # mini-xmind
 
-![badge](https://action-badges.now.sh/orzyyyy/mini-xmind)
 [![codecov](https://codecov.io/gh/orzyyyy/mini-xmind/branch/master/graph/badge.svg)](https://codecov.io/gh/orzyyyy/mini-xmind)
 
 A web tool for mini mind-mapping.
