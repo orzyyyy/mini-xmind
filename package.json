@@ -17,7 +17,7 @@
     "build": "nino koei",
     "clean": "rimraf node_modules package-lock.json dist es lib && npm i",
     "codecov": "nino test --coverage",
-    "compile": "nino compile",
+    "compile": "nino compile && tsc --outDir es && tsc --outDir lib",
     "deploy": "node scripts/publish",
     "lint": "nino eslint",
     "lint-staged": "lint-staged",
