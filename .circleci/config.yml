@@ -71,7 +71,7 @@ jobs:
       - checkout
       - *attach_workspace
       - run:
-          command: npm test -- -u --maxWorkers=2
+          command: npm test -- -u
           environment:
             LIB_DIR: dist
   test_lib:
@@ -80,7 +80,7 @@ jobs:
       - checkout
       - *attach_workspace
       - run:
-          command: npm test -- -u --maxWorkers=2
+          command: npm test -- -u
           environment:
             LIB_DIR: lib
 
