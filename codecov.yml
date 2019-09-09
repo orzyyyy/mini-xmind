@@ -30,3 +30,4 @@ ignore:
   - 'src/go.*'
   - 'src/index.*'
   - 'nino.koei.js'
+  - 'nino.go.js'
