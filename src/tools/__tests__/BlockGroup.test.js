@@ -1,21 +1,13 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import MockDate from 'mockdate';
+import BlockGroup from '../BlockGroup';
 import {
   setClickList,
   setLineMapping,
   setTargetDom,
   getTargetDom,
 } from '../../canvas/nino-zone';
-let BlockGroup;
-switch (process.env.LIB_DIR) {
-  case 'lib':
-    BlockGroup = require('../../../lib/tools/BlockGroup').default;
-    break;
-  default:
-    BlockGroup = require('../BlockGroup').default;
-    break;
-}
 
 const defaultCheckBlockClickList1 = {
   'block-73377': {
