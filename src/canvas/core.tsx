@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classNames from 'classnames';
 import LineGroup, { LineProps } from '../tools/LineGroup';
 import {
@@ -13,7 +13,7 @@ import BlockGroup, {
 } from '../tools/BlockGroup';
 import Draggable from 'react-draggable';
 import { TagProps } from 'antd/lib/tag';
-import { setClickList, getTargetDom } from './nino-zone';
+import { setClickList, getTargetDom, setLineMapping } from './nino-zone';
 import { OrientationProps } from '../line/SteppedLine';
 
 export type CanvasPositionProps = {
@@ -68,6 +68,10 @@ const Canvas = ({
   let linesProps = (data && data.LineGroup) || {};
   let tagProps = (data && data.TagGroup) || {};
   let position = (data && data.CanvasPosition) || defaultCanvasPosition;
+
+  useEffect(() => {
+    setLineMapping(linesProps);
+  }, [linesProps]);
 
   const handleBlockChange = (newBlockProps: BlockProps, blockDOM: any) => {
     if (onChange) {
@@ -131,7 +135,7 @@ const Canvas = ({
   };
 
   const handleDragStart = (e: MouseEvent) => {
-    setClickList({});
+    setClickList({}, true);
     stopPropagation(e);
   };
 
