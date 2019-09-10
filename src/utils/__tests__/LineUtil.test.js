@@ -3,7 +3,7 @@ import {
   preventDefault,
   stopPropagation,
   getRelativeLinesByBlockKey,
-  getLineCoordinates,
+  getLineCoordinatesForHorizonal,
 } from '../LineUtil';
 import 'nino-cli/scripts/setup';
 import { mount } from 'enzyme';
@@ -124,9 +124,9 @@ describe('LineUtil', () => {
     ).toEqual(['line-77619']);
   });
 
-  it('getLineCoordinates', () => {
+  it('getLineCoordinatesForHorizonal', () => {
     expect(
-      getLineCoordinates(
+      getLineCoordinatesForHorizonal(
         { width: 100, x: 468, y: 242 },
         { width: 100, x: 408, y: 502 },
         { x: 0, y: 0 },
@@ -142,7 +142,7 @@ describe('LineUtil', () => {
       y1: 502,
     });
     expect(
-      getLineCoordinates(
+      getLineCoordinatesForHorizonal(
         { width: 100, x: 361, y: 687 },
         { width: 100, x: 409, y: 503 },
         { x: 0, y: 0 },
@@ -158,7 +158,7 @@ describe('LineUtil', () => {
       y1: 503,
     });
     expect(
-      getLineCoordinates(
+      getLineCoordinatesForHorizonal(
         { width: 100, x: 469, y: 695 },
         { width: 100, x: 409, y: 503 },
         { x: 0, y: 0 },
