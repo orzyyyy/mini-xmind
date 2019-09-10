@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SteppedLine render correctly 1`] = `
+exports[`SteppedLine render horizonal correctly 1`] = `
 <SteppedLine
   from={
     Object {
@@ -74,6 +74,89 @@ exports[`SteppedLine render correctly 1`] = `
           Object {
             "transform": "translate3d(263px, 388px, 0) rotate(180deg)",
             "width": "98px",
+          }
+        }
+      />
+    </Line>
+  </div>
+</SteppedLine>
+`;
+
+exports[`SteppedLine render vertical correctly 1`] = `
+<SteppedLine
+  from={
+    Object {
+      "bottom": 616,
+      "height": 80,
+      "left": 361,
+      "right": 461,
+      "top": 536,
+      "width": 100,
+      "x": 361,
+      "y": 536,
+    }
+  }
+  orientation="vertical"
+  to={
+    Object {
+      "bottom": 428,
+      "height": 80,
+      "left": 65,
+      "right": 165,
+      "top": 348,
+      "width": 100,
+      "x": 65,
+      "y": 348,
+    }
+  }
+>
+  <div
+    className="stepped-line"
+  >
+    <Line
+      x0={411}
+      x1={411}
+      y0={536}
+      y1={482}
+    >
+      <div
+        className="line-core"
+        style={
+          Object {
+            "transform": "translate3d(411px, 536px, 0) rotate(-90deg)",
+            "width": "54px",
+          }
+        }
+      />
+    </Line>
+    <Line
+      x0={411}
+      x1={115}
+      y0={482}
+      y1={482}
+    >
+      <div
+        className="line-core"
+        style={
+          Object {
+            "transform": "translate3d(411px, 482px, 0) rotate(180deg)",
+            "width": "296px",
+          }
+        }
+      />
+    </Line>
+    <Line
+      x0={115}
+      x1={115}
+      y0={482}
+      y1={428}
+    >
+      <div
+        className="line-core"
+        style={
+          Object {
+            "transform": "translate3d(115px, 482px, 0) rotate(-90deg)",
+            "width": "54px",
           }
         }
       />
