@@ -1,7 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Line Line renders correctly 1`] = `
-<Line>
+<Line
+  x0={0}
+  x1={0}
+  y0={0}
+  y1={0}
+>
   <div
     className="line-core"
     style={
