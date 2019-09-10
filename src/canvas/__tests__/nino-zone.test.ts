@@ -67,20 +67,20 @@ describe('nino-zone', () => {
   it('shouldPaintLine', () => {
     expect(shouldPaintLine(null, {})).toBe(true);
     setLineMapping({}, true);
-    expect(shouldPaintLine(defaultCheckBlockClickList1, { test: 1 })).toBe(
-      true,
-    );
+    expect(
+      shouldPaintLine(defaultCheckBlockClickList1, { test: 1 } as any),
+    ).toBe(true);
     setLineMapping({
       block1: { fromKey: 'block-73377', toKey: 'block-624018' },
     });
-    expect(shouldPaintLine(defaultCheckBlockClickList1, { test: 1 })).toBe(
-      false,
-    );
+    expect(
+      shouldPaintLine(defaultCheckBlockClickList1, { test: 1 } as any),
+    ).toBe(false);
   });
 
   it('generateLineData', () => {
     setClickList(defaultCheckBlockClickList1, true);
-    expect(generateLineData({ 'line-test': {} }, 'line-test')).toEqual({
+    expect(generateLineData({ 'line-test': {} as any }, 'line-test')).toEqual({
       fromKey: 'block-73377',
       result: {
         'line-test': {
@@ -93,7 +93,7 @@ describe('nino-zone', () => {
       toKey: 'block-624018',
     });
     setClickList(defaultCheckBlockClickList2, true);
-    expect(generateLineData({ 'line-test': {} }, 'line-test')).toEqual({
+    expect(generateLineData({ 'line-test': {} as any }, 'line-test')).toEqual({
       fromKey: 'block-624018',
       result: {
         'line-test': {

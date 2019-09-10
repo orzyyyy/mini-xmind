@@ -10,7 +10,14 @@ describe('TagGroup', () => {
         input: 'test',
       },
     };
-    const wrapper = mount(<TagGroup data={data} />);
+    const wrapper = mount(
+      <TagGroup
+        data={data as any}
+        onChange={jest.fn()}
+        onContextMenu={jest.fn()}
+        lineData={{}}
+      />,
+    );
     expect(
       wrapper
         .find('.tag-group')
@@ -35,7 +42,14 @@ describe('TagGroup', () => {
         input: 'test',
       },
     };
-    const wrapper = mount(<TagGroup data={data} />);
+    const wrapper = mount(
+      <TagGroup
+        data={data as any}
+        onChange={jest.fn()}
+        onContextMenu={jest.fn()}
+        lineData={{}}
+      />,
+    );
     wrapper
       .find('.tag-group')
       .at(1)
@@ -55,7 +69,14 @@ describe('TagGroup', () => {
         input: 'test',
       },
     };
-    const wrapper = mount(<TagGroup data={data} />);
+    const wrapper = mount(
+      <TagGroup
+        data={data as any}
+        onChange={jest.fn()}
+        onContextMenu={jest.fn()}
+        lineData={{}}
+      />,
+    );
     wrapper.find('TextArea').simulate('change', { target: { value: 'test1' } });
     expect(wrapper.find('TagGroup').props().data).toEqual({
       tag: {
@@ -70,18 +91,19 @@ describe('TagGroup', () => {
     const wrapper = mount(
       <TagGroup
         onChange={onChange}
-        data={{
-          tag: {
-            editable: false,
-            input: 'test',
-          },
-        }}
+        onContextMenu={jest.fn()}
+        lineData={{}}
+        data={
+          {
+            tag: {
+              editable: false,
+              input: 'test',
+            },
+          } as any
+        }
       />,
     );
-    wrapper
-      .find('Draggable')
-      .props()
-      .onDrag({ x: 0, y: 0 }, 'test');
+    (wrapper.find('Draggable').props() as any).onDrag({ x: 0, y: 0 }, 'test');
     expect(onChange).toBeCalled();
   });
 
@@ -90,12 +112,16 @@ describe('TagGroup', () => {
     const wrapper = mount(
       <TagGroup
         onChange={onChange}
-        data={{
-          tag: {
-            editable: true,
-            input: 'test',
-          },
-        }}
+        data={
+          {
+            tag: {
+              editable: true,
+              input: 'test',
+            },
+          } as any
+        }
+        onContextMenu={jest.fn()}
+        lineData={{}}
       />,
     );
     wrapper.find('TextArea').simulate('change', { target: { value: '1' } });
@@ -107,12 +133,16 @@ describe('TagGroup', () => {
     const wrapper = mount(
       <TagGroup
         onChange={onChange}
-        data={{
-          tag: {
-            editable: true,
-            input: 'test',
-          },
-        }}
+        data={
+          {
+            tag: {
+              editable: true,
+              input: 'test',
+            },
+          } as any
+        }
+        onContextMenu={jest.fn()}
+        lineData={{}}
       />,
     );
     wrapper.find('TextArea').simulate('blur');
@@ -124,19 +154,22 @@ describe('TagGroup', () => {
     const wrapper = mount(
       <TagGroup
         onContextMenu={onContextMenu}
-        data={{
-          tag: {
-            editable: false,
-            input: 'test',
-          },
-        }}
+        data={
+          {
+            tag: {
+              editable: false,
+              input: 'test',
+            },
+          } as any
+        }
+        onChange={jest.fn()}
+        lineData={{}}
       />,
     );
-    wrapper
+    (wrapper
       .find('.tag-group')
       .at(1)
-      .props()
-      .onContextMenu();
+      .props() as any).onContextMenu();
     expect(onContextMenu).toHaveBeenCalled();
   });
 
@@ -145,18 +178,23 @@ describe('TagGroup', () => {
     const stopPropagation = jest.fn();
     const wrapper = mount(
       <TagGroup
-        data={{
-          tag: {
-            editable: false,
-            input: 'test',
-          },
-        }}
+        data={
+          {
+            tag: {
+              editable: false,
+              input: 'test',
+            },
+          } as any
+        }
+        onChange={jest.fn()}
+        onContextMenu={jest.fn()}
+        lineData={{}}
       />,
     );
-    wrapper
-      .find('Draggable')
-      .props()
-      .onStart({ preventDefault, stopPropagation });
+    (wrapper.find('Draggable').props() as any).onStart({
+      preventDefault,
+      stopPropagation,
+    });
     expect(preventDefault).toHaveBeenCalled();
   });
 });

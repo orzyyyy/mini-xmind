@@ -80,7 +80,7 @@ describe('LineUtil', () => {
       .find('button')
       .at(0)
       .simulate('click', () => {
-        // tslint:disable-next-line
+        // eslint-disable-next-line no-unused-labels
         preventDefault: () => {
           defaultEvent();
         };
@@ -98,7 +98,7 @@ describe('LineUtil', () => {
       .find('button')
       .at(0)
       .simulate('click', () => {
-        // tslint:disable-next-line
+        // eslint-disable-next-line no-unused-labels
         stopPropagation: () => {
           defaultEvent();
         };

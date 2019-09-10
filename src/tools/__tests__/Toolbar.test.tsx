@@ -16,27 +16,24 @@ describe('Toolbar', () => {
       onChange();
     };
     const event = { dataTransfer: { effectAllowed: '', setData } };
-    wrapper
+    (wrapper
       .find('li')
       .first()
-      .props()
-      .onDragStart(event, '{ test: 1 }');
+      .props() as any).onDragStart(event, '{ test: 1 }');
     expect(onChange).toBeCalled();
     expect(event.dataTransfer.effectAllowed).toBe('copy');
 
-    wrapper
+    (wrapper
       .find('li')
       .at(1)
-      .props()
-      .onDragStart(event, '{ test: 1 }');
+      .props() as any).onDragStart(event, '{ test: 1 }');
     expect(onChange).toBeCalled();
     expect(event.dataTransfer.effectAllowed).toBe('copy');
 
-    wrapper
+    (wrapper
       .find('li')
       .at(2)
-      .props()
-      .onDragStart(event, '{ test: 1 }');
+      .props() as any).onDragStart(event, '{ test: 1 }');
     expect(onChange).toBeCalled();
     expect(event.dataTransfer.effectAllowed).toBe('copy');
   });
