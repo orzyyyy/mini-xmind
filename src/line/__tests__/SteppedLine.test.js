@@ -24,8 +24,15 @@ describe('SteppedLine', () => {
     left: 361,
   };
 
-  it('render correctly', () => {
+  it('render horizonal correctly', () => {
     const wrapper = mount(<SteppedLine from={from} to={to} />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('render vertical correctly', () => {
+    const wrapper = mount(
+      <SteppedLine from={from} to={to} orientation="vertical" />,
+    );
     expect(wrapper).toMatchSnapshot();
   });
 });

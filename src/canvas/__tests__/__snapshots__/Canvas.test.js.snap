@@ -1388,7 +1388,6 @@ exports[`Canvas Canvas renders correctly 1`] = `
               className="stepped-line"
             >
               <Line
-                orientation="horizonal"
                 x0={428}
                 x1={330}
                 y0={346}
@@ -1405,7 +1404,6 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 />
               </Line>
               <Line
-                orientation="horizonal"
                 x0={330}
                 x1={330}
                 y0={346}
@@ -1422,7 +1420,6 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 />
               </Line>
               <Line
-                orientation="horizonal"
                 x0={330}
                 x1={232}
                 y0={158}
@@ -1480,7 +1477,6 @@ exports[`Canvas Canvas renders correctly 1`] = `
               className="stepped-line"
             >
               <Line
-                orientation="horizonal"
                 x0={232}
                 x1={329.5}
                 y0={158}
@@ -1497,7 +1493,6 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 />
               </Line>
               <Line
-                orientation="horizonal"
                 x0={329.5}
                 x1={329.5}
                 y0={158}
@@ -1514,7 +1509,6 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 />
               </Line>
               <Line
-                orientation="horizonal"
                 x0={329.5}
                 x1={427}
                 y0={-10}

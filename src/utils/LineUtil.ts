@@ -91,7 +91,77 @@ export const getRelativeLinesByBlockKey = (blockKey: string, mapping: any) => {
   return lineKeys;
 };
 
-export const getLineCoordinates = (from: any, to: any, offset: any) => {
+export const getLineCoordinatesForVertical = (
+  from: any,
+  to: any,
+  offset: any,
+) => {
+  let firstLineVisible = true;
+  let secondLineVisible = true;
+  let thirdLineVisible = true;
+
+  const { toAnchor } = getPlacement(
+    { x: from.x, y: from.y },
+    { x: to.x, y: to.y },
+  );
+
+  const offsetX = window.pageXOffset - offset.x;
+  const offsetY = window.pageYOffset - offset.y;
+
+  const fromWidth = from.width || 0;
+  const fromHeight = from.height || 0;
+  const toWidth = to.width || 0;
+  const toHeight = to.height || 0;
+  const centerY = (from.y + to.y + fromHeight) / 2 + offsetY;
+
+  let x0, x1, y0, y1;
+
+  x0 = from.x + offsetX + fromWidth / 2;
+  y0 = from.y + offsetY + fromHeight;
+  x1 = to.x + offsetX + fromWidth / 2;
+  y1 = to.y + offsetY;
+
+  if (
+    from.y + fromHeight / 2 >= to.y - toHeight / 2 &&
+    from.y - fromHeight / 2 <= to.y + toHeight / 2
+  ) {
+    if (toAnchor === 'right') {
+      x0 = from.x + offsetX + fromWidth;
+      y0 = from.y + offsetY + fromHeight / 2;
+      x1 = to.x + offsetX;
+      y1 = to.y + offsetY + toHeight / 2;
+    } else if (toAnchor === 'left') {
+      x0 = from.x + offsetX;
+      y0 = from.y + offsetY + fromHeight / 2;
+      x1 = to.x + offsetX + toWidth;
+      y1 = to.y + offsetY + toHeight / 2;
+    }
+  }
+
+  if (from.y > to.y + toHeight) {
+    x0 = from.x + offsetX + fromWidth / 2;
+    y0 = from.y + offsetY;
+    x1 = to.x + offsetX + toWidth / 2;
+    y1 = to.y + offsetY + toHeight;
+  }
+
+  return {
+    x0,
+    x1,
+    y0,
+    y1,
+    centerY,
+    firstLineVisible,
+    secondLineVisible,
+    thirdLineVisible,
+  };
+};
+
+export const getLineCoordinatesForHorizonal = (
+  from: any,
+  to: any,
+  offset: any,
+) => {
   let firstLineVisible = true;
   let secondLineVisible = true;
   let thirdLineVisible = true;

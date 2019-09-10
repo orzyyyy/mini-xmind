@@ -3,7 +3,8 @@ import {
   preventDefault,
   stopPropagation,
   getRelativeLinesByBlockKey,
-  getLineCoordinates,
+  getLineCoordinatesForHorizonal,
+  getLineCoordinatesForVertical,
 } from '../LineUtil';
 import 'nino-cli/scripts/setup';
 import { mount } from 'enzyme';
@@ -124,9 +125,9 @@ describe('LineUtil', () => {
     ).toEqual(['line-77619']);
   });
 
-  it('getLineCoordinates', () => {
+  it('getLineCoordinatesForHorizonal', () => {
     expect(
-      getLineCoordinates(
+      getLineCoordinatesForHorizonal(
         { width: 100, x: 468, y: 242 },
         { width: 100, x: 408, y: 502 },
         { x: 0, y: 0 },
@@ -142,7 +143,7 @@ describe('LineUtil', () => {
       y1: 502,
     });
     expect(
-      getLineCoordinates(
+      getLineCoordinatesForHorizonal(
         { width: 100, x: 361, y: 687 },
         { width: 100, x: 409, y: 503 },
         { x: 0, y: 0 },
@@ -158,7 +159,7 @@ describe('LineUtil', () => {
       y1: 503,
     });
     expect(
-      getLineCoordinates(
+      getLineCoordinatesForHorizonal(
         { width: 100, x: 469, y: 695 },
         { width: 100, x: 409, y: 503 },
         { x: 0, y: 0 },
@@ -172,6 +173,42 @@ describe('LineUtil', () => {
       x1: 409,
       y0: 695,
       y1: 503,
+    });
+  });
+
+  it('getLineCoordinatesForVertical', () => {
+    expect(
+      getLineCoordinatesForVertical(
+        { width: 22, height: 21, x: 262, y: 500 },
+        { width: 30, height: 21, x: 478, y: 502 },
+        { x: 0, y: 0 },
+      ),
+    ).toEqual({
+      centerY: 511.5,
+      firstLineVisible: true,
+      secondLineVisible: true,
+      thirdLineVisible: true,
+      x0: 284,
+      x1: 478,
+      y0: 510.5,
+      y1: 512.5,
+    });
+
+    expect(
+      getLineCoordinatesForVertical(
+        { width: 22, height: 21, x: 602, y: 503 },
+        { width: 30, height: 21, x: 478, y: 502 },
+        { x: 0, y: 0 },
+      ),
+    ).toEqual({
+      centerY: 513,
+      firstLineVisible: true,
+      secondLineVisible: true,
+      thirdLineVisible: true,
+      x0: 602,
+      x1: 508,
+      y0: 513.5,
+      y1: 512.5,
     });
   });
 });

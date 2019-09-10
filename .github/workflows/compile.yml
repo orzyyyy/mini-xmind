@@ -13,5 +13,5 @@ jobs:
       - name: install
         run: npm install
 
-      - name: lint
+      - name: compile
         run: npm run compile
