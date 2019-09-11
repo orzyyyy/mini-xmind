@@ -59,7 +59,7 @@ describe('Canvas', () => {
       .first()
       .props()
       .onDrop(event);
-    expect(onChange).not.toHaveBeenCalled();
+    expect(onChange).toHaveBeenCalled();
   });
 
   it('onDrop should update blockProps when droping a Block', () => {
