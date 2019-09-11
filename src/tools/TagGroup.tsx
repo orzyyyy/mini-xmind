@@ -12,7 +12,7 @@ export type TagGroupRenderItem = {
   item: { input: string; x: number; y: number };
   key: string;
   className: string;
-  onContextMenu: ({ event, key, group }: ContextMenuProps) => void;
+  onContextMenu?: ({ event, key, group }: ContextMenuProps) => void;
 };
 export type TagGroupItem = {
   [key: string]: {
@@ -130,7 +130,6 @@ const TagGroup = ({
             item,
             key,
             className: targetClassName,
-            onContextMenu: () => {},
           });
         }
         return renderTagItem({

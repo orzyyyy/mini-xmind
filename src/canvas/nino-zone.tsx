@@ -7,7 +7,7 @@ import { LineProps } from '../tools/LineGroup';
 
 export interface NinoZoneProps {
   targetKey: string;
-  onContextMenu: (item: ContextMenuProps) => void;
+  onContextMenu?: (item: ContextMenuProps) => void;
   onChange: (data: DataSource, targetDom: any) => void;
   data: BlockProps;
   lineData?: LineProps;
@@ -158,11 +158,12 @@ const NinoZone = ({
       ref={saveRef}
       className={className}
       onContextMenu={(e: any) => {
-        onContextMenu({
-          event: e,
-          key: targetKey,
-          group: name,
-        });
+        onContextMenu &&
+          onContextMenu({
+            event: e,
+            key: targetKey,
+            group: name,
+          });
       }}
     >
       {children}
