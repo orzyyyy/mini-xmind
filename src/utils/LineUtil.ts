@@ -1,53 +1,49 @@
-//
-// Generally speaking, `from` is the target, `to` is the relative
-//
-////////////////////////////////////////////////////////////////////
 //   _________
 //  |         |
-//  | target  |
+//  | from    |
 //  |_________|
 //                         =======> bottom right
 //                _____________
 //               |            |
-//               |  relative  |
+//               |     to     |
 //               |____________|
 //
 ////////////////////////////////////////////////////////////////////
 //                               _________
 //                              |         |
-//                              | target  |
+//                              |   from  |
 //                              |_________|
 //                                            =======> bottom left
 //             _____________
 //            |            |
-//            |  relative  |
+//            |     to     |
 //            |____________|
 //
 ////////////////////////////////////////////////////////////////////
 //
 //             _____________
 //            |            |
-//            |  relative  |
+//            |     to     |
 //            |____________|
 //
 //                                =======> top left
 //                                       _________
 //                                      |         |
-//                                      | target  |
+//                                      |   from  |
 //                                      |_________|
 //
 ////////////////////////////////////////////////////////////////////
 //
 //                                         _____________
 //                                        |            |
-//                                        |  relative  |
+//                                        |     to     |
 //                                        |____________|
 //
 //                                =======> top right
 //
 //                 __________
 //                |         |
-//                | target  |
+//                |   from  |
 //                |_________|
 //
 export const getPlacement = (
@@ -116,14 +112,20 @@ export const getLineCoordinatesForVertical = (
   to: any,
   offset: any,
 ) => {
-  let firstLineVisible = true;
-  let secondLineVisible = true;
-  let thirdLineVisible = true;
+  let firstLineX0 = 0;
+  let firstLineY0 = 0;
+  let firstLineX1 = 0;
+  let firstLineY1 = 0;
 
-  const { toAnchor } = getPlacement(
-    { x: from.x, y: from.y },
-    { x: to.x, y: to.y },
-  );
+  let secondLineX0 = 0;
+  let secondLineY0 = 0;
+  let secondLineX1 = 0;
+  let secondLineY1 = 0;
+
+  let thirdLineX0 = 0;
+  let thirdLineY0 = 0;
+  let thirdLineX1 = 0;
+  let thirdLineY1 = 0;
 
   const offsetX = window.pageXOffset - offset.x;
   const offsetY = window.pageYOffset - offset.y;
@@ -132,9 +134,11 @@ export const getLineCoordinatesForVertical = (
   const fromHeight = from.height || 0;
   const toWidth = to.width || 0;
   const toHeight = to.height || 0;
-  const centerY = (from.y + to.y + fromHeight) / 2 + offsetY;
 
-  let x0, x1, y0, y1;
+  const fromX = from.x + offsetX;
+  const fromY = from.y + offsetY;
+  const toX = to.x + offsetX;
+  const toY = to.y + offsetY;
 
   //
   //   ____________                                   ____________
@@ -150,52 +154,85 @@ export const getLineCoordinatesForVertical = (
   //                          |    to     |
   //                          |           |
   //                          |___________|
-  //                                |
-  //                                |
-  //         _______________________|______________________
-  //        |                                             |
-  //        |                                             |
-  //   _____|______                                  _____|______
-  //  |           |                                 |           |
-  //  |   from3   |                                 |   from4   |
-  //  |           |                                 |           |
-  //  |___________|                                 |___________|
   //
-  x0 = from.x + offsetX + fromWidth / 2;
-  y0 = from.y + offsetY + fromHeight;
-  x1 = to.x + offsetX + fromWidth / 2;
-  y1 = to.y + offsetY;
+  if (fromY + fromHeight < toY) {
+    firstLineX0 = fromX + fromWidth / 2;
+    firstLineY0 = fromY + fromHeight;
+    firstLineX1 = firstLineX0;
+    firstLineY1 = (fromY + fromHeight + toY) / 2;
+
+    secondLineX0 = firstLineX1;
+    secondLineY0 = firstLineY1;
+    secondLineX1 = toX + toWidth / 2;
+    secondLineY1 = secondLineY0;
+
+    thirdLineX0 = secondLineX1;
+    thirdLineY0 = secondLineY1;
+    thirdLineX1 = toX + toWidth / 2;
+    thirdLineY1 = toY;
+  }
 
   //
   //
-  //         this is right
-  //   ____________                                                 this is left
+  //
+  //   ____________
   //  |           |                       ____________
-  //  |   from1   |______________________|           |                          _____________
-  //  |           |                      |     to    |                         |            |
-  //  |___________|                      |           |_________________________|   from2    |
-  //                                     |___________|                         |            |
-  //                                                                           |____________|
+  //  |    from   |___________           |           |
+  //  |           |          |___________|     to    |
+  //  |___________|                      |           |
+  //                                     |___________|
   //
-  //
-  //  If you don't know why `left` or `right`,
-  //  check the comment of function `getPlacement`
   //
   if (
-    from.y + fromHeight / 2 >= to.y - toHeight / 2 &&
-    from.y - fromHeight / 2 <= to.y + toHeight / 2
+    fromY + fromHeight / 2 > toY &&
+    fromY + fromHeight / 2 < toY + toHeight &&
+    fromX + fromWidth < toX
   ) {
-    if (toAnchor === 'right') {
-      x0 = from.x + offsetX + fromWidth;
-      y0 = from.y + offsetY + fromHeight / 2;
-      x1 = to.x + offsetX;
-      y1 = to.y + offsetY + toHeight / 2;
-    } else if (toAnchor === 'left') {
-      x0 = from.x + offsetX;
-      y0 = from.y + offsetY + fromHeight / 2;
-      x1 = to.x + offsetX + toWidth;
-      y1 = to.y + offsetY + toHeight / 2;
-    }
+    firstLineX0 = fromX + fromWidth;
+    firstLineY0 = fromY + fromHeight / 2;
+    firstLineX1 = (fromX + fromWidth + toX) / 2;
+    firstLineY1 = firstLineY0;
+
+    secondLineX0 = firstLineX1;
+    secondLineY0 = firstLineY1;
+    secondLineX1 = secondLineX0;
+    secondLineY1 = toY + toHeight / 2;
+
+    thirdLineX0 = secondLineX1;
+    thirdLineY0 = secondLineY1;
+    thirdLineX1 = toX;
+    thirdLineY1 = toY + toHeight / 2;
+  }
+
+  //
+  //
+  //
+  //   ____________
+  //  |           |                          _____________
+  //  |     to    |_____________            |            |
+  //  |           |            |____________|   from     |
+  //  |___________|                         |            |
+  //                                        |____________|
+  //
+  if (
+    fromY + fromHeight / 2 > toY &&
+    fromY + fromHeight / 2 < toY + toHeight &&
+    fromX > toX + toWidth
+  ) {
+    firstLineX0 = fromX;
+    firstLineY0 = fromY + fromHeight / 2;
+    firstLineX1 = (fromX + fromWidth + toX) / 2;
+    firstLineY1 = firstLineY0;
+
+    secondLineX0 = firstLineX1;
+    secondLineY0 = firstLineY1;
+    secondLineX1 = secondLineX0;
+    secondLineY1 = toY + toHeight / 2;
+
+    thirdLineX0 = secondLineX1;
+    thirdLineY0 = secondLineY1;
+    thirdLineX1 = toX + toWidth;
+    thirdLineY1 = toY + toHeight / 2;
   }
 
   //
@@ -212,22 +249,36 @@ export const getLineCoordinatesForVertical = (
   //  |___________|                                  |___________|
   //
   //
-  if (from.y > to.y + toHeight) {
-    x0 = from.x + offsetX + fromWidth / 2;
-    y0 = from.y + offsetY;
-    x1 = to.x + offsetX + toWidth / 2;
-    y1 = to.y + offsetY + toHeight;
+  if (fromY > toY + toHeight) {
+    firstLineX0 = fromX + fromWidth / 2;
+    firstLineY0 = fromY;
+    firstLineX1 = firstLineX0;
+    firstLineY1 = (fromY + fromHeight + toY) / 2;
+
+    secondLineX0 = firstLineX1;
+    secondLineY0 = firstLineY1;
+    secondLineX1 = toX + toWidth / 2;
+    secondLineY1 = secondLineY0;
+
+    thirdLineX0 = secondLineX1;
+    thirdLineY0 = secondLineY1;
+    thirdLineX1 = toX + toWidth / 2;
+    thirdLineY1 = toY + toHeight;
   }
 
   return {
-    x0,
-    x1,
-    y0,
-    y1,
-    centerY,
-    firstLineVisible,
-    secondLineVisible,
-    thirdLineVisible,
+    firstLineX0,
+    firstLineY0,
+    firstLineX1,
+    firstLineY1,
+    secondLineX0,
+    secondLineY0,
+    secondLineX1,
+    secondLineY1,
+    thirdLineX0,
+    thirdLineY0,
+    thirdLineX1,
+    thirdLineY1,
   };
 };
 
@@ -300,7 +351,7 @@ export const getLineCoordinatesForHorizonal = (
   //                          |___________|
   //
   //
-  if (from.x + fromWidth <= to.x) {
+  if (fromX + fromWidth <= toX) {
     firstLineX0 = fromX + fromWidth;
     firstLineY0 = fromY + fromHeight / 2;
     firstLineX1 = (fromX + fromWidth + toX) / 2;
@@ -332,7 +383,7 @@ export const getLineCoordinatesForHorizonal = (
   //    |           |
   //    |___________|
   //
-  if (from.x >= to.x + toWidth) {
+  if (fromX >= toX + toWidth) {
     firstLineX0 = fromX;
     firstLineY0 = fromY + fromHeight / 2;
     firstLineX1 = (fromX + toX + toWidth) / 2;
