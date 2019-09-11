@@ -91,6 +91,26 @@ export const getRelativeLinesByBlockKey = (blockKey: string, mapping: any) => {
   return lineKeys;
 };
 
+// Firstly, the coordinate origin is at the top left
+//
+//   This is the coordinate origin
+//        ___
+//       |\
+//         \
+//          \
+//           \_____________________
+//           |                    |
+//           |                    |
+//           |                    |
+//           |                    |
+//           |                    |
+//           |                    |
+//           |____________________|
+//
+//
+// Secondly, all calculation is based on this and should follow this forever
+// Or it would be hard to read code below
+//
 export const getLineCoordinatesForVertical = (
   from: any,
   to: any,
@@ -116,11 +136,42 @@ export const getLineCoordinatesForVertical = (
 
   let x0, x1, y0, y1;
 
+  //
+  //   ____________                                   ____________
+  //  |           |                                  |           |
+  //  |   from1   |______                       _____|   from2   |
+  //  |           |     |                      |     |           |
+  //  |___________|     |                      |     |___________|
+  //                    |                      |
+  //                    |                      |
+  //                    |                      |
+  //                    |      ____________    |
+  //                    |     |           |    |
+  //                    |_____|    to     |____|
+  //                          |           |
+  //                          |___________|
+  //
+  //
   x0 = from.x + offsetX + fromWidth / 2;
   y0 = from.y + offsetY + fromHeight;
   x1 = to.x + offsetX + fromWidth / 2;
   y1 = to.y + offsetY;
 
+  //
+  //
+  //         this is right
+  //   ____________                                                 this is left
+  //  |           |                       ____________
+  //  |   from1   |______________________|           |                          _____________
+  //  |           |                      |     to    |                         |            |
+  //  |___________|                      |           |_________________________|   from2    |
+  //                                     |___________|                         |            |
+  //                                                                           |____________|
+  //
+  //
+  //  If you don't know why `left` or `right`,
+  //  check the comment of function `getPlacement`
+  //
   if (
     from.y + fromHeight / 2 >= to.y - toHeight / 2 &&
     from.y - fromHeight / 2 <= to.y + toHeight / 2
@@ -138,6 +189,20 @@ export const getLineCoordinatesForVertical = (
     }
   }
 
+  //
+  //                           ____________
+  //                          |           |
+  //                     _____|    to     |______
+  //                    |     |           |     |
+  //                    |     |___________|     |
+  //                    |                       |
+  //   ____________     |                       |     ____________
+  //  |           |     |                       |    |           |
+  //  |   from1   |_____|                       |____|   from2   |
+  //  |           |                                  |           |
+  //  |___________|                                  |___________|
+  //
+  //
   if (from.y > to.y + toHeight) {
     x0 = from.x + offsetX + fromWidth / 2;
     y0 = from.y + offsetY;
@@ -157,6 +222,26 @@ export const getLineCoordinatesForVertical = (
   };
 };
 
+// Firstly, the coordinate origin is at the top left
+//
+//   This is the coordinate origin
+//        ___
+//       |\
+//         \
+//          \
+//           \_____________________
+//           |                    |
+//           |                    |
+//           |                    |
+//           |                    |
+//           |                    |
+//           |                    |
+//           |____________________|
+//
+//
+// Secondly, all calculation is based on this and should follow this forever
+// Or it would be hard to read code below
+//
 export const getLineCoordinatesForHorizonal = (
   from: any,
   to: any,
@@ -181,6 +266,31 @@ export const getLineCoordinatesForHorizonal = (
 
   let x0, x1, y0, y1;
 
+  //
+  //   ____________                                   ____________
+  //  |           |                                  |           |
+  //  |   from1   |                                  |   from2   |
+  //  |           |                                  |           |
+  //  |___________|                                  |___________|
+  //        |                                             |
+  //        |_____________________________________________|
+  //                                |
+  //                           _____|______
+  //                          |           |
+  //                          |    to     |
+  //                          |           |
+  //                          |___________|
+  //                                |
+  //                                |
+  //         _______________________|______________________
+  //        |                                             |
+  //        |                                             |
+  //   _____|______                                  _____|______
+  //  |           |                                 |           |
+  //  |   from3   |                                 |   from4   |
+  //  |           |                                 |           |
+  //  |___________|                                 |___________|
+  //
   x0 = from.x + offsetX + fromWidth;
   x1 = to.x + offsetX;
   y0 = from.y + offsetY + fromHeight / 2;
@@ -191,6 +301,21 @@ export const getLineCoordinatesForHorizonal = (
     x1 = x1 + fromWidth;
   }
 
+  //
+  //    __________________
+  //   |                 |
+  //   |       from      |
+  //   |                 |
+  //   |_________________|
+  //            |
+  //            |
+  //            |
+  //        ____|_____________
+  //       |                 |
+  //       |       to        |
+  //       |                 |
+  //       |_________________|
+  //
   if (
     fromAnchor === 'bottom' &&
     // toAnchor === 'right' &&
@@ -203,6 +328,21 @@ export const getLineCoordinatesForHorizonal = (
     y1 = y1 - toHeight / 2;
   }
 
+  //
+  //             __________________
+  //            |                 |
+  //            |       from      |
+  //            |                 |
+  //            |_________________|
+  //                    |
+  //                    |
+  //                    |
+  //        ____________|_____
+  //       |                 |
+  //       |       to        |
+  //       |                 |
+  //       |_________________|
+  //
   if (
     fromAnchor === 'bottom' &&
     // toAnchor === 'left' &&
@@ -215,6 +355,21 @@ export const getLineCoordinatesForHorizonal = (
     y1 = y1 - toHeight / 2;
   }
 
+  //
+  //             __________________
+  //            |                 |
+  //            |       to        |
+  //            |                 |
+  //            |_________________|
+  //                    |
+  //                    |
+  //                    |
+  //        ____________|_____
+  //       |                 |
+  //       |       from      |
+  //       |                 |
+  //       |_________________|
+  //
   if (
     fromAnchor === 'top' &&
     // toAnchor === 'right' &&
@@ -227,6 +382,21 @@ export const getLineCoordinatesForHorizonal = (
     y1 = y1 + fromHeight / 2;
   }
 
+  //
+  //    __________________
+  //   |                 |
+  //   |       to        |
+  //   |                 |
+  //   |_________________|
+  //            |
+  //            |
+  //            |
+  //        ____|_____________
+  //       |                 |
+  //       |       from      |
+  //       |                 |
+  //       |_________________|
+  //
   if (
     fromAnchor === 'top' &&
     // toAnchor === 'left' &&
