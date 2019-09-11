@@ -118,9 +118,6 @@ const NinoZone = ({
         setTargetDom(result);
         return;
       }
-      if (item && JSON.stringify(convert) !== JSON.stringify(item)) {
-        setTargetDom(result);
-      }
     }
   };
 

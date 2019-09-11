@@ -88,7 +88,7 @@ describe('Canvas', () => {
     event.clientY = 100;
     event.dataTransfer = {};
     event.dataTransfer.getData = () => {
-      return '{"key":"border","value":"input","style":{"width":100,"height":80}}';
+      return '{"key":"border","value":"tag","style":{"width":100,"height":80}}';
     };
     wrapper
       .find('.react-draggable')

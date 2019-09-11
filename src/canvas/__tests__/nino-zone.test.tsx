@@ -1,4 +1,6 @@
-import {
+import React from 'react';
+import { mount } from 'enzyme';
+import NinoZone, {
   shouldPaintLine,
   generateLineData,
   setClickList,
@@ -105,5 +107,28 @@ describe('nino-zone', () => {
       },
       toKey: 'block-73377',
     });
+  });
+
+  it('should not render redundant line', () => {
+    const onChange = jest.fn();
+    const wrapper = mount(
+      <NinoZone
+        onChange={onChange}
+        targetKey="test-key"
+        onContextMenu={jest.fn()}
+        name="tag-group"
+        data={
+          {
+            'tag-416176': { x: 186, y: 469, editable: false, input: 'test' },
+            'tag-439992': { x: 34, y: 367, editable: false, input: 'test2' },
+          } as any
+        }
+        lineData={{}}
+      />,
+    );
+    setClickList({ test: 1 }, true);
+    (wrapper.find('div').props() as any).onClick();
+    (wrapper.find('div').props() as any).onClick();
+    expect(onChange).toHaveBeenCalled();
   });
 });
