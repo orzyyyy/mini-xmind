@@ -184,8 +184,8 @@ export const getLineCoordinatesForVertical = (
   //
   //
   if (
-    fromY + fromHeight / 2 > toY &&
-    fromY + fromHeight / 2 < toY + toHeight &&
+    fromY + fromHeight > toY &&
+    fromY - fromHeight / 2 < toY + toHeight &&
     fromX + fromWidth < toX
   ) {
     firstLineX0 = fromX + fromWidth;
@@ -215,8 +215,8 @@ export const getLineCoordinatesForVertical = (
   //                                        |____________|
   //
   if (
-    fromY + fromHeight / 2 > toY &&
-    fromY + fromHeight / 2 < toY + toHeight &&
+    fromY + fromHeight > toY &&
+    fromY - fromHeight / 2 < toY + toHeight &&
     fromX > toX + toWidth
   ) {
     firstLineX0 = fromX;
@@ -246,7 +246,7 @@ export const getLineCoordinatesForVertical = (
   //         |
   //   ______|_____
   //  |           |
-  //  |   from1   |
+  //  |   from    |
   //  |           |
   //  |___________|
   //
@@ -255,7 +255,7 @@ export const getLineCoordinatesForVertical = (
     firstLineX0 = fromX + fromWidth / 2;
     firstLineY0 = fromY;
     firstLineX1 = firstLineX0;
-    firstLineY1 = (fromY + fromHeight + toY) / 2;
+    firstLineY1 = (fromY + toY + toHeight) / 2;
 
     secondLineX0 = firstLineX1;
     secondLineY0 = firstLineY1;
@@ -418,7 +418,7 @@ export const getLineCoordinatesForHorizonal = (
   //       |_________________|
   //
   if (
-    fromX + fromWidth / 2 > toX &&
+    fromX + fromWidth > toX &&
     fromX + fromWidth / 2 < toX + toWidth / 2 &&
     fromY + fromHeight < toY
   ) {
@@ -455,7 +455,7 @@ export const getLineCoordinatesForHorizonal = (
   //
   if (
     fromX + fromWidth / 2 > toX + toWidth / 2 &&
-    fromX + fromWidth / 2 < toX + toWidth &&
+    fromX < toX + toWidth &&
     fromY + fromHeight < toY
   ) {
     firstLineX0 = fromX + fromWidth / 2;
@@ -490,7 +490,7 @@ export const getLineCoordinatesForHorizonal = (
   //       |_________________|
   //
   if (
-    fromX + fromWidth / 2 > toX &&
+    fromX + fromWidth > toX &&
     fromX + fromWidth / 2 < toX + toWidth / 2 &&
     fromY > toY + toHeight
   ) {
@@ -527,7 +527,7 @@ export const getLineCoordinatesForHorizonal = (
   //
   if (
     fromX + fromWidth / 2 > toX + toWidth / 2 &&
-    fromX + fromWidth / 2 < toX + toWidth &&
+    fromX < toX + toWidth &&
     fromY > toY + toHeight
   ) {
     firstLineX0 = fromX + fromWidth / 2;
