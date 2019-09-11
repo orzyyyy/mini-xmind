@@ -18,7 +18,7 @@ const Toolbar = () => (
       </li>
       <li
         draggable
-        onDragStart={e => onDragStart(e, { value: 'input', editable: true })}
+        onDragStart={e => onDragStart(e, { value: 'tag', editable: true })}
       >
         <Tag />
       </li>

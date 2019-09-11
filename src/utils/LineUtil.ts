@@ -71,7 +71,7 @@ export function stopPropagation(e: any) {
   e.stopPropagation();
 }
 
-export const generateKey = (name: string) => {
+export const generateKey = (name: 'block' | 'line' | 'tag') => {
   return `${name}-${new Date().getTime() % 1000000}`;
 };
 

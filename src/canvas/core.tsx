@@ -94,36 +94,30 @@ const Canvas = ({
     dragItem = dragItem ? JSON.parse(dragItem) : {};
     const { value } = dragItem;
     const { clientX, clientY } = e;
-    let defaultWidth = 100;
-    let defaultHeight = 80;
-    const newBlockProps: any = {};
-    const newTagProps: any = {};
+    let targetName: 'newBlockProps' | 'newTagProps' | 'unknown';
+    const result: any = {};
+    const x = clientX - position.x;
+    const y = clientY - position.y;
+    const key = generateKey(value);
 
     switch (value) {
       case 'block':
-        newBlockProps[generateKey('block')] = {
-          x: clientX - defaultWidth / 2 - position.x,
-          y: clientY - defaultHeight / 2 - position.y,
-        };
-        if (onChange) {
-          onChange(getTarData({ newBlockProps }));
-        }
+        targetName = 'newBlockProps';
+        result[key] = { x, y };
         break;
 
-      case 'input':
-        defaultWidth = 100;
-        defaultHeight = 32;
-        newTagProps[generateKey('tag')] = {
-          x: clientX - defaultWidth / 2 - position.x,
-          y: clientY - defaultHeight / 2 - position.y,
-          editable: true,
-        };
-        if (onChange) {
-          onChange(getTarData({ newTagProps }));
-        }
+      case 'tag':
+        targetName = 'newTagProps';
+        result[key] = { x, y, editable: true };
         break;
+
       default:
+        targetName = 'unknown';
         break;
+    }
+
+    if (onChange) {
+      onChange(getTarData({ [targetName]: result }));
     }
   };
 
