@@ -13,7 +13,10 @@ import React, { useState, useEffect } from 'react';
 import { Canvas, Toolbar } from 'mini-xmind';
 
 const dataSource = {
-  BlockGroup: {},
+  BlockGroup: {
+    'block-232930': { x: 54, y: 652 },
+    'block-234642': { x: 250, y: 798 },
+  },
   LineGroup: {
     'line-446586': {
       fromKey: 'tag-416176',
@@ -91,14 +94,14 @@ const dataSource = {
       fromKey: 'tag-491320',
       toKey: 'tag-443720',
       from: {
-        top: 590,
+        top: 591,
         right: 600.359375,
-        bottom: 611,
+        bottom: 612,
         left: 570,
         width: 30.359375,
         height: 21,
         x: 570,
-        y: 590,
+        y: 591,
       },
       to: {
         top: 502,
@@ -111,6 +114,30 @@ const dataSource = {
         y: 502,
       },
     },
+    'line-335318': {
+      fromKey: 'block-232930',
+      toKey: 'block-234642',
+      from: {
+        top: 552,
+        right: 233,
+        bottom: 632,
+        left: 133,
+        width: 100,
+        height: 80,
+        x: 133,
+        y: 552,
+      },
+      to: {
+        top: 698,
+        right: 429,
+        bottom: 778,
+        left: 329,
+        width: 100,
+        height: 80,
+        x: 329,
+        y: 698,
+      },
+    },
   },
   TagGroup: {
     'tag-416176': { x: 186, y: 469, editable: false, input: 'test' },
@@ -118,6 +145,8 @@ const dataSource = {
     'tag-443720': { x: 399, y: 602, editable: false, input: 'test3' },
     'tag-476280': { x: 385, y: 340, editable: false, input: 'test4' },
     'tag-491320': { x: 491, y: 691, editable: false, input: 'test5' },
+    'tag-240426': { x: 89, y: 685, editable: false, input: 'test6' },
+    'tag-248450': { x: 284, y: 829, editable: false, input: 'test7' },
   },
   CanvasPosition: { x: 79, y: -100, z: 0, gap: 1 },
 };
@@ -163,11 +192,12 @@ npm test
 
 ### Toolbar props
 
-There is no prop for now, just render
+No prop for now, just render
 
 ### Canvas props
 
-| Property | Description                                         | Type                                                                                                                                               | Default |
-| -------- | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| data     | what you want to paint in canvas                    | [DataSource](https://github.com/orzyyyy/mini-xmind/blob/0b83c704edf98fac54dc5117f120565b28244877/src/canvas/core.tsx#L23)                          | {}      |
-| onChange | return all data when dragging or typing in TagGroup | (dataCollector: [DataSource](https://github.com/orzyyyy/mini-xmind/blob/0b83c704edf98fac54dc5117f120565b28244877/src/canvas/core.tsx#L23)) => void | -       |
+| Property    | Description                                         | Type                                                                                                                                               | Default   |
+| ----------- | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| data        | what you want to paint in canvas                    | [DataSource](https://github.com/orzyyyy/mini-xmind/blob/0b83c704edf98fac54dc5117f120565b28244877/src/canvas/core.tsx#L23)                          | {}        |
+| onChange    | return all data when dragging or typing in TagGroup | (dataCollector: [DataSource](https://github.com/orzyyyy/mini-xmind/blob/0b83c704edf98fac54dc5117f120565b28244877/src/canvas/core.tsx#L23)) => void | -         |
+| orientation | the direction of Line startting                     | enum, ['horizonal', 'vertical']                                                                                                                    | horizonal |
