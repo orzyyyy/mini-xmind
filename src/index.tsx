@@ -1,4 +1,4 @@
-import Canvas, { DataSource } from './canvas/core';
+import Canvas from './canvas/core';
 import Toolbar from './tools/Toolbar';
 
-export { Canvas, Toolbar, DataSource };
+export { Canvas, Toolbar };
