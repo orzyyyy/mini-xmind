@@ -1,4 +1,4 @@
-name: dist
+name: site
 
 on: [push]
 
@@ -13,5 +13,5 @@ jobs:
       - name: install
         run: npm install
 
-      - name: compile
-        run: npm run dist
+      - name: lint
+        run: npm run build

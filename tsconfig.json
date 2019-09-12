@@ -14,16 +14,15 @@
     "module": "esNext",
     "declaration": true,
     "sourceMap": true,
-    "outDir": "dist"
+    "outDir": "site"
   },
   "exclude": [
     "node_modules",
     "dist",
-    "scripts",
+    "site",
     "docs",
-    ".circleci",
-    ".github",
     "lib",
+    "es",
     "**/__tests__/**"
   ]
 }

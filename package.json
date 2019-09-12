@@ -25,7 +25,8 @@
     "pub": "npm run build && npm run compile && git push origin master && npm publish",
     "sort": "npx sort-package-json",
     "start": "nino go",
-    "test": "nino test --testPathPattern='src'"
+    "test": "nino test --testPathPattern='src'",
+    "dist": "nino dist"
   },
   "pre-commit": [
     "lint-staged"

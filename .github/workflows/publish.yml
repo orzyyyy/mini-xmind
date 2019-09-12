@@ -27,6 +27,9 @@ jobs:
       - name: compile
         run: npm run compile
 
+      - name: dist
+        run: npm run dist
+
       - name: publish to npm
         run: npm publish
         env:
@@ -37,5 +40,5 @@ jobs:
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: dist
+          FOLDER: site
           BASE_BRANCH: gh-pages
