@@ -2,11 +2,9 @@
   <img width="500px" src="./docs/logo_transparent.png"></img>
 </p>
 
-<div align="center">
-  <p align="center">
-    <img src="./docs/screenshot.gif"></img>
-  </p>
-</div>
+<p align="center">
+  <img src="./docs/screenshot.gif"></img>
+</p>
 
 ## Install
 
