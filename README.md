@@ -3,14 +3,9 @@
 </p>
 
 <div align="center">
-  A mini web tool for mind mapping
-
-[![codecov](https://codecov.io/gh/orzyyyy/mini-xmind/branch/master/graph/badge.svg)](https://codecov.io/gh/orzyyyy/mini-xmind)
-
-<p align="center">
-  <img src="./docs/screenshot.gif"></img>
-</p>
-
+  <p align="center">
+    <img src="./docs/screenshot.gif"></img>
+  </p>
 </div>
 
 ## Install
@@ -214,3 +209,5 @@ No prop for now, just render
 | data        | what you want to paint in canvas                    | [DataSource](https://github.com/orzyyyy/mini-xmind/blob/0b83c704edf98fac54dc5117f120565b28244877/src/canvas/core.tsx#L23)                          | {}        |
 | onChange    | return all data when dragging or typing in TagGroup | (dataCollector: [DataSource](https://github.com/orzyyyy/mini-xmind/blob/0b83c704edf98fac54dc5117f120565b28244877/src/canvas/core.tsx#L23)) => void | -         |
 | orientation | the direction of Line startting                     | enum, ['horizonal', 'vertical']                                                                                                                    | horizonal |
+
+[![codecov](https://codecov.io/gh/orzyyyy/mini-xmind/branch/master/graph/badge.svg)](https://codecov.io/gh/orzyyyy/mini-xmind)
