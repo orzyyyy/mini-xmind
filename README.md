@@ -1,6 +1,6 @@
 <p align="center">
 
-![avatar](./docs/logo_transparent.png)
+![avatar](./docs/banner.png)
 
 </p>
 
