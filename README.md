@@ -1,5 +1,7 @@
 <p align="center">
-  <img style="width: 500px;" src="./docs/logo_transparent.png" />
+
+![avatar](./docs/logo_transparent.png)
+
 </p>
 
 <p align="center">
