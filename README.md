@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/banner.png" width="300" height="52" alt="mini-xmind" />
+  <img src="./docs/banner.png" width="300" height="52" alt="mini-xmind" />
 </p>
 
 <div align="center">
@@ -7,7 +7,7 @@
 
 [![codecov](https://codecov.io/gh/orzyyyy/mini-xmind/branch/master/graph/badge.svg)](https://codecov.io/gh/orzyyyy/mini-xmind)
 
-![avatar](docs/screenshot.gif)
+![avatar](./docs/screenshot.gif)
 
 </div>
 
