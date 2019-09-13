@@ -1,9 +1,9 @@
 <p align="center">
-  <img width="500px" src="./docs/logo_transparent.png"></img>
+  <img style="width: 500px;" src="./docs/logo_transparent.png" />
 </p>
 
 <p align="center">
-  <img src="./docs/screenshot.gif"></img>
+  <img src="./docs/screenshot.gif" />
 </p>
 
 ## Install
