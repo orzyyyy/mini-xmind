@@ -209,3 +209,8 @@ No prop for now, just render
 | orientation | the direction of Line startting                     | enum, ['horizonal', 'vertical']                                                                                                                    | horizonal |
 
 [![codecov](https://codecov.io/gh/orzyyyy/mini-xmind/branch/master/graph/badge.svg)](https://codecov.io/gh/orzyyyy/mini-xmind)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Forzyyyy%2Fmini-xmind.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Forzyyyy%2Fmini-xmind?ref=badge_shield)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Forzyyyy%2Fmini-xmind.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Forzyyyy%2Fmini-xmind?ref=badge_large)
