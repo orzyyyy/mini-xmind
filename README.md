@@ -1,7 +1,5 @@
 <p align="center">
-
-![avatar](./docs/banner.png)
-
+  <img style="width: 500px;" src="https://raw.githubusercontent.com/orzyyyy/mini-xmind/docs/docs/logo_transparent.png" />
 </p>
 
 <p align="center">
