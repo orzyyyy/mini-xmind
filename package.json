@@ -19,14 +19,14 @@
     "codecov": "nino test --coverage",
     "compile": "tsc --outDir es && tsc --outDir lib && nino compile",
     "deploy": "node scripts/publish",
+    "dist": "nino dist",
     "lint": "nino eslint",
     "lint-staged": "lint-staged",
     "prettier": "nino prettier",
     "pub": "npm run build && npm run compile && git push origin master && npm publish",
     "sort": "npx sort-package-json",
     "start": "nino go",
-    "test": "nino test --testPathPattern='src'",
-    "dist": "nino dist"
+    "test": "nino test --testPathPattern='src'"
   },
   "pre-commit": [
     "lint-staged"
