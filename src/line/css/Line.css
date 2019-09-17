@@ -4,3 +4,19 @@
   position: absolute;
   z-index: 1;
 }
+
+.line-core-with-arrow {
+  border: 1px solid #ddd;
+  transform-origin: 0 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.line-core-with-arrow:after {
+  content: '>';
+  position: absolute;
+  top: 50%;
+  right: 30%;
+  color: gray;
+  transform: translate(-50%, -50%);
+}
