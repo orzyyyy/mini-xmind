@@ -31,6 +31,7 @@ exports[`SteppedLine render horizonal correctly 1`] = `
     className="stepped-line"
   >
     <Line
+      showArrow={false}
       x0={361}
       x1={263}
       y0={576}
@@ -47,6 +48,7 @@ exports[`SteppedLine render horizonal correctly 1`] = `
       />
     </Line>
     <Line
+      showArrow={false}
       x0={263}
       x1={263}
       y0={576}
@@ -63,6 +65,7 @@ exports[`SteppedLine render horizonal correctly 1`] = `
       />
     </Line>
     <Line
+      showArrow={false}
       x0={263}
       x1={165}
       y0={388}
@@ -114,6 +117,7 @@ exports[`SteppedLine render vertical correctly 1`] = `
     className="stepped-line"
   >
     <Line
+      showArrow={false}
       x0={411}
       x1={411}
       y0={536}
@@ -130,6 +134,7 @@ exports[`SteppedLine render vertical correctly 1`] = `
       />
     </Line>
     <Line
+      showArrow={false}
       x0={411}
       x1={115}
       y0={482}
@@ -146,6 +151,7 @@ exports[`SteppedLine render vertical correctly 1`] = `
       />
     </Line>
     <Line
+      showArrow={false}
       x0={115}
       x1={115}
       y0={482}

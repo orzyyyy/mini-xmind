@@ -9,6 +9,7 @@ export interface LineProps {
   y1: number;
   className?: string;
   style?: React.CSSProperties;
+  showArrow?: boolean;
 }
 
 const Line = ({
@@ -18,6 +19,7 @@ const Line = ({
   y1 = 0,
   className,
   style,
+  showArrow,
 }: LineProps) => {
   const dy = y1 - y0;
   const dx = x1 - x0;
@@ -25,7 +27,11 @@ const Line = ({
   const width = Math.sqrt(dx * dx + dy * dy);
   return (
     <div
-      className={classNames('line-core', className)}
+      className={classNames({
+        'line-core': !showArrow,
+        'line-core-with-arrow': showArrow,
+        className,
+      })}
       style={Object.assign(
         {
           width: `${width}px`,

@@ -26,6 +26,7 @@ export interface LineGroupProps {
   data: LineProps;
   orientation?: OrientationProps;
   className?: string;
+  arrowStatus?: [boolean, boolean, boolean];
 }
 
 const LineGroup = ({ offset, data, ...rest }: LineGroupProps) => (

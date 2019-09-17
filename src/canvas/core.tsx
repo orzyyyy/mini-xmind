@@ -38,6 +38,7 @@ export interface CanvasProps {
   onChange?: (item: DataSource) => void;
   onWheel?: (item: DataSource, event?: any) => void;
   onClick?: () => void;
+  arrowStatus?: [boolean, boolean, boolean];
 }
 export interface CanvasState {
   newBlockProps?: BlockProps;
@@ -62,6 +63,7 @@ const Canvas = ({
   data,
   onChange,
   onWheel,
+  arrowStatus,
   ...rest
 }: CanvasProps) => {
   let blockProps = (data && data.BlockGroup) || {};
@@ -190,6 +192,7 @@ const Canvas = ({
       offset={position}
       orientation={orientation}
       className={lineClassName}
+      arrowStatus={arrowStatus}
     />
   );
 
