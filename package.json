@@ -54,6 +54,8 @@
     "gh-pages": "^2.1.0",
     "lint-staged": "^9.2.1",
     "mockdate": "^2.0.5",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "typescript": "^3.5.3"
   }
 }
