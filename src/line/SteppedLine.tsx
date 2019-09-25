@@ -4,13 +4,14 @@ import {
   getLineCoordinatesForHorizonal,
   getLineCoordinatesForVertical,
 } from '../utils/LineUtil';
+import { CoordinatesProps } from '../canvas/core';
 
 export type OrientationProps = 'horizonal' | 'vertical';
 export interface SteppedLineProps {
   className?: string;
   from: any;
   to: any;
-  offset?: { x: number; y: number };
+  offset?: CoordinatesProps;
   orientation?: OrientationProps;
   arrowStatus?: [boolean, boolean, boolean];
 }

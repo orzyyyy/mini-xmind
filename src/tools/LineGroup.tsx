@@ -1,5 +1,6 @@
 import React from 'react';
 import SteppedLine, { OrientationProps } from '../line/SteppedLine';
+import { CoordinatesProps } from '../canvas/core';
 
 export type LineItem =
   | {
@@ -22,7 +23,7 @@ export type LineProps = {
   };
 };
 export interface LineGroupProps {
-  offset?: { x: number; y: number };
+  offset?: CoordinatesProps;
   data: LineProps;
   orientation?: OrientationProps;
   className?: string;

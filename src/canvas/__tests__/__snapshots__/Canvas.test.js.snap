@@ -4,106 +4,154 @@ exports[`Canvas Canvas renders correctly 1`] = `
 <Canvas
   data={
     Object {
-      "BlockGroup": Object {
-        "block-623187": Object {
-          "x": 132,
-          "y": 118,
-        },
-        "block-624018": Object {
-          "x": 426,
-          "y": -50,
-        },
-        "block-73377": Object {
-          "x": 428,
-          "y": 306,
-        },
-      },
-      "CanvasPosition": Object {
-        "gap": 1,
-        "x": -67,
-        "y": 230,
-        "z": 0,
-      },
-      "LineGroup": Object {
-        "line-592694": Object {
+      "block": Object {},
+      "current": "root",
+      "line": Object {
+        "line-446586": Object {
           "from": Object {
-            "bottom": 428,
-            "height": 80,
-            "left": 65,
-            "right": 165,
-            "top": 348,
-            "width": 100,
-            "x": 65,
-            "y": 348,
+            "bottom": 390,
+            "height": 21,
+            "left": 265,
+            "right": 287.578125,
+            "top": 369,
+            "width": 22.578125,
+            "x": 265,
+            "y": 369,
           },
-          "fromKey": "block-623187",
+          "fromKey": "tag-416176",
           "to": Object {
-            "bottom": 260,
-            "height": 80,
-            "left": 360,
-            "right": 460,
-            "top": 180,
-            "width": 100,
-            "x": 360,
-            "y": 180,
+            "bottom": 523,
+            "height": 21,
+            "left": 478,
+            "right": 508.359375,
+            "top": 502,
+            "width": 30.359375,
+            "x": 478,
+            "y": 502,
           },
-          "toKey": "block-624018",
+          "toKey": "tag-443720",
         },
-        "line-77619": Object {
+        "line-451979": Object {
           "from": Object {
-            "bottom": 616,
-            "height": 80,
-            "left": 361,
-            "right": 461,
-            "top": 536,
-            "width": 100,
-            "x": 361,
-            "y": 536,
+            "bottom": 288,
+            "height": 21,
+            "left": 113,
+            "right": 143.359375,
+            "top": 267,
+            "width": 30.359375,
+            "x": 113,
+            "y": 267,
           },
-          "fromKey": "block-73377",
+          "fromKey": "tag-439992",
           "to": Object {
-            "bottom": 428,
-            "height": 80,
-            "left": 65,
-            "right": 165,
-            "top": 348,
-            "width": 100,
-            "x": 65,
-            "y": 348,
+            "bottom": 390,
+            "height": 21,
+            "left": 265,
+            "right": 287.578125,
+            "top": 369,
+            "width": 22.578125,
+            "x": 265,
+            "y": 369,
           },
-          "toKey": "block-623187",
+          "toKey": "tag-416176",
+        },
+        "line-479893": Object {
+          "from": Object {
+            "bottom": 261,
+            "height": 21,
+            "left": 464,
+            "right": 494.359375,
+            "top": 240,
+            "width": 30.359375,
+            "x": 464,
+            "y": 240,
+          },
+          "fromKey": "tag-476280",
+          "to": Object {
+            "bottom": 390,
+            "height": 21,
+            "left": 265,
+            "right": 287.578125,
+            "top": 369,
+            "width": 22.578125,
+            "x": 265,
+            "y": 369,
+          },
+          "toKey": "tag-416176",
+        },
+        "line-493906": Object {
+          "from": Object {
+            "bottom": 612,
+            "height": 21,
+            "left": 570,
+            "right": 600.359375,
+            "top": 591,
+            "width": 30.359375,
+            "x": 570,
+            "y": 591,
+          },
+          "fromKey": "tag-491320",
+          "to": Object {
+            "bottom": 523,
+            "height": 21,
+            "left": 478,
+            "right": 508.359375,
+            "top": 502,
+            "width": 30.359375,
+            "x": 478,
+            "y": 502,
+          },
+          "toKey": "tag-443720",
         },
       },
-      "TagGroup": Object {
-        "tag-626505": Object {
+      "position": Object {
+        "root": Object {
+          "x": 79,
+          "y": -100,
+        },
+      },
+      "tag": Object {
+        "tag-416176": Object {
           "editable": false,
           "input": "test",
-          "style": Object {
-            "height": 32,
-            "width": 100,
-          },
-          "x": 169,
-          "y": 144,
+          "parent": "",
+          "x": 186,
+          "y": 469,
         },
-        "tag-629962": Object {
+        "tag-439992": Object {
           "editable": false,
           "input": "test2",
-          "style": Object {
-            "height": 32,
-            "width": 100,
-          },
-          "x": 462,
-          "y": -23,
+          "parent": "",
+          "x": 34,
+          "y": 367,
         },
-        "tag-80986": Object {
+        "tag-443720": Object {
           "editable": false,
           "input": "test3",
-          "style": Object {
-            "height": 32,
-            "width": 100,
-          },
-          "x": 463,
-          "y": 333,
+          "parent": "",
+          "x": 399,
+          "y": 602,
+        },
+        "tag-476280": Object {
+          "editable": false,
+          "input": "test4",
+          "parent": "",
+          "x": 385,
+          "y": 340,
+        },
+        "tag-491320": Object {
+          "editable": false,
+          "input": "test5",
+          "parent": "",
+          "x": 491,
+          "y": 691,
+        },
+        "tag-491321": Object {
+          "editable": false,
+          "input": "test6",
+          "parent": "tag-491320",
+          "x": 591,
+          "y": 791,
         },
       },
     }
@@ -134,10 +182,8 @@ exports[`Canvas Canvas renders correctly 1`] = `
     onStop={[Function]}
     position={
       Object {
-        "gap": 1,
-        "x": -67,
-        "y": 230,
-        "z": 0,
+        "x": 79,
+        "y": -100,
       }
     }
     scale={1}
@@ -165,618 +211,269 @@ exports[`Canvas Canvas renders correctly 1`] = `
         onMouseUp={[Function]}
         onTouchEnd={[Function]}
         onTouchStart={[Function]}
-        onWheel={[Function]}
         style={
           Object {
             "touchAction": "none",
-            "transform": "translate(-67px,230px)",
+            "transform": "translate(79px,-100px)",
           }
         }
         transform={null}
       >
         <BlockGroup
-          data={
-            Object {
-              "block-623187": Object {
-                "x": 132,
-                "y": 118,
-              },
-              "block-624018": Object {
-                "x": 426,
-                "y": -50,
-              },
-              "block-73377": Object {
-                "x": 428,
-                "y": 306,
-              },
-            }
-          }
+          data={Object {}}
           lineData={
             Object {
-              "line-592694": Object {
+              "line-446586": Object {
                 "from": Object {
-                  "bottom": 428,
-                  "height": 80,
-                  "left": 65,
-                  "right": 165,
-                  "top": 348,
-                  "width": 100,
-                  "x": 65,
-                  "y": 348,
+                  "bottom": 390,
+                  "height": 21,
+                  "left": 265,
+                  "right": 287.578125,
+                  "top": 369,
+                  "width": 22.578125,
+                  "x": 265,
+                  "y": 369,
                 },
-                "fromKey": "block-623187",
+                "fromKey": "tag-416176",
                 "to": Object {
-                  "bottom": 260,
-                  "height": 80,
-                  "left": 360,
-                  "right": 460,
-                  "top": 180,
-                  "width": 100,
-                  "x": 360,
-                  "y": 180,
+                  "bottom": 523,
+                  "height": 21,
+                  "left": 478,
+                  "right": 508.359375,
+                  "top": 502,
+                  "width": 30.359375,
+                  "x": 478,
+                  "y": 502,
                 },
-                "toKey": "block-624018",
+                "toKey": "tag-443720",
               },
-              "line-77619": Object {
+              "line-451979": Object {
                 "from": Object {
-                  "bottom": 616,
-                  "height": 80,
-                  "left": 361,
-                  "right": 461,
-                  "top": 536,
-                  "width": 100,
-                  "x": 361,
-                  "y": 536,
+                  "bottom": 288,
+                  "height": 21,
+                  "left": 113,
+                  "right": 143.359375,
+                  "top": 267,
+                  "width": 30.359375,
+                  "x": 113,
+                  "y": 267,
                 },
-                "fromKey": "block-73377",
+                "fromKey": "tag-439992",
                 "to": Object {
-                  "bottom": 428,
-                  "height": 80,
-                  "left": 65,
-                  "right": 165,
-                  "top": 348,
-                  "width": 100,
-                  "x": 65,
-                  "y": 348,
+                  "bottom": 390,
+                  "height": 21,
+                  "left": 265,
+                  "right": 287.578125,
+                  "top": 369,
+                  "width": 22.578125,
+                  "x": 265,
+                  "y": 369,
                 },
-                "toKey": "block-623187",
+                "toKey": "tag-416176",
+              },
+              "line-479893": Object {
+                "from": Object {
+                  "bottom": 261,
+                  "height": 21,
+                  "left": 464,
+                  "right": 494.359375,
+                  "top": 240,
+                  "width": 30.359375,
+                  "x": 464,
+                  "y": 240,
+                },
+                "fromKey": "tag-476280",
+                "to": Object {
+                  "bottom": 390,
+                  "height": 21,
+                  "left": 265,
+                  "right": 287.578125,
+                  "top": 369,
+                  "width": 22.578125,
+                  "x": 265,
+                  "y": 369,
+                },
+                "toKey": "tag-416176",
+              },
+              "line-493906": Object {
+                "from": Object {
+                  "bottom": 612,
+                  "height": 21,
+                  "left": 570,
+                  "right": 600.359375,
+                  "top": 591,
+                  "width": 30.359375,
+                  "x": 570,
+                  "y": 591,
+                },
+                "fromKey": "tag-491320",
+                "to": Object {
+                  "bottom": 523,
+                  "height": 21,
+                  "left": 478,
+                  "right": 508.359375,
+                  "top": 502,
+                  "width": 30.359375,
+                  "x": 478,
+                  "y": 502,
+                },
+                "toKey": "tag-443720",
               },
             }
           }
           offset={
             Object {
-              "gap": 1,
-              "x": -67,
-              "y": 230,
-              "z": 0,
+              "x": 79,
+              "y": -100,
             }
           }
           onChange={[Function]}
           onContextMenu={[Function]}
-        >
-          <Draggable
-            allowAnyClick={false}
-            axis="both"
-            bounds={false}
-            cancel={null}
-            defaultClassName="react-draggable"
-            defaultClassNameDragged="react-draggable-dragged"
-            defaultClassNameDragging="react-draggable-dragging"
-            defaultPosition={
-              Object {
-                "x": 0,
-                "y": 0,
-              }
-            }
-            disabled={false}
-            enableUserSelectHack={true}
-            grid={null}
-            handle={null}
-            key="block-623187"
-            offsetParent={null}
-            onDrag={[Function]}
-            onMouseDown={[Function]}
-            onStart={[Function]}
-            onStop={[Function]}
-            position={
-              Object {
-                "x": 132,
-                "y": 118,
-              }
-            }
-            scale={1}
-            transform={null}
-          >
-            <DraggableCore
-              allowAnyClick={false}
-              cancel={null}
-              disabled={false}
-              enableUserSelectHack={true}
-              grid={null}
-              handle={null}
-              offsetParent={null}
-              onDrag={[Function]}
-              onMouseDown={[Function]}
-              onStart={[Function]}
-              onStop={[Function]}
-              transform={null}
-            >
-              <div
-                className="react-draggable"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "touchAction": "none",
-                    "transform": "translate(132px,118px)",
-                  }
-                }
-                transform={null}
-              >
-                <NinoZone
-                  className="block-group animate-appear"
-                  data={
-                    Object {
-                      "block-623187": Object {
-                        "x": 132,
-                        "y": 118,
-                      },
-                      "block-624018": Object {
-                        "x": 426,
-                        "y": -50,
-                      },
-                      "block-73377": Object {
-                        "x": 428,
-                        "y": 306,
-                      },
-                    }
-                  }
-                  key="nino-zone-block-623187"
-                  lineData={
-                    Object {
-                      "line-592694": Object {
-                        "from": Object {
-                          "bottom": 428,
-                          "height": 80,
-                          "left": 65,
-                          "right": 165,
-                          "top": 348,
-                          "width": 100,
-                          "x": 65,
-                          "y": 348,
-                        },
-                        "fromKey": "block-623187",
-                        "to": Object {
-                          "bottom": 260,
-                          "height": 80,
-                          "left": 360,
-                          "right": 460,
-                          "top": 180,
-                          "width": 100,
-                          "x": 360,
-                          "y": 180,
-                        },
-                        "toKey": "block-624018",
-                      },
-                      "line-77619": Object {
-                        "from": Object {
-                          "bottom": 616,
-                          "height": 80,
-                          "left": 361,
-                          "right": 461,
-                          "top": 536,
-                          "width": 100,
-                          "x": 361,
-                          "y": 536,
-                        },
-                        "fromKey": "block-73377",
-                        "to": Object {
-                          "bottom": 428,
-                          "height": 80,
-                          "left": 65,
-                          "right": 165,
-                          "top": 348,
-                          "width": 100,
-                          "x": 65,
-                          "y": 348,
-                        },
-                        "toKey": "block-623187",
-                      },
-                    }
-                  }
-                  name="block-group"
-                  onChange={[Function]}
-                  onContextMenu={[Function]}
-                  targetKey="block-623187"
-                >
-                  <div
-                    className="block-group animate-appear"
-                    onClick={[Function]}
-                    onContextMenu={[Function]}
-                  />
-                </NinoZone>
-              </div>
-            </DraggableCore>
-          </Draggable>
-          <Draggable
-            allowAnyClick={false}
-            axis="both"
-            bounds={false}
-            cancel={null}
-            defaultClassName="react-draggable"
-            defaultClassNameDragged="react-draggable-dragged"
-            defaultClassNameDragging="react-draggable-dragging"
-            defaultPosition={
-              Object {
-                "x": 0,
-                "y": 0,
-              }
-            }
-            disabled={false}
-            enableUserSelectHack={true}
-            grid={null}
-            handle={null}
-            key="block-624018"
-            offsetParent={null}
-            onDrag={[Function]}
-            onMouseDown={[Function]}
-            onStart={[Function]}
-            onStop={[Function]}
-            position={
-              Object {
-                "x": 426,
-                "y": -50,
-              }
-            }
-            scale={1}
-            transform={null}
-          >
-            <DraggableCore
-              allowAnyClick={false}
-              cancel={null}
-              disabled={false}
-              enableUserSelectHack={true}
-              grid={null}
-              handle={null}
-              offsetParent={null}
-              onDrag={[Function]}
-              onMouseDown={[Function]}
-              onStart={[Function]}
-              onStop={[Function]}
-              transform={null}
-            >
-              <div
-                className="react-draggable"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "touchAction": "none",
-                    "transform": "translate(426px,-50px)",
-                  }
-                }
-                transform={null}
-              >
-                <NinoZone
-                  className="block-group animate-appear"
-                  data={
-                    Object {
-                      "block-623187": Object {
-                        "x": 132,
-                        "y": 118,
-                      },
-                      "block-624018": Object {
-                        "x": 426,
-                        "y": -50,
-                      },
-                      "block-73377": Object {
-                        "x": 428,
-                        "y": 306,
-                      },
-                    }
-                  }
-                  key="nino-zone-block-624018"
-                  lineData={
-                    Object {
-                      "line-592694": Object {
-                        "from": Object {
-                          "bottom": 428,
-                          "height": 80,
-                          "left": 65,
-                          "right": 165,
-                          "top": 348,
-                          "width": 100,
-                          "x": 65,
-                          "y": 348,
-                        },
-                        "fromKey": "block-623187",
-                        "to": Object {
-                          "bottom": 260,
-                          "height": 80,
-                          "left": 360,
-                          "right": 460,
-                          "top": 180,
-                          "width": 100,
-                          "x": 360,
-                          "y": 180,
-                        },
-                        "toKey": "block-624018",
-                      },
-                      "line-77619": Object {
-                        "from": Object {
-                          "bottom": 616,
-                          "height": 80,
-                          "left": 361,
-                          "right": 461,
-                          "top": 536,
-                          "width": 100,
-                          "x": 361,
-                          "y": 536,
-                        },
-                        "fromKey": "block-73377",
-                        "to": Object {
-                          "bottom": 428,
-                          "height": 80,
-                          "left": 65,
-                          "right": 165,
-                          "top": 348,
-                          "width": 100,
-                          "x": 65,
-                          "y": 348,
-                        },
-                        "toKey": "block-623187",
-                      },
-                    }
-                  }
-                  name="block-group"
-                  onChange={[Function]}
-                  onContextMenu={[Function]}
-                  targetKey="block-624018"
-                >
-                  <div
-                    className="block-group animate-appear"
-                    onClick={[Function]}
-                    onContextMenu={[Function]}
-                  />
-                </NinoZone>
-              </div>
-            </DraggableCore>
-          </Draggable>
-          <Draggable
-            allowAnyClick={false}
-            axis="both"
-            bounds={false}
-            cancel={null}
-            defaultClassName="react-draggable"
-            defaultClassNameDragged="react-draggable-dragged"
-            defaultClassNameDragging="react-draggable-dragging"
-            defaultPosition={
-              Object {
-                "x": 0,
-                "y": 0,
-              }
-            }
-            disabled={false}
-            enableUserSelectHack={true}
-            grid={null}
-            handle={null}
-            key="block-73377"
-            offsetParent={null}
-            onDrag={[Function]}
-            onMouseDown={[Function]}
-            onStart={[Function]}
-            onStop={[Function]}
-            position={
-              Object {
-                "x": 428,
-                "y": 306,
-              }
-            }
-            scale={1}
-            transform={null}
-          >
-            <DraggableCore
-              allowAnyClick={false}
-              cancel={null}
-              disabled={false}
-              enableUserSelectHack={true}
-              grid={null}
-              handle={null}
-              offsetParent={null}
-              onDrag={[Function]}
-              onMouseDown={[Function]}
-              onStart={[Function]}
-              onStop={[Function]}
-              transform={null}
-            >
-              <div
-                className="react-draggable"
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "touchAction": "none",
-                    "transform": "translate(428px,306px)",
-                  }
-                }
-                transform={null}
-              >
-                <NinoZone
-                  className="block-group animate-appear"
-                  data={
-                    Object {
-                      "block-623187": Object {
-                        "x": 132,
-                        "y": 118,
-                      },
-                      "block-624018": Object {
-                        "x": 426,
-                        "y": -50,
-                      },
-                      "block-73377": Object {
-                        "x": 428,
-                        "y": 306,
-                      },
-                    }
-                  }
-                  key="nino-zone-block-73377"
-                  lineData={
-                    Object {
-                      "line-592694": Object {
-                        "from": Object {
-                          "bottom": 428,
-                          "height": 80,
-                          "left": 65,
-                          "right": 165,
-                          "top": 348,
-                          "width": 100,
-                          "x": 65,
-                          "y": 348,
-                        },
-                        "fromKey": "block-623187",
-                        "to": Object {
-                          "bottom": 260,
-                          "height": 80,
-                          "left": 360,
-                          "right": 460,
-                          "top": 180,
-                          "width": 100,
-                          "x": 360,
-                          "y": 180,
-                        },
-                        "toKey": "block-624018",
-                      },
-                      "line-77619": Object {
-                        "from": Object {
-                          "bottom": 616,
-                          "height": 80,
-                          "left": 361,
-                          "right": 461,
-                          "top": 536,
-                          "width": 100,
-                          "x": 361,
-                          "y": 536,
-                        },
-                        "fromKey": "block-73377",
-                        "to": Object {
-                          "bottom": 428,
-                          "height": 80,
-                          "left": 65,
-                          "right": 165,
-                          "top": 348,
-                          "width": 100,
-                          "x": 65,
-                          "y": 348,
-                        },
-                        "toKey": "block-623187",
-                      },
-                    }
-                  }
-                  name="block-group"
-                  onChange={[Function]}
-                  onContextMenu={[Function]}
-                  targetKey="block-73377"
-                >
-                  <div
-                    className="block-group animate-appear"
-                    onClick={[Function]}
-                    onContextMenu={[Function]}
-                  />
-                </NinoZone>
-              </div>
-            </DraggableCore>
-          </Draggable>
-        </BlockGroup>
+        />
         <TagGroup
           data={
             Object {
-              "tag-626505": Object {
+              "tag-416176": Object {
                 "editable": false,
                 "input": "test",
-                "style": Object {
-                  "height": 32,
-                  "width": 100,
-                },
-                "x": 169,
-                "y": 144,
+                "parent": "",
+                "x": 186,
+                "y": 469,
               },
-              "tag-629962": Object {
+              "tag-439992": Object {
                 "editable": false,
                 "input": "test2",
-                "style": Object {
-                  "height": 32,
-                  "width": 100,
-                },
-                "x": 462,
-                "y": -23,
+                "parent": "",
+                "x": 34,
+                "y": 367,
               },
-              "tag-80986": Object {
+              "tag-443720": Object {
                 "editable": false,
                 "input": "test3",
-                "style": Object {
-                  "height": 32,
-                  "width": 100,
-                },
-                "x": 463,
-                "y": 333,
+                "parent": "",
+                "x": 399,
+                "y": 602,
+              },
+              "tag-476280": Object {
+                "editable": false,
+                "input": "test4",
+                "parent": "",
+                "x": 385,
+                "y": 340,
+              },
+              "tag-491320": Object {
+                "editable": false,
+                "input": "test5",
+                "parent": "",
+                "x": 491,
+                "y": 691,
+              },
+              "tag-491321": Object {
+                "editable": false,
+                "input": "test6",
+                "parent": "tag-491320",
+                "x": 591,
+                "y": 791,
               },
             }
           }
           lineData={
             Object {
-              "line-592694": Object {
+              "line-446586": Object {
                 "from": Object {
-                  "bottom": 428,
-                  "height": 80,
-                  "left": 65,
-                  "right": 165,
-                  "top": 348,
-                  "width": 100,
-                  "x": 65,
-                  "y": 348,
+                  "bottom": 390,
+                  "height": 21,
+                  "left": 265,
+                  "right": 287.578125,
+                  "top": 369,
+                  "width": 22.578125,
+                  "x": 265,
+                  "y": 369,
                 },
-                "fromKey": "block-623187",
+                "fromKey": "tag-416176",
                 "to": Object {
-                  "bottom": 260,
-                  "height": 80,
-                  "left": 360,
-                  "right": 460,
-                  "top": 180,
-                  "width": 100,
-                  "x": 360,
-                  "y": 180,
+                  "bottom": 523,
+                  "height": 21,
+                  "left": 478,
+                  "right": 508.359375,
+                  "top": 502,
+                  "width": 30.359375,
+                  "x": 478,
+                  "y": 502,
                 },
-                "toKey": "block-624018",
+                "toKey": "tag-443720",
               },
-              "line-77619": Object {
+              "line-451979": Object {
                 "from": Object {
-                  "bottom": 616,
-                  "height": 80,
-                  "left": 361,
-                  "right": 461,
-                  "top": 536,
-                  "width": 100,
-                  "x": 361,
-                  "y": 536,
+                  "bottom": 288,
+                  "height": 21,
+                  "left": 113,
+                  "right": 143.359375,
+                  "top": 267,
+                  "width": 30.359375,
+                  "x": 113,
+                  "y": 267,
                 },
-                "fromKey": "block-73377",
+                "fromKey": "tag-439992",
                 "to": Object {
-                  "bottom": 428,
-                  "height": 80,
-                  "left": 65,
-                  "right": 165,
-                  "top": 348,
-                  "width": 100,
-                  "x": 65,
-                  "y": 348,
+                  "bottom": 390,
+                  "height": 21,
+                  "left": 265,
+                  "right": 287.578125,
+                  "top": 369,
+                  "width": 22.578125,
+                  "x": 265,
+                  "y": 369,
                 },
-                "toKey": "block-623187",
+                "toKey": "tag-416176",
+              },
+              "line-479893": Object {
+                "from": Object {
+                  "bottom": 261,
+                  "height": 21,
+                  "left": 464,
+                  "right": 494.359375,
+                  "top": 240,
+                  "width": 30.359375,
+                  "x": 464,
+                  "y": 240,
+                },
+                "fromKey": "tag-476280",
+                "to": Object {
+                  "bottom": 390,
+                  "height": 21,
+                  "left": 265,
+                  "right": 287.578125,
+                  "top": 369,
+                  "width": 22.578125,
+                  "x": 265,
+                  "y": 369,
+                },
+                "toKey": "tag-416176",
+              },
+              "line-493906": Object {
+                "from": Object {
+                  "bottom": 612,
+                  "height": 21,
+                  "left": 570,
+                  "right": 600.359375,
+                  "top": 591,
+                  "width": 30.359375,
+                  "x": 570,
+                  "y": 591,
+                },
+                "fromKey": "tag-491320",
+                "to": Object {
+                  "bottom": 523,
+                  "height": 21,
+                  "left": 478,
+                  "right": 508.359375,
+                  "top": 502,
+                  "width": 30.359375,
+                  "x": 478,
+                  "y": 502,
+                },
+                "toKey": "tag-443720",
               },
             }
           }
@@ -801,7 +498,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
             enableUserSelectHack={true}
             grid={null}
             handle={null}
-            key="tag-626505"
+            key="tag-416176"
             offsetParent={null}
             onDrag={[Function]}
             onMouseDown={[Function]}
@@ -809,8 +506,8 @@ exports[`Canvas Canvas renders correctly 1`] = `
             onStop={[Function]}
             position={
               Object {
-                "x": 169,
-                "y": 144,
+                "x": 186,
+                "y": 469,
               }
             }
             scale={1}
@@ -840,7 +537,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 style={
                   Object {
                     "touchAction": "none",
-                    "transform": "translate(169px,144px)",
+                    "transform": "translate(186px,469px)",
                   }
                 }
                 transform={null}
@@ -849,95 +546,155 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   className="tag-group animate-appear"
                   data={
                     Object {
-                      "tag-626505": Object {
+                      "tag-416176": Object {
                         "editable": false,
                         "input": "test",
-                        "style": Object {
-                          "height": 32,
-                          "width": 100,
-                        },
-                        "x": 169,
-                        "y": 144,
+                        "parent": "",
+                        "x": 186,
+                        "y": 469,
                       },
-                      "tag-629962": Object {
+                      "tag-439992": Object {
                         "editable": false,
                         "input": "test2",
-                        "style": Object {
-                          "height": 32,
-                          "width": 100,
-                        },
-                        "x": 462,
-                        "y": -23,
+                        "parent": "",
+                        "x": 34,
+                        "y": 367,
                       },
-                      "tag-80986": Object {
+                      "tag-443720": Object {
                         "editable": false,
                         "input": "test3",
-                        "style": Object {
-                          "height": 32,
-                          "width": 100,
-                        },
-                        "x": 463,
-                        "y": 333,
+                        "parent": "",
+                        "x": 399,
+                        "y": 602,
+                      },
+                      "tag-476280": Object {
+                        "editable": false,
+                        "input": "test4",
+                        "parent": "",
+                        "x": 385,
+                        "y": 340,
+                      },
+                      "tag-491320": Object {
+                        "editable": false,
+                        "input": "test5",
+                        "parent": "",
+                        "x": 491,
+                        "y": 691,
+                      },
+                      "tag-491321": Object {
+                        "editable": false,
+                        "input": "test6",
+                        "parent": "tag-491320",
+                        "x": 591,
+                        "y": 791,
                       },
                     }
                   }
-                  key="nino-zone-tag-626505"
+                  key="nino-zone-tag-416176"
                   lineData={
                     Object {
-                      "line-592694": Object {
+                      "line-446586": Object {
                         "from": Object {
-                          "bottom": 428,
-                          "height": 80,
-                          "left": 65,
-                          "right": 165,
-                          "top": 348,
-                          "width": 100,
-                          "x": 65,
-                          "y": 348,
+                          "bottom": 390,
+                          "height": 21,
+                          "left": 265,
+                          "right": 287.578125,
+                          "top": 369,
+                          "width": 22.578125,
+                          "x": 265,
+                          "y": 369,
                         },
-                        "fromKey": "block-623187",
+                        "fromKey": "tag-416176",
                         "to": Object {
-                          "bottom": 260,
-                          "height": 80,
-                          "left": 360,
-                          "right": 460,
-                          "top": 180,
-                          "width": 100,
-                          "x": 360,
-                          "y": 180,
+                          "bottom": 523,
+                          "height": 21,
+                          "left": 478,
+                          "right": 508.359375,
+                          "top": 502,
+                          "width": 30.359375,
+                          "x": 478,
+                          "y": 502,
                         },
-                        "toKey": "block-624018",
+                        "toKey": "tag-443720",
                       },
-                      "line-77619": Object {
+                      "line-451979": Object {
                         "from": Object {
-                          "bottom": 616,
-                          "height": 80,
-                          "left": 361,
-                          "right": 461,
-                          "top": 536,
-                          "width": 100,
-                          "x": 361,
-                          "y": 536,
+                          "bottom": 288,
+                          "height": 21,
+                          "left": 113,
+                          "right": 143.359375,
+                          "top": 267,
+                          "width": 30.359375,
+                          "x": 113,
+                          "y": 267,
                         },
-                        "fromKey": "block-73377",
+                        "fromKey": "tag-439992",
                         "to": Object {
-                          "bottom": 428,
-                          "height": 80,
-                          "left": 65,
-                          "right": 165,
-                          "top": 348,
-                          "width": 100,
-                          "x": 65,
-                          "y": 348,
+                          "bottom": 390,
+                          "height": 21,
+                          "left": 265,
+                          "right": 287.578125,
+                          "top": 369,
+                          "width": 22.578125,
+                          "x": 265,
+                          "y": 369,
                         },
-                        "toKey": "block-623187",
+                        "toKey": "tag-416176",
+                      },
+                      "line-479893": Object {
+                        "from": Object {
+                          "bottom": 261,
+                          "height": 21,
+                          "left": 464,
+                          "right": 494.359375,
+                          "top": 240,
+                          "width": 30.359375,
+                          "x": 464,
+                          "y": 240,
+                        },
+                        "fromKey": "tag-476280",
+                        "to": Object {
+                          "bottom": 390,
+                          "height": 21,
+                          "left": 265,
+                          "right": 287.578125,
+                          "top": 369,
+                          "width": 22.578125,
+                          "x": 265,
+                          "y": 369,
+                        },
+                        "toKey": "tag-416176",
+                      },
+                      "line-493906": Object {
+                        "from": Object {
+                          "bottom": 612,
+                          "height": 21,
+                          "left": 570,
+                          "right": 600.359375,
+                          "top": 591,
+                          "width": 30.359375,
+                          "x": 570,
+                          "y": 591,
+                        },
+                        "fromKey": "tag-491320",
+                        "to": Object {
+                          "bottom": 523,
+                          "height": 21,
+                          "left": 478,
+                          "right": 508.359375,
+                          "top": 502,
+                          "width": 30.359375,
+                          "x": 478,
+                          "y": 502,
+                        },
+                        "toKey": "tag-443720",
                       },
                     }
                   }
                   name="tag-group"
                   onChange={[Function]}
                   onContextMenu={[Function]}
-                  targetKey="tag-626505"
+                  targetKey="tag-416176"
                 >
                   <div
                     className="tag-group animate-appear"
@@ -968,7 +725,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
             enableUserSelectHack={true}
             grid={null}
             handle={null}
-            key="tag-629962"
+            key="tag-439992"
             offsetParent={null}
             onDrag={[Function]}
             onMouseDown={[Function]}
@@ -976,8 +733,8 @@ exports[`Canvas Canvas renders correctly 1`] = `
             onStop={[Function]}
             position={
               Object {
-                "x": 462,
-                "y": -23,
+                "x": 34,
+                "y": 367,
               }
             }
             scale={1}
@@ -1007,7 +764,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 style={
                   Object {
                     "touchAction": "none",
-                    "transform": "translate(462px,-23px)",
+                    "transform": "translate(34px,367px)",
                   }
                 }
                 transform={null}
@@ -1016,95 +773,155 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   className="tag-group animate-appear"
                   data={
                     Object {
-                      "tag-626505": Object {
+                      "tag-416176": Object {
                         "editable": false,
                         "input": "test",
-                        "style": Object {
-                          "height": 32,
-                          "width": 100,
-                        },
-                        "x": 169,
-                        "y": 144,
+                        "parent": "",
+                        "x": 186,
+                        "y": 469,
                       },
-                      "tag-629962": Object {
+                      "tag-439992": Object {
                         "editable": false,
                         "input": "test2",
-                        "style": Object {
-                          "height": 32,
-                          "width": 100,
-                        },
-                        "x": 462,
-                        "y": -23,
+                        "parent": "",
+                        "x": 34,
+                        "y": 367,
                       },
-                      "tag-80986": Object {
+                      "tag-443720": Object {
                         "editable": false,
                         "input": "test3",
-                        "style": Object {
-                          "height": 32,
-                          "width": 100,
-                        },
-                        "x": 463,
-                        "y": 333,
+                        "parent": "",
+                        "x": 399,
+                        "y": 602,
+                      },
+                      "tag-476280": Object {
+                        "editable": false,
+                        "input": "test4",
+                        "parent": "",
+                        "x": 385,
+                        "y": 340,
+                      },
+                      "tag-491320": Object {
+                        "editable": false,
+                        "input": "test5",
+                        "parent": "",
+                        "x": 491,
+                        "y": 691,
+                      },
+                      "tag-491321": Object {
+                        "editable": false,
+                        "input": "test6",
+                        "parent": "tag-491320",
+                        "x": 591,
+                        "y": 791,
                       },
                     }
                   }
-                  key="nino-zone-tag-629962"
+                  key="nino-zone-tag-439992"
                   lineData={
                     Object {
-                      "line-592694": Object {
+                      "line-446586": Object {
                         "from": Object {
-                          "bottom": 428,
-                          "height": 80,
-                          "left": 65,
-                          "right": 165,
-                          "top": 348,
-                          "width": 100,
-                          "x": 65,
-                          "y": 348,
+                          "bottom": 390,
+                          "height": 21,
+                          "left": 265,
+                          "right": 287.578125,
+                          "top": 369,
+                          "width": 22.578125,
+                          "x": 265,
+                          "y": 369,
                         },
-                        "fromKey": "block-623187",
+                        "fromKey": "tag-416176",
                         "to": Object {
-                          "bottom": 260,
-                          "height": 80,
-                          "left": 360,
-                          "right": 460,
-                          "top": 180,
-                          "width": 100,
-                          "x": 360,
-                          "y": 180,
+                          "bottom": 523,
+                          "height": 21,
+                          "left": 478,
+                          "right": 508.359375,
+                          "top": 502,
+                          "width": 30.359375,
+                          "x": 478,
+                          "y": 502,
                         },
-                        "toKey": "block-624018",
+                        "toKey": "tag-443720",
                       },
-                      "line-77619": Object {
+                      "line-451979": Object {
                         "from": Object {
-                          "bottom": 616,
-                          "height": 80,
-                          "left": 361,
-                          "right": 461,
-                          "top": 536,
-                          "width": 100,
-                          "x": 361,
-                          "y": 536,
+                          "bottom": 288,
+                          "height": 21,
+                          "left": 113,
+                          "right": 143.359375,
+                          "top": 267,
+                          "width": 30.359375,
+                          "x": 113,
+                          "y": 267,
                         },
-                        "fromKey": "block-73377",
+                        "fromKey": "tag-439992",
                         "to": Object {
-                          "bottom": 428,
-                          "height": 80,
-                          "left": 65,
-                          "right": 165,
-                          "top": 348,
-                          "width": 100,
-                          "x": 65,
-                          "y": 348,
+                          "bottom": 390,
+                          "height": 21,
+                          "left": 265,
+                          "right": 287.578125,
+                          "top": 369,
+                          "width": 22.578125,
+                          "x": 265,
+                          "y": 369,
                         },
-                        "toKey": "block-623187",
+                        "toKey": "tag-416176",
+                      },
+                      "line-479893": Object {
+                        "from": Object {
+                          "bottom": 261,
+                          "height": 21,
+                          "left": 464,
+                          "right": 494.359375,
+                          "top": 240,
+                          "width": 30.359375,
+                          "x": 464,
+                          "y": 240,
+                        },
+                        "fromKey": "tag-476280",
+                        "to": Object {
+                          "bottom": 390,
+                          "height": 21,
+                          "left": 265,
+                          "right": 287.578125,
+                          "top": 369,
+                          "width": 22.578125,
+                          "x": 265,
+                          "y": 369,
+                        },
+                        "toKey": "tag-416176",
+                      },
+                      "line-493906": Object {
+                        "from": Object {
+                          "bottom": 612,
+                          "height": 21,
+                          "left": 570,
+                          "right": 600.359375,
+                          "top": 591,
+                          "width": 30.359375,
+                          "x": 570,
+                          "y": 591,
+                        },
+                        "fromKey": "tag-491320",
+                        "to": Object {
+                          "bottom": 523,
+                          "height": 21,
+                          "left": 478,
+                          "right": 508.359375,
+                          "top": 502,
+                          "width": 30.359375,
+                          "x": 478,
+                          "y": 502,
+                        },
+                        "toKey": "tag-443720",
                       },
                     }
                   }
                   name="tag-group"
                   onChange={[Function]}
                   onContextMenu={[Function]}
-                  targetKey="tag-629962"
+                  targetKey="tag-439992"
                 >
                   <div
                     className="tag-group animate-appear"
@@ -1135,7 +952,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
             enableUserSelectHack={true}
             grid={null}
             handle={null}
-            key="tag-80986"
+            key="tag-443720"
             offsetParent={null}
             onDrag={[Function]}
             onMouseDown={[Function]}
@@ -1143,8 +960,8 @@ exports[`Canvas Canvas renders correctly 1`] = `
             onStop={[Function]}
             position={
               Object {
-                "x": 463,
-                "y": 333,
+                "x": 399,
+                "y": 602,
               }
             }
             scale={1}
@@ -1174,7 +991,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 style={
                   Object {
                     "touchAction": "none",
-                    "transform": "translate(463px,333px)",
+                    "transform": "translate(399px,602px)",
                   }
                 }
                 transform={null}
@@ -1183,95 +1000,155 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   className="tag-group animate-appear"
                   data={
                     Object {
-                      "tag-626505": Object {
+                      "tag-416176": Object {
                         "editable": false,
                         "input": "test",
-                        "style": Object {
-                          "height": 32,
-                          "width": 100,
-                        },
-                        "x": 169,
-                        "y": 144,
+                        "parent": "",
+                        "x": 186,
+                        "y": 469,
                       },
-                      "tag-629962": Object {
+                      "tag-439992": Object {
                         "editable": false,
                         "input": "test2",
-                        "style": Object {
-                          "height": 32,
-                          "width": 100,
-                        },
-                        "x": 462,
-                        "y": -23,
+                        "parent": "",
+                        "x": 34,
+                        "y": 367,
                       },
-                      "tag-80986": Object {
+                      "tag-443720": Object {
                         "editable": false,
                         "input": "test3",
-                        "style": Object {
-                          "height": 32,
-                          "width": 100,
-                        },
-                        "x": 463,
-                        "y": 333,
+                        "parent": "",
+                        "x": 399,
+                        "y": 602,
+                      },
+                      "tag-476280": Object {
+                        "editable": false,
+                        "input": "test4",
+                        "parent": "",
+                        "x": 385,
+                        "y": 340,
+                      },
+                      "tag-491320": Object {
+                        "editable": false,
+                        "input": "test5",
+                        "parent": "",
+                        "x": 491,
+                        "y": 691,
+                      },
+                      "tag-491321": Object {
+                        "editable": false,
+                        "input": "test6",
+                        "parent": "tag-491320",
+                        "x": 591,
+                        "y": 791,
                       },
                     }
                   }
-                  key="nino-zone-tag-80986"
+                  key="nino-zone-tag-443720"
                   lineData={
                     Object {
-                      "line-592694": Object {
+                      "line-446586": Object {
                         "from": Object {
-                          "bottom": 428,
-                          "height": 80,
-                          "left": 65,
-                          "right": 165,
-                          "top": 348,
-                          "width": 100,
-                          "x": 65,
-                          "y": 348,
+                          "bottom": 390,
+                          "height": 21,
+                          "left": 265,
+                          "right": 287.578125,
+                          "top": 369,
+                          "width": 22.578125,
+                          "x": 265,
+                          "y": 369,
                         },
-                        "fromKey": "block-623187",
+                        "fromKey": "tag-416176",
                         "to": Object {
-                          "bottom": 260,
-                          "height": 80,
-                          "left": 360,
-                          "right": 460,
-                          "top": 180,
-                          "width": 100,
-                          "x": 360,
-                          "y": 180,
+                          "bottom": 523,
+                          "height": 21,
+                          "left": 478,
+                          "right": 508.359375,
+                          "top": 502,
+                          "width": 30.359375,
+                          "x": 478,
+                          "y": 502,
                         },
-                        "toKey": "block-624018",
+                        "toKey": "tag-443720",
                       },
-                      "line-77619": Object {
+                      "line-451979": Object {
                         "from": Object {
-                          "bottom": 616,
-                          "height": 80,
-                          "left": 361,
-                          "right": 461,
-                          "top": 536,
-                          "width": 100,
-                          "x": 361,
-                          "y": 536,
+                          "bottom": 288,
+                          "height": 21,
+                          "left": 113,
+                          "right": 143.359375,
+                          "top": 267,
+                          "width": 30.359375,
+                          "x": 113,
+                          "y": 267,
                         },
-                        "fromKey": "block-73377",
+                        "fromKey": "tag-439992",
                         "to": Object {
-                          "bottom": 428,
-                          "height": 80,
-                          "left": 65,
-                          "right": 165,
-                          "top": 348,
-                          "width": 100,
-                          "x": 65,
-                          "y": 348,
+                          "bottom": 390,
+                          "height": 21,
+                          "left": 265,
+                          "right": 287.578125,
+                          "top": 369,
+                          "width": 22.578125,
+                          "x": 265,
+                          "y": 369,
                         },
-                        "toKey": "block-623187",
+                        "toKey": "tag-416176",
+                      },
+                      "line-479893": Object {
+                        "from": Object {
+                          "bottom": 261,
+                          "height": 21,
+                          "left": 464,
+                          "right": 494.359375,
+                          "top": 240,
+                          "width": 30.359375,
+                          "x": 464,
+                          "y": 240,
+                        },
+                        "fromKey": "tag-476280",
+                        "to": Object {
+                          "bottom": 390,
+                          "height": 21,
+                          "left": 265,
+                          "right": 287.578125,
+                          "top": 369,
+                          "width": 22.578125,
+                          "x": 265,
+                          "y": 369,
+                        },
+                        "toKey": "tag-416176",
+                      },
+                      "line-493906": Object {
+                        "from": Object {
+                          "bottom": 612,
+                          "height": 21,
+                          "left": 570,
+                          "right": 600.359375,
+                          "top": 591,
+                          "width": 30.359375,
+                          "x": 570,
+                          "y": 591,
+                        },
+                        "fromKey": "tag-491320",
+                        "to": Object {
+                          "bottom": 523,
+                          "height": 21,
+                          "left": 478,
+                          "right": 508.359375,
+                          "top": 502,
+                          "width": 30.359375,
+                          "x": 478,
+                          "y": 502,
+                        },
+                        "toKey": "tag-443720",
                       },
                     }
                   }
                   name="tag-group"
                   onChange={[Function]}
                   onContextMenu={[Function]}
-                  targetKey="tag-80986"
+                  targetKey="tag-443720"
                 >
                   <div
                     className="tag-group animate-appear"
@@ -1284,103 +1161,829 @@ exports[`Canvas Canvas renders correctly 1`] = `
               </div>
             </DraggableCore>
           </Draggable>
+          <Draggable
+            allowAnyClick={false}
+            axis="both"
+            bounds={false}
+            cancel={null}
+            defaultClassName="react-draggable"
+            defaultClassNameDragged="react-draggable-dragged"
+            defaultClassNameDragging="react-draggable-dragging"
+            defaultPosition={
+              Object {
+                "x": 0,
+                "y": 0,
+              }
+            }
+            disabled={false}
+            enableUserSelectHack={true}
+            grid={null}
+            handle={null}
+            key="tag-476280"
+            offsetParent={null}
+            onDrag={[Function]}
+            onMouseDown={[Function]}
+            onStart={[Function]}
+            onStop={[Function]}
+            position={
+              Object {
+                "x": 385,
+                "y": 340,
+              }
+            }
+            scale={1}
+            transform={null}
+          >
+            <DraggableCore
+              allowAnyClick={false}
+              cancel={null}
+              disabled={false}
+              enableUserSelectHack={true}
+              grid={null}
+              handle={null}
+              offsetParent={null}
+              onDrag={[Function]}
+              onMouseDown={[Function]}
+              onStart={[Function]}
+              onStop={[Function]}
+              transform={null}
+            >
+              <div
+                className="react-draggable"
+                onDoubleClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                    "transform": "translate(385px,340px)",
+                  }
+                }
+                transform={null}
+              >
+                <NinoZone
+                  className="tag-group animate-appear"
+                  data={
+                    Object {
+                      "tag-416176": Object {
+                        "editable": false,
+                        "input": "test",
+                        "parent": "",
+                        "x": 186,
+                        "y": 469,
+                      },
+                      "tag-439992": Object {
+                        "editable": false,
+                        "input": "test2",
+                        "parent": "",
+                        "x": 34,
+                        "y": 367,
+                      },
+                      "tag-443720": Object {
+                        "editable": false,
+                        "input": "test3",
+                        "parent": "",
+                        "x": 399,
+                        "y": 602,
+                      },
+                      "tag-476280": Object {
+                        "editable": false,
+                        "input": "test4",
+                        "parent": "",
+                        "x": 385,
+                        "y": 340,
+                      },
+                      "tag-491320": Object {
+                        "editable": false,
+                        "input": "test5",
+                        "parent": "",
+                        "x": 491,
+                        "y": 691,
+                      },
+                      "tag-491321": Object {
+                        "editable": false,
+                        "input": "test6",
+                        "parent": "tag-491320",
+                        "x": 591,
+                        "y": 791,
+                      },
+                    }
+                  }
+                  key="nino-zone-tag-476280"
+                  lineData={
+                    Object {
+                      "line-446586": Object {
+                        "from": Object {
+                          "bottom": 390,
+                          "height": 21,
+                          "left": 265,
+                          "right": 287.578125,
+                          "top": 369,
+                          "width": 22.578125,
+                          "x": 265,
+                          "y": 369,
+                        },
+                        "fromKey": "tag-416176",
+                        "to": Object {
+                          "bottom": 523,
+                          "height": 21,
+                          "left": 478,
+                          "right": 508.359375,
+                          "top": 502,
+                          "width": 30.359375,
+                          "x": 478,
+                          "y": 502,
+                        },
+                        "toKey": "tag-443720",
+                      },
+                      "line-451979": Object {
+                        "from": Object {
+                          "bottom": 288,
+                          "height": 21,
+                          "left": 113,
+                          "right": 143.359375,
+                          "top": 267,
+                          "width": 30.359375,
+                          "x": 113,
+                          "y": 267,
+                        },
+                        "fromKey": "tag-439992",
+                        "to": Object {
+                          "bottom": 390,
+                          "height": 21,
+                          "left": 265,
+                          "right": 287.578125,
+                          "top": 369,
+                          "width": 22.578125,
+                          "x": 265,
+                          "y": 369,
+                        },
+                        "toKey": "tag-416176",
+                      },
+                      "line-479893": Object {
+                        "from": Object {
+                          "bottom": 261,
+                          "height": 21,
+                          "left": 464,
+                          "right": 494.359375,
+                          "top": 240,
+                          "width": 30.359375,
+                          "x": 464,
+                          "y": 240,
+                        },
+                        "fromKey": "tag-476280",
+                        "to": Object {
+                          "bottom": 390,
+                          "height": 21,
+                          "left": 265,
+                          "right": 287.578125,
+                          "top": 369,
+                          "width": 22.578125,
+                          "x": 265,
+                          "y": 369,
+                        },
+                        "toKey": "tag-416176",
+                      },
+                      "line-493906": Object {
+                        "from": Object {
+                          "bottom": 612,
+                          "height": 21,
+                          "left": 570,
+                          "right": 600.359375,
+                          "top": 591,
+                          "width": 30.359375,
+                          "x": 570,
+                          "y": 591,
+                        },
+                        "fromKey": "tag-491320",
+                        "to": Object {
+                          "bottom": 523,
+                          "height": 21,
+                          "left": 478,
+                          "right": 508.359375,
+                          "top": 502,
+                          "width": 30.359375,
+                          "x": 478,
+                          "y": 502,
+                        },
+                        "toKey": "tag-443720",
+                      },
+                    }
+                  }
+                  name="tag-group"
+                  onChange={[Function]}
+                  onContextMenu={[Function]}
+                  targetKey="tag-476280"
+                >
+                  <div
+                    className="tag-group animate-appear"
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                  >
+                    test4
+                  </div>
+                </NinoZone>
+              </div>
+            </DraggableCore>
+          </Draggable>
+          <Draggable
+            allowAnyClick={false}
+            axis="both"
+            bounds={false}
+            cancel={null}
+            defaultClassName="react-draggable"
+            defaultClassNameDragged="react-draggable-dragged"
+            defaultClassNameDragging="react-draggable-dragging"
+            defaultPosition={
+              Object {
+                "x": 0,
+                "y": 0,
+              }
+            }
+            disabled={false}
+            enableUserSelectHack={true}
+            grid={null}
+            handle={null}
+            key="tag-491320"
+            offsetParent={null}
+            onDrag={[Function]}
+            onMouseDown={[Function]}
+            onStart={[Function]}
+            onStop={[Function]}
+            position={
+              Object {
+                "x": 491,
+                "y": 691,
+              }
+            }
+            scale={1}
+            transform={null}
+          >
+            <DraggableCore
+              allowAnyClick={false}
+              cancel={null}
+              disabled={false}
+              enableUserSelectHack={true}
+              grid={null}
+              handle={null}
+              offsetParent={null}
+              onDrag={[Function]}
+              onMouseDown={[Function]}
+              onStart={[Function]}
+              onStop={[Function]}
+              transform={null}
+            >
+              <div
+                className="react-draggable"
+                onDoubleClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                    "transform": "translate(491px,691px)",
+                  }
+                }
+                transform={null}
+              >
+                <NinoZone
+                  className="tag-group animate-appear"
+                  data={
+                    Object {
+                      "tag-416176": Object {
+                        "editable": false,
+                        "input": "test",
+                        "parent": "",
+                        "x": 186,
+                        "y": 469,
+                      },
+                      "tag-439992": Object {
+                        "editable": false,
+                        "input": "test2",
+                        "parent": "",
+                        "x": 34,
+                        "y": 367,
+                      },
+                      "tag-443720": Object {
+                        "editable": false,
+                        "input": "test3",
+                        "parent": "",
+                        "x": 399,
+                        "y": 602,
+                      },
+                      "tag-476280": Object {
+                        "editable": false,
+                        "input": "test4",
+                        "parent": "",
+                        "x": 385,
+                        "y": 340,
+                      },
+                      "tag-491320": Object {
+                        "editable": false,
+                        "input": "test5",
+                        "parent": "",
+                        "x": 491,
+                        "y": 691,
+                      },
+                      "tag-491321": Object {
+                        "editable": false,
+                        "input": "test6",
+                        "parent": "tag-491320",
+                        "x": 591,
+                        "y": 791,
+                      },
+                    }
+                  }
+                  key="nino-zone-tag-491320"
+                  lineData={
+                    Object {
+                      "line-446586": Object {
+                        "from": Object {
+                          "bottom": 390,
+                          "height": 21,
+                          "left": 265,
+                          "right": 287.578125,
+                          "top": 369,
+                          "width": 22.578125,
+                          "x": 265,
+                          "y": 369,
+                        },
+                        "fromKey": "tag-416176",
+                        "to": Object {
+                          "bottom": 523,
+                          "height": 21,
+                          "left": 478,
+                          "right": 508.359375,
+                          "top": 502,
+                          "width": 30.359375,
+                          "x": 478,
+                          "y": 502,
+                        },
+                        "toKey": "tag-443720",
+                      },
+                      "line-451979": Object {
+                        "from": Object {
+                          "bottom": 288,
+                          "height": 21,
+                          "left": 113,
+                          "right": 143.359375,
+                          "top": 267,
+                          "width": 30.359375,
+                          "x": 113,
+                          "y": 267,
+                        },
+                        "fromKey": "tag-439992",
+                        "to": Object {
+                          "bottom": 390,
+                          "height": 21,
+                          "left": 265,
+                          "right": 287.578125,
+                          "top": 369,
+                          "width": 22.578125,
+                          "x": 265,
+                          "y": 369,
+                        },
+                        "toKey": "tag-416176",
+                      },
+                      "line-479893": Object {
+                        "from": Object {
+                          "bottom": 261,
+                          "height": 21,
+                          "left": 464,
+                          "right": 494.359375,
+                          "top": 240,
+                          "width": 30.359375,
+                          "x": 464,
+                          "y": 240,
+                        },
+                        "fromKey": "tag-476280",
+                        "to": Object {
+                          "bottom": 390,
+                          "height": 21,
+                          "left": 265,
+                          "right": 287.578125,
+                          "top": 369,
+                          "width": 22.578125,
+                          "x": 265,
+                          "y": 369,
+                        },
+                        "toKey": "tag-416176",
+                      },
+                      "line-493906": Object {
+                        "from": Object {
+                          "bottom": 612,
+                          "height": 21,
+                          "left": 570,
+                          "right": 600.359375,
+                          "top": 591,
+                          "width": 30.359375,
+                          "x": 570,
+                          "y": 591,
+                        },
+                        "fromKey": "tag-491320",
+                        "to": Object {
+                          "bottom": 523,
+                          "height": 21,
+                          "left": 478,
+                          "right": 508.359375,
+                          "top": 502,
+                          "width": 30.359375,
+                          "x": 478,
+                          "y": 502,
+                        },
+                        "toKey": "tag-443720",
+                      },
+                    }
+                  }
+                  name="tag-group"
+                  onChange={[Function]}
+                  onContextMenu={[Function]}
+                  targetKey="tag-491320"
+                >
+                  <div
+                    className="tag-group animate-appear"
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                  >
+                    test5
+                  </div>
+                </NinoZone>
+              </div>
+            </DraggableCore>
+          </Draggable>
+          <Draggable
+            allowAnyClick={false}
+            axis="both"
+            bounds={false}
+            cancel={null}
+            defaultClassName="react-draggable"
+            defaultClassNameDragged="react-draggable-dragged"
+            defaultClassNameDragging="react-draggable-dragging"
+            defaultPosition={
+              Object {
+                "x": 0,
+                "y": 0,
+              }
+            }
+            disabled={false}
+            enableUserSelectHack={true}
+            grid={null}
+            handle={null}
+            key="tag-491321"
+            offsetParent={null}
+            onDrag={[Function]}
+            onMouseDown={[Function]}
+            onStart={[Function]}
+            onStop={[Function]}
+            position={
+              Object {
+                "x": 591,
+                "y": 791,
+              }
+            }
+            scale={1}
+            transform={null}
+          >
+            <DraggableCore
+              allowAnyClick={false}
+              cancel={null}
+              disabled={false}
+              enableUserSelectHack={true}
+              grid={null}
+              handle={null}
+              offsetParent={null}
+              onDrag={[Function]}
+              onMouseDown={[Function]}
+              onStart={[Function]}
+              onStop={[Function]}
+              transform={null}
+            >
+              <div
+                className="react-draggable"
+                onDoubleClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                    "transform": "translate(591px,791px)",
+                  }
+                }
+                transform={null}
+              >
+                <NinoZone
+                  className="tag-group animate-appear"
+                  data={
+                    Object {
+                      "tag-416176": Object {
+                        "editable": false,
+                        "input": "test",
+                        "parent": "",
+                        "x": 186,
+                        "y": 469,
+                      },
+                      "tag-439992": Object {
+                        "editable": false,
+                        "input": "test2",
+                        "parent": "",
+                        "x": 34,
+                        "y": 367,
+                      },
+                      "tag-443720": Object {
+                        "editable": false,
+                        "input": "test3",
+                        "parent": "",
+                        "x": 399,
+                        "y": 602,
+                      },
+                      "tag-476280": Object {
+                        "editable": false,
+                        "input": "test4",
+                        "parent": "",
+                        "x": 385,
+                        "y": 340,
+                      },
+                      "tag-491320": Object {
+                        "editable": false,
+                        "input": "test5",
+                        "parent": "",
+                        "x": 491,
+                        "y": 691,
+                      },
+                      "tag-491321": Object {
+                        "editable": false,
+                        "input": "test6",
+                        "parent": "tag-491320",
+                        "x": 591,
+                        "y": 791,
+                      },
+                    }
+                  }
+                  key="nino-zone-tag-491321"
+                  lineData={
+                    Object {
+                      "line-446586": Object {
+                        "from": Object {
+                          "bottom": 390,
+                          "height": 21,
+                          "left": 265,
+                          "right": 287.578125,
+                          "top": 369,
+                          "width": 22.578125,
+                          "x": 265,
+                          "y": 369,
+                        },
+                        "fromKey": "tag-416176",
+                        "to": Object {
+                          "bottom": 523,
+                          "height": 21,
+                          "left": 478,
+                          "right": 508.359375,
+                          "top": 502,
+                          "width": 30.359375,
+                          "x": 478,
+                          "y": 502,
+                        },
+                        "toKey": "tag-443720",
+                      },
+                      "line-451979": Object {
+                        "from": Object {
+                          "bottom": 288,
+                          "height": 21,
+                          "left": 113,
+                          "right": 143.359375,
+                          "top": 267,
+                          "width": 30.359375,
+                          "x": 113,
+                          "y": 267,
+                        },
+                        "fromKey": "tag-439992",
+                        "to": Object {
+                          "bottom": 390,
+                          "height": 21,
+                          "left": 265,
+                          "right": 287.578125,
+                          "top": 369,
+                          "width": 22.578125,
+                          "x": 265,
+                          "y": 369,
+                        },
+                        "toKey": "tag-416176",
+                      },
+                      "line-479893": Object {
+                        "from": Object {
+                          "bottom": 261,
+                          "height": 21,
+                          "left": 464,
+                          "right": 494.359375,
+                          "top": 240,
+                          "width": 30.359375,
+                          "x": 464,
+                          "y": 240,
+                        },
+                        "fromKey": "tag-476280",
+                        "to": Object {
+                          "bottom": 390,
+                          "height": 21,
+                          "left": 265,
+                          "right": 287.578125,
+                          "top": 369,
+                          "width": 22.578125,
+                          "x": 265,
+                          "y": 369,
+                        },
+                        "toKey": "tag-416176",
+                      },
+                      "line-493906": Object {
+                        "from": Object {
+                          "bottom": 612,
+                          "height": 21,
+                          "left": 570,
+                          "right": 600.359375,
+                          "top": 591,
+                          "width": 30.359375,
+                          "x": 570,
+                          "y": 591,
+                        },
+                        "fromKey": "tag-491320",
+                        "to": Object {
+                          "bottom": 523,
+                          "height": 21,
+                          "left": 478,
+                          "right": 508.359375,
+                          "top": 502,
+                          "width": 30.359375,
+                          "x": 478,
+                          "y": 502,
+                        },
+                        "toKey": "tag-443720",
+                      },
+                    }
+                  }
+                  name="tag-group"
+                  onChange={[Function]}
+                  onContextMenu={[Function]}
+                  targetKey="tag-491321"
+                >
+                  <div
+                    className="tag-group animate-appear"
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                  >
+                    test6
+                  </div>
+                </NinoZone>
+              </div>
+            </DraggableCore>
+          </Draggable>
         </TagGroup>
         <LineGroup
           data={
             Object {
-              "line-592694": Object {
+              "line-446586": Object {
                 "from": Object {
-                  "bottom": 428,
-                  "height": 80,
-                  "left": 65,
-                  "right": 165,
-                  "top": 348,
-                  "width": 100,
-                  "x": 65,
-                  "y": 348,
+                  "bottom": 390,
+                  "height": 21,
+                  "left": 265,
+                  "right": 287.578125,
+                  "top": 369,
+                  "width": 22.578125,
+                  "x": 265,
+                  "y": 369,
                 },
-                "fromKey": "block-623187",
+                "fromKey": "tag-416176",
                 "to": Object {
-                  "bottom": 260,
-                  "height": 80,
-                  "left": 360,
-                  "right": 460,
-                  "top": 180,
-                  "width": 100,
-                  "x": 360,
-                  "y": 180,
+                  "bottom": 523,
+                  "height": 21,
+                  "left": 478,
+                  "right": 508.359375,
+                  "top": 502,
+                  "width": 30.359375,
+                  "x": 478,
+                  "y": 502,
                 },
-                "toKey": "block-624018",
+                "toKey": "tag-443720",
               },
-              "line-77619": Object {
+              "line-451979": Object {
                 "from": Object {
-                  "bottom": 616,
-                  "height": 80,
-                  "left": 361,
-                  "right": 461,
-                  "top": 536,
-                  "width": 100,
-                  "x": 361,
-                  "y": 536,
+                  "bottom": 288,
+                  "height": 21,
+                  "left": 113,
+                  "right": 143.359375,
+                  "top": 267,
+                  "width": 30.359375,
+                  "x": 113,
+                  "y": 267,
                 },
-                "fromKey": "block-73377",
+                "fromKey": "tag-439992",
                 "to": Object {
-                  "bottom": 428,
-                  "height": 80,
-                  "left": 65,
-                  "right": 165,
-                  "top": 348,
-                  "width": 100,
-                  "x": 65,
-                  "y": 348,
+                  "bottom": 390,
+                  "height": 21,
+                  "left": 265,
+                  "right": 287.578125,
+                  "top": 369,
+                  "width": 22.578125,
+                  "x": 265,
+                  "y": 369,
                 },
-                "toKey": "block-623187",
+                "toKey": "tag-416176",
+              },
+              "line-479893": Object {
+                "from": Object {
+                  "bottom": 261,
+                  "height": 21,
+                  "left": 464,
+                  "right": 494.359375,
+                  "top": 240,
+                  "width": 30.359375,
+                  "x": 464,
+                  "y": 240,
+                },
+                "fromKey": "tag-476280",
+                "to": Object {
+                  "bottom": 390,
+                  "height": 21,
+                  "left": 265,
+                  "right": 287.578125,
+                  "top": 369,
+                  "width": 22.578125,
+                  "x": 265,
+                  "y": 369,
+                },
+                "toKey": "tag-416176",
+              },
+              "line-493906": Object {
+                "from": Object {
+                  "bottom": 612,
+                  "height": 21,
+                  "left": 570,
+                  "right": 600.359375,
+                  "top": 591,
+                  "width": 30.359375,
+                  "x": 570,
+                  "y": 591,
+                },
+                "fromKey": "tag-491320",
+                "to": Object {
+                  "bottom": 523,
+                  "height": 21,
+                  "left": 478,
+                  "right": 508.359375,
+                  "top": 502,
+                  "width": 30.359375,
+                  "x": 478,
+                  "y": 502,
+                },
+                "toKey": "tag-443720",
               },
             }
           }
           offset={
             Object {
-              "gap": 1,
-              "x": -67,
-              "y": 230,
-              "z": 0,
+              "x": 79,
+              "y": -100,
             }
           }
           orientation="horizonal"
         >
           <SteppedLine
+            className="animate-appear"
             from={
               Object {
-                "bottom": 616,
-                "height": 80,
-                "left": 361,
-                "right": 461,
-                "top": 536,
-                "width": 100,
-                "x": 361,
-                "y": 536,
+                "bottom": 390,
+                "height": 21,
+                "left": 265,
+                "right": 287.578125,
+                "top": 369,
+                "width": 22.578125,
+                "x": 265,
+                "y": 369,
               }
             }
-            key="line-77619"
+            key="line-446586"
             offset={
               Object {
-                "gap": 1,
-                "x": -67,
-                "y": 230,
-                "z": 0,
+                "x": 79,
+                "y": -100,
               }
             }
             orientation="horizonal"
             to={
               Object {
-                "bottom": 428,
-                "height": 80,
-                "left": 65,
-                "right": 165,
-                "top": 348,
-                "width": 100,
-                "x": 65,
-                "y": 348,
+                "bottom": 523,
+                "height": 21,
+                "left": 478,
+                "right": 508.359375,
+                "top": 502,
+                "width": 30.359375,
+                "x": 478,
+                "y": 502,
               }
             }
           >
@@ -1389,51 +1992,51 @@ exports[`Canvas Canvas renders correctly 1`] = `
             >
               <Line
                 showArrow={false}
-                x0={428}
-                x1={330}
-                y0={346}
-                y1={346}
+                x0={208.578125}
+                x1={303.7890625}
+                y0={479.5}
+                y1={479.5}
               >
                 <div
                   className="line-core"
                   style={
                     Object {
-                      "transform": "translate3d(428px, 346px, 0) rotate(180deg)",
-                      "width": "98px",
+                      "transform": "translate3d(208.578125px, 479.5px, 0) rotate(0deg)",
+                      "width": "95.2109375px",
                     }
                   }
                 />
               </Line>
               <Line
                 showArrow={false}
-                x0={330}
-                x1={330}
-                y0={346}
-                y1={158}
+                x0={303.7890625}
+                x1={303.7890625}
+                y0={479.5}
+                y1={612.5}
               >
                 <div
                   className="line-core"
                   style={
                     Object {
-                      "transform": "translate3d(330px, 346px, 0) rotate(-90deg)",
-                      "width": "188px",
+                      "transform": "translate3d(303.7890625px, 479.5px, 0) rotate(90deg)",
+                      "width": "133px",
                     }
                   }
                 />
               </Line>
               <Line
                 showArrow={false}
-                x0={330}
-                x1={232}
-                y0={158}
-                y1={158}
+                x0={303.7890625}
+                x1={399}
+                y0={612.5}
+                y1={612.5}
               >
                 <div
                   className="line-core"
                   style={
                     Object {
-                      "transform": "translate3d(330px, 158px, 0) rotate(180deg)",
-                      "width": "98px",
+                      "transform": "translate3d(303.7890625px, 612.5px, 0) rotate(0deg)",
+                      "width": "95.2109375px",
                     }
                   }
                 />
@@ -1441,38 +2044,37 @@ exports[`Canvas Canvas renders correctly 1`] = `
             </div>
           </SteppedLine>
           <SteppedLine
+            className="animate-appear"
             from={
               Object {
-                "bottom": 428,
-                "height": 80,
-                "left": 65,
-                "right": 165,
-                "top": 348,
-                "width": 100,
-                "x": 65,
-                "y": 348,
+                "bottom": 288,
+                "height": 21,
+                "left": 113,
+                "right": 143.359375,
+                "top": 267,
+                "width": 30.359375,
+                "x": 113,
+                "y": 267,
               }
             }
-            key="line-592694"
+            key="line-451979"
             offset={
               Object {
-                "gap": 1,
-                "x": -67,
-                "y": 230,
-                "z": 0,
+                "x": 79,
+                "y": -100,
               }
             }
             orientation="horizonal"
             to={
               Object {
-                "bottom": 260,
-                "height": 80,
-                "left": 360,
-                "right": 460,
-                "top": 180,
-                "width": 100,
-                "x": 360,
-                "y": 180,
+                "bottom": 390,
+                "height": 21,
+                "left": 265,
+                "right": 287.578125,
+                "top": 369,
+                "width": 22.578125,
+                "x": 265,
+                "y": 369,
               }
             }
           >
@@ -1481,51 +2083,233 @@ exports[`Canvas Canvas renders correctly 1`] = `
             >
               <Line
                 showArrow={false}
-                x0={232}
-                x1={329.5}
-                y0={158}
-                y1={158}
+                x0={64.359375}
+                x1={125.1796875}
+                y0={377.5}
+                y1={377.5}
               >
                 <div
                   className="line-core"
                   style={
                     Object {
-                      "transform": "translate3d(232px, 158px, 0) rotate(0deg)",
-                      "width": "97.5px",
+                      "transform": "translate3d(64.359375px, 377.5px, 0) rotate(0deg)",
+                      "width": "60.8203125px",
                     }
                   }
                 />
               </Line>
               <Line
                 showArrow={false}
-                x0={329.5}
-                x1={329.5}
-                y0={158}
-                y1={-10}
+                x0={125.1796875}
+                x1={125.1796875}
+                y0={377.5}
+                y1={479.5}
               >
                 <div
                   className="line-core"
                   style={
                     Object {
-                      "transform": "translate3d(329.5px, 158px, 0) rotate(-90deg)",
-                      "width": "168px",
+                      "transform": "translate3d(125.1796875px, 377.5px, 0) rotate(90deg)",
+                      "width": "102px",
                     }
                   }
                 />
               </Line>
               <Line
                 showArrow={false}
-                x0={329.5}
-                x1={427}
-                y0={-10}
-                y1={-10}
+                x0={125.1796875}
+                x1={186}
+                y0={479.5}
+                y1={479.5}
               >
                 <div
                   className="line-core"
                   style={
                     Object {
-                      "transform": "translate3d(329.5px, -10px, 0) rotate(0deg)",
-                      "width": "97.5px",
+                      "transform": "translate3d(125.1796875px, 479.5px, 0) rotate(0deg)",
+                      "width": "60.8203125px",
+                    }
+                  }
+                />
+              </Line>
+            </div>
+          </SteppedLine>
+          <SteppedLine
+            className="animate-appear"
+            from={
+              Object {
+                "bottom": 261,
+                "height": 21,
+                "left": 464,
+                "right": 494.359375,
+                "top": 240,
+                "width": 30.359375,
+                "x": 464,
+                "y": 240,
+              }
+            }
+            key="line-479893"
+            offset={
+              Object {
+                "x": 79,
+                "y": -100,
+              }
+            }
+            orientation="horizonal"
+            to={
+              Object {
+                "bottom": 390,
+                "height": 21,
+                "left": 265,
+                "right": 287.578125,
+                "top": 369,
+                "width": 22.578125,
+                "x": 265,
+                "y": 369,
+              }
+            }
+          >
+            <div
+              className="stepped-line"
+            >
+              <Line
+                showArrow={false}
+                x0={385}
+                x1={296.7890625}
+                y0={350.5}
+                y1={350.5}
+              >
+                <div
+                  className="line-core"
+                  style={
+                    Object {
+                      "transform": "translate3d(385px, 350.5px, 0) rotate(180deg)",
+                      "width": "88.2109375px",
+                    }
+                  }
+                />
+              </Line>
+              <Line
+                showArrow={false}
+                x0={296.7890625}
+                x1={296.7890625}
+                y0={350.5}
+                y1={479.5}
+              >
+                <div
+                  className="line-core"
+                  style={
+                    Object {
+                      "transform": "translate3d(296.7890625px, 350.5px, 0) rotate(90deg)",
+                      "width": "129px",
+                    }
+                  }
+                />
+              </Line>
+              <Line
+                showArrow={false}
+                x0={296.7890625}
+                x1={208.578125}
+                y0={479.5}
+                y1={479.5}
+              >
+                <div
+                  className="line-core"
+                  style={
+                    Object {
+                      "transform": "translate3d(296.7890625px, 479.5px, 0) rotate(180deg)",
+                      "width": "88.2109375px",
+                    }
+                  }
+                />
+              </Line>
+            </div>
+          </SteppedLine>
+          <SteppedLine
+            className="animate-appear"
+            from={
+              Object {
+                "bottom": 612,
+                "height": 21,
+                "left": 570,
+                "right": 600.359375,
+                "top": 591,
+                "width": 30.359375,
+                "x": 570,
+                "y": 591,
+              }
+            }
+            key="line-493906"
+            offset={
+              Object {
+                "x": 79,
+                "y": -100,
+              }
+            }
+            orientation="horizonal"
+            to={
+              Object {
+                "bottom": 523,
+                "height": 21,
+                "left": 478,
+                "right": 508.359375,
+                "top": 502,
+                "width": 30.359375,
+                "x": 478,
+                "y": 502,
+              }
+            }
+          >
+            <div
+              className="stepped-line"
+            >
+              <Line
+                showArrow={false}
+                x0={491}
+                x1={460.1796875}
+                y0={701.5}
+                y1={701.5}
+              >
+                <div
+                  className="line-core"
+                  style={
+                    Object {
+                      "transform": "translate3d(491px, 701.5px, 0) rotate(180deg)",
+                      "width": "30.8203125px",
+                    }
+                  }
+                />
+              </Line>
+              <Line
+                showArrow={false}
+                x0={460.1796875}
+                x1={460.1796875}
+                y0={701.5}
+                y1={612.5}
+              >
+                <div
+                  className="line-core"
+                  style={
+                    Object {
+                      "transform": "translate3d(460.1796875px, 701.5px, 0) rotate(-90deg)",
+                      "width": "89px",
+                    }
+                  }
+                />
+              </Line>
+              <Line
+                showArrow={false}
+                x0={460.1796875}
+                x1={429.359375}
+                y0={612.5}
+                y1={612.5}
+              >
+                <div
+                  className="line-core"
+                  style={
+                    Object {
+                      "transform": "translate3d(460.1796875px, 612.5px, 0) rotate(180deg)",
+                      "width": "30.8203125px",
                     }
                   }
                 />
@@ -1533,325 +2317,6 @@ exports[`Canvas Canvas renders correctly 1`] = `
             </div>
           </SteppedLine>
         </LineGroup>
-      </div>
-    </DraggableCore>
-  </Draggable>
-</Canvas>
-`;
-
-exports[`Canvas render correctly when data is null 1`] = `
-<Canvas
-  data={null}
->
-  <Draggable
-    allowAnyClick={false}
-    axis="both"
-    bounds={false}
-    cancel={null}
-    defaultClassName="react-draggable"
-    defaultClassNameDragged="react-draggable-dragged"
-    defaultClassNameDragging="react-draggable-dragging"
-    defaultPosition={
-      Object {
-        "x": 0,
-        "y": 0,
-      }
-    }
-    disabled={false}
-    enableUserSelectHack={true}
-    grid={null}
-    handle={null}
-    offsetParent={null}
-    onDrag={[Function]}
-    onMouseDown={[Function]}
-    onStart={[Function]}
-    onStop={[Function]}
-    position={
-      Object {
-        "gap": 1,
-        "x": 0,
-        "y": 0,
-        "z": 0,
-      }
-    }
-    scale={1}
-    transform={null}
-  >
-    <DraggableCore
-      allowAnyClick={false}
-      cancel={null}
-      disabled={false}
-      enableUserSelectHack={true}
-      grid={null}
-      handle={null}
-      offsetParent={null}
-      onDrag={[Function]}
-      onMouseDown={[Function]}
-      onStart={[Function]}
-      onStop={[Function]}
-      transform={null}
-    >
-      <div
-        className="Canvas react-draggable"
-        onDragOver={[Function]}
-        onDrop={[Function]}
-        onMouseDown={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchStart={[Function]}
-        onWheel={[Function]}
-        style={
-          Object {
-            "touchAction": "none",
-            "transform": "translate(0px,0px)",
-          }
-        }
-        transform={null}
-      >
-        <BlockGroup
-          data={Object {}}
-          lineData={Object {}}
-          offset={
-            Object {
-              "gap": 1,
-              "x": 0,
-              "y": 0,
-              "z": 0,
-            }
-          }
-          onChange={[Function]}
-          onContextMenu={[Function]}
-        />
-        <TagGroup
-          data={Object {}}
-          lineData={Object {}}
-          onChange={[Function]}
-          onContextMenu={[Function]}
-        />
-        <LineGroup
-          data={Object {}}
-          offset={
-            Object {
-              "gap": 1,
-              "x": 0,
-              "y": 0,
-              "z": 0,
-            }
-          }
-          orientation="horizonal"
-        />
-      </div>
-    </DraggableCore>
-  </Draggable>
-</Canvas>
-`;
-
-exports[`Canvas render correctly when data is null 2`] = `
-<Canvas>
-  <Draggable
-    allowAnyClick={false}
-    axis="both"
-    bounds={false}
-    cancel={null}
-    defaultClassName="react-draggable"
-    defaultClassNameDragged="react-draggable-dragged"
-    defaultClassNameDragging="react-draggable-dragging"
-    defaultPosition={
-      Object {
-        "x": 0,
-        "y": 0,
-      }
-    }
-    disabled={false}
-    enableUserSelectHack={true}
-    grid={null}
-    handle={null}
-    offsetParent={null}
-    onDrag={[Function]}
-    onMouseDown={[Function]}
-    onStart={[Function]}
-    onStop={[Function]}
-    position={
-      Object {
-        "gap": 1,
-        "x": 0,
-        "y": 0,
-        "z": 0,
-      }
-    }
-    scale={1}
-    transform={null}
-  >
-    <DraggableCore
-      allowAnyClick={false}
-      cancel={null}
-      disabled={false}
-      enableUserSelectHack={true}
-      grid={null}
-      handle={null}
-      offsetParent={null}
-      onDrag={[Function]}
-      onMouseDown={[Function]}
-      onStart={[Function]}
-      onStop={[Function]}
-      transform={null}
-    >
-      <div
-        className="Canvas react-draggable"
-        onDragOver={[Function]}
-        onDrop={[Function]}
-        onMouseDown={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchStart={[Function]}
-        onWheel={[Function]}
-        style={
-          Object {
-            "touchAction": "none",
-            "transform": "translate(0px,0px)",
-          }
-        }
-        transform={null}
-      >
-        <BlockGroup
-          data={Object {}}
-          lineData={Object {}}
-          offset={
-            Object {
-              "gap": 1,
-              "x": 0,
-              "y": 0,
-              "z": 0,
-            }
-          }
-          onChange={[Function]}
-          onContextMenu={[Function]}
-        />
-        <TagGroup
-          data={Object {}}
-          lineData={Object {}}
-          onChange={[Function]}
-          onContextMenu={[Function]}
-        />
-        <LineGroup
-          data={Object {}}
-          offset={
-            Object {
-              "gap": 1,
-              "x": 0,
-              "y": 0,
-              "z": 0,
-            }
-          }
-          orientation="horizonal"
-        />
-      </div>
-    </DraggableCore>
-  </Draggable>
-</Canvas>
-`;
-
-exports[`Canvas render correctly when data is null 3`] = `
-<Canvas
-  data={Object {}}
->
-  <Draggable
-    allowAnyClick={false}
-    axis="both"
-    bounds={false}
-    cancel={null}
-    defaultClassName="react-draggable"
-    defaultClassNameDragged="react-draggable-dragged"
-    defaultClassNameDragging="react-draggable-dragging"
-    defaultPosition={
-      Object {
-        "x": 0,
-        "y": 0,
-      }
-    }
-    disabled={false}
-    enableUserSelectHack={true}
-    grid={null}
-    handle={null}
-    offsetParent={null}
-    onDrag={[Function]}
-    onMouseDown={[Function]}
-    onStart={[Function]}
-    onStop={[Function]}
-    position={
-      Object {
-        "gap": 1,
-        "x": 0,
-        "y": 0,
-        "z": 0,
-      }
-    }
-    scale={1}
-    transform={null}
-  >
-    <DraggableCore
-      allowAnyClick={false}
-      cancel={null}
-      disabled={false}
-      enableUserSelectHack={true}
-      grid={null}
-      handle={null}
-      offsetParent={null}
-      onDrag={[Function]}
-      onMouseDown={[Function]}
-      onStart={[Function]}
-      onStop={[Function]}
-      transform={null}
-    >
-      <div
-        className="Canvas react-draggable"
-        onDragOver={[Function]}
-        onDrop={[Function]}
-        onMouseDown={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchStart={[Function]}
-        onWheel={[Function]}
-        style={
-          Object {
-            "touchAction": "none",
-            "transform": "translate(0px,0px)",
-          }
-        }
-        transform={null}
-      >
-        <BlockGroup
-          data={Object {}}
-          lineData={Object {}}
-          offset={
-            Object {
-              "gap": 1,
-              "x": 0,
-              "y": 0,
-              "z": 0,
-            }
-          }
-          onChange={[Function]}
-          onContextMenu={[Function]}
-        />
-        <TagGroup
-          data={Object {}}
-          lineData={Object {}}
-          onChange={[Function]}
-          onContextMenu={[Function]}
-        />
-        <LineGroup
-          data={Object {}}
-          offset={
-            Object {
-              "gap": 1,
-              "x": 0,
-              "y": 0,
-              "z": 0,
-            }
-          }
-          orientation="horizonal"
-        />
       </div>
     </DraggableCore>
   </Draggable>

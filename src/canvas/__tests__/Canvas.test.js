@@ -9,33 +9,6 @@ describe('Canvas', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('Block renders correctly', () => {
-    if (process.env.LIB_DIR === 'lib') {
-      return;
-    }
-    const wrapper = mount(<Canvas data={mapping} />);
-    expect(wrapper.find('.block-group').length).toBe(6);
-  });
-
-  it('render mapping correctly when passing data', () => {
-    if (process.env.LIB_DIR === 'lib') {
-      return;
-    }
-    const wrapper = mount(<Canvas data={mapping} />);
-
-    expect(wrapper.find('.block-group').length).toBe(6);
-    expect(wrapper.find('.tag-group').length).toBe(6);
-  });
-
-  it('render correctly when data is null', () => {
-    const wrapper = mount(<Canvas data={null} />);
-    expect(wrapper).toMatchSnapshot();
-    wrapper.setProps({ data: undefined });
-    expect(wrapper).toMatchSnapshot();
-    wrapper.setProps({ data: {} });
-    expect(wrapper).toMatchSnapshot();
-  });
-
   it('onDrop should return when dragItem is null', () => {
     const onChange = jest.fn();
     const wrapper = mount(<Canvas data={mapping} onChange={onChange} />);
@@ -52,7 +25,7 @@ describe('Canvas', () => {
         .onDrop(event),
     ).toBe(false);
     event.dataTransfer.getData = () => {
-      return '{"key":"border","value":"","style":{"width":100,"height":80}}';
+      return '{"key":"border","type":"","style":{"width":100,"height":80}}';
     };
     wrapper
       .find('.react-draggable')
@@ -70,7 +43,7 @@ describe('Canvas', () => {
     event.clientY = 100;
     event.dataTransfer = {};
     event.dataTransfer.getData = () => {
-      return '{"key":"border","value":"block","style":{"width":100,"height":80}}';
+      return '{"key":"border","type":"block","style":{"width":100,"height":80}}';
     };
     wrapper
       .find('.react-draggable')
@@ -88,7 +61,7 @@ describe('Canvas', () => {
     event.clientY = 100;
     event.dataTransfer = {};
     event.dataTransfer.getData = () => {
-      return '{"key":"border","value":"tag","style":{"width":100,"height":80}}';
+      return '{"key":"border","type":"tag","style":{"width":100,"height":80}}';
     };
     wrapper
       .find('.react-draggable')
@@ -110,9 +83,6 @@ describe('Canvas', () => {
   });
 
   it('right click should work', () => {
-    if (process.env.LIB_DIR === 'dist') {
-      return;
-    }
     const onChange = jest.fn();
     const wrapper = mount(<Canvas data={mapping} onChange={onChange} />);
     const preventDefault = jest.fn();
@@ -121,7 +91,7 @@ describe('Canvas', () => {
       .find('TagGroup')
       .first()
       .props()
-      .onContextMenu({ group: '', event, key: 'tag-626505' });
+      .onContextMenu({ group: '', event, key: 'tag-491320' });
     expect(onChange).toHaveBeenCalled();
     wrapper
       .find('BlockGroup')
@@ -138,7 +108,7 @@ describe('Canvas', () => {
       .find('TagGroup')
       .first()
       .props()
-      .onContextMenu({ group: 'tag-group', event, key: 'tag-626505' });
+      .onContextMenu({ group: 'tag-group', event, key: 'tag-491320' });
     expect(onChange).toHaveBeenCalledWith(
       Object.assign({}, mapping, {
         TagGroup: mapping.TagGroup,
@@ -147,34 +117,7 @@ describe('Canvas', () => {
     expect(preventDefault).toHaveBeenCalled();
   });
 
-  it('onWheel should work', () => {
-    const onWheel = jest.fn();
-    const wrapper = mount(<Canvas data={mapping} onWheel={onWheel} />);
-    wrapper
-      .find('.Canvas')
-      .props()
-      .onWheel(null);
-    expect(onWheel).toHaveBeenCalledWith(mapping, null);
-  });
-
-  it('onChange', () => {
-    if (process.env.LIB_DIR === 'dist') {
-      return;
-    }
-    const wrapper = mount(<Canvas data={mapping} />);
-    const onChange = jest.fn();
-    wrapper.setProps({ data: mapping, onChange });
-    wrapper
-      .find('BlockGroup')
-      .props()
-      .onChange(null);
-    expect(onChange).toHaveBeenCalled();
-  });
-
   it('handleTagChange', () => {
-    if (process.env.LIB_DIR === 'dist') {
-      return;
-    }
     const onChange = jest.fn();
     const wrapper = mount(<Canvas data={mapping} onChange={onChange} />);
     wrapper
@@ -193,5 +136,16 @@ describe('Canvas', () => {
       .props()
       .onStart({ stopPropagation });
     expect(stopPropagation).toHaveBeenCalled();
+  });
+
+  it('handleBlockChange', () => {
+    const onChange = jest.fn();
+    const data = { ...mapping, block: { x: 100, y: 100 } };
+    const wrapper = mount(<Canvas data={data} onChange={onChange} />);
+    wrapper
+      .find('BlockGroup')
+      .props()
+      .onChange();
+    expect(onChange).toHaveBeenCalledWith(data);
   });
 });
