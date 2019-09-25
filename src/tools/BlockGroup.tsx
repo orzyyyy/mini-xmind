@@ -52,7 +52,7 @@ const BlockGroup = ({
   lineData,
   onContextMenu,
 }: BlockGroupProps) => {
-  const handleDrag = ({ x, y }: { x: number; y: number }, blockKey: string) => {
+  const handleDrag = ({ x, y }: CoordinatesProps, blockKey: string) => {
     if (onChange) {
       onChange(
         Object.assign({}, data, { [blockKey]: { x, y } }),

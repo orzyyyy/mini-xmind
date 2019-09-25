@@ -4,8 +4,6 @@ import { CoordinatesProps } from '../canvas/core';
 
 export type LineItem =
   | {
-      x: number;
-      y: number;
       bottom: number;
       height: number;
       left: number;
@@ -13,7 +11,7 @@ export type LineItem =
       top: number;
       width: number;
     }
-  | DOMRect;
+  | DOMRect & CoordinatesProps;
 export type LineProps = {
   [key: string]: {
     fromKey: string;

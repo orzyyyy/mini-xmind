@@ -4,20 +4,18 @@ import Draggable from 'react-draggable';
 import { Input } from 'antd';
 import './css/TagGroup.css';
 import { stopPropagation, preventDefault } from '../utils/LineUtil';
-import { ContextMenuProps } from '../canvas/core';
+import { ContextMenuProps, CoordinatesProps } from '../canvas/core';
 import NinoZone from '../canvas/nino-zone';
 import { LineProps } from './LineGroup';
 
 export type TagGroupRenderItem = {
-  item: { input: string; x: number; y: number };
+  item: CoordinatesProps & { input: string };
   key: string;
   className: string;
   onContextMenu?: ({ event, key, group }: ContextMenuProps) => void;
 };
 export type TagGroupItem = {
-  [key: string]: {
-    x: number;
-    y: number;
+  [key: string]: CoordinatesProps & {
     input: string;
     editable: boolean;
     className?: string;
