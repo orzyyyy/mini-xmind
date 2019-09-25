@@ -10,16 +10,13 @@ const onDragStart = (e: any, item: any) => {
 const Toolbar = () => (
   <div className="Toolbar">
     <ul>
-      <li draggable onDragStart={e => onDragStart(e, { value: 'line' })}>
+      <li draggable onDragStart={e => onDragStart(e, { type: 'line' })}>
         <Minus />
       </li>
-      <li draggable onDragStart={e => onDragStart(e, { value: 'block' })}>
+      <li draggable onDragStart={e => onDragStart(e, { type: 'block' })}>
         <Border />
       </li>
-      <li
-        draggable
-        onDragStart={e => onDragStart(e, { value: 'tag', editable: true })}
-      >
+      <li draggable onDragStart={e => onDragStart(e, { type: 'tag' })}>
         <Tag />
       </li>
     </ul>

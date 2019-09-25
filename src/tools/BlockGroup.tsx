@@ -2,18 +2,18 @@ import React from 'react';
 import Draggable from 'react-draggable';
 import { stopPropagation, preventDefault } from '../utils/LineUtil';
 import './css/BlockGroup.css';
-import { ContextMenuProps, DataSource } from '../canvas/core';
+import { ContextMenuProps, DataSource, CoordinatesProps } from '../canvas/core';
 import { LineProps } from './LineGroup';
 import NinoZone, { getTargetDom } from '../canvas/nino-zone';
 import classNames from 'classnames';
 
-export type BlockProps = { [blockKey: string]: { x: number; y: number } };
+export type BlockProps = { [blockKey: string]: CoordinatesProps };
 export interface BlockGroupProps {
   className?: string;
   data: BlockProps;
   lineData: LineProps;
   onChange: (data: DataSource, blockDOM: any) => void;
-  offset?: { x: number; y: number };
+  offset?: CoordinatesProps;
   onContextMenu: (item: ContextMenuProps) => void;
 }
 export interface BlockGroupState {
@@ -23,16 +23,16 @@ export interface BlockGroupState {
 
 export const updateLineDataByTargetDom = (
   lineData: LineProps,
-  targetBlockDOM: any,
+  targetDom: any = {},
 ) => {
   for (const key of Object.keys(lineData)) {
     const { fromKey, toKey } = lineData[key];
-    for (const blockKey of Object.keys(targetBlockDOM)) {
-      const value = targetBlockDOM[blockKey];
-      if (fromKey === blockKey) {
+    for (const targetKey of Object.keys(targetDom)) {
+      const value = targetDom[targetKey];
+      if (fromKey === targetKey) {
         lineData[key].from = value;
       }
-      if (toKey === blockKey) {
+      if (toKey === targetKey) {
         lineData[key].to = value;
       }
     }

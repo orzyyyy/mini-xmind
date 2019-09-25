@@ -12,79 +12,63 @@ import BlockGroup, {
   updateLineDataByTargetDom,
 } from '../tools/BlockGroup';
 import Draggable from 'react-draggable';
-import { TagProps } from 'antd/lib/tag';
 import { setClickList, getTargetDom, setLineMapping } from './nino-zone';
 import { OrientationProps } from '../line/SteppedLine';
 
-export type CanvasPositionProps = {
+export interface CoordinatesProps {
   x: number;
   y: number;
-  z: number;
-  gap: number;
-};
+}
 export type DataSource = {
-  CanvasPosition?: CanvasPositionProps;
-  BlockGroup?: BlockProps;
-  TagGroup?: TagGroupItem;
-  LineGroup?: LineProps;
+  position?: {
+    [key: string]: CoordinatesProps;
+  };
+  block?: BlockProps;
+  tag?: TagGroupItem;
+  line?: LineProps;
+  current?: string;
 };
 export interface CanvasProps {
   className?: string;
   data: DataSource;
   orientation?: OrientationProps;
-  blockClassName?: string;
-  tagClassName?: string;
-  lineClassName?: string;
-  onChange?: (item: DataSource) => void;
-  onWheel?: (item: DataSource, event?: any) => void;
-  onClick?: () => void;
+  onChange: (item: DataSource) => void;
   arrowStatus?: [boolean, boolean, boolean];
-}
-export interface CanvasState {
-  newBlockProps?: BlockProps;
-  newLinesProps?: LineProps;
-  newTagProps?: TagProps;
-  newPosition?: CanvasPositionProps;
 }
 export type ContextMenuProps = {
   event: Event;
   key: string;
-  group: string;
+  group: 'block-group' | 'tag-group';
 };
-
-export const defaultCanvasPosition = { x: 0, y: 0, z: 0, gap: 1 };
 
 const Canvas = ({
   className,
   orientation = 'horizonal',
-  blockClassName,
-  tagClassName,
-  lineClassName,
   data,
   onChange,
-  onWheel,
   arrowStatus,
   ...rest
 }: CanvasProps) => {
-  let blockProps = (data && data.BlockGroup) || {};
-  let linesProps = (data && data.LineGroup) || {};
-  let tagProps = (data && data.TagGroup) || {};
-  let position = (data && data.CanvasPosition) || defaultCanvasPosition;
+  const { block = {}, line = {}, tag = {}, current = 'root' } = data;
+  const position = (data.position && data.position[current]) || {
+    x: -1,
+    y: -1,
+  };
 
   useEffect(() => {
-    setLineMapping(linesProps);
-  }, [linesProps]);
+    setLineMapping(line);
+  }, [line]);
 
-  const handleBlockChange = (newBlockProps: BlockProps, blockDOM: any) => {
+  const handleBlockChange = (newBlock: BlockProps, blockDOM: any) => {
     if (onChange) {
-      const newLinesProps = updateLineDataByTargetDom(linesProps, blockDOM);
-      onChange(getTarData({ newBlockProps, newLinesProps }));
+      const newLine = updateLineDataByTargetDom(line, blockDOM);
+      onChange(getMergedData({ block: newBlock, line: newLine }));
     }
   };
 
-  const handleTagChange = (newTagProps: TagGroupItem) => {
+  const handleTagChange = (newTag: TagGroupItem) => {
     if (onChange) {
-      onChange(getTarData({ newTagProps }));
+      onChange(getMergedData({ tag: newTag }));
     }
   };
 
@@ -94,39 +78,27 @@ const Canvas = ({
       return false;
     }
     dragItem = dragItem ? JSON.parse(dragItem) : {};
-    const { value } = dragItem;
+    const { type }: { type: 'block' | 'tag' } = dragItem;
     const { clientX, clientY } = e;
-    let targetName: 'newBlockProps' | 'newTagProps' | 'unknown';
     const result: any = {};
     const x = clientX - position.x;
     const y = clientY - position.y;
-    const key = generateKey(value);
+    const key = generateKey(type);
 
-    switch (value) {
-      case 'block':
-        targetName = 'newBlockProps';
-        result[key] = { x, y };
-        break;
+    result[key] = { x, y };
 
-      case 'tag':
-        targetName = 'newTagProps';
-        result[key] = { x, y, editable: true };
-        break;
-
-      default:
-        targetName = 'unknown';
-        break;
+    if (type === 'tag') {
+      result[key]['editable'] = true;
     }
 
     if (onChange) {
-      onChange(getTarData({ [targetName]: result }));
+      onChange(getMergedData({ [type]: result }));
     }
   };
 
-  const handleDrag = (_: any, { x, y }: { x: number; y: number }) => {
-    const newPosition = Object.assign({}, position, { x, y });
+  const handleDrag = (_: any, newPosition: CoordinatesProps) => {
     if (onChange) {
-      onChange(getTarData({ newPosition }));
+      onChange(getMergedData({ position: newPosition }));
     }
   };
 
@@ -139,59 +111,54 @@ const Canvas = ({
     preventDefault(event);
     switch (group) {
       case 'block-group':
-        delete blockProps[key];
+        delete block[key];
         break;
 
       case 'tag-group':
-        delete tagProps[key];
+        delete tag[key];
         break;
 
       default:
         break;
     }
-    for (const lineKey of Object.keys(linesProps)) {
-      const { fromKey, toKey } = linesProps[lineKey];
+    for (const lineKey of Object.keys(line)) {
+      const { fromKey, toKey } = line[lineKey];
       if (fromKey === key || toKey === key) {
-        delete linesProps[lineKey];
+        delete line[lineKey];
       }
     }
     if (onChange) {
-      onChange(
-        getTarData({
-          newBlockProps: blockProps,
-          newLinesProps: linesProps,
-          newTagProps: tagProps,
-        }),
-      );
+      onChange(getMergedData({ block, line, tag }));
     }
   };
 
-  const handleOnWhell = (e: any) => {
-    if (onWheel) {
-      onWheel(getTarData({}), e);
-    }
-  };
-
-  const getTarData = ({
-    newBlockProps,
-    newLinesProps,
-    newTagProps,
-    newPosition,
-  }: CanvasState) => {
+  const getMergedData = ({
+    block: newBlock,
+    line: newLine,
+    tag: newTag,
+    position: newPosition,
+    current: newCurrent = current,
+  }: {
+    block?: BlockProps;
+    tag?: TagGroupItem;
+    line?: LineProps;
+    position?: CoordinatesProps;
+    current?: string;
+  }): DataSource => {
     return {
-      BlockGroup: Object.assign({}, blockProps, newBlockProps),
-      LineGroup: Object.assign({}, linesProps, newLinesProps),
-      TagGroup: Object.assign({}, tagProps, newTagProps),
-      CanvasPosition: Object.assign({}, position, newPosition),
+      block: Object.assign({}, block, newBlock),
+      line: Object.assign({}, line, newLine),
+      tag: Object.assign({}, tag, newTag),
+      position: { [newCurrent]: Object.assign({}, position, newPosition) },
+      current: newCurrent,
     };
   };
 
   const renderLineGroup = (targetDom: any) => (
     <LineGroup
-      data={updateLineDataByTargetDom(linesProps, targetDom)}
+      data={updateLineDataByTargetDom(line, targetDom)}
       offset={position}
       orientation={orientation}
-      className={lineClassName}
       arrowStatus={arrowStatus}
     />
   );
@@ -206,24 +173,21 @@ const Canvas = ({
         className={classNames('Canvas', className)}
         onDragOver={preventDefault}
         onDrop={onDrop}
-        onWheel={handleOnWhell}
         {...rest}
       >
         {
           <>
             <BlockGroup
               offset={position}
-              data={blockProps}
+              data={block}
               onChange={handleBlockChange}
-              lineData={linesProps}
-              className={blockClassName}
+              lineData={line}
               onContextMenu={handleRightClick}
             />
             <TagGroup
-              data={tagProps}
+              data={tag}
               onChange={handleTagChange}
-              className={tagClassName}
-              lineData={linesProps}
+              lineData={line}
               onContextMenu={handleRightClick}
             />
           </>

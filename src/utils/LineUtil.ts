@@ -1,3 +1,5 @@
+import { CoordinatesProps } from '../canvas/core';
+
 //   _________
 //  |         |
 //  | from    |
@@ -47,8 +49,8 @@
 //                |_________|
 //
 export const getPlacement = (
-  { x: x0, y: y0 }: { x: number; y: number },
-  { x: x1, y: y1 }: { x: number; y: number },
+  { x: x0, y: y0 }: CoordinatesProps,
+  { x: x1, y: y1 }: CoordinatesProps,
 ) => {
   let fromAnchor;
   let toAnchor;
