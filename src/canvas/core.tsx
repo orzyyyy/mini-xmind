@@ -41,13 +41,77 @@ export type ContextMenuProps = {
   group: 'block-group' | 'tag-group';
 };
 
+const filterCurrentElement = (data: DataSource) => {
+  const { current } = data;
+  const target = Object.assign({}, data);
+  if (!current) {
+    const tag: TagGroupItem = {};
+    const block: BlockProps = {};
+    const parents: string[] = [];
+
+    for (const key in data.tag) {
+      const { parent = 'root' } = (data as any).tag[key];
+      if (parent === 'root') {
+        tag[key] = (data as any).tag[key];
+      } else {
+        parents.push(key);
+      }
+    }
+    target.tag = tag;
+
+    for (const key in data.block) {
+      const { parent = 'root' } = (data as any).block[key];
+      if (parent === 'root') {
+        block[key] = (data as any).block[key];
+      } else {
+        parents.push(key);
+      }
+    }
+    target.block = block;
+
+    for (const item of parents) {
+      for (const key in data.line) {
+        const lineItem = data.line[key];
+        if (item === lineItem.toKey || item === lineItem.fromKey) {
+          delete (target as any).line[key];
+        }
+      }
+    }
+
+    return target;
+  }
+
+  const splitArr = current.split('-');
+  const prefix = splitArr.length && splitArr[0];
+  const item = (target as any)[prefix];
+
+  // Handle element
+  const result: any = {};
+  for (const key in item) {
+    const parent = item[key].parent || 'root';
+
+    if (parent === current) {
+      result[parent] = item[parent];
+      result[key] = item[key];
+    }
+  }
+  (target as any)[prefix] = result;
+
+  // Handle line
+  // for (const key in data['line']) {
+  // }
+
+  return target;
+};
+
 const Canvas = ({
   className,
   orientation = 'horizonal',
-  data,
+  data: originData,
   onChange,
   arrowStatus,
 }: CanvasProps) => {
+  const data = filterCurrentElement(originData);
   const { block = {}, line = {}, tag = {}, current = 'root' } = data;
   const position = (data.position && data.position[current]) || {
     x: -1,
