@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import LineGroup, { LineProps } from '../tools/LineGroup';
 import {
@@ -47,13 +47,13 @@ const Canvas = ({
   data,
   onChange,
   arrowStatus,
-  ...rest
 }: CanvasProps) => {
   const { block = {}, line = {}, tag = {}, current = 'root' } = data;
   const position = (data.position && data.position[current]) || {
     x: -1,
     y: -1,
   };
+  const [zoomHistory, setZoomHistory] = useState([] as string[]);
 
   useEffect(() => {
     setLineMapping(line);
@@ -132,12 +132,32 @@ const Canvas = ({
     }
   };
 
+  const onElementWheel = (data: any) => {
+    if (data.parent && !zoomHistory.includes(data.parent)) {
+      zoomHistory.push(current);
+      setZoomHistory(Array.from(new Set(zoomHistory)));
+
+      if (onChange) {
+        onChange(getMergedData({ current: data.parent }));
+      }
+    }
+  };
+
+  const handleCanvasWheel = (e: any) => {
+    if (e.deltaY > 0 && onChange && zoomHistory.length) {
+      const temp = zoomHistory.pop();
+      const newCurrent = temp === current ? zoomHistory.pop() : temp;
+      setZoomHistory(zoomHistory);
+      onChange(getMergedData({ current: newCurrent }));
+    }
+  };
+
   const getMergedData = ({
     block: newBlock,
     line: newLine,
     tag: newTag,
     position: newPosition,
-    current: newCurrent = current,
+    current: newCurrent,
   }: {
     block?: BlockProps;
     tag?: TagGroupItem;
@@ -145,6 +165,7 @@ const Canvas = ({
     position?: CoordinatesProps;
     current?: string;
   }): DataSource => {
+    newCurrent = newCurrent || current;
     return {
       block: Object.assign({}, block, newBlock),
       line: Object.assign({}, line, newLine),
@@ -173,7 +194,7 @@ const Canvas = ({
         className={classNames('Canvas', className)}
         onDragOver={preventDefault}
         onDrop={onDrop}
-        {...rest}
+        onWheel={handleCanvasWheel}
       >
         {
           <>
@@ -183,12 +204,14 @@ const Canvas = ({
               onChange={handleBlockChange}
               lineData={line}
               onContextMenu={handleRightClick}
+              onWheel={onElementWheel}
             />
             <TagGroup
               data={tag}
               onChange={handleTagChange}
               lineData={line}
               onContextMenu={handleRightClick}
+              onWheel={onElementWheel}
             />
           </>
         }

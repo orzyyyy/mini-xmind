@@ -5,6 +5,7 @@ import { ContextMenuProps, DataSource } from './core';
 import { BlockProps } from '../tools/BlockGroup';
 import { LineProps } from '../tools/LineGroup';
 
+export type ScrollDirection = 'up' | 'down';
 export interface NinoZoneProps {
   targetKey: string;
   onContextMenu?: (item: ContextMenuProps) => void;
@@ -14,6 +15,7 @@ export interface NinoZoneProps {
   name: 'block-group' | 'tag-group';
   className?: string;
   children?: any;
+  onWheel: (data: any, scrollDirection?: ScrollDirection) => void;
 }
 
 let targetDom: any = {};
@@ -104,6 +106,7 @@ const NinoZone = ({
   name,
   className,
   children,
+  onWheel,
 }: NinoZoneProps) => {
   const saveRef = (targetRef: HTMLDivElement | null) => {
     if (targetRef) {
@@ -157,6 +160,11 @@ const NinoZone = ({
       onClick={onClick}
       ref={saveRef}
       className={className}
+      onWheel={e => {
+        if (e.deltaY <= 0) {
+          onWheel((data as any)[targetKey]);
+        }
+      }}
       onContextMenu={(e: any) => {
         onContextMenu &&
           onContextMenu({
