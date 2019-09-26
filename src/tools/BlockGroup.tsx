@@ -7,7 +7,9 @@ import { LineProps } from './LineGroup';
 import NinoZone, { getTargetDom } from '../canvas/nino-zone';
 import classNames from 'classnames';
 
-export type BlockProps = { [blockKey: string]: CoordinatesProps };
+export type BlockProps = {
+  [blockKey: string]: CoordinatesProps & { children?: string[] };
+};
 export interface BlockGroupProps {
   className?: string;
   data: BlockProps;
@@ -15,6 +17,7 @@ export interface BlockGroupProps {
   onChange: (data: DataSource, blockDOM: any) => void;
   offset?: CoordinatesProps;
   onContextMenu: (item: ContextMenuProps) => void;
+  onWheel: (data: BlockGroupProps, key: string, event: any) => void;
 }
 export interface BlockGroupState {
   data?: DataSource;
@@ -51,6 +54,7 @@ const BlockGroup = ({
   onChange,
   lineData,
   onContextMenu,
+  onWheel,
 }: BlockGroupProps) => {
   const handleDrag = ({ x, y }: CoordinatesProps, blockKey: string) => {
     if (onChange) {
@@ -72,7 +76,12 @@ const BlockGroup = ({
             onStart={handleDragStart}
             key={blockKey}
           >
-            <div>
+            <div
+              style={{
+                transition:
+                  'transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)',
+              }}
+            >
               <NinoZone
                 className={classNames(
                   'block-group',
@@ -87,6 +96,7 @@ const BlockGroup = ({
                 name="block-group"
                 onChange={onChange}
                 key={`nino-zone-${blockKey}`}
+                onWheel={onWheel}
               />
             </div>
           </Draggable>

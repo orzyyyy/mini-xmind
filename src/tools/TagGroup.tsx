@@ -19,6 +19,7 @@ export type TagGroupItem = {
     input: string;
     editable: boolean;
     className?: string;
+    children?: string[];
   };
 };
 export interface TagGroupProps {
@@ -27,6 +28,7 @@ export interface TagGroupProps {
   className?: string;
   onContextMenu: (item: ContextMenuProps) => void;
   lineData: LineProps;
+  onWheel: (data: TagGroupItem, key: string, event: any) => void;
 }
 export interface TagGroupState {
   data: TagGroupItem;
@@ -43,6 +45,7 @@ const TagGroup = ({
   onContextMenu,
   className: parentClassName,
   lineData,
+  onWheel,
 }: TagGroupProps) => {
   const handleChange = (
     item: any,
@@ -95,7 +98,12 @@ const TagGroup = ({
       position={{ x: item.x, y: item.y }}
       onDrag={(_: any, jtem: any) => handleDrag(jtem, key)}
     >
-      <div onDoubleClick={() => handleChange(item, key, 'editable', true)}>
+      <div
+        onDoubleClick={() => handleChange(item, key, 'editable', true)}
+        style={{
+          transition: 'transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)',
+        }}
+      >
         <NinoZone
           className={className}
           onContextMenu={onContextMenu}
@@ -105,6 +113,7 @@ const TagGroup = ({
           targetKey={key}
           data={data}
           lineData={lineData}
+          onWheel={onWheel}
         >
           {item.input}
         </NinoZone>

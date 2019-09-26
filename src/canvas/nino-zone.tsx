@@ -14,6 +14,7 @@ export interface NinoZoneProps {
   name: 'block-group' | 'tag-group';
   className?: string;
   children?: any;
+  onWheel: (data: any, targetKey: string, event: any) => void;
 }
 
 let targetDom: any = {};
@@ -104,6 +105,7 @@ const NinoZone = ({
   name,
   className,
   children,
+  onWheel,
 }: NinoZoneProps) => {
   const saveRef = (targetRef: HTMLDivElement | null) => {
     if (targetRef) {
@@ -157,6 +159,11 @@ const NinoZone = ({
       onClick={onClick}
       ref={saveRef}
       className={className}
+      onWheel={e => {
+        if (e.deltaY <= 0) {
+          onWheel((data as any)[targetKey], targetKey, e);
+        }
+      }}
       onContextMenu={(e: any) => {
         onContextMenu &&
           onContextMenu({

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import LineGroup, { LineProps } from '../tools/LineGroup';
 import {
@@ -41,19 +41,85 @@ export type ContextMenuProps = {
   group: 'block-group' | 'tag-group';
 };
 
+const filterCurrentElement = (data: DataSource) => {
+  const { current } = data;
+  const target = JSON.parse(JSON.stringify(data));
+  if (!current || current === 'root') {
+    const childrenList: string[] = [];
+
+    for (const key in target) {
+      const value = (target as any)[key];
+      for (const innerKey in value) {
+        const innerValue = value[innerKey];
+        if (innerValue.children) {
+          childrenList.push(...innerValue.children);
+        }
+      }
+    }
+
+    // Handle with Line
+    for (const key in target.line) {
+      const value = target.line[key];
+      for (const item of childrenList) {
+        if (value.fromKey === item || value.toKey === item) {
+          delete target.line[key];
+        }
+      }
+    }
+
+    // Handle with Groups
+    for (const key in target) {
+      const value = (target as any)[key];
+      for (const innerKey in value) {
+        for (const item of childrenList) {
+          if (innerKey === item) {
+            delete value[innerKey];
+          }
+        }
+      }
+    }
+
+    return target;
+  }
+
+  const splitArr = current.split('-');
+  const prefix = splitArr.length && splitArr[0];
+  const targetSet = (target as any)[prefix];
+  const { children } = targetSet[current];
+  const instance: TagGroupItem = {};
+
+  // Handle element
+  instance[current] = targetSet[current];
+  for (const item of children) {
+    instance[item] = targetSet[item];
+  }
+  target[prefix] = instance;
+
+  // Handle with Line
+  for (const key in target.line) {
+    const value = target.line[key];
+    if (!children.includes(value.fromKey) && !children.includes(value.toKey)) {
+      delete target.line[key];
+    }
+  }
+
+  return target;
+};
+
 const Canvas = ({
   className,
   orientation = 'horizonal',
-  data,
+  data: originData,
   onChange,
   arrowStatus,
-  ...rest
 }: CanvasProps) => {
+  const data = filterCurrentElement(originData);
   const { block = {}, line = {}, tag = {}, current = 'root' } = data;
   const position = (data.position && data.position[current]) || {
     x: -1,
     y: -1,
   };
+  const [zoomHistory, setZoomHistory] = useState([] as string[]);
 
   useEffect(() => {
     setLineMapping(line);
@@ -132,12 +198,32 @@ const Canvas = ({
     }
   };
 
+  const onElementWheel = (data: any, key: string) => {
+    if (data.children && !zoomHistory.includes(key)) {
+      zoomHistory.push(current);
+      setZoomHistory(Array.from(new Set(zoomHistory)));
+
+      if (onChange) {
+        onChange(getMergedData({ ...originData, current: key } as any));
+      }
+    }
+  };
+
+  const handleCanvasWheel = (e: any) => {
+    if (e.deltaY > 0 && onChange && zoomHistory.length) {
+      const temp = zoomHistory.pop();
+      const newCurrent = temp === current ? zoomHistory.pop() : temp;
+      setZoomHistory(zoomHistory);
+      onChange(getMergedData({ ...originData, current: newCurrent } as any));
+    }
+  };
+
   const getMergedData = ({
     block: newBlock,
     line: newLine,
     tag: newTag,
     position: newPosition,
-    current: newCurrent = current,
+    current: newCurrent,
   }: {
     block?: BlockProps;
     tag?: TagGroupItem;
@@ -145,11 +231,14 @@ const Canvas = ({
     position?: CoordinatesProps;
     current?: string;
   }): DataSource => {
+    newCurrent = newCurrent || current;
     return {
       block: Object.assign({}, block, newBlock),
       line: Object.assign({}, line, newLine),
       tag: Object.assign({}, tag, newTag),
-      position: { [newCurrent]: Object.assign({}, position, newPosition) },
+      position: {
+        [newCurrent as string]: Object.assign({}, position, newPosition),
+      },
       current: newCurrent,
     };
   };
@@ -173,7 +262,7 @@ const Canvas = ({
         className={classNames('Canvas', className)}
         onDragOver={preventDefault}
         onDrop={onDrop}
-        {...rest}
+        onWheel={handleCanvasWheel}
       >
         {
           <>
@@ -183,12 +272,14 @@ const Canvas = ({
               onChange={handleBlockChange}
               lineData={line}
               onContextMenu={handleRightClick}
+              onWheel={onElementWheel}
             />
             <TagGroup
               data={tag}
               onChange={handleTagChange}
               lineData={line}
               onContextMenu={handleRightClick}
+              onWheel={onElementWheel}
             />
           </>
         }
