@@ -240,6 +240,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
       },
     }
   }
+  onChange={[MockFunction]}
 >
   <Draggable
     allowAnyClick={false}
@@ -2404,6 +2405,7 @@ exports[`Canvas Canvas renders correctly 2`] = `
       },
     }
   }
+  onChange={[MockFunction]}
 >
   <Draggable
     allowAnyClick={false}

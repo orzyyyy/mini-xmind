@@ -11,52 +11,86 @@ import {
 
 const defaultCheckBlockClickList1 = {
   'block-73377': {
-    current: {
-      bottom: 616,
-      height: 80,
-      left: 361,
-      right: 461,
-      top: 536,
-      width: 100,
-      x: 361,
-      y: 536,
-    },
-    time: 1566984174971,
+    x: 361,
+    y: 536,
   },
   'block-624018': {
-    current: {
-      bottom: 260,
-      height: 80,
-      left: 359,
-      right: 459,
-      top: 180,
-      width: 100,
-      x: 359,
-      y: 180,
+    x: 359,
+    y: 180,
+  },
+};
+const defaultLineData = {
+  'line-762482': {
+    from: {
+      bottom: 712,
+      height: 21,
+      left: 670,
+      right: 700.359375,
+      top: 691,
+      width: 30.359375,
+      x: 670,
+      y: 691,
     },
-    time: 1566984176547,
+    fromKey: 'tag-491321',
+    to: {
+      bottom: 612,
+      height: 21,
+      left: 570,
+      right: 600.359375,
+      top: 591,
+      width: 30.359375,
+      x: 570,
+      y: 591,
+    },
+    toKey: 'tag-491320',
+  },
+  'line-758626': {
+    from: {
+      bottom: 412,
+      height: 21,
+      left: 670,
+      right: 700.359375,
+      top: 391,
+      width: 30.359375,
+      x: 670,
+      y: 391,
+    },
+    fromKey: 'tag-491323',
+    to: {
+      bottom: 261,
+      height: 21,
+      left: 464,
+      right: 494.359375,
+      top: 240,
+      width: 30.359375,
+      x: 464,
+      y: 240,
+    },
+    toKey: 'tag-476280',
   },
 };
 
 describe('BlockGroup', () => {
-  it("when lineData is null, onChange shouldn't be called", () => {
+  it('when lineData is undefined, onChange should not be called', () => {
     const onChange = jest.fn();
-    const renderLine = jest.fn();
+    const onContextMenu = jest.fn();
+    const onWheel = jest.fn();
     mount(
       <BlockGroup
         data={{
           'block-442566': {
             x: 571,
             y: 320,
-            style: {
-              width: 100,
-              height: 80,
-            },
+          },
+          'block-442567': {
+            x: 771,
+            y: 520,
           },
         }}
-        lineData={undefined}
+        lineData={defaultLineData}
         onChange={onChange}
-        renderLine={renderLine}
+        onContextMenu={onContextMenu}
+        onWheel={onWheel}
       />,
     );
     expect(onChange).not.toBeCalled();
@@ -64,22 +98,20 @@ describe('BlockGroup', () => {
 
   it('when dragging, onChange should be called', () => {
     const onChange = jest.fn();
-    const renderLine = jest.fn();
-    const wrapper = mount(
+    const onContextMenu = jest.fn();
+    const onWheel = jest.fn();
+    const wrapper: any = mount(
       <BlockGroup
         data={{
           'block-442566': {
             x: 571,
             y: 320,
-            style: {
-              width: 100,
-              height: 80,
-            },
           },
         }}
-        lineData={undefined}
+        lineData={defaultLineData}
         onChange={onChange}
-        renderLine={renderLine}
+        onContextMenu={onContextMenu}
+        onWheel={onWheel}
       />,
     );
     wrapper
@@ -91,14 +123,16 @@ describe('BlockGroup', () => {
 
   it('handleBlockClick', () => {
     MockDate.set(new Date('2019-04-09T00:00:00'));
-    const renderLine = jest.fn();
     const onChange = jest.fn();
-    const wrapper = mount(
+    const onContextMenu = jest.fn();
+    const onWheel = jest.fn();
+    const wrapper: any = mount(
       <BlockGroup
         data={defaultCheckBlockClickList1}
-        lineData={{ 'line-test': {} }}
+        lineData={defaultLineData}
         onChange={onChange}
-        renderLine={renderLine}
+        onContextMenu={onContextMenu}
+        onWheel={onWheel}
       />,
     );
     setClickList({}, true);
@@ -126,6 +160,16 @@ describe('BlockGroup', () => {
         x: 0,
         y: 0,
       },
+      'block-442567': {
+        bottom: 0,
+        height: 0,
+        left: 0,
+        right: 0,
+        top: 0,
+        width: 0,
+        x: 0,
+        y: 0,
+      },
       'block-624018': {},
       'block-73377': {},
     });
@@ -141,28 +185,28 @@ describe('BlockGroup', () => {
         .at(1)
         .props()
         .onClick('block-73377'),
-    ).toBe();
+    ).toBe(undefined);
     MockDate.reset();
   });
 
   it('handleDragStart', () => {
     const stopPropagation = jest.fn();
     const preventDefault = jest.fn();
-    const renderLine = jest.fn();
-    const wrapper = mount(
+    const onChange = jest.fn();
+    const onContextMenu = jest.fn();
+    const onWheel = jest.fn();
+    const wrapper: any = mount(
       <BlockGroup
         data={{
           'block-442566': {
             x: 571,
             y: 320,
-            style: {
-              width: 100,
-              height: 80,
-            },
           },
         }}
-        lineData={undefined}
-        renderLine={renderLine}
+        lineData={defaultLineData}
+        onChange={onChange}
+        onContextMenu={onContextMenu}
+        onWheel={onWheel}
       />,
     );
     wrapper
@@ -175,23 +219,21 @@ describe('BlockGroup', () => {
   });
 
   it('onContextMenu', () => {
-    const renderLine = jest.fn();
     const onContextMenu = jest.fn();
-    const wrapper = mount(
+    const onChange = jest.fn();
+    const onWheel = jest.fn();
+    const wrapper: any = mount(
       <BlockGroup
         data={{
           'block-442566': {
             x: 571,
             y: 320,
-            style: {
-              width: 100,
-              height: 80,
-            },
           },
         }}
-        lineData={undefined}
-        renderLine={renderLine}
+        lineData={defaultLineData}
         onContextMenu={onContextMenu}
+        onChange={onChange}
+        onWheel={onWheel}
       />,
     );
     wrapper
