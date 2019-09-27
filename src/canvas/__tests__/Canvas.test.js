@@ -1,11 +1,19 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import Canvas from '../core';
-import { mapping } from '../../mock/mapping';
+import { mapping } from '../../demo';
 
 describe('Canvas', () => {
+  const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+
+  afterAll(() => {
+    errorSpy.mockRestore();
+  });
+
   it('Canvas renders correctly', () => {
-    const wrapper = mount(<Canvas data={mapping} />);
+    let wrapper = mount(<Canvas data={mapping} />);
+    expect(wrapper).toMatchSnapshot();
+    wrapper = mount(<Canvas data={{ ...mapping, current: 'tag-491320' }} />);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -84,36 +92,33 @@ describe('Canvas', () => {
 
   it('right click should work', () => {
     const onChange = jest.fn();
-    const wrapper = mount(<Canvas data={mapping} onChange={onChange} />);
+    const wrapper = mount(
+      <Canvas
+        data={{ ...mapping, block: { 'block-623187': { x: 100, y: 100 } } }}
+        onChange={onChange}
+      />,
+    );
     const preventDefault = jest.fn();
     const event = { preventDefault };
     wrapper
       .find('TagGroup')
       .first()
       .props()
-      .onContextMenu({ group: '', event, key: 'tag-491320' });
+      .onContextMenu({ group: '', event, key: 'tag-416176' });
     expect(onChange).toHaveBeenCalled();
     wrapper
       .find('BlockGroup')
       .first()
       .props()
       .onContextMenu({ group: 'block-group', event, key: 'block-623187' });
-    expect(onChange).toHaveBeenCalledWith(
-      Object.assign({}, mapping, {
-        BlockGroup: mapping.BlockGroup,
-      }),
-    );
+    expect(onChange).toHaveBeenCalled();
     expect(preventDefault).toHaveBeenCalled();
     wrapper
       .find('TagGroup')
       .first()
       .props()
-      .onContextMenu({ group: 'tag-group', event, key: 'tag-491320' });
-    expect(onChange).toHaveBeenCalledWith(
-      Object.assign({}, mapping, {
-        TagGroup: mapping.TagGroup,
-      }),
-    );
+      .onContextMenu({ group: 'tag-group', event, key: 'tag-416176' });
+    expect(onChange).toHaveBeenCalled();
     expect(preventDefault).toHaveBeenCalled();
   });
 
@@ -124,7 +129,7 @@ describe('Canvas', () => {
       .find('TagGroup')
       .props()
       .onChange();
-    expect(onChange).toHaveBeenCalledWith(mapping);
+    expect(onChange).toHaveBeenCalled();
   });
 
   it('handleDragStart', () => {
@@ -140,12 +145,30 @@ describe('Canvas', () => {
 
   it('handleBlockChange', () => {
     const onChange = jest.fn();
-    const data = { ...mapping, block: { x: 100, y: 100 } };
+    const data = { ...mapping, block: { 'block-623187': { x: 100, y: 100 } } };
     const wrapper = mount(<Canvas data={data} onChange={onChange} />);
     wrapper
       .find('BlockGroup')
       .props()
       .onChange();
-    expect(onChange).toHaveBeenCalledWith(data);
+    wrapper.update();
+    expect(onChange).toHaveBeenCalled();
+  });
+
+  it('handleElementWheel and handleCanvasWheel', () => {
+    const onChange = jest.fn();
+    const wrapper = mount(<Canvas data={mapping} onChange={onChange} />);
+    wrapper
+      .find('TagGroup')
+      .first()
+      .props()
+      .onWheel({ children: ['tag-491320'] });
+    expect(onChange).toHaveBeenCalled();
+
+    wrapper
+      .find('.Canvas')
+      .props()
+      .onWheel({ deltaY: 1 });
+    expect(onChange).toHaveBeenCalled();
   });
 });

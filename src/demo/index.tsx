@@ -3,7 +3,7 @@ import Canvas, { DataSource } from '../canvas/core';
 import Toolbar from '../tools/Toolbar';
 import './css/demo.css';
 
-const mapping = {
+export const mapping = {
   block: {},
   line: {
     'line-446586': {
