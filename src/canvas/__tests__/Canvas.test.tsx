@@ -11,16 +11,22 @@ describe('Canvas', () => {
   });
 
   it('Canvas renders correctly', () => {
-    let wrapper = mount(<Canvas data={mapping} />);
+    const onChange = jest.fn();
+    let wrapper = mount(<Canvas data={mapping} onChange={onChange} />);
     expect(wrapper).toMatchSnapshot();
-    wrapper = mount(<Canvas data={{ ...mapping, current: 'tag-491320' }} />);
+    wrapper = mount(
+      <Canvas
+        data={{ ...mapping, current: 'tag-491320' }}
+        onChange={onChange}
+      />,
+    );
     expect(wrapper).toMatchSnapshot();
   });
 
   it('onDrop should return when dragItem is null', () => {
     const onChange = jest.fn();
-    const wrapper = mount(<Canvas data={mapping} onChange={onChange} />);
-    const event = {};
+    const wrapper: any = mount(<Canvas data={mapping} onChange={onChange} />);
+    const event: any = {};
     event.dataTransfer = {};
     event.dataTransfer.getData = () => {
       return false;
@@ -45,8 +51,8 @@ describe('Canvas', () => {
 
   it('onDrop should update blockProps when droping a Block', () => {
     const onChange = jest.fn();
-    const wrapper = mount(<Canvas data={mapping} onChange={onChange} />);
-    const event = {};
+    const wrapper: any = mount(<Canvas data={mapping} onChange={onChange} />);
+    const event: any = {};
     event.clientX = 100;
     event.clientY = 100;
     event.dataTransfer = {};
@@ -63,8 +69,8 @@ describe('Canvas', () => {
 
   it('onDrop should update tagProps when droping a Tag', () => {
     const onChange = jest.fn();
-    const wrapper = mount(<Canvas data={mapping} onChange={onChange} />);
-    const event = {};
+    const wrapper: any = mount(<Canvas data={mapping} onChange={onChange} />);
+    const event: any = {};
     event.clientX = 100;
     event.clientY = 100;
     event.dataTransfer = {};
@@ -81,7 +87,7 @@ describe('Canvas', () => {
 
   it('handleDrag should work correctly', () => {
     const onChange = jest.fn();
-    const wrapper = mount(<Canvas data={mapping} onChange={onChange} />);
+    const wrapper: any = mount(<Canvas data={mapping} onChange={onChange} />);
     wrapper
       .find('Draggable')
       .first()
@@ -92,7 +98,7 @@ describe('Canvas', () => {
 
   it('right click should work', () => {
     const onChange = jest.fn();
-    const wrapper = mount(
+    const wrapper: any = mount(
       <Canvas
         data={{ ...mapping, block: { 'block-623187': { x: 100, y: 100 } } }}
         onChange={onChange}
@@ -124,7 +130,7 @@ describe('Canvas', () => {
 
   it('handleTagChange', () => {
     const onChange = jest.fn();
-    const wrapper = mount(<Canvas data={mapping} onChange={onChange} />);
+    const wrapper: any = mount(<Canvas data={mapping} onChange={onChange} />);
     wrapper
       .find('TagGroup')
       .props()
@@ -134,7 +140,8 @@ describe('Canvas', () => {
 
   it('handleDragStart', () => {
     const stopPropagation = jest.fn();
-    const wrapper = mount(<Canvas data={mapping} />);
+    const onChange = jest.fn();
+    const wrapper: any = mount(<Canvas data={mapping} onChange={onChange} />);
     wrapper
       .find('Draggable')
       .first()
@@ -146,7 +153,7 @@ describe('Canvas', () => {
   it('handleBlockChange', () => {
     const onChange = jest.fn();
     const data = { ...mapping, block: { 'block-623187': { x: 100, y: 100 } } };
-    const wrapper = mount(<Canvas data={data} onChange={onChange} />);
+    const wrapper: any = mount(<Canvas data={data} onChange={onChange} />);
     wrapper
       .find('BlockGroup')
       .props()
@@ -157,7 +164,7 @@ describe('Canvas', () => {
 
   it('handleElementWheel and handleCanvasWheel', () => {
     const onChange = jest.fn();
-    const wrapper = mount(<Canvas data={mapping} onChange={onChange} />);
+    const wrapper: any = mount(<Canvas data={mapping} onChange={onChange} />);
     wrapper
       .find('TagGroup')
       .first()
