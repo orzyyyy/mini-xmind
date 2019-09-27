@@ -211,6 +211,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
         onMouseUp={[Function]}
         onTouchEnd={[Function]}
         onTouchStart={[Function]}
+        onWheel={[Function]}
         style={
           Object {
             "touchAction": "none",
@@ -329,6 +330,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
           }
           onChange={[Function]}
           onContextMenu={[Function]}
+          onWheel={[Function]}
         />
         <TagGroup
           data={
@@ -479,6 +481,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
           }
           onChange={[Function]}
           onContextMenu={[Function]}
+          onWheel={[Function]}
         >
           <Draggable
             allowAnyClick={false}
@@ -694,12 +697,14 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   name="tag-group"
                   onChange={[Function]}
                   onContextMenu={[Function]}
+                  onWheel={[Function]}
                   targetKey="tag-416176"
                 >
                   <div
                     className="tag-group animate-appear"
                     onClick={[Function]}
                     onContextMenu={[Function]}
+                    onWheel={[Function]}
                   >
                     test
                   </div>
@@ -921,12 +926,14 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   name="tag-group"
                   onChange={[Function]}
                   onContextMenu={[Function]}
+                  onWheel={[Function]}
                   targetKey="tag-439992"
                 >
                   <div
                     className="tag-group animate-appear"
                     onClick={[Function]}
                     onContextMenu={[Function]}
+                    onWheel={[Function]}
                   >
                     test2
                   </div>
@@ -1148,12 +1155,14 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   name="tag-group"
                   onChange={[Function]}
                   onContextMenu={[Function]}
+                  onWheel={[Function]}
                   targetKey="tag-443720"
                 >
                   <div
                     className="tag-group animate-appear"
                     onClick={[Function]}
                     onContextMenu={[Function]}
+                    onWheel={[Function]}
                   >
                     test3
                   </div>
@@ -1375,12 +1384,14 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   name="tag-group"
                   onChange={[Function]}
                   onContextMenu={[Function]}
+                  onWheel={[Function]}
                   targetKey="tag-476280"
                 >
                   <div
                     className="tag-group animate-appear"
                     onClick={[Function]}
                     onContextMenu={[Function]}
+                    onWheel={[Function]}
                   >
                     test4
                   </div>
@@ -1602,12 +1613,14 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   name="tag-group"
                   onChange={[Function]}
                   onContextMenu={[Function]}
+                  onWheel={[Function]}
                   targetKey="tag-491320"
                 >
                   <div
                     className="tag-group animate-appear"
                     onClick={[Function]}
                     onContextMenu={[Function]}
+                    onWheel={[Function]}
                   >
                     test5
                   </div>
@@ -1829,12 +1842,14 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   name="tag-group"
                   onChange={[Function]}
                   onContextMenu={[Function]}
+                  onWheel={[Function]}
                   targetKey="tag-491321"
                 >
                   <div
                     className="tag-group animate-appear"
                     onClick={[Function]}
                     onContextMenu={[Function]}
+                    onWheel={[Function]}
                   >
                     test6
                   </div>

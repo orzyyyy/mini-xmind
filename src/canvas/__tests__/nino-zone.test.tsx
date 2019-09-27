@@ -111,6 +111,7 @@ describe('nino-zone', () => {
 
   it('should not render redundant line', () => {
     const onChange = jest.fn();
+    const onWheel = jest.fn();
     const wrapper = mount(
       <NinoZone
         onChange={onChange}
@@ -124,6 +125,7 @@ describe('nino-zone', () => {
           } as any
         }
         lineData={{}}
+        onWheel={onWheel}
       />,
     );
     setClickList({ test: 1 }, true);
