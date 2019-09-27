@@ -162,9 +162,9 @@ const Canvas = ({
     }
   };
 
-  const handleDrag = (_: any, newPosition: CoordinatesProps) => {
+  const handleDrag = (_: any, { x, y }: CoordinatesProps) => {
     if (onChange) {
-      onChange(getMergedData({ position: newPosition }));
+      onChange(getMergedData({ position: { x, y } }));
     }
   };
 
@@ -198,13 +198,13 @@ const Canvas = ({
     }
   };
 
-  const onElementWheel = (data: any, key: string) => {
+  const handleElementWheel = (data: any, key: string) => {
     if (data.children && !zoomHistory.includes(key)) {
       zoomHistory.push(current);
       setZoomHistory(Array.from(new Set(zoomHistory)));
 
       if (onChange) {
-        onChange(getMergedData({ ...originData, current: key } as any));
+        onChange(getMergedData({ current: key }));
       }
     }
   };
@@ -214,7 +214,7 @@ const Canvas = ({
       const temp = zoomHistory.pop();
       const newCurrent = temp === current ? zoomHistory.pop() : temp;
       setZoomHistory(zoomHistory);
-      onChange(getMergedData({ ...originData, current: newCurrent } as any));
+      onChange(getMergedData({ current: newCurrent }));
     }
   };
 
@@ -232,12 +232,13 @@ const Canvas = ({
     current?: string;
   }): DataSource => {
     newCurrent = newCurrent || current;
+    const originPosition = (originData.position as any)[current];
     return {
-      block: Object.assign({}, block, newBlock),
-      line: Object.assign({}, line, newLine),
-      tag: Object.assign({}, tag, newTag),
+      block: Object.assign({}, originData.block, newBlock),
+      line: Object.assign({}, originData.line, newLine),
+      tag: Object.assign({}, originData.tag, newTag),
       position: {
-        [newCurrent as string]: Object.assign({}, position, newPosition),
+        [newCurrent as string]: Object.assign({}, originPosition, newPosition),
       },
       current: newCurrent,
     };
@@ -272,14 +273,14 @@ const Canvas = ({
               onChange={handleBlockChange}
               lineData={line}
               onContextMenu={handleRightClick}
-              onWheel={onElementWheel}
+              onWheel={handleElementWheel}
             />
             <TagGroup
               data={tag}
               onChange={handleTagChange}
               lineData={line}
               onContextMenu={handleRightClick}
-              onWheel={onElementWheel}
+              onWheel={handleElementWheel}
             />
           </>
         }
