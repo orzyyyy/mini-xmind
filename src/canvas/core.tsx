@@ -125,16 +125,17 @@ const Canvas = ({
     setLineMapping(line);
   }, [line]);
 
-  const handleBlockChange = (newBlock: BlockProps, blockDOM: any) => {
+  const handleBlockChange = (newBlock: BlockProps, blockDom: any) => {
     if (onChange) {
-      const newLine = updateLineDataByTargetDom(line, blockDOM);
+      const newLine = updateLineDataByTargetDom(line, blockDom);
       onChange(getMergedData({ block: newBlock, line: newLine }));
     }
   };
 
-  const handleTagChange = (newTag: TagGroupItem) => {
+  const handleTagChange = (newTag: TagGroupItem, tagDom: any) => {
     if (onChange) {
-      onChange(getMergedData({ tag: newTag }));
+      const newLine = updateLineDataByTargetDom(line, tagDom);
+      onChange(getMergedData({ tag: newTag, line: newLine }));
     }
   };
 

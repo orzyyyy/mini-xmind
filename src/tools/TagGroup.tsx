@@ -5,7 +5,7 @@ import { Input } from 'antd';
 import './css/TagGroup.css';
 import { stopPropagation, preventDefault } from '../utils/LineUtil';
 import { ContextMenuProps, CoordinatesProps } from '../canvas/core';
-import NinoZone from '../canvas/nino-zone';
+import NinoZone, { getTargetDom } from '../canvas/nino-zone';
 import { LineProps } from './LineGroup';
 
 export type TagGroupRenderItem = {
@@ -24,7 +24,7 @@ export type TagGroupItem = {
 };
 export interface TagGroupProps {
   data: TagGroupItem;
-  onChange: (data: TagGroupItem) => void;
+  onChange: (data: TagGroupItem, tagDom: any) => void;
   className?: string;
   onContextMenu: (item: ContextMenuProps) => void;
   lineData: LineProps;
@@ -57,13 +57,16 @@ const TagGroup = ({
     (data as any)[key][targetKey] = targetValue;
 
     if (onChange) {
-      onChange(Object.assign({}, data, { [key]: item }));
+      onChange(Object.assign({}, data, { [key]: item }), getTargetDom());
     }
   };
 
   const handleDrag = ({ x, y }: any, key: string) => {
     if (onChange) {
-      onChange(Object.assign({}, data, { [key]: { ...data[key], x, y } }));
+      onChange(
+        Object.assign({}, data, { [key]: { ...data[key], x, y } }),
+        getTargetDom(),
+      );
     }
   };
 
