@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import LineGroup, { LineProps } from '../tools/LineGroup';
 import {
@@ -41,34 +41,101 @@ export type ContextMenuProps = {
   group: 'block-group' | 'tag-group';
 };
 
+const filterCurrentElement = (data: DataSource) => {
+  const { current } = data;
+  const target = JSON.parse(JSON.stringify(data));
+  if (!current || current === 'root') {
+    const childrenList: string[] = [];
+
+    for (const key in target) {
+      const value = (target as any)[key];
+      for (const innerKey in value) {
+        const innerValue = value[innerKey];
+        if (innerValue.children) {
+          childrenList.push(...innerValue.children);
+        }
+      }
+    }
+
+    // Handle with Line
+    for (const key in target.line) {
+      const value = target.line[key];
+      for (const item of childrenList) {
+        if (value.fromKey === item || value.toKey === item) {
+          delete target.line[key];
+        }
+      }
+    }
+
+    // Handle with Groups
+    for (const key in target) {
+      const value = (target as any)[key];
+      for (const innerKey in value) {
+        for (const item of childrenList) {
+          if (innerKey === item) {
+            delete value[innerKey];
+          }
+        }
+      }
+    }
+
+    return target;
+  }
+
+  const splitArr = current.split('-');
+  const prefix = splitArr.length && splitArr[0];
+  const targetSet = (target as any)[prefix];
+  const { children } = targetSet[current];
+  const instance: TagGroupItem = {};
+
+  // Handle element
+  instance[current] = targetSet[current];
+  for (const item of children) {
+    instance[item] = targetSet[item];
+  }
+  target[prefix] = instance;
+
+  // Handle with Line
+  for (const key in target.line) {
+    const value = target.line[key];
+    if (!children.includes(value.fromKey) && !children.includes(value.toKey)) {
+      delete target.line[key];
+    }
+  }
+
+  return target;
+};
+
 const Canvas = ({
   className,
   orientation = 'horizonal',
-  data,
+  data: originData,
   onChange,
   arrowStatus,
-  ...rest
 }: CanvasProps) => {
+  const data = filterCurrentElement(originData);
   const { block = {}, line = {}, tag = {}, current = 'root' } = data;
   const position = (data.position && data.position[current]) || {
     x: -1,
     y: -1,
   };
+  const [zoomHistory, setZoomHistory] = useState([] as string[]);
 
   useEffect(() => {
     setLineMapping(line);
   }, [line]);
 
-  const handleBlockChange = (newBlock: BlockProps, blockDOM: any) => {
+  const handleBlockChange = (newBlock: BlockProps, blockDom: any) => {
     if (onChange) {
-      const newLine = updateLineDataByTargetDom(line, blockDOM);
+      const newLine = updateLineDataByTargetDom(line, blockDom);
       onChange(getMergedData({ block: newBlock, line: newLine }));
     }
   };
 
-  const handleTagChange = (newTag: TagGroupItem) => {
+  const handleTagChange = (newTag: TagGroupItem, tagDom: any) => {
     if (onChange) {
-      onChange(getMergedData({ tag: newTag }));
+      const newLine = updateLineDataByTargetDom(line, tagDom);
+      onChange(getMergedData({ tag: newTag, line: newLine }));
     }
   };
 
@@ -96,9 +163,9 @@ const Canvas = ({
     }
   };
 
-  const handleDrag = (_: any, newPosition: CoordinatesProps) => {
+  const handleDrag = (_: any, { x, y }: CoordinatesProps) => {
     if (onChange) {
-      onChange(getMergedData({ position: newPosition }));
+      onChange(getMergedData({ position: { x, y } }));
     }
   };
 
@@ -128,28 +195,72 @@ const Canvas = ({
       }
     }
     if (onChange) {
-      onChange(getMergedData({ block, line, tag }));
+      onChange(getMergedData({ block, line, tag }, true));
     }
   };
 
-  const getMergedData = ({
-    block: newBlock,
-    line: newLine,
-    tag: newTag,
-    position: newPosition,
-    current: newCurrent = current,
-  }: {
-    block?: BlockProps;
-    tag?: TagGroupItem;
-    line?: LineProps;
-    position?: CoordinatesProps;
-    current?: string;
-  }): DataSource => {
+  const handleElementWheel = (data: any, key: string) => {
+    if (data.children && !zoomHistory.includes(key)) {
+      zoomHistory.push(current);
+      setZoomHistory(Array.from(new Set(zoomHistory)));
+
+      if (onChange) {
+        onChange(getMergedData({ current: key }));
+      }
+    }
+  };
+
+  const handleCanvasWheel = (e: any) => {
+    if (e.deltaY > 0 && onChange && zoomHistory.length) {
+      const temp = zoomHistory.pop();
+      const newCurrent = temp === current ? zoomHistory.pop() : temp;
+      setZoomHistory(zoomHistory);
+      onChange(getMergedData({ current: newCurrent }));
+    }
+  };
+
+  const getMergedData = (
+    {
+      block: newBlock,
+      line: newLine,
+      tag: newTag,
+      position: newPosition,
+      current: newCurrent,
+    }: {
+      block?: BlockProps;
+      tag?: TagGroupItem;
+      line?: LineProps;
+      position?: CoordinatesProps;
+      current?: string;
+    },
+    shouldUpdateOriginData?: boolean,
+  ): DataSource => {
+    newCurrent = newCurrent || current;
+    const originPosition = (originData.position as any)[current];
+
+    if (shouldUpdateOriginData) {
+      return {
+        block: newBlock || originData.block,
+        line: newLine || originData.line,
+        tag: newTag || originData.tag,
+        position: {
+          [newCurrent as string]: Object.assign(
+            {},
+            originPosition,
+            newPosition,
+          ),
+        },
+        current: newCurrent,
+      };
+    }
+
     return {
-      block: Object.assign({}, block, newBlock),
-      line: Object.assign({}, line, newLine),
-      tag: Object.assign({}, tag, newTag),
-      position: { [newCurrent]: Object.assign({}, position, newPosition) },
+      block: Object.assign({}, originData.block, newBlock),
+      line: Object.assign({}, originData.line, newLine),
+      tag: Object.assign({}, originData.tag, newTag),
+      position: {
+        [newCurrent as string]: Object.assign({}, originPosition, newPosition),
+      },
       current: newCurrent,
     };
   };
@@ -173,7 +284,7 @@ const Canvas = ({
         className={classNames('Canvas', className)}
         onDragOver={preventDefault}
         onDrop={onDrop}
-        {...rest}
+        onWheel={handleCanvasWheel}
       >
         {
           <>
@@ -183,12 +294,14 @@ const Canvas = ({
               onChange={handleBlockChange}
               lineData={line}
               onContextMenu={handleRightClick}
+              onWheel={handleElementWheel}
             />
             <TagGroup
               data={tag}
               onChange={handleTagChange}
               lineData={line}
               onContextMenu={handleRightClick}
+              onWheel={handleElementWheel}
             />
           </>
         }

@@ -111,6 +111,7 @@ describe('nino-zone', () => {
 
   it('should not render redundant line', () => {
     const onChange = jest.fn();
+    const onWheel = jest.fn();
     const wrapper = mount(
       <NinoZone
         onChange={onChange}
@@ -124,11 +125,42 @@ describe('nino-zone', () => {
           } as any
         }
         lineData={{}}
+        onWheel={onWheel}
       />,
     );
     setClickList({ test: 1 }, true);
     (wrapper.find('div').props() as any).onClick();
     (wrapper.find('div').props() as any).onClick();
     expect(onChange).toHaveBeenCalled();
+  });
+
+  it('onWheel', () => {
+    const onChange = jest.fn();
+    const onWheel = jest.fn();
+    const wrapper: any = mount(
+      <NinoZone
+        onChange={onChange}
+        targetKey="tag-416176"
+        onContextMenu={jest.fn()}
+        name="tag-group"
+        data={
+          {
+            'tag-416176': { x: 186, y: 469, editable: false, input: 'test' },
+            'tag-439992': { x: 34, y: 367, editable: false, input: 'test2' },
+          } as any
+        }
+        lineData={{}}
+        onWheel={onWheel}
+      />,
+    );
+    wrapper
+      .find('div')
+      .props()
+      .onWheel({ deltaY: -1 });
+    expect(onWheel).toHaveBeenCalledWith(
+      { x: 186, y: 469, editable: false, input: 'test' },
+      'tag-416176',
+      { deltaY: -1 },
+    );
   });
 });

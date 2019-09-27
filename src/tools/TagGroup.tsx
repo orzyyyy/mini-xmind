@@ -5,7 +5,7 @@ import { Input } from 'antd';
 import './css/TagGroup.css';
 import { stopPropagation, preventDefault } from '../utils/LineUtil';
 import { ContextMenuProps, CoordinatesProps } from '../canvas/core';
-import NinoZone from '../canvas/nino-zone';
+import NinoZone, { getTargetDom } from '../canvas/nino-zone';
 import { LineProps } from './LineGroup';
 
 export type TagGroupRenderItem = {
@@ -19,14 +19,16 @@ export type TagGroupItem = {
     input: string;
     editable: boolean;
     className?: string;
+    children?: string[];
   };
 };
 export interface TagGroupProps {
   data: TagGroupItem;
-  onChange: (data: TagGroupItem) => void;
+  onChange: (data: TagGroupItem, tagDom: any) => void;
   className?: string;
   onContextMenu: (item: ContextMenuProps) => void;
   lineData: LineProps;
+  onWheel: (data: TagGroupItem, key: string, event: any) => void;
 }
 export interface TagGroupState {
   data: TagGroupItem;
@@ -43,6 +45,7 @@ const TagGroup = ({
   onContextMenu,
   className: parentClassName,
   lineData,
+  onWheel,
 }: TagGroupProps) => {
   const handleChange = (
     item: any,
@@ -54,13 +57,16 @@ const TagGroup = ({
     (data as any)[key][targetKey] = targetValue;
 
     if (onChange) {
-      onChange(Object.assign({}, data, { [key]: item }));
+      onChange(Object.assign({}, data, { [key]: item }), getTargetDom());
     }
   };
 
   const handleDrag = ({ x, y }: any, key: string) => {
     if (onChange) {
-      onChange(Object.assign({}, data, { [key]: { ...data[key], x, y } }));
+      onChange(
+        Object.assign({}, data, { [key]: { ...data[key], x, y } }),
+        getTargetDom(),
+      );
     }
   };
 
@@ -105,6 +111,7 @@ const TagGroup = ({
           targetKey={key}
           data={data}
           lineData={lineData}
+          onWheel={onWheel}
         >
           {item.input}
         </NinoZone>

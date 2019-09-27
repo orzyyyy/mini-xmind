@@ -4,6 +4,7 @@ import TagGroup from '../TagGroup';
 
 describe('TagGroup', () => {
   it('editable should work correctly', () => {
+    const onWheel = jest.fn();
     const data = {
       tag: {
         editable: false,
@@ -16,6 +17,7 @@ describe('TagGroup', () => {
         onChange={jest.fn()}
         onContextMenu={jest.fn()}
         lineData={{}}
+        onWheel={onWheel}
       />,
     );
     expect(
@@ -36,6 +38,7 @@ describe('TagGroup', () => {
   });
 
   it('double click should work correctly', () => {
+    const onWheel = jest.fn();
     const data = {
       tag: {
         editable: false,
@@ -48,6 +51,7 @@ describe('TagGroup', () => {
         onChange={jest.fn()}
         onContextMenu={jest.fn()}
         lineData={{}}
+        onWheel={onWheel}
       />,
     );
     wrapper
@@ -63,6 +67,7 @@ describe('TagGroup', () => {
   });
 
   it('when input changed, state should update', () => {
+    const onWheel = jest.fn();
     const data = {
       tag: {
         editable: true,
@@ -75,6 +80,7 @@ describe('TagGroup', () => {
         onChange={jest.fn()}
         onContextMenu={jest.fn()}
         lineData={{}}
+        onWheel={onWheel}
       />,
     );
     wrapper.find('TextArea').simulate('change', { target: { value: 'test1' } });
@@ -87,6 +93,7 @@ describe('TagGroup', () => {
   });
 
   it('when dragging, onChange should be called', () => {
+    const onWheel = jest.fn();
     const onChange = jest.fn();
     const wrapper = mount(
       <TagGroup
@@ -101,6 +108,7 @@ describe('TagGroup', () => {
             },
           } as any
         }
+        onWheel={onWheel}
       />,
     );
     (wrapper.find('Draggable').props() as any).onDrag({ x: 0, y: 0 }, 'test');
@@ -108,6 +116,7 @@ describe('TagGroup', () => {
   });
 
   it('when typing in Input, onChange should be called', () => {
+    const onWheel = jest.fn();
     const onChange = jest.fn();
     const wrapper = mount(
       <TagGroup
@@ -122,6 +131,7 @@ describe('TagGroup', () => {
         }
         onContextMenu={jest.fn()}
         lineData={{}}
+        onWheel={onWheel}
       />,
     );
     wrapper.find('TextArea').simulate('change', { target: { value: '1' } });
@@ -129,6 +139,7 @@ describe('TagGroup', () => {
   });
 
   it('when blur, onChange should be called', () => {
+    const onWheel = jest.fn();
     const onChange = jest.fn();
     const wrapper = mount(
       <TagGroup
@@ -143,6 +154,7 @@ describe('TagGroup', () => {
         }
         onContextMenu={jest.fn()}
         lineData={{}}
+        onWheel={onWheel}
       />,
     );
     wrapper.find('TextArea').simulate('blur');
@@ -151,6 +163,7 @@ describe('TagGroup', () => {
 
   it('onContextMenu', () => {
     const onContextMenu = jest.fn();
+    const onWheel = jest.fn();
     const wrapper = mount(
       <TagGroup
         onContextMenu={onContextMenu}
@@ -163,6 +176,7 @@ describe('TagGroup', () => {
           } as any
         }
         onChange={jest.fn()}
+        onWheel={onWheel}
         lineData={{}}
       />,
     );
@@ -174,6 +188,7 @@ describe('TagGroup', () => {
   });
 
   it('Draggable.onStart', () => {
+    const onWheel = jest.fn();
     const preventDefault = jest.fn();
     const stopPropagation = jest.fn();
     const wrapper = mount(
@@ -189,6 +204,7 @@ describe('TagGroup', () => {
         onChange={jest.fn()}
         onContextMenu={jest.fn()}
         lineData={{}}
+        onWheel={onWheel}
       />,
     );
     (wrapper.find('Draggable').props() as any).onStart({

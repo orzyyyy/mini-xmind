@@ -5,7 +5,6 @@ exports[`Canvas Canvas renders correctly 1`] = `
   data={
     Object {
       "block": Object {},
-      "current": "root",
       "line": Object {
         "line-446586": Object {
           "from": Object {
@@ -103,6 +102,78 @@ exports[`Canvas Canvas renders correctly 1`] = `
           },
           "toKey": "tag-443720",
         },
+        "line-758626": Object {
+          "from": Object {
+            "bottom": 412,
+            "height": 21,
+            "left": 670,
+            "right": 700.359375,
+            "top": 391,
+            "width": 30.359375,
+            "x": 670,
+            "y": 391,
+          },
+          "fromKey": "tag-491323",
+          "to": Object {
+            "bottom": 261,
+            "height": 21,
+            "left": 464,
+            "right": 494.359375,
+            "top": 240,
+            "width": 30.359375,
+            "x": 464,
+            "y": 240,
+          },
+          "toKey": "tag-476280",
+        },
+        "line-761026": Object {
+          "from": Object {
+            "bottom": 512,
+            "height": 21,
+            "left": 670,
+            "right": 700.359375,
+            "top": 491,
+            "width": 30.359375,
+            "x": 670,
+            "y": 491,
+          },
+          "fromKey": "tag-491322",
+          "to": Object {
+            "bottom": 612,
+            "height": 21,
+            "left": 570,
+            "right": 600.359375,
+            "top": 591,
+            "width": 30.359375,
+            "x": 570,
+            "y": 591,
+          },
+          "toKey": "tag-491320",
+        },
+        "line-762482": Object {
+          "from": Object {
+            "bottom": 712,
+            "height": 21,
+            "left": 670,
+            "right": 700.359375,
+            "top": 691,
+            "width": 30.359375,
+            "x": 670,
+            "y": 691,
+          },
+          "fromKey": "tag-491321",
+          "to": Object {
+            "bottom": 612,
+            "height": 21,
+            "left": 570,
+            "right": 600.359375,
+            "top": 591,
+            "width": 30.359375,
+            "x": 570,
+            "y": 591,
+          },
+          "toKey": "tag-491320",
+        },
       },
       "position": Object {
         "root": Object {
@@ -114,44 +185,57 @@ exports[`Canvas Canvas renders correctly 1`] = `
         "tag-416176": Object {
           "editable": false,
           "input": "test",
-          "parent": "",
           "x": 186,
           "y": 469,
         },
         "tag-439992": Object {
           "editable": false,
           "input": "test2",
-          "parent": "",
           "x": 34,
           "y": 367,
         },
         "tag-443720": Object {
           "editable": false,
           "input": "test3",
-          "parent": "",
           "x": 399,
           "y": 602,
         },
         "tag-476280": Object {
+          "children": Array [
+            "tag-491323",
+          ],
           "editable": false,
           "input": "test4",
-          "parent": "",
           "x": 385,
           "y": 340,
         },
         "tag-491320": Object {
+          "children": Array [
+            "tag-491321",
+            "tag-491322",
+          ],
           "editable": false,
           "input": "test5",
-          "parent": "",
           "x": 491,
           "y": 691,
         },
         "tag-491321": Object {
           "editable": false,
           "input": "test6",
-          "parent": "tag-491320",
           "x": 591,
           "y": 791,
+        },
+        "tag-491322": Object {
+          "editable": false,
+          "input": "test7",
+          "x": 591,
+          "y": 591,
+        },
+        "tag-491323": Object {
+          "editable": false,
+          "input": "test8",
+          "x": 591,
+          "y": 491,
         },
       },
     }
@@ -211,6 +295,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
         onMouseUp={[Function]}
         onTouchEnd={[Function]}
         onTouchStart={[Function]}
+        onWheel={[Function]}
         style={
           Object {
             "touchAction": "none",
@@ -329,6 +414,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
           }
           onChange={[Function]}
           onContextMenu={[Function]}
+          onWheel={[Function]}
         />
         <TagGroup
           data={
@@ -336,44 +422,39 @@ exports[`Canvas Canvas renders correctly 1`] = `
               "tag-416176": Object {
                 "editable": false,
                 "input": "test",
-                "parent": "",
                 "x": 186,
                 "y": 469,
               },
               "tag-439992": Object {
                 "editable": false,
                 "input": "test2",
-                "parent": "",
                 "x": 34,
                 "y": 367,
               },
               "tag-443720": Object {
                 "editable": false,
                 "input": "test3",
-                "parent": "",
                 "x": 399,
                 "y": 602,
               },
               "tag-476280": Object {
+                "children": Array [
+                  "tag-491323",
+                ],
                 "editable": false,
                 "input": "test4",
-                "parent": "",
                 "x": 385,
                 "y": 340,
               },
               "tag-491320": Object {
+                "children": Array [
+                  "tag-491321",
+                  "tag-491322",
+                ],
                 "editable": false,
                 "input": "test5",
-                "parent": "",
                 "x": 491,
                 "y": 691,
-              },
-              "tag-491321": Object {
-                "editable": false,
-                "input": "test6",
-                "parent": "tag-491320",
-                "x": 591,
-                "y": 791,
               },
             }
           }
@@ -479,6 +560,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
           }
           onChange={[Function]}
           onContextMenu={[Function]}
+          onWheel={[Function]}
         >
           <Draggable
             allowAnyClick={false}
@@ -549,44 +631,39 @@ exports[`Canvas Canvas renders correctly 1`] = `
                       "tag-416176": Object {
                         "editable": false,
                         "input": "test",
-                        "parent": "",
                         "x": 186,
                         "y": 469,
                       },
                       "tag-439992": Object {
                         "editable": false,
                         "input": "test2",
-                        "parent": "",
                         "x": 34,
                         "y": 367,
                       },
                       "tag-443720": Object {
                         "editable": false,
                         "input": "test3",
-                        "parent": "",
                         "x": 399,
                         "y": 602,
                       },
                       "tag-476280": Object {
+                        "children": Array [
+                          "tag-491323",
+                        ],
                         "editable": false,
                         "input": "test4",
-                        "parent": "",
                         "x": 385,
                         "y": 340,
                       },
                       "tag-491320": Object {
+                        "children": Array [
+                          "tag-491321",
+                          "tag-491322",
+                        ],
                         "editable": false,
                         "input": "test5",
-                        "parent": "",
                         "x": 491,
                         "y": 691,
-                      },
-                      "tag-491321": Object {
-                        "editable": false,
-                        "input": "test6",
-                        "parent": "tag-491320",
-                        "x": 591,
-                        "y": 791,
                       },
                     }
                   }
@@ -694,12 +771,14 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   name="tag-group"
                   onChange={[Function]}
                   onContextMenu={[Function]}
+                  onWheel={[Function]}
                   targetKey="tag-416176"
                 >
                   <div
                     className="tag-group animate-appear"
                     onClick={[Function]}
                     onContextMenu={[Function]}
+                    onWheel={[Function]}
                   >
                     test
                   </div>
@@ -776,44 +855,39 @@ exports[`Canvas Canvas renders correctly 1`] = `
                       "tag-416176": Object {
                         "editable": false,
                         "input": "test",
-                        "parent": "",
                         "x": 186,
                         "y": 469,
                       },
                       "tag-439992": Object {
                         "editable": false,
                         "input": "test2",
-                        "parent": "",
                         "x": 34,
                         "y": 367,
                       },
                       "tag-443720": Object {
                         "editable": false,
                         "input": "test3",
-                        "parent": "",
                         "x": 399,
                         "y": 602,
                       },
                       "tag-476280": Object {
+                        "children": Array [
+                          "tag-491323",
+                        ],
                         "editable": false,
                         "input": "test4",
-                        "parent": "",
                         "x": 385,
                         "y": 340,
                       },
                       "tag-491320": Object {
+                        "children": Array [
+                          "tag-491321",
+                          "tag-491322",
+                        ],
                         "editable": false,
                         "input": "test5",
-                        "parent": "",
                         "x": 491,
                         "y": 691,
-                      },
-                      "tag-491321": Object {
-                        "editable": false,
-                        "input": "test6",
-                        "parent": "tag-491320",
-                        "x": 591,
-                        "y": 791,
                       },
                     }
                   }
@@ -921,12 +995,14 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   name="tag-group"
                   onChange={[Function]}
                   onContextMenu={[Function]}
+                  onWheel={[Function]}
                   targetKey="tag-439992"
                 >
                   <div
                     className="tag-group animate-appear"
                     onClick={[Function]}
                     onContextMenu={[Function]}
+                    onWheel={[Function]}
                   >
                     test2
                   </div>
@@ -1003,44 +1079,39 @@ exports[`Canvas Canvas renders correctly 1`] = `
                       "tag-416176": Object {
                         "editable": false,
                         "input": "test",
-                        "parent": "",
                         "x": 186,
                         "y": 469,
                       },
                       "tag-439992": Object {
                         "editable": false,
                         "input": "test2",
-                        "parent": "",
                         "x": 34,
                         "y": 367,
                       },
                       "tag-443720": Object {
                         "editable": false,
                         "input": "test3",
-                        "parent": "",
                         "x": 399,
                         "y": 602,
                       },
                       "tag-476280": Object {
+                        "children": Array [
+                          "tag-491323",
+                        ],
                         "editable": false,
                         "input": "test4",
-                        "parent": "",
                         "x": 385,
                         "y": 340,
                       },
                       "tag-491320": Object {
+                        "children": Array [
+                          "tag-491321",
+                          "tag-491322",
+                        ],
                         "editable": false,
                         "input": "test5",
-                        "parent": "",
                         "x": 491,
                         "y": 691,
-                      },
-                      "tag-491321": Object {
-                        "editable": false,
-                        "input": "test6",
-                        "parent": "tag-491320",
-                        "x": 591,
-                        "y": 791,
                       },
                     }
                   }
@@ -1148,12 +1219,14 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   name="tag-group"
                   onChange={[Function]}
                   onContextMenu={[Function]}
+                  onWheel={[Function]}
                   targetKey="tag-443720"
                 >
                   <div
                     className="tag-group animate-appear"
                     onClick={[Function]}
                     onContextMenu={[Function]}
+                    onWheel={[Function]}
                   >
                     test3
                   </div>
@@ -1230,44 +1303,39 @@ exports[`Canvas Canvas renders correctly 1`] = `
                       "tag-416176": Object {
                         "editable": false,
                         "input": "test",
-                        "parent": "",
                         "x": 186,
                         "y": 469,
                       },
                       "tag-439992": Object {
                         "editable": false,
                         "input": "test2",
-                        "parent": "",
                         "x": 34,
                         "y": 367,
                       },
                       "tag-443720": Object {
                         "editable": false,
                         "input": "test3",
-                        "parent": "",
                         "x": 399,
                         "y": 602,
                       },
                       "tag-476280": Object {
+                        "children": Array [
+                          "tag-491323",
+                        ],
                         "editable": false,
                         "input": "test4",
-                        "parent": "",
                         "x": 385,
                         "y": 340,
                       },
                       "tag-491320": Object {
+                        "children": Array [
+                          "tag-491321",
+                          "tag-491322",
+                        ],
                         "editable": false,
                         "input": "test5",
-                        "parent": "",
                         "x": 491,
                         "y": 691,
-                      },
-                      "tag-491321": Object {
-                        "editable": false,
-                        "input": "test6",
-                        "parent": "tag-491320",
-                        "x": 591,
-                        "y": 791,
                       },
                     }
                   }
@@ -1375,12 +1443,14 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   name="tag-group"
                   onChange={[Function]}
                   onContextMenu={[Function]}
+                  onWheel={[Function]}
                   targetKey="tag-476280"
                 >
                   <div
                     className="tag-group animate-appear"
                     onClick={[Function]}
                     onContextMenu={[Function]}
+                    onWheel={[Function]}
                   >
                     test4
                   </div>
@@ -1457,44 +1527,39 @@ exports[`Canvas Canvas renders correctly 1`] = `
                       "tag-416176": Object {
                         "editable": false,
                         "input": "test",
-                        "parent": "",
                         "x": 186,
                         "y": 469,
                       },
                       "tag-439992": Object {
                         "editable": false,
                         "input": "test2",
-                        "parent": "",
                         "x": 34,
                         "y": 367,
                       },
                       "tag-443720": Object {
                         "editable": false,
                         "input": "test3",
-                        "parent": "",
                         "x": 399,
                         "y": 602,
                       },
                       "tag-476280": Object {
+                        "children": Array [
+                          "tag-491323",
+                        ],
                         "editable": false,
                         "input": "test4",
-                        "parent": "",
                         "x": 385,
                         "y": 340,
                       },
                       "tag-491320": Object {
+                        "children": Array [
+                          "tag-491321",
+                          "tag-491322",
+                        ],
                         "editable": false,
                         "input": "test5",
-                        "parent": "",
                         "x": 491,
                         "y": 691,
-                      },
-                      "tag-491321": Object {
-                        "editable": false,
-                        "input": "test6",
-                        "parent": "tag-491320",
-                        "x": 591,
-                        "y": 791,
                       },
                     }
                   }
@@ -1602,241 +1667,16 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   name="tag-group"
                   onChange={[Function]}
                   onContextMenu={[Function]}
+                  onWheel={[Function]}
                   targetKey="tag-491320"
                 >
                   <div
                     className="tag-group animate-appear"
                     onClick={[Function]}
                     onContextMenu={[Function]}
+                    onWheel={[Function]}
                   >
                     test5
-                  </div>
-                </NinoZone>
-              </div>
-            </DraggableCore>
-          </Draggable>
-          <Draggable
-            allowAnyClick={false}
-            axis="both"
-            bounds={false}
-            cancel={null}
-            defaultClassName="react-draggable"
-            defaultClassNameDragged="react-draggable-dragged"
-            defaultClassNameDragging="react-draggable-dragging"
-            defaultPosition={
-              Object {
-                "x": 0,
-                "y": 0,
-              }
-            }
-            disabled={false}
-            enableUserSelectHack={true}
-            grid={null}
-            handle={null}
-            key="tag-491321"
-            offsetParent={null}
-            onDrag={[Function]}
-            onMouseDown={[Function]}
-            onStart={[Function]}
-            onStop={[Function]}
-            position={
-              Object {
-                "x": 591,
-                "y": 791,
-              }
-            }
-            scale={1}
-            transform={null}
-          >
-            <DraggableCore
-              allowAnyClick={false}
-              cancel={null}
-              disabled={false}
-              enableUserSelectHack={true}
-              grid={null}
-              handle={null}
-              offsetParent={null}
-              onDrag={[Function]}
-              onMouseDown={[Function]}
-              onStart={[Function]}
-              onStop={[Function]}
-              transform={null}
-            >
-              <div
-                className="react-draggable"
-                onDoubleClick={[Function]}
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchStart={[Function]}
-                style={
-                  Object {
-                    "touchAction": "none",
-                    "transform": "translate(591px,791px)",
-                  }
-                }
-                transform={null}
-              >
-                <NinoZone
-                  className="tag-group animate-appear"
-                  data={
-                    Object {
-                      "tag-416176": Object {
-                        "editable": false,
-                        "input": "test",
-                        "parent": "",
-                        "x": 186,
-                        "y": 469,
-                      },
-                      "tag-439992": Object {
-                        "editable": false,
-                        "input": "test2",
-                        "parent": "",
-                        "x": 34,
-                        "y": 367,
-                      },
-                      "tag-443720": Object {
-                        "editable": false,
-                        "input": "test3",
-                        "parent": "",
-                        "x": 399,
-                        "y": 602,
-                      },
-                      "tag-476280": Object {
-                        "editable": false,
-                        "input": "test4",
-                        "parent": "",
-                        "x": 385,
-                        "y": 340,
-                      },
-                      "tag-491320": Object {
-                        "editable": false,
-                        "input": "test5",
-                        "parent": "",
-                        "x": 491,
-                        "y": 691,
-                      },
-                      "tag-491321": Object {
-                        "editable": false,
-                        "input": "test6",
-                        "parent": "tag-491320",
-                        "x": 591,
-                        "y": 791,
-                      },
-                    }
-                  }
-                  key="nino-zone-tag-491321"
-                  lineData={
-                    Object {
-                      "line-446586": Object {
-                        "from": Object {
-                          "bottom": 390,
-                          "height": 21,
-                          "left": 265,
-                          "right": 287.578125,
-                          "top": 369,
-                          "width": 22.578125,
-                          "x": 265,
-                          "y": 369,
-                        },
-                        "fromKey": "tag-416176",
-                        "to": Object {
-                          "bottom": 523,
-                          "height": 21,
-                          "left": 478,
-                          "right": 508.359375,
-                          "top": 502,
-                          "width": 30.359375,
-                          "x": 478,
-                          "y": 502,
-                        },
-                        "toKey": "tag-443720",
-                      },
-                      "line-451979": Object {
-                        "from": Object {
-                          "bottom": 288,
-                          "height": 21,
-                          "left": 113,
-                          "right": 143.359375,
-                          "top": 267,
-                          "width": 30.359375,
-                          "x": 113,
-                          "y": 267,
-                        },
-                        "fromKey": "tag-439992",
-                        "to": Object {
-                          "bottom": 390,
-                          "height": 21,
-                          "left": 265,
-                          "right": 287.578125,
-                          "top": 369,
-                          "width": 22.578125,
-                          "x": 265,
-                          "y": 369,
-                        },
-                        "toKey": "tag-416176",
-                      },
-                      "line-479893": Object {
-                        "from": Object {
-                          "bottom": 261,
-                          "height": 21,
-                          "left": 464,
-                          "right": 494.359375,
-                          "top": 240,
-                          "width": 30.359375,
-                          "x": 464,
-                          "y": 240,
-                        },
-                        "fromKey": "tag-476280",
-                        "to": Object {
-                          "bottom": 390,
-                          "height": 21,
-                          "left": 265,
-                          "right": 287.578125,
-                          "top": 369,
-                          "width": 22.578125,
-                          "x": 265,
-                          "y": 369,
-                        },
-                        "toKey": "tag-416176",
-                      },
-                      "line-493906": Object {
-                        "from": Object {
-                          "bottom": 612,
-                          "height": 21,
-                          "left": 570,
-                          "right": 600.359375,
-                          "top": 591,
-                          "width": 30.359375,
-                          "x": 570,
-                          "y": 591,
-                        },
-                        "fromKey": "tag-491320",
-                        "to": Object {
-                          "bottom": 523,
-                          "height": 21,
-                          "left": 478,
-                          "right": 508.359375,
-                          "top": 502,
-                          "width": 30.359375,
-                          "x": 478,
-                          "y": 502,
-                        },
-                        "toKey": "tag-443720",
-                      },
-                    }
-                  }
-                  name="tag-group"
-                  onChange={[Function]}
-                  onContextMenu={[Function]}
-                  targetKey="tag-491321"
-                >
-                  <div
-                    className="tag-group animate-appear"
-                    onClick={[Function]}
-                    onContextMenu={[Function]}
-                  >
-                    test6
                   </div>
                 </NinoZone>
               </div>
@@ -2310,6 +2150,1192 @@ exports[`Canvas Canvas renders correctly 1`] = `
                     Object {
                       "transform": "translate3d(460.1796875px, 612.5px, 0) rotate(180deg)",
                       "width": "30.8203125px",
+                    }
+                  }
+                />
+              </Line>
+            </div>
+          </SteppedLine>
+        </LineGroup>
+      </div>
+    </DraggableCore>
+  </Draggable>
+</Canvas>
+`;
+
+exports[`Canvas Canvas renders correctly 2`] = `
+<Canvas
+  data={
+    Object {
+      "block": Object {},
+      "current": "tag-491320",
+      "line": Object {
+        "line-446586": Object {
+          "from": Object {
+            "bottom": 390,
+            "height": 21,
+            "left": 265,
+            "right": 287.578125,
+            "top": 369,
+            "width": 22.578125,
+            "x": 265,
+            "y": 369,
+          },
+          "fromKey": "tag-416176",
+          "to": Object {
+            "bottom": 523,
+            "height": 21,
+            "left": 478,
+            "right": 508.359375,
+            "top": 502,
+            "width": 30.359375,
+            "x": 478,
+            "y": 502,
+          },
+          "toKey": "tag-443720",
+        },
+        "line-451979": Object {
+          "from": Object {
+            "bottom": 288,
+            "height": 21,
+            "left": 113,
+            "right": 143.359375,
+            "top": 267,
+            "width": 30.359375,
+            "x": 113,
+            "y": 267,
+          },
+          "fromKey": "tag-439992",
+          "to": Object {
+            "bottom": 390,
+            "height": 21,
+            "left": 265,
+            "right": 287.578125,
+            "top": 369,
+            "width": 22.578125,
+            "x": 265,
+            "y": 369,
+          },
+          "toKey": "tag-416176",
+        },
+        "line-479893": Object {
+          "from": Object {
+            "bottom": 261,
+            "height": 21,
+            "left": 464,
+            "right": 494.359375,
+            "top": 240,
+            "width": 30.359375,
+            "x": 464,
+            "y": 240,
+          },
+          "fromKey": "tag-476280",
+          "to": Object {
+            "bottom": 390,
+            "height": 21,
+            "left": 265,
+            "right": 287.578125,
+            "top": 369,
+            "width": 22.578125,
+            "x": 265,
+            "y": 369,
+          },
+          "toKey": "tag-416176",
+        },
+        "line-493906": Object {
+          "from": Object {
+            "bottom": 612,
+            "height": 21,
+            "left": 570,
+            "right": 600.359375,
+            "top": 591,
+            "width": 30.359375,
+            "x": 570,
+            "y": 591,
+          },
+          "fromKey": "tag-491320",
+          "to": Object {
+            "bottom": 523,
+            "height": 21,
+            "left": 478,
+            "right": 508.359375,
+            "top": 502,
+            "width": 30.359375,
+            "x": 478,
+            "y": 502,
+          },
+          "toKey": "tag-443720",
+        },
+        "line-758626": Object {
+          "from": Object {
+            "bottom": 412,
+            "height": 21,
+            "left": 670,
+            "right": 700.359375,
+            "top": 391,
+            "width": 30.359375,
+            "x": 670,
+            "y": 391,
+          },
+          "fromKey": "tag-491323",
+          "to": Object {
+            "bottom": 261,
+            "height": 21,
+            "left": 464,
+            "right": 494.359375,
+            "top": 240,
+            "width": 30.359375,
+            "x": 464,
+            "y": 240,
+          },
+          "toKey": "tag-476280",
+        },
+        "line-761026": Object {
+          "from": Object {
+            "bottom": 512,
+            "height": 21,
+            "left": 670,
+            "right": 700.359375,
+            "top": 491,
+            "width": 30.359375,
+            "x": 670,
+            "y": 491,
+          },
+          "fromKey": "tag-491322",
+          "to": Object {
+            "bottom": 612,
+            "height": 21,
+            "left": 570,
+            "right": 600.359375,
+            "top": 591,
+            "width": 30.359375,
+            "x": 570,
+            "y": 591,
+          },
+          "toKey": "tag-491320",
+        },
+        "line-762482": Object {
+          "from": Object {
+            "bottom": 712,
+            "height": 21,
+            "left": 670,
+            "right": 700.359375,
+            "top": 691,
+            "width": 30.359375,
+            "x": 670,
+            "y": 691,
+          },
+          "fromKey": "tag-491321",
+          "to": Object {
+            "bottom": 612,
+            "height": 21,
+            "left": 570,
+            "right": 600.359375,
+            "top": 591,
+            "width": 30.359375,
+            "x": 570,
+            "y": 591,
+          },
+          "toKey": "tag-491320",
+        },
+      },
+      "position": Object {
+        "root": Object {
+          "x": 79,
+          "y": -100,
+        },
+      },
+      "tag": Object {
+        "tag-416176": Object {
+          "editable": false,
+          "input": "test",
+          "x": 186,
+          "y": 469,
+        },
+        "tag-439992": Object {
+          "editable": false,
+          "input": "test2",
+          "x": 34,
+          "y": 367,
+        },
+        "tag-443720": Object {
+          "editable": false,
+          "input": "test3",
+          "x": 399,
+          "y": 602,
+        },
+        "tag-476280": Object {
+          "children": Array [
+            "tag-491323",
+          ],
+          "editable": false,
+          "input": "test4",
+          "x": 385,
+          "y": 340,
+        },
+        "tag-491320": Object {
+          "children": Array [
+            "tag-491321",
+            "tag-491322",
+          ],
+          "editable": false,
+          "input": "test5",
+          "x": 491,
+          "y": 691,
+        },
+        "tag-491321": Object {
+          "editable": false,
+          "input": "test6",
+          "x": 591,
+          "y": 791,
+        },
+        "tag-491322": Object {
+          "editable": false,
+          "input": "test7",
+          "x": 591,
+          "y": 591,
+        },
+        "tag-491323": Object {
+          "editable": false,
+          "input": "test8",
+          "x": 591,
+          "y": 491,
+        },
+      },
+    }
+  }
+>
+  <Draggable
+    allowAnyClick={false}
+    axis="both"
+    bounds={false}
+    cancel={null}
+    defaultClassName="react-draggable"
+    defaultClassNameDragged="react-draggable-dragged"
+    defaultClassNameDragging="react-draggable-dragging"
+    defaultPosition={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    disabled={false}
+    enableUserSelectHack={true}
+    grid={null}
+    handle={null}
+    offsetParent={null}
+    onDrag={[Function]}
+    onMouseDown={[Function]}
+    onStart={[Function]}
+    onStop={[Function]}
+    position={
+      Object {
+        "x": -1,
+        "y": -1,
+      }
+    }
+    scale={1}
+    transform={null}
+  >
+    <DraggableCore
+      allowAnyClick={false}
+      cancel={null}
+      disabled={false}
+      enableUserSelectHack={true}
+      grid={null}
+      handle={null}
+      offsetParent={null}
+      onDrag={[Function]}
+      onMouseDown={[Function]}
+      onStart={[Function]}
+      onStop={[Function]}
+      transform={null}
+    >
+      <div
+        className="Canvas react-draggable"
+        onDragOver={[Function]}
+        onDrop={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        onWheel={[Function]}
+        style={
+          Object {
+            "touchAction": "none",
+            "transform": "translate(-1px,-1px)",
+          }
+        }
+        transform={null}
+      >
+        <BlockGroup
+          data={Object {}}
+          lineData={
+            Object {
+              "line-761026": Object {
+                "from": Object {
+                  "bottom": 512,
+                  "height": 21,
+                  "left": 670,
+                  "right": 700.359375,
+                  "top": 491,
+                  "width": 30.359375,
+                  "x": 670,
+                  "y": 491,
+                },
+                "fromKey": "tag-491322",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                  "x": 0,
+                  "y": 0,
+                },
+                "toKey": "tag-491320",
+              },
+              "line-762482": Object {
+                "from": Object {
+                  "bottom": 712,
+                  "height": 21,
+                  "left": 670,
+                  "right": 700.359375,
+                  "top": 691,
+                  "width": 30.359375,
+                  "x": 670,
+                  "y": 691,
+                },
+                "fromKey": "tag-491321",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                  "x": 0,
+                  "y": 0,
+                },
+                "toKey": "tag-491320",
+              },
+            }
+          }
+          offset={
+            Object {
+              "x": -1,
+              "y": -1,
+            }
+          }
+          onChange={[Function]}
+          onContextMenu={[Function]}
+          onWheel={[Function]}
+        />
+        <TagGroup
+          data={
+            Object {
+              "tag-491320": Object {
+                "children": Array [
+                  "tag-491321",
+                  "tag-491322",
+                ],
+                "editable": false,
+                "input": "test5",
+                "x": 491,
+                "y": 691,
+              },
+              "tag-491321": Object {
+                "editable": false,
+                "input": "test6",
+                "x": 591,
+                "y": 791,
+              },
+              "tag-491322": Object {
+                "editable": false,
+                "input": "test7",
+                "x": 591,
+                "y": 591,
+              },
+            }
+          }
+          lineData={
+            Object {
+              "line-761026": Object {
+                "from": Object {
+                  "bottom": 512,
+                  "height": 21,
+                  "left": 670,
+                  "right": 700.359375,
+                  "top": 491,
+                  "width": 30.359375,
+                  "x": 670,
+                  "y": 491,
+                },
+                "fromKey": "tag-491322",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                  "x": 0,
+                  "y": 0,
+                },
+                "toKey": "tag-491320",
+              },
+              "line-762482": Object {
+                "from": Object {
+                  "bottom": 712,
+                  "height": 21,
+                  "left": 670,
+                  "right": 700.359375,
+                  "top": 691,
+                  "width": 30.359375,
+                  "x": 670,
+                  "y": 691,
+                },
+                "fromKey": "tag-491321",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                  "x": 0,
+                  "y": 0,
+                },
+                "toKey": "tag-491320",
+              },
+            }
+          }
+          onChange={[Function]}
+          onContextMenu={[Function]}
+          onWheel={[Function]}
+        >
+          <Draggable
+            allowAnyClick={false}
+            axis="both"
+            bounds={false}
+            cancel={null}
+            defaultClassName="react-draggable"
+            defaultClassNameDragged="react-draggable-dragged"
+            defaultClassNameDragging="react-draggable-dragging"
+            defaultPosition={
+              Object {
+                "x": 0,
+                "y": 0,
+              }
+            }
+            disabled={false}
+            enableUserSelectHack={true}
+            grid={null}
+            handle={null}
+            key="tag-491320"
+            offsetParent={null}
+            onDrag={[Function]}
+            onMouseDown={[Function]}
+            onStart={[Function]}
+            onStop={[Function]}
+            position={
+              Object {
+                "x": 491,
+                "y": 691,
+              }
+            }
+            scale={1}
+            transform={null}
+          >
+            <DraggableCore
+              allowAnyClick={false}
+              cancel={null}
+              disabled={false}
+              enableUserSelectHack={true}
+              grid={null}
+              handle={null}
+              offsetParent={null}
+              onDrag={[Function]}
+              onMouseDown={[Function]}
+              onStart={[Function]}
+              onStop={[Function]}
+              transform={null}
+            >
+              <div
+                className="react-draggable"
+                onDoubleClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                    "transform": "translate(491px,691px)",
+                  }
+                }
+                transform={null}
+              >
+                <NinoZone
+                  className="tag-group animate-appear"
+                  data={
+                    Object {
+                      "tag-491320": Object {
+                        "children": Array [
+                          "tag-491321",
+                          "tag-491322",
+                        ],
+                        "editable": false,
+                        "input": "test5",
+                        "x": 491,
+                        "y": 691,
+                      },
+                      "tag-491321": Object {
+                        "editable": false,
+                        "input": "test6",
+                        "x": 591,
+                        "y": 791,
+                      },
+                      "tag-491322": Object {
+                        "editable": false,
+                        "input": "test7",
+                        "x": 591,
+                        "y": 591,
+                      },
+                    }
+                  }
+                  key="nino-zone-tag-491320"
+                  lineData={
+                    Object {
+                      "line-761026": Object {
+                        "from": Object {
+                          "bottom": 512,
+                          "height": 21,
+                          "left": 670,
+                          "right": 700.359375,
+                          "top": 491,
+                          "width": 30.359375,
+                          "x": 670,
+                          "y": 491,
+                        },
+                        "fromKey": "tag-491322",
+                        "to": Object {
+                          "bottom": 0,
+                          "height": 0,
+                          "left": 0,
+                          "right": 0,
+                          "top": 0,
+                          "width": 0,
+                          "x": 0,
+                          "y": 0,
+                        },
+                        "toKey": "tag-491320",
+                      },
+                      "line-762482": Object {
+                        "from": Object {
+                          "bottom": 712,
+                          "height": 21,
+                          "left": 670,
+                          "right": 700.359375,
+                          "top": 691,
+                          "width": 30.359375,
+                          "x": 670,
+                          "y": 691,
+                        },
+                        "fromKey": "tag-491321",
+                        "to": Object {
+                          "bottom": 0,
+                          "height": 0,
+                          "left": 0,
+                          "right": 0,
+                          "top": 0,
+                          "width": 0,
+                          "x": 0,
+                          "y": 0,
+                        },
+                        "toKey": "tag-491320",
+                      },
+                    }
+                  }
+                  name="tag-group"
+                  onChange={[Function]}
+                  onContextMenu={[Function]}
+                  onWheel={[Function]}
+                  targetKey="tag-491320"
+                >
+                  <div
+                    className="tag-group animate-appear"
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onWheel={[Function]}
+                  >
+                    test5
+                  </div>
+                </NinoZone>
+              </div>
+            </DraggableCore>
+          </Draggable>
+          <Draggable
+            allowAnyClick={false}
+            axis="both"
+            bounds={false}
+            cancel={null}
+            defaultClassName="react-draggable"
+            defaultClassNameDragged="react-draggable-dragged"
+            defaultClassNameDragging="react-draggable-dragging"
+            defaultPosition={
+              Object {
+                "x": 0,
+                "y": 0,
+              }
+            }
+            disabled={false}
+            enableUserSelectHack={true}
+            grid={null}
+            handle={null}
+            key="tag-491321"
+            offsetParent={null}
+            onDrag={[Function]}
+            onMouseDown={[Function]}
+            onStart={[Function]}
+            onStop={[Function]}
+            position={
+              Object {
+                "x": 591,
+                "y": 791,
+              }
+            }
+            scale={1}
+            transform={null}
+          >
+            <DraggableCore
+              allowAnyClick={false}
+              cancel={null}
+              disabled={false}
+              enableUserSelectHack={true}
+              grid={null}
+              handle={null}
+              offsetParent={null}
+              onDrag={[Function]}
+              onMouseDown={[Function]}
+              onStart={[Function]}
+              onStop={[Function]}
+              transform={null}
+            >
+              <div
+                className="react-draggable"
+                onDoubleClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                    "transform": "translate(591px,791px)",
+                  }
+                }
+                transform={null}
+              >
+                <NinoZone
+                  className="tag-group animate-appear"
+                  data={
+                    Object {
+                      "tag-491320": Object {
+                        "children": Array [
+                          "tag-491321",
+                          "tag-491322",
+                        ],
+                        "editable": false,
+                        "input": "test5",
+                        "x": 491,
+                        "y": 691,
+                      },
+                      "tag-491321": Object {
+                        "editable": false,
+                        "input": "test6",
+                        "x": 591,
+                        "y": 791,
+                      },
+                      "tag-491322": Object {
+                        "editable": false,
+                        "input": "test7",
+                        "x": 591,
+                        "y": 591,
+                      },
+                    }
+                  }
+                  key="nino-zone-tag-491321"
+                  lineData={
+                    Object {
+                      "line-761026": Object {
+                        "from": Object {
+                          "bottom": 512,
+                          "height": 21,
+                          "left": 670,
+                          "right": 700.359375,
+                          "top": 491,
+                          "width": 30.359375,
+                          "x": 670,
+                          "y": 491,
+                        },
+                        "fromKey": "tag-491322",
+                        "to": Object {
+                          "bottom": 0,
+                          "height": 0,
+                          "left": 0,
+                          "right": 0,
+                          "top": 0,
+                          "width": 0,
+                          "x": 0,
+                          "y": 0,
+                        },
+                        "toKey": "tag-491320",
+                      },
+                      "line-762482": Object {
+                        "from": Object {
+                          "bottom": 712,
+                          "height": 21,
+                          "left": 670,
+                          "right": 700.359375,
+                          "top": 691,
+                          "width": 30.359375,
+                          "x": 670,
+                          "y": 691,
+                        },
+                        "fromKey": "tag-491321",
+                        "to": Object {
+                          "bottom": 0,
+                          "height": 0,
+                          "left": 0,
+                          "right": 0,
+                          "top": 0,
+                          "width": 0,
+                          "x": 0,
+                          "y": 0,
+                        },
+                        "toKey": "tag-491320",
+                      },
+                    }
+                  }
+                  name="tag-group"
+                  onChange={[Function]}
+                  onContextMenu={[Function]}
+                  onWheel={[Function]}
+                  targetKey="tag-491321"
+                >
+                  <div
+                    className="tag-group animate-appear"
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onWheel={[Function]}
+                  >
+                    test6
+                  </div>
+                </NinoZone>
+              </div>
+            </DraggableCore>
+          </Draggable>
+          <Draggable
+            allowAnyClick={false}
+            axis="both"
+            bounds={false}
+            cancel={null}
+            defaultClassName="react-draggable"
+            defaultClassNameDragged="react-draggable-dragged"
+            defaultClassNameDragging="react-draggable-dragging"
+            defaultPosition={
+              Object {
+                "x": 0,
+                "y": 0,
+              }
+            }
+            disabled={false}
+            enableUserSelectHack={true}
+            grid={null}
+            handle={null}
+            key="tag-491322"
+            offsetParent={null}
+            onDrag={[Function]}
+            onMouseDown={[Function]}
+            onStart={[Function]}
+            onStop={[Function]}
+            position={
+              Object {
+                "x": 591,
+                "y": 591,
+              }
+            }
+            scale={1}
+            transform={null}
+          >
+            <DraggableCore
+              allowAnyClick={false}
+              cancel={null}
+              disabled={false}
+              enableUserSelectHack={true}
+              grid={null}
+              handle={null}
+              offsetParent={null}
+              onDrag={[Function]}
+              onMouseDown={[Function]}
+              onStart={[Function]}
+              onStop={[Function]}
+              transform={null}
+            >
+              <div
+                className="react-draggable"
+                onDoubleClick={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                    "transform": "translate(591px,591px)",
+                  }
+                }
+                transform={null}
+              >
+                <NinoZone
+                  className="tag-group animate-appear"
+                  data={
+                    Object {
+                      "tag-491320": Object {
+                        "children": Array [
+                          "tag-491321",
+                          "tag-491322",
+                        ],
+                        "editable": false,
+                        "input": "test5",
+                        "x": 491,
+                        "y": 691,
+                      },
+                      "tag-491321": Object {
+                        "editable": false,
+                        "input": "test6",
+                        "x": 591,
+                        "y": 791,
+                      },
+                      "tag-491322": Object {
+                        "editable": false,
+                        "input": "test7",
+                        "x": 591,
+                        "y": 591,
+                      },
+                    }
+                  }
+                  key="nino-zone-tag-491322"
+                  lineData={
+                    Object {
+                      "line-761026": Object {
+                        "from": Object {
+                          "bottom": 512,
+                          "height": 21,
+                          "left": 670,
+                          "right": 700.359375,
+                          "top": 491,
+                          "width": 30.359375,
+                          "x": 670,
+                          "y": 491,
+                        },
+                        "fromKey": "tag-491322",
+                        "to": Object {
+                          "bottom": 0,
+                          "height": 0,
+                          "left": 0,
+                          "right": 0,
+                          "top": 0,
+                          "width": 0,
+                          "x": 0,
+                          "y": 0,
+                        },
+                        "toKey": "tag-491320",
+                      },
+                      "line-762482": Object {
+                        "from": Object {
+                          "bottom": 712,
+                          "height": 21,
+                          "left": 670,
+                          "right": 700.359375,
+                          "top": 691,
+                          "width": 30.359375,
+                          "x": 670,
+                          "y": 691,
+                        },
+                        "fromKey": "tag-491321",
+                        "to": Object {
+                          "bottom": 0,
+                          "height": 0,
+                          "left": 0,
+                          "right": 0,
+                          "top": 0,
+                          "width": 0,
+                          "x": 0,
+                          "y": 0,
+                        },
+                        "toKey": "tag-491320",
+                      },
+                    }
+                  }
+                  name="tag-group"
+                  onChange={[Function]}
+                  onContextMenu={[Function]}
+                  onWheel={[Function]}
+                  targetKey="tag-491322"
+                >
+                  <div
+                    className="tag-group animate-appear"
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onWheel={[Function]}
+                  >
+                    test7
+                  </div>
+                </NinoZone>
+              </div>
+            </DraggableCore>
+          </Draggable>
+        </TagGroup>
+        <LineGroup
+          data={
+            Object {
+              "line-761026": Object {
+                "from": Object {
+                  "bottom": 512,
+                  "height": 21,
+                  "left": 670,
+                  "right": 700.359375,
+                  "top": 491,
+                  "width": 30.359375,
+                  "x": 670,
+                  "y": 491,
+                },
+                "fromKey": "tag-491322",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                  "x": 0,
+                  "y": 0,
+                },
+                "toKey": "tag-491320",
+              },
+              "line-762482": Object {
+                "from": Object {
+                  "bottom": 712,
+                  "height": 21,
+                  "left": 670,
+                  "right": 700.359375,
+                  "top": 691,
+                  "width": 30.359375,
+                  "x": 670,
+                  "y": 691,
+                },
+                "fromKey": "tag-491321",
+                "to": Object {
+                  "bottom": 0,
+                  "height": 0,
+                  "left": 0,
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                  "x": 0,
+                  "y": 0,
+                },
+                "toKey": "tag-491320",
+              },
+            }
+          }
+          offset={
+            Object {
+              "x": -1,
+              "y": -1,
+            }
+          }
+          orientation="horizonal"
+        >
+          <SteppedLine
+            className="animate-appear"
+            from={
+              Object {
+                "bottom": 512,
+                "height": 21,
+                "left": 670,
+                "right": 700.359375,
+                "top": 491,
+                "width": 30.359375,
+                "x": 670,
+                "y": 491,
+              }
+            }
+            key="line-761026"
+            offset={
+              Object {
+                "x": -1,
+                "y": -1,
+              }
+            }
+            orientation="horizonal"
+            to={
+              Object {
+                "bottom": 0,
+                "height": 0,
+                "left": 0,
+                "right": 0,
+                "top": 0,
+                "width": 0,
+                "x": 0,
+                "y": 0,
+              }
+            }
+          >
+            <div
+              className="stepped-line"
+            >
+              <Line
+                showArrow={false}
+                x0={671}
+                x1={336}
+                y0={502.5}
+                y1={502.5}
+              >
+                <div
+                  className="line-core"
+                  style={
+                    Object {
+                      "transform": "translate3d(671px, 502.5px, 0) rotate(180deg)",
+                      "width": "335px",
+                    }
+                  }
+                />
+              </Line>
+              <Line
+                showArrow={false}
+                x0={336}
+                x1={336}
+                y0={502.5}
+                y1={1}
+              >
+                <div
+                  className="line-core"
+                  style={
+                    Object {
+                      "transform": "translate3d(336px, 502.5px, 0) rotate(-90deg)",
+                      "width": "501.5px",
+                    }
+                  }
+                />
+              </Line>
+              <Line
+                showArrow={false}
+                x0={336}
+                x1={1}
+                y0={1}
+                y1={1}
+              >
+                <div
+                  className="line-core"
+                  style={
+                    Object {
+                      "transform": "translate3d(336px, 1px, 0) rotate(180deg)",
+                      "width": "335px",
+                    }
+                  }
+                />
+              </Line>
+            </div>
+          </SteppedLine>
+          <SteppedLine
+            className="animate-appear"
+            from={
+              Object {
+                "bottom": 712,
+                "height": 21,
+                "left": 670,
+                "right": 700.359375,
+                "top": 691,
+                "width": 30.359375,
+                "x": 670,
+                "y": 691,
+              }
+            }
+            key="line-762482"
+            offset={
+              Object {
+                "x": -1,
+                "y": -1,
+              }
+            }
+            orientation="horizonal"
+            to={
+              Object {
+                "bottom": 0,
+                "height": 0,
+                "left": 0,
+                "right": 0,
+                "top": 0,
+                "width": 0,
+                "x": 0,
+                "y": 0,
+              }
+            }
+          >
+            <div
+              className="stepped-line"
+            >
+              <Line
+                showArrow={false}
+                x0={671}
+                x1={336}
+                y0={702.5}
+                y1={702.5}
+              >
+                <div
+                  className="line-core"
+                  style={
+                    Object {
+                      "transform": "translate3d(671px, 702.5px, 0) rotate(180deg)",
+                      "width": "335px",
+                    }
+                  }
+                />
+              </Line>
+              <Line
+                showArrow={false}
+                x0={336}
+                x1={336}
+                y0={702.5}
+                y1={1}
+              >
+                <div
+                  className="line-core"
+                  style={
+                    Object {
+                      "transform": "translate3d(336px, 702.5px, 0) rotate(-90deg)",
+                      "width": "701.5px",
+                    }
+                  }
+                />
+              </Line>
+              <Line
+                showArrow={false}
+                x0={336}
+                x1={1}
+                y0={1}
+                y1={1}
+              >
+                <div
+                  className="line-core"
+                  style={
+                    Object {
+                      "transform": "translate3d(336px, 1px, 0) rotate(180deg)",
+                      "width": "335px",
                     }
                   }
                 />
