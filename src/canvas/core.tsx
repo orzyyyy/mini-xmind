@@ -195,7 +195,7 @@ const Canvas = ({
       }
     }
     if (onChange) {
-      onChange(getMergedData({ block, line, tag }));
+      onChange(getMergedData({ block, line, tag }, true));
     }
   };
 
@@ -219,21 +219,41 @@ const Canvas = ({
     }
   };
 
-  const getMergedData = ({
-    block: newBlock,
-    line: newLine,
-    tag: newTag,
-    position: newPosition,
-    current: newCurrent,
-  }: {
-    block?: BlockProps;
-    tag?: TagGroupItem;
-    line?: LineProps;
-    position?: CoordinatesProps;
-    current?: string;
-  }): DataSource => {
+  const getMergedData = (
+    {
+      block: newBlock,
+      line: newLine,
+      tag: newTag,
+      position: newPosition,
+      current: newCurrent,
+    }: {
+      block?: BlockProps;
+      tag?: TagGroupItem;
+      line?: LineProps;
+      position?: CoordinatesProps;
+      current?: string;
+    },
+    shouldUpdateOriginData?: boolean,
+  ): DataSource => {
     newCurrent = newCurrent || current;
     const originPosition = (originData.position as any)[current];
+
+    if (shouldUpdateOriginData) {
+      return {
+        block: newBlock || originData.block,
+        line: newLine || originData.line,
+        tag: newTag || originData.tag,
+        position: {
+          [newCurrent as string]: Object.assign(
+            {},
+            originPosition,
+            newPosition,
+          ),
+        },
+        current: newCurrent,
+      };
+    }
+
     return {
       block: Object.assign({}, originData.block, newBlock),
       line: Object.assign({}, originData.line, newLine),
