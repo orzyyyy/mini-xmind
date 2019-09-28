@@ -265,15 +265,6 @@ const Canvas = ({
     };
   };
 
-  const renderLineGroup = (targetDom: any) => (
-    <LineGroup
-      data={updateLineDataByTargetDom(line, targetDom)}
-      offset={position}
-      orientation={orientation}
-      arrowStatus={arrowStatus}
-    />
-  );
-
   return (
     <Draggable
       onDrag={handleDrag}
@@ -286,26 +277,27 @@ const Canvas = ({
         onDrop={onDrop}
         onWheel={handleCanvasWheel}
       >
-        {
-          <>
-            <BlockGroup
-              offset={position}
-              data={block}
-              onChange={handleBlockChange}
-              lineData={line}
-              onContextMenu={handleRightClick}
-              onWheel={handleElementWheel}
-            />
-            <TagGroup
-              data={tag}
-              onChange={handleTagChange}
-              lineData={line}
-              onContextMenu={handleRightClick}
-              onWheel={handleElementWheel}
-            />
-          </>
-        }
-        {renderLineGroup(getTargetDom())}
+        <BlockGroup
+          offset={position}
+          data={block}
+          onChange={handleBlockChange}
+          lineData={line}
+          onContextMenu={handleRightClick}
+          onWheel={handleElementWheel}
+        />
+        <TagGroup
+          data={tag}
+          onChange={handleTagChange}
+          lineData={line}
+          onContextMenu={handleRightClick}
+          onWheel={handleElementWheel}
+        />
+        <LineGroup
+          data={updateLineDataByTargetDom(line, getTargetDom())}
+          offset={position}
+          orientation={orientation}
+          arrowStatus={arrowStatus}
+        />
       </div>
     </Draggable>
   );
