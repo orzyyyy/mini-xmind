@@ -120,23 +120,20 @@ const Canvas = ({
     y: -1,
   };
   const [zoomHistory, setZoomHistory] = useState([] as string[]);
+  const updatedLine = updateLineDataByTargetDom(line, getTargetDom());
 
   useEffect(() => {
     setLineMapping(line);
   }, [line]);
 
   const handleBlockChange = (newBlock: BlockProps, blockDom: any) => {
-    if (onChange) {
-      const newLine = updateLineDataByTargetDom(line, blockDom);
-      onChange(getMergedData({ block: newBlock, line: newLine }));
-    }
+    const newLine = updateLineDataByTargetDom(line, blockDom);
+    onChange(getMergedData({ block: newBlock, line: newLine }));
   };
 
   const handleTagChange = (newTag: TagGroupItem, tagDom: any) => {
-    if (onChange) {
-      const newLine = updateLineDataByTargetDom(line, tagDom);
-      onChange(getMergedData({ tag: newTag, line: newLine }));
-    }
+    const newLine = updateLineDataByTargetDom(line, tagDom);
+    onChange(getMergedData({ tag: newTag, line: newLine }));
   };
 
   const onDrop = (e: any) => {
@@ -158,15 +155,11 @@ const Canvas = ({
       result[key]['editable'] = true;
     }
 
-    if (onChange) {
-      onChange(getMergedData({ [type]: result }));
-    }
+    onChange(getMergedData({ [type]: result }));
   };
 
   const handleDrag = (_: any, { x, y }: CoordinatesProps) => {
-    if (onChange) {
-      onChange(getMergedData({ position: { x, y } }));
-    }
+    onChange(getMergedData({ position: { x, y } }));
   };
 
   const handleDragStart = (e: MouseEvent) => {
@@ -194,9 +187,7 @@ const Canvas = ({
         delete line[lineKey];
       }
     }
-    if (onChange) {
-      onChange(getMergedData({ block, line, tag }, true));
-    }
+    onChange(getMergedData({ block, line, tag }, true));
   };
 
   const handleElementWheel = (data: any, key: string) => {
@@ -204,9 +195,7 @@ const Canvas = ({
       zoomHistory.push(current);
       setZoomHistory(Array.from(new Set(zoomHistory)));
 
-      if (onChange) {
-        onChange(getMergedData({ current: key }));
-      }
+      onChange(getMergedData({ current: key }));
     }
   };
 
@@ -293,7 +282,7 @@ const Canvas = ({
           onWheel={handleElementWheel}
         />
         <LineGroup
-          data={updateLineDataByTargetDom(line, getTargetDom())}
+          data={updatedLine}
           offset={position}
           orientation={orientation}
           arrowStatus={arrowStatus}
