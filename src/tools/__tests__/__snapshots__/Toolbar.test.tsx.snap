@@ -8,6 +8,7 @@ exports[`Toolbar toolbar render correctly 1`] = `
     <ul>
       <li
         draggable={true}
+        key="toolbar-line"
         onDragStart={[Function]}
       >
         <Minus>
@@ -86,6 +87,7 @@ exports[`Toolbar toolbar render correctly 1`] = `
       </li>
       <li
         draggable={true}
+        key="toolbar-block"
         onDragStart={[Function]}
       >
         <Border>
@@ -164,6 +166,7 @@ exports[`Toolbar toolbar render correctly 1`] = `
       </li>
       <li
         draggable={true}
+        key="toolbar-tag"
         onDragStart={[Function]}
       >
         <Tag>
