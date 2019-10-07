@@ -120,6 +120,7 @@ const Canvas = ({
     y: -1,
   };
   const [zoomHistory, setZoomHistory] = useState([] as string[]);
+  const [tagEditable, setTagEditable] = useState(false);
   const updatedLine = updateLineDataByTargetDom(line, getTargetDom());
 
   useEffect(() => {
@@ -131,8 +132,15 @@ const Canvas = ({
     onChange(getMergedData({ block: newBlock, line: newLine }));
   };
 
-  const handleTagChange = (newTag: TagGroupItem, tagDom: any) => {
+  const handleTagChange = (
+    newTag: TagGroupItem,
+    tagDom: any,
+    targetKey?: string,
+  ) => {
     const newLine = updateLineDataByTargetDom(line, tagDom);
+    // When `editable` is true, remove <Draggable /> of Canvas,
+    // for the resize of textarea
+    setTagEditable(!!targetKey);
     onChange(getMergedData({ tag: newTag, line: newLine }));
   };
 
@@ -254,42 +262,63 @@ const Canvas = ({
     };
   };
 
-  return (
-    <Draggable
-      onDrag={handleDrag}
-      position={position}
-      onStart={handleDragStart}
-    >
-      <div
-        className={classNames('Canvas', className)}
-        onDragOver={preventDefault}
-        onDrop={onDrop}
-        onWheel={handleCanvasWheel}
+  const addWrapper = (children: React.ReactElement) => {
+    if (tagEditable) {
+      return (
+        <div
+          className="tag-editting"
+          style={{
+            transform: `translate3d(${position.x}px,${position.y}px, 0)`,
+          }}
+        >
+          {children}
+        </div>
+      );
+    }
+
+    return (
+      <Draggable
+        onDrag={handleDrag}
+        position={position}
+        onStart={handleDragStart}
       >
-        <BlockGroup
-          offset={position}
-          data={block}
-          onChange={handleBlockChange}
-          lineData={line}
-          onContextMenu={handleRightClick}
-          onWheel={handleElementWheel}
-        />
-        <TagGroup
-          data={tag}
-          onChange={handleTagChange}
-          lineData={line}
-          onContextMenu={handleRightClick}
-          onWheel={handleElementWheel}
-        />
-        <LineGroup
-          data={updatedLine}
-          offset={position}
-          orientation={orientation}
-          arrowStatus={arrowStatus}
-        />
-      </div>
-    </Draggable>
+        {children}
+      </Draggable>
+    );
+  };
+
+  const content = (
+    <div
+      className={classNames('Canvas', className)}
+      onDragOver={preventDefault}
+      onDrop={onDrop}
+      onWheel={handleCanvasWheel}
+    >
+      <BlockGroup
+        offset={position}
+        data={block}
+        onChange={handleBlockChange}
+        lineData={line}
+        onContextMenu={handleRightClick}
+        onWheel={handleElementWheel}
+      />
+      <TagGroup
+        data={tag}
+        onChange={handleTagChange}
+        lineData={line}
+        onContextMenu={handleRightClick}
+        onWheel={handleElementWheel}
+      />
+      <LineGroup
+        data={updatedLine}
+        offset={position}
+        orientation={orientation}
+        arrowStatus={arrowStatus}
+      />
+    </div>
   );
+
+  return addWrapper(content);
 };
 
 export default Canvas;

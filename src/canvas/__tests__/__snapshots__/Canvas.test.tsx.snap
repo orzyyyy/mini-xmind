@@ -781,7 +781,9 @@ exports[`Canvas Canvas renders correctly 1`] = `
                     onContextMenu={[Function]}
                     onWheel={[Function]}
                   >
-                    test
+                    <div>
+                      test
+                    </div>
                   </div>
                 </NinoZone>
               </div>
@@ -1005,7 +1007,9 @@ exports[`Canvas Canvas renders correctly 1`] = `
                     onContextMenu={[Function]}
                     onWheel={[Function]}
                   >
-                    test2
+                    <div>
+                      test2
+                    </div>
                   </div>
                 </NinoZone>
               </div>
@@ -1229,7 +1233,9 @@ exports[`Canvas Canvas renders correctly 1`] = `
                     onContextMenu={[Function]}
                     onWheel={[Function]}
                   >
-                    test3
+                    <div>
+                      test3
+                    </div>
                   </div>
                 </NinoZone>
               </div>
@@ -1453,7 +1459,9 @@ exports[`Canvas Canvas renders correctly 1`] = `
                     onContextMenu={[Function]}
                     onWheel={[Function]}
                   >
-                    test4
+                    <div>
+                      test4
+                    </div>
                   </div>
                 </NinoZone>
               </div>
@@ -1677,7 +1685,9 @@ exports[`Canvas Canvas renders correctly 1`] = `
                     onContextMenu={[Function]}
                     onWheel={[Function]}
                   >
-                    test5
+                    <div>
+                      test5
+                    </div>
                   </div>
                 </NinoZone>
               </div>
@@ -2772,7 +2782,9 @@ exports[`Canvas Canvas renders correctly 2`] = `
                     onContextMenu={[Function]}
                     onWheel={[Function]}
                   >
-                    test5
+                    <div>
+                      test5
+                    </div>
                   </div>
                 </NinoZone>
               </div>
@@ -2933,7 +2945,9 @@ exports[`Canvas Canvas renders correctly 2`] = `
                     onContextMenu={[Function]}
                     onWheel={[Function]}
                   >
-                    test6
+                    <div>
+                      test6
+                    </div>
                   </div>
                 </NinoZone>
               </div>
@@ -3094,7 +3108,9 @@ exports[`Canvas Canvas renders correctly 2`] = `
                     onContextMenu={[Function]}
                     onWheel={[Function]}
                   >
-                    test7
+                    <div>
+                      test7
+                    </div>
                   </div>
                 </NinoZone>
               </div>

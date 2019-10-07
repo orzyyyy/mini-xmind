@@ -24,7 +24,7 @@ export type TagGroupItem = {
 };
 export interface TagGroupProps {
   data: TagGroupItem;
-  onChange: (data: TagGroupItem, tagDom: any) => void;
+  onChange: (data: TagGroupItem, tagDom: any, targetKey?: string) => void;
   className?: string;
   onContextMenu: (item: ContextMenuProps) => void;
   lineData: LineProps;
@@ -57,7 +57,12 @@ const TagGroup = ({
     (data as any)[key][targetKey] = targetValue;
 
     if (onChange) {
-      onChange(Object.assign({}, data, { [key]: item }), getTargetDom());
+      const isEditable = item.editable;
+      onChange(
+        Object.assign({}, data, { [key]: item }),
+        getTargetDom(),
+        isEditable && key,
+      );
     }
   };
 
@@ -113,7 +118,7 @@ const TagGroup = ({
           lineData={lineData}
           onWheel={onWheel}
         >
-          {item.input}
+          <div>{item.input}</div>
         </NinoZone>
       </div>
     </Draggable>
