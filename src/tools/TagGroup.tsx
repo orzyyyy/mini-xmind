@@ -4,12 +4,17 @@ import Draggable from 'react-draggable';
 import { Input } from 'antd';
 import './css/TagGroup.css';
 import { stopPropagation, preventDefault } from '../utils/LineUtil';
-import { ContextMenuProps, CoordinatesProps } from '../canvas/core';
+import {
+  ContextMenuProps,
+  CoordinatesProps,
+  CommonProps,
+} from '../canvas/core';
 import NinoZone, { getTargetDom } from '../canvas/nino-zone';
 import { LineProps } from './LineGroup';
+import { Plus } from '@ant-design/icons';
 
 export type TagGroupRenderItem = {
-  item: CoordinatesProps & { input: string };
+  item: CommonProps & CoordinatesProps & { input: string };
   key: string;
   className: string;
   onContextMenu?: ({ event, key, group }: ContextMenuProps) => void;
@@ -123,6 +128,7 @@ const TagGroup = ({
         >
           {/* this should not be wrapper with a block element such as a div,
             or lines will get crashed */}
+          {item.children && <Plus style={item.childStyle} />}
           {item.input}
         </NinoZone>
       </div>

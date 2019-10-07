@@ -19,6 +19,12 @@ export interface CoordinatesProps {
   x: number;
   y: number;
 }
+export interface CommonProps {
+  children?: string[];
+  style?: React.CSSProperties;
+  childStyle?: React.CSSProperties;
+  className?: string;
+}
 export type DataSource = {
   position?: {
     [key: string]: CoordinatesProps;
