@@ -621,6 +621,8 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   Object {
                     "touchAction": "none",
                     "transform": "translate(186px,469px)",
+                    "width": 199,
+                    "wordBreak": "break-all",
                   }
                 }
                 transform={null}
@@ -845,6 +847,8 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   Object {
                     "touchAction": "none",
                     "transform": "translate(34px,367px)",
+                    "width": 199,
+                    "wordBreak": "break-all",
                   }
                 }
                 transform={null}
@@ -1069,6 +1073,8 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   Object {
                     "touchAction": "none",
                     "transform": "translate(399px,602px)",
+                    "width": 199,
+                    "wordBreak": "break-all",
                   }
                 }
                 transform={null}
@@ -1293,6 +1299,8 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   Object {
                     "touchAction": "none",
                     "transform": "translate(385px,340px)",
+                    "width": 199,
+                    "wordBreak": "break-all",
                   }
                 }
                 transform={null}
@@ -1517,6 +1525,8 @@ exports[`Canvas Canvas renders correctly 1`] = `
                   Object {
                     "touchAction": "none",
                     "transform": "translate(491px,691px)",
+                    "width": 199,
+                    "wordBreak": "break-all",
                   }
                 }
                 transform={null}
@@ -2675,6 +2685,8 @@ exports[`Canvas Canvas renders correctly 2`] = `
                   Object {
                     "touchAction": "none",
                     "transform": "translate(491px,691px)",
+                    "width": 199,
+                    "wordBreak": "break-all",
                   }
                 }
                 transform={null}
@@ -2836,6 +2848,8 @@ exports[`Canvas Canvas renders correctly 2`] = `
                   Object {
                     "touchAction": "none",
                     "transform": "translate(591px,791px)",
+                    "width": 199,
+                    "wordBreak": "break-all",
                   }
                 }
                 transform={null}
@@ -2997,6 +3011,8 @@ exports[`Canvas Canvas renders correctly 2`] = `
                   Object {
                     "touchAction": "none",
                     "transform": "translate(591px,591px)",
+                    "width": 199,
+                    "wordBreak": "break-all",
                   }
                 }
                 transform={null}

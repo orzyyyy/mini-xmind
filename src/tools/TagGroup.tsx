@@ -106,7 +106,10 @@ const TagGroup = ({
       position={{ x: item.x, y: item.y }}
       onDrag={(_: any, jtem: any) => handleDrag(jtem, key)}
     >
-      <div onDoubleClick={() => handleChange(item, key, 'editable', true)}>
+      <div
+        onDoubleClick={() => handleChange(item, key, 'editable', true)}
+        style={{ width: 199, wordBreak: 'break-all' }}
+      >
         <NinoZone
           className={className}
           onContextMenu={onContextMenu}
