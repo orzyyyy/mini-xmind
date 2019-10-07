@@ -781,7 +781,14 @@ exports[`Canvas Canvas renders correctly 1`] = `
                     onContextMenu={[Function]}
                     onWheel={[Function]}
                   >
-                    <div>
+                    <div
+                      style={
+                        Object {
+                          "width": 199,
+                          "wordBreak": "break-all",
+                        }
+                      }
+                    >
                       test
                     </div>
                   </div>
@@ -1007,7 +1014,14 @@ exports[`Canvas Canvas renders correctly 1`] = `
                     onContextMenu={[Function]}
                     onWheel={[Function]}
                   >
-                    <div>
+                    <div
+                      style={
+                        Object {
+                          "width": 199,
+                          "wordBreak": "break-all",
+                        }
+                      }
+                    >
                       test2
                     </div>
                   </div>
@@ -1233,7 +1247,14 @@ exports[`Canvas Canvas renders correctly 1`] = `
                     onContextMenu={[Function]}
                     onWheel={[Function]}
                   >
-                    <div>
+                    <div
+                      style={
+                        Object {
+                          "width": 199,
+                          "wordBreak": "break-all",
+                        }
+                      }
+                    >
                       test3
                     </div>
                   </div>
@@ -1459,7 +1480,14 @@ exports[`Canvas Canvas renders correctly 1`] = `
                     onContextMenu={[Function]}
                     onWheel={[Function]}
                   >
-                    <div>
+                    <div
+                      style={
+                        Object {
+                          "width": 199,
+                          "wordBreak": "break-all",
+                        }
+                      }
+                    >
                       test4
                     </div>
                   </div>
@@ -1685,7 +1713,14 @@ exports[`Canvas Canvas renders correctly 1`] = `
                     onContextMenu={[Function]}
                     onWheel={[Function]}
                   >
-                    <div>
+                    <div
+                      style={
+                        Object {
+                          "width": 199,
+                          "wordBreak": "break-all",
+                        }
+                      }
+                    >
                       test5
                     </div>
                   </div>
@@ -2782,7 +2817,14 @@ exports[`Canvas Canvas renders correctly 2`] = `
                     onContextMenu={[Function]}
                     onWheel={[Function]}
                   >
-                    <div>
+                    <div
+                      style={
+                        Object {
+                          "width": 199,
+                          "wordBreak": "break-all",
+                        }
+                      }
+                    >
                       test5
                     </div>
                   </div>
@@ -2945,7 +2987,14 @@ exports[`Canvas Canvas renders correctly 2`] = `
                     onContextMenu={[Function]}
                     onWheel={[Function]}
                   >
-                    <div>
+                    <div
+                      style={
+                        Object {
+                          "width": 199,
+                          "wordBreak": "break-all",
+                        }
+                      }
+                    >
                       test6
                     </div>
                   </div>
@@ -3108,7 +3157,14 @@ exports[`Canvas Canvas renders correctly 2`] = `
                     onContextMenu={[Function]}
                     onWheel={[Function]}
                   >
-                    <div>
+                    <div
+                      style={
+                        Object {
+                          "width": 199,
+                          "wordBreak": "break-all",
+                        }
+                      }
+                    >
                       test7
                     </div>
                   </div>
