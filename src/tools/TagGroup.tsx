@@ -118,7 +118,9 @@ const TagGroup = ({
           lineData={lineData}
           onWheel={onWheel}
         >
-          <div>{item.input}</div>
+          {/* this should not be wrapper with a block element such as a div,
+            or lines will get crashed */}
+          {item.input}
         </NinoZone>
       </div>
     </Draggable>
