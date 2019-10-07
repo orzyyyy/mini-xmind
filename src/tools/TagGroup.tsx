@@ -118,7 +118,7 @@ const TagGroup = ({
           lineData={lineData}
           onWheel={onWheel}
         >
-          <div style={{ width: 199, wordBreak: 'break-all' }}>{item.input}</div>
+          <div>{item.input}</div>
         </NinoZone>
       </div>
     </Draggable>
