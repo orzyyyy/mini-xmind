@@ -2,6 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import Canvas from '../core';
 import { mapping } from '../../demo';
+import { getTargetDom } from '../nino-zone';
 
 describe('Canvas', () => {
   const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
@@ -177,5 +178,28 @@ describe('Canvas', () => {
       .props()
       .onWheel({ deltaY: 1 });
     expect(onChange).toHaveBeenCalled();
+  });
+
+  it('tagEditable should work', async () => {
+    const onChange = jest.fn();
+    const wrapper: any = mount(<Canvas data={mapping} onChange={onChange} />);
+    wrapper
+      .find('TagGroup')
+      .first()
+      .props()
+      .onChange(
+        Object.assign({}, mapping.tag, {
+          'tag-416176': {
+            x: 186,
+            y: 469,
+            editable: true,
+            input: 'test',
+          },
+        }),
+        getTargetDom(),
+        'tag-416176',
+      );
+    await wrapper.update();
+    expect(wrapper.find('.tag-editting')).toHaveLength(1);
   });
 });
