@@ -6,7 +6,7 @@ describe('Toolbar', () => {
   it('toolbar render correctly', () => {
     const wrapper = mount(<Toolbar />);
     expect(wrapper).toMatchSnapshot();
-    expect(wrapper.find('.anticon').length).toBe(3);
+    expect(wrapper.find('.anticon').length).toBe(4);
   });
 
   it('onDragStart', () => {
@@ -16,20 +16,6 @@ describe('Toolbar', () => {
       onChange();
     };
     const event = { dataTransfer: { effectAllowed: '', setData } };
-    (wrapper
-      .find('li')
-      .first()
-      .props() as any).onDragStart(event, '{ test: 1 }');
-    expect(onChange).toBeCalled();
-    expect(event.dataTransfer.effectAllowed).toBe('copy');
-
-    (wrapper
-      .find('li')
-      .at(1)
-      .props() as any).onDragStart(event, '{ test: 1 }');
-    expect(onChange).toBeCalled();
-    expect(event.dataTransfer.effectAllowed).toBe('copy');
-
     (wrapper
       .find('li')
       .at(2)

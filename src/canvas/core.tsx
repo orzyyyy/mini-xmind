@@ -14,6 +14,7 @@ import BlockGroup, {
 import Draggable from 'react-draggable';
 import { setClickList, getTargetDom, setLineMapping } from './nino-zone';
 import { OrientationProps } from '../line/SteppedLine';
+import { DraggableItemProp } from '../tools/Toolbar';
 
 export interface CoordinatesProps {
   x: number;
@@ -156,7 +157,7 @@ const Canvas = ({
       return false;
     }
     dragItem = dragItem ? JSON.parse(dragItem) : {};
-    const { type }: { type: 'block' | 'tag' } = dragItem;
+    const { type }: { type: DraggableItemProp } = dragItem;
     const { clientX, clientY } = e;
     const result: any = {};
     const x = clientX - position.x;
