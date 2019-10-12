@@ -16,7 +16,7 @@
   "scripts": {
     "build": "nino koei",
     "clean": "rimraf node_modules package-lock.json dist es lib && npm i",
-    "codecov": "nino test --coverage",
+    "codecov": "npm test -- --coverage",
     "compile": "tsc --outDir es && tsc --outDir lib && nino compile",
     "deploy": "node scripts/publish",
     "dist": "nino dist",
