@@ -5,10 +5,7 @@ import {
   getRelativeLinesByBlockKey,
   getLineCoordinatesForHorizonal,
   getLineCoordinatesForVertical,
-  // getLineCoordinatesForHorizonal,
-  // getLineCoordinatesForVertical,
 } from '../LineUtil';
-import 'nino-cli/scripts/setup';
 import { mount } from 'enzyme';
 import React from 'react';
 
