@@ -1,4 +1,4 @@
-name: compile
+name: test-es
 
 on: [push]
 
@@ -15,3 +15,6 @@ jobs:
 
       - name: compile
         run: npm run compile
+
+      - name: test esm
+        run: npm run test:es
