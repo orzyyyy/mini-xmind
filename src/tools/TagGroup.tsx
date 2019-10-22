@@ -4,11 +4,7 @@ import Draggable from 'react-draggable';
 import { Input } from 'antd';
 import './css/TagGroup.css';
 import { stopPropagation, preventDefault } from '../utils/LineUtil';
-import {
-  ContextMenuProps,
-  CoordinatesProps,
-  CommonProps,
-} from '../canvas/core';
+import { ContextMenuProps, CoordinatesProps, CommonProps } from '../canvas/core';
 import NinoZone, { getTargetDom } from '../canvas/nino-zone';
 import { LineProps } from './LineGroup';
 import { Plus } from '@ant-design/icons';
@@ -44,39 +40,20 @@ const handleDragStart = (e: any) => {
   preventDefault(e);
 };
 
-const TagGroup = ({
-  data,
-  onChange,
-  onContextMenu,
-  className: parentClassName,
-  lineData,
-  onWheel,
-}: TagGroupProps) => {
-  const handleChange = (
-    item: any,
-    key: string,
-    targetKey: string,
-    targetValue: boolean | string,
-  ) => {
+const TagGroup = ({ data, onChange, onContextMenu, className: parentClassName, lineData, onWheel }: TagGroupProps) => {
+  const handleChange = (item: any, key: string, targetKey: string, targetValue: boolean | string) => {
     data[key] = item;
     (data as any)[key][targetKey] = targetValue;
 
     if (onChange) {
       const isEditable = item.editable;
-      onChange(
-        Object.assign({}, data, { [key]: item }),
-        getTargetDom(),
-        isEditable && key,
-      );
+      onChange(Object.assign({}, data, { [key]: item }), getTargetDom(), isEditable && key);
     }
   };
 
   const handleDrag = ({ x, y }: any, key: string) => {
     if (onChange) {
-      onChange(
-        Object.assign({}, data, { [key]: { ...data[key], x, y } }),
-        getTargetDom(),
-      );
+      onChange(Object.assign({}, data, { [key]: { ...data[key], x, y } }), getTargetDom());
     }
   };
 
@@ -99,12 +76,7 @@ const TagGroup = ({
     </div>
   );
 
-  const renderTagItem = ({
-    item,
-    key,
-    onContextMenu,
-    className,
-  }: TagGroupRenderItem) => (
+  const renderTagItem = ({ item, key, onContextMenu, className }: TagGroupRenderItem) => (
     <Draggable
       onStart={handleDragStart}
       key={key}
@@ -140,12 +112,7 @@ const TagGroup = ({
       {Object.keys(data).map(key => {
         const item = (data as any)[key];
         const { editable, className: tagClassName } = item;
-        const targetClassName = classNames(
-          'tag-group',
-          'animate-appear',
-          parentClassName,
-          tagClassName,
-        );
+        const targetClassName = classNames('tag-group', 'animate-appear', parentClassName, tagClassName);
         if (editable) {
           return renderTextArea({
             item,

@@ -237,7 +237,7 @@ const debounce = (fun: any, delay: number) => (args: any) => {
   }, delay);
 };
 
-function useDebounce(data: any) {
+function useDebounce(data: DataSource) {
   // eslint-disable-next-line
   console.log(data);
 }

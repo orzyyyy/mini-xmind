@@ -1,16 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import LineGroup, { LineProps } from '../tools/LineGroup';
-import {
-  preventDefault,
-  generateKey,
-  stopPropagation,
-} from '../utils/LineUtil';
+import { preventDefault, generateKey, stopPropagation } from '../utils/LineUtil';
 import TagGroup, { TagGroupItem } from '../tools/TagGroup';
-import BlockGroup, {
-  BlockProps,
-  updateLineDataByTargetDom,
-} from '../tools/BlockGroup';
+import BlockGroup, { BlockProps, updateLineDataByTargetDom } from '../tools/BlockGroup';
 import Draggable from 'react-draggable';
 import { setClickList, getTargetDom, setLineMapping } from './nino-zone';
 import { OrientationProps } from '../line/SteppedLine';
@@ -113,13 +106,7 @@ const filterCurrentElement = (data: DataSource) => {
   return target;
 };
 
-const Canvas = ({
-  className,
-  orientation = 'horizonal',
-  data: originData,
-  onChange,
-  arrowStatus,
-}: CanvasProps) => {
+const Canvas = ({ className, orientation = 'horizonal', data: originData, onChange, arrowStatus }: CanvasProps) => {
   const data = filterCurrentElement(originData);
   const { block = {}, line = {}, tag = {}, current = 'root' } = data;
   const position = (data.position && data.position[current]) || {
@@ -139,11 +126,7 @@ const Canvas = ({
     onChange(getMergedData({ block: newBlock, line: newLine }));
   };
 
-  const handleTagChange = (
-    newTag: TagGroupItem,
-    tagDom: any,
-    targetKey?: string,
-  ) => {
+  const handleTagChange = (newTag: TagGroupItem, tagDom: any, targetKey?: string) => {
     const newLine = updateLineDataByTargetDom(line, tagDom);
     // When `editable` is true, remove <Draggable /> of Canvas,
     // for the resize of textarea
@@ -151,13 +134,13 @@ const Canvas = ({
     onChange(getMergedData({ tag: newTag, line: newLine }));
   };
 
-  const onDrop = (e: any) => {
-    let dragItem = e.dataTransfer.getData('dragItem');
+  const onDrop = (e: React.DragEvent<HTMLLIElement | HTMLDivElement>) => {
+    let dragItem: string = e.dataTransfer.getData('dragItem');
     if (!dragItem) {
       return false;
     }
-    dragItem = dragItem ? JSON.parse(dragItem) : {};
-    const { type }: { type: DraggableItemProp } = dragItem;
+    const dragItemResult: { type: DraggableItemProp } = dragItem && JSON.parse(dragItem);
+    const { type } = dragItemResult;
     const { clientX, clientY } = e;
     const result: any = {};
     const x = clientX - position.x;
@@ -214,7 +197,7 @@ const Canvas = ({
     }
   };
 
-  const handleCanvasWheel = (e: any) => {
+  const handleCanvasWheel = (e: React.WheelEvent) => {
     if (e.deltaY > 0 && onChange && zoomHistory.length) {
       const temp = zoomHistory.pop();
       const newCurrent = temp === current ? zoomHistory.pop() : temp;
@@ -240,7 +223,7 @@ const Canvas = ({
     shouldUpdateOriginData?: boolean,
   ): DataSource => {
     newCurrent = newCurrent || current;
-    const originPosition = (originData.position as any)[current];
+    const originPosition = originData.position && originData.position[current];
 
     if (shouldUpdateOriginData) {
       return {
@@ -248,11 +231,7 @@ const Canvas = ({
         line: newLine || originData.line,
         tag: newTag || originData.tag,
         position: {
-          [newCurrent as string]: Object.assign(
-            {},
-            originPosition,
-            newPosition,
-          ),
+          [newCurrent as string]: Object.assign({}, originPosition, newPosition),
         },
         current: newCurrent,
       };
@@ -284,11 +263,7 @@ const Canvas = ({
     }
 
     return (
-      <Draggable
-        onDrag={handleDrag}
-        position={position}
-        onStart={handleDragStart}
-      >
+      <Draggable onDrag={handleDrag} position={position} onStart={handleDragStart}>
         {children}
       </Draggable>
     );
@@ -316,12 +291,7 @@ const Canvas = ({
         onContextMenu={handleRightClick}
         onWheel={handleElementWheel}
       />
-      <LineGroup
-        data={updatedLine}
-        offset={position}
-        orientation={orientation}
-        arrowStatus={arrowStatus}
-      />
+      <LineGroup data={updatedLine} offset={position} orientation={orientation} arrowStatus={arrowStatus} />
     </div>
   );
 

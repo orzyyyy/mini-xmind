@@ -48,10 +48,7 @@ import { CoordinatesProps } from '../canvas/core';
 //                |   from  |
 //                |_________|
 //
-export const getPlacement = (
-  { x: x0, y: y0 }: CoordinatesProps,
-  { x: x1, y: y1 }: CoordinatesProps,
-) => {
+export const getPlacement = ({ x: x0, y: y0 }: CoordinatesProps, { x: x1, y: y1 }: CoordinatesProps) => {
   let fromAnchor;
   let toAnchor;
 
@@ -109,11 +106,7 @@ export const getRelativeLinesByBlockKey = (blockKey: string, mapping: any) => {
 // Secondly, all calculation is based on this and should follow this forever
 // Or it would be hard to read code below
 //
-export const getLineCoordinatesForVertical = (
-  from: any,
-  to: any,
-  offset: any,
-) => {
+export const getLineCoordinatesForVertical = (from: any, to: any, offset: any) => {
   let firstLineX0 = 0;
   let firstLineY0 = 0;
   let firstLineX1 = 0;
@@ -185,11 +178,7 @@ export const getLineCoordinatesForVertical = (
   //                                     |___________|
   //
   //
-  if (
-    fromY + fromHeight > toY &&
-    fromY - fromHeight / 2 < toY + toHeight &&
-    fromX + fromWidth < toX
-  ) {
+  if (fromY + fromHeight > toY && fromY - fromHeight / 2 < toY + toHeight && fromX + fromWidth < toX) {
     firstLineX0 = fromX + fromWidth;
     firstLineY0 = fromY + fromHeight / 2;
     firstLineX1 = (fromX + fromWidth + toX) / 2;
@@ -216,11 +205,7 @@ export const getLineCoordinatesForVertical = (
   //  |___________|                         |            |
   //                                        |____________|
   //
-  if (
-    fromY + fromHeight > toY &&
-    fromY - fromHeight / 2 < toY + toHeight &&
-    fromX > toX + toWidth
-  ) {
+  if (fromY + fromHeight > toY && fromY - fromHeight / 2 < toY + toHeight && fromX > toX + toWidth) {
     firstLineX0 = fromX;
     firstLineY0 = fromY + fromHeight / 2;
     firstLineX1 = (fromX + fromWidth + toX) / 2;
@@ -306,11 +291,7 @@ export const getLineCoordinatesForVertical = (
 // Secondly, all calculation is based on this and should follow this forever
 // Or it would be hard to read code below
 //
-export const getLineCoordinatesForHorizonal = (
-  from: any,
-  to: any,
-  offset: any,
-) => {
+export const getLineCoordinatesForHorizonal = (from: any, to: any, offset: any) => {
   let firstLineX0 = 0;
   let firstLineY0 = 0;
   let firstLineX1 = 0;
@@ -419,11 +400,7 @@ export const getLineCoordinatesForHorizonal = (
   //       |                 |
   //       |_________________|
   //
-  if (
-    fromX + fromWidth > toX &&
-    fromX + fromWidth / 2 < toX + toWidth / 2 &&
-    fromY + fromHeight < toY
-  ) {
+  if (fromX + fromWidth > toX && fromX + fromWidth / 2 < toX + toWidth / 2 && fromY + fromHeight < toY) {
     firstLineX0 = fromX + fromWidth / 2;
     firstLineY0 = fromY + fromHeight;
     firstLineX1 = firstLineX0;
@@ -455,11 +432,7 @@ export const getLineCoordinatesForHorizonal = (
   //       |                 |
   //       |_________________|
   //
-  if (
-    fromX + fromWidth / 2 > toX + toWidth / 2 &&
-    fromX < toX + toWidth &&
-    fromY + fromHeight < toY
-  ) {
+  if (fromX + fromWidth / 2 > toX + toWidth / 2 && fromX < toX + toWidth && fromY + fromHeight < toY) {
     firstLineX0 = fromX + fromWidth / 2;
     firstLineY0 = fromY + fromHeight;
     firstLineX1 = firstLineX0;
@@ -491,11 +464,7 @@ export const getLineCoordinatesForHorizonal = (
   //       |                 |
   //       |_________________|
   //
-  if (
-    fromX + fromWidth > toX &&
-    fromX + fromWidth / 2 < toX + toWidth / 2 &&
-    fromY > toY + toHeight
-  ) {
+  if (fromX + fromWidth > toX && fromX + fromWidth / 2 < toX + toWidth / 2 && fromY > toY + toHeight) {
     firstLineX0 = fromX + fromWidth / 2;
     firstLineY0 = fromY;
     firstLineX1 = firstLineX0;
@@ -527,11 +496,7 @@ export const getLineCoordinatesForHorizonal = (
   //       |                 |
   //       |_________________|
   //
-  if (
-    fromX + fromWidth / 2 > toX + toWidth / 2 &&
-    fromX < toX + toWidth &&
-    fromY > toY + toHeight
-  ) {
+  if (fromX + fromWidth / 2 > toX + toWidth / 2 && fromX < toX + toWidth && fromY > toY + toHeight) {
     firstLineX0 = fromX + fromWidth / 2;
     firstLineY0 = fromY;
     firstLineX1 = firstLineX0;

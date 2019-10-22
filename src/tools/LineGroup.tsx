@@ -32,16 +32,7 @@ const LineGroup = ({ offset, data, ...rest }: LineGroupProps) => (
   <>
     {Object.keys(data).map(lineKey => {
       const { from, to } = data[lineKey];
-      return (
-        <SteppedLine
-          from={from}
-          to={to}
-          key={lineKey}
-          offset={offset}
-          className="animate-appear"
-          {...rest}
-        />
-      );
+      return <SteppedLine from={from} to={to} key={lineKey} offset={offset} className="animate-appear" {...rest} />;
     })}
   </>
 );

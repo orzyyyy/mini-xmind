@@ -2,12 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import MockDate from 'mockdate';
 import BlockGroup from '../BlockGroup';
-import {
-  setClickList,
-  setLineMapping,
-  setTargetDom,
-  getTargetDom,
-} from '../../canvas/nino-zone';
+import { setClickList, setLineMapping, setTargetDom, getTargetDom } from '../../canvas/nino-zone';
 
 const defaultCheckBlockClickList1 = {
   'block-73377': {
@@ -173,10 +168,7 @@ describe('BlockGroup', () => {
       'block-624018': {},
       'block-73377': {},
     });
-    setLineMapping(
-      { test1: { fromKey: 'block-73377', toKey: 'block-624018' } },
-      true,
-    );
+    setLineMapping({ test1: { fromKey: 'block-73377', toKey: 'block-624018' } }, true);
     setTargetDom({ 'block-73377': {}, 'block-624018': {} });
     setClickList({ 'block-73377': {}, 'block-624018': {} }, true);
     expect(

@@ -1,6 +1,8 @@
+import { LineItem } from '../tools/LineGroup';
+
 export function noop() {}
 
-export const convertDomRect2Object = (item: DOMRect | ClientRect) => {
+export const convertDomRect2Object = (item: DOMRect | ClientRect): LineItem => {
   let x;
   let y;
   x = 'x' in item ? item.x : item.left;
