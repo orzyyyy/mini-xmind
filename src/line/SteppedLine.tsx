@@ -1,16 +1,14 @@
 import React from 'react';
 import Line from './Line';
-import {
-  getLineCoordinatesForHorizonal,
-  getLineCoordinatesForVertical,
-} from '../utils/LineUtil';
+import { getLineCoordinatesForHorizonal, getLineCoordinatesForVertical } from '../utils/LineUtil';
 import { CoordinatesProps } from '../canvas/core';
+import { LineItem } from '../tools/LineGroup';
 
 export type OrientationProps = 'horizonal' | 'vertical';
 export interface SteppedLineProps {
   className?: string;
-  from: any;
-  to: any;
+  from: LineItem;
+  to: LineItem;
   offset?: CoordinatesProps;
   orientation?: OrientationProps;
   arrowStatus?: [boolean, boolean, boolean];
@@ -41,27 +39,9 @@ const SteppedLine = ({
 
     return (
       <div className="stepped-line">
-        <Line
-          x0={firstLineX0}
-          y0={firstLineY0}
-          x1={firstLineX1}
-          y1={firstLineY1}
-          showArrow={arrowStatus[0]}
-        />
-        <Line
-          x0={secondLineX0}
-          y0={secondLineY0}
-          x1={secondLineX1}
-          y1={secondLineY1}
-          showArrow={arrowStatus[1]}
-        />
-        <Line
-          x0={thirdLineX0}
-          y0={thirdLineY0}
-          x1={thirdLineX1}
-          y1={thirdLineY1}
-          showArrow={arrowStatus[2]}
-        />
+        <Line x0={firstLineX0} y0={firstLineY0} x1={firstLineX1} y1={firstLineY1} showArrow={arrowStatus[0]} />
+        <Line x0={secondLineX0} y0={secondLineY0} x1={secondLineX1} y1={secondLineY1} showArrow={arrowStatus[1]} />
+        <Line x0={thirdLineX0} y0={thirdLineY0} x1={thirdLineX1} y1={thirdLineY1} showArrow={arrowStatus[2]} />
       </div>
     );
   };
@@ -84,27 +64,9 @@ const SteppedLine = ({
 
     return (
       <div className="stepped-line">
-        <Line
-          x0={firstLineX0}
-          y0={firstLineY0}
-          x1={firstLineX1}
-          y1={firstLineY1}
-          showArrow={arrowStatus[0]}
-        />
-        <Line
-          x0={secondLineX0}
-          y0={secondLineY0}
-          x1={secondLineX1}
-          y1={secondLineY1}
-          showArrow={arrowStatus[1]}
-        />
-        <Line
-          x0={thirdLineX0}
-          y0={thirdLineY0}
-          x1={thirdLineX1}
-          y1={thirdLineY1}
-          showArrow={arrowStatus[2]}
-        />
+        <Line x0={firstLineX0} y0={firstLineY0} x1={firstLineX1} y1={firstLineY1} showArrow={arrowStatus[0]} />
+        <Line x0={secondLineX0} y0={secondLineY0} x1={secondLineX1} y1={secondLineY1} showArrow={arrowStatus[1]} />
+        <Line x0={thirdLineX0} y0={thirdLineY0} x1={thirdLineX1} y1={thirdLineY1} showArrow={arrowStatus[2]} />
       </div>
     );
   };

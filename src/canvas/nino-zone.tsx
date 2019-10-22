@@ -144,9 +144,7 @@ const NinoZone = ({
       // clean up after drawing a line
       setClickList({}, true);
       // record mapping for arrow
-      setLineMapping(
-        Object.assign({}, lineMapping, { [lineKey]: { fromKey, toKey } }),
-      );
+      setLineMapping(Object.assign({}, lineMapping, { [lineKey]: { fromKey, toKey } }));
 
       if (onChange) {
         onChange(data, result);
