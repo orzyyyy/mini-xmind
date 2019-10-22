@@ -26,7 +26,7 @@
     "pub": "npm run build && npm run compile && git push origin master && npm publish",
     "sort": "npx sort-package-json",
     "start": "nino go",
-    "test": "nino test --testPathPattern='src' --no-cache",
+    "test": "nino test",
     "test:es": "cross-env LIB_DIR=es nino test --testPathPattern='src' --no-cache -u",
     "test:lib": "cross-env LIB_DIR=lib nino test --testPathPattern='src' --no-cache -u"
   },
