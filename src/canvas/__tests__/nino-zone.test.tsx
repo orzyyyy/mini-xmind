@@ -1,11 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import NinoZone, {
-  shouldPaintLine,
-  generateLineData,
-  setClickList,
-  setLineMapping,
-} from '../nino-zone';
+import NinoZone, { shouldPaintLine, generateLineData, setClickList, setLineMapping } from '../nino-zone';
 
 const defaultCheckBlockClickList1 = {
   'block-73377': {
@@ -69,15 +64,11 @@ describe('nino-zone', () => {
   it('shouldPaintLine', () => {
     expect(shouldPaintLine(null, {})).toBe(true);
     setLineMapping({}, true);
-    expect(
-      shouldPaintLine(defaultCheckBlockClickList1, { test: 1 } as any),
-    ).toBe(true);
+    expect(shouldPaintLine(defaultCheckBlockClickList1, { test: 1 } as any)).toBe(true);
     setLineMapping({
       block1: { fromKey: 'block-73377', toKey: 'block-624018' },
     });
-    expect(
-      shouldPaintLine(defaultCheckBlockClickList1, { test: 1 } as any),
-    ).toBe(false);
+    expect(shouldPaintLine(defaultCheckBlockClickList1, { test: 1 } as any)).toBe(false);
   });
 
   it('generateLineData', () => {
@@ -157,10 +148,8 @@ describe('nino-zone', () => {
       .find('div')
       .props()
       .onWheel({ deltaY: -1 });
-    expect(onWheel).toHaveBeenCalledWith(
-      { x: 186, y: 469, editable: false, input: 'test' },
-      'tag-416176',
-      { deltaY: -1 },
-    );
+    expect(onWheel).toHaveBeenCalledWith({ x: 186, y: 469, editable: false, input: 'test' }, 'tag-416176', {
+      deltaY: -1,
+    });
   });
 });

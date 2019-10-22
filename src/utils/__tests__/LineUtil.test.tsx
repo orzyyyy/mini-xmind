@@ -28,10 +28,7 @@ describe('LineUtil', () => {
     expect(firstQuadrantTopInstance.fromAnchor).toBe('top');
     expect(firstQuadrantTopInstance.toAnchor).toBe('right');
 
-    const firstQuadrantBottomInstance = getPlacement(
-      target,
-      firstQuadrantBottom,
-    );
+    const firstQuadrantBottomInstance = getPlacement(target, firstQuadrantBottom);
     expect(firstQuadrantBottomInstance.fromAnchor).toBe('top');
     expect(firstQuadrantBottomInstance.toAnchor).toBe('right');
 
@@ -39,10 +36,7 @@ describe('LineUtil', () => {
     expect(secondQuadrantTopInstance.fromAnchor).toBe('top');
     expect(secondQuadrantTopInstance.toAnchor).toBe('left');
 
-    const secondQuadrantBottomInstance = getPlacement(
-      target,
-      secondQuadrantBottom,
-    );
+    const secondQuadrantBottomInstance = getPlacement(target, secondQuadrantBottom);
     expect(secondQuadrantBottomInstance.fromAnchor).toBe('top');
     expect(secondQuadrantBottomInstance.toAnchor).toBe('left');
 
@@ -50,10 +44,7 @@ describe('LineUtil', () => {
     expect(thirdQuadrantTopInstance.fromAnchor).toBe('bottom');
     expect(thirdQuadrantTopInstance.toAnchor).toBe('left');
 
-    const thirdQuadrantBottomInstance = getPlacement(
-      target,
-      thirdQuadrantBottom,
-    );
+    const thirdQuadrantBottomInstance = getPlacement(target, thirdQuadrantBottom);
     expect(thirdQuadrantBottomInstance.fromAnchor).toBe('bottom');
     expect(thirdQuadrantBottomInstance.toAnchor).toBe('left');
 
@@ -61,10 +52,7 @@ describe('LineUtil', () => {
     expect(fourthQuadrantTopInstance.fromAnchor).toBe('bottom');
     expect(fourthQuadrantTopInstance.toAnchor).toBe('right');
 
-    const fourthQuadrantBottomInstance = getPlacement(
-      target,
-      fourthQuadrantBottom,
-    );
+    const fourthQuadrantBottomInstance = getPlacement(target, fourthQuadrantBottom);
     expect(fourthQuadrantBottomInstance.fromAnchor).toBe('bottom');
     expect(fourthQuadrantBottomInstance.toAnchor).toBe('right');
   });

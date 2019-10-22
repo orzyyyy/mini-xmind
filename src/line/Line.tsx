@@ -12,15 +12,7 @@ export interface LineProps {
   showArrow?: boolean;
 }
 
-const Line = ({
-  x0 = 0,
-  y0 = 0,
-  x1 = 0,
-  y1 = 0,
-  className,
-  style,
-  showArrow,
-}: LineProps) => {
+const Line = ({ x0 = 0, y0 = 0, x1 = 0, y1 = 0, className, style, showArrow }: LineProps) => {
   const dy = y1 - y0;
   const dx = x1 - x0;
   const angle = (Math.atan2(dy, dx) * 180) / Math.PI;

@@ -15,12 +15,7 @@ describe('Canvas', () => {
     const onChange = jest.fn();
     let wrapper = mount(<Canvas data={mapping} onChange={onChange} />);
     expect(wrapper).toMatchSnapshot();
-    wrapper = mount(
-      <Canvas
-        data={{ ...mapping, current: 'tag-491320' }}
-        onChange={onChange}
-      />,
-    );
+    wrapper = mount(<Canvas data={{ ...mapping, current: 'tag-491320' }} onChange={onChange} />);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -100,10 +95,7 @@ describe('Canvas', () => {
   it('right click should work', () => {
     const onChange = jest.fn();
     const wrapper: any = mount(
-      <Canvas
-        data={{ ...mapping, block: { 'block-623187': { x: 100, y: 100 } } }}
-        onChange={onChange}
-      />,
+      <Canvas data={{ ...mapping, block: { 'block-623187': { x: 100, y: 100 } } }} onChange={onChange} />,
     );
     const preventDefault = jest.fn();
     const event = { preventDefault };

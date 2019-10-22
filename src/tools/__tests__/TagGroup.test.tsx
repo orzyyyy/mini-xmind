@@ -12,13 +12,7 @@ describe('TagGroup', () => {
       },
     };
     const wrapper = mount(
-      <TagGroup
-        data={data as any}
-        onChange={jest.fn()}
-        onContextMenu={jest.fn()}
-        lineData={{}}
-        onWheel={onWheel}
-      />,
+      <TagGroup data={data as any} onChange={jest.fn()} onContextMenu={jest.fn()} lineData={{}} onWheel={onWheel} />,
     );
     expect(
       wrapper
@@ -46,13 +40,7 @@ describe('TagGroup', () => {
       },
     };
     const wrapper = mount(
-      <TagGroup
-        data={data as any}
-        onChange={jest.fn()}
-        onContextMenu={jest.fn()}
-        lineData={{}}
-        onWheel={onWheel}
-      />,
+      <TagGroup data={data as any} onChange={jest.fn()} onContextMenu={jest.fn()} lineData={{}} onWheel={onWheel} />,
     );
     wrapper
       .find('.tag-group')
@@ -75,13 +63,7 @@ describe('TagGroup', () => {
       },
     };
     const wrapper = mount(
-      <TagGroup
-        data={data as any}
-        onChange={jest.fn()}
-        onContextMenu={jest.fn()}
-        lineData={{}}
-        onWheel={onWheel}
-      />,
+      <TagGroup data={data as any} onChange={jest.fn()} onContextMenu={jest.fn()} lineData={{}} onWheel={onWheel} />,
     );
     wrapper.find('TextArea').simulate('change', { target: { value: 'test1' } });
     expect(wrapper.find('TagGroup').props().data).toEqual({

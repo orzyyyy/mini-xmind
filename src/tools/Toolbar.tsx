@@ -8,15 +8,9 @@ const draggableItem: {
   type: DraggableItemProp;
   item: React.ReactElement;
   key: string;
-}[] = [
-  { type: 'block', item: <Border />, key: 'toolbar-block' },
-  { type: 'tag', item: <Tag />, key: 'toolbar-tag' },
-];
+}[] = [{ type: 'block', item: <Border />, key: 'toolbar-block' }, { type: 'tag', item: <Tag />, key: 'toolbar-tag' }];
 
-const onDragStart = (
-  e: React.DragEvent<HTMLLIElement>,
-  item: { type: DraggableItemProp },
-) => {
+const onDragStart = (e: React.DragEvent<HTMLLIElement>, item: { type: DraggableItemProp }) => {
   e.dataTransfer.effectAllowed = 'copy';
   e.dataTransfer.setData('dragItem', JSON.stringify(item));
 };

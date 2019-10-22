@@ -30,9 +30,7 @@ describe('SteppedLine', () => {
   });
 
   it('render vertical correctly', () => {
-    const wrapper = mount(
-      <SteppedLine from={from} to={to} orientation="vertical" />,
-    );
+    const wrapper = mount(<SteppedLine from={from} to={to} orientation="vertical" />);
     expect(wrapper).toMatchSnapshot();
   });
 });

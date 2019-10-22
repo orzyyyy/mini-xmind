@@ -24,10 +24,7 @@ export interface BlockGroupState {
   lineData?: LineProps;
 }
 
-export const updateLineDataByTargetDom = (
-  lineData: LineProps,
-  targetDom: any = {},
-) => {
+export const updateLineDataByTargetDom = (lineData: LineProps, targetDom: any = {}) => {
   for (const key of Object.keys(lineData)) {
     const { fromKey, toKey } = lineData[key];
     for (const targetKey of Object.keys(targetDom)) {
@@ -58,10 +55,7 @@ const BlockGroup = ({
 }: BlockGroupProps) => {
   const handleDrag = ({ x, y }: CoordinatesProps, blockKey: string) => {
     if (onChange) {
-      onChange(
-        Object.assign({}, data, { [blockKey]: { x, y } }),
-        getTargetDom(),
-      );
+      onChange(Object.assign({}, data, { [blockKey]: { x, y } }), getTargetDom());
     }
   };
 
@@ -78,12 +72,7 @@ const BlockGroup = ({
           >
             <div>
               <NinoZone
-                className={classNames(
-                  'block-group',
-                  'animate-appear',
-                  parentClassName,
-                  blockClassName,
-                )}
+                className={classNames('block-group', 'animate-appear', parentClassName, blockClassName)}
                 targetKey={blockKey}
                 data={data}
                 lineData={lineData}
