@@ -212,7 +212,7 @@ const Canvas = ({ className, orientation = 'horizonal', data: originData, onChan
       line: newLine,
       tag: newTag,
       position: newPosition,
-      current: newCurrent,
+      current: newCurrent = current,
     }: {
       block?: BlockProps;
       tag?: TagGroupItem;
@@ -222,7 +222,6 @@ const Canvas = ({ className, orientation = 'horizonal', data: originData, onChan
     },
     shouldUpdateOriginData?: boolean,
   ): DataSource => {
-    newCurrent = newCurrent || current;
     const originPosition = originData.position && originData.position[current];
 
     if (shouldUpdateOriginData) {
@@ -231,7 +230,7 @@ const Canvas = ({ className, orientation = 'horizonal', data: originData, onChan
         line: newLine || originData.line,
         tag: newTag || originData.tag,
         position: {
-          [newCurrent as string]: Object.assign({}, originPosition, newPosition),
+          [newCurrent]: Object.assign({}, originPosition, newPosition),
         },
         current: newCurrent,
       };
@@ -242,7 +241,7 @@ const Canvas = ({ className, orientation = 'horizonal', data: originData, onChan
       line: Object.assign({}, originData.line, newLine),
       tag: Object.assign({}, originData.tag, newTag),
       position: {
-        [newCurrent as string]: Object.assign({}, originPosition, newPosition),
+        [newCurrent]: Object.assign({}, originPosition, newPosition),
       },
       current: newCurrent,
     };
