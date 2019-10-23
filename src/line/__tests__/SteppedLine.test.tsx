@@ -25,7 +25,7 @@ describe('SteppedLine', () => {
   };
 
   it('render horizonal correctly', () => {
-    const wrapper = mount(<SteppedLine from={from} to={to} />);
+    const wrapper = mount(<SteppedLine from={from} to={to} orientation="horizonal" />);
     expect(wrapper).toMatchSnapshot();
   });
 
