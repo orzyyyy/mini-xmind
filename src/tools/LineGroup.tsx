@@ -2,16 +2,15 @@ import React from 'react';
 import SteppedLine, { OrientationProps } from '../line/SteppedLine';
 import { CoordinatesProps } from '../canvas/core';
 
-export type LineItem =
-  | {
-      bottom: number;
-      height: number;
-      left: number;
-      right: number;
-      top: number;
-      width: number;
-    }
-  | DOMRect & CoordinatesProps;
+export type LineRect = {
+  bottom: number;
+  height: number;
+  left: number;
+  right: number;
+  top: number;
+  width: number;
+};
+export type LineItem = LineRect & CoordinatesProps;
 export type LineProps = {
   [key: string]: {
     fromKey: string;

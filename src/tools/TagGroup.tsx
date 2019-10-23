@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import Draggable from 'react-draggable';
+import Draggable, { DraggableEvent, DraggableData } from 'react-draggable';
 import { Input } from 'antd';
 import './css/TagGroup.css';
 import { stopPropagation, preventDefault } from '../utils/LineUtil';
@@ -9,6 +9,7 @@ import NinoZone, { getTargetDom } from '../canvas/nino-zone';
 import { LineProps } from './LineGroup';
 import { Plus } from '@ant-design/icons';
 
+export type TagDomItem = CommonProps & CoordinatesProps & { input: string };
 export type TagGroupRenderItem = {
   item: CommonProps & CoordinatesProps & { input: string };
   key: string;
@@ -25,17 +26,17 @@ export type TagGroupItem = {
 };
 export interface TagGroupProps {
   data: TagGroupItem;
-  onChange: (data: TagGroupItem, tagDom: any, targetKey?: string) => void;
+  onChange: (data: TagGroupItem, tagDom: TagDomItem, targetKey?: string) => void;
   className?: string;
   onContextMenu: (item: ContextMenuProps) => void;
   lineData: LineProps;
-  onWheel: (data: TagGroupItem, key: string, event: any) => void;
+  onWheel: (data: TagGroupItem, key: string, event: React.WheelEvent) => void;
 }
 export interface TagGroupState {
   data: TagGroupItem;
 }
 
-const handleDragStart = (e: any) => {
+const handleDragStart = (e: DraggableEvent) => {
   stopPropagation(e);
   preventDefault(e);
 };
@@ -51,7 +52,7 @@ const TagGroup = ({ data, onChange, onContextMenu, className: parentClassName, l
     }
   };
 
-  const handleDrag = ({ x, y }: any, key: string) => {
+  const handleDrag = ({ x, y }: DraggableData, key: string) => {
     if (onChange) {
       onChange(Object.assign({}, data, { [key]: { ...data[key], x, y } }), getTargetDom());
     }
@@ -81,7 +82,7 @@ const TagGroup = ({ data, onChange, onContextMenu, className: parentClassName, l
       onStart={handleDragStart}
       key={key}
       position={{ x: item.x, y: item.y }}
-      onDrag={(_: any, jtem: any) => handleDrag(jtem, key)}
+      onDrag={(_: DraggableEvent, jtem: DraggableData) => handleDrag(jtem, key)}
     >
       <div
         onDoubleClick={() => handleChange(item, key, 'editable', true)}
@@ -110,7 +111,7 @@ const TagGroup = ({ data, onChange, onContextMenu, className: parentClassName, l
   return (
     <>
       {Object.keys(data).map(key => {
-        const item = (data as any)[key];
+        const item = data[key];
         const { editable, className: tagClassName } = item;
         const targetClassName = classNames('tag-group', 'animate-appear', parentClassName, tagClassName);
         if (editable) {
