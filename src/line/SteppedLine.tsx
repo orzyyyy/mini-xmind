@@ -79,7 +79,7 @@ const SteppedLine = ({
     return renderVertical();
   }
 
-  return renderHorizonal();
+  return null;
 };
 
 export default SteppedLine;

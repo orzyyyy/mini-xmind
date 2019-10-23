@@ -57,7 +57,7 @@ const filterCurrentElement = (data: DataSource) => {
       }
     }
 
-    // Handle with Line
+    // deal with Line
     for (const key in target.line) {
       const value = target.line[key];
       for (const item of childrenList) {
@@ -67,7 +67,7 @@ const filterCurrentElement = (data: DataSource) => {
       }
     }
 
-    // Handle with Groups
+    // deal with Groups
     for (const key in target) {
       const value = target[key];
       for (const innerKey in value) {
@@ -88,14 +88,14 @@ const filterCurrentElement = (data: DataSource) => {
   const { children } = targetSet[current];
   const instance: TagGroupItem = {};
 
-  // Handle element
+  // deal with element
   instance[current] = targetSet[current];
   for (const item of children) {
     instance[item] = targetSet[item];
   }
   target[prefix] = instance;
 
-  // Handle with Line
+  // deal with Line
   for (const key in target.line) {
     const value = target.line[key];
     if (!children.includes(value.fromKey) && !children.includes(value.toKey)) {
@@ -156,7 +156,7 @@ const Canvas = ({ className, orientation = 'horizonal', data: originData, onChan
     onChange(getMergedData({ [type]: result }));
   };
 
-  const handleDrag = (_: any, { x, y }: CoordinatesProps) => {
+  const handleDrag = (_: DragEvent, { x, y }: CoordinatesProps) => {
     onChange(getMergedData({ position: { x, y } }));
   };
 
