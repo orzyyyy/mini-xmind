@@ -36,7 +36,7 @@ export interface CanvasProps {
   arrowStatus?: [boolean, boolean, boolean];
 }
 export type ContextMenuProps = {
-  event: Event;
+  event: React.MouseEvent<HTMLDivElement>;
   key: string;
   group: 'block-group' | 'tag-group';
 };
@@ -48,7 +48,7 @@ const filterCurrentElement = (data: DataSource) => {
     const childrenList: string[] = [];
 
     for (const key in target) {
-      const value = (target as any)[key];
+      const value = target[key];
       for (const innerKey in value) {
         const innerValue = value[innerKey];
         if (innerValue.children) {
@@ -69,7 +69,7 @@ const filterCurrentElement = (data: DataSource) => {
 
     // Handle with Groups
     for (const key in target) {
-      const value = (target as any)[key];
+      const value = target[key];
       for (const innerKey in value) {
         for (const item of childrenList) {
           if (innerKey === item) {
@@ -84,7 +84,7 @@ const filterCurrentElement = (data: DataSource) => {
 
   const splitArr = current.split('-');
   const prefix = splitArr.length && splitArr[0];
-  const targetSet = (target as any)[prefix];
+  const targetSet = target[prefix];
   const { children } = targetSet[current];
   const instance: TagGroupItem = {};
 
@@ -121,7 +121,7 @@ const Canvas = ({ className, orientation = 'horizonal', data: originData, onChan
     setLineMapping(line);
   }, [line]);
 
-  const handleBlockChange = (newBlock: BlockProps, blockDom: any) => {
+  const handleBlockChange = (newBlock: BlockProps, blockDom: DataSource) => {
     const newLine = updateLineDataByTargetDom(line, blockDom);
     onChange(getMergedData({ block: newBlock, line: newLine }));
   };

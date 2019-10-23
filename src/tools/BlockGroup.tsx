@@ -1,5 +1,5 @@
 import React from 'react';
-import Draggable from 'react-draggable';
+import Draggable, { DraggableEvent } from 'react-draggable';
 import { stopPropagation, preventDefault } from '../utils/LineUtil';
 import './css/BlockGroup.css';
 import { ContextMenuProps, DataSource, CoordinatesProps } from '../canvas/core';
@@ -8,16 +8,16 @@ import NinoZone, { getTargetDom } from '../canvas/nino-zone';
 import classNames from 'classnames';
 
 export type BlockProps = {
-  [blockKey: string]: CoordinatesProps & { children?: string[] };
+  [blockKey: string]: CoordinatesProps & { children?: string[]; className?: string };
 };
 export interface BlockGroupProps {
   className?: string;
   data: BlockProps;
   lineData: LineProps;
-  onChange: (data: DataSource, blockDOM: any) => void;
+  onChange: (data: DataSource, blockDOM: DataSource) => void;
   offset?: CoordinatesProps;
   onContextMenu: (item: ContextMenuProps) => void;
-  onWheel: (data: BlockGroupProps, key: string, event: any) => void;
+  onWheel: (data: BlockGroupProps, key: string, event: React.WheelEvent) => void;
 }
 export interface BlockGroupState {
   data?: DataSource;
@@ -40,7 +40,7 @@ export const updateLineDataByTargetDom = (lineData: LineProps, targetDom: any = 
   return lineData;
 };
 
-const handleDragStart = (e: any) => {
+const handleDragStart = (e: DraggableEvent) => {
   stopPropagation(e);
   preventDefault(e);
 };
@@ -62,11 +62,11 @@ const BlockGroup = ({
   return (
     <>
       {Object.keys(data).map(blockKey => {
-        const { x, y, className: blockClassName } = (data as any)[blockKey];
+        const { x, y, className: blockClassName } = data[blockKey];
         return (
           <Draggable
             position={{ x, y }}
-            onDrag={(_: any, item: any) => handleDrag(item, blockKey)}
+            onDrag={(_: DraggableEvent, item: CoordinatesProps) => handleDrag(item, blockKey)}
             onStart={handleDragStart}
             key={blockKey}
           >

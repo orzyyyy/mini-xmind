@@ -14,7 +14,7 @@ export interface NinoZoneProps {
   name: 'block-group' | 'tag-group';
   className?: string;
   children?: any;
-  onWheel: (data: any, targetKey: string, event: any) => void;
+  onWheel: (data: any, targetKey: string, event: React.WheelEvent<HTMLDivElement>) => void;
 }
 
 let targetDom: any = {};
@@ -125,7 +125,7 @@ const NinoZone = ({
 
   const onClick = () => {
     const lineKey = generateKey('line');
-    clickList[targetKey] = { current: (getTargetDom() as any)[targetKey] };
+    clickList[targetKey] = { current: getTargetDom()[targetKey] };
 
     // to record which Block is the starting point
     if (!('time' in clickList[targetKey])) {
@@ -159,10 +159,10 @@ const NinoZone = ({
       className={className}
       onWheel={e => {
         if (e.deltaY <= 0) {
-          onWheel((data as any)[targetKey], targetKey, e);
+          onWheel(data[targetKey], targetKey, e);
         }
       }}
-      onContextMenu={(e: any) => {
+      onContextMenu={(e: React.MouseEvent<HTMLDivElement>) => {
         onContextMenu &&
           onContextMenu({
             event: e,

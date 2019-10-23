@@ -1,4 +1,6 @@
 import { CoordinatesProps } from '../canvas/core';
+import { DraggableEvent } from 'react-draggable';
+import { LineProps, LineItem } from '../tools/LineGroup';
 
 //   _________
 //  |         |
@@ -58,11 +60,11 @@ export const getPlacement = ({ x: x0, y: y0 }: CoordinatesProps, { x: x1, y: y1 
   return { fromAnchor, toAnchor };
 };
 
-export function preventDefault(e: any) {
+export function preventDefault(e: React.MouseEvent | DraggableEvent) {
   e.preventDefault();
 }
 
-export function stopPropagation(e: any) {
+export function stopPropagation(e: React.MouseEvent | DraggableEvent) {
   e.stopPropagation();
 }
 
@@ -70,7 +72,7 @@ export const generateKey = (name: 'block' | 'line' | 'tag') => {
   return `${name}-${new Date().getTime() % 1000000}`;
 };
 
-export const getRelativeLinesByBlockKey = (blockKey: string, mapping: any) => {
+export const getRelativeLinesByBlockKey = (blockKey: string, mapping: LineProps) => {
   let lineKeys = [];
 
   for (let key in mapping) {
@@ -106,7 +108,7 @@ export const getRelativeLinesByBlockKey = (blockKey: string, mapping: any) => {
 // Secondly, all calculation is based on this and should follow this forever
 // Or it would be hard to read code below
 //
-export const getLineCoordinatesForVertical = (from: any, to: any, offset: any) => {
+export const getLineCoordinatesForVertical = (from: LineItem, to: LineItem, offset: CoordinatesProps) => {
   let firstLineX0 = 0;
   let firstLineY0 = 0;
   let firstLineX1 = 0;
@@ -291,7 +293,7 @@ export const getLineCoordinatesForVertical = (from: any, to: any, offset: any) =
 // Secondly, all calculation is based on this and should follow this forever
 // Or it would be hard to read code below
 //
-export const getLineCoordinatesForHorizonal = (from: any, to: any, offset: any) => {
+export const getLineCoordinatesForHorizonal = (from: LineItem, to: LineItem, offset: CoordinatesProps) => {
   let firstLineX0 = 0;
   let firstLineY0 = 0;
   let firstLineX1 = 0;
