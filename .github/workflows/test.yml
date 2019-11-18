@@ -3,15 +3,55 @@ name: test
 on: [push]
 
 jobs:
-  build:
+  setup:
     runs-on: ubuntu-latest
 
     steps:
       - name: checkout
         uses: actions/checkout@master
 
+      - name: cache node_modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: node_modules
+
       - name: install
         run: npm install
+
+  compile:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: cache lib
+        uses: actions/cache@v1
+        with:
+          path: lib
+          key: lib
+
+      - name: cache es
+        uses: actions/cache@v1
+        with:
+          path: es
+          key: es
+
+      - name: compile
+        run: npm run compile
+
+      - name: dist
+        run: npm run dist
+
+    needs: setup
+
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: test for lib
+        run: npm run test:lib
+
+      - name: test for es
+        run: npm run test:es
 
       - name: test with reporting coverage
         run: npm run codecov
@@ -20,3 +60,5 @@ jobs:
         uses: codecov/codecov-action@v1.0.2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+
+    needs: compile
