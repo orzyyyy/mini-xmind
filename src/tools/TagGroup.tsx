@@ -47,8 +47,7 @@ const TagGroup = ({ data, onChange, onContextMenu, className: parentClassName, l
     (data as any)[key][targetKey] = targetValue;
 
     if (onChange) {
-      const isEditable = item.editable;
-      onChange(Object.assign({}, data, { [key]: item }), getTargetDom(), isEditable && key);
+      onChange(Object.assign({}, data, { [key]: item }), getTargetDom());
     }
   };
 
