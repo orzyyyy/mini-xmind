@@ -70,7 +70,7 @@ jobs:
 
     needs: setup
 
-  cases:
+  case:
     runs-on: ubuntu-latest
 
     steps:
@@ -89,7 +89,7 @@ jobs:
           path: node_modules
           key: node_modules-${{ hashFiles('**/package.json') }}
 
-      - name: test for site
+      - name: check for site
         run: npm run build
 
       - name: test with reporting coverage
@@ -107,10 +107,10 @@ jobs:
           path: es
           key: es-${{ hashFiles('**/package.json') }}
 
-      - name: test for lib
+      - name: check for lib
         run: npm run test:lib
 
-      - name: test for es
+      - name: check for es
         run: npm run test:es
 
     needs: compile
@@ -130,4 +130,4 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
 
-    needs: check
+    needs: case
