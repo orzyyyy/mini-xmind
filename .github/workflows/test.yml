@@ -10,14 +10,26 @@ jobs:
       - name: checkout
         uses: actions/checkout@master
 
+      - name: install
+        run: npm install
+
       - name: cache node_modules
         uses: actions/cache@v1
         with:
           path: node_modules
           key: node_modules
 
-      - name: install
-        run: npm install
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+
+      - name: check
+        run: npm run lint
+
+    needs: setup
 
   compile:
     runs-on: ubuntu-latest
@@ -25,6 +37,9 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@master
+
+      - name: compile
+        run: npm run compile
 
       - name: cache lib
         uses: actions/cache@v1
@@ -37,9 +52,6 @@ jobs:
         with:
           path: es
           key: es
-
-      - name: compile
-        run: npm run compile
 
       - name: dist
         run: npm run dist
