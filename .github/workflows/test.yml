@@ -77,12 +77,6 @@ jobs:
       - name: checkout
         uses: actions/checkout@master
 
-      - name: cache coverage
-        uses: actions/cache@v1
-        with:
-          path: coverage
-          key: coverage-${{ hashFiles('**/package.json') }}
-
       - name: restore cache from node_modules
         uses: actions/cache@v1
         with:
