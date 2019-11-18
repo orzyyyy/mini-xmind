@@ -35,6 +35,8 @@ jobs:
       - name: check
         run: npm run lint
 
+    needs: setup
+
   compile:
     runs-on: ubuntu-latest
 
