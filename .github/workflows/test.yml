@@ -42,7 +42,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@master
 
-      - name: cache node_modules
+      - name: restore cache from node_modules
         uses: actions/cache@v1
         with:
           path: node_modules
@@ -75,7 +75,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@master
 
-      - name: cache node_modules
+      - name: restore cache from node_modules
         uses: actions/cache@v1
         with:
           path: node_modules
@@ -84,13 +84,16 @@ jobs:
       - name: test for site
         run: npm run build
 
-      - name: cache lib
+      - name: test with reporting coverage
+        run: npm run codecov
+
+      - name: restore cache from lib
         uses: actions/cache@v1
         with:
           path: lib
           key: lib
 
-      - name: cache es
+      - name: restore cache from es
         uses: actions/cache@v1
         with:
           path: es
@@ -101,9 +104,6 @@ jobs:
 
       - name: test for es
         run: npm run test:es
-
-      - name: test with reporting coverage
-        run: npm run codecov
 
       - name: upload coverage to codecov
         uses: codecov/codecov-action@v1.0.2
