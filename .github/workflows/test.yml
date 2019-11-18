@@ -105,9 +105,25 @@ jobs:
       - name: test for es
         run: npm run test:es
 
+      - name: cache coverage
+        uses: actions/cache@v1
+        with:
+          path: coverage
+          key: coverage
+
+    needs: compile
+
+  upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: restore cache from coverage
+        uses: actions/cache@v1
+        with:
+          path: coverage
+          key: coverage
+
       - name: upload coverage to codecov
         uses: codecov/codecov-action@v1.0.2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-
-    needs: compile
