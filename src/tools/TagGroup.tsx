@@ -70,7 +70,7 @@ const TagGroup = ({ data, onChange, onContextMenu, className: parentClassName, l
         onChange={e => handleChange(item, key, 'input', e.target.value)}
         value={item.input}
         autoFocus
-        autosize
+        autoSize
         onBlur={() => handleChange(item, key, 'editable', false)}
       />
     </div>
