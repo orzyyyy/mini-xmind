@@ -6,7 +6,7 @@
   <img src="./docs/screenshot.gif" />
 </p>
 
-[![codecov](https://codecov.io/gh/orzyyyy/mini-xmind/branch/master/graph/badge.svg)](https://codecov.io/gh/orzyyyy/mini-xmind)
+[![codecov](https://codecov.io/gh/peko-bot/mini-xmind/branch/master/graph/badge.svg)](https://codecov.io/gh/peko-bot/mini-xmind)
 
 ## Install
 
@@ -47,7 +47,7 @@ export default () => {
 ## Development
 
 ```bash
-$ git clone https://github.com/orzyyyy/mini-xmind.git
+$ git clone https://github.com/peko-bot/mini-xmind.git
 $ cd mini-xmind
 $ npm install
 $ npm start
@@ -69,8 +69,8 @@ No prop for now, just render
 
 ### Canvas props
 
-| Property    | Description                                         | Type                                                                                                                                               | Default   |
-| ----------- | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| data        | what you want to paint in canvas                    | [DataSource](https://github.com/orzyyyy/mini-xmind/blob/0b83c704edf98fac54dc5117f120565b28244877/src/canvas/core.tsx#L23)                          | {}        |
-| onChange    | return all data when dragging or typing in TagGroup | (dataCollector: [DataSource](https://github.com/orzyyyy/mini-xmind/blob/0b83c704edf98fac54dc5117f120565b28244877/src/canvas/core.tsx#L23)) => void | -         |
-| orientation | the direction of Line startting                     | enum, ['horizonal', 'vertical']                                                                                                                    | horizonal |
+| Property    | Description                                         | Type                                                                                                                                                | Default   |
+| ----------- | --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| data        | what you want to paint in canvas                    | [DataSource](https://github.com/peko-bot/mini-xmind/blob/0b83c704edf98fac54dc5117f120565b28244877/src/canvas/core.tsx#L23)                          | {}        |
+| onChange    | return all data when dragging or typing in TagGroup | (dataCollector: [DataSource](https://github.com/peko-bot/mini-xmind/blob/0b83c704edf98fac54dc5117f120565b28244877/src/canvas/core.tsx#L23)) => void | -         |
+| orientation | the direction of Line startting                     | enum, ['horizonal', 'vertical']                                                                                                                     | horizonal |
