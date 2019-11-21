@@ -6,7 +6,7 @@
   <img src="./docs/screenshot.gif" />
 </p>
 
-[![codecov](https://codecov.io/gh/peko-bot/mini-xmind/branch/master/graph/badge.svg)](https://codecov.io/gh/peko-bot/mini-xmind)
+[![codecov](https://codecov.io/gh/orzyyyy/mini-xmind/branch/master/graph/badge.svg)](https://codecov.io/gh/orzyyyy/mini-xmind)
 
 ## Install
 
