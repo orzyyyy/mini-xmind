@@ -28,7 +28,7 @@ describe('TagGroup', () => {
         },
       },
     });
-    expect(wrapper.find('TextArea').prop('value')).toBe('test1');
+    expect(wrapper.find('textarea').prop('value')).toBe('test1');
   });
 
   it('double click should work correctly', () => {
@@ -65,7 +65,7 @@ describe('TagGroup', () => {
     const wrapper = mount(
       <TagGroup data={data as any} onChange={jest.fn()} onContextMenu={jest.fn()} lineData={{}} onWheel={onWheel} />,
     );
-    wrapper.find('TextArea').simulate('change', { target: { value: 'test1' } });
+    wrapper.find('textarea').simulate('change', { target: { value: 'test1' } });
     expect(wrapper.find('TagGroup').props().data).toEqual({
       tag: {
         editable: true,
@@ -116,7 +116,7 @@ describe('TagGroup', () => {
         onWheel={onWheel}
       />,
     );
-    wrapper.find('TextArea').simulate('change', { target: { value: '1' } });
+    wrapper.find('textarea').simulate('change', { target: { value: '1' } });
     expect(onChange).toHaveBeenCalled();
   });
 
@@ -139,7 +139,7 @@ describe('TagGroup', () => {
         onWheel={onWheel}
       />,
     );
-    wrapper.find('TextArea').simulate('blur');
+    wrapper.find('textarea').simulate('blur');
     expect(onChange).toHaveBeenCalled();
   });
 
