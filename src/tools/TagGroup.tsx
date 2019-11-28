@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
 import Draggable, { DraggableEvent, DraggableData } from 'react-draggable';
-import { Input } from 'antd';
 import './css/TagGroup.css';
 import { stopPropagation, preventDefault } from '../utils/LineUtil';
 import { ContextMenuProps, CoordinatesProps, CommonProps } from '../canvas/core';
@@ -64,12 +63,11 @@ const TagGroup = ({ data, onChange, onContextMenu, className: parentClassName, l
       }}
       key={key}
     >
-      <Input.TextArea
+      <textarea
         className="animate-appear"
         onChange={e => handleChange(item, key, 'input', e.target.value)}
         value={item.input}
         autoFocus
-        autoSize
         onBlur={() => handleChange(item, key, 'editable', false)}
       />
     </div>
