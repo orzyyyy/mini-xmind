@@ -6,7 +6,10 @@ describe('Toolbar', () => {
   it('toolbar render correctly', () => {
     const wrapper = mount(<Toolbar />);
     expect(wrapper).toMatchSnapshot();
-    expect(wrapper.find('.anticon').length).toBe(4);
+    expect(wrapper.find('.icon-minus')).toBeTruthy();
+    expect(wrapper.find('.icon-branches')).toBeTruthy();
+    expect(wrapper.find('.icon-border')).toBeTruthy();
+    expect(wrapper.find('.icon-tag')).toBeTruthy();
   });
 
   it('onDragStart', () => {

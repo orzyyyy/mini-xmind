@@ -7,7 +7,6 @@ import { stopPropagation, preventDefault } from '../utils/LineUtil';
 import { ContextMenuProps, CoordinatesProps, CommonProps } from '../canvas/core';
 import NinoZone, { getTargetDom } from '../canvas/nino-zone';
 import { LineProps } from './LineGroup';
-import { Plus } from '@ant-design/icons';
 
 export type TagDomItem = CommonProps & CoordinatesProps & { input: string };
 export type TagGroupRenderItem = {
@@ -100,7 +99,7 @@ const TagGroup = ({ data, onChange, onContextMenu, className: parentClassName, l
         >
           {/* this should not be wrapper with a block element such as a div,
             or lines will get crashed */}
-          {item.children && <Plus style={item.childStyle} />}
+          {item.children && <span style={item.childStyle}>+</span>}
           {item.input}
         </NinoZone>
       </div>
