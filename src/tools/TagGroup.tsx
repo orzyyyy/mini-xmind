@@ -99,7 +99,7 @@ const TagGroup = ({ data, onChange, onContextMenu, className: parentClassName, l
         >
           {/* this should not be wrapper with a block element such as a div,
             or lines will get crashed */}
-          {item.children && <div className="icon-plus" style={item.childStyle} />}
+          {item.children && <span style={item.childStyle}>+</span>}
           {item.input}
         </NinoZone>
       </div>
