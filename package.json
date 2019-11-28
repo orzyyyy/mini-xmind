@@ -42,7 +42,6 @@
     ]
   },
   "dependencies": {
-    "@ant-design/icons": "^4.0.0-alpha.8",
     "antd": "^4.0.0-alpha.2",
     "core-js": "^3.4.1",
     "react-draggable": "^4.1.0"
