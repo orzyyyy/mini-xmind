@@ -17,3 +17,12 @@
     opacity: 1;
   }
 }
+
+.tag-group .icon-plus {
+  -webkit-mask-image: url(../svg/plus.svg);
+  mask-image: url(../svg/plus.svg);
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background: gray;
+}

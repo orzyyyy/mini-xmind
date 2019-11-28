@@ -7,312 +7,32 @@ exports[`Toolbar toolbar render correctly 1`] = `
   >
     <ul>
       <li>
-        <Minus>
-          <AntdIcon
-            icon={
-              Object {
-                "icon": Object {
-                  "attrs": Object {
-                    "focusable": "false",
-                    "viewBox": "64 64 896 896",
-                  },
-                  "children": Array [
-                    Object {
-                      "attrs": Object {
-                        "d": "M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z",
-                      },
-                      "tag": "path",
-                    },
-                  ],
-                  "tag": "svg",
-                },
-                "name": "minus",
-                "theme": "outline",
-              }
-            }
-          >
-            <span
-              aria-label="minus"
-              className="anticon anticon-minus"
-              role="img"
-            >
-              <IconReact
-                className=""
-                icon={
-                  Object {
-                    "icon": Object {
-                      "attrs": Object {
-                        "focusable": "false",
-                        "viewBox": "64 64 896 896",
-                      },
-                      "children": Array [
-                        Object {
-                          "attrs": Object {
-                            "d": "M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z",
-                          },
-                          "tag": "path",
-                        },
-                      ],
-                      "tag": "svg",
-                    },
-                    "name": "minus",
-                    "theme": "outline",
-                  }
-                }
-              >
-                <svg
-                  aria-hidden="true"
-                  className=""
-                  data-icon="minus"
-                  fill="currentColor"
-                  focusable="false"
-                  height="1em"
-                  key="svg-minus"
-                  viewBox="64 64 896 896"
-                  width="1em"
-                >
-                  <path
-                    d="M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"
-                    key="svg-minus-svg-0"
-                  />
-                </svg>
-              </IconReact>
-            </span>
-          </AntdIcon>
-        </Minus>
+        <div
+          className="icon-minus"
+        />
       </li>
       <li>
-        <Branches>
-          <AntdIcon
-            icon={
-              Object {
-                "icon": Object {
-                  "attrs": Object {
-                    "focusable": "false",
-                    "viewBox": "64 64 896 896",
-                  },
-                  "children": Array [
-                    Object {
-                      "attrs": Object {
-                        "d": "M740 161c-61.8 0-112 50.2-112 112 0 50.1 33.1 92.6 78.5 106.9v95.9L320 602.4V318.1c44.2-15 76-56.9 76-106.1 0-61.8-50.2-112-112-112s-112 50.2-112 112c0 49.2 31.8 91 76 106.1V706c-44.2 15-76 56.9-76 106.1 0 61.8 50.2 112 112 112s112-50.2 112-112c0-49.2-31.8-91-76-106.1v-27.8l423.5-138.7a50.52 50.52 0 0034.9-48.2V378.2c42.9-15.8 73.6-57 73.6-105.2 0-61.8-50.2-112-112-112zm-504 51a48.01 48.01 0 0196 0 48.01 48.01 0 01-96 0zm96 600a48.01 48.01 0 01-96 0 48.01 48.01 0 0196 0zm408-491a48.01 48.01 0 010-96 48.01 48.01 0 010 96z",
-                      },
-                      "tag": "path",
-                    },
-                  ],
-                  "tag": "svg",
-                },
-                "name": "branches",
-                "theme": "outline",
-              }
-            }
-          >
-            <span
-              aria-label="branches"
-              className="anticon anticon-branches"
-              role="img"
-            >
-              <IconReact
-                className=""
-                icon={
-                  Object {
-                    "icon": Object {
-                      "attrs": Object {
-                        "focusable": "false",
-                        "viewBox": "64 64 896 896",
-                      },
-                      "children": Array [
-                        Object {
-                          "attrs": Object {
-                            "d": "M740 161c-61.8 0-112 50.2-112 112 0 50.1 33.1 92.6 78.5 106.9v95.9L320 602.4V318.1c44.2-15 76-56.9 76-106.1 0-61.8-50.2-112-112-112s-112 50.2-112 112c0 49.2 31.8 91 76 106.1V706c-44.2 15-76 56.9-76 106.1 0 61.8 50.2 112 112 112s112-50.2 112-112c0-49.2-31.8-91-76-106.1v-27.8l423.5-138.7a50.52 50.52 0 0034.9-48.2V378.2c42.9-15.8 73.6-57 73.6-105.2 0-61.8-50.2-112-112-112zm-504 51a48.01 48.01 0 0196 0 48.01 48.01 0 01-96 0zm96 600a48.01 48.01 0 01-96 0 48.01 48.01 0 0196 0zm408-491a48.01 48.01 0 010-96 48.01 48.01 0 010 96z",
-                          },
-                          "tag": "path",
-                        },
-                      ],
-                      "tag": "svg",
-                    },
-                    "name": "branches",
-                    "theme": "outline",
-                  }
-                }
-              >
-                <svg
-                  aria-hidden="true"
-                  className=""
-                  data-icon="branches"
-                  fill="currentColor"
-                  focusable="false"
-                  height="1em"
-                  key="svg-branches"
-                  viewBox="64 64 896 896"
-                  width="1em"
-                >
-                  <path
-                    d="M740 161c-61.8 0-112 50.2-112 112 0 50.1 33.1 92.6 78.5 106.9v95.9L320 602.4V318.1c44.2-15 76-56.9 76-106.1 0-61.8-50.2-112-112-112s-112 50.2-112 112c0 49.2 31.8 91 76 106.1V706c-44.2 15-76 56.9-76 106.1 0 61.8 50.2 112 112 112s112-50.2 112-112c0-49.2-31.8-91-76-106.1v-27.8l423.5-138.7a50.52 50.52 0 0034.9-48.2V378.2c42.9-15.8 73.6-57 73.6-105.2 0-61.8-50.2-112-112-112zm-504 51a48.01 48.01 0 0196 0 48.01 48.01 0 01-96 0zm96 600a48.01 48.01 0 01-96 0 48.01 48.01 0 0196 0zm408-491a48.01 48.01 0 010-96 48.01 48.01 0 010 96z"
-                    key="svg-branches-svg-0"
-                  />
-                </svg>
-              </IconReact>
-            </span>
-          </AntdIcon>
-        </Branches>
+        <div
+          className="icon-branches"
+        />
       </li>
       <li
         draggable={true}
         key="toolbar-block"
         onDragStart={[Function]}
       >
-        <Border>
-          <AntdIcon
-            icon={
-              Object {
-                "icon": Object {
-                  "attrs": Object {
-                    "focusable": "false",
-                    "viewBox": "64 64 896 896",
-                  },
-                  "children": Array [
-                    Object {
-                      "attrs": Object {
-                        "d": "M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z",
-                      },
-                      "tag": "path",
-                    },
-                  ],
-                  "tag": "svg",
-                },
-                "name": "border",
-                "theme": "outline",
-              }
-            }
-          >
-            <span
-              aria-label="border"
-              className="anticon anticon-border"
-              role="img"
-            >
-              <IconReact
-                className=""
-                icon={
-                  Object {
-                    "icon": Object {
-                      "attrs": Object {
-                        "focusable": "false",
-                        "viewBox": "64 64 896 896",
-                      },
-                      "children": Array [
-                        Object {
-                          "attrs": Object {
-                            "d": "M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z",
-                          },
-                          "tag": "path",
-                        },
-                      ],
-                      "tag": "svg",
-                    },
-                    "name": "border",
-                    "theme": "outline",
-                  }
-                }
-              >
-                <svg
-                  aria-hidden="true"
-                  className=""
-                  data-icon="border"
-                  fill="currentColor"
-                  focusable="false"
-                  height="1em"
-                  key="svg-border"
-                  viewBox="64 64 896 896"
-                  width="1em"
-                >
-                  <path
-                    d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z"
-                    key="svg-border-svg-0"
-                  />
-                </svg>
-              </IconReact>
-            </span>
-          </AntdIcon>
-        </Border>
+        <div
+          className="icon-border"
+        />
       </li>
       <li
         draggable={true}
         key="toolbar-tag"
         onDragStart={[Function]}
       >
-        <Tag>
-          <AntdIcon
-            icon={
-              Object {
-                "icon": Object {
-                  "attrs": Object {
-                    "focusable": "false",
-                    "viewBox": "64 64 896 896",
-                  },
-                  "children": Array [
-                    Object {
-                      "attrs": Object {
-                        "d": "M938 458.8l-29.6-312.6c-1.5-16.2-14.4-29-30.6-30.6L565.2 86h-.4c-3.2 0-5.7 1-7.6 2.9L88.9 557.2a9.96 9.96 0 000 14.1l363.8 363.8c1.9 1.9 4.4 2.9 7.1 2.9s5.2-1 7.1-2.9l468.3-468.3c2-2.1 3-5 2.8-8zM459.7 834.7L189.3 564.3 589 164.6 836 188l23.4 247-399.7 399.7zM680 256c-48.5 0-88 39.5-88 88s39.5 88 88 88 88-39.5 88-88-39.5-88-88-88zm0 120c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z",
-                      },
-                      "tag": "path",
-                    },
-                  ],
-                  "tag": "svg",
-                },
-                "name": "tag",
-                "theme": "outline",
-              }
-            }
-          >
-            <span
-              aria-label="tag"
-              className="anticon anticon-tag"
-              role="img"
-            >
-              <IconReact
-                className=""
-                icon={
-                  Object {
-                    "icon": Object {
-                      "attrs": Object {
-                        "focusable": "false",
-                        "viewBox": "64 64 896 896",
-                      },
-                      "children": Array [
-                        Object {
-                          "attrs": Object {
-                            "d": "M938 458.8l-29.6-312.6c-1.5-16.2-14.4-29-30.6-30.6L565.2 86h-.4c-3.2 0-5.7 1-7.6 2.9L88.9 557.2a9.96 9.96 0 000 14.1l363.8 363.8c1.9 1.9 4.4 2.9 7.1 2.9s5.2-1 7.1-2.9l468.3-468.3c2-2.1 3-5 2.8-8zM459.7 834.7L189.3 564.3 589 164.6 836 188l23.4 247-399.7 399.7zM680 256c-48.5 0-88 39.5-88 88s39.5 88 88 88 88-39.5 88-88-39.5-88-88-88zm0 120c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z",
-                          },
-                          "tag": "path",
-                        },
-                      ],
-                      "tag": "svg",
-                    },
-                    "name": "tag",
-                    "theme": "outline",
-                  }
-                }
-              >
-                <svg
-                  aria-hidden="true"
-                  className=""
-                  data-icon="tag"
-                  fill="currentColor"
-                  focusable="false"
-                  height="1em"
-                  key="svg-tag"
-                  viewBox="64 64 896 896"
-                  width="1em"
-                >
-                  <path
-                    d="M938 458.8l-29.6-312.6c-1.5-16.2-14.4-29-30.6-30.6L565.2 86h-.4c-3.2 0-5.7 1-7.6 2.9L88.9 557.2a9.96 9.96 0 000 14.1l363.8 363.8c1.9 1.9 4.4 2.9 7.1 2.9s5.2-1 7.1-2.9l468.3-468.3c2-2.1 3-5 2.8-8zM459.7 834.7L189.3 564.3 589 164.6 836 188l23.4 247-399.7 399.7zM680 256c-48.5 0-88 39.5-88 88s39.5 88 88 88 88-39.5 88-88-39.5-88-88-88zm0 120c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"
-                    key="svg-tag-svg-0"
-                  />
-                </svg>
-              </IconReact>
-            </span>
-          </AntdIcon>
-        </Tag>
+        <div
+          className="icon-tag"
+        />
       </li>
     </ul>
   </div>

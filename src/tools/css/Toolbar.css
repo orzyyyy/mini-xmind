@@ -10,3 +10,39 @@
   cursor: pointer;
   margin-bottom: 10px;
 }
+
+.Toolbar .icon-minus {
+  -webkit-mask-image: url(../svg/minus.svg);
+  mask-image: url(../svg/minus.svg);
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background: gray;
+}
+
+.Toolbar .icon-border {
+  -webkit-mask-image: url(../svg/border.svg);
+  mask-image: url(../svg/border.svg);
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background: gray;
+}
+
+.Toolbar .icon-tag {
+  -webkit-mask-image: url(../svg/tag.svg);
+  mask-image: url(../svg/tag.svg);
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background: gray;
+}
+
+.Toolbar .icon-branches {
+  -webkit-mask-image: url(../svg/branches.svg);
+  mask-image: url(../svg/branches.svg);
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background: gray;
+}

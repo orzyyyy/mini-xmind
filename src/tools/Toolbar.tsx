@@ -1,5 +1,4 @@
 import React from 'react';
-import { Minus, Border, Tag, Branches } from '@ant-design/icons';
 import './css/Toolbar.css';
 
 export type DraggableItemProp = 'block' | 'tag';
@@ -8,7 +7,10 @@ const draggableItem: {
   type: DraggableItemProp;
   item: React.ReactElement;
   key: string;
-}[] = [{ type: 'block', item: <Border />, key: 'toolbar-block' }, { type: 'tag', item: <Tag />, key: 'toolbar-tag' }];
+}[] = [
+  { type: 'block', item: <div className="icon-border" />, key: 'toolbar-block' },
+  { type: 'tag', item: <div className="icon-tag" />, key: 'toolbar-tag' },
+];
 
 const onDragStart = (e: React.DragEvent<HTMLLIElement>, item: { type: DraggableItemProp }) => {
   e.dataTransfer.effectAllowed = 'copy';
@@ -19,10 +21,10 @@ const Toolbar = () => (
   <div className="Toolbar">
     <ul>
       <li>
-        <Minus />
+        <div className="icon-minus" />
       </li>
       <li>
-        <Branches />
+        <div className="icon-branches" />
       </li>
       {draggableItem.map(({ type, item, key }) => (
         <li draggable onDragStart={e => onDragStart(e, { type })} key={key}>
