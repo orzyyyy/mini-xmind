@@ -35,9 +35,10 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: deploy
-        uses: JamesIves/github-pages-deploy-action@master
+        uses: peaceiris/actions-gh-pages@v2.5.0
         env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: site
-          BASE_BRANCH: gh-pages
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACCESS_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./site
+        with:
+          emptyCommits: false
