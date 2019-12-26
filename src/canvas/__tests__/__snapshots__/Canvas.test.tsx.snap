@@ -286,6 +286,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
       onMouseDown={[Function]}
       onStart={[Function]}
       onStop={[Function]}
+      scale={1}
       transform={null}
     >
       <div
@@ -608,6 +609,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
               onMouseDown={[Function]}
               onStart={[Function]}
               onStop={[Function]}
+              scale={1}
               transform={null}
             >
               <div
@@ -834,6 +836,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
               onMouseDown={[Function]}
               onStart={[Function]}
               onStop={[Function]}
+              scale={1}
               transform={null}
             >
               <div
@@ -1060,6 +1063,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
               onMouseDown={[Function]}
               onStart={[Function]}
               onStop={[Function]}
+              scale={1}
               transform={null}
             >
               <div
@@ -1286,6 +1290,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
               onMouseDown={[Function]}
               onStart={[Function]}
               onStop={[Function]}
+              scale={1}
               transform={null}
             >
               <div
@@ -1515,6 +1520,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
               onMouseDown={[Function]}
               onStart={[Function]}
               onStop={[Function]}
+              scale={1}
               transform={null}
             >
               <div
@@ -2467,6 +2473,7 @@ exports[`Canvas Canvas renders correctly 2`] = `
       onMouseDown={[Function]}
       onStart={[Function]}
       onStop={[Function]}
+      scale={1}
       transform={null}
     >
       <div
@@ -2678,6 +2685,7 @@ exports[`Canvas Canvas renders correctly 2`] = `
               onMouseDown={[Function]}
               onStart={[Function]}
               onStop={[Function]}
+              scale={1}
               transform={null}
             >
               <div
@@ -2844,6 +2852,7 @@ exports[`Canvas Canvas renders correctly 2`] = `
               onMouseDown={[Function]}
               onStart={[Function]}
               onStop={[Function]}
+              scale={1}
               transform={null}
             >
               <div
@@ -3007,6 +3016,7 @@ exports[`Canvas Canvas renders correctly 2`] = `
               onMouseDown={[Function]}
               onStart={[Function]}
               onStop={[Function]}
+              scale={1}
               transform={null}
             >
               <div
