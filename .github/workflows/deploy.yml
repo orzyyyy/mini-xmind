@@ -24,7 +24,7 @@ jobs:
         env:
           ACTIONS_DEPLOY_KEY: ${{ secrets.ACCESS_TOKEN }}
           PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: ./dist
+          PUBLISH_DIR: ./site
         with:
           emptyCommits: false
           username: 'peko-bot'
