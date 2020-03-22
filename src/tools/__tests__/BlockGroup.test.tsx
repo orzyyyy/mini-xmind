@@ -109,10 +109,7 @@ describe('BlockGroup', () => {
         onWheel={onWheel}
       />,
     );
-    wrapper
-      .find('Draggable')
-      .props()
-      .onDrag({ x: 0, y: 0 }, 'block-442566');
+    wrapper.find('Draggable').props().onDrag({ x: 0, y: 0 }, 'block-442566');
     expect(onChange).toBeCalled();
   });
 
@@ -133,17 +130,9 @@ describe('BlockGroup', () => {
     setClickList({}, true);
     setLineMapping({}, true);
     setTargetDom({ 'block-73377': {}, 'block-624018': {} });
-    wrapper
-      .find('.block-group')
-      .at(1)
-      .props()
-      .onClick('block-73377');
+    wrapper.find('.block-group').at(1).props().onClick('block-73377');
     expect(onChange).not.toHaveBeenCalled();
-    wrapper
-      .find('.block-group')
-      .at(1)
-      .props()
-      .onClick('block-624018');
+    wrapper.find('.block-group').at(1).props().onClick('block-624018');
     expect(getTargetDom()).toEqual({
       'block-442566': {
         bottom: 0,
@@ -171,13 +160,7 @@ describe('BlockGroup', () => {
     setLineMapping({ test1: { fromKey: 'block-73377', toKey: 'block-624018' } }, true);
     setTargetDom({ 'block-73377': {}, 'block-624018': {} });
     setClickList({ 'block-73377': {}, 'block-624018': {} }, true);
-    expect(
-      wrapper
-        .find('.block-group')
-        .at(1)
-        .props()
-        .onClick('block-73377'),
-    ).toBe(undefined);
+    expect(wrapper.find('.block-group').at(1).props().onClick('block-73377')).toBe(undefined);
     MockDate.reset();
   });
 
@@ -201,11 +184,7 @@ describe('BlockGroup', () => {
         onWheel={onWheel}
       />,
     );
-    wrapper
-      .find('Draggable')
-      .first()
-      .props()
-      .onStart({ stopPropagation, preventDefault });
+    wrapper.find('Draggable').first().props().onStart({ stopPropagation, preventDefault });
     expect(preventDefault).toHaveBeenCalled();
     expect(stopPropagation).toHaveBeenCalled();
   });
@@ -228,11 +207,7 @@ describe('BlockGroup', () => {
         onWheel={onWheel}
       />,
     );
-    wrapper
-      .find('.block-group')
-      .at(1)
-      .props()
-      .onContextMenu();
+    wrapper.find('.block-group').at(1).props().onContextMenu();
     expect(onContextMenu).toHaveBeenCalled();
   });
 });

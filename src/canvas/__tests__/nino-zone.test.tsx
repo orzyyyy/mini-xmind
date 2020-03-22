@@ -144,10 +144,7 @@ describe('nino-zone', () => {
         onWheel={onWheel}
       />,
     );
-    wrapper
-      .find('div')
-      .props()
-      .onWheel({ deltaY: -1 });
+    wrapper.find('div').props().onWheel({ deltaY: -1 });
     expect(onWheel).toHaveBeenCalledWith({ x: 186, y: 469, editable: false, input: 'test' }, 'tag-416176', {
       deltaY: -1,
     });

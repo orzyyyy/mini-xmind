@@ -232,7 +232,7 @@ export const mapping = {
 
 const debounce = (fun: any, delay: number) => (args: any) => {
   clearTimeout(fun.id);
-  fun.id = setTimeout(function() {
+  fun.id = setTimeout(function () {
     fun.call(this, args);
   }, delay);
 };

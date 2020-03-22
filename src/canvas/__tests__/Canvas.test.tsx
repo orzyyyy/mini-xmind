@@ -26,21 +26,11 @@ describe('Canvas', () => {
     event.dataTransfer.getData = () => {
       return false;
     };
-    expect(
-      wrapper
-        .find('.react-draggable')
-        .first()
-        .props()
-        .onDrop(event),
-    ).toBe(false);
+    expect(wrapper.find('.react-draggable').first().props().onDrop(event)).toBe(false);
     event.dataTransfer.getData = () => {
       return '{"key":"border","type":"","style":{"width":100,"height":80}}';
     };
-    wrapper
-      .find('.react-draggable')
-      .first()
-      .props()
-      .onDrop(event);
+    wrapper.find('.react-draggable').first().props().onDrop(event);
     expect(onChange).toHaveBeenCalled();
   });
 
@@ -54,11 +44,7 @@ describe('Canvas', () => {
     event.dataTransfer.getData = () => {
       return '{"key":"border","type":"block","style":{"width":100,"height":80}}';
     };
-    wrapper
-      .find('.react-draggable')
-      .first()
-      .props()
-      .onDrop(event);
+    wrapper.find('.react-draggable').first().props().onDrop(event);
     expect(onChange).toHaveBeenCalled();
   });
 
@@ -72,22 +58,14 @@ describe('Canvas', () => {
     event.dataTransfer.getData = () => {
       return '{"key":"border","type":"tag","style":{"width":100,"height":80}}';
     };
-    wrapper
-      .find('.react-draggable')
-      .first()
-      .props()
-      .onDrop(event);
+    wrapper.find('.react-draggable').first().props().onDrop(event);
     expect(onChange).toHaveBeenCalled();
   });
 
   it('handleDrag should work correctly', () => {
     const onChange = jest.fn();
     const wrapper: any = mount(<Canvas data={mapping} onChange={onChange} />);
-    wrapper
-      .find('Draggable')
-      .first()
-      .props()
-      .onDrag(null, { x: 1, y: 1 });
+    wrapper.find('Draggable').first().props().onDrag(null, { x: 1, y: 1 });
     expect(onChange).toHaveBeenCalled();
   });
 
@@ -98,24 +76,12 @@ describe('Canvas', () => {
     );
     const preventDefault = jest.fn();
     const event = { preventDefault };
-    wrapper
-      .find('TagGroup')
-      .first()
-      .props()
-      .onContextMenu({ group: '', event, key: 'tag-416176' });
+    wrapper.find('TagGroup').first().props().onContextMenu({ group: '', event, key: 'tag-416176' });
     expect(onChange).toHaveBeenCalled();
-    wrapper
-      .find('BlockGroup')
-      .first()
-      .props()
-      .onContextMenu({ group: 'block-group', event, key: 'block-623187' });
+    wrapper.find('BlockGroup').first().props().onContextMenu({ group: 'block-group', event, key: 'block-623187' });
     expect(onChange).toHaveBeenCalled();
     expect(preventDefault).toHaveBeenCalled();
-    wrapper
-      .find('TagGroup')
-      .first()
-      .props()
-      .onContextMenu({ group: 'tag-group', event, key: 'tag-416176' });
+    wrapper.find('TagGroup').first().props().onContextMenu({ group: 'tag-group', event, key: 'tag-416176' });
     expect(onChange).toHaveBeenCalled();
     expect(preventDefault).toHaveBeenCalled();
   });
@@ -123,10 +89,7 @@ describe('Canvas', () => {
   it('handleTagChange', () => {
     const onChange = jest.fn();
     const wrapper: any = mount(<Canvas data={mapping} onChange={onChange} />);
-    wrapper
-      .find('TagGroup')
-      .props()
-      .onChange();
+    wrapper.find('TagGroup').props().onChange();
     expect(onChange).toHaveBeenCalled();
   });
 
@@ -134,11 +97,7 @@ describe('Canvas', () => {
     const stopPropagation = jest.fn();
     const onChange = jest.fn();
     const wrapper: any = mount(<Canvas data={mapping} onChange={onChange} />);
-    wrapper
-      .find('Draggable')
-      .first()
-      .props()
-      .onStart({ stopPropagation });
+    wrapper.find('Draggable').first().props().onStart({ stopPropagation });
     expect(stopPropagation).toHaveBeenCalled();
   });
 
@@ -146,10 +105,7 @@ describe('Canvas', () => {
     const onChange = jest.fn();
     const data = { ...mapping, block: { 'block-623187': { x: 100, y: 100 } } };
     const wrapper: any = mount(<Canvas data={data} onChange={onChange} />);
-    wrapper
-      .find('BlockGroup')
-      .props()
-      .onChange();
+    wrapper.find('BlockGroup').props().onChange();
     wrapper.update();
     expect(onChange).toHaveBeenCalled();
   });
@@ -164,10 +120,7 @@ describe('Canvas', () => {
       .onWheel({ children: ['tag-491320'] });
     expect(onChange).toHaveBeenCalled();
 
-    wrapper
-      .find('.Canvas')
-      .props()
-      .onWheel({ deltaY: 1 });
+    wrapper.find('.Canvas').props().onWheel({ deltaY: 1 });
     expect(onChange).toHaveBeenCalled();
   });
 });

@@ -14,12 +14,7 @@ describe('TagGroup', () => {
     const wrapper = mount(
       <TagGroup data={data as any} onChange={jest.fn()} onContextMenu={jest.fn()} lineData={{}} onWheel={onWheel} />,
     );
-    expect(
-      wrapper
-        .find('.tag-group')
-        .at(1)
-        .text(),
-    ).toBe('test');
+    expect(wrapper.find('.tag-group').at(1).text()).toBe('test');
     wrapper.setProps({
       data: {
         tag: {
@@ -42,10 +37,7 @@ describe('TagGroup', () => {
     const wrapper = mount(
       <TagGroup data={data as any} onChange={jest.fn()} onContextMenu={jest.fn()} lineData={{}} onWheel={onWheel} />,
     );
-    wrapper
-      .find('.tag-group')
-      .at(1)
-      .simulate('doubleclick');
+    wrapper.find('.tag-group').at(1).simulate('doubleclick');
     expect(wrapper.find('TagGroup').props().data).toEqual({
       tag: {
         editable: true,
@@ -162,10 +154,7 @@ describe('TagGroup', () => {
         lineData={{}}
       />,
     );
-    (wrapper
-      .find('.tag-group')
-      .at(1)
-      .props() as any).onContextMenu();
+    (wrapper.find('.tag-group').at(1).props() as any).onContextMenu();
     expect(onContextMenu).toHaveBeenCalled();
   });
 
