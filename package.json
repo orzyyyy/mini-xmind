@@ -27,8 +27,8 @@
     "sort": "npx sort-package-json",
     "start": "nino go",
     "test": "nino test",
-    "test:es": "cross-env LIB_DIR=es nino test --testPathPattern='src' --no-cache -u",
-    "test:lib": "cross-env LIB_DIR=lib nino test --testPathPattern='src' --no-cache -u",
+    "test:es": "cross-env LIB_DIR=es nino test --path='src' --no-cache -u",
+    "test:lib": "cross-env LIB_DIR=lib nino test --path='src' --no-cache -u",
     "tsc": "tsc"
   },
   "pre-commit": [
