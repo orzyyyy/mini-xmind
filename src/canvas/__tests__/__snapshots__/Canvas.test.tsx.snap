@@ -296,11 +296,9 @@ exports[`Canvas Canvas renders correctly 1`] = `
         onMouseDown={[Function]}
         onMouseUp={[Function]}
         onTouchEnd={[Function]}
-        onTouchStart={[Function]}
         onWheel={[Function]}
         style={
           Object {
-            "touchAction": "none",
             "transform": "translate(79px,-100px)",
           }
         }
@@ -618,10 +616,8 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
-                onTouchStart={[Function]}
                 style={
                   Object {
-                    "touchAction": "none",
                     "transform": "translate(186px,469px)",
                     "width": 199,
                     "wordBreak": "break-all",
@@ -845,10 +841,8 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
-                onTouchStart={[Function]}
                 style={
                   Object {
-                    "touchAction": "none",
                     "transform": "translate(34px,367px)",
                     "width": 199,
                     "wordBreak": "break-all",
@@ -1072,10 +1066,8 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
-                onTouchStart={[Function]}
                 style={
                   Object {
-                    "touchAction": "none",
                     "transform": "translate(399px,602px)",
                     "width": 199,
                     "wordBreak": "break-all",
@@ -1299,10 +1291,8 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
-                onTouchStart={[Function]}
                 style={
                   Object {
-                    "touchAction": "none",
                     "transform": "translate(385px,340px)",
                     "width": 199,
                     "wordBreak": "break-all",
@@ -1529,10 +1519,8 @@ exports[`Canvas Canvas renders correctly 1`] = `
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
-                onTouchStart={[Function]}
                 style={
                   Object {
-                    "touchAction": "none",
                     "transform": "translate(491px,691px)",
                     "width": 199,
                     "wordBreak": "break-all",
@@ -2483,11 +2471,9 @@ exports[`Canvas Canvas renders correctly 2`] = `
         onMouseDown={[Function]}
         onMouseUp={[Function]}
         onTouchEnd={[Function]}
-        onTouchStart={[Function]}
         onWheel={[Function]}
         style={
           Object {
-            "touchAction": "none",
             "transform": "translate(-1px,-1px)",
           }
         }
@@ -2694,10 +2680,8 @@ exports[`Canvas Canvas renders correctly 2`] = `
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
-                onTouchStart={[Function]}
                 style={
                   Object {
-                    "touchAction": "none",
                     "transform": "translate(491px,691px)",
                     "width": 199,
                     "wordBreak": "break-all",
@@ -2861,10 +2845,8 @@ exports[`Canvas Canvas renders correctly 2`] = `
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
-                onTouchStart={[Function]}
                 style={
                   Object {
-                    "touchAction": "none",
                     "transform": "translate(591px,791px)",
                     "width": 199,
                     "wordBreak": "break-all",
@@ -3025,10 +3007,8 @@ exports[`Canvas Canvas renders correctly 2`] = `
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
                 onTouchEnd={[Function]}
-                onTouchStart={[Function]}
                 style={
                   Object {
-                    "touchAction": "none",
                     "transform": "translate(591px,591px)",
                     "width": 199,
                     "wordBreak": "break-all",
