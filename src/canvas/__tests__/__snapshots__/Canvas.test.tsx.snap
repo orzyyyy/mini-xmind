@@ -246,7 +246,6 @@ exports[`Canvas Canvas renders correctly 1`] = `
     allowAnyClick={false}
     axis="both"
     bounds={false}
-    cancel={null}
     defaultClassName="react-draggable"
     defaultClassNameDragged="react-draggable-dragged"
     defaultClassNameDragging="react-draggable-dragging"
@@ -258,9 +257,6 @@ exports[`Canvas Canvas renders correctly 1`] = `
     }
     disabled={false}
     enableUserSelectHack={true}
-    grid={null}
-    handle={null}
-    offsetParent={null}
     onDrag={[Function]}
     onMouseDown={[Function]}
     onStart={[Function]}
@@ -272,22 +268,16 @@ exports[`Canvas Canvas renders correctly 1`] = `
       }
     }
     scale={1}
-    transform={null}
   >
     <DraggableCore
       allowAnyClick={false}
-      cancel={null}
       disabled={false}
       enableUserSelectHack={true}
-      grid={null}
-      handle={null}
-      offsetParent={null}
       onDrag={[Function]}
       onMouseDown={[Function]}
       onStart={[Function]}
       onStop={[Function]}
       scale={1}
-      transform={null}
     >
       <div
         className="Canvas react-draggable"
@@ -566,7 +556,6 @@ exports[`Canvas Canvas renders correctly 1`] = `
             allowAnyClick={false}
             axis="both"
             bounds={false}
-            cancel={null}
             defaultClassName="react-draggable"
             defaultClassNameDragged="react-draggable-dragged"
             defaultClassNameDragging="react-draggable-dragging"
@@ -578,10 +567,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
             }
             disabled={false}
             enableUserSelectHack={true}
-            grid={null}
-            handle={null}
             key="tag-416176"
-            offsetParent={null}
             onDrag={[Function]}
             onMouseDown={[Function]}
             onStart={[Function]}
@@ -593,22 +579,16 @@ exports[`Canvas Canvas renders correctly 1`] = `
               }
             }
             scale={1}
-            transform={null}
           >
             <DraggableCore
               allowAnyClick={false}
-              cancel={null}
               disabled={false}
               enableUserSelectHack={true}
-              grid={null}
-              handle={null}
-              offsetParent={null}
               onDrag={[Function]}
               onMouseDown={[Function]}
               onStart={[Function]}
               onStop={[Function]}
               scale={1}
-              transform={null}
             >
               <div
                 className="react-draggable"
@@ -791,7 +771,6 @@ exports[`Canvas Canvas renders correctly 1`] = `
             allowAnyClick={false}
             axis="both"
             bounds={false}
-            cancel={null}
             defaultClassName="react-draggable"
             defaultClassNameDragged="react-draggable-dragged"
             defaultClassNameDragging="react-draggable-dragging"
@@ -803,10 +782,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
             }
             disabled={false}
             enableUserSelectHack={true}
-            grid={null}
-            handle={null}
             key="tag-439992"
-            offsetParent={null}
             onDrag={[Function]}
             onMouseDown={[Function]}
             onStart={[Function]}
@@ -818,22 +794,16 @@ exports[`Canvas Canvas renders correctly 1`] = `
               }
             }
             scale={1}
-            transform={null}
           >
             <DraggableCore
               allowAnyClick={false}
-              cancel={null}
               disabled={false}
               enableUserSelectHack={true}
-              grid={null}
-              handle={null}
-              offsetParent={null}
               onDrag={[Function]}
               onMouseDown={[Function]}
               onStart={[Function]}
               onStop={[Function]}
               scale={1}
-              transform={null}
             >
               <div
                 className="react-draggable"
@@ -1016,7 +986,6 @@ exports[`Canvas Canvas renders correctly 1`] = `
             allowAnyClick={false}
             axis="both"
             bounds={false}
-            cancel={null}
             defaultClassName="react-draggable"
             defaultClassNameDragged="react-draggable-dragged"
             defaultClassNameDragging="react-draggable-dragging"
@@ -1028,10 +997,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
             }
             disabled={false}
             enableUserSelectHack={true}
-            grid={null}
-            handle={null}
             key="tag-443720"
-            offsetParent={null}
             onDrag={[Function]}
             onMouseDown={[Function]}
             onStart={[Function]}
@@ -1043,22 +1009,16 @@ exports[`Canvas Canvas renders correctly 1`] = `
               }
             }
             scale={1}
-            transform={null}
           >
             <DraggableCore
               allowAnyClick={false}
-              cancel={null}
               disabled={false}
               enableUserSelectHack={true}
-              grid={null}
-              handle={null}
-              offsetParent={null}
               onDrag={[Function]}
               onMouseDown={[Function]}
               onStart={[Function]}
               onStop={[Function]}
               scale={1}
-              transform={null}
             >
               <div
                 className="react-draggable"
@@ -1241,7 +1201,6 @@ exports[`Canvas Canvas renders correctly 1`] = `
             allowAnyClick={false}
             axis="both"
             bounds={false}
-            cancel={null}
             defaultClassName="react-draggable"
             defaultClassNameDragged="react-draggable-dragged"
             defaultClassNameDragging="react-draggable-dragging"
@@ -1253,10 +1212,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
             }
             disabled={false}
             enableUserSelectHack={true}
-            grid={null}
-            handle={null}
             key="tag-476280"
-            offsetParent={null}
             onDrag={[Function]}
             onMouseDown={[Function]}
             onStart={[Function]}
@@ -1268,22 +1224,16 @@ exports[`Canvas Canvas renders correctly 1`] = `
               }
             }
             scale={1}
-            transform={null}
           >
             <DraggableCore
               allowAnyClick={false}
-              cancel={null}
               disabled={false}
               enableUserSelectHack={true}
-              grid={null}
-              handle={null}
-              offsetParent={null}
               onDrag={[Function]}
               onMouseDown={[Function]}
               onStart={[Function]}
               onStop={[Function]}
               scale={1}
-              transform={null}
             >
               <div
                 className="react-draggable"
@@ -1469,7 +1419,6 @@ exports[`Canvas Canvas renders correctly 1`] = `
             allowAnyClick={false}
             axis="both"
             bounds={false}
-            cancel={null}
             defaultClassName="react-draggable"
             defaultClassNameDragged="react-draggable-dragged"
             defaultClassNameDragging="react-draggable-dragging"
@@ -1481,10 +1430,7 @@ exports[`Canvas Canvas renders correctly 1`] = `
             }
             disabled={false}
             enableUserSelectHack={true}
-            grid={null}
-            handle={null}
             key="tag-491320"
-            offsetParent={null}
             onDrag={[Function]}
             onMouseDown={[Function]}
             onStart={[Function]}
@@ -1496,22 +1442,16 @@ exports[`Canvas Canvas renders correctly 1`] = `
               }
             }
             scale={1}
-            transform={null}
           >
             <DraggableCore
               allowAnyClick={false}
-              cancel={null}
               disabled={false}
               enableUserSelectHack={true}
-              grid={null}
-              handle={null}
-              offsetParent={null}
               onDrag={[Function]}
               onMouseDown={[Function]}
               onStart={[Function]}
               onStop={[Function]}
               scale={1}
-              transform={null}
             >
               <div
                 className="react-draggable"
@@ -2421,7 +2361,6 @@ exports[`Canvas Canvas renders correctly 2`] = `
     allowAnyClick={false}
     axis="both"
     bounds={false}
-    cancel={null}
     defaultClassName="react-draggable"
     defaultClassNameDragged="react-draggable-dragged"
     defaultClassNameDragging="react-draggable-dragging"
@@ -2433,9 +2372,6 @@ exports[`Canvas Canvas renders correctly 2`] = `
     }
     disabled={false}
     enableUserSelectHack={true}
-    grid={null}
-    handle={null}
-    offsetParent={null}
     onDrag={[Function]}
     onMouseDown={[Function]}
     onStart={[Function]}
@@ -2447,22 +2383,16 @@ exports[`Canvas Canvas renders correctly 2`] = `
       }
     }
     scale={1}
-    transform={null}
   >
     <DraggableCore
       allowAnyClick={false}
-      cancel={null}
       disabled={false}
       enableUserSelectHack={true}
-      grid={null}
-      handle={null}
-      offsetParent={null}
       onDrag={[Function]}
       onMouseDown={[Function]}
       onStart={[Function]}
       onStop={[Function]}
       scale={1}
-      transform={null}
     >
       <div
         className="Canvas react-draggable"
@@ -2630,7 +2560,6 @@ exports[`Canvas Canvas renders correctly 2`] = `
             allowAnyClick={false}
             axis="both"
             bounds={false}
-            cancel={null}
             defaultClassName="react-draggable"
             defaultClassNameDragged="react-draggable-dragged"
             defaultClassNameDragging="react-draggable-dragging"
@@ -2642,10 +2571,7 @@ exports[`Canvas Canvas renders correctly 2`] = `
             }
             disabled={false}
             enableUserSelectHack={true}
-            grid={null}
-            handle={null}
             key="tag-491320"
-            offsetParent={null}
             onDrag={[Function]}
             onMouseDown={[Function]}
             onStart={[Function]}
@@ -2657,22 +2583,16 @@ exports[`Canvas Canvas renders correctly 2`] = `
               }
             }
             scale={1}
-            transform={null}
           >
             <DraggableCore
               allowAnyClick={false}
-              cancel={null}
               disabled={false}
               enableUserSelectHack={true}
-              grid={null}
-              handle={null}
-              offsetParent={null}
               onDrag={[Function]}
               onMouseDown={[Function]}
               onStart={[Function]}
               onStop={[Function]}
               scale={1}
-              transform={null}
             >
               <div
                 className="react-draggable"
@@ -2795,7 +2715,6 @@ exports[`Canvas Canvas renders correctly 2`] = `
             allowAnyClick={false}
             axis="both"
             bounds={false}
-            cancel={null}
             defaultClassName="react-draggable"
             defaultClassNameDragged="react-draggable-dragged"
             defaultClassNameDragging="react-draggable-dragging"
@@ -2807,10 +2726,7 @@ exports[`Canvas Canvas renders correctly 2`] = `
             }
             disabled={false}
             enableUserSelectHack={true}
-            grid={null}
-            handle={null}
             key="tag-491321"
-            offsetParent={null}
             onDrag={[Function]}
             onMouseDown={[Function]}
             onStart={[Function]}
@@ -2822,22 +2738,16 @@ exports[`Canvas Canvas renders correctly 2`] = `
               }
             }
             scale={1}
-            transform={null}
           >
             <DraggableCore
               allowAnyClick={false}
-              cancel={null}
               disabled={false}
               enableUserSelectHack={true}
-              grid={null}
-              handle={null}
-              offsetParent={null}
               onDrag={[Function]}
               onMouseDown={[Function]}
               onStart={[Function]}
               onStop={[Function]}
               scale={1}
-              transform={null}
             >
               <div
                 className="react-draggable"
@@ -2957,7 +2867,6 @@ exports[`Canvas Canvas renders correctly 2`] = `
             allowAnyClick={false}
             axis="both"
             bounds={false}
-            cancel={null}
             defaultClassName="react-draggable"
             defaultClassNameDragged="react-draggable-dragged"
             defaultClassNameDragging="react-draggable-dragging"
@@ -2969,10 +2878,7 @@ exports[`Canvas Canvas renders correctly 2`] = `
             }
             disabled={false}
             enableUserSelectHack={true}
-            grid={null}
-            handle={null}
             key="tag-491322"
-            offsetParent={null}
             onDrag={[Function]}
             onMouseDown={[Function]}
             onStart={[Function]}
@@ -2984,22 +2890,16 @@ exports[`Canvas Canvas renders correctly 2`] = `
               }
             }
             scale={1}
-            transform={null}
           >
             <DraggableCore
               allowAnyClick={false}
-              cancel={null}
               disabled={false}
               enableUserSelectHack={true}
-              grid={null}
-              handle={null}
-              offsetParent={null}
               onDrag={[Function]}
               onMouseDown={[Function]}
               onStart={[Function]}
               onStop={[Function]}
               scale={1}
-              transform={null}
             >
               <div
                 className="react-draggable"
