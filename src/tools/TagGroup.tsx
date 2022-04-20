@@ -1,11 +1,15 @@
-import React from 'react';
-import classNames from 'classnames';
-import Draggable, { DraggableEvent, DraggableData } from 'react-draggable';
-import './css/TagGroup.css';
-import { stopPropagation, preventDefault } from '../utils/LineUtil';
-import { ContextMenuProps, CoordinatesProps, CommonProps } from '../canvas/core';
-import NinoZone, { getTargetDom } from '../canvas/nino-zone';
-import { LineProps } from './LineGroup';
+import React from "react";
+import classNames from "classnames";
+import Draggable, { DraggableEvent, DraggableData } from "react-draggable";
+import "./css/TagGroup.css";
+import { stopPropagation, preventDefault } from "../utils/LineUtil";
+import {
+  ContextMenuProps,
+  CoordinatesProps,
+  CommonProps,
+} from "../canvas/core";
+import NinoZone, { getTargetDom } from "../canvas/nino-zone";
+import { LineProps } from "./LineGroup";
 
 export type TagDomItem = CommonProps & CoordinatesProps & { input: string };
 export type TagGroupRenderItem = {
@@ -24,7 +28,11 @@ export type TagGroupItem = {
 };
 export interface TagGroupProps {
   data: TagGroupItem;
-  onChange: (data: TagGroupItem, tagDom: TagDomItem, targetKey?: string) => void;
+  onChange: (
+    data: TagGroupItem,
+    tagDom: TagDomItem,
+    targetKey?: string
+  ) => void;
   className?: string;
   onContextMenu: (item: ContextMenuProps) => void;
   lineData: LineProps;
@@ -39,8 +47,20 @@ const handleDragStart = (e: DraggableEvent) => {
   preventDefault(e);
 };
 
-const TagGroup = ({ data, onChange, onContextMenu, className: parentClassName, lineData, onWheel }: TagGroupProps) => {
-  const handleChange = (item: any, key: string, targetKey: string, targetValue: boolean | string) => {
+const TagGroup = ({
+  data,
+  onChange,
+  onContextMenu,
+  className: parentClassName,
+  lineData,
+  onWheel,
+}: TagGroupProps) => {
+  const handleChange = (
+    item: any,
+    key: string,
+    targetKey: string,
+    targetValue: boolean | string
+  ) => {
     data[key] = item;
     (data as any)[key][targetKey] = targetValue;
 
@@ -51,7 +71,10 @@ const TagGroup = ({ data, onChange, onContextMenu, className: parentClassName, l
 
   const handleDrag = ({ x, y }: DraggableData, key: string) => {
     if (onChange) {
-      onChange(Object.assign({}, data, { [key]: { ...data[key], x, y } }), getTargetDom());
+      onChange(
+        Object.assign({}, data, { [key]: { ...data[key], x, y } }),
+        getTargetDom()
+      );
     }
   };
 
@@ -65,15 +88,21 @@ const TagGroup = ({ data, onChange, onContextMenu, className: parentClassName, l
     >
       <textarea
         className="animate-appear"
-        onChange={e => handleChange(item, key, 'input', e.target.value)}
+        onChange={(e) => handleChange(item, key, "input", e.target.value)}
         value={item.input}
         autoFocus
-        onBlur={() => handleChange(item, key, 'editable', false)}
+        onBlur={() => handleChange(item, key, "editable", false)}
       />
     </div>
   );
 
-  const renderTagItem = ({ item, key, onContextMenu, className }: TagGroupRenderItem) => (
+  const renderTagItem = ({
+    item,
+    key,
+    onContextMenu,
+    className,
+  }: TagGroupRenderItem) => (
+    // @ts-expect-error
     <Draggable
       onStart={handleDragStart}
       key={key}
@@ -81,8 +110,8 @@ const TagGroup = ({ data, onChange, onContextMenu, className: parentClassName, l
       onDrag={(_: DraggableEvent, jtem: DraggableData) => handleDrag(jtem, key)}
     >
       <div
-        onDoubleClick={() => handleChange(item, key, 'editable', true)}
-        style={{ width: 199, wordBreak: 'break-all' }}
+        onDoubleClick={() => handleChange(item, key, "editable", true)}
+        style={{ width: 199, wordBreak: "break-all" }}
       >
         <NinoZone
           className={className}
@@ -106,10 +135,15 @@ const TagGroup = ({ data, onChange, onContextMenu, className: parentClassName, l
 
   return (
     <>
-      {Object.keys(data).map(key => {
+      {Object.keys(data).map((key) => {
         const item = data[key];
         const { editable, className: tagClassName } = item;
-        const targetClassName = classNames('tag-group', 'animate-appear', parentClassName, tagClassName);
+        const targetClassName = classNames(
+          "tag-group",
+          "animate-appear",
+          parentClassName,
+          tagClassName
+        );
         if (editable) {
           return renderTextArea({
             item,
