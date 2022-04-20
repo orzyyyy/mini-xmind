@@ -1,13 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import classNames from 'classnames';
-import LineGroup, { LineProps } from '../tools/LineGroup';
-import { preventDefault, generateKey, stopPropagation } from '../utils/LineUtil';
-import TagGroup, { TagGroupItem } from '../tools/TagGroup';
-import BlockGroup, { BlockProps, updateLineDataByTargetDom } from '../tools/BlockGroup';
-import Draggable from 'react-draggable';
-import { setClickList, getTargetDom, setLineMapping } from './nino-zone';
-import { OrientationProps } from '../line/SteppedLine';
-import { DraggableItemProp } from '../tools/Toolbar';
+import React, { useEffect, useState } from "react";
+import classNames from "classnames";
+import LineGroup, { LineProps } from "../tools/LineGroup";
+import {
+  preventDefault,
+  generateKey,
+  stopPropagation,
+} from "../utils/LineUtil";
+import TagGroup, { TagGroupItem } from "../tools/TagGroup";
+import BlockGroup, {
+  BlockProps,
+  updateLineDataByTargetDom,
+} from "../tools/BlockGroup";
+import Draggable from "react-draggable";
+import { setClickList, getTargetDom, setLineMapping } from "./nino-zone";
+import { OrientationProps } from "../line/SteppedLine";
+import { DraggableItemProp } from "../tools/Toolbar";
 
 export interface CoordinatesProps {
   x: number;
@@ -38,13 +45,13 @@ export interface CanvasProps {
 export type ContextMenuProps = {
   event: React.MouseEvent<HTMLDivElement>;
   key: string;
-  group: 'block-group' | 'tag-group';
+  group: "block-group" | "tag-group";
 };
 
 const filterCurrentElement = (data: DataSource) => {
   const { current } = data;
   const target = JSON.parse(JSON.stringify(data));
-  if (!current || current === 'root') {
+  if (!current || current === "root") {
     const childrenList: string[] = [];
 
     for (const key in target) {
@@ -82,7 +89,7 @@ const filterCurrentElement = (data: DataSource) => {
     return target;
   }
 
-  const splitArr = current.split('-');
+  const splitArr = current.split("-");
   const prefix = splitArr.length && splitArr[0];
   const targetSet = target[prefix];
   const { children } = targetSet[current];
@@ -106,9 +113,15 @@ const filterCurrentElement = (data: DataSource) => {
   return target;
 };
 
-const Canvas = ({ className, orientation = 'horizonal', data: originData, onChange, arrowStatus }: CanvasProps) => {
+const Canvas = ({
+  className,
+  orientation = "horizonal",
+  data: originData,
+  onChange,
+  arrowStatus,
+}: CanvasProps) => {
   const data = filterCurrentElement(originData);
-  const { block = {}, line = {}, tag = {}, current = 'root' } = data;
+  const { block = {}, line = {}, tag = {}, current = "root" } = data;
   const position = (data.position && data.position[current]) || {
     x: -1,
     y: -1,
@@ -131,11 +144,12 @@ const Canvas = ({ className, orientation = 'horizonal', data: originData, onChan
   };
 
   const onDrop = (e: React.DragEvent<HTMLLIElement | HTMLDivElement>) => {
-    let dragItem: string = e.dataTransfer.getData('dragItem');
+    let dragItem: string = e.dataTransfer.getData("dragItem");
     if (!dragItem) {
       return false;
     }
-    const dragItemResult: { type: DraggableItemProp } = dragItem && JSON.parse(dragItem);
+    const dragItemResult: { type: DraggableItemProp } =
+      dragItem && JSON.parse(dragItem);
     const { type } = dragItemResult;
     const { clientX, clientY } = e;
     const result: any = {};
@@ -145,8 +159,8 @@ const Canvas = ({ className, orientation = 'horizonal', data: originData, onChan
 
     result[key] = { x, y };
 
-    if (type === 'tag') {
-      result[key]['editable'] = true;
+    if (type === "tag") {
+      result[key]["editable"] = true;
     }
 
     onChange(getMergedData({ [type]: result }));
@@ -164,11 +178,11 @@ const Canvas = ({ className, orientation = 'horizonal', data: originData, onChan
   const handleRightClick = ({ key, event, group }: ContextMenuProps) => {
     preventDefault(event);
     switch (group) {
-      case 'block-group':
+      case "block-group":
         delete block[key];
         break;
 
-      case 'tag-group':
+      case "tag-group":
         delete tag[key];
         break;
 
@@ -216,7 +230,7 @@ const Canvas = ({ className, orientation = 'horizonal', data: originData, onChan
       position?: CoordinatesProps;
       current?: string;
     },
-    shouldUpdateOriginData?: boolean,
+    shouldUpdateOriginData?: boolean
   ): DataSource => {
     const originPosition = originData.position && originData.position[current];
 
@@ -244,9 +258,14 @@ const Canvas = ({ className, orientation = 'horizonal', data: originData, onChan
   };
 
   return (
-    <Draggable onDrag={handleDrag} position={position} onStart={handleDragStart}>
+    // @ts-expect-error
+    <Draggable
+      onDrag={handleDrag}
+      position={position}
+      onStart={handleDragStart}
+    >
       <div
-        className={classNames('Canvas', className)}
+        className={classNames("Canvas", className)}
         onDragOver={preventDefault}
         onDrop={onDrop}
         onWheel={handleCanvasWheel}
@@ -266,7 +285,12 @@ const Canvas = ({ className, orientation = 'horizonal', data: originData, onChan
           onContextMenu={handleRightClick}
           onWheel={handleElementWheel}
         />
-        <LineGroup data={updatedLine} offset={position} orientation={orientation} arrowStatus={arrowStatus} />
+        <LineGroup
+          data={updatedLine}
+          offset={position}
+          orientation={orientation}
+          arrowStatus={arrowStatus}
+        />
       </div>
     </Draggable>
   );
