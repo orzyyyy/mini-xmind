@@ -77,7 +77,6 @@ const BlockGroup = ({
       {Object.keys(data).map((blockKey) => {
         const { x, y, className: blockClassName } = data[blockKey];
         return (
-          // @ts-expect-error
           <Draggable
             position={{ x, y }}
             onDrag={(_: DraggableEvent, item: CoordinatesProps) =>

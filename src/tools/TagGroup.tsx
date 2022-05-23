@@ -102,7 +102,6 @@ const TagGroup = ({
     onContextMenu,
     className,
   }: TagGroupRenderItem) => (
-    // @ts-expect-error
     <Draggable
       onStart={handleDragStart}
       key={key}

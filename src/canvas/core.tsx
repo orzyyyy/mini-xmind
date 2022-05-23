@@ -258,7 +258,6 @@ const Canvas = ({
   };
 
   return (
-    // @ts-expect-error
     <Draggable
       onDrag={handleDrag}
       position={position}
